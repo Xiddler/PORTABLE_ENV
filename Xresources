@@ -1,0 +1,4 @@
+URxvt*font:                             xft:Bitstream Vera Sans Mono:terminus:pixelsize:16
+URxvt*background:                       Black
+URxvt*foreground:                       White
+URxvt*geometry:                         160x80

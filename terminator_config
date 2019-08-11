@@ -1,0 +1,35 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  focus = mouse
+  geometry_hinting = True
+  inactive_color_offset = 0.617283950617
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = f22ce67f-b6bf-472a-bd9b-b0783de5937d
+      last_active_window = True
+      maximised = False
+      order = 0
+      parent = ""
+      position = 248:188
+      size = 1610, 700
+      title = donagh@donagh-SATELLITE-P50-C: ~
+      type = Window
+    [[[terminal1]]]
+      order = 0
+      parent = child0
+      profile = default
+      type = Terminal
+      uuid = f22ce67f-b6bf-472a-bd9b-b0783de5937d
+[plugins]
+  [[ActivityWatch]]
+    hush_period = 10.0
+[profiles]
+  [[default]]
+    cursor_color = "#aaaaaa"
+    custom_command = zsh -l
+    font = Monospace 13
+    use_custom_command = True
+    use_system_font = False

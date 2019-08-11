@@ -1,0 +1,105 @@
+# ALIASES
+# REM: the functions are defined in .zshrc
+# alias chk='cd $HOME && ./info.sh'
+# alias contout='$HOME/contact_out.sh' # refers to contacts.csv which is /media/ubuntu/3520-FD13/0My_Folders/00Donaghs_ORG/14_Donaghs_CONTACTS/00_Main_Contacts.csv
+# alias ggp='git push git@github.com:Xiddler/xiddler.github.io.git gh-pages:master'
+# alias t='./todo.sh -d /path/to/your/todo.cfg'
+# alias vim='sudo vim '
+alias -g C=' | gpaste-client'
+alias -g G='| egrep -i --color=auto'
+alias -g P='pwd -P'
+alias -g PS='ps aux | egrep -i --color=auto'
+alias -g catt='cat /media/donagh/3520-FD13/zim/Computer/11SignUps.txt|ag -i -A5 '
+alias -g contin='python3 /media/donagh/3520-FD13/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/contin.py' # input new contact
+alias -g contout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 '
+alias -g exa='~/Applications/exa-linux-x86_64' # modern ls
+alias -g kontout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 ' # get contact  
+alias -g lsd='du -s -- *(D) | sort -k1n' # list size of directories
+alias -g nt='terminator --geometry +500+100' # open a new zsh terminal  
+alias -g passin='python3 /media/donagh/3520-FD13/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
+alias -g passout='cat /media/donagh/3520-FD13/zim/Computer/11SignUps.txt|ag -i -A5 ' # alternative alias
+alias -g t='/home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.sh -d ~/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.cfg' 
+alias -g xn='| xargs -n 1'
+alias -g zimbu='/home/donagh/.scripts/zim_backup_to_tinyUSB.sh'
+alias -g zz='zsh -l'
+# 
+# the following shortcut alias means that pressing enter after just a 
+# file name with .md extension will automagically open it with vim. Hurrah!
+alias -s md=vim
+
+# Navigation shortcuts
+alias cd..='cd ..'
+alias dl='cd ~/Downloads/'
+alias ds='cd ~/Documents'
+alias croom='cd  /media/donagh/3520-FD13/zim/Business/03_PAYE_Employment/Croom_Concrete_Ltd'
+
+
+# dot files shortcuts 
+alias cb='cat ~/.bashrc'
+alias cv='cat ~/.vimrc'
+alias cz='cat ~/.zshrc'
+alias cza='cat ~/.zsh_aliases'
+alias sb='source ~/.bashrc'
+alias sz='source ~/.zshrc'
+alias vb='vim ~/.bashrc'
+alias vv='vim ~/.vimrc'
+alias vz="vim ~/.zshrc"
+alias vza="vim ~/.zsh_aliases"
+
+# Donaghs shortcuts
+alias chk='$HOME/.scripts/info.sh' # quick summary of system status
+alias def='~/.scripts/get_defs.sh ' # dictionary addition to $dict
+alias mj=md_journal # opens todays journal as a markdown file in vim for editing.
+alias hanging='cd $HOME/ziim/Computer/ && tail -n4 0_Hanging.txt && cd $HOME/ziim/Donaghs/00_Home/ && tail -n4 0_Hanging.txt'
+alias hg=histgrep
+alias hj='history'
+alias pss='python -m SimpleHTTPServer 8000'
+alias ra='ranger'
+alias gett='$HOME/.scripts/get_password.sh'
+alias synaptic='sudo synaptic'
+# alias tm="calc -d 'read qtime; qtime(0)'" # sudo apt install apcalc WINTER TIME
+alias tm="calc -d 'read qtime; qtime(1)'" # sudo apt install apcalc SUMMER TIME
+alias todot=" cd /home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli && ls"
+alias tn='t | festival --tts'
+alias tn='t | spd-say --pipe-mode'
+alias speedtest="curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
+alias wett='curl wttr.in/limerick'
+alias -g define='BROWSER=w3m ddgr \!wordnik ' # ddgr is CLI DDGo and w3m is CLI browser
+
+# todo.txt
+alias t="/home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.sh -d /home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.cfg"
+
+# git shortcuts - but see $alias from zsh
+alias cm='git commit -m '
+alias gcm='git commit -m '
+alias ggs='git status'
+alias gst='git status'
+
+# List directories / files
+alias l.='ls -d .* --color=auto' # Show hidden files ##
+alias ld='ls -d */'
+alias lk='ls -1v'
+alias lk='ls -1v'
+alias ll='ls -la'
+alias lls='ls | xargs -n1' # show ls in a single column
+alias ls='ls --color=auto'
+alias hp='ls --hide=*.py'
+alias hh='cd ~/'
+
+# python virtual envs shortcuts
+alias pb='source $HOME/.virtualenvs/basic/bin/activate'
+alias pd='source $HOME/.virtualenvs/django/bin/activate'
+alias pf='source $HOME/.virtualenvs/flask/bin/activate'
+
+# networking shortcuts
+alias ipe='dig @resolver1.opendns.com ANY myip.opendns.com +short' # external ip -- better
+alias ipi="ip -4 addr  | grep 192 | cut -d '/' -f1"
+alias ping='ping -c3 '
+alias png='ping -c4 8.8.8.8' # ping google to check if there is internet access
+
+# zsh shortcuts
+alias zcp='zmv -C'
+alias zln='zmv -L'
+alias zs='zsh_stats' # lists last 20 commands with statisticsI
+
+# THE END
