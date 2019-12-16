@@ -1,13 +1,13 @@
 # NOTE: Aliases handled in .zsh_aliases or .bash_aliases
 #
 # Add zsh aliases.
-if [ -f ~/.zsh_aliases ]; then
-    source ~/.zsh_aliases
+if [ -f $HOME/.zsh_aliases ]; then
+    source $HOME/.zsh_aliases
 fi
 
 # Path to your oh-my-zsh installation.
   # export ZSH=/home/ubuntu/.oh-my-zsh
-  export ZSH=/home/donagh/.oh-my-zsh
+  export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -21,7 +21,7 @@ ZSH_THEME="crcandy"
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
 SAVEHIST=1000
-HISTFILE=~/.zsh_history
+HISTFILE=$HOME/.zsh_history
 
 # Use modern completion system
 autoload -Uz compinit
@@ -83,6 +83,7 @@ plugins=(
   zsh-syntax-highlighting  
   colored-man-pages
   extract
+  python
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -90,7 +91,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 # To add a new path
 # export PATH="your-dir:$PATH"
-export PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin"
+# export PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -131,7 +132,7 @@ setopt extendedglob # extended globbbing e.g. ls -d ^*.py excludes .py files
 setopt SHARE_HISTORY # uses same history for all sessions
 # only fools wouldn't do this ;-) 
 export EDITOR="vim"
-export BROWSER="w3m"
+# export BROWSER="w3m"
 
 # alias -s
 # the following shortcut alias means that pressing enter after just a 
@@ -139,6 +140,8 @@ export BROWSER="w3m"
 # alias -s md=vim
 
 # Other
+alias cx='clear'
+source $HOME/.zsh_aliases
 # alias wett='curl wttr.in/limerick'
 # alias hp='ls --hide=*.py'
 # alias gett='$HOME/.scripts/get_password.sh'
@@ -189,20 +192,20 @@ export BROWSER="w3m"
 bindkey 'jk' vi-cmd-mode 
 
 # for urxvt terminal emulator
-xrdb ~/.Xresources  # may need to be in my .bashrc file though
-TERM=xterm
+# xrdb ~/.Xresources  # may need to be in my .bashrc file though
+# TERM=xterm
 
 # cd  /media/ubuntu/3520-FD13/2programming_repository/IT_projects/Dashboard_personal/ && gunicorn render_todo:app
 # eval "`dircolors -b ~/.dircolors`"
 # alias ls='ls --color=auto'
 
 # powerline statusline for zsh 2018-08-05
-. /usr/share/powerline/bindings/zsh/powerline.zsh
+# . /usr/share/powerline/bindings/zsh/powerline.zsh
 # fast file and directory autojump
 # . /media/ubuntu/3520-FD13/compressed_utilities/zsh/z/z.sh
 
 # ls_colors
-eval "`dircolors -b ~/.dircolors`"
+# eval "`dircolors -b ~/.dircolors`"
 # alias ls='ls --color=auto'
 # alias lk='ls -1v'
 
@@ -212,27 +215,27 @@ eval "`dircolors -b ~/.dircolors`"
 # FUNCTIONS
 #
 # Navigation shortcuts
-bal() { cd $HOME/sd35/0My_Folders/11Balmurry/Balmurry_Sale/}
-sd3() { cd $HOME/sd35/}
-ziim() { cd $HOME/sd35/zim}
-don() { cd $HOME/sd35/1donaghs-stuff/Big_Projects/2019_new_earn}
+# bal() { cd $HOME/sd35/0My_Folders/11Balmurry/Balmurry_Sale/}
+# sd3() { cd $HOME/sd35/}
+# ziim() { cd $HOME/downloads/home/donagh/sd35/zim}
+# don() { cd $HOME/sd35/1donaghs-stuff/Big_Projects/2019_new_earn}
 
-ccl() { cd $HOME/sd35/1donaghs-stuff/croom_concrete/ }
+# ccl() { cd $HOME/sd35/1donaghs-stuff/croom_concrete/ }
 
-app() { cd $HOME/Applications}
-seek() { cd /media/donagh/015C-2582/Donaghs_WORKSEARCH}
-ts() { cd $HOME/TESTING }
-tst() { cd $HOME/TESTING }
-books() {cd $HOME/sd35/books }
-minding() {cd $HOME/journal/2019/minding_me }
-what() { cd /media/donagh/3520-FD13/0My_Folders/00Donaghs_ORG/WHAT }
-# convert a .md file to a .pdf file. Usage: $ mkp filename.md
-mkp() { ~/.scripts/mktopdf.sh $1 }
-cash() { /media/donagh/3520-FD13/0My_Folders/00Donaghs_ORG/03_FINANCES/GnuCash }
-gcash() { cd ~/Applications/gnucash && flatpak run org.gnucash.GnuCash }
-bus() { cd /media/donagh/3520-FD13/0My_Folders/BUSINESS }
-# shortcut to made a screenshot e.g. grap foto1.png then make selection with mouse
-grab() { scrot -s $1 }
+# app() { cd $HOME/Applications}
+# seek() { cd /media/donagh/015C-2582/Donaghs_WORKSEARCH}
+# ts() { cd $HOME/TESTING }
+# tst() { cd $HOME/TESTING }
+# books() {cd $HOME/sd35/books }
+# minding() {cd $HOME/journal/2019/minding_me }
+# what() { cd /media/donagh/3520-FD13/0My_Folders/00Donaghs_ORG/WHAT }
+# # convert a .md file to a .pdf file. Usage: $ mkp filename.md
+# mkp() { ~/.scripts/mktopdf.sh $1 }
+# cash() { /media/donagh/3520-FD13/0My_Folders/00Donaghs_ORG/03_FINANCES/GnuCash }
+# gcash() { cd ~/Applications/gnucash && flatpak run org.gnucash.GnuCash }
+# bus() { cd /media/donagh/3520-FD13/0My_Folders/BUSINESS }
+# # shortcut to made a screenshot e.g. grap foto1.png then make selection with mouse
+# grab() { scrot -s $1 }
 
 
 # where the -U stands for unique, tells the shell that it should not add anything to $PATH if it's there already
@@ -263,8 +266,8 @@ jour() { cd ~/journal/2019 && ls }
 # todo.txt
 # CLI tool
 # t is aliased to .../todo.sh in .zsh_aliases
-export TODOTXT_DEFAULT_ACTION=ls
-todo_folder='/home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli/'
+# export TODOTXT_DEFAULT_ACTION=ls
+# todo_folder='/home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli/'
 # the following function greps a term as in $ grep <term> <Enter>
 v()
 {
