@@ -23,6 +23,7 @@ alias -g xn='| xargs -n 1'
 alias -g zimbu='/home/donagh/.scripts/zim_backup_to_tinyUSB.sh'
 alias -g zz='zsh -l'
 # 
+alias -g cx='clear'
 # the following shortcut alias means that pressing enter after just a 
 # file name with .md extension will automagically open it with vim. Hurrah!
 alias -s md=vim
@@ -32,6 +33,9 @@ alias cd..='cd ..'
 alias dl='cd ~/Downloads/'
 alias ds='cd ~/Documents'
 alias croom='cd  /media/donagh/3520-FD13/zim/Business/03_PAYE_Employment/Croom_Concrete_Ltd'
+alias -g ziim='$HOME/downloads/home/donagh/sd35/zim/'
+alias -g hf='cd $HOME'
+
 
 
 # dot files shortcuts 
@@ -79,7 +83,6 @@ alias gst='git status'
 alias l.='ls -d .* --color=auto' # Show hidden files ##
 alias ld='ls -d */'
 alias lk='ls -1v'
-alias lk='ls -1v'
 alias ll='ls -la'
 alias lls='ls | xargs -n1' # show ls in a single column
 alias ls='ls --color=auto'
@@ -100,6 +103,6 @@ alias png='ping -c4 8.8.8.8' # ping google to check if there is internet access
 # zsh shortcuts
 alias zcp='zmv -C'
 alias zln='zmv -L'
-alias zs='zsh_stats' # lists last 20 commands with statisticsI
+alias zs='zsh_stats' # lists last 20 commands with statistics
 
 # THE END
