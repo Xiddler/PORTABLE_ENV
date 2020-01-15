@@ -200,7 +200,7 @@ bindkey 'jk' vi-cmd-mode
 # alias ls='ls --color=auto'
 
 # powerline statusline for zsh 2018-08-05
-# . /usr/share/powerline/bindings/zsh/powerline.zsh
+. /usr/share/powerline/bindings/zsh/powerline.zsh
 # fast file and directory autojump
 # . /media/ubuntu/3520-FD13/compressed_utilities/zsh/z/z.sh
 
@@ -256,11 +256,14 @@ md_journal() {
 # alias mj=md_journal # opens todays journal as a markdown file in vim for editing.
 #
 
-alc() { $EDITOR ~/journal/2019/minding_me/alcohol_journal.md }
-grat() { $EDITOR ~/journal/2019/minding_me/gratitude_journal.md }
-pain() { $EDITOR ~/journal/2019/minding_me/pain_points.md }
-ideas() { $EDITOR ~/journal/2019/ideas/ideas_to_go_at.md }
-jour() { cd ~/journal/2019 && ls }
+alc() { $EDITOR ~/journal/minding_me/alcohol_journal.md }
+# see zsh_aliases for the following
+# wisdom
+# inspire
+grat() { $EDITOR ~/journal/minding_me/gratitude_journal.md }
+pain() { $EDITOR ~/journal/minding_me/pain_points.md }
+ideas() { $EDITOR ~/journal/ideas/ideas_to_go_at.md }
+jour() { cd ~/journal && ls }
 
 
 # todo.txt
@@ -296,3 +299,5 @@ histgrep ()
 export RANGER_LOAD_DEFAULT_RC=false
 
 
+
+source /home/donagh/.config/broot/launcher/bash/br

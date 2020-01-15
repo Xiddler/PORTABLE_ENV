@@ -9,19 +9,20 @@ alias -g C=' | gpaste-client'
 alias -g G='| egrep -i --color=auto'
 alias -g P='pwd -P'
 alias -g PS='ps aux | egrep -i --color=auto'
-alias -g catt='cat /media/donagh/3520-FD13/zim/Computer/11SignUps.txt|ag -i -A5 '
+alias -g catt='cat $HOME/zzim/Computer/11SignUps.txt|ag -i -A5 '
 alias -g contin='python3 /media/donagh/3520-FD13/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/contin.py' # input new contact
 alias -g contout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 '
 alias -g exa='~/Applications/exa-linux-x86_64' # modern ls
 alias -g kontout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 ' # get contact  
 alias -g lsd='du -s -- *(D) | sort -k1n' # list size of directories
 alias -g nt='terminator --geometry +500+100' # open a new zsh terminal  
-alias -g passin='python3 /media/donagh/3520-FD13/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
+alias -g passin='python3 $HOME/sd64/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
 alias -g passout='cat /media/donagh/3520-FD13/zim/Computer/11SignUps.txt|ag -i -A5 ' # alternative alias
 alias -g t='/home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.sh -d ~/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.cfg' 
 alias -g xn='| xargs -n 1'
 alias -g zimbu='/home/donagh/.scripts/zim_backup_to_tinyUSB.sh'
 alias -g zz='zsh -l'
+alias -g latest='ls -lt  **/*(.om[1,20])' # list latest 20 files edited
 # 
 alias -g cx='clear'
 # the following shortcut alias means that pressing enter after just a 
@@ -32,9 +33,13 @@ alias -s md=vim
 alias cd..='cd ..'
 alias dl='cd ~/Downloads/'
 alias ds='cd ~/Documents'
-alias croom='cd  /media/donagh/3520-FD13/zim/Business/03_PAYE_Employment/Croom_Concrete_Ltd'
-alias -g ziim='$HOME/downloads/home/donagh/sd35/zim/'
+alias -g ziim='$HOME/sd64/zim/'
+alias -g sd='cd $HOME/sd64/'
 alias -g hf='cd $HOME'
+alias -g 2p='cd $HOME/sd64/2programming_repository/'
+web(){cd $HOME/sd64/2programming_repository/css/css_grid/donagh-dev/}
+wisdom() {cd $HOME/journal/wisdom && vim snippets.md }
+inspire() {cd $HOME/journal/inspiration && vim inspire.md }
 
 
 
@@ -45,6 +50,7 @@ alias cz='cat ~/.zshrc'
 alias cza='cat ~/.zsh_aliases'
 alias sb='source ~/.bashrc'
 alias sz='source ~/.zshrc'
+alias sza='source ~/.zsh_aliases'
 alias vb='vim ~/.bashrc'
 alias vv='vim ~/.vimrc'
 alias vz="vim ~/.zshrc"
@@ -57,7 +63,7 @@ alias mj=md_journal # opens todays journal as a markdown file in vim for editing
 alias hanging='cd $HOME/ziim/Computer/ && tail -n4 0_Hanging.txt && cd $HOME/ziim/Donaghs/00_Home/ && tail -n4 0_Hanging.txt'
 alias hg=histgrep
 alias hj='history'
-alias pss='python -m SimpleHTTPServer 8000'
+alias pss='python3 -m http.server 5000'
 alias ra='ranger'
 alias gett='$HOME/.scripts/get_password.sh'
 alias synaptic='sudo synaptic'
