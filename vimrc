@@ -119,4 +119,24 @@
     set modelines=1
     "vim:foldmethod=marker:foldlevel=0
     "}}}
-    
+   " Preferred Plugins {{{
+   " "=== Preferred Plugins === 
+   "tpope
+   " vim-commentary
+   " vim-surround
+   "
+   " francoiscabrol
+   " vim-ranger
+   "
+   " theme
+   " nightsense
+   "
+   " status line
+   " airline
+   "
+   " masukomi
+   " vim-markdown-folding
+   "
+   " mattn
+   " emmet-vim
+   "}}}

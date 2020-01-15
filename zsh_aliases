@@ -40,6 +40,7 @@ alias -g 2p='cd $HOME/sd64/2programming_repository/'
 web(){cd $HOME/sd64/2programming_repository/css/css_grid/donagh-dev/}
 wisdom() {cd $HOME/journal/wisdom && vim snippets.md }
 inspire() {cd $HOME/journal/inspiration && vim inspire.md }
+books() {cd $HOME/sd64/books/Computer_books/ }
 
 
 
