@@ -23,6 +23,9 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=$HOME/.zsh_history
 
+# increase line of scrollback to 5000
+# set -g history-limit 5000
+
 # Use modern completion system
 autoload -Uz compinit
 compinit

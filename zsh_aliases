@@ -24,7 +24,7 @@ alias -g zimbu='/home/donagh/.scripts/zim_backup_to_tinyUSB.sh'
 alias -g zz='zsh -l'
 alias -g latest='ls -lt  **/*(.om[1,20])' # list latest 20 files edited
 # 
-alias -g cx='clear'
+# alias -g cx='clear'
 # the following shortcut alias means that pressing enter after just a 
 # file name with .md extension will automagically open it with vim. Hurrah!
 alias -s md=vim
@@ -37,6 +37,7 @@ alias -g ziim='$HOME/sd64/zim/'
 alias -g sd='cd $HOME/sd64/'
 alias -g hf='cd $HOME'
 alias -g 2p='cd $HOME/sd64/2programming_repository/'
+alias -g share='cd /linuxShared'
 web(){cd $HOME/sd64/2programming_repository/css/css_grid/donagh-dev/}
 wisdom() {cd $HOME/journal/wisdom && vim snippets.md }
 inspire() {cd $HOME/journal/inspiration && vim inspire.md }
@@ -88,13 +89,14 @@ alias gst='git status'
 
 # List directories / files
 alias l.='ls -d .* --color=auto' # Show hidden files ##
-alias ld='ls -d */'
+alias ld='ls -la -d */'
 alias lk='ls -1v'
 alias ll='ls -la'
 alias lls='ls | xargs -n1' # show ls in a single column
 alias ls='ls --color=auto'
 alias hp='ls --hide=*.py'
 alias hh='cd ~/'
+alias llk="ll | grep '^l.*'"
 
 # python virtual envs shortcuts
 alias pb='source $HOME/.virtualenvs/basic/bin/activate'
