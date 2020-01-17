@@ -87,6 +87,7 @@ plugins=(
   colored-man-pages
   extract
   python
+  systemd
 )
 
 source $ZSH/oh-my-zsh.sh
