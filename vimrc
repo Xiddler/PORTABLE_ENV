@@ -139,4 +139,7 @@
    "
    " mattn
    " emmet-vim
+   "
+   "multicursor
+   "https://github.com/terryma/vim-multiple-cursors
    "}}}

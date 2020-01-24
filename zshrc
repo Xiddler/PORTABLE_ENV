@@ -1,94 +1,96 @@
-# NOTE: Aliases handled in .zsh_aliases or .bash_aliases
-#
-# Add zsh aliases.
-if [ -f $HOME/.zsh_aliases ]; then
-    source $HOME/.zsh_aliases
-fi
+## NOTE: Aliases handled in .zsh_aliases or .bash_aliases
+##
+## Add zsh aliases.
+#if [ -f $HOME/.zsh_aliases ]; then
+#    source $HOME/.zsh_aliases
+#fi
 
-# Path to your oh-my-zsh installation.
-  # export ZSH=/home/ubuntu/.oh-my-zsh
-  export ZSH=$HOME/.oh-my-zsh
+## Path to your oh-my-zsh installation.
+#  # export ZSH=/home/ubuntu/.oh-my-zsh
+ export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-# # ZSH_THEME="agnoster"
-# ZSH_THEME="candy-kingdom"
-ZSH_THEME="crcandy"
-# ZSH_THEME="powerlevel9k/powerlevel9k"
+## Set name of the theme to load. Optionally, if you set this to "random"
+## it'll load a random theme each time that oh-my-zsh is loaded.
+## See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+## ZSH_THEME="robbyrussell"
+## # ZSH_THEME="agnoster"
+## ZSH_THEME="candy-kingdom"
+#ZSH_THEME="crcandy"
+## ZSH_THEME="powerlevel9k/powerlevel9k"
 
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=1000
-SAVEHIST=1000
-HISTFILE=$HOME/.zsh_history
+## Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
+#HISTSIZE=1000
+#SAVEHIST=1000
+#HISTFILE=$HOME/.zsh_history
 
-# increase line of scrollback to 5000
-# set -g history-limit 5000
+## Use modern completion system
+#autoload -Uz compinit
+#compinit
+## Completion for kitty terminal
+## kitty + complete setup zsh | source /dev/stdin
 
-# Use modern completion system
-autoload -Uz compinit
-compinit
-# Completion for kitty terminal
-# kitty + complete setup zsh | source /dev/stdin
+## Set list of themes to load
+## Setting this variable when ZSH_THEME=random
+## cause zsh load theme from this variable instead of
+## looking in ~/.oh-my-zsh/themes/
+## An empty array have no effect
+## ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+## Uncomment the following line to use case-sensitive completion.
+## CASE_SENSITIVE="true"
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+## Uncomment the following line to use hyphen-insensitive completion. Case
+## sensitive completion must be off. _ and - will be interchangeable.
+## HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+## Uncomment the following line to disable bi-weekly auto-update checks.
+## DISABLE_AUTO_UPDATE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+## Uncomment the following line to change how often to auto-update (in days).
+#export UPDATE_ZSH_DAYS=3
 
-# Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=3
+## Uncomment the following line to disable colors in ls.
+## DISABLE_LS_COLORS="true"
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+## Uncomment the following line to disable auto-setting terminal title.
+## DISABLE_AUTO_TITLE="true"
 
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+## Uncomment the following line to enable command auto-correction.
+#ENABLE_CORRECTION="true"
 
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+## Uncomment the following line to display red dots whilst waiting for completion.
+#COMPLETION_WAITING_DOTS="true"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+## Uncomment the following line if you want to disable marking untracked files
+## under VCS as dirty. This makes repository status check for large repositories
+## much, much faster.
+## DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+## Uncomment the following line if you want to change the command execution time
+## stamp shown in the history command output.
+## The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+## HIST_STAMPS="mm/dd/yyyy"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+## Would you like to use another custom folder than $ZSH/custom?
+## ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+## Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+## Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+## Example format: plugins=(rails git textmate ruby lighthouse)
+## Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  zsh-syntax-highlighting  
+  # zsh-syntax-highlighting  
   colored-man-pages
-  extract
-  python
-  systemd
+  # extract
+  # systemd
 )
+# the following is a workaround to solve a problem with not going to vi-cmd-mode on "jk" on the CLI
+# https://github.com/zsh-users/zsh-autosuggestions/issues/126
+# if [ -z "$_zsh_custom_scripts_loaded" ]; then
+#   _zsh_custom_scripts_loaded=1
+#   plugins+=(zsh-syntax-highlighting)
+# fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -143,9 +145,10 @@ export EDITOR="vim"
 # file name with .md extension will automagically open it with vim. Hurrah!
 # alias -s md=vim
 
-# Other
-alias cx='clear'
+# Other aliases -- now taken care of in .zsh_aliases
+#
 source $HOME/.zsh_aliases
+# alias cx='clear' <-- now done using autokey which includes the <Enter> for speed!
 # alias wett='curl wttr.in/limerick'
 # alias hp='ls --hide=*.py'
 # alias gett='$HOME/.scripts/get_password.sh'
@@ -217,6 +220,7 @@ bindkey 'jk' vi-cmd-mode
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # FUNCTIONS
+# Functions can be found in the .zshrc file
 #
 # Navigation shortcuts
 # bal() { cd $HOME/sd35/0My_Folders/11Balmurry/Balmurry_Sale/}
@@ -303,5 +307,9 @@ histgrep ()
 export RANGER_LOAD_DEFAULT_RC=false
 
 
+# br is an alternative file searcher - described in HackerNews Jan 2020
+# source /home/donagh/.config/broot/launcher/bash/br
+#
+# call the zsh-syntax-highlighting plugin last
+# plugins=( zsh-syntax-highlighting )
 
-source /home/donagh/.config/broot/launcher/bash/br
