@@ -15,7 +15,7 @@
 ## ZSH_THEME="robbyrussell"
 ## # ZSH_THEME="agnoster"
 ## ZSH_THEME="candy-kingdom"
-#ZSH_THEME="crcandy"
+# ZSH_THEME="crcandy"
 ## ZSH_THEME="powerlevel9k/powerlevel9k"
 
 ## Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
@@ -80,12 +80,13 @@
 ## Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  # zsh-syntax-highlighting  
+  zsh-syntax-highlighting  
   colored-man-pages
   # extract
   # systemd
 )
 # the following is a workaround to solve a problem with not going to vi-cmd-mode on "jk" on the CLI
+# this seems to have gotten resolved somehow...
 # https://github.com/zsh-users/zsh-autosuggestions/issues/126
 # if [ -z "$_zsh_custom_scripts_loaded" ]; then
 #   _zsh_custom_scripts_loaded=1
@@ -97,7 +98,10 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 # To add a new path
 # export PATH="your-dir:$PATH"
-# export PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin"
+# "export" in included within the zsh PATH command - check if true
+# added to include Zotero path 2020-02-19
+PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -119,6 +123,8 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
+#
+# My aliases are in the file .zsh_aliases
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -313,3 +319,5 @@ export RANGER_LOAD_DEFAULT_RC=false
 # call the zsh-syntax-highlighting plugin last
 # plugins=( zsh-syntax-highlighting )
 
+
+source /home/donagh/.config/broot/launcher/bash/br

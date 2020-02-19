@@ -17,7 +17,7 @@ alias -g kontout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt |
 alias -g lsd='du -s -- *(D) | sort -k1n' # list size of directories
 alias -g nt='terminator --geometry +500+100' # open a new zsh terminal  
 alias -g passin='python3 $HOME/sd64/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
-alias -g passout='cat /media/donagh/3520-FD13/zim/Computer/11SignUps.txt|ag -i -A5 ' # alternative alias
+alias -g passout='cat /home/donagh/sd64/zim/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias
 alias -g t='/home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.sh -d ~/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.cfg' 
 alias -g xn='| xargs -n 1'
 alias -g zimbu='/home/donagh/.scripts/zim_backup_to_tinyUSB.sh'
@@ -33,7 +33,16 @@ alias -s md=vim
 alias cd..='cd ..'
 alias dl='cd ~/Downloads/'
 alias ds='cd ~/Documents'
+alias -g sd='cd $HOME/sd64/'
+# ____________________________________________________________________________________
+# shortcuts for when I want to Search Zim - Computer ORG 
 alias -g ziim='$HOME/sd64/zim/'
+# go to zim/Computer
+alias -g szc='cd $HOME/sd64/zim/Computer/'
+# go to zim/ORG
+alias -g szo='cd $HOME/sd64/zim/ORG/'
+# ____________________________________________________________________________________
+
 alias -g sd='cd $HOME/sd64/'
 alias -g hf='cd $HOME'
 alias -g 2p='cd $HOME/sd64/2programming_repository/'
@@ -43,7 +52,8 @@ wisdom() {cd $HOME/journal/wisdom && vim snippets.md }
 inspire() {cd $HOME/journal/inspiration && vim inspire.md }
 books() {cd $HOME/sd64/books/Computer_books/ }
 
-
+# alias to get my IP address of digital ocean website (2020-02-17)
+alias site='dig donaghmccarthy.ie +short'
 
 # dot files shortcuts 
 alias cb='cat ~/.bashrc'
@@ -69,8 +79,8 @@ alias pss='python3 -m http.server 5000'
 alias ra='ranger'
 alias gett='$HOME/.scripts/get_password.sh'
 alias synaptic='sudo synaptic'
-# alias tm="calc -d 'read qtime; qtime(0)'" # sudo apt install apcalc WINTER TIME
-alias tm="calc -d 'read qtime; qtime(1)'" # sudo apt install apcalc SUMMER TIME
+alias tm="calc -d 'read qtime; qtime(0)'" # sudo apt install apcalc WINTER TIME
+# alias tm="calc -d 'read qtime; qtime(1)'" # sudo apt install apcalc SUMMER TIME
 alias todot=" cd /home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli && ls"
 alias tn='t | festival --tts'
 alias tn='t | spd-say --pipe-mode'
