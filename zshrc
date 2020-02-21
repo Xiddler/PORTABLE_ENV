@@ -320,4 +320,4 @@ export RANGER_LOAD_DEFAULT_RC=false
 # plugins=( zsh-syntax-highlighting )
 
 
-source /home/donagh/.config/broot/launcher/bash/br
+# source /home/donagh/.config/broot/launcher/bash/br

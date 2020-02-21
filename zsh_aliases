@@ -9,7 +9,7 @@ alias -g C=' | gpaste-client'
 alias -g G='| egrep -i --color=auto'
 alias -g P='pwd -P'
 alias -g PS='ps aux | egrep -i --color=auto'
-alias -g catt='cat $HOME/zzim/Computer/11SignUps.txt|ag -i -A5 '
+alias -g catt='cat $HOME/ziim/Computer/11SignUps.txt|ag -i -A5 '
 alias -g contin='python3 /media/donagh/3520-FD13/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/contin.py' # input new contact
 alias -g contout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 '
 alias -g exa='~/Applications/exa-linux-x86_64' # modern ls
@@ -24,7 +24,7 @@ alias -g zimbu='/home/donagh/.scripts/zim_backup_to_tinyUSB.sh'
 alias -g zz='zsh -l'
 alias -g latest='ls -lt  **/*(.om[1,20])' # list latest 20 files edited
 # 
-# alias -g cx='clear'
+alias -g cx='clear'
 # the following shortcut alias means that pressing enter after just a 
 # file name with .md extension will automagically open it with vim. Hurrah!
 alias -s md=vim

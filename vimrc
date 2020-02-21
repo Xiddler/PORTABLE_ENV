@@ -121,24 +121,27 @@
     "}}}
    " Preferred Plugins {{{
    " "=== Preferred Plugins === 
-   "tpope
-   " vim-commentary
-   " vim-surround
+   " tpope
+   " https://github.com/tpope/vim-surround.git  
+   " https://github.com/tpope/vim-commentary.git  
    "
    " francoiscabrol
+   " https://github.com/francoiscabrol/ranger.vim.git
    " vim-ranger
    "
    " theme
    " nightsense
+   " https://github.com/nightsense/stellarized.git
    "
-   " status line
    " airline
+   " https://github.com/vim-airline/vim-airline.git
    "
    " masukomi
    " vim-markdown-folding
    "
    " mattn
    " emmet-vim
+   " https://github.com/mattn/emmet-vim.git
    "
    "multicursor
    "https://github.com/terryma/vim-multiple-cursors
