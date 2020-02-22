@@ -103,6 +103,8 @@
 	noremap <leader>q :q<cr>
 	" use <leader>p to paste from system clipboard
 	nnoremap <leader>p :set paste<CR>"+p:set nopaste<CR>
+	let g:ranger_map_keys = 0
+	map <leader>f :Ranger<CR>
 	"python
 	autocmd Filetype python inoremap <leader>m if __name__ ==  "__main__":<enter>
     " }}}
@@ -128,6 +130,7 @@
    " francoiscabrol
    " https://github.com/francoiscabrol/ranger.vim.git
    " vim-ranger
+	" map <leader>f :Ranger<CR>
    "
    " theme
    " nightsense
@@ -145,4 +148,4 @@
    "
    "multicursor
    "https://github.com/terryma/vim-multiple-cursors
-   "}}}
+   "}}

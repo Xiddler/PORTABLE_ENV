@@ -316,8 +316,7 @@ export RANGER_LOAD_DEFAULT_RC=false
 # br is an alternative file searcher - described in HackerNews Jan 2020
 # source /home/donagh/.config/broot/launcher/bash/br
 #
-# call the zsh-syntax-highlighting plugin last
-# plugins=( zsh-syntax-highlighting )
-
 
 # source /home/donagh/.config/broot/launcher/bash/br
+# call the zsh-syntax-highlighting plugin last
+plugins=( zsh-syntax-highlighting )
