@@ -214,3 +214,5 @@ fi
 #      /usr/bin/mint-fortune
 # fi
 # export PS1="$yellow[$CYAN\t$yellow][$red $USER $yellow][$GREEN\w$grey$yellow]$NC $ "
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

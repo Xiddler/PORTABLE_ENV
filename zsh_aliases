@@ -16,7 +16,8 @@ alias -g exa='~/Applications/exa-linux-x86_64' # modern ls
 alias -g kontout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 ' # get contact  
 alias -g lsd='du -s -- *(D) | sort -k1n' # list size of directories
 alias -g nt='terminator --geometry +500+100' # open a new zsh terminal  
-alias -g passin='python3 $HOME/sd64/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
+# alias -g passin='python3 $HOME/sd64/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
+alias -g passin='/home/donagh/.scripts/passin.sh'
 alias -g passout='cat /home/donagh/sd64/zim/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias
 alias -g t='/home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.sh -d ~/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.cfg' 
 alias -g xn='| xargs -n 1'
@@ -24,7 +25,7 @@ alias -g zimbu='/home/donagh/.scripts/zim_backup_to_tinyUSB.sh'
 alias -g zz='zsh -l'
 alias -g latest='ls -lt  **/*(.om[1,20])' # list latest 20 files edited
 # 
-# alias -g cx='clear'
+alias -g cx='clear'
 # the following shortcut alias means that pressing enter after just a 
 # file name with .md extension will automagically open it with vim. Hurrah!
 alias -s md=vim
@@ -44,7 +45,7 @@ alias -g szo='cd $HOME/sd64/zim/ORG/'
 # ____________________________________________________________________________________
 
 alias -g sd='cd $HOME/sd64/'
-alias -g hf='cd $HOME'
+# alias -g hf='cd $HOME'
 alias -g 2p='cd $HOME/sd64/2programming_repository/'
 alias -g share='cd /home/donagh/linuxShared'
 web(){cd $HOME/sd64/2programming_repository/css/css_grid/donagh-dev/}

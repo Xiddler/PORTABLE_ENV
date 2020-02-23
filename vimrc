@@ -86,7 +86,7 @@
         "to toggle them automatically for you:
         map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 	" }}}
-    " Custom Leader {{{
+   " Custom Leader {{{
 	" === Custom Leader ===
 	" set your own personal modifier key to something handy
 	let mapleader="," 
@@ -102,9 +102,10 @@
 	" quit file
 	noremap <leader>q :q<cr>
 	" use <leader>p to paste from system clipboard
-	nnoremap <leader>p :set paste<CR>"+p:set nopaste<CR>
+	nnoremap <leader>p :set paste<cr>"+p :set nopaste<cr>
+	" use <leader>f to call up ranger file manager
 	let g:ranger_map_keys = 0
-	map <leader>f :Ranger<CR>
+	map <leader>f :Ranger<cr>
 	"python
 	autocmd Filetype python inoremap <leader>m if __name__ ==  "__main__":<enter>
     " }}}

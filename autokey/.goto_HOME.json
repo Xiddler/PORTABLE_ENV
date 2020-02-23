@@ -1,17 +1,17 @@
 {
-    "type": "phrase",
-    "description": "clear_screen",
+    "type": "script",
+    "description": "goto_$HOME",
+    "store": {},
     "modes": [
         1
     ],
-    "usageCount": 26,
+    "usageCount": 5,
     "prompt": false,
     "omitTrigger": false,
-    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "cx"
+            "fh"
         ],
         "backspace": true,
         "ignoreCase": false,
@@ -26,6 +26,5 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    },
-    "sendMode": "kb"
+    }
 }

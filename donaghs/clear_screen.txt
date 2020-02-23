@@ -1,2 +1,0 @@
-keyboard.send_keys("clear")
-keyboard.send_key("<delete>")

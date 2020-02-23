@@ -222,9 +222,6 @@ bindkey 'jk' vi-cmd-mode
 # alias ls='ls --color=auto'
 # alias lk='ls -1v'
 
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # FUNCTIONS
 # Functions can be found in the .zshrc file
 #
@@ -316,6 +313,9 @@ export RANGER_LOAD_DEFAULT_RC=false
 # br is an alternative file searcher - described in HackerNews Jan 2020
 # source /home/donagh/.config/broot/launcher/bash/br
 #
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # source /home/donagh/.config/broot/launcher/bash/br
 # call the zsh-syntax-highlighting plugin last
