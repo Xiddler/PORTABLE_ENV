@@ -3,6 +3,9 @@
     " Mininimum settings {{{
 	"=== Min settings === 
 	set nocompatible
+    if has("autocmd")
+      filetype plugin indent on
+    endif
 	set <esc>=jk "" my inline comment in a set command
     set number
 	set relativenumber
