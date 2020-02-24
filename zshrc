@@ -138,6 +138,7 @@ autoload -U compinit; compinit
 # vi editor
 # set -o vi
 setopt VI # what is this?
+# next allows cd to dir without prepending cd
 setopt autocd
 setopt autolist # e.g.in $HOME directory -> %ls /DoTAB ie follow ls /Do With  TAB
 setopt extendedglob # extended globbbing e.g. ls -d ^*.py excludes .py files

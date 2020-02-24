@@ -35,6 +35,7 @@ alias cd..='cd ..'
 alias dl='cd ~/Downloads/'
 alias ds='cd ~/Documents'
 alias -g sd='cd $HOME/sd64/'
+alias -g hf='cd $HOME'
 # ____________________________________________________________________________________
 # shortcuts for when I want to Search Zim - Computer ORG 
 alias -g ziim='$HOME/sd64/zim/'

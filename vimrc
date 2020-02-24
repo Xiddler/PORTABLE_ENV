@@ -75,7 +75,8 @@
 	" execute pathogen#helptags()
 	" execute pathogen#infect()
 	syntax on
-	filetype plugin indent on
+	filetype plugin on
+	" filetype plugin indent on
 	" }}}
     " Theme & Colors {{{
 	" === Theme  & Colors ===

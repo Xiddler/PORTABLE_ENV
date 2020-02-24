@@ -1,27 +1,28 @@
 {
     "type": "script",
-    "description": "goto_$HOME",
+    "description": "shell_la",
     "store": {},
     "modes": [
-        1
+        3
     ],
-    "usageCount": 5,
+    "usageCount": 1,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
     "abbreviation": {
-        "abbreviations": [
-            "fh"
-        ],
+        "abbreviations": [],
         "backspace": true,
         "ignoreCase": false,
-        "immediate": true,
+        "immediate": false,
         "triggerInside": false,
         "wordChars": "[\\w]"
     },
     "hotkey": {
-        "modifiers": [],
-        "hotKey": null
+        "modifiers": [
+            "<alt>",
+            "<ctrl>"
+        ],
+        "hotKey": "h"
     },
     "filter": {
         "regex": null,

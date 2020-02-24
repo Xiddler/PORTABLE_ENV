@@ -6,9 +6,6 @@
 make a script to copy these dot files to the new home folder with a leading dot
 
 
-
-
-
 ## These are my main dot_files. 
 The initial dot is removed to keep them visible on my local machine.
 I have also included my .vim folder for ultimate portability.
@@ -65,4 +62,37 @@ sudo apt install powerline\
 sudo apt install fonts-powerline
 
 
+### bookmarks
+bookmarks.csv
+These are exported from zotero in .csv format. And can be converted to other formats.
 
+
+### vim plugins
+$HOME/.vim/pack/<plugin>/start/{git clone here}
+"=== Preferred Plugins === 
+tpope
+https://github.com/tpope/vim-surround.git  
+https://github.com/tpope/vim-commentary.git  
+
+francoiscabrol
+https://github.com/francoiscabrol/ranger.vim.git
+vim-ranger
+p <leader>f :Ranger<CR>
+
+theme
+nightsense
+https://github.com/nightsense/stellarized.git
+
+airline
+https://github.com/vim-airline/vim-airline.git
+
+masukomi
+mkdir -p $HOME/.vim/pack/masukomi/start && git clone https://github.com/masukomi/vim-markdown-folding
+vim-markdown-folding
+
+mattn
+emmet-vim
+https://github.com/mattn/emmet-vim.git
+
+multicursor
+ttps://github.com/terryma/vim-multiple-cursors
