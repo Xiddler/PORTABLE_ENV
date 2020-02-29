@@ -2,10 +2,8 @@
     "type": "script",
     "description": "cd_no_enter",
     "store": {},
-    "modes": [
-        1
-    ],
-    "usageCount": 14,
+    "modes": [],
+    "usageCount": 62,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,

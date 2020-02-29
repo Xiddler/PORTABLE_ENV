@@ -1,4 +1,3 @@
-# Enter script code
 keyboard.send_keys('cd')
 keyboard.press_key('<ctrl>')
 keyboard.press_key('<enter>')

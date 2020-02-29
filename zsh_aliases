@@ -25,15 +25,16 @@ alias -g zimbu='/home/donagh/.scripts/zim_backup_to_tinyUSB.sh'
 alias -g zz='zsh -l'
 alias -g latest='ls -lt  **/*(.om[1,20])' # list latest 20 files edited
 # 
-alias -g cx='clear'
+# alias -g cx='clear'
 # the following shortcut alias means that pressing enter after just a 
 # file name with .md extension will automagically open it with vim. Hurrah!
 alias -s md=vim
 
 # Navigation shortcuts
 alias cd..='cd ..'
-alias dl='cd ~/Downloads/'
+alias dl='cd ~/Downloads'
 alias ds='cd ~/Documents'
+alias dr='cd ~/Dropbox'
 alias -g sd='cd $HOME/sd64/'
 alias -g hf='cd $HOME'
 # ____________________________________________________________________________________
@@ -50,10 +51,22 @@ alias -g sd='cd $HOME/sd64/'
 alias -g 2p='cd $HOME/sd64/2programming_repository/'
 alias -g share='cd /home/donagh/linuxShared'
 web(){cd $HOME/sd64/2programming_repository/css/css_grid/donagh-dev/}
-wisdom() {cd $HOME/journal/wisdom && vim snippets.md }
-inspire() {cd $HOME/journal/inspiration && vim inspire.md }
 books() {cd $HOME/sd64/books/Computer_books/ }
 
+#-------------------- START journal
+journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
+
+# alias mj=md_journal # opens todays journal as a markdown file in vim for editing.
+
+wisdom() {cd $journal/wisdom && vim snippets.md }
+inspire() {cd $journal/inspiration && vim inspire.md }
+alc() { $EDITOR ~/$journal/minding_me/alcohol_journal.md }
+grat() { $EDITOR ~/$journal/minding_me/gratitude_journal.md }
+pain() { $EDITOR ~/$journal/minding_me/pain_points.md }
+ideas() { $EDITOR ~/$journal/ideas/ideas_to_go_at.md }
+minding() {cd $HOME/$journal/2020/minding_me }
+
+#-------------------- END journal
 # alias to get my IP address of digital ocean website (2020-02-17)
 alias site='dig donaghmccarthy.ie +short'
 

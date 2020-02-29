@@ -213,8 +213,16 @@ bindkey 'jk' vi-cmd-mode
 # eval "`dircolors -b ~/.dircolors`"
 # alias ls='ls --color=auto'
 
+# POWERLINE 
+# see https://powerline.readthedocs.io/en/latest/usage/shell-prompts.html
 # powerline statusline for zsh 2018-08-05
-. /usr/share/powerline/bindings/zsh/powerline.zsh
+# Location: /usr/lib/python3.8/site-packages
+# . {repository_root}/powerline/bindings/zsh/powerline.zsh
+# . /usr/share/powerline/bindings/zsh/powerline.zsh
+
+powerline-daemon -q
+. /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
+
 # fast file and directory autojump
 # . /media/ubuntu/3520-FD13/compressed_utilities/zsh/z/z.sh
 
@@ -239,7 +247,6 @@ bindkey 'jk' vi-cmd-mode
 # ts() { cd $HOME/TESTING }
 # tst() { cd $HOME/TESTING }
 # books() {cd $HOME/sd35/books }
-# minding() {cd $HOME/journal/2019/minding_me }
 # what() { cd /media/donagh/3520-FD13/0My_Folders/00Donaghs_ORG/WHAT }
 # # convert a .md file to a .pdf file. Usage: $ mkp filename.md
 # mkp() { ~/.scripts/mktopdf.sh $1 }
@@ -252,32 +259,20 @@ bindkey 'jk' vi-cmd-mode
 
 # where the -U stands for unique, tells the shell that it should not add anything to $PATH if it's there already
 typeset -U path
-
+# ----------------- START journal ------------------------------
 # my easy journal 
-# journal() {
-#         mkdir -p ~/journal/`date +%Y`
-#         $EDITOR ~/journal/`date +%Y`/`date +%d-%m`
-#     }
-# alias jj=journal # opens todays journal file in vim for editing.
+# Set up the journal directory on the SD64 Card
+journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
+
+jour() { cd $journal && ls }
 
 md_journal() {
-        mkdir -p ~/journal/`date +%Y`
-        $EDITOR ~/journal/`date +%Y`/`date +%d-%m\.md`
+        mkdir -p ~/$journal/`date +%Y`
+        $EDITOR ~/$journal/`date +%Y`/`date +%d-%m\.md`
     }
 
-# alias mj=md_journal # opens todays journal as a markdown file in vim for editing.
+# ----------------- END journal ------------------------------
 #
-
-alc() { $EDITOR ~/journal/minding_me/alcohol_journal.md }
-# see zsh_aliases for the following
-# wisdom
-# inspire
-grat() { $EDITOR ~/journal/minding_me/gratitude_journal.md }
-pain() { $EDITOR ~/journal/minding_me/pain_points.md }
-ideas() { $EDITOR ~/journal/ideas/ideas_to_go_at.md }
-jour() { cd ~/journal && ls }
-
-
 # todo.txt
 # CLI tool
 # t is aliased to .../todo.sh in .zsh_aliases

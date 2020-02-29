@@ -216,3 +216,9 @@ fi
 # export PS1="$yellow[$CYAN\t$yellow][$red $USER $yellow][$GREEN\w$grey$yellow]$NC $ "
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/donagh/Projects/my-little-storage-resources/google-cloud-sdk/path.bash.inc' ]; then . '/home/donagh/Projects/my-little-storage-resources/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/donagh/Projects/my-little-storage-resources/google-cloud-sdk/completion.bash.inc' ]; then . '/home/donagh/Projects/my-little-storage-resources/google-cloud-sdk/completion.bash.inc'; fi

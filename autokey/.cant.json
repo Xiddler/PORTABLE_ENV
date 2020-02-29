@@ -1,17 +1,17 @@
 {
-    "type": "script",
-    "description": "open_firefox",
-    "store": {},
+    "type": "phrase",
+    "description": "can't",
     "modes": [
         1
     ],
-    "usageCount": 8,
+    "usageCount": 1,
     "prompt": false,
     "omitTrigger": false,
+    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "ff"
+            "cant"
         ],
         "backspace": true,
         "ignoreCase": false,
@@ -26,5 +26,6 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    }
+    },
+    "sendMode": "kb"
 }
