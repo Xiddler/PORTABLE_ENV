@@ -135,7 +135,7 @@
    " francoiscabrol
    " https://github.com/francoiscabrol/ranger.vim.git
    " vim-ranger
-	" map <leader>f :Ranger<CR>
+        " map <leader>f :Ranger<CR>
    "
    " theme
    " nightsense

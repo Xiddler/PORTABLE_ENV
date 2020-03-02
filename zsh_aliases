@@ -16,8 +16,8 @@ alias -g exa='~/Applications/exa-linux-x86_64' # modern ls
 alias -g kontout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 ' # get contact  
 alias -g lsd='du -s -- *(D) | sort -k1n' # list size of directories
 alias -g nt='terminator --geometry +500+100' # open a new zsh terminal  
-# alias -g passin='python3 $HOME/sd64/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
-alias -g passin='/home/donagh/.scripts/passin.sh'
+alias -g passin='python3 $HOME/sd64/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
+# alias -g passin='/home/donagh/.scripts/passin.sh' # a non-GUI version
 alias -g passout='cat /home/donagh/sd64/zim/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias
 alias -g t='/home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.sh -d ~/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.cfg' 
 alias -g xn='| xargs -n 1'
@@ -54,7 +54,7 @@ web(){cd $HOME/sd64/2programming_repository/css/css_grid/donagh-dev/}
 books() {cd $HOME/sd64/books/Computer_books/ }
 
 #-------------------- START journal
-journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
+# journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
 
 # alias mj=md_journal # opens todays journal as a markdown file in vim for editing.
 
@@ -86,12 +86,12 @@ alias vza="vim ~/.zsh_aliases"
 # Donaghs shortcuts
 alias chk='$HOME/.scripts/info.sh' # quick summary of system status
 alias def='~/.scripts/get_defs.sh ' # dictionary addition to $dict
-alias mj=md_journal # opens todays journal as a markdown file in vim for editing.
+alias -g mj=md_journal # opens todays journal as a markdown file in vim for editing.
 alias hanging='cd $HOME/ziim/Computer/ && tail -n4 0_Hanging.txt && cd $HOME/ziim/Donaghs/00_Home/ && tail -n4 0_Hanging.txt'
 alias hg=histgrep
 alias hj='history'
 alias pss='python3 -m http.server 5000'
-alias ra='ranger'
+alias -g ra='ranger'
 alias gett='$HOME/.scripts/get_password.sh'
 alias synaptic='sudo synaptic'
 alias tm="calc -d 'read qtime; qtime(0)'" # sudo apt install apcalc WINTER TIME

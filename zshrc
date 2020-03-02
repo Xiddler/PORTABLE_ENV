@@ -7,13 +7,13 @@
 
 ## Path to your oh-my-zsh installation.
 #  # export ZSH=/home/ubuntu/.oh-my-zsh
- export ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 ## Set name of the theme to load. Optionally, if you set this to "random"
 ## it'll load a random theme each time that oh-my-zsh is loaded.
 ## See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ## ZSH_THEME="robbyrussell"
-## # ZSH_THEME="agnoster"
+ZSH_THEME="agnoster"
 ## ZSH_THEME="candy-kingdom"
 # ZSH_THEME="crcandy"
 ## ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -46,8 +46,8 @@
 ## Uncomment the following line to disable bi-weekly auto-update checks.
 ## DISABLE_AUTO_UPDATE="true"
 
-## Uncomment the following line to change how often to auto-update (in days).
-#export UPDATE_ZSH_DAYS=3
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=3
 
 ## Uncomment the following line to disable colors in ls.
 ## DISABLE_LS_COLORS="true"
@@ -125,10 +125,6 @@ PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:
 # For a full list of active aliases, run `alias`.
 #
 # My aliases are in the file .zsh_aliases
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 # donaghs
 autoload -U zmv # meaning zsh mv command
@@ -222,7 +218,7 @@ bindkey 'jk' vi-cmd-mode
 
 powerline-daemon -q
 . /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
-
+#
 # fast file and directory autojump
 # . /media/ubuntu/3520-FD13/compressed_utilities/zsh/z/z.sh
 
@@ -262,14 +258,17 @@ typeset -U path
 # ----------------- START journal ------------------------------
 # my easy journal 
 # Set up the journal directory on the SD64 Card
-journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
+# journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
+#
+journal='/home/donagh/sd64/1donaghs-stuff/personal/journal'
 
 jour() { cd $journal && ls }
 
 md_journal() {
-        mkdir -p ~/$journal/`date +%Y`
-        $EDITOR ~/$journal/`date +%Y`/`date +%d-%m\.md`
+        mkdir -p $journal/`date +%Y`
+        $EDITOR $journal/`date +%Y`/`date +%d-%m\.md`
     }
+# mj on the CLI will make or open the relevant file.
 
 # ----------------- END journal ------------------------------
 #
