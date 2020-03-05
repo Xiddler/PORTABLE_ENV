@@ -1,0 +1,5 @@
+# top 5 RAM using processes
+inxi -t m
+
+# top 5 CPU using processes
+inxi -t c

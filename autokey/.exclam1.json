@@ -5,7 +5,7 @@
     "modes": [
         1
     ],
-    "usageCount": 14,
+    "usageCount": 26,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
@@ -16,7 +16,7 @@
         "backspace": true,
         "ignoreCase": false,
         "immediate": true,
-        "triggerInside": false,
+        "triggerInside": true,
         "wordChars": "[\\w]"
     },
     "hotkey": {

@@ -1,4 +1,5 @@
 # my dot_files
+2020-03-05 - I added cheat folders to not lose my edited cheats - using rsync ~/.cheat/* ~/PORTABLE_ENV/cheat/dot_cheat to back them up 
 2019-08-11 - made the PORTABLE_ENV directory in Github
 2019-03-04 
 

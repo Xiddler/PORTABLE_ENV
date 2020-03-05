@@ -1,0 +1,6 @@
+To access another tty
+Ctrl+Alt+F<num>
+On my laptop I need to press FN key to activate the Function 1-12 keys.
+So, to open tty2, for example:
+
+Ctrl+FN+Alt+F2

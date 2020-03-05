@@ -2,10 +2,8 @@
     "type": "script",
     "description": "open_zim",
     "store": {},
-    "modes": [
-        1
-    ],
-    "usageCount": 10,
+    "modes": [],
+    "usageCount": 14,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
