@@ -71,7 +71,9 @@
 	map <c-l> <c-w>l
 	map <c-h> <c-w>h
 	" }}}
-    " packpath {{{
+    " Packpath {{{
+    " This is for using the package manager that utilises the folder
+    " $HOME/.vim/pack
 	" === packpath ===
 	" load packpath
 	filetype off
@@ -128,7 +130,7 @@
     "}}}
    " Preferred Plugins {{{
    " "=== Preferred Plugins === 
-   " Rundown of good pluginds available at https://catonmat.net/vim-plugins
+   " Rundown of good plugins available at https://catonmat.net/vim-plugins
    " --- My Preferred Plugins ---  
    " tpope
    " https://github.com/tpope/vim-surround.git  

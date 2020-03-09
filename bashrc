@@ -4,6 +4,19 @@ if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
 
+# functions for shortcuts: original in .zsh_aliases
+# inserted in .bashrc to allow vim to access them
+alc() { $EDITOR $personal/minding_me/alcohol_journal.md }
+grat() { $EDITOR $personal/minding_me/gratitude_journal.md }
+ideas() { $EDITOR $personal/ideas/ideas_to_go_at.md }
+insp() { $EDITOR $personal/ideas/inspire.md }
+jour() { cd $journal && ls }
+# See  alias -g mj=md_journal above
+mind() {cd $personal/minding_me }
+pain() { $EDITOR $personal/minding_me/pain_points.md }
+pers() { cd $personal && ls }
+wisd() { $EDITOR $personal/ideas/snippets.md }
+
 # this is also in .zshrc but this allows access from vim
 export TODOTXT_DEFAULT_ACTION=ls
 todo_folder='/home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli/'
