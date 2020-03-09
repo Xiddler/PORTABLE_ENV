@@ -98,7 +98,7 @@
 		" ,v calls up VISUAL mode
 	" try ,o (as in OpEd) <-- works
 	noremap <leader>o <c-w>v<c-w>l
-	noremap <leader>s <c-w>s<c-w>j
+	noremap <leader>h <c-w>s<c-w>j
 	noremap <leader>x <c-w>c
 	"  save file
 	nnoremap <leader>s :w<cr>
@@ -128,6 +128,8 @@
     "}}}
    " Preferred Plugins {{{
    " "=== Preferred Plugins === 
+   " Rundown of good pluginds available at https://catonmat.net/vim-plugins
+   " --- My Preferred Plugins ---  
    " tpope
    " https://github.com/tpope/vim-surround.git  
    " https://github.com/tpope/vim-commentary.git  
@@ -135,13 +137,13 @@
    " francoiscabrol
    " https://github.com/francoiscabrol/ranger.vim.git
    " vim-ranger
-        " map <leader>f :Ranger<CR>
+   " map <leader>f :Ranger<CR>
    "
    " theme
    " nightsense
    " https://github.com/nightsense/stellarized.git
    "
-   " airline
+   " airline - powerline for vim
    " https://github.com/vim-airline/vim-airline.git
    "
    " masukomi

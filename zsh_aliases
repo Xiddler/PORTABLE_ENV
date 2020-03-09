@@ -55,16 +55,22 @@ books() {cd $HOME/sd64/books/Computer_books/ }
 
 #-------------------- START journal
 # journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
-
+# 
+# journal='/home/donagh/sd64/1donaghs-stuff/personal/journal/2020' # short form
+#
 # alias mj=md_journal # opens todays journal as a markdown file in vim for editing.
-
-wisdom() {cd $journal/wisdom && vim snippets.md }
-inspire() {cd $journal/inspiration && vim inspire.md }
-alc() { $EDITOR ~/$journal/minding_me/alcohol_journal.md }
-grat() { $EDITOR ~/$journal/minding_me/gratitude_journal.md }
-pain() { $EDITOR ~/$journal/minding_me/pain_points.md }
-ideas() { $EDITOR ~/$journal/ideas/ideas_to_go_at.md }
-minding() {cd $HOME/$journal/2020/minding_me }
+#
+# Functions for shortcuts - equivalent to aliases.
+alc() { $EDITOR $personal/minding_me/alcohol_journal.md }
+grat() { $EDITOR $personal/minding_me/gratitude_journal.md }
+ideas() { $EDITOR $personal/ideas/ideas_to_go_at.md }
+insp() { $EDITOR $personal/ideas/inspire.md }
+jour() { cd $journal && ls }
+# See  alias -g mj=md_journal above
+mind() {cd $personal/minding_me }
+pain() { $EDITOR $personal/minding_me/pain_points.md }
+pers() { cd $personal && ls }
+wisd() { $EDITOR $personal/ideas/snippets.md }
 
 #-------------------- END journal
 # alias to get my IP address of digital ocean website (2020-02-17)
