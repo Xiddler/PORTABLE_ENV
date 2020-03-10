@@ -71,4 +71,26 @@ d{motion}       delete text that {motion} moves over
 # installing plugins
 .vim/pack/<name>/start/PLUGIN
 
+# check installed / working plugins
+ls $HOME/.vim/pack/*/start/*/plugin | grep '.vim$'
+or
+tail -n30 $HOME/.vimrc G .git
+
+
+# location of info on my vim plugins
+/home/donagh/sd64/zim/Computer/LINUX/1Linux_Live_USB/02a_install_extras/10vim_settings/vim_plugins.txt
+eg cd to above folder and ->% grep <surround>
+
+# vim surround
+# to put " around the words bear necessity - with cursor on the b of bear
+ ys2w"
+# use ysiw when it's only one word " 
+
+#  to change 'funny' to "funny"
+cs'"
+
+
+
+
+
 
