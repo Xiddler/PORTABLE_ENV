@@ -1,17 +1,17 @@
 {
     "type": "phrase",
-    "description": "don't",
+    "description": "wouldn't",
     "modes": [
         1
     ],
-    "usageCount": 6,
+    "usageCount": 1,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "dont"
+            "wouldnt"
         ],
         "backspace": true,
         "ignoreCase": false,

@@ -83,13 +83,14 @@ eg cd to above folder and ->% grep <surround>
 
 # vim surround
 # to put " around the words bear necessity - with cursor on the b of bear
- ys2w"
+' ys2w" '
 # use ysiw when it's only one word " 
 
 #  to change 'funny' to "funny"
-cs'"
+' cs'"'
 
-
+# " open file at line 23
+vim +23 <filename>
 
 
 

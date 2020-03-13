@@ -92,7 +92,8 @@ alias vza="vim ~/.zsh_aliases"
 # Donaghs shortcuts
 alias chk='$HOME/.scripts/info.sh' # quick summary of system status
 alias def='~/.scripts/get_defs.sh ' # dictionary addition to $dict
-alias -g mj=md_journal # opens todays journal as a markdown file in vim for editing.
+# alias -g mj=md_journal # opens todays journal as a markdown file in vim for editing.
+alias -g mj='$HOME/.scripts/markdown_journal.sh'
 alias hanging='cd $HOME/ziim/Computer/ && tail -n4 0_Hanging.txt && cd $HOME/ziim/Donaghs/00_Home/ && tail -n4 0_Hanging.txt'
 alias hg=histgrep
 alias hj='history'
