@@ -1,5 +1,3 @@
-" https://dougblack.io/words/a-good-vimrc.html#fold
-"
     " Mininimum settings {{{
 	"=== Min settings === 
 	set nocompatible
@@ -43,6 +41,7 @@
     set smartcase
 	" }}}
     " Folding {{{
+    " https://dougblack.io/words/a-good-vimrc.html#fold
 	"=== folding ===
 	set foldmethod=indent   " fold based on indent level
 	set foldnestmax=10      " max 10 depth

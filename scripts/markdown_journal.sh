@@ -19,11 +19,11 @@ md_journal() {
             # front matter for new day's journal:
             echo "$today
 
-        ### Notes
-        " >>  $filen
+### Notes
+" >>  $filen
         $EDITOR +5 $filen
         else
-           $EDITOR "+normal G$" +startinsert $filen 
+           $EDITOR "+normal Go" $filen 
         fi
 
 }

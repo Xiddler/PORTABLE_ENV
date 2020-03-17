@@ -3,7 +3,6 @@
 # alias chk='cd $HOME && ./info.sh'
 # alias contout='$HOME/contact_out.sh' # refers to contacts.csv which is /media/ubuntu/3520-FD13/0My_Folders/00Donaghs_ORG/14_Donaghs_CONTACTS/00_Main_Contacts.csv
 # alias ggp='git push git@github.com:Xiddler/xiddler.github.io.git gh-pages:master'
-# alias t='./todo.sh -d /path/to/your/todo.cfg'
 # alias vim='sudo vim '
 alias -g C=' | gpaste-client'
 alias -g G='| egrep -i --color=auto'
@@ -19,7 +18,6 @@ alias -g nt='terminator --geometry +500+100' # open a new zsh terminal
 alias -g passin='python3 $HOME/sd64/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
 # alias -g passin='/home/donagh/.scripts/passin.sh' # a non-GUI version
 alias -g passout='cat /home/donagh/sd64/zim/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias
-alias -g t='/home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.sh -d ~/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.cfg' 
 alias -g xn='| xargs -n 1'
 alias -g zimbu='/home/donagh/.scripts/zim_backup_to_tinyUSB.sh'
 alias -g zz='zsh -l'
@@ -103,15 +101,22 @@ alias gett='$HOME/.scripts/get_password.sh'
 alias synaptic='sudo synaptic'
 alias tm="calc -d 'read qtime; qtime(0)'" # sudo apt install apcalc WINTER TIME
 # alias tm="calc -d 'read qtime; qtime(1)'" # sudo apt install apcalc SUMMER TIME
-alias todot=" cd /home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli && ls"
 alias tn='t | festival --tts'
 alias tn='t | spd-say --pipe-mode'
 alias speedtest="curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 alias wett='curl wttr.in/limerick'
 alias -g define='BROWSER=w3m ddgr \!wordnik ' # ddgr is CLI DDGo and w3m is CLI browser
 
-# todo.txt
-alias t="/home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.sh -d /home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.cfg"
+# TODO
+todo() { cd $HOME/TODO }
+alias t="/home/donagh/TODO && ls"
+alias td="/home/donagh/TODO && ls"
+# Libre Office open TODO.ods / LISTS.ods
+alias lot="/usr/sbin/libreoffice $HOME\/TODO\/TODO.ods &"
+alias lol="/usr/sbin/libreoffice $HOME\/TODO\/LISTS.ods &"
+# View todo / lists in the terminal
+alias -g vt="/home/donagh/.scripts/todo-ods-to-csv.sh"
+alias -g vl="/home/donagh/.scripts/lists-ods-to-csv.sh"
 
 # git shortcuts - but see $alias from zsh
 alias cm='git commit -m '
