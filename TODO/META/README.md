@@ -132,19 +132,3 @@ Anyhow, here are some candidates:
 
 ### Positives
 sources_of_pride.md, my_skills.md, hopes.md, what_i_fixed.md, achievements.md, good_points.md,  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

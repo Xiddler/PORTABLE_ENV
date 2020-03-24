@@ -36,6 +36,7 @@ alias dr='cd ~/Dropbox'
 alias -g sd='cd $HOME/sd64/'
 alias -g hf='cd $HOME'
 alias -g po='cd $HOME/PORTABLE_ENV'
+alias -g port='cd $HOME/PORTABLE_ENV'
 
 # ____________________________________________________________________________________
 # shortcuts for when I want to Search Zim - Computer ORG 
