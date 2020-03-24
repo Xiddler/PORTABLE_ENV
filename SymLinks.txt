@@ -1,0 +1,12 @@
+lrwxrwxrwx  1 donagh donagh     19 Feb 20 23:22 .bashrc -> PORTABLE_ENV/bashrc
+lrwxrwxrwx  1 donagh donagh      5 Dec 12 13:23 .face.icon -> .face
+lrwxrwxrwx  1 donagh donagh     31 Feb 21 16:05 .HOLD_zshrc -> /home/donagh/PORTABLE_ENV/zshrc
+lrwxrwxrwx  1 donagh donagh     49 Mar  1 15:06 journal -> /home/donagh/sd64/1donaghs-stuff/personal/journal
+lrwxrwxrwx  1 donagh donagh     48 Mar  1 14:47 pyython -> /home/donagh/sd64/2programming_repository/python
+lrwxrwxrwx  1 donagh donagh     20 Feb 22 13:47 .scripts -> PORTABLE_ENV/scripts
+lrwxrwxrwx  1 donagh donagh     66 Feb 21 12:28 sd64 -> /run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP
+lrwxrwxrwx  1 donagh donagh     17 Mar 17 11:30 TODO -> PORTABLE_ENV/TODO
+lrwxrwxrwx  1 donagh donagh     18 Feb 20 23:24 .vimrc -> PORTABLE_ENV/vimrc
+lrwxrwxrwx  1 donagh donagh     70 Feb 21 09:48 ziim -> /run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/zim
+lrwxrwxrwx  1 donagh donagh     24 Feb 21 12:02 .zsh_aliases -> PORTABLE_ENV/zsh_aliases
+lrwxrwxrwx  1 donagh donagh     18 Feb 21 12:01 .zshrc.pre-oh-my-zsh -> PORTABLE_ENV/zshrc

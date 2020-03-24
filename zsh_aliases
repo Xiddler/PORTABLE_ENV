@@ -35,6 +35,8 @@ alias ds='cd ~/Documents'
 alias dr='cd ~/Dropbox'
 alias -g sd='cd $HOME/sd64/'
 alias -g hf='cd $HOME'
+alias -g po='cd $HOME/PORTABLE_ENV'
+
 # ____________________________________________________________________________________
 # shortcuts for when I want to Search Zim - Computer ORG 
 alias -g ziim='$HOME/sd64/zim/'
@@ -54,7 +56,7 @@ books() {cd $HOME/sd64/books/Computer_books/ }
 #-------------------- START journal
 # journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
 # 
-# journal='/home/donagh/sd64/1donaghs-stuff/personal/journal/2020' # short form
+journal='/home/donagh/sd64/1donaghs-stuff/personal/journal/2020' # short form
 #
 # alias mj=md_journal # opens todays journal as a markdown file in vim for editing.
 #
@@ -111,12 +113,13 @@ alias -g define='BROWSER=w3m ddgr \!wordnik ' # ddgr is CLI DDGo and w3m is CLI 
 todo() { cd $HOME/TODO }
 alias t="/home/donagh/TODO && ls"
 alias td="/home/donagh/TODO && ls"
-# Libre Office open TODO.ods / LISTS.ods
+# Libre Office open TODO.ods / PROJECTS.ods
 alias lot="/usr/sbin/libreoffice $HOME\/TODO\/TODO.ods &"
-alias lol="/usr/sbin/libreoffice $HOME\/TODO\/LISTS.ods &"
+alias lop="/usr/sbin/libreoffice $HOME\/TODO\/PROJECTS.ods &"
 # View todo / lists in the terminal
 alias -g vt="/home/donagh/.scripts/todo-ods-to-csv.sh"
-alias -g vl="/home/donagh/.scripts/lists-ods-to-csv.sh"
+alias -g vp="/home/donagh/.scripts/projects-ods-to-csv.sh"
+alias -g meta="/home/donagh/TODO/META"
 
 # git shortcuts - but see $alias from zsh
 alias cm='git commit -m '

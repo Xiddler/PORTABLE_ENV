@@ -17,3 +17,7 @@ cheat -s <command>
 
 # To get the current `cheat' version
 cheat -v
+
+# Using cheat.sh - 
+#  python - How do you append to a file?
+->%  curl cht.sh/python/append+file

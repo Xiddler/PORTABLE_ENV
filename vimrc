@@ -51,9 +51,9 @@
     " Custom Movements {{{
     	"=== Custom Movements ===
 	"navigation tips
-	"    H – Go to the first line of current screen.
-	"    M – Go to the middle line of current screen.
-	"    L – Go to the last line of current screen.
+	"    H – Go to the first line of current screen. But see noremaps below.
+	"    M – Go to the middle line of current screen. 
+	"    L – Go to the last line of current screen. But see noremaps below.
 	"    ctrl+F – Jump forward one full screen.
 	"    ctrl+B – Jump backwards one full screen
 	"    ctrl+D – Jump forward (down) a half screen
@@ -64,6 +64,9 @@
     "set the cursor to move down a single row on the screen
     nnoremap j gj
     nnoremap k gk
+    " Use H and L to move to the previous/next tabpage.
+    nnoremap H gT
+    nnoremap L gt
 	" use ctrl-h/j/k/l to switch between splits
 	map <c-j> <c-w>j
 	map <c-k> <c-w>k

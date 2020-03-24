@@ -64,7 +64,7 @@ d{motion}       delete text that {motion} moves over
 5yy         copies 5 lines
 42G         go to line 42
 
-
+### DONAGHS ###
 # sudo trick
 :w !sudo tee %
 
@@ -92,6 +92,6 @@ eg cd to above folder and ->% grep <surround>
 # " open file at line 23
 vim +23 <filename>
 
-
-
-
+# tab navigation
+gt # next tab
+gT # prev tab

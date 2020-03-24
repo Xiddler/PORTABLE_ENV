@@ -20,3 +20,5 @@ ls -d .*/ */
 ls -t
 ls -tr
 
+# List links
+ls -al | awk '/^l/ { print $0 }'
