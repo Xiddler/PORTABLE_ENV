@@ -116,6 +116,23 @@ These matters can't be forever ignored and must be processed at least to a level
 
 I don't present well to others. I don't know how to present myself. I don't know who I am.
 
+2020-03-24_17:19
+I notice the contents of the META folder at this stage is all negative stuff. These things may be true (are true) but tend to demotivate somehow.
+    excuses.md
+    fears.md
+    lies.md
+    preoccupations.md
+        README.md
+Maybes?
+    forbidden_fruit.md # fantasies / wrong'uns (but great excitement) ignoble desires.md
+
+One thing I need to do is ramp up the positive. So I am looking for names of files that could help to motivate and incentivise and lead to positive productive action.
+The danger is that it might lead to hubris or complacency. 
+Anyhow, here are some candidates:
+
+### Positives
+sources_of_pride.md, my_skills.md, hopes.md, what_i_fixed.md, achievements.md, good_points.md,  
+
 
 
 
