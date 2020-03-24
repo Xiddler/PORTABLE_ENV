@@ -3,10 +3,10 @@
 
 filen1='/home/donagh/TODO/PROJECTS.ods'
 
-unoconv -f csv -o '/home/donagh/TODO/PROJECTS.csv' $filen1
+unoconv -f csv -o '/home/donagh/TODO/CSV/PROJECTS.csv' $filen1
 
 
-fileCSV1='/home/donagh/TODO/PROJECTS.csv'
+fileCSV1='/home/donagh/TODO/CSV/PROJECTS.csv'
 
 column -s, -t < $fileCSV1
 
