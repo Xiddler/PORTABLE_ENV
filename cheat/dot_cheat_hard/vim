@@ -89,9 +89,25 @@ eg cd to above folder and ->% grep <surround>
 #  to change 'funny' to "funny"
 ' cs'"'
 
-# " open file at line 23
-vim +23 <filename>
 
 # tab navigation
 gt # next tab
 gT # prev tab
+
+# Ranges
+:12,34s/old/new/g   # substitute in lines 12 to 34 inclusive
+12,$                # from line 12 to end of the file
+.,$                 # current to end
+%                   # all file
+1,$                 # equivalent to %
+
+# tab buffers
+vim -p file1.text file2.txt # open files in separate tabs
+tabe # edit a new file
+H   # previous filetab - alias for gt
+L   # next filetab - alias for gT
+
+# " open file at line 23
+vim +23 <filename>
+
+
