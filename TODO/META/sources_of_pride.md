@@ -32,6 +32,7 @@ sewing, DIY, decorating, repair, household management, musical instruments, song
 
 ### Hopes
 This is a strange one for me. I don't really do hope. I do stoicism instead, put up and shut up. But here goes...
+
 I hope that:
     As few people as possible will die from covid19
     The healthcare system will be able to cope with the load
@@ -55,7 +56,7 @@ Life
 Bought my own house without parental assistance
 The design and completion of O'Sheas Shop, Charleville
 Built my own garage 
-Did a 10 day tour of Andalucia on my own incl. speaking Spanish to get accommodation and food.
+Did a 10 day tour of Andalucia on my own incl. speaking Spanish to get accommodation and food. And climbed to top of Pico Valetta.
 
 ### Good Points
 Not sure if it is up to me to mention my good points so I will skip this for the time being.
