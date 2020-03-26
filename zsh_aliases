@@ -92,9 +92,9 @@ alias vza="vim ~/.zsh_aliases"
 
 # Donaghs shortcuts
 alias chk='$HOME/.scripts/info.sh' # quick summary of system status
-alias def='~/.scripts/get_defs.sh ' # dictionary addition to $dict
 # alias -g mj=md_journal # opens todays journal as a markdown file in vim for editing.
 alias -g mj='$HOME/.scripts/markdown_journal.sh'
+alias -g wcmj='$HOME/.scripts/wordCount_journal.sh' # word count my journal (markdown journal)
 alias hanging='cd $HOME/ziim/Computer/ && tail -n4 0_Hanging.txt && cd $HOME/ziim/Donaghs/00_Home/ && tail -n4 0_Hanging.txt'
 alias hg=histgrep
 alias hj='history'
@@ -108,6 +108,7 @@ alias tn='t | festival --tts'
 alias tn='t | spd-say --pipe-mode'
 alias speedtest="curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 alias wett='curl wttr.in/limerick'
+alias def='~/.scripts/get_defs.sh ' # dictionary addition to $dict
 alias -g define='BROWSER=w3m ddgr \!wordnik ' # ddgr is CLI DDGo and w3m is CLI browser
 
 # TODO

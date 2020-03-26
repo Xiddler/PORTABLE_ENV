@@ -11,8 +11,8 @@ h 		Scroll left (scrollLeft)
 l 		Scroll right (scrollRight)
 r 		Reload the page (reload)
 yy 		Copy the current URL to the clipboard (copyCurrentUrl)
-p 		Open the clipboard's URL in the current tab (openCopiedUrlInCurrentTab)
-P 		Open the clipboard's URL in a new tab (openCopiedUrlInNewTab)
+p 		Open the clipboard\'s URL in the current tab (openCopiedUrlInCurrentTab)
+P 		Open the clipboard\'s URL in a new tab (openCopiedUrlInNewTab)
 i 		Enter insert mode (enterInsertMode)
 v 		Enter visual mode (enterVisualMode)
 gi 		Focus the first text input on the page (focusInput)
@@ -20,7 +20,7 @@ f 		Open a link in the current tab (LinkHints.activateMode)
 F 		Open a link in a new tab (LinkHints.activateModeToOpenInNewTab)
 		Open a link in a new tab & switch to it (LinkHints.activateModeToOpenInNewForegroundTab)
 gf 		Select the next frame on the page (nextFrame)
-gF 		Select the page's main/top frame (mainFrame)
+gF 		Select the page\'s main/top frame (mainFrame)
 		Using the vomnibar
 o 		Open URL, bookmark or history entry (Vomnibar.activate)
 O 		Open URL, bookmark or history entry in a new tab (Vomnibar.activateInNewTab)
@@ -100,7 +100,7 @@ g$ go to the last tab
 t create tab
 yt duplicate current tab
 x close current tab
-X restore closed tab (i.e. unwind the 'x' command)
+X restore closed tab (i.e. unwind the \'x\' command)
 T search through your open tabs
 <a-p> pin/unpin current tab
 
@@ -113,7 +113,7 @@ ma, mA set local mark "a" (global mark "A")
 
 Additional advanced browsing commands:
 
-]], [[ Follow the link labeled 'next' or '>' ('previous' or '<')
+]], [[ Follow the link labeled \'next\' or \'>\' (\'previous\' or \'<\')
 - helpful for browsing paginated sites
 <a-f> open multiple links in a new tab
 gi focus the first (or n-th) text input box on the page
@@ -128,5 +128,9 @@ V enter visual line mode
 
 Vimium supports command repetition so, for example, hitting 5t will open 5 tabs in rapid succession. <Esc> (or <c-[>) will clear any partial commands in the queue and will also exit insert and find modes.
 
-There are some advanced commands which aren't documented here; refer to the help dialog (type ?) for a full list.
+There are some advanced commands which aren\'t documented here; refer to the help dialog (type ?) for a full list.
 In the vimium icon select Options > Show Available Commands
+
+# Donaghs
+# replace ' with \' from current to end
+:.,$s/'/\\'/g

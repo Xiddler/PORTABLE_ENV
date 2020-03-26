@@ -132,3 +132,8 @@ Anyhow, here are some candidates:
 
 ### Positives
 sources_of_pride.md, my_skills.md, hopes.md, what_i_fixed.md, achievements.md, good_points.md,  
+
+### 2020-03-25
+2020-03-25_00:36 
+Added /TODO/CSV to keep the .csv files separate and the TODO/ folder clean - yesterday 2020-03-24.
+
