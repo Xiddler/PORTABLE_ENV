@@ -91,7 +91,8 @@ alias vz="vim ~/.zshrc"
 alias vza="vim ~/.zsh_aliases"
 
 # Donaghs shortcuts
-alias chk='$HOME/.scripts/info.sh' # quick summary of system status
+alias -g chk='$HOME/.scripts/info.sh' # quick summary of system status
+alias -g scr='cd $HOME/.scripts/' # cd to /home/donagh/.scripts
 # alias -g mj=md_journal # opens todays journal as a markdown file in vim for editing.
 alias -g mj='$HOME/.scripts/markdown_journal.sh'
 alias -g wcmj='$HOME/.scripts/wordCount_journal.sh' # word count my journal (markdown journal)
