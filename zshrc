@@ -1,20 +1,21 @@
-## NOTE: Aliases handled in .zsh_aliases or .bash_aliases
-##
-## Add zsh aliases.
-#if [ -f $HOME/.zsh_aliases ]; then
-#    source $HOME/.zsh_aliases
-#fi
+# NOTE: Aliases handled in .zsh_aliases or .bash_aliases
+#
+# Add zsh aliases.
+if [ -f $HOME/.zsh_aliases ]; then
+    source $HOME/.zsh_aliases
+fi
 
-## Path to your oh-my-zsh installation.
-#  # export ZSH=/home/ubuntu/.oh-my-zsh
+# Path to your oh-my-zsh installation.
+# export ZSH=/home/ubuntu/.oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
 
 ## Set name of the theme to load. Optionally, if you set this to "random"
 ## it'll load a random theme each time that oh-my-zsh is loaded.
 ## See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ## ZSH_THEME="robbyrussell"
-ZSH_THEME="agnoster"
-## ZSH_THEME="candy-kingdom"
+# ZSH_THEME="agnoster"
+ZSH_THEME="amuse_dm"
+# ## ZSH_THEME="candy-kingdom"
 # ZSH_THEME="crcandy"
 ## ZSH_THEME="powerlevel9k/powerlevel9k"
 
@@ -216,8 +217,8 @@ bindkey 'jk' vi-cmd-mode
 # . {repository_root}/powerline/bindings/zsh/powerline.zsh
 # . /usr/share/powerline/bindings/zsh/powerline.zsh
 
-powerline-daemon -q
-. /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
+# powerline-daemon -q
+# . /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
 #
 # fast file and directory autojump
 # . /media/ubuntu/3520-FD13/compressed_utilities/zsh/z/z.sh
