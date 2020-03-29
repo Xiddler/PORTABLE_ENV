@@ -201,6 +201,8 @@ source $HOME/.zsh_aliases
 # bindkeys see also $ zle -al
 # switches to the command mode
 bindkey 'jk' vi-cmd-mode 
+# cx for clear screen
+bindkey 'cx' clear-screen
 
 # for urxvt terminal emulator
 # xrdb ~/.Xresources  # may need to be in my .bashrc file though

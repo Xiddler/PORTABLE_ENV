@@ -2,10 +2,8 @@
     "type": "script",
     "description": "clear_screen",
     "store": {},
-    "modes": [
-        1
-    ],
-    "usageCount": 14,
+    "modes": [],
+    "usageCount": 98,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
