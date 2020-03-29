@@ -1,8 +1,10 @@
 [global_config]
-  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  enabled_plugins = TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   focus = mouse
   geometry_hinting = True
   inactive_color_offset = 0.617283950617
+  title_font = Sans 13
+  title_use_system_font = False
 [keybindings]
 [layouts]
   [[default]]
