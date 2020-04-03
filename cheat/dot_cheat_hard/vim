@@ -110,4 +110,7 @@ L   # next filetab - alias for gT
 # " open file at line 23
 vim +23 <filename>
 
+# navigate tabs
+tab left H
+tab right  L
 

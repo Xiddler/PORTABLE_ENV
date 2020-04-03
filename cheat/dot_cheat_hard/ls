@@ -22,3 +22,17 @@ ls -tr
 
 # List links
 ls -al | awk '/^l/ { print $0 }'
+
+# List directories / files
+alias l.='ls -d .* --color=auto' # Show hidden files ##
+alias ld='ls -la -d */'
+alias lk='ls -1v'
+alias ll='ls -la'
+alias lls='ls | xargs -n1' # show ls in a single column
+alias ls='ls --color=auto'
+alias hp='ls --hide=*.py'
+alias hh='cd ~/'
+alias llk="ll | grep '^l.*'"
+alias -g lf="ls | tr ' ' '\n'"
+alias -g latest='ls -lt  **/*(.om[1,20])' # list latest 20 files edited
+

@@ -64,7 +64,8 @@
     "set the cursor to move down a single row on the screen
     nnoremap j gj
     nnoremap k gk
-    " Use H and L to move to the previous/next tabpage.
+    " Use H and L to move to the previous/next tabpage & tab & tabs and next
+    " tab and previous tab
     nnoremap H gT
     nnoremap L gt
 	" use ctrl-h/j/k/l to switch between splits
@@ -93,6 +94,8 @@
 	set background=dark
         "to toggle them automatically for you:
         map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+    " to allow italics in vim
+    highlight Comment cterm=italic
 	" }}}
    " Custom Leader {{{
 	" === Custom Leader ===
