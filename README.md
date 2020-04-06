@@ -3,6 +3,9 @@
 2019-08-11 - made the PORTABLE_ENV directory in Github
 2019-03-04 
 
+2020-04-06
+Added folder "droplets" to repo to make setting up website on Digital Ocean easier 
+
 2020-04-01
 To install oh-my-zsh
 sudo curl -L http://install.ohmyz.sh | sh
