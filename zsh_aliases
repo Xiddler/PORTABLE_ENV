@@ -112,6 +112,7 @@ alias speedtest="curl -o /dev/null http://speedtest.wdc01.softlayer.com/download
 alias wett='curl wttr.in/limerick'
 alias def='~/.scripts/get_defs.sh ' # dictionary addition to $dict
 alias -g define='BROWSER=w3m ddgr \!wordnik ' # ddgr is CLI DDGo and w3m is CLI browser
+alias -g filepath='$HOME/.scripts/filename.sh'
 
 # TODO
 todo() { cd $HOME/TODO }
