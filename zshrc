@@ -4,6 +4,8 @@
 if [ -f $HOME/.zsh_aliases ]; then
     source $HOME/.zsh_aliases
 fi
+# Increase scrolling history.
+set -g history-limit 5000
 
 # Path to your oh-my-zsh installation.
 # export ZSH=/home/ubuntu/.oh-my-zsh
