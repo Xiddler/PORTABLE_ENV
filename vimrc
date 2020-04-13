@@ -155,6 +155,7 @@
    "
    " masukomi
    " vim-markdown-folding
+   " https://github.com/masukomi/vim-markdown-folding.git
    "
    " mattn
    " emmet-vim

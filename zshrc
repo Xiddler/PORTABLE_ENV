@@ -5,7 +5,10 @@ if [ -f $HOME/.zsh_aliases ]; then
     source $HOME/.zsh_aliases
 fi
 # Increase scrolling history.
-set -g history-limit 5000
+set -g history-limit 2000
+
+# get fzf to enable Ctrl-R & Ctrl-T
+source ~/.fzf/shell/key-bindings.zsh
 
 # Path to your oh-my-zsh installation.
 # export ZSH=/home/ubuntu/.oh-my-zsh

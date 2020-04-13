@@ -1,17 +1,17 @@
 {
     "type": "phrase",
-    "description": "email_xiddler",
+    "description": "email_dm.me",
     "modes": [
         1
     ],
-    "usageCount": 7,
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "@@x"
+            "@@@"
         ],
         "backspace": true,
         "ignoreCase": false,
