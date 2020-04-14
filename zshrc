@@ -14,6 +14,13 @@ source ~/.fzf/shell/key-bindings.zsh
 # export ZSH=/home/ubuntu/.oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
 
+# to allow copying of arguments - of mv - using kk
+autoload copy-earlier-word
+zle -N copy-earlier-word
+# bindkey '^[,' copy-earlier-word # original
+bindkey 'kk' copy-earlier-word
+
+
 ## Set name of the theme to load. Optionally, if you set this to "random"
 ## it'll load a random theme each time that oh-my-zsh is loaded.
 ## See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
