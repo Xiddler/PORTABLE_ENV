@@ -7,6 +7,7 @@
 	set <esc>=jk "" my inline comment in a set command
     set number
 	set relativenumber
+    set virtualedit=all
 	"}}}
     " Spaces And Tabs {{{ 
 	"=== Spaces And Tabs ===

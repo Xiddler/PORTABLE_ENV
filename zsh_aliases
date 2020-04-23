@@ -59,6 +59,7 @@ bookmarks() { cd /home/donagh/sd64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Boo
 # journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
 # 
 journal='/home/donagh/sd64/1donaghs-stuff/personal/journal/2020' # short form
+personal='/home/donagh/sd64/1donaghs-stuff/personal/' # short form
 #
 # alias mj=md_journal # opens todays journal as a markdown file in vim for editing.
 #

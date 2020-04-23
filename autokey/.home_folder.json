@@ -1,15 +1,15 @@
 {
     "type": "phrase",
-    "description": "hor_line_w3",
+    "description": "home_folder",
     "modes": [],
-    "usageCount": 3,
+    "usageCount": 2,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "w3"
+            "hf"
         ],
         "backspace": true,
         "ignoreCase": false,

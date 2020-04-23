@@ -144,7 +144,7 @@ autoload -U zmv # meaning zsh mv command
 # You can then run zmv to rename files according to a pattern. Both the pattern and the replacement text need to be quoted so that they are passed-as is to the zmv function which will expand them in due course.
 # zmv '^*.*' '$f.md'
 autoload -U compinit; compinit
-# vi editor
+# In bash to use the vi editor
 # set -o vi
 setopt VI # what is this?
 # next allows cd to dir without prepending cd

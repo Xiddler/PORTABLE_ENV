@@ -6,6 +6,8 @@
   title_font = Sans 13
   title_use_system_font = False
 [keybindings]
+  next_tab = <Primary><Alt>n
+  prev_tab = <Primary><Alt>p
 [layouts]
   [[default]]
     [[[child0]]]
