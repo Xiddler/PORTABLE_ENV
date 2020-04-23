@@ -12,3 +12,13 @@ Also, when I try to git commit, I don't seem to capture the files in /usr/share/
 
 ##2
 Also, when I edit a cheat using ->% cheat -e vim does this relplace the /usr/share/cheat/vim or what?
+
+
+# SOLUTIONS
+## Workaround
+Copy the contents of /usr/share/cheat to dot_cheat_hard
+->% cp /usr/share/cheat/* dot_cheat_hard
+Then perform the git commit*
+The names of these folders are confusing. Raise another issue.
+
+I removed the sym link usr_share_cheat altogether.
