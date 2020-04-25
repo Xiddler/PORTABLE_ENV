@@ -46,13 +46,6 @@ find . -type f -samefile MY_FILE_HERE 2>/dev/null
 # To find all files in the current directory and modify their permissions
 find . -type f -exec chmod 644 {} \;
 
-nning with i in the current folder
- find . -maxdepth 1 -type f -name 'i*'
-
+#DONAGHS - the cheat -e version
 # To find files beginning with i in the current folder
  find . -maxdepth 1 -type f -name 'i*'
-
-
-# To find files beginning with i in the current folder
- find . -maxdepth 1 -type f -name 'i*'
-

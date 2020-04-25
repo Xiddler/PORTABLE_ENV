@@ -174,6 +174,7 @@
    au bufnewfile *.py 0r /home/donagh/PORTABLE_ENV/vim_headers/py_header.temp
 
    " for the vim-notes plugin. ~/.vim/misc/notes/user
-    :let g:notes_directories = ['/home/donagh/PORTABLE_ENV/Notes/']
-
+    " adds .txt suffix to new notes
+    :let g:notes_directories = ['/home/donagh/PORTABLE_ENV/Notes', '/home/donagh/.vim/misc/notes/user']
+    :let g:notes_suffix = '.txt'
    "}}}

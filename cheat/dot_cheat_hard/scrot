@@ -1,0 +1,4 @@
+# (you need the delay to get the Terminal screen out of the way)
+$ scrot -d5  -s ~/newfile.png
+
+# where -d 5 is a 5 sec delay to allow say closing a window or opening another.

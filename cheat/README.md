@@ -17,7 +17,9 @@ Also, when I edit a cheat using ->% cheat -e vim does this relplace the /usr/sha
 # SOLUTIONS
 ## Workaround
 Copy the contents of /usr/share/cheat to dot_cheat_hard
-->% cp /usr/share/cheat/* dot_cheat_hard
+->% cp -f /home/donagh/.cheat/* dot_cheat_hard
+->% cp -f /usr/share/cheat/* dot_cheat_hard
+
 Then perform the git commit*
 The names of these folders are confusing. Raise another issue.
 

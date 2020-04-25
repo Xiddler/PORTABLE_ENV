@@ -1,3 +1,7 @@
+# Help
+date --help
+
+
 # Print date in format suitable for affixing to file names
 date +"%Y%m%d_%H%M%S"
 
@@ -6,3 +10,8 @@ date -d @1440359821
 
 # Convert Unix timestamp to Date(Mac)
 date -r 1440359821
+
+
+# in a script
+p=$(date +"%Y-%m-%d")
+echo $p

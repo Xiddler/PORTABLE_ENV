@@ -149,3 +149,18 @@ git revert <commit SHA>
 # Pich a commit from a branch to current branch. This is different than merge as
 # this just applies a single commit from a branch to current branch
 git cherry-pick <commit SHA1>
+
+# to see status of remote
+git fetch --dry-run --verbose
+
+# To remove a commit done locally: 
+git reset --soft HEAD^
+# HEAD^ means go back one commit from where HEAD is now. This will get you to the state just before the last commit. 
+
+# To remove a commit you have already pushed to remote: 
+# The safest way of removing a commit from remote is to revert the bad commit. Find the commit hash and:
+git revert <commit-hash>
+
+
+
+

@@ -134,3 +134,5 @@ In the vimium icon select Options > Show Available Commands
 # Donaghs
 # replace ' with \' from current to end
 :.,$s/'/\\'/g
+
+yy 		Copy the current URL to the clipboard (copyCurrentUrl)

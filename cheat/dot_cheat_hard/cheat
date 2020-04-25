@@ -1,3 +1,8 @@
+# Folders used by cheat
+# check using ->% cheat -d
+/usr/share/cheat    --> ~/PORTABLE_ENV/cheat/usr_share_cheat
+~/.cheat            --> ~/PORTABLE_ENV/cheat/dot_cheat
+#
 # To see example usage of a program:
 cheat <command>
 
@@ -12,3 +17,10 @@ cheat -s <command>
 
 # To get the current `cheat' version
 cheat -v
+
+# Using cheat.sh - 
+#  python - How do you append to a file?
+->%  curl cht.sh/python/append+file
+
+# To amend an existing (official) cheat
+

@@ -36,3 +36,10 @@ deactivate
 # Delete environmment (with virtualenvwrapper)
 rmvirtualenv env_name
 
+# Make a new virtualenv e.g.  for django
+python3 -m venv $HOME/.virtualenvs/django
+
+# Activate it
+source $HOME/.virtualenvs/django/bin/activate
+
+
