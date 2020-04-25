@@ -37,6 +37,7 @@ alias -g hf='cd $HOME'
 # bindkey 'hf' 'cd $HOME'
 alias -g po='cd $HOME/PORTABLE_ENV'
 alias -g port='cd $HOME/PORTABLE_ENV'
+alias -g tt='cd /home/donagh/TESTING'
 
 # ____________________________________________________________________________________
 # shortcuts for when I want to Search Zim - Computer ORG 

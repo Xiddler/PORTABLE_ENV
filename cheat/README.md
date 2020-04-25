@@ -22,3 +22,4 @@ Then perform the git commit*
 The names of these folders are confusing. Raise another issue.
 
 I removed the sym link usr_share_cheat altogether.
+->% cp /usr/share/cheat/* dot_cheat_hard

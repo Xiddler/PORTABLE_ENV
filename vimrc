@@ -127,7 +127,7 @@
     " set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L] 
     " :set laststatus=2 
     "}}}
-    " vimrc folding {{{
+    " Vimrc Folding {{{
     " === vimrc folding settings ===
     set foldmethod=marker
     set foldlevel=0
@@ -164,4 +164,9 @@
    "
    "multicursor
    "https://github.com/terryma/vim-multiple-cursors
-   "}}
+   "}}}
+   " Customised {{{
+   " "=== Customised === 
+   " Add header to .py file when starting a .py file
+   au bufnewfile *.py 0r /home/donagh/PORTABLE_ENV/vim_headers/py_header.temp
+   "}}}

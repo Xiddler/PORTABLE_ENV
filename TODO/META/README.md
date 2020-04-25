@@ -1,5 +1,8 @@
 2020-03-13 
 
+### CONTENTS
+INTRODUCTION
+
 ### INTRODUCTION
 This is another of my attempts to get the ball rolling in terms of actually doing something other than sitting for most of the day.
 
@@ -64,9 +67,10 @@ The file TODO.ods is a formatted Calc / Excel file. This is Linux so I am using 
 It is formatted to be appealing visually. This is important so that I am interested in looking at the contents. For terminal access to the contents I have set up some shortcuts viz:
     lot - LibreOffice Tasks & Jobs
     lol - LibreOffice Lists
-    vt  - view tasks :: These convert the .ods to .csv and the Unix column program pretty prints them to the Terminal
+    vt  - view tasks :: These convert* the .ods to .csv and the Unix column program pretty prints them to the Terminal
     vl  - view lists
 (These are in zsh_aliases)
+* do they do this automatically? YES. The shortcuts call a script -> /home/donagh/PORTABLE_ENV/scripts/todo-ods-to-csv.sh which converts the .ods file to .csv
 
 ### Journal
 
