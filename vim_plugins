@@ -1,7 +1,10 @@
-airline
-francoiscabrol
-masukomi
-mattn
-nightsense
-ranger
-tpope
+airline                 vim info
+francoiscabrol          ranger
+masukomi                markdown folding
+mattn                   emmet 
+nightsense              vim theme
+tpope                   surround  commentary
+voom                    browser window in the file for fold viewing e.g.  markdown files - nice Note: new. Added 2020-04-25
+
+vim-instant-markdown - opens a browser when a .md file is opened and closes also
+

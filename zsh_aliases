@@ -55,7 +55,7 @@ alias -g share='cd /home/donagh/linuxShared'
 web(){cd $HOME/sd64/2programming_repository/css/css_grid/donagh-dev/}
 books() {cd $HOME/sd64/books/Computer_books/ }
 bookmarks() { cd /home/donagh/sd64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
-
+vimi() { vim_shortcuts='/home/donagh/PORTABLE_ENV/';  cd $vim_shortcuts && feh vimium_shortcuts.png }
 #-------------------- START journal
 # journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
 # 

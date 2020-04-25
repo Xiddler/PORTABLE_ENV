@@ -164,6 +164,9 @@
    "
    "multicursor
    "https://github.com/terryma/vim-multiple-cursors
+   "
+   "Voom
+   "sudo pamac install vim-voom
    "}}}
    " Customised {{{
    " "=== Customised === 
