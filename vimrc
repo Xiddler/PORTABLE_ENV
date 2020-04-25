@@ -172,4 +172,8 @@
    " "=== Customised === 
    " Add header to .py file when starting a .py file
    au bufnewfile *.py 0r /home/donagh/PORTABLE_ENV/vim_headers/py_header.temp
+
+   " for the vim-notes plugin. ~/.vim/misc/notes/user
+    :let g:notes_directories = ['/home/donagh/PORTABLE_ENV/Notes/']
+
    "}}}
