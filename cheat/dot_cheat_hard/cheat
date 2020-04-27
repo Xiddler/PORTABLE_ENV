@@ -22,5 +22,6 @@ cheat -v
 #  python - How do you append to a file?
 ->%  curl cht.sh/python/append+file
 
-# To amend an existing (official) cheat
-
+# To amend an existing (official) cheat - seems I need to -e twice
+cheat -e <cheat> 
+cheat -e <cheat> 

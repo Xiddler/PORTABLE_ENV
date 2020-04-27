@@ -1,0 +1,9 @@
+# image viewer on the CLI
+
+# usage example
+feh <path/to/image.jpg>
+
+# to view images that may utilize ImageMagick e.g. .svg files
+->% feh --conversion-timeout 5 <path/to/image.svg>
+
+

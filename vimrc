@@ -69,7 +69,7 @@
     " tab and previous tab
     nnoremap H gT
     nnoremap L gt
-	" use ctrl-h/j/k/l to switch between splits
+	" splits - use ctrl-h/j/k/l to switch between splits
 	map <c-j> <c-w>j
 	map <c-k> <c-w>k
 	map <c-l> <c-w>l
@@ -81,6 +81,7 @@
 	" === packpath ===
 	" load packpath
 	filetype off
+    packloadall
 	" execute pathogen#helptags()
 	" execute pathogen#infect()
 	syntax on
@@ -105,6 +106,7 @@
 	" use ,o to make a new vertical split, ,s for horiz, ,x to close a split
 		" ,v calls up VISUAL mode
 	" try ,o (as in OpEd) <-- works
+    " splits - to make a new split & quit split
 	noremap <leader>o <c-w>v<c-w>l
 	noremap <leader>h <c-w>s<c-w>j
 	noremap <leader>x <c-w>c
@@ -177,4 +179,13 @@
     " adds .txt suffix to new notes
     :let g:notes_directories = ['/home/donagh/PORTABLE_ENV/Notes', '/home/donagh/.vim/misc/notes/user']
     :let g:notes_suffix = '.txt'
+    " Splits - change default position of new splits
+    set splitbelow splitright
+    " open a terminal in vim
+    " map <leader>tt :new terminal://bash<CR>
+    "Swap vertical split to hor
+    map <leader>th <C-w>t<C-w>H
+    map <leader>tk <C-w>t<C-w>K
+
+
    "}}}

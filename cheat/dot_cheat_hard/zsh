@@ -1,4 +1,5 @@
 # A plain old glob
+#
 print -l *.txt
 print -l **/*.txt
 
@@ -80,3 +81,6 @@ echo ${(s._.)file}
 # Join expansion flag, opposite of the split flag.
 array=(a b c d)
 echo ${(j.-.)array} # a-b-c-d
+
+# Track back through command history
+Alt - (repeat)

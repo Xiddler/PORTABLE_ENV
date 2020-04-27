@@ -95,6 +95,7 @@ plugins=(
   git
   zsh-syntax-highlighting  
   colored-man-pages
+  fzf
   # extract
   # systemd
 )
