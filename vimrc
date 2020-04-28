@@ -169,12 +169,15 @@
    "
    "Voom
    "sudo pamac install vim-voom
+   "
+   "SuperMan
+   "Man pages in vim editor
+   "https://github.com/jez/vim-superman
    "}}}
    " Customised {{{
    " "=== Customised === 
    " Add header to .py file when starting a .py file
-   au bufnewfile *.py 0r /home/donagh/PORTABLE_ENV/vim_headers/py_header.temp
-
+   au bufnewfile *.py 0r /home/donagh/PORTABLE_ENV/vim_stuff/py_header.temp
    " for the vim-notes plugin. ~/.vim/misc/notes/user
     " adds .txt suffix to new notes
     :let g:notes_directories = ['/home/donagh/PORTABLE_ENV/Notes', '/home/donagh/.vim/misc/notes/user']
