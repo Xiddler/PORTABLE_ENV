@@ -123,11 +123,9 @@
 	"python
 	autocmd Filetype python inoremap <leader>m if __name__ ==  "__main__":<enter>
     " }}}
-    " Statusline {{{
-    "=== Statusline ===
-    " NOTE: relpaced by airline pluging (similar to Powerline in zsh)
-    " set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L] 
-    " :set laststatus=2 
+    " Status line {{{
+    "=== Status line ===
+    " NOTE: replaced by airline plugin (similar to Powerline in zsh)
     "}}}
     " Vimrc Folding {{{
     " === vimrc folding settings ===
@@ -182,6 +180,7 @@
     " adds .txt suffix to new notes
     :let g:notes_directories = ['/home/donagh/PORTABLE_ENV/Notes', '/home/donagh/.vim/misc/notes/user']
     :let g:notes_suffix = '.txt'
+
     " Splits - change default position of new splits
     set splitbelow splitright
     " open a terminal in vim
@@ -189,6 +188,5 @@
     "Swap vertical split to hor
     map <leader>th <C-w>t<C-w>H
     map <leader>tk <C-w>t<C-w>K
-
 
    "}}}
