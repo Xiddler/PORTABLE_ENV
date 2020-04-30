@@ -188,5 +188,7 @@
     "Swap vertical split to hor
     map <leader>th <C-w>t<C-w>H
     map <leader>tk <C-w>t<C-w>K
+    " Capitalize letter under cursor
+    nnoremap <leader>u v~
 
    "}}}

@@ -4,9 +4,10 @@
 if [ -f $HOME/.zsh_aliases ]; then
     source $HOME/.zsh_aliases
 fi
-# Increase scrolling history.
-set -g history-limit 2000
 
+# Increase scrolling history. This is __NOT__ the number of items listed from a command. That'd be a Terminator setting.
+set -g history-limit 2000
+#
 # get fzf to enable Ctrl-R & Ctrl-T
 source ~/.fzf/shell/key-bindings.zsh
 
