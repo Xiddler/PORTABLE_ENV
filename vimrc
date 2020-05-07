@@ -101,12 +101,13 @@
 	" }}}
    " Custom Leader {{{
 	" === Custom Leader ===
+    " See also Customised below
 	" set your own personal modifier key to something handy
 	let mapleader="," 
 	" use ,o to make a new vertical split, ,s for horiz, ,x to close a split
 		" ,v calls up VISUAL mode
 	" try ,o (as in OpEd) <-- works
-    " splits - to make a new split & quit split
+    " splits - to make a new split & quit split -  ,vf and ,hv to go to file
 	noremap <leader>o <c-w>v<c-w>l
 	noremap <leader>h <c-w>s<c-w>j
 	noremap <leader>x <c-w>c
@@ -122,6 +123,21 @@
 	map <leader>f :Ranger<cr>
 	"python
 	autocmd Filetype python inoremap <leader>m if __name__ ==  "__main__":<enter>
+    "
+    " open the file under the cursor in a new window
+    nnoremap <leader>vf :vertical wincmd f<CR>
+    nnoremap <leader>hf :below wincmd f<CR>
+    " nav the command mode - up and down for previous commands
+    cmap <C-j> <Down>
+    cmap <C-k> <Up>
+    cmap <C-h> <Left>
+    cmap <C-l> <Right>
+    " source $MYVIMRC
+    nnoremap <Leader>r :so $MYVIMRC<CR>
+    "To insert the absolute path of the directory the file is in use:
+    inoremap <Leader>n <C-R>=expand("%:p:h")<CR>
+      " To insert the name of the innermost directory (the one containing the current file) use:
+    " inoremap <Leader>n <C-R>=expand("%:p:h:t")<CR>
     " }}}
     " Status line {{{
     "=== Status line ===
@@ -183,12 +199,14 @@
 
     " Splits - change default position of new splits
     set splitbelow splitright
-    " open a terminal in vim
-    " map <leader>tt :new terminal://bash<CR>
+    "
+    " open a terminal within vim
+    map <leader>tt :terminal<CR>
+    "
     "Swap vertical split to hor
     map <leader>th <C-w>t<C-w>H
     map <leader>tk <C-w>t<C-w>K
-    " Capitalize letter under cursor
+    " Capitalize/minusculize letter under cursor
     nnoremap <leader>u v~
 
    "}}}

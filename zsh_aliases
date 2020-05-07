@@ -95,6 +95,9 @@ alias vb='vim ~/.bashrc'
 alias vv='vim ~/.vimrc'
 alias vz="vim ~/.zshrc"
 alias vza="vim ~/.zsh_aliases"
+alias vs="vim ~/.spacemacs"
+alias cs="cat ~/.spacemacs"
+
 
 # Donaghs shortcuts
 alias -g chk='$HOME/.scripts/info.sh' # quick summary of system status

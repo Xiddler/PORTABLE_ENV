@@ -1,15 +1,17 @@
 {
     "type": "script",
-    "description": "open_firefox",
+    "description": "parens_exit",
     "store": {},
-    "modes": [],
-    "usageCount": 10,
+    "modes": [
+        1
+    ],
+    "usageCount": 11,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "ff"
+            ",,"
         ],
         "backspace": true,
         "ignoreCase": false,

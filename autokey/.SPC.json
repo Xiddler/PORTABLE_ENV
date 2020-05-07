@@ -1,15 +1,17 @@
 {
-    "type": "script",
-    "description": "open_firefox",
-    "store": {},
-    "modes": [],
-    "usageCount": 10,
+    "type": "phrase",
+    "description": "SPC",
+    "modes": [
+        1
+    ],
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
+    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "ff"
+            "spc"
         ],
         "backspace": true,
         "ignoreCase": false,
@@ -24,5 +26,6 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    }
+    },
+    "sendMode": "kb"
 }
