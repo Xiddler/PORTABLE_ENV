@@ -1,5 +1,7 @@
 # NOTE: Aliases handled in .zsh_aliases or .bash_aliases
-#
+
+export LANG=en_US.utf8
+
 # Add zsh aliases.
 if [ -f $HOME/.zsh_aliases ]; then
     source $HOME/.zsh_aliases

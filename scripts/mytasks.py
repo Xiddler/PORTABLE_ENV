@@ -5,6 +5,10 @@ import csv
 
 from rich.console import Console
 from rich.table import Column, Table
+from rich.text import Text # maybe not used
+
+from rich import print
+from rich.panel import Panel
 
 console = Console()
 
@@ -24,8 +28,18 @@ with open(csvfile, mode='r') as csv_file:
     table.add_column("TODO - OTHER", style="dim", width=60)
     for row in csv_reader:
         line_count += 1
-        table.add_row(row["*"], row["S"], row["O"], row["D"], row["#"], row["TODO "], row["##"], row["TODO lesser"])
-        if line_count == 12: 
+        text0 = row["*"]
+        text1 = Text(str(row["TODO"]))
+        # table.add_row(row["*"], row["S"], row["O"], row["D"], row["#"], row["TODO"], row["##"], row["TODO lesser"]) # good 
+        if row["TODO"] == "TODO – NOT-SO-NICE BUT NECESSARY":
             table.add_row('', '', '', '','',  '_________________________________________', '', '_________________________________________')
+        # if line_count > 12: 
+        if row["O"] == "O":
+            text1.stylize(0, 61, style="bold cyan")
+        # table.add_row(row["*"],  row["S"], row["O"], row["D"], row["#"], Panel(text1),  row["##"], row["TODO lesser"]) # Panel usage
+        table.add_row(row["*"],  row["S"], row["O"], row["D"], row["#"], text1,  row["##"], row["TODO lesser"]) # good 
     console.print(table)
 
+
+
+# print(Panel("Hello, [red]World!"))

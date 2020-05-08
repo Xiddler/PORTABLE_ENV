@@ -6,7 +6,7 @@ filen='/home/donagh/TODO/TODO.ods'
 unoconv -f csv -o '/home/donagh/TODO/CSV/TODO.csv' $filen
 
 
-fileCSV='/home/donagh/TODO/CSV/TODO.csv'
+fileCSV='/home/donagh/sd64/TODO/CSV/TODO.csv'
 
 # prettified output to terminal
 # column -s, -t < $fileCSV
