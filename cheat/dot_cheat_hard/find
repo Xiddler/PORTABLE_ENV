@@ -52,3 +52,7 @@ find . -type f -exec chmod 644 {} \;
 
 # list .txt files in directory with no prefix
 find . -name \*.txt -type f -print | sed 's/\.\///g'
+
+# using find instead of rg - why would you?
+find . -name "*.txt" | xargs grep ping-pong
+

@@ -21,6 +21,8 @@ alias -g passout='cat /home/donagh/sd64/zim/Computer/11SignUps.txt|rg -i -A5 ' #
 alias -g xn='| xargs -n 1'
 alias -g zimbu='/home/donagh/.scripts/zim_backup_to_tinyUSB.sh'
 alias -g zz='zsh -l'
+# to copy all new and old cheats to /home/donag/PORTABLE_ENV/cheat/dot_cheat_hard
+alias ccheat="cp -f /usr/share/cheat/* /home/donagh/PORTABLE_ENV/cheat/dot_cheat_hard/ && cp -f /home/donagh/.cheat/* /home/donagh/PORTABLE_ENV/cheat/dot_cheat_hard/"
 # 
 # alias -g cx='clear'
 # the following shortcut alias means that pressing enter after just a 

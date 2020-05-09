@@ -1,5 +1,14 @@
 2020-04-23 
 
+# TL;DR
+
+Copy the contents of /usr/share/cheat to dot_cheat_hard
+cp -f /home/donagh/.cheat/* dot_cheat_hard && cp -f /usr/share/cheat/* dot_cheat_hard
+alias ccheat="cp -f /home/donagh/.cheat/* dot_cheat_hard && cp -f /usr/share/cheat/* dot_cheat_hard"
+
+
+
+
 # NOTES
  There is an important caveat when creating symlinks that are meant to be tracked under Git. The reference path of the source file should be relative to the repository, not absolute to the machine.
 

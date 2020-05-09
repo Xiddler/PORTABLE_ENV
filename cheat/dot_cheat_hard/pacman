@@ -49,3 +49,10 @@ cd "$pkgname"
 makepkg -s
 # Install
 sudo pacman -U <package file (.pkg.tar.xz)>
+
+# List apps installed by pacman
+pacman -Q
+
+# To keep a file
+->% pacman -Q > /home/donagh/PORTABLE_ENV/pacman.txt
+ 

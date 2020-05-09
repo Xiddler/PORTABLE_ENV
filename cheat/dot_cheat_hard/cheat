@@ -25,3 +25,6 @@ cheat -v
 # To amend an existing (official) cheat - seems I need to -e twice
 cheat -e <cheat> 
 cheat -e <cheat> 
+
+# to update (ie copy all new and old) cheats to /home/donag/PORTABLE_ENV/cheat/dot_cheat_hard
+ccheat

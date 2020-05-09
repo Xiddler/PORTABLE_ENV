@@ -118,3 +118,34 @@ tab right  L
 # Check installed plugins
 :scriptnames
 :help local-additions
+
+# Splits
+hor. split  : <Leader> H
+ver. split  : <Leader> O
+swap splits : Ctrl W Shift R
+equalize split : Ctrl W =
+maximize split   : Ctrl W _ (hor. split)
+maximize split   : Ctrl W | (ver. split)
+resize split     :res +5 or :vert res -5
+
+# Terminal in vim
+:sp |:terminal
+
+# Turn terminal into a vim file
+<C-w> <S-n>
+# To exit 
+# <C-w> <S-i>
+# 
+
+# Navigation
+C-B --> back one pane
+C-F --> forward one pane
+
+# Open file under cursor - custom keybinding
+,vf # open vert. split
+,hf # open hor. split
+
+# Insert filename in insert mode 
+<C-r>%
+# Insert filepath in insert mode 
+,n
