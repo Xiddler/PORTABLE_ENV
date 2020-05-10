@@ -120,7 +120,7 @@ source $ZSH/oh-my-zsh.sh
 PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -180,7 +180,7 @@ source $HOME/.zsh_aliases
 # alias l.='ls -d .* --color=auto' # Show hidden files ##
 # alias pss='python -m SimpleHTTPServer 8000'
 # shortcuts for activating venvs. pb python basic
-# alias pb='source $HOME/.virtualenvs/basic/bin/activate'
+alias pb='source $HOME/.virtualenvs/basic/bin/activate'
 # alias pf='source $HOME/.virtualenvs/flask/bin/activate'
 # alias pd='source $HOME/.virtualenvs/django/bin/activate'
 # alias zln='zmv -L'

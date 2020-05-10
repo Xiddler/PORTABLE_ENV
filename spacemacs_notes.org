@@ -1,0 +1,70 @@
+#+STARTUP: content
+* spacemacs notes
+** files
+*** save [SPC] f s 
+*** find files [SPC] f f
+*** copy file [SPC] f c
+** folding
+*** use the vim system: zc, zo, zm, zr for opening and closing folds.
+*** or use S-TAB to cycle through folds
+** general
+*** C-g to get out of a command
+*** [SPC] f e d to open .spacemacs configuration file
+
+** jargon
+*** kill-ring is the clipboard
+** killring / clipboard
+   [SPC] r y 
+   and then C-j to scroll down to item you want to insert to current buffer
+
+** links
+*** [ link ] [ description ]
+*** [[www.google.com] [ google.com] the final ] is missing as it would collapse to what you can see on the next line.
+*** URLs / links 
+    [[https://www.google.com][google.com]]
+    [[http://donaghmccarthy.ie][donaghmccarthy]]
+*** images / files
+    To view the following image: 
+    [file:/home/donagh/Images/chainsaw-haircut.png]
+    1. make a vert. split. ( , w v) <-- optional
+    2. place cursor inside [] , l
+    3. q to cancel image
+    Link to a file
+    # C-c l to make a link in the link store
+    # , l to find and open that link
+    [[/home/donagh/PORTABLE_ENV/spacemacs][link to .spacemacs in PORTABLE_ENV]]
+    
+** multiple org files
+   Suppose you have many files that you want org-mode to 'watch'. In the dotspacemacs-configuration-layers of .spacemacs:
+   Say, work, school and home.
+#+BEGIN_SRC elisp
+(setq org-agenda-files (list "~/org/work.org"
+"~/org/school.org" 
+                             "~/org/home.org"))
+#+END_SRC
+Press C-c a t to enter the global todo list.
+
+** org-mode
+*** See  /home/donagh/TODO/ORG-MODE/first.org for my preliminary notes on org-mode.
+*** TODO I created a new todo task when on the above line with A-S RET
+    DEADLINE: <2020-05-10 Sun>
+*** TODO but in insert mode...
+    SCHEDULED: <2020-05-12 Tue>
+** projects
+*** directory should contain one of these files: .projectile or .git
+**** This will allow helm to manage and find the project.
+
+** snippets
+   Yasnippet & Yasnippet-snippets
+   [SPC] i s
+  This is the incrementally snippet in text-mode.
+
+** windows
+*** [SPC] w d to delete a window
+*** [SPC] w s to split a window below
+*** [SPC] w v to split a window vert. right
+** shell
+   Call with  [SPC] !
+   There is some issue with .zshrc / .zshenv / PATH which I need to resolve.
+   
+   
