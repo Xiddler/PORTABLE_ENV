@@ -149,3 +149,7 @@ C-F --> forward one pane
 <C-r>%
 # Insert filepath in insert mode 
 ,n
+
+
+# Remember to use Notes (addon)
+:Note
