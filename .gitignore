@@ -4,3 +4,5 @@ TODO/.*
 TRIALS/.*
 TRIALS/
 zArchive/*
+*/.git/
+vim-superman
