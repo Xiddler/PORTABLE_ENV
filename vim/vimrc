@@ -138,6 +138,8 @@
     inoremap <Leader>n <C-R>=expand("%:p:h")<CR>
       " To insert the name of the innermost directory (the one containing the current file) use:
     " inoremap <Leader>n <C-R>=expand("%:p:h:t")<CR>
+    " get , , w to make easy motion work
+     " map <Leader><Leader>w <Plug>(easymotion-prefix)
     " }}}
     " Status line {{{
     "=== Status line ===
@@ -185,13 +187,13 @@
    "sudo pamac install vim-voom
    "
    "SuperMan
-   "Man pages in vim editor
+   "Man pages in vim editor: vman <app>
    "https://github.com/jez/vim-superman
    "}}}
    " Customised {{{
    " "=== Customised === 
    " Add header to .py file when starting a .py file
-   au bufnewfile *.py 0r /home/donagh/PORTABLE_ENV/vim_stuff/py_header.temp
+   au bufnewfile *.py 0r /home/donagh/PORTABLE_ENV/vim/py_header.temp
    " for the vim-notes plugin. ~/.vim/misc/notes/user
     " adds .txt suffix to new notes
     :let g:notes_directories = ['/home/donagh/PORTABLE_ENV/Notes', '/home/donagh/.vim/misc/notes/user']

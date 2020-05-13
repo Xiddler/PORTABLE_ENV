@@ -44,16 +44,30 @@
 #+END_SRC
 Press C-c a t to enter the global todo list.
 
+** navigating
+*** within a file
+    [SPC] j l then type link to the line (try it!)
+    will show links for every file visible in every window! 
+*** directory 
+    [SPC] f T to see directory tree
 ** org-mode
 *** See  /home/donagh/TODO/ORG-MODE/first.org for my preliminary notes on org-mode.
 *** TODO I created a new todo task when on the above line with A-S RET
     DEADLINE: <2020-05-10 Sun>
 *** TODO but in insert mode...
     SCHEDULED: <2020-05-12 Tue>
+*** to view agenda beyond this week: 14 , a n
+    Here's a link with good answers
+    https://stackoverflow.com/questions/32423127/how-to-view-the-next-days-in-org-modes-agenda#32426234
+
 ** projects
 *** directory should contain one of these files: .projectile or .git
 **** This will allow helm to manage and find the project.
 
+** promoting / demoting 
+*** Headings: C-c C-< and C-c C->
+*** moving nodes  : M-up and M-down
+    
 ** snippets
    Yasnippet & Yasnippet-snippets
    [SPC] i s
@@ -68,3 +82,11 @@ Press C-c a t to enter the global todo list.
    There is some issue with .zshrc / .zshenv / PATH which I need to resolve.
    
    
+** Drawers
+   Types of drawers:
+   - Custom made - see mydrawer below
+     To open/close, place cursor on the : line and TAB
+     :mydrawer:
+  This is the content of my first drawer
+  :end:
+   - Reserved e.g.  properties drawer, 

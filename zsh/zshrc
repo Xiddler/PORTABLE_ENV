@@ -1,5 +1,9 @@
 # NOTE: Aliases handled in .zsh_aliases or .bash_aliases
 
+# to disable the Toshiba touchpad
+xinput disable 13
+
+# locale
 export LANG=en_US.utf8
 
 # Add zsh aliases.

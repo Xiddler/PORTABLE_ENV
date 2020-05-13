@@ -2,10 +2,8 @@
     "type": "script",
     "description": "parens_exit",
     "store": {},
-    "modes": [
-        1
-    ],
-    "usageCount": 11,
+    "modes": [],
+    "usageCount": 15,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,

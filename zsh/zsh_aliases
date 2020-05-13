@@ -125,6 +125,7 @@ alias -g define='BROWSER=w3m ddgr \!wordnik ' # ddgr is CLI DDGo and w3m is CLI 
 alias -g filepath='$HOME/.scripts/filename.sh'
 
 # TODO
+org() { cd $HOME/TODO/ORG-MODE }
 todo() { cd $HOME/TODO }
 alias t="/home/donagh/TODO && ls"
 alias td="/home/donagh/TODO && ls"
