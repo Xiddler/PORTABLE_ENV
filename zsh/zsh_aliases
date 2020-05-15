@@ -55,7 +55,7 @@ alias -g sd='cd $HOME/sd64/'
 alias -g 2p='cd $HOME/sd64/2programming_repository/'
 alias -g share='cd /home/donagh/linuxShared'
 web(){cd $HOME/sd64/2programming_repository/css/css_grid/donagh-dev/}
-books() {cd $HOME/sd64/books/Computer_books/ }
+books() {cd $HOME/sd64/books/ }
 bookmarks() { cd /home/donagh/sd64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
 
 

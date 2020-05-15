@@ -157,3 +157,11 @@ C-F --> forward one pane
 # show lines with matching word under cursor
 [I
 
+# find non-ascii characters in a vim file
+/[^a-zA-Z0-9-: #\/\.,)("']  # Donaghs recipe
+/[^\d0-\d127]               # Where d0 represents the first ASCII and d127 the 128th
+
+
+
+
+

@@ -1,5 +1,33 @@
-#+STARTUP: content
+* frontmatter
+#+TITLE: Notes for spacemacs
+#+DATE: 2020-05-08
+#+AUTHOR: Donagh McCarthy
+#+OPTIONS: num:nil 
+#+OPTIONS: html-style:nil
+** styling html export
+   to export , , h
+    #+begin_export html
+      <style>
+      body {
+        color: red;
+      }
+      </style>
+
+      #+end_export
+   source code not displayed
+
+
 * spacemacs notes
+** characters
+   - Characters: \alpha \rightarrow \beta
+** drawers
+   Types of drawers:
+   - Custom made - see mydrawer below
+     To open/close, place cursor on the : line and TAB
+     :mydrawer:
+  This is the content of my first drawer
+  :end:
+   - Reserved e.g.  properties drawer, 
 ** files
 *** save [SPC] f s 
 *** find files [SPC] f f
@@ -7,12 +35,41 @@
 ** folding
 *** use the vim system: zc, zo, zm, zr for opening and closing folds.
 *** or use S-TAB to cycle through folds
-** general
-*** C-g to get out of a command
-*** [SPC] f e d to open .spacemacs configuration file
+** formatting
+   use the symbols fore and aft OR , x and select
+*** bold is *bold*
+*** italic is /italic/
+*** verbatim is =verbatim= 
+*** strikethrough +strikethrough+
+*** underline _underline_
+*** source code / literate programming
+    To insert a snippet for source code: [SPC] i s and select begin_src
 
-** jargon
-*** kill-ring is the clipboard
+    Example 1 emacs-lisp
+   #+BEGIN_SRC emacs-lisp
+   (+ 3 55)
+
+   #+END_SRC
+
+   #+RESULTS:
+   : 58
+
+   and then pressing C-x C-e will show 58 in the mini buffer  
+
+    Example 2 python
+   #+BEGIN_SRC python
+   print(3+43+43+4)
+   
+
+   #+END_SRC 
+   C-c C-c inside the code block (not working)
+   #+RESULTS:
+   : None
+
+** keybindings
+   M is the Alt key
+   M-x for package install.
+
 ** killring / clipboard
    [SPC] r y 
    and then C-j to scroll down to item you want to insert to current buffer
@@ -22,7 +79,7 @@
 *** [[www.google.com] [ google.com] the final ] is missing as it would collapse to what you can see on the next line.
 *** URLs / links 
     [[https://www.google.com][google.com]]
-    [[http://donaghmccarthy.ie][donaghmccarthy]]
+    [[http://donaghmccarthy.ie][donaghmccarthy.ie]] 
 *** images / files
     To view the following image: 
     [file:/home/donagh/Images/chainsaw-haircut.png]
@@ -34,6 +91,9 @@
     # , l to find and open that link
     [[/home/donagh/PORTABLE_ENV/spacemacs][link to .spacemacs in PORTABLE_ENV]]
     
+*** C-c C-l will allow to make a link. Link:  & Description:
+   [[http://www.donaghmccarthy.ie][donaghmccarthy.ie]] 
+
 ** multiple org files
    Suppose you have many files that you want org-mode to 'watch'. In the dotspacemacs-configuration-layers of .spacemacs:
    Say, work, school and home.
@@ -49,7 +109,15 @@ Press C-c a t to enter the global todo list.
     [SPC] j l then type link to the line (try it!)
     will show links for every file visible in every window! 
 *** directory 
-    [SPC] f T to see directory tree
+    [SPC] f T to see directory tree and q to quit
+** options
+   Placed at start of file
+*** title
+    "#+TITLE: 
+*** options
+    "#+OPTIONS: html-style: nil
+*** startip
+    "#+STARTIP: overview
 ** org-mode
 *** See  /home/donagh/TODO/ORG-MODE/first.org for my preliminary notes on org-mode.
 *** TODO I created a new todo task when on the above line with A-S RET
@@ -59,34 +127,38 @@ Press C-c a t to enter the global todo list.
 *** to view agenda beyond this week: 14 , a n
     Here's a link with good answers
     https://stackoverflow.com/questions/32423127/how-to-view-the-next-days-in-org-modes-agenda#32426234
-
+** packages
+   M-x 
+   list-packages (available, installed, builtin )
+*** eww
+    emacs web browser M-x ew
+    w
+*** jedi
+    server (for python?)
 ** projects
-*** directory should contain one of these files: .projectile or .git
+   *** directory should contain one of these files: .projectile or .git
 **** This will allow helm to manage and find the project.
 
 ** promoting / demoting 
 *** Headings: C-c C-< and C-c C->
 *** moving nodes  : M-up and M-down
     
+** shell
+   Call with  [SPC] !
+   There is some issue with .zshrc / .zshenv / PATH which I need to resolve.
+   
 ** snippets
    Yasnippet & Yasnippet-snippets
    [SPC] i s
   This is the incrementally snippet in text-mode.
 
+** tables
+   | Name   | Age | Gender |
+   |--------+-----+--------|
+   | Donagh |  58 | M      |
+   | Helen  |  28 | F      |
+   |       |     |        |
 ** windows
 *** [SPC] w d to delete a window
 *** [SPC] w s to split a window below
 *** [SPC] w v to split a window vert. right
-** shell
-   Call with  [SPC] !
-   There is some issue with .zshrc / .zshenv / PATH which I need to resolve.
-   
-   
-** Drawers
-   Types of drawers:
-   - Custom made - see mydrawer below
-     To open/close, place cursor on the : line and TAB
-     :mydrawer:
-  This is the content of my first drawer
-  :end:
-   - Reserved e.g.  properties drawer, 

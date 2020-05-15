@@ -210,5 +210,9 @@
     map <leader>tk <C-w>t<C-w>K
     " Capitalize/minusculize letter under cursor
     nnoremap <leader>u v~
+    " MY FUNCTIONS
+    function Simple()
+        echom "Running simple function"
+    endfunction
+    nnoremap <C-l>, :call Simple()<CR>
 
-   "}}}

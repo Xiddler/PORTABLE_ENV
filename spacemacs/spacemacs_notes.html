@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>spacemacs_notes.html</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+</head>
+
+<body>
+
+<ul>
+<li><p>frontmatter</p>
+
+<h1>+TITLE: Notes for spacemacs</h1>
+
+<h1>+DATE: 2020-05-08</h1>
+
+<h1>+AUTHOR: Donagh McCarthy</h1>
+
+<h1>+OPTIONS: num:nil</h1>
+
+<h1>+OPTIONS: html-style:nil</h1>
+
+<p>** styling html export
+ to export , , h
+  #+begin_export html
+    <style>
+    body {
+      color: red;
+    }
+    </style></p>
+
+<pre><code>#+end_export
+</code></pre>
+
+<p> source code not displayed</p></li>
+<li><p>spacemacs notes
+** characters</p>
+
+<ul>
+<li>Characters: \alpha \rightarrow \beta
+** drawers
+Types of drawers:</li>
+<li>Custom made - see mydrawer below
+To open/close, place cursor on the : line and TAB
+:mydrawer:
+This is the content of my first drawer
+:end:</li>
+<li>Reserved e.g.  properties drawer,
+<strong> files
+</strong><em> save [SPC] f s
+</em><strong> find files [SPC] f f
+</strong><em> copy file [SPC] f c
+<strong> folding
+</strong></em> use the vim system: zc, zo, zm, zr for opening and closing folds.
+<em><strong> or use S-TAB to cycle through folds
+</strong> formatting
+use the symbols fore and aft OR , x and select
+</em><strong> bold is <em>bold</em>
+</strong><em> italic is /italic/
+</em><strong> verbatim is =verbatim=
+</strong><em> strikethrough +strikethrough+
+</em><strong> underline <em>underline</em>
+</strong>* source code / literate programming
+To insert a snippet for source code: [SPC] i s and select begin_src</li>
+</ul>
+
+
+<p>  Example 1 emacs-lisp
+ #+BEGIN_SRC emacs-lisp
+ (+ 3 55)</p>
+
+<p> #+END_SRC</p>
+
+<p> #+RESULTS:
+ : 58</p>
+
+<p> and then pressing C-x C-e will show 58 in the mini buffer</p>
+
+<p>  Example 2 python
+ #+BEGIN_SRC python
+ print(3+43+43+4)</p>
+
+<p> #+END_SRC
+ C-c C-c inside the code block (not working)
+ #+RESULTS:
+ : None</p></li>
+</ul>
+
+
+<p>** keybindings
+   M is the Alt key
+   M-x for package install.</p>
+
+<p>** killring / clipboard
+   [SPC] r y
+   and then C-j to scroll down to item you want to insert to current buffer</p>
+
+<p><strong> links
+</strong><em> [ link ] [ description ]
+</em><strong> [[www.google.com] [ google.com] the final ] is missing as it would collapse to what you can see on the next line.
+</strong><em> URLs / links
+    [[https://www.google.com][google.com]]
+    [[http://donaghmccarthy.ie][donaghmccarthy.ie]]
+</em>** images / files
+    To view the following image:
+    [file:/home/donagh/Images/chainsaw-haircut.png]
+    1. make a vert. split. ( , w v) &lt;&ndash; optional
+    2. place cursor inside [] , l
+    3. q to cancel image
+    Link to a file
+    # C-c l to make a link in the link store
+    # , l to find and open that link
+    [[/home/donagh/PORTABLE_ENV/spacemacs][link to .spacemacs in PORTABLE_ENV]]</p>
+
+<p>*** C-c C-l will allow to make a link. Link:  &amp; Description:
+   [[http://www.donaghmccarthy.ie][donaghmccarthy.ie]]</p>
+
+<p>** multiple org files
+   Suppose you have many files that you want org-mode to &lsquo;watch&rsquo;. In the dotspacemacs-configuration-layers of .spacemacs:
+   Say, work, school and home.</p>
+
+<h1>+BEGIN_SRC elisp</h1>
+
+<p>(setq org-agenda-files (list &ldquo;~/org/work.org&rdquo;
+&ldquo;~/org/school.org&rdquo;
+                             &ldquo;~/org/home.org&rdquo;))</p>
+
+<h1>+END_SRC</h1>
+
+<p>Press C-c a t to enter the global todo list.</p>
+
+<p><strong> navigating
+</strong><em> within a file
+    [SPC] j l then type link to the line (try it!)
+    will show links for every file visible in every window!
+</em><strong> directory
+    [SPC] f T to see directory tree and q to quit
+</strong> options
+   Placed at start of file
+<strong><em> title
+    &ldquo;#+TITLE:
+</em></strong> options
+    &rdquo;#+OPTIONS: html-style: nil
+<em><strong> startip
+    &ldquo;#+STARTIP: overview
+</strong> org-mode
+</em><strong> See  /home/donagh/TODO/ORG-MODE/first.org for my preliminary notes on org-mode.
+</strong><em> TODO I created a new todo task when on the above line with A-S RET
+    DEADLINE: &lt;2020-05-10 Sun>
+</em><strong> TODO but in insert mode&hellip;
+    SCHEDULED: &lt;2020-05-12 Tue>
+</strong><em> to view agenda beyond this week: 14 , a n
+    Here&rsquo;s a link with good answers
+    https://stackoverflow.com/questions/32423127/how-to-view-the-next-days-in-org-modes-agenda#32426234
+<strong> packages
+   M-x
+</strong></em> eww
+    emacs web browser M-x ew
+    w
+<strong> projects
+   </strong><em> directory should contain one of these files: .projectile or .git
+</em>*** This will allow helm to manage and find the project.</p>
+
+<p><strong> promoting / demoting
+</strong><em> Headings: C-c C-&lt; and C-c C->
+</em>** moving nodes  : M-up and M-down</p>
+
+<p>** shell
+   Call with  [SPC] !
+   There is some issue with .zshrc / .zshenv / PATH which I need to resolve.</p>
+
+<p>** snippets
+   Yasnippet &amp; Yasnippet-snippets
+   [SPC] i s
+  This is the incrementally snippet in text-mode.</p>
+
+<p><strong> tables
+   | Name   | Age | Gender |
+   |&mdash;&mdash;&ndash;+&mdash;&ndash;+&mdash;&mdash;&ndash;|
+   | Donagh |  58 | M      |
+   | Helen  |  28 | F      |
+   |       |     |        |
+</strong> windows
+<strong><em> [SPC] w d to delete a window
+</em></strong> [SPC] w s to split a window below
+*** [SPC] w v to split a window vert. right</p>
+
+</body>
+</html>
