@@ -1,0 +1,4 @@
+* Tasks
+** TODO Library check opening times 
+   [2020-05-15 Fri]
+   [[file:~/PORTABLE_ENV/spacemacs/spacemacs_notes.org::* progress markers - without checkboxes][[1/3] [33%] progress markers - without checkboxes]]

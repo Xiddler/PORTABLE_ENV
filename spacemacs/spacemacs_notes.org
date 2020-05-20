@@ -1,5 +1,6 @@
 * frontmatter
 #+TITLE: Notes for spacemacs
+#+TAGS: help orgmode donaghs
 #+DATE: 2020-05-08
 #+AUTHOR: Donagh McCarthy
 #+OPTIONS: num:nil 
@@ -19,6 +20,7 @@
 
 * spacemacs notes
 ** characters
+*** LaTeX
    - Characters: \alpha \rightarrow \beta
 ** drawers
    Types of drawers:
@@ -32,6 +34,8 @@
 *** save [SPC] f s 
 *** find files [SPC] f f
 *** copy file [SPC] f c
+*** filepath [SPC] f y 
+     full filepath and places it in the clipboard for copying - /home/donagh/PORTABLE_ENV/spacemacs/spacemacs_notes.org
 ** folding
 *** use the vim system: zc, zo, zm, zr for opening and closing folds.
 *** or use S-TAB to cycle through folds
@@ -66,6 +70,11 @@
    #+RESULTS:
    : None
 
+** help
+*** to get help
+   [SPC] h d <varies>
+   C-h i     <-- info
+   Worg is the org-mode wiki at [[ https://orgmode.org/worg/ ][worg]
 ** keybindings
    M is the Alt key
    M-x for package install.
@@ -109,8 +118,9 @@ Press C-c a t to enter the global todo list.
     [SPC] j l then type link to the line (try it!)
     will show links for every file visible in every window! 
 *** directory 
-    [SPC] f T to see directory tree and q to quit
+    [SPC] f t to see directory tree and q to quit
 ** options
+
    Placed at start of file
 *** title
     "#+TITLE: 
@@ -118,15 +128,30 @@ Press C-c a t to enter the global todo list.
     "#+OPTIONS: html-style: nil
 *** startip
     "#+STARTIP: overview
+** org-capture
+   For keeping notes, snippets, thoughts etc.
+   org-capture --> , c
+   Customize templates --> , c C
+   
 ** org-mode
 *** See  /home/donagh/TODO/ORG-MODE/first.org for my preliminary notes on org-mode.
+*** Make a new item a todo with t
 *** TODO I created a new todo task when on the above line with A-S RET
     DEADLINE: <2020-05-10 Sun>
-*** TODO but in insert mode...
+*** TODO and in insert mode...
     SCHEDULED: <2020-05-12 Tue>
-*** to view agenda beyond this week: 14 , a n
+*** to view agenda beyond this week: eg next fortnight --> 14 , a n
     Here's a link with good answers
     https://stackoverflow.com/questions/32423127/how-to-view-the-next-days-in-org-modes-agenda#32426234
+*** TODO [1/2] [50%] progress markers - without checkboxes
+**** DONE item 1
+     CLOSED: [2020-05-15 Fri 15:43]
+**** item 2
+**** TODO item 3
+*** TODO Repeat schedule - e.g.  every week +1w add inside <>
+    - Weekly shop
+    SCHEDULED: <2020-06-13 Sat +1w>
+    NOTE: This doesn't appear in the global TODOS because this file is not "registered" in the list of files to be checked.
 ** packages
    M-x 
    list-packages (available, installed, builtin )
@@ -143,14 +168,23 @@ Press C-c a t to enter the global todo list.
 *** Headings: C-c C-< and C-c C->
 *** moving nodes  : M-up and M-down
     
+** refresh
+   spacemacs --> [SPC] f e R
 ** shell
+*** shell
    Call with  [SPC] !
    There is some issue with .zshrc / .zshenv / PATH which I need to resolve.
-   
+*** eshell
+    emacs shell
+    YouTube video on this at https://www.youtube.com/watch?v=RhYNu6i_uY4
+    it's an emacs REPL. e.g. 
+    $ (length "Donagh") 
+    $ 6
+
 ** snippets
    Yasnippet & Yasnippet-snippets
    [SPC] i s
-  This is the incrementally snippet in text-mode.
+  This is the "incrementally" snippet in text-mode.
 
 ** tables
    | Name   | Age | Gender |
@@ -158,7 +192,14 @@ Press C-c a t to enter the global todo list.
    | Donagh |  58 | M      |
    | Helen  |  28 | F      |
    |       |     |        |
+** themes
+   [SPC] T s to get a new themes
+   [SPC] T n to cycle (or toggle) dark / light if only those listed in the spacemacs config under themes.
 ** windows
 *** [SPC] w d to delete a window
 *** [SPC] w s to split a window below
 *** [SPC] w v to split a window vert. right
+
+
+donaghs headin
+*** g

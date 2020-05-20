@@ -100,6 +100,9 @@ alias vza="vim ~/.zsh_aliases"
 alias vs="vim ~/.spacemacs"
 alias cs="cat ~/.spacemacs"
 
+# Doom emacs
+alias doom='/home/donagh/.emacs.d/doom-emacs/bin/doom run'
+
 
 # Donaghs shortcuts
 alias -g chk='$HOME/.scripts/info.sh' # quick summary of system status
