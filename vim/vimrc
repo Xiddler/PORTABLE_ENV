@@ -122,7 +122,10 @@
 	let g:ranger_map_keys = 0
 	map <leader>f :Ranger<cr>
 	"python
+    "shortcut for if __name__  = ,m
 	autocmd Filetype python inoremap <leader>m if __name__ ==  "__main__":<enter>
+    " remove trailing whitespace from python files
+    autocmd BufWritePre *.py :%s/\s\+$//e
     "
     " open the file under the cursor in a new window
     nnoremap <leader>vf :vertical wincmd f<CR>
@@ -138,8 +141,13 @@
     inoremap <Leader>n <C-R>=expand("%:p:h")<CR>
       " To insert the name of the innermost directory (the one containing the current file) use:
     " inoremap <Leader>n <C-R>=expand("%:p:h:t")<CR>
+     " easymotion keybindings
+     " nmap f <Plug>(easymotion-overwin-f2) " this doesn't work properly
     " get , , w to make easy motion work
      " map <Leader><Leader>w <Plug>(easymotion-prefix)
+     " highlight ALL words for navigating to
+     map <leader>/ <Plug>(easymotion-bd-w) 
+     nmap <leader>/ <Plug>(easymotion-overwin-w) 
     " }}}
     " Status line {{{
     "=== Status line ===

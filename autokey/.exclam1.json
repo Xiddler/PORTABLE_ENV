@@ -2,10 +2,8 @@
     "type": "script",
     "description": "exclam!",
     "store": {},
-    "modes": [
-        1
-    ],
-    "usageCount": 26,
+    "modes": [],
+    "usageCount": 36,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,

@@ -54,9 +54,11 @@ alias -g sd='cd $HOME/sd64/'
 # alias -g hf='cd $HOME'
 alias -g 2p='cd $HOME/sd64/2programming_repository/'
 alias -g share='cd /home/donagh/linuxShared'
+words() {cd $HOME/WORDS/ }
 web(){cd $HOME/sd64/2programming_repository/css/css_grid/donagh-dev/}
 books() {cd $HOME/sd64/books/ }
 bookmarks() { cd /home/donagh/sd64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
+clue() {cd  $HOME/sd64/1donaghs-stuff/Projects/Clueless-on-DO/Clueless/clueless-webapp }
 
 
 #-------------------- START journal
@@ -109,6 +111,7 @@ alias -g chk='$HOME/.scripts/info.sh' # quick summary of system status
 alias -g scr='cd $HOME/.scripts/' # cd to /home/donagh/.scripts
 # alias -g mj=md_journal # opens todays journal as a markdown file in vim for editing.
 alias -g mj='$HOME/.scripts/markdown_journal.sh'
+alias -g mn='$HOME/.scripts/mynotes.sh'
 alias -g wcmj='$HOME/.scripts/wordCount_journal.sh' # word count my journal (markdown journal)
 alias hanging='cd $HOME/ziim/Computer/ && tail -n4 0_Hanging.txt && cd $HOME/ziim/Donaghs/00_Home/ && tail -n4 0_Hanging.txt'
 alias hg=histgrep
@@ -121,6 +124,7 @@ alias tm="calc -d 'read qtime; qtime(0)'" # sudo apt install apcalc WINTER TIME
 # alias tm="calc -d 'read qtime; qtime(1)'" # sudo apt install apcalc SUMMER TIME
 alias tn='t | festival --tts'
 alias tn='t | spd-say --pipe-mode'
+alias pip='pip3'
 alias speedtest="curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 alias wett='curl wttr.in/limerick'
 alias def='~/.scripts/get_defs.sh ' # dictionary addition to $dict

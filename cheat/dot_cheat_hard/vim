@@ -161,7 +161,8 @@ C-F --> forward one pane
 /[^a-zA-Z0-9-: #\/\.,)("']  # Donaghs recipe
 /[^\d0-\d127]               # Where d0 represents the first ASCII and d127 the 128th
 
-
+# uniquify lines in a text
+:sort u
 
 
 

@@ -11,7 +11,6 @@
 ;;; Code:
 (setq user-full-name "Donagh McCarthy"
       user-mail-address "xiddler@gmail.com")
-
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;
@@ -67,6 +66,13 @@
 ;;
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
-;;
+;; More Donaghs
+(setq message-kill-buffer-on-exit t)
+
+(require 'neotree)
+(setq neo-window-fixed-size nil)
 (provide 'config)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; config.el ends here

@@ -14,6 +14,9 @@ fi
 # Increase scrolling history. This is __NOT__ the number of items listed from a command. That'd be a Terminator setting.
 set -g history-limit 2000
 #
+#set Caps Lock key to Escape
+setxkbmap -option caps:escape
+
 # get fzf to enable Ctrl-R & Ctrl-T
 source ~/.fzf/shell/key-bindings.zsh
 
@@ -124,7 +127,7 @@ source $ZSH/oh-my-zsh.sh
 # PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin"
 #
 
-PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin:/home/donagh/.emacs.d/doom-emacs/bin/"
+PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin:/home/donagh/.emacs.d/doom-emacs/bin/:/home/donagh/.cargo/bin"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 # You may need to manually set your language environment

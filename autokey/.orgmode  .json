@@ -1,17 +1,17 @@
 {
     "type": "phrase",
-    "description": "IP for website DOD",
+    "description": "orgmode [ ]",
     "modes": [
         1
     ],
-    "usageCount": 24,
+    "usageCount": 1,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "ipdm"
+            "]]"
         ],
         "backspace": true,
         "ignoreCase": false,

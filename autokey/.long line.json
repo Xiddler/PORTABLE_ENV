@@ -1,17 +1,17 @@
 {
     "type": "phrase",
-    "description": "IP for website DOD",
+    "description": "long line",
     "modes": [
         1
     ],
-    "usageCount": 24,
+    "usageCount": 3,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "ipdm"
+            "l3"
         ],
         "backspace": true,
         "ignoreCase": false,

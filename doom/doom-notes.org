@@ -7,6 +7,7 @@
 #+TAGS: help orgmode donaghs
 
 * spacemacs notes
+Most of this is useful for doom emacs. Especially, org-mode
 ** characters
 *** LaTeX
    - Characters: \alpha \rightarrow \beta
@@ -123,12 +124,29 @@ Press C-c a t to enter the global todo list.
 
 ** org-mode
 *** See  /home/donagh/TODO/ORG-MODE/first.org for my preliminary notes on org-mode.
-*** Make a new item a todo with t
+*** Make a new (asterisked) item into a todo -> tt and then select from menu
+**** HOLD
 *** TODO I created a new todo task when on the above line with A-S RET
     DEADLINE: <2020-05-10 Sun>
 *** TODO and in insert mode...
     SCHEDULED: <2020-05-12 Tue>
-*** to view agenda beyond this week: eg next fortnight --> 14 , a n
+*** CHECKBOXES - Make a new checkbox i.e. [ ]
+***** checkbox
+shortcut is ]] --> - [ ] (set in Autokey). To toggle checkmark, with cursor inside brackets, C-c C-c
+[/] for n of m items
+[%] for percent
+***** this [1/3]
+- [X] this item [2/2]
+  - [X] Subitem 1
+  - [X] Subitem 2
+- [ ] Another item
+- [ ] This funny one C-c C-x C-b
+*** TODO Schedule - How to
+First, need to be on a list item *, ** etc. not a plain list i.e. -
+then
+    C-c C-s and select date using C-j, C-h etc.
+
+*** Agenda - to view agenda beyond this week: eg next fortnight --> 14 , a n
     Here's a link with good answers
     https://stackoverflow.com/questions/32423127/how-to-view-the-next-days-in-org-modes-agenda#32426234
 *** TODO [1/2] [50%] progress markers - without checkboxes
@@ -140,6 +158,13 @@ Press C-c a t to enter the global todo list.
     - Weekly shop
     SCHEDULED: <2020-06-13 Sat +1w>
     NOTE: This doesn't appear in the global TODOS because this file is not "registered" in the list of files to be checked.
+*** Modifier keys
+M = Alt; S = Shift; C = Ctrl; RET = Enter / Return
+- Alt RET = M RET --> New list item at same level
+- M-S RET = [ ] if done at a list item
+-
+-
+-
 ** packages
    M-x
    list-packages (available, installed, builtin )
@@ -241,14 +266,20 @@ this allows to explore outside the current project
 M-x ielm or [SPC] o r
 *** see snippets below for begin_src
 ** files
-current file path [SPC] i F <-- ~/PORTABLE_ENV/doom/doom-notes.org
+**** current file path [SPC] i F <-- ~/PORTABLE_ENV/doom/doom-notes.org
 Finding files:
 [SPC] f
+**** save file -> :w OR [SPC] f s
+**** save buffer -> [SPC] b s OR :w
+**** open a file -> [SPC] f f and select your file for opening
 ** general notes
 - See spacemacs_notes above. Lots of stuff applies in doom-emacs.
 ** help
 FAQ - [SPC] h d f
+To refresh the config.el file C-h r r OR doom/reload (in the /home/donagh/.emacs.d/doom-emacs/bin folder)
 ** installation notes
+*** install
+from https://github.com/hlissner/doom-emacs
 *** config files
 "doom install will deploy three files to your DOOMDIR (~/.doom.d)
 _init.el_
@@ -267,18 +298,21 @@ _packages.el_
 [SPC] :        <-- M-x
 gi             <-- go to previous insert position
 C-S-f          <-- toggle full screen - equivalent to F11
-C-=            <-- increase test size - equivalent to zoom in
-C-_            <-- decrease test size - equivalent to zoom out
+C-=            <-- increase text size - equivalent to zoom in
+C-_            <-- decrease text size - equivalent to zoom out
 
 ** line numbers
 [SPC] t l <-- toggles line numbers (which are relative by default)
+** minor modes
+*** To check available minor modes -> C-h m
+
 ** org-mode Doom
 *** Add TODO item
 C-c C-t and select from the menu
 *** TODO Add Scheduled item
 SCHEDULED: <2020-05-21 Thu>
 C-c C-t and select from the menu
-Then on the TODO item, C-c C-s to schedule it
+Add this to schedule
 ** org-capture
 ~stored in ~/PORTABLE_ENV/doom/org~
 stored in ~/Dropbox/org-mode/org/
@@ -290,12 +324,6 @@ stored in ~/Dropbox/org-mode/org/
     [SPC] n s <-- Search notes for text
 
 ** packages
-*** meta
-**** install new package
-in config.el - copy the treemacs line then run doom sync in the ~/.emacs.d/doom-emacs/bin folder
-**** to run a package
-   M-x (also [SPC] :)
-   - list-packages (available, installed, builtin )
 *** avy
 NOTE: pre-installed in doom
 In-file navigation. gs [SPC] <letter>
@@ -307,6 +335,18 @@ First the gs [SPC] will dim the text and then <letter> will be highlighted
 elephants in your head
 oranges are not the only fruit
 plain herds are better than awful
+*** dired
+Buffer for directory
+[SPC] f d
+To remove details: (
+To go to parent:   -
+Add a new directory: +
+Delete: D x
+chmod: M
+Select only directories: /* and then t to toggle between directories and files
+Select a file or directory: m and then u to unselect
+Change a file / dir name: i and then make changes
+
 *** evil
 NOTE: Pre-installed in doom
 **** evil-snipe
@@ -316,6 +356,15 @@ f <letter> highlights all <letter>s forward and ; moves to next one.
 NOTE: For more comprehensive in-file search look at avy.
 *** eww
     emacs web browser M-x e
+*** meta
+**** install new package
+in config.el - (require '<package>) and then C-h r r {Need to check if this works}
+in config.el - copy the treemacs line then run doom sync in the ~/.emacs.d/doom-emacs/bin folder
+**** to run a package
+   M-x (also [SPC] :)
+   - list-packages (available, installed, builtin )
+*** neotree
+added (require 'neotree) to config.el on 2020-05-20
 *** projectile
 directory in a separate buffer
 *** treemacs
@@ -372,3 +421,8 @@ The following was a begin src block
 
 appear
 defamation
+** tags :tags:
+" An excellent way to implement labels and contexts for cross-correlating information is to assign tags to headlines. "
+tags are words preceded by : and ending in : e.g. :donaghs: or :work: - these can then be searched for
+To search for tags C-c \ OR C-c / m
+see https://www.gnu.org/software/emacs/manual/html_node/org/Tag-searches.html#Tag-searches
