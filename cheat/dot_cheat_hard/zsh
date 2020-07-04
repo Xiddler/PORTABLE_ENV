@@ -84,3 +84,11 @@ echo ${(j.-.)array} # a-b-c-d
 
 # Track back through command history
 Alt - (repeat)
+
+
+# You can use a named directory hash to create such 'aliases' to directories:
+hash -d hello=~/Documents
+~hello/world
+
+
+

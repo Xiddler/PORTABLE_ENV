@@ -69,7 +69,7 @@
 ;; More Donaghs
 (setq message-kill-buffer-on-exit t)
 
-(require 'neotree)
+;; (require 'neotree)
 (setq neo-window-fixed-size nil)
 (provide 'config)
 ;; Local Variables:

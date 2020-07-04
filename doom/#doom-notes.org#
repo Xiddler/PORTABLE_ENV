@@ -124,34 +124,12 @@ Press C-c a t to enter the global todo list.
 
 ** org-mode
 *** See  /home/donagh/TODO/ORG-MODE/first.org for my preliminary notes on org-mode.
-*** Agenda / Scheduling
-**** NOTES
-Agenda - [SPC] a and select from list
-SCHEDULE is a keyword. Another is DEADLINE
-C-c C-s - to SCHEDULE
-C-c C-d - to DEADLINE
-
-**** SHORTCUT New todo --> tt
-**** SHORTCUT New schedule --> ts
-**** Agenda - to view agenda beyond this week: eg next four weeks --> C-u 28 [SPC] a n
-***** Here's a link with good answers
-    https://stackoverflow.com/questions/32423127/how-to-view-the-next-days-in-org-modes-agenda#32426234
-**** Schedule - How to
-***** First, need to be on a list item *** etc. not a plain list i.e. -
-then
-    C-c C-s and select date using C-j, C-h etc.
-***** To set the time
-SCHEDULED: <2020-07-04 Sat 09:50>
-At the prompt insert the time e.g. 09:50
-
-**** To view schedules ie your agenda
-To appear in the global TODOS because the file must be "registered" in the list of files
-[SPC] a a <-- to view agenda for coming week
-
 *** Make a new (asterisked) item into a todo -> tt and then select from menu
 **** HOLD
-*** Todos
-**** To call TODO menu or make a new todo : tt OR C-c C-t and select from the menu
+*** TODO I created a new todo task when on the above line with A-S RET
+    DEADLINE: <2020-05-10 Sun>
+*** TODO and in insert mode...
+    SCHEDULED: <2020-05-12 Tue>
 *** CHECKBOXES - Make a new checkbox i.e. [ ]
 ***** checkbox
 shortcut is ]] --> - [ ] (set in Autokey). To toggle checkmark, with cursor inside brackets, C-c C-c
@@ -163,12 +141,20 @@ shortcut is ]] --> - [ ] (set in Autokey). To toggle checkmark, with cursor insi
   - [X] Subitem 2
 - [ ] Another item
 - [ ] This funny one C-c C-x C-b
+*** TODO Schedule - How to
+First, need to be on a list item *, ** etc. not a plain list i.e. -
+then
+    C-c C-s and select date using C-j, C-h etc.
+
+*** Agenda - to view agenda beyond this week: eg next fortnight --> 14 , a n
+    Here's a link with good answers
+    https://stackoverflow.com/questions/32423127/how-to-view-the-next-days-in-org-modes-agenda#32426234
 *** TODO [1/2] [50%] progress markers - without checkboxes
 **** DONE item 1
      CLOSED: [2020-05-15 Fri 15:43]
 **** item 2
 **** TODO item 3
-*** Repeat schedule - e.g.  every week +1w add inside <> as in the example below
+*** TODO Repeat schedule - e.g.  every week +1w add inside <>
     - Weekly shop
     SCHEDULED: <2020-06-13 Sat +1w>
     NOTE: This doesn't appear in the global TODOS because this file is not "registered" in the list of files to be checked.
@@ -280,11 +266,12 @@ this allows to explore outside the current project
 M-x ielm or [SPC] o r
 *** see snippets below for begin_src
 ** files
-- save file -> :w OR [SPC] f s
-- save buffer -> [SPC] b s OR :w
-- open a file -> [SPC] f f and select your file for opening
-- insert current file path [SPC] i F <-- ~/PORTABLE_ENV/doom/doom-notes.org
-- Finding files: [SPC] f
+**** current file path [SPC] i F <-- ~/PORTABLE_ENV/doom/doom-notes.org
+Finding files:
+[SPC] f
+**** save file -> :w OR [SPC] f s
+**** save buffer -> [SPC] b s OR :w
+**** open a file -> [SPC] f f and select your file for opening
 ** general notes
 - See spacemacs_notes above. Lots of stuff applies in doom-emacs.
 ** help
@@ -304,12 +291,9 @@ _packages.el_
     Where you declare what packages to install and where from.
    
 *** configuration
-~/.doom.d/*
-These files are symbolic linked to ~/PORTABLE_ENV/doom/* - to keep my config if reinstalling
+~/.doom.d/config.el
 ~/.emacs/doom-emacs/init.el
-
 ** keybindings
-See also shortcuts below
 [SPC] m        <-- local to to the file type
 [SPC] :        <-- M-x
 gi             <-- go to previous insert position
@@ -323,7 +307,6 @@ C-_            <-- decrease text size - equivalent to zoom out
 *** To check available minor modes -> C-h m
 
 ** org-mode Doom
-*** See org-mode in SPACEMACS above
 *** Add TODO item
 C-c C-t and select from the menu
 *** TODO Add Scheduled item
@@ -342,7 +325,6 @@ stored in ~/Dropbox/org-mode/org/
 
 ** packages
 *** avy
-For navigation.
 NOTE: pre-installed in doom
 In-file navigation. gs [SPC] <letter>
 In-file navigation - specifically on current screen. Highlights using one or two letter pairs to highlight the target
@@ -378,19 +360,16 @@ NOTE: For more comprehensive in-file search look at avy.
 **** install new package
 in config.el - (require '<package>) and then C-h r r {Need to check if this works}
 in config.el - copy the treemacs line then run doom sync in the ~/.emacs.d/doom-emacs/bin folder
-OR
-(require <package>) in packages.el and then ->% doom sync
 **** to run a package
    M-x (also [SPC] :)
    - list-packages (available, installed, builtin )
-*** neotree - use treemacs
+*** neotree
 added (require 'neotree) to config.el on 2020-05-20
 *** projectile
 directory in a separate buffer
 *** treemacs
 _CURRENT_ directory / file explorer
-M-x treemacs <-- opens explorer for CURRENT directory : keybinding :: tm
-:q in treemacs pane to quit
+M-x treemacs <-- opens explorer for CURRENT directory : keybinding :: tt
 *** treemacs-evil
 use vim keys for navigating
 
@@ -408,15 +387,6 @@ For example, my username is “jdemaris” so my folder is ~/.emacs.d/modules/pr
     (projectile-add-known-project “~/Projects/playground/elixir”)
     (projectile-add-known-project “~/Projects/playground/otp”)"
     test addition
-** shortcuts
-Set in ~/PORTABLE_ENV/doom/config.el
-;; Donaghs - the following keybinding *did* work. :n indicates normal mode
-(map! :n "Q" 'org-babel-execute-src-block ) ;; Quantify!
-(map! :n "SPC d" 'treemacs ) ;; Directory for files / folders
-(map! :n "tt" 'org-todo )
-(map! :n "ts" 'org-schedule )
-(map! :n "SPC a" 'org-agenda )
-
 ** snippets
 [SPC] i s or just <s [TAB]
 The following was a begin src block
@@ -424,23 +394,23 @@ The following was a begin src block
 (defun great (name)
   (concat "Hello " name))
 
-(great "Dolly")
+(great "Donagh")
 
 #+END_SRC
 
 #+RESULTS:
-: Hello Dolly
+: Hello Donagh
 (To execute: M-x org-babel-execute-source-block :: I made a keybinding to do this. It is Q )
 
 
 <s and [TAB]
 
 #+BEGIN_SRC emacs-lisp
-(+ 11 43)
+(+ 11 4)
 #+END_SRC
 
 #+RESULTS:
-: 54
+: 15
 
 
 

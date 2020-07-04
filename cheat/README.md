@@ -4,6 +4,7 @@
 
 Copy the contents of /usr/share/cheat to dot_cheat_hard
 cp -f /home/donagh/.cheat/* dot_cheat_hard && cp -f /usr/share/cheat/* dot_cheat_hard
+### SHORTCUT
 alias ccheat="cp -f /home/donagh/.cheat/* dot_cheat_hard && cp -f /usr/share/cheat/* dot_cheat_hard"
 
 
