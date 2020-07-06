@@ -145,9 +145,9 @@ C-F --> forward one pane
 ,vf # open vert. split
 ,hf # open hor. split
 
-# Insert filename in insert mode 
+# Insert filename - relative to starting folder. In INSERT MODE:
 <C-r>%
-# Insert filepath in insert mode 
+# Insert filepath. In INSERT MODE:
 ,n
 
 
@@ -163,6 +163,15 @@ C-F --> forward one pane
 
 # uniquify lines in a text
 :sort u
+
+# insert a range of lines from another file
+:put =readfile('/path/to/foo/foo.c')[146:226]
+OR
+:r! sed -n 3,7p /path/to/foo/bar.md
+
+# to read in the 3 lines After 'CHALLENGE' in the specified file
+:r! grep -A3 "CHALLENGE" /path/to/foo/bar.md
+
 
 
 
