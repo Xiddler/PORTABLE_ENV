@@ -82,6 +82,8 @@ mind() {cd $personal/minding_me }
 pain() { $EDITOR $personal/minding_me/pain_points.md }
 pers() { cd $personal && ls }
 wisd() { $EDITOR $personal/ideas/snippets.md }
+snippets() { $EDITOR $personal/ideas/snippets.md }
+reading() { cd $HOME/sd64//books/1_Reading && ls }
 
 #-------------------- END journal
 # alias to get my IP address of digital ocean website (2020-02-17)
@@ -112,7 +114,7 @@ alias -g scr='cd $HOME/.scripts/' # cd to /home/donagh/.scripts
 # alias -g mj=md_journal # opens todays journal as a markdown file in vim for editing.
 alias -g mj='$HOME/.scripts/markdown_journal.sh'
 alias -g mn='$HOME/.scripts/mynotes.sh'
-alias -g wcmj='$HOME/.scripts/wordCount_journal.sh' # word count my journal (markdown journal)
+alias -g wcmj='$HOME/.scripts/wordCount_journal.sh' # word count my journal (markdown journal) - usage ->% wcmj 05 [ie June]
 alias hanging='cd $HOME/ziim/Computer/ && tail -n4 0_Hanging.txt && cd $HOME/ziim/Donaghs/00_Home/ && tail -n4 0_Hanging.txt'
 alias hg=histgrep
 alias hj='history'

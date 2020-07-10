@@ -172,6 +172,13 @@ OR
 # to read in the 3 lines After 'CHALLENGE' in the specified file
 :r! grep -A3 "CHALLENGE" /path/to/foo/bar.md
 
+# digraphs :h digraphs
+Ctrl K =e <-- euro OR Ctrl K Eu <-- euro
 
+# online vim docs
+https://www.vim.org/docs.php
+
+# doom-emacs like save file
+:w[SPC]
 
 

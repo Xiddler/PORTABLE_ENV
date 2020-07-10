@@ -69,6 +69,11 @@
     " tab and previous tab
     nnoremap H gT
     nnoremap L gt
+    "
+    " TRY THIS: save like doom-emacs [SPC] w [SPC]
+    cmap w<space> :w<cr><cr> 
+    " it is now working - great!
+    "
 	" splits - use ctrl-h/j/k/l to switch between splits
 	map <c-j> <c-w>j
 	map <c-k> <c-w>k

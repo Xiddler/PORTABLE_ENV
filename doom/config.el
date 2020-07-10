@@ -60,6 +60,7 @@
 (map! :n "tt" 'org-todo )
 (map! :n "ts" 'org-schedule )
 (map! :n "SPC a" 'org-agenda )
+(map! :n "SPC w SPC" 'save-buffer )
 ;; To get information about any of these functions/macros, move the cursor over
 ;; the highlighted symbol at press 'K' (non-evil users must press 'C-c g k').
 ;; This will open documentation for it, including demos of how they are used.
