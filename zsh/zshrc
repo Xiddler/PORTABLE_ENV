@@ -318,8 +318,7 @@ v()
 #
 #
 # grep hist
-histgrep () 
-  {
+histgrep() {
   grep -r "$@" ~/.history
   history | grep "$@"
   }

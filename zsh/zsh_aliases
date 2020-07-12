@@ -21,6 +21,9 @@ alias -g passout='cat /home/donagh/sd64/zim/Computer/11SignUps.txt|rg -i -A5 ' #
 alias -g xn='| xargs -n 1'
 alias -g zimbu='/home/donagh/.scripts/zim_backup_to_tinyUSB.sh'
 alias -g zz='zsh -l'
+alias -g jc='jupyter-console'
+# instead of plain rm usd trash rm to move the file to Trash so as to be able to recover it like on the Desktop
+alias -g trm='mv --force -t ~/.local/share/Trash '
 # to copy all new and old cheats to /home/donag/PORTABLE_ENV/cheat/dot_cheat_hard
 alias ccheat="cp -f /usr/share/cheat/* /home/donagh/PORTABLE_ENV/cheat/dot_cheat_hard/ && cp -f /home/donagh/.cheat/* /home/donagh/PORTABLE_ENV/cheat/dot_cheat_hard/"
 # 
@@ -54,11 +57,22 @@ alias -g sd='cd $HOME/sd64/'
 # alias -g hf='cd $HOME'
 alias -g 2p='cd $HOME/sd64/2programming_repository/'
 alias -g share='cd /home/donagh/linuxShared'
+# for changing color of the monitor against eyestrain
+alias -g night='blueshift -t 1800'
+alias -g day='blueshift -t 3000'
+
+
+# FUNCTIONS (See Separate functions for my personal journal below)
 words() {cd $HOME/WORDS/ }
-web(){cd $HOME/sd64/2programming_repository/css/css_grid/donagh-dev/}
 books() {cd $HOME/sd64/books/ }
 bookmarks() { cd /home/donagh/sd64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
+reading() { cd $HOME/sd64//books/1_Reading && ls }
+
+
+# Temporary functions
+web(){cd $HOME/sd64/2programming_repository/css/css_grid/donagh-dev/}
 clue() {cd  $HOME/sd64/1donaghs-stuff/Projects/Clueless-on-DO/Clueless/clueless-webapp }
+
 
 
 #-------------------- START journal
@@ -72,20 +86,20 @@ personal='/home/donagh/sd64/1donaghs-stuff/personal/' # short form
 # alias mj=md_journal # opens todays journal as a markdown file in vim for editing.
 #
 # Functions for shortcuts - equivalent to aliases.
+jour() { cd $journal && ls }
+pers() { cd $personal && ls }
 alc() { $EDITOR $personal/minding_me/alcohol_journal.md }
 grat() { $EDITOR $personal/minding_me/gratitude_journal.md }
 ideas() { $EDITOR $personal/ideas/ideas_to_go_at.md }
 insp() { $EDITOR $personal/ideas/inspire.md }
-jour() { cd $journal && ls }
 # See  alias -g mj=md_journal above
 mind() {cd $personal/minding_me }
 pain() { $EDITOR $personal/minding_me/pain_points.md }
-pers() { cd $personal && ls }
 wisd() { $EDITOR $personal/ideas/snippets.md }
-snippets() { $EDITOR $personal/ideas/snippets.md }
-reading() { cd $HOME/sd64//books/1_Reading && ls }
+snippets() { $EDITOR $personal/ideas/snippets.md } # same as wisd
 
 #-------------------- END journal
+#
 # alias to get my IP address of digital ocean website (2020-02-17)
 alias site='dig donaghmccarthy.ie +short'
 
@@ -133,7 +147,7 @@ alias def='~/.scripts/get_defs.sh ' # dictionary addition to $dict
 alias -g define='BROWSER=w3m ddgr \!wordnik ' # ddgr is CLI DDGo and w3m is CLI browser
 alias -g filepath='$HOME/.scripts/filename.sh'
 
-# TODO
+#----------  TODO
 org() { cd $HOME/TODO/ORG-MODE }
 todo() { cd $HOME/TODO }
 alias t="/home/donagh/TODO && ls"
