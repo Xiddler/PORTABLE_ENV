@@ -229,6 +229,7 @@ alias pb='source $HOME/.virtualenvs/basic/bin/activate'
 bindkey 'jk' vi-cmd-mode 
 # cx for clear screen
 bindkey 'cx' clear-screen
+# bindkey 'hf' cd $HOME && clear-screen
 
 # for urxvt terminal emulator
 # xrdb ~/.Xresources  # may need to be in my .bashrc file though

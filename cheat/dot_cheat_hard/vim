@@ -181,4 +181,6 @@ https://www.vim.org/docs.php
 # doom-emacs like save file
 :w[SPC]
 
+# source for plugin recommendations
+https://catonmat.net/vim-plugins
 
