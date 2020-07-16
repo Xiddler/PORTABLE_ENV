@@ -176,11 +176,6 @@ then zsh -l to make it zsh
     $ (length "Donagh")
     $ 6
 
-** snippets
-   Yasnippet & Yasnippet-snippets
-   [SPC] i s
-  This is the "incrementally" snippet in text-mode.
-
 ** styling html export
    to export , , h
     #+begin_export html
@@ -315,6 +310,9 @@ First the gs [SPC] will dim the text and then <letter> will be highlighted
 elephants in your head
 oranges are not the only fruit
 plain herds are better than awful
+*** org-babel
+Allows to have short snippets of code that can be run inside org-mode.
+See [[snippets ][snippets]] below
 *** dired
 Buffer for directory
 [SPC] f d
@@ -384,6 +382,10 @@ Set in ~/PORTABLE_ENV/doom/config.el
 (map! :n "SPC w SPC" 'save-buffer )
 
 ** snippets
+   Yasnippet & Yasnippet-snippets
+   [SPC] i s
+  This is the "incrementally" snippet in text-mode.
+ 
 [SPC] i s or just <s [TAB]
 The following was a begin src block
 #+BEGIN_SRC emacs-lisp

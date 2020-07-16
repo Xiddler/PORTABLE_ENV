@@ -36,3 +36,6 @@ alias llk="ll | grep '^l.*'"
 alias -g lf="ls | tr ' ' '\n'"
 alias -g latest='ls -lt  **/*(.om[1,20])' # list latest 20 files edited
 
+# DONAGHS
+# About grepping the output of ls
+# see https://mywiki.wooledge.org/ParsingLs

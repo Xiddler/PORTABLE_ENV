@@ -1,0 +1,5 @@
+# modern replacement for fd
+
+# DONAGHS
+# e.g.  find filenames containing the pattern 'org'
+ fd --regex -i 'org'

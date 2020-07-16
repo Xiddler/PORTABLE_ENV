@@ -76,6 +76,10 @@
     cmap w<space> :w<cr><cr> 
     " it is now working - great!
     "
+    " TRY THIS: write/quit with :ww
+    cmap ww :wq<cr>
+    "
+    "
 	" splits - use ctrl-h/j/k/l to switch between splits
 	map <c-j> <c-w>j
 	map <c-k> <c-w>k
@@ -230,4 +234,5 @@
         echom "Running simple function"
     endfunction
     nnoremap <C-l>, :call Simple()<CR>
+
 

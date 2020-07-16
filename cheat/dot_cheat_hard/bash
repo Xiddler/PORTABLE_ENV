@@ -26,6 +26,8 @@ echo ${PIPESTATUS[0]}  # replace 0 with N
 # Lock file:
 ( set -o noclobber; echo > my.lock ) || echo 'Failed to create lock file'
   
-
+#DONAGHS
+# to filter the output of ls to include the files containing <pattern>
+stat --printf '%y\t%n\n' -- *<pattern>*
 
  #!/usr/bin/env bash is more portable than #!/bin/bash
