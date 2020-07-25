@@ -61,6 +61,13 @@
 (map! :n "ts" 'org-schedule )
 (map! :n "SPC a" 'org-agenda )
 (map! :n "SPC w SPC" 'save-buffer )
+(map! :n "SPC j" 'outline-next-visible-heading )
+(map! :n "SPC k" 'outline-previous-visible-heading )
+(map! :n "SPC l" 'org-insert-link )
+
+
+;; To refresh config.el --> C-h r r
+;;
 ;; To get information about any of these functions/macros, move the cursor over
 ;; the highlighted symbol at press 'K' (non-evil users must press 'C-c g k').
 ;; This will open documentation for it, including demos of how they are used.

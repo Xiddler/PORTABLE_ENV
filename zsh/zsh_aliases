@@ -11,6 +11,7 @@ alias -g PS='ps aux | egrep -i --color=auto'
 alias -g catt='cat $HOME/ziim/Computer/11SignUps.txt|rg -i -A5 '
 alias -g contin='python3 /media/donagh/3520-FD13/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/contin.py' # input new contact
 alias -g contout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 '
+alias -g ep='echo $PATH'
 alias -g exa='~/Applications/exa-linux-x86_64' # modern ls
 alias -g kontout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 ' # get contact  
 alias -g lsd='du -s -- *(D) | sort -k1n' # list size of directories

@@ -73,7 +73,7 @@
     nnoremap L gt
     "
     " TRY THIS: save like doom-emacs [SPC] w [SPC]
-    cmap w<space> :w<cr><cr> 
+    cmap w<space> :w<cr><cr><CR> 
     " it is now working - great!
     "
     " TRY THIS: write/quit with :ww
@@ -208,6 +208,10 @@
    "SuperMan
    "Man pages in vim editor: vman <app>
    "https://github.com/jez/vim-superman
+   "
+   "peekaboo
+   "let's you see the regs
+   "https://github.com/junegunn/vim-peekaboo
    "}}}
    " Customised {{{
    " "=== Customised === 

@@ -1,10 +1,8 @@
 {
     "type": "phrase",
     "description": "orgmode [ ]",
-    "modes": [
-        1
-    ],
-    "usageCount": 21,
+    "modes": [],
+    "usageCount": 49,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
