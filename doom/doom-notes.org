@@ -7,7 +7,7 @@
 #+STARTIP: overview
 #+TAGS: help orgmode org-mode donaghs
 
-* spacemacs notes
+* Spacemacs notes
 Most of this is useful for doom emacs. Especially, org-mode
 ** characters
 *** LaTeX
@@ -138,108 +138,31 @@ Press C-c a t to enter the global todo list.
    org-capture --> , c
    Customize templates --> , c C
 
-** packages
-   M-x
-   list-packages (available, installed, builtin )
-*** eww
-    emacs web browser M-x ew
-    w
-*** jedi
-    server (for python?)
-*** evil
-**** evil-snipe
-Navigating in files - short distances
-Enable: M-x evil-snipe <-- toggles on/off
-f <letter> highlights all <letter>s forward and ; moves to next one.
-NOTE: For more comprehensive in-file search look at avy.
-**** avy
-In-file navigation - specifically on current screen. Highlights using one or two letter pairs to highlight the target
-gs [SPC] <letter> (or <letter><anotherletter><letter3> etc)
-First the gs [SPC] will dim the text and then <letter> will be highlighted
-*** projectile
-see projects below
-
-*** treemacs
-File tree
-[SPC] d
-:q to quit
-** projects
-- Directory should contain one of these files: .projectile or .git
--[SPC] p a <-- To add a new project
-- This will allow projectile to manage and find the project.
-- [SPC] p p to select a project managed by projectile
-
-** promoting / demoting
-*** Headings: C-c C-< and C-c C->
-*** moving nodes  : M-up and M-down
-
-** refresh
-   spacemacs --> [SPC] f e R
-** shell
-*** shell
-   Call with  [SPC] o e
-   There is some issue with .zshrc / .zshenv / PATH which I need to resolve.
-*** eshell
-[SPC] o E
-then zsh -l to make it zsh
-    emacs shell
-    YouTube video on this at https://www.youtube.com/watch?v=RhYNu6i_uY4
-    it's an emacs REPL. e.g.
-    $ (length "Donagh")
-    $ 6
-
-** styling html export
-   to export , , h
-    #+begin_export html
-      <style>
-      body {
-        color: red;
-      }
-      </style>
-
-      #+end_export
-   source code not displayed
-
-** tables
-   | Name   | Age | Gender |
-   |--------+-----+--------|
-   | Donagh |  58 | M      |
-   | Helen  |  28 | F      |
-   |       |     |        |
-** themes
-   [SPC] T s to get a new themes
-   [SPC] T n to cycle (or toggle) dark / light if only those listed in the spacemacs config under themes.
-** windows
-*** [SPC] w d to delete a window
-*** [SPC] w s to split a window below
-*** [SPC] w v to split a window vert. right
-
-
-*** [SPC] w l go to window at left
-*** [SPC] w j go to window below
-
 * DOOM EMACS
 ** buffers
-list current buffers: [SPC] , *OR* [SPC] b b
-change buffer : [SPC] <
+[SPC] , *OR* [SPC] b b <-- list current buffers
+[SPC] <                <-- change buffer
+[SPC] .                <-- list files in current directory
+[SPC] [SPC]            <-- find file in PARENT directory
 ** copy / paste
+*** How do you copy to the system clipboard?
+Highlight word(s) using (vim) v and y
+To copy full line to system clipboard: Y (like yy)
 *** How do you paste from the system clipboard?
+Paste into current file
 [SPC] i y <-- displays system clipboard (killring) 2020-05-17_20:36 -- at last
 [SPC] i r <-- evil register <-- equivalent to :reg in vim
 
-*** How do you paste to the system clipboard?
-Highlight word(s) and y
-To copy full line to system clipboard: Y
 ** configuration
 .doom.d directory is the preferred place to store your custom config (not within the Doom directory itself).
 See the documentation (Henrik is super great about this)
 My config files __are__ indeed in ~/.doom.d and symlinked to ~/PORTABLE_ENV/doom/*.el
 
-** directory tree
+** directory tree navigation
+*** treemacs [SPC] d
+[[treemacs]]
 *** navigating [SPC] p r
 [SPC] p r <-- list recent files
-*** dired [SPC] f d
-*** projectile - ls in a separate buffer
 *** files inside current project [SPC] [SPC]   <-- <space> <space>
 this allows to explore inside the current project
 *** files outside current project [SPC] .  <-- <space> dot
@@ -264,6 +187,17 @@ M - down <-- to move down
 see also [[help / reference]] in org-mode below
 FAQ - [SPC] h d f
 To refresh the config.el file C-h r r OR doom/reload (in the /home/donagh/.emacs.d/doom-emacs/bin folder)
+** How do I
+*** Add a package
+discover new packages
+[[install new package]]
+** images
+images can be displayed within the buffer with the following command: C-c C-x C-v (org-toggle-inline-images).
+OR Move over image / link and press [Enter]
+[[/home/donagh/Images/BW75-thrush.png][thrush.png]]
+
+This is an image of a thrush.
+[SPC] w o to enlarge window
 ** installation notes
 *** install
 from https://github.com/hlissner/doom-emacs
@@ -299,7 +233,7 @@ DONAGHS
 #+CONSTANTS: pi=3.14159265358979323846
 ** minor modes
 *** To check available minor modes -> C-h m
-** navigating
+** navigating org files
 *** Headings
 **** Siblings:
 C-c C-f <-- outline-forward-same-level
@@ -312,6 +246,7 @@ Donaghs shortcuts
 [SPC] k for up one
 ** org-capture
 [SPC] X
+[SPC] n n
 ~stored in ~/PORTABLE_ENV/doom/org~
 stored in ~/Dropbox/org-mode/org/
 There are a number of templates to save notes to
@@ -324,8 +259,42 @@ There are a number of templates to save notes to
     [SPC] n s <-- Search notes for text
 
 ** packages
+*** meta
+**** install new package
+[SPC] : (or M-x)
+Then type: package-install
+------
+in config.el - (require '<package>) and then C-h r r {Need to check if this works}
+in config.el - copy the treemacs line then run doom sync in the ~/.emacs.d/doom-emacs/bin folder
+OR
+in packages.el (require '<package>) and then ->% doom sync
+**** to run a package
+   M-x (also [SPC] :)
+   - list-packages (available, installed, builtin )
+*** dired
+New buffer for (current) directory
+[SPC] f d
+
+To remove details: (
+To go to parent:   -
+Add a new directory: +
+Delete: D x
+chmod: M
+Select only directories: /* and then t to toggle between directories and files
+Select a file or directory: m and then u to unselect
+Change a file / dir name: i and then make changes
+
+*** treemacs
+view directory in a separate panel
+[SPC] d
+M-x treemacs <-- opens explorer for CURRENT directory
+[SPC] d <-- toggles close / open
+:q in treemacs pane to quit
+**** treemacs-evil
+use vim keys for navigating
 *** avy
-For navigation.
+For navigation within a file.
+
 NOTE: pre-installed in doom
 In-file navigation. gs [SPC] <letter>
 In-file navigation - specifically on current screen. Highlights using one or two letter pairs to highlight the target
@@ -336,50 +305,27 @@ First the gs [SPC] will dim the text and then <letter> will be highlighted
 elephants in your head
 oranges are not the only fruit
 plain herds are better than awful
-*** org-babel
-Allows to have short snippets of code that can be run inside org-mode.
-See [[snippets ][snippets]] below
-*** dired
-Buffer for directory
-[SPC] f d
-To remove details: (
-To go to parent:   -
-Add a new directory: +
-Delete: D x
-chmod: M
-Select only directories: /* and then t to toggle between directories and files
-Select a file or directory: m and then u to unselect
-Change a file / dir name: i and then make changes
+*** eww
+    emacs web browser M-x e
+*** projectile
+ Its goal is to provide a nice set of features operating on a project level without introducing external dependencies
 
+cf. also projectile for treemacs
+**** Idea of a project
+*** org-babel
+Allows to have short snippets of code that can be run inside org-mode. ?Literate programming?
+See [[snippets ][snippets]] below
 *** evil
+vim bindings for emacs / DOOM
 NOTE: Pre-installed in doom
 **** evil-snipe
 Navigating in files - short distances
 Enable: M-x evil-snipe <-- toggles on/off
 f <letter> highlights all <letter>s forward and ; moves to next one.
 NOTE: For more comprehensive in-file search look at avy.
-*** eww
-    emacs web browser M-x e
-*** meta
-**** install new package
-in config.el - (require '<package>) and then C-h r r {Need to check if this works}
-in config.el - copy the treemacs line then run doom sync in the ~/.emacs.d/doom-emacs/bin folder
-OR
-(require <package>) in packages.el and then ->% doom sync
-**** to run a package
-   M-x (also [SPC] :)
-   - list-packages (available, installed, builtin )
 *** neotree - use treemacs
+View directory tree in a panel
 added (require 'neotree) to config.el on 2020-05-20
-*** projectile
-directory in a separate buffer
-*** treemacs
-_CURRENT_ directory / file explorer
-M-x treemacs <-- opens explorer for CURRENT directory : keybinding :: tm
-:q in treemacs pane to quit
-*** treemacs-evil
-use vim keys for navigating
-
 ** projects
 *** manage projects
 uses projectile
@@ -453,10 +399,23 @@ appear
 defamation
 
 ** tags :tags:
-" An excellent way to implement labels and contexts for cross-correlating information is to assign tags to headlines. "
-tags are words preceded by : and ending in : e.g. :donaghs: or :work: - these can then be searched for
 To search for tags C-c \ OR C-c / m
+
+" An excellent way to implement labels and contexts for cross-correlating information is to assign tags to headlines. "
+tags are words preceded by : and ending in : e.g. :donaghs: or :work: - these can then be searched using  C-c \ OR C-c / m
 see https://www.gnu.org/software/emacs/manual/html_node/org/Tag-searches.html#Tag-searches
+** themes
+[SPC] h t
+OR M-x load-theme <-- opens available themes
+Preferred theme:
+tsdh-dark        :: Sky blue headlines w green subs
+Others:
+doom-solarized-dark :: Sky blue headlines w. yellow subs
+doom-acario-dark :: Blue headlines with purple subs
+doom-dark+       :: Dim sky blue headlines with dim pink subs
+doom-molokai     :: Cerise headlines with orange subs
+doom-material    :: Gre/blue headlines w dim purple subs
+
 ** sparse trees
 [SPC] m s s r <pattern>
 For filtering all but what you want to see
@@ -470,19 +429,23 @@ eg C-c / r navig
 * Org-mode
 Maybe see [[file:~/TODO/ORG-MODE/first.org][first.org]]  for my preliminary notes
 ** help / reference
+*** In doom-emacs
+[SPC] h i   :: inline help
+OR
+M-x info    :: the help manual
+
 *** Books
 [[file:/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/books/Computer_books/Org_Mode_Compact_Guide.pdf][Org Mode Compact Guide]] (PDF)
 *** Websites
 [[https://www.orgmode.org][orgmode.org]]
 https://orgmode.org/worg/               :: wiki for org-mode
 https://orgmode.org/worg/org-faq.html   :: FAQ
-*** In doom-emacs
-M-x info :: the help manual
-
 ** shortcuts
 Set in [[file:config.el][config.el]]
 *** Modifier keys
+
 M = Alt; S = Shift; C = Ctrl; RET = Enter / Return
+
 - Alt RET = M RET --> New list item at same level
 - M-S RET = [ ] if done at a list item
 -
@@ -490,33 +453,33 @@ M = Alt; S = Shift; C = Ctrl; RET = Enter / Return
 -
 *** Donaghs shortcuts
 [SPC] w [SPC] <-- save-buffer
+AND
+[SPC] s [SPC] <-- save-buffer
 ** Agenda / Scheduling
-*** NOTES
+*** NOTES on Agenda
 Agenda - [SPC] a and select from list
 SCHEDULE - [SPC] a s OR C-c C-s
 DEADLINE C-c C-d - to
-
 *** SHORTCUT New todo --> tt
 *** SHORTCUT New schedule --> ts
 *** Agenda - to view agenda beyond this week: eg next four weeks --> C-U 28 [SPC] a n
 ***** Here's a link with good answers
     https://stackoverflow.com/questions/32423127/how-to-view-the-next-days-in-org-modes-agenda#32426234
 *** Schedule - How to
-***** First, need to be on a list item *** etc. not a plain list i.e. -
+**** First, need to be on a headline item *** etc. not a plain list i.e. -
 then
     C-c C-s and select date using C-j, C-h etc.
-***** To set the time
+**** To set the time
 SCHEDULED: <2020-07-04 Sat 09:50>
 At the prompt insert the time e.g. 09:50
-
-***** Repeat schedule - e.g.  every week +1w add inside <> as in the example below
+**** Repeat schedule - e.g.  every week +1w add inside <> as in the example below
     - Weekly shop
     SCHEDULED: <2020-06-13 Sat +1w>
     NOTE: This doesn't appear in the global TODOS because this file is not "registered" in the list of files to be checked.
-***** To view schedules ie your agenda
+**** To view schedules ie your agenda
 To appear in the global TODOS because the file must be "registered" in the list of files
 [SPC] a a <-- to view agenda for coming week
-***** To register a file for TODOs
+**** To register a file for TODOs
 
 ** Todos
 To call TODO menu or make a new todo :
@@ -545,3 +508,9 @@ or replace ' ' with X (or vice versa)
 - [X] this item [2/2]
   - [X] Subitem 1
   - [X] Subitem 2
+** Org-capture
+Save notes to [[/home/donagh/Dropbox/org-mode/org/notes.org][notes.org]] using [SPC] X
+Then select the appropriate letter - [n] [j] etc.
+** Search
+1. /
+2. gss CHAR1 CHAR2

@@ -1,0 +1,18 @@
+# List of tools that I may not often use but may be usefule sometimes
+
+# like Task Manager - shows processes in a separate GUI
+systemmonitor
+
+
+# Show details of files
+stat
+
+# generate UUID
+uuidgen
+
+# colorize output on the CLI
+# example
+grc df -h
+
+# fakeroot -- see ->% man fakeroot
+fakeroot

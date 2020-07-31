@@ -20,6 +20,9 @@ setxkbmap -option caps:escape
 # get fzf to enable Ctrl-R & Ctrl-T
 source ~/.fzf/shell/key-bindings.zsh
 
+# enable grc - for colorizing output
+source /etc/grc.zsh
+
 # Path to your oh-my-zsh installation.
 # export ZSH=/home/ubuntu/.oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh

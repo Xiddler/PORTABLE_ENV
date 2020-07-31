@@ -1,5 +1,6 @@
     " Mininimum settings {{{
 	"=== Min settings === 
+    " 'set nocompatible' is never necessary in a vimrc file. When Vim detects a user vimrc file, it automatically sets nocompatible. 
 	set nocompatible
     if has("autocmd")
       filetype plugin indent on
@@ -72,12 +73,16 @@
     nnoremap H gT
     nnoremap L gt
     "
-    " TRY THIS: save like doom-emacs [SPC] w [SPC]
-    cmap w<space> :w<cr><cr><CR> 
-    " it is now working - great!
+    " TRY THIS: save like my doom-emacs keybindings [SPC] w [SPC]
+    " (This works because SPACEBAR is mapped to : above and cmap puts vim
+    " into Ex mode )
+    cmap w<space> :w<cr>
+    " even shorter journey to s
+    cmap s<space> :w<cr>
     "
-    " TRY THIS: write/quit with :ww
+    " write/quit with :ww or :xx
     cmap ww :wq<cr>
+    cmap xx :wq<cr>
     "
     "
 	" splits - use ctrl-h/j/k/l to switch between splits
@@ -86,15 +91,13 @@
 	map <c-l> <c-w>l
 	map <c-h> <c-w>h
 	" }}}
-    " Packpath {{{
+    " Packages using Packpath {{{
     " This is for using the package manager that utilises the folder
     " $HOME/.vim/pack
 	" === packpath ===
 	" load packpath
 	filetype off
     packloadall
-	" execute pathogen#helptags()
-	" execute pathogen#infect()
 	syntax on
 	filetype plugin on
 	" filetype plugin indent on
@@ -113,7 +116,7 @@
    " Custom Leader {{{
 	" === Custom Leader ===
     " See also Customised below
-	" set your own personal modifier key to something handy
+	" setting custom leader to comma
 	let mapleader="," 
 	" use ,o to make a new vertical split, ,s for horiz, ,x to close a split
 		" ,v calls up VISUAL mode
@@ -152,7 +155,7 @@
     inoremap <Leader>n <C-R>=expand("%:p:h")<CR>
       " To insert the name of the innermost directory (the one containing the current file) use:
     " inoremap <Leader>n <C-R>=expand("%:p:h:t")<CR>
-     " easymotion keybindings
+     " easymotion keybindings - for fast navigation within a file
      " nmap f <Plug>(easymotion-overwin-f2) " this doesn't work properly
     " get , , w to make easy motion work
      " map <Leader><Leader>w <Plug>(easymotion-prefix)
@@ -212,6 +215,9 @@
    "peekaboo
    "let's you see the regs
    "https://github.com/junegunn/vim-peekaboo
+   "
+   "easymotion
+   "
    "}}}
    " Customised {{{
    " "=== Customised === 
