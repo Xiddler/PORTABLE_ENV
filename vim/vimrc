@@ -17,7 +17,7 @@
 	set smarttab
 	set softtabstop=4   " number of spaces in tab when editing
 	set expandtab       " tabs are spaces
-    set wm=50           " wrap text before too far to the right
+    set wm=30           " wrap text before too far to the right
 	" }}}
     " UI Config {{{
 	"===  UI Config ===

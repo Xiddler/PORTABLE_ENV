@@ -1,11 +1,11 @@
-* Frontmatter
-#+TITLE:
-#+ABOUT: Notes for doom
-#+DATE: 2020-05-17
-#+AUTHOR: Donagh McCarthy
-#+OPTIONS: il
-#+STARTIP: overview
-#+TAGS: help orgmode org-mode donaghs
+#+TITLE: doom-notes.org
+* frontmatter
+#+about: notes for doom
+#+date: Started 2020-05-17
+#+author: donagh mccarthy
+#+options: il
+#+startip: overview
+#+tags: help orgmode org-mode donaghs
 
 * Spacemacs notes
 Most of this is useful for doom emacs. Especially, org-mode
@@ -110,9 +110,9 @@ eg link to todos.org
    Suppose you have many files that you want org-mode to 'watch'. In the dotspacemacs-configuration-layers of .spacemacs:
    Say, work, school and home.
 #+BEGIN_SRC elisp
-(setq org-agenda-files (list "~/org/work.org"
-"~/org/school.org"
-                             "~/org/home.org"))
+(setq org-agenda-files (list "/home/donagh/org/work.org"
+                             "/home/donagh/org/school.org"
+                             "/home/donagh/org/home.org"))
 #+END_SRC
 Press C-c a t to enter the global todo list.
 
@@ -144,6 +144,18 @@ Press C-c a t to enter the global todo list.
 [SPC] <                <-- change buffer
 [SPC] .                <-- list files in current directory
 [SPC] [SPC]            <-- find file in PARENT directory
+** calculator
+*** Eval
+[SPC] ; <-- single line buffer
+*** Calculator
+[SPC] : Calc <-- opens new buffer
+Usage:
+<number> [Enter]
+<number> [Enter]
+<function> [Enter]
+
+(Use s to find more modes)
+eg s S for sin
 ** copy / paste
 *** How do you copy to the system clipboard?
 Highlight word(s) using (vim) v and y
@@ -156,7 +168,7 @@ Paste into current file
 ** configuration
 .doom.d directory is the preferred place to store your custom config (not within the Doom directory itself).
 See the documentation (Henrik is super great about this)
-My config files __are__ indeed in ~/.doom.d and symlinked to ~/PORTABLE_ENV/doom/*.el
+My config files __are__ indeed in /home/donagh/.doom.d and symlinked to /home/donagh/PORTABLE_ENV/doom/*.el
 
 ** directory tree navigation
 *** treemacs [SPC] d
@@ -175,7 +187,7 @@ M-x ielm or [SPC] o r
 - save file -> :w OR [SPC] f s
 - save buffer -> [SPC] b s OR :w
 - open a file -> [SPC] f f and select your file for opening
-- insert current file path [SPC] i F <-- ~/PORTABLE_ENV/doom/doom-notes.org
+- insert current file path [SPC] i F <-- /home/donagh/PORTABLE_ENV/doom/doom-notes.org
 - Finding files: [SPC] f
 ** general notes
 - See spacemacs_notes above. Lots of stuff applies in doom-emacs.
@@ -187,7 +199,7 @@ M - down <-- to move down
 see also [[help / reference]] in org-mode below
 FAQ - [SPC] h d f
 To refresh the config.el file C-h r r OR doom/reload (in the /home/donagh/.emacs.d/doom-emacs/bin folder)
-** How do I
+** how do I
 *** Add a package
 discover new packages
 [[install new package]]
@@ -202,7 +214,7 @@ This is an image of a thrush.
 *** install
 from https://github.com/hlissner/doom-emacs
 *** config files
-"doom install will deploy three files to your DOOMDIR (~/.doom.d)
+"doom install will deploy three files to your DOOMDIR (/home/donagh/.doom.d)
 _init.el_
     Where you’ll find your doom! block, which controls what Doom modules are enabled and in what order they will be loaded.
     This file is evaluated early in the startup process, before any other module has loaded.
@@ -212,9 +224,9 @@ _packages.el_
     Where you declare what packages to install and where from.
    
 *** configuration
-~/.doom.d/*
-These files are symbolic linked to ~/PORTABLE_ENV/doom/* - to keep my config if reinstalling
-~/.emacs/doom-emacs/init.el
+/home/donagh/.doom.d/*
+These files are symbolic linked to /home/donagh/PORTABLE_ENV/doom/* - to keep my config if reinstalling
+/home/donagh/.emacs/doom-emacs/init.el
 
 ** keybindings
 See also [[shortcuts]] below
@@ -229,26 +241,39 @@ DONAGHS
 
 ** line numbers
 [SPC] t l <-- toggles line numbers (which are relative by default)
+** links
+*** [ [link] ][ description ]] <<< with NO spaces
+*** Make links
+**** Method 1
+[SPC] l OR C-c C-l <-- In normal mode
+Then type info
+For infile ref: the headlines
+For external file: file: <filepath>
+For elisp: elisp: org-agenda
+Others are available
+Example:
+[[https://www.donaghmccarthy.ie][donaghmccarthy.ie]]
+**** Method 2
+[SPC] m l l
+Then type in the name of the link and then the description
+**** Method 3
+Type [[x][]]
+and put the link / URI instead of x and the description in the second pair of [].
 ** math
 #+CONSTANTS: pi=3.14159265358979323846
 ** minor modes
 *** To check available minor modes -> C-h m
-** navigating org files
-*** Headings
-**** Siblings:
-C-c C-f <-- outline-forward-same-level
-C-c C-b  <-- outline-backward-same-level
-**** Parent / children
-C-c C-n <-- outline-next-visible-heading
-C-c C-p<-- outline-previous-visible-heading
-Donaghs shortcuts
-[SPC] J for down one
-[SPC] k for up one
+*** testing links
++ [[projects][projects]]
+
 ** org-capture
+*** About
+To quickly capture a note and save it for easy recapture
+*** Commands
 [SPC] X
 [SPC] n n
-~stored in ~/PORTABLE_ENV/doom/org~
-stored in ~/Dropbox/org-mode/org/
+stored in /home/donagh/PORTABLE_ENV/doom/org
+stored in /home/donagh/Dropbox/org-mode/org/
 There are a number of templates to save notes to
 
     In Doom it's waaay easier than Spacemacs IMHO:
@@ -260,57 +285,96 @@ There are a number of templates to save notes to
 
 ** packages
 *** meta
+REM: Doesn't use emacs packages.el
 **** install new package
 [SPC] : (or M-x)
 Then type: package-install
 ------
 in config.el - (require '<package>) and then C-h r r {Need to check if this works}
-in config.el - copy the treemacs line then run doom sync in the ~/.emacs.d/doom-emacs/bin folder
+in config.el - copy the treemacs line then run doom sync in the /home/donagh/.emacs.d/doom-emacs/bin folder
 OR
 in packages.el (require '<package>) and then ->% doom sync
 **** to run a package
    M-x (also [SPC] :)
    - list-packages (available, installed, builtin )
 *** dired
+**** About
+Like Ranger for emacs
+**** Commands
 New buffer for (current) directory
 [SPC] f d
 
-To remove details: (
+To remove details: ( [ie show file/dir names only]
 To go to parent:   -
 Add a new directory: +
-Delete: D x
+Delete: D [to mark the file/dir] then x
+Copy: D [to mark the file/dir] then C
 chmod: M
 Select only directories: /* and then t to toggle between directories and files
 Select a file or directory: m and then u to unselect
 Change a file / dir name: i and then make changes
 
 *** treemacs
+**** About
 view directory in a separate panel
+**** Commands
 [SPC] d
 M-x treemacs <-- opens explorer for CURRENT directory
 [SPC] d <-- toggles close / open
 :q in treemacs pane to quit
-**** treemacs-evil
 use vim keys for navigating
 *** avy
+**** About
 For navigation within a file.
-
+Like easymotion plugin in vim
 NOTE: pre-installed in doom
-In-file navigation. gs [SPC] <letter>
 In-file navigation - specifically on current screen. Highlights using one or two letter pairs to highlight the target
-gs [SPC] <letter> (or <letter><anotherletter><letter3> etc)
+**** Commands
+gs [SPC] <letter> <-- In-file navigation.
 First the gs [SPC] will dim the text and then <letter> will be highlighted
 
+OR
+
+g s s CHAR1 CHAR2 and then select the single letter
+Example:
+To move to f of fruit <-- g s s fr then press hl letter
 
 elephants in your head
 oranges are not the only fruit
 plain herds are better than awful
 *** eww
     emacs web browser M-x e
+*** ivy
+Ivy, a generic completion mechanism for Emacs - in insert mode.
+Select one string from a list of strings in a pop-up instead of having to type it out.
 *** projectile
+**** About
  Its goal is to provide a nice set of features operating on a project level without introducing external dependencies
 
 cf. also projectile for treemacs
+**** Background
+REM: Projectils confines the scope of files available to those in the project you selected with [SPC] p p
+-----
+If you are more familiar with IDEs like Eclipse or IntelliJ, you probably already have a concept of a project in your mind. It’s basically a folder for a particular codebase (probably under version control) that is pretty much a cohesive unit that you work on independently. In Emacs, this grouping and identification is usually managed by Projectile. With Doom, this is installed by default.
+
+from https://medium.com/urbint-engineering/emacs-doom-for-newbies-1f8038604e3b
+'
+In order to manage projects that you already have, you need to let Projectile know where the projects reside.
+Inside of Doom, you do this by modifying the init.el inside your own custom configuration folder:
+
+    /home/donagh/.emacs.d/modules/private/<your-user-name>/init.el
+
+For example, my username is “jdemaris” so my folder is /home/donagh/.emacs.d/modules/private/jdemaris is my custom folder. Keeping all of your changes in here makes it safer to update the Doom config whenever new versions come out. Inside of my init.el file, I have added a number of Projectile projects:
+
+    (projectile-add-known-project "/home/donagh/Projects/playground/elixir")
+    (projectile-add-known-project "/home/donagh/Projects/playground/otp")
+'
+   
+    test addition
+**** Commands
+REM: The projects must be made known to Doom in the init.el file. cf.[[Background][Background]]
+---------
+[SPC] p p (OR in the Doom splash screen select open project)
 **** Idea of a project
 *** org-babel
 Allows to have short snippets of code that can be run inside org-mode. ?Literate programming?
@@ -319,7 +383,7 @@ See [[snippets ][snippets]] below
 vim bindings for emacs / DOOM
 NOTE: Pre-installed in doom
 **** evil-snipe
-Navigating in files - short distances
+Navigating in files - short distances [but see [[avy]]]
 Enable: M-x evil-snipe <-- toggles on/off
 f <letter> highlights all <letter>s forward and ; moves to next one.
 NOTE: For more comprehensive in-file search look at avy.
@@ -328,7 +392,8 @@ View directory tree in a panel
 added (require 'neotree) to config.el on 2020-05-20
 ** projects
 *** manage projects
-uses projectile
+using [[projectile][projectile]]
+-----
 If you are more familiar with IDEs like Eclipse or IntelliJ, you probably already have a concept of a project in your mind. It’s basically a folder for a particular codebase (probably under version control) that is pretty much a cohesive unit that you work on independently. In Emacs, this grouping and identification is usually managed by Projectile. With Doom, this is installed by default.
 
 from https://medium.com/urbint-engineering/emacs-doom-for-newbies-1f8038604e3b
@@ -336,16 +401,16 @@ from https://medium.com/urbint-engineering/emacs-doom-for-newbies-1f8038604e3b
 In order to manage projects that you already have, you need to let Projectile know where the projects reside.
 Inside of Doom, you do this by modifying the init.el inside your own custom configuration folder:
 
-    ~/.emacs.d/modules/private/<your-user-name>/init.el
+    /home/donagh/.emacs.d/modules/private/<your-user-name>/init.el
 
-For example, my username is “jdemaris” so my folder is ~/.emacs.d/modules/private/jdemaris is my custom folder. Keeping all of your changes in here makes it safer to update the Doom config whenever new versions come out. Inside of my init.el file, I have added a number of Projectile projects:
+For example, my username is “jdemaris” so my folder is /home/donagh/.emacs.d/modules/private/jdemaris is my custom folder. Keeping all of your changes in here makes it safer to update the Doom config whenever new versions come out. Inside of my init.el file, I have added a number of Projectile projects:
 
-    (projectile-add-known-project “~/Projects/playground/elixir”)
-    (projectile-add-known-project “~/Projects/playground/otp”)"
+    (projectile-add-known-project “/home/donagh/Projects/playground/elixir”)
+    (projectile-add-known-project “/home/donagh/Projects/playground/otp”)"
     test addition
 ** shortcuts
 See also [[keybindings]] above
-Set in ~/PORTABLE_ENV/doom/config.el
+Set in /home/donagh/PORTABLE_ENV/doom/config.el
 ;; Donaghs - the following keybinding *did* work. :n indicates normal mode
 (map! :n "Q" 'org-babel-execute-src-block ) ;; Quantify!
 (map! :n "SPC d" 'treemacs ) ;; Directory for files / folders
@@ -427,6 +492,7 @@ eg C-c / r navig
 [SPC] w w (toggles) <-- to move to next window
 
 * Org-mode
+** about
 Maybe see [[file:~/TODO/ORG-MODE/first.org][first.org]]  for my preliminary notes
 ** help / reference
 *** In doom-emacs
@@ -455,7 +521,7 @@ M = Alt; S = Shift; C = Ctrl; RET = Enter / Return
 [SPC] w [SPC] <-- save-buffer
 AND
 [SPC] s [SPC] <-- save-buffer
-** Agenda / Scheduling
+** agenda / scheduling
 *** NOTES on Agenda
 Agenda - [SPC] a and select from list
 SCHEDULE - [SPC] a s OR C-c C-s
@@ -481,9 +547,9 @@ To appear in the global TODOS because the file must be "registered" in the list 
 [SPC] a a <-- to view agenda for coming week
 **** To register a file for TODOs
 
-** Todos
+** todos
 To call TODO menu or make a new todo :
-tt OR C-c C-t and select from the menu
+  tt OR C-c C-t and select from the menu
 *** Add TODO item
 C-c C-t OR tt and select from the menu
 *** Progress Markers
@@ -492,25 +558,25 @@ TODO [1/2] [50%] progress markers - without checkboxes
      CLOSED: [2020-05-15 Fri 15:43]
 **** item 2
 **** TODO item 3
-** Make a new (asterisked) item into a todo -> tt and then select from menu
+** make a new (asterisked) item into a todo -> tt and then select from menu
 Example
 **** HOLD
-** CHECKBOXES - Make a new checkbox i.e. [ ]
-***** checkbox
+** checkboxes - Make a new checkbox i.e. [ ]
+**** checkbox
 my ]] shortcut conflicts with making manual links ending in ]]. This is resolved by using the quickie C-c C-l
 The shortcut (set in autokey) is ]] --> - [ ] (set in Autokey). To toggle checkmark, with cursor inside brackets, C-c C-c
 or replace ' ' with X (or vice versa)
 [/] for n of m items
 [%] for percent
-***** this [1/3]
+**** this [1/3]
 - [ ] Another item
 - [ ] This funny one C-c C-x C-b
 - [X] this item [2/2]
   - [X] Subitem 1
   - [X] Subitem 2
-** Org-capture
+** org-capture
 Save notes to [[/home/donagh/Dropbox/org-mode/org/notes.org][notes.org]] using [SPC] X
 Then select the appropriate letter - [n] [j] etc.
-** Search
+** search
 1. /
-2. gss CHAR1 CHAR2
+2. gss CHAR1 CHAR2 <-- this is avy
