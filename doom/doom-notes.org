@@ -8,7 +8,7 @@
 #+tags: help orgmode org-mode donaghs
 
 * Spacemacs notes
-Most of this is useful for doom emacs. Especially, org-mode
+A lot of these are useful for doom emacs. Especially, org-mode
 ** characters
 *** LaTeX
    - Characters: \alpha \rightarrow \beta
@@ -148,7 +148,8 @@ Press C-c a t to enter the global todo list.
 *** Eval
 [SPC] ; <-- single line buffer
 *** Calculator
-[SPC] : Calc <-- opens new buffer
+https://www.emacswiki.org/emacs/Calc_Tutorials_by_Andrew_Hyatt
+-----
 Usage:
 <number> [Enter]
 <number> [Enter]
@@ -297,6 +298,16 @@ in packages.el (require '<package>) and then ->% doom sync
 **** to run a package
    M-x (also [SPC] :)
    - list-packages (available, installed, builtin )
+*** from github
+**** About
+see
+**** Org-roam
+***** Install
+Successful on 2020-08-04
+In [[file:packages.el][Packages.el]]
+(package! org-roam
+  :recipe (:host github :repo "org-roam/org-roam"))
+
 *** dired
 **** About
 Like Ranger for emacs
@@ -312,6 +323,7 @@ Copy: D [to mark the file/dir] then C
 chmod: M
 Select only directories: /* and then t to toggle between directories and files
 Select a file or directory: m and then u to unselect
+CONFLICT HERE: 'u' in dired unmarks, but evil-mode it is undo
 Change a file / dir name: i and then make changes
 
 *** treemacs
@@ -493,34 +505,7 @@ eg C-c / r navig
 
 * Org-mode
 ** about
-Maybe see [[file:~/TODO/ORG-MODE/first.org][first.org]]  for my preliminary notes
-** help / reference
-*** In doom-emacs
-[SPC] h i   :: inline help
-OR
-M-x info    :: the help manual
-
-*** Books
-[[file:/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/books/Computer_books/Org_Mode_Compact_Guide.pdf][Org Mode Compact Guide]] (PDF)
-*** Websites
-[[https://www.orgmode.org][orgmode.org]]
-https://orgmode.org/worg/               :: wiki for org-mode
-https://orgmode.org/worg/org-faq.html   :: FAQ
-** shortcuts
-Set in [[file:config.el][config.el]]
-*** Modifier keys
-
-M = Alt; S = Shift; C = Ctrl; RET = Enter / Return
-
-- Alt RET = M RET --> New list item at same level
-- M-S RET = [ ] if done at a list item
--
--
--
-*** Donaghs shortcuts
-[SPC] w [SPC] <-- save-buffer
-AND
-[SPC] s [SPC] <-- save-buffer
+Maybe see [[file:~/sd64/TODO/ORG-MODE/first.org][first.org]]  for my preliminary notes
 ** agenda / scheduling
 *** NOTES on Agenda
 Agenda - [SPC] a and select from list
@@ -543,24 +528,17 @@ At the prompt insert the time e.g. 09:50
     SCHEDULED: <2020-06-13 Sat +1w>
     NOTE: This doesn't appear in the global TODOS because this file is not "registered" in the list of files to be checked.
 **** To view schedules ie your agenda
-To appear in the global TODOS because the file must be "registered" in the list of files
 [SPC] a a <-- to view agenda for coming week
-**** To register a file for TODOs
+Shown in light green
+To appear in the global TODOS because the file must be "registered" in the list of files - how?
 
-** todos
-To call TODO menu or make a new todo :
-  tt OR C-c C-t and select from the menu
-*** Add TODO item
-C-c C-t OR tt and select from the menu
-*** Progress Markers
-TODO [1/2] [50%] progress markers - without checkboxes
-**** DONE item 1
-     CLOSED: [2020-05-15 Fri 15:43]
-**** item 2
-**** TODO item 3
-** make a new (asterisked) item into a todo -> tt and then select from menu
-Example
-**** HOLD
+REM: Use z in this view to select desired period e.g. week/month
+**** To register a file for TODOs
+*** Deadline - How todo
+[SPC] m d d or C-c C-d
+**** View Deadlines
+[SPC] a a & deadlines shown in pink
+
 ** checkboxes - Make a new checkbox i.e. [ ]
 **** checkbox
 my ]] shortcut conflicts with making manual links ending in ]]. This is resolved by using the quickie C-c C-l
@@ -574,9 +552,71 @@ or replace ' ' with X (or vice versa)
 - [X] this item [2/2]
   - [X] Subitem 1
   - [X] Subitem 2
+** convert headline into a todo
+tt and then select from menu
+Example - hover over STRT and press tt
+**** STRT
+** help / reference
+*** In doom-emacs
+[SPC] h d h :: Documetation (located at /home/donagh/.emacs.d/docs/index.org)
+
+[SPC] h i   :: inline help
+OR
+M-x info    :: the help manual
+
+*** Books
+[[file:/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/books/Computer_books/Org_Mode_Compact_Guide.pdf][Org Mode Compact Guide]] (PDF)
+*** Websites
+[[https://www.orgmode.org][orgmode.org]]
+https://orgmode.org/worg/               :: wiki for org-mode
+https://orgmode.org/worg/org-faq.html   :: FAQ
 ** org-capture
 Save notes to [[/home/donagh/Dropbox/org-mode/org/notes.org][notes.org]] using [SPC] X
 Then select the appropriate letter - [n] [j] etc.
+** org-roam
+*** About
+2020-08-04
+    A plain-text personal knowledge management system
+    org-mode implementation of Roam as in RoamResearch - networked notetaking
+*** Install
+Successful on 2020-08-04
+In [[file:packages.el][Packages.el]]
+(package! org-roam
+  :recipe (:host github :repo "org-roam/org-roam"))
+*** Help
+https://www.orgroam.com/manual/Getting-Started.html#Getting-Started
+*** Links
+https://www.orgroam.com/
+
 ** search
-1. /
+Search current buffer:
+1. /               <-- vim-like buffer search
 2. gss CHAR1 CHAR2 <-- this is avy
+3. [SPC] s b       <-- Swiper = 'isearch-forward'
+   [SPC] s s       <-- Swiper that is not line-based
+** shortcuts
+Set in [[file:config.el][config.el]]
+*** Modifier keys
+
+M = Alt; S = Shift; C = Ctrl; RET = Enter / Return
+
+- Alt RET = M RET --> New list item at same level
+- M-S RET = [ ] if done at a list item
+-
+-
+-
+*** Donaghs shortcuts
+[SPC] w [SPC] <-- save-buffer
+AND
+[SPC] s [SPC] <-- save-buffer
+** todos
+To call TODO menu or make a new todo :
+  tt OR C-c C-t and select from the menu
+*** Add TODO item
+C-c C-t OR tt and select from the menu
+*** Progress Markers
+TODO [1/2] [50%] progress markers - without checkboxes
+**** DONE item 1
+     CLOSED: [2020-05-15 Fri 15:43]
+**** item 2
+**** TODO item 3

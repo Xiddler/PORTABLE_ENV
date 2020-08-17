@@ -1,0 +1,4 @@
+0 14 * * * /home/donagh/.scripts/zim_backup_to_tinyUSB.sh
+30 * * * * cp /home/donagh/Dropbox/org-mode/org/todos.org /home/donagh/sd64/TODO/ORG-MODE/BACKUPS/todos.org
+30 20 * * * /usr/sbin/blueshift -t 1800
+0 9 * * * /usr/sbin/blueshift -t 3000

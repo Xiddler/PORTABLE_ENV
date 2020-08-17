@@ -23,7 +23,8 @@
 ;; font string. You generally only need these two:
 ;; (setq doom-font (font-spec :family "monospace" :size 20))
 ;;; Code:
-(setq doom-font (font-spec :family "Source Code Pro" :size 20))
+;; (setq doom-font (font-spec :family "Source Code Pro" :size 20))
+(setq doom-font (font-spec :family "Liberation Mono" :size 20))
 ;; use avy search in all windows
 ;;; Code:
 (setq avy-all-windows t)
@@ -35,6 +36,9 @@
 ;; (setq doom-theme 'doom-solarized-dark)
 (setq doom-theme 'tsdh-dark)
 
+;;; org-roam
+(setq org-roam-directory "~/org-roam")
+
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/Dropbox/org-mode/org/")
@@ -42,6 +46,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
+;; (setq display-line-numbers-type t)
 (setq display-line-numbers-type t)
 
 

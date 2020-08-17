@@ -15,7 +15,7 @@
 ;;      directory (for easy access to its source code).
 ;;;
 ;;; Code:
-(projectile-add-known-project "~/ALL_ORG")
+;;; (projectile-add-known-project "~/ALL_ORG")
 
 (doom! :input
        ;;chinese

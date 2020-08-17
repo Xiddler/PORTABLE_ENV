@@ -5,7 +5,7 @@ systemmonitor
 
 
 # Show details of files
-stat
+stat <filename>
 
 # generate UUID
 uuidgen
@@ -16,3 +16,91 @@ grc df -h
 
 # fakeroot -- see ->% man fakeroot
 fakeroot
+
+# Handwritten notes and save to pdf
+#A usage would be to annotate pdf files
+xournalpp
+
+# Manage configuration templates
+doxygen
+
+# stopwatch and countdown timer in the cli
+# termdown --help
+termdown -t "Finished" '1h 0m 5s'
+
+# text to speech
+espeak "Hey get up and do something"
+
+# simple calculations
+expr 4 + 7
+expr 4 \* 7 # the '*' needs to be escaped
+
+
+# show text larger that single line 
+figlet "hello giraffe"
+ _          _ _               _            __  __      
+| |__   ___| | | ___     __ _(_)_ __ __ _ / _|/ _| ___ 
+| '_ \ / _ \ | |/ _ \   / _` | | '__/ _` | |_| |_ / _ \
+| | | |  __/ | | (_) | | (_| | | | | (_| |  _|  _|  __/
+|_| |_|\___|_|_|\___/   \__, |_|_|  \__,_|_| |_|  \___|
+                        |___/                          
+
+# show time in figlet format
+watch -t -n1 "date +%T | figlet" 
+
+# Check if a specific port is open or not on localhost
+ncat -zv localhost <port_number>
+
+
+# view animated gifs
+# needs ImageMagick
+animate <file.gif>
+
+# write raw images to disk like dd command
+imagewriter
+
+# BATCH RENAME
+# Lowercase all files and folders in current directory
+rename 'y/A-Z/a-z/' *
+
+# Replace 'sometext' with 'replacedby' in all files in current directory
+rename 's/sometext/replacedby/' *
+
+# using zmv
+# e.g.  remove the (z-lib.org) from the filenames of the books in Computer_books [ to allow searching for
+# org-mode files]
+zmv '(*)\(z-lib.org\).pdf' '$1.pdf'
+
+# USING RANGER (THE WAY!!)
+# use the bulkrename function in ranger. It opens a buffer in vim
+# see YouTube Luke Smith https://www.youtube.com/watch?v=NzD2UdQl5Gc
+1. open the dir in ranger (shortcut ->% ra)
+2. select files (all files? shortcut V)
+3. :bulkrename (this opens a buffer with all the selected files)
+4. make the changes (in vim escape the grouping parentheses e.g. \( and the capture is e.g. \1)
+5. save changes e.g.  :wq
+6. confirm everything before committing with :q<enter>
+
+# END BATCH RENAME
+
+# convert from one encoding to another
+iconv --usage
+(recode is a CLI utility which is a wrapper for iconv)
+
+
+# get system information
+inxi
+
+# CLI screenshot utility
+scrot
+
+# pop up dialogue boxes etc
+#examples
+zenity --color-selection
+zenity --calendar
+
+# display bandwidth usage on an interface by host
+iftop 
+
+
+

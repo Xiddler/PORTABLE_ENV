@@ -1,6 +1,7 @@
     " Mininimum settings {{{
 	"=== Min settings === 
     " 'set nocompatible' is never necessary in a vimrc file. When Vim detects a user vimrc file, it automatically sets nocompatible. 
+    set encoding=utf-8
 	set nocompatible
     if has("autocmd")
       filetype plugin indent on

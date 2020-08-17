@@ -69,10 +69,13 @@ words() {cd $HOME/WORDS/ }
 books() {cd $HOME/sd64/books/ }
 bookmarks() { cd /home/donagh/sd64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
 reading() { cd $HOME/sd64//books/1_Reading && ls }
+toread() { vim $HOME/sd64/books/0_To_Read/books_to_read.md }
+
+recipes() {vim /home/donagh/sd64/1donaghs-stuff/recipes/low-carb_meals/links_to_low_carb_meals.md }
 
 
 # Temporary functions
-web(){cd $HOME/sd64/2programming_repository/css/css_grid/donagh-dev/}
+web() {cd $HOME/sd64/2programming_repository/css/css_grid/donagh-dev/}
 clue() {cd  $HOME/sd64/1donaghs-stuff/Projects/Clueless-on-DO/Clueless/clueless-webapp }
 
 
@@ -137,7 +140,7 @@ alias hj='history'
 alias pss='python3 -m http.server 5000'
 alias -g ra='ranger'
 alias gett='$HOME/.scripts/get_password.sh'
-alias synaptic='sudo synaptic'
+# alias synaptic='sudo synaptic'
 alias tm="calc -d 'read qtime; qtime(0)'" # sudo apt install apcalc WINTER TIME
 # alias tm="calc -d 'read qtime; qtime(1)'" # sudo apt install apcalc SUMMER TIME
 alias tn='t | festival --tts'
@@ -150,6 +153,7 @@ alias -g define='BROWSER=w3m ddgr \!wordnik ' # ddgr is CLI DDGo and w3m is CLI 
 alias -g filepath='$HOME/.scripts/filename.sh'
 
 #----------  TODO
+# Superceded by org-mode in May 2020
 org() { cd $HOME/TODO/ORG-MODE }
 todo() { cd $HOME/TODO }
 alias t="/home/donagh/TODO && ls"
