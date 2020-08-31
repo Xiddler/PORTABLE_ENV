@@ -3,7 +3,6 @@
 # like Task Manager - shows processes in a separate GUI
 systemmonitor
 
-
 # Show details of files
 stat <filename>
 
@@ -71,7 +70,7 @@ rename 's/sometext/replacedby/' *
 # org-mode files]
 zmv '(*)\(z-lib.org\).pdf' '$1.pdf'
 
-# USING RANGER (THE WAY!!)
+# USING RANGER (NICE WAY - but see qmv -A)
 # use the bulkrename function in ranger. It opens a buffer in vim
 # see YouTube Luke Smith https://www.youtube.com/watch?v=NzD2UdQl5Gc
 1. open the dir in ranger (shortcut ->% ra)
@@ -101,6 +100,45 @@ zenity --calendar
 
 # display bandwidth usage on an interface by host
 iftop 
+
+# section of man pages e.g. inxi(8)
+man 8 inxi
+
+# block / unblock (internal) IP addresses
+sudo arp -s 192.168.1.1xx # blocks
+sudo arp -d 192.168.1.1xx # unblocks
+
+
+# play media in the CLI
+cvlc <mediafile> # headless version of VLC
+mpv <mediafile>
+mplayer <mediafile>
+
+# view .jpg or .gif __directly__ in the terminal
+chafa <imgfilename>
+
+# rename files in current directory in a vim buffer
+qmv -A
+
+# Versatile replacement for vmstat, iostat and ifstat.
+dstat --vmstat -sn
+
+# output file into columns
+column -t <filename>
+
+# monitor power see https://www.linux-magazine.com/Issues/2020/233/The-Linux-Box-of-Tricks/(tagID)/32
+->% upower -i 
+
+# pop-up notification e.g. ->% notify-send -t 4000 "Hello Donagh" will open a pop-up for 4 seconds
+->% notify-send "Hello Donagh"
+
+# identify current running shell
+->% echo $0
+->% which "$0" 
+->%   realpath /proc/$$/exe
+
+
+
 
 
 

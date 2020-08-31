@@ -27,6 +27,8 @@ alias -g jc='jupyter-console'
 alias -g trm='mv --force -t ~/.local/share/Trash '
 # to copy all new and old cheats to /home/donag/PORTABLE_ENV/cheat/dot_cheat_hard
 alias ccheat="cp -f /usr/share/cheat/* /home/donagh/PORTABLE_ENV/cheat/dot_cheat_hard/ && cp -f /home/donagh/.cheat/* /home/donagh/PORTABLE_ENV/cheat/dot_cheat_hard/"
+alias -g ifconfig="echo 'Use the ip command'"
+alias -g lanner="/home/donagh/.scripts/lanner_start.sh" 
 # 
 # alias -g cx='clear'
 # the following shortcut alias means that pressing enter after just a 
@@ -102,6 +104,7 @@ mind() {cd $personal/minding_me }
 pain() { $EDITOR $personal/minding_me/pain_points.md }
 wisd() { $EDITOR $personal/ideas/snippets.md }
 snippets() { $EDITOR $personal/ideas/snippets.md } # same as wisd
+outdoors() { cd /home/donagh/sd64/1donaghs-stuff/OUTDOOR }
 
 #-------------------- END journal
 #
@@ -195,6 +198,7 @@ alias ipe='dig @resolver1.opendns.com ANY myip.opendns.com +short' # external ip
 alias ipi="ip -4 addr  | grep 192 | cut -d '/' -f1"
 alias ping='ping -c3 '
 alias png='ping -c4 8.8.8.8' # ping google to check if there is internet access
+alias avg='png G rtt | cut -d'/' -f5' # average png time atm. Compared to what? Is internet slow or not?
 
 # zsh shortcuts
 alias zcp='zmv -C'

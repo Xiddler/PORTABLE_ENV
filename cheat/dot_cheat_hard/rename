@@ -19,3 +19,6 @@ zmv '(*)\(z-lib.org\).pdf' '$1.pdf'
 4. make the changes (in vim escape the grouping parentheses e.g. \( and the capture is e.g. \1)
 5. save changes e.g.  :wq
 6. confirm everything before committing with :q<enter>
+
+# using moreutils command - opens $EDITOR buffer containing contents of directory
+vidir <directory>

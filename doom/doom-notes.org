@@ -175,7 +175,9 @@ My config files __are__ indeed in /home/donagh/.doom.d and symlinked to /home/do
 *** treemacs [SPC] d
 [[treemacs]]
 *** navigating [SPC] p r
-[SPC] p r <-- list recent files
+[SPC] f r <-- list recent files
+[SPC] p r <-- recently visited files in current directory
+
 *** files inside current project [SPC] [SPC]   <-- <space> <space>
 this allows to explore inside the current project
 *** files outside current project [SPC] .  <-- <space> dot
@@ -204,6 +206,11 @@ To refresh the config.el file C-h r r OR doom/reload (in the /home/donagh/.emacs
 *** Add a package
 discover new packages
 [[install new package]]
+*** Navigate to point in file
+**** Using [[avy]] package
+g s [SPC] <letters> <-- In-file navigation.
+Mnemonic: (g)oto (s)ubject
+**** Using swiper: [spc] s s
 ** images
 images can be displayed within the buffer with the following command: C-c C-x C-v (org-toggle-inline-images).
 OR Move over image / link and press [Enter]
@@ -242,6 +249,7 @@ DONAGHS
 
 ** line numbers
 [SPC] t l <-- toggles line numbers (which are relative by default)
+Mnemonic: (t)oggle (l)ine-numbers
 ** links
 *** [ [link] ][ description ]] <<< with NO spaces
 *** Make links
@@ -260,6 +268,11 @@ Then type in the name of the link and then the description
 **** Method 3
 Type [[x][]]
 and put the link / URI instead of x and the description in the second pair of [].
+** markdown for emacs
+Bold *bold*
+Italic /italic/
+Underline __underline__
+Strikethrough ~strikethrough~
 ** math
 #+CONSTANTS: pi=3.14159265358979323846
 ** minor modes
@@ -342,7 +355,7 @@ Like easymotion plugin in vim
 NOTE: pre-installed in doom
 In-file navigation - specifically on current screen. Highlights using one or two letter pairs to highlight the target
 **** Commands
-gs [SPC] <letter> <-- In-file navigation.
+g s [SPC] <letter> <-- In-file navigation.
 First the gs [SPC] will dim the text and then <letter> will be highlighted
 
 OR
