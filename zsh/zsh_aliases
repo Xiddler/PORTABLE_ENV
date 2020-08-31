@@ -35,18 +35,6 @@ alias -g lanner="/home/donagh/.scripts/lanner_start.sh"
 # file name with .md extension will automagically open it with vim. Hurrah!
 alias -s md=vim
 
-# Navigation shortcuts
-alias cd..='cd ..'
-alias dl='cd ~/Downloads'
-alias ds='cd ~/Documents'
-alias dr='cd ~/Dropbox'
-alias -g sd='cd $HOME/sd64/'
-alias -g hf='cd $HOME'
-# bindkey 'hf' 'cd $HOME'
-alias -g po='cd $HOME/PORTABLE_ENV'
-alias -g port='cd $HOME/PORTABLE_ENV'
-alias -g tt='cd /home/donagh/TESTING'
-alias -g az='cd /home/donagh/ALL_ORG'
 
 # ____________________________________________________________________________________
 # shortcuts for when I want to Search Zim - Computer ORG 
@@ -57,8 +45,6 @@ alias -g szc='cd $HOME/sd64/zim/Computer/'
 alias -g szo='cd $HOME/sd64/zim/ORG/'
 # ____________________________________________________________________________________
 
-alias -g sd='cd $HOME/sd64/'
-# alias -g hf='cd $HOME'
 alias -g 2p='cd $HOME/sd64/2programming_repository/'
 alias -g share='cd /home/donagh/linuxShared'
 # for changing color of the monitor against eyestrain
@@ -67,18 +53,11 @@ alias -g day='blueshift -t 3000'
 
 
 # FUNCTIONS (See Separate functions for my personal journal below)
-words() {cd $HOME/WORDS/ }
-books() {cd $HOME/sd64/books/ }
-bookmarks() { cd /home/donagh/sd64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
-reading() { cd $HOME/sd64//books/1_Reading && ls }
-toread() { vim $HOME/sd64/books/0_To_Read/books_to_read.md }
 
+toread() { vim $HOME/sd64/books/0_To_Read/books_to_read.md }
 recipes() {vim /home/donagh/sd64/1donaghs-stuff/recipes/low-carb_meals/links_to_low_carb_meals.md }
 
 
-# Temporary functions
-web() {cd $HOME/sd64/2programming_repository/css/css_grid/donagh-dev/}
-clue() {cd  $HOME/sd64/1donaghs-stuff/Projects/Clueless-on-DO/Clueless/clueless-webapp }
 
 
 
@@ -92,19 +71,42 @@ personal='/home/donagh/sd64/1donaghs-stuff/personal/' # short form
 #
 # alias mj=md_journal # opens todays journal as a markdown file in vim for editing.
 #
+# Navigation shortcuts
+alias cd..='cd ..'
+alias dl='cd ~/Downloads'
+alias ds='cd ~/Documents'
+alias dr='cd ~/Dropbox'
+alias -g hf='$HOME/'
+
 # Functions for shortcuts - equivalent to aliases.
 jour() { cd $journal && ls }
+po() { cd $HOME/PORTABLE_ENV }
+tt() { cd $HOME/TESTING }
+az() { cd $HOME/ALL_ORG }
+sd() { cd $HOME/sd64/ }
 pers() { cd $personal && ls }
+planning() { cd  $personal/planning/ }
+humour() { cd /home/donagh/sd64/1donaghs-stuff/Humour/ }
+outdoors() { cd /home/donagh/sd64/1donaghs-stuff/OUTDOOR }
+mind() { cd $personal/minding_me }
+words() { cd $HOME/WORDS/ }
+books() { cd $HOME/sd64/books/ }
+bookmarks() { cd /home/donagh/sd64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
+reading() { cd $HOME/sd64//books/1_Reading && ls }
+
+# Temporary functions
+web() {cd $HOME/sd64/2programming_repository/css/css_grid/donagh-dev/}
+clue() {cd  $HOME/sd64/1donaghs-stuff/Projects/Clueless-on-DO/Clueless/clueless-webapp }
+
+# immediately edit a file
 alc() { $EDITOR $personal/minding_me/alcohol_journal.md }
 grat() { $EDITOR $personal/minding_me/gratitude_journal.md }
 ideas() { $EDITOR $personal/ideas/ideas_to_go_at.md }
 insp() { $EDITOR $personal/ideas/inspire.md }
 # See  alias -g mj=md_journal above
-mind() {cd $personal/minding_me }
 pain() { $EDITOR $personal/minding_me/pain_points.md }
 wisd() { $EDITOR $personal/ideas/snippets.md }
 snippets() { $EDITOR $personal/ideas/snippets.md } # same as wisd
-outdoors() { cd /home/donagh/sd64/1donaghs-stuff/OUTDOOR }
 
 #-------------------- END journal
 #
