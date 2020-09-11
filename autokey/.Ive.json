@@ -11,7 +11,8 @@
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "ive"
+            "ive",
+            "ivv"
         ],
         "backspace": true,
         "ignoreCase": false,

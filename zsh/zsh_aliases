@@ -86,20 +86,21 @@ az() { cd $HOME/ALL_ORG }
 sd() { cd $HOME/sd64/ }
 pers() { cd $personal && ls }
 planning() { cd  $personal/planning/ }
-humour() { cd /home/donagh/sd64/1donaghs-stuff/Humour/ }
+humour() { cd /home/donagh/sd64/1donaghs-stuff/humour/ }
 outdoors() { cd /home/donagh/sd64/1donaghs-stuff/OUTDOOR }
+donaghs() { cd /home/donagh/sd64/1donaghs-stuff/ }
 mind() { cd $personal/minding_me }
 words() { cd $HOME/WORDS/ }
 books() { cd $HOME/sd64/books/ }
 bookmarks() { cd /home/donagh/sd64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
 reading() { cd $HOME/sd64//books/1_Reading && ls }
+alc() { cd  $personal/alcohol/ }
 
 # Temporary functions
 web() {cd $HOME/sd64/2programming_repository/css/css_grid/donagh-dev/}
 clue() {cd  $HOME/sd64/1donaghs-stuff/Projects/Clueless-on-DO/Clueless/clueless-webapp }
 
 # immediately edit a file
-alc() { $EDITOR $personal/minding_me/alcohol_journal.md }
 grat() { $EDITOR $personal/minding_me/gratitude_journal.md }
 ideas() { $EDITOR $personal/ideas/ideas_to_go_at.md }
 insp() { $EDITOR $personal/ideas/inspire.md }
@@ -107,6 +108,7 @@ insp() { $EDITOR $personal/ideas/inspire.md }
 pain() { $EDITOR $personal/minding_me/pain_points.md }
 wisd() { $EDITOR $personal/ideas/snippets.md }
 snippets() { $EDITOR $personal/ideas/snippets.md } # same as wisd
+aj() { $EDITOR $personal/alcohol/alcohol_journal.md } # (a)lcohol-(j)ournal modelled after (m)y (j)ournal.
 
 #-------------------- END journal
 #
