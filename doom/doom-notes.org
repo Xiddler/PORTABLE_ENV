@@ -371,7 +371,9 @@ plain herds are better than awful
     emacs web browser M-x e
 *** ivy
 Ivy, a generic completion mechanism for Emacs - in insert mode.
+Toggle ivy using M-x ivy
 Select one string from a list of strings in a pop-up instead of having to type it out.
+Also there is a jumplist available with ivy. [SPC] s j
 *** projectile
 **** About
  Its goal is to provide a nice set of features operating on a project level without introducing external dependencies
