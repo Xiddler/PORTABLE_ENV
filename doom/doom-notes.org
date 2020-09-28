@@ -4,7 +4,7 @@
 #+date: Started 2020-05-17
 #+author: donagh mccarthy
 #+options: il
-#+startip: overview
+#+startup: overview
 #+tags: help orgmode org-mode donaghs
 
 * Spacemacs notes
@@ -140,7 +140,9 @@ Press C-c a t to enter the global todo list.
 
 * DOOM EMACS
 ** buffers
-[SPC] , *OR* [SPC] b b <-- list current buffers
+[SPC] ,                <-- switch buffers
+[SPC] b b              <-- list current buffers
+[SPC] b i              <-- list current buffers
 [SPC] <                <-- change buffer
 [SPC] .                <-- list files in current directory
 [SPC] [SPC]            <-- find file in PARENT directory
@@ -148,6 +150,7 @@ Press C-c a t to enter the global todo list.
 *** Eval
 [SPC] ; <-- single line buffer
 *** Calculator
+M-x calc
 https://www.emacswiki.org/emacs/Calc_Tutorials_by_Andrew_Hyatt
 -----
 Usage:
@@ -299,7 +302,7 @@ There are a number of templates to save notes to
 
 ** packages
 *** meta
-REM: Doesn't use emacs packages.el
+REM: Doesn't use emacs packages.el it uses straight.el instead for package management
 **** install new package
 [SPC] : (or M-x)
 Then type: package-install
@@ -404,6 +407,24 @@ REM: The projects must be made known to Doom in the init.el file. cf.[[Backgroun
 [SPC] p p (OR in the Doom splash screen select open project)
 **** Idea of a project
 *** org-babel
+Invoke using <s[TAB] <language>
+#+BEGIN_SRC python
+#!/usr/sbin/python
+def fib(n):
+    a = 0
+    b = 1
+    for _ in range(n-1):
+        a, b = b, a+b
+    return b if n > 0 else 0
+
+print(fib(5))
+#+END_SRC
+
+#+RESULTS:
+: None
+
+
+
 Allows to have short snippets of code that can be run inside org-mode. ?Literate programming?
 See [[snippets ][snippets]] below
 *** evil
@@ -417,6 +438,10 @@ NOTE: For more comprehensive in-file search look at avy.
 *** neotree - use treemacs
 View directory tree in a panel
 added (require 'neotree) to config.el on 2020-05-20
+*** swiper
+For searching for text in a buffer
+[SPC] s b
+[SPC] s s  <-- swiper that is not line based - input two letters and [ENTER]
 ** projects
 *** manage projects
 using [[projectile][projectile]]
@@ -468,6 +493,7 @@ The following was a begin src block
 
 #+RESULTS:
 : Hello Dolly
+
 (To execute: M-x org-babel-execute-source-block :: I made a keybinding to do this. It is Q )
 
 
@@ -555,6 +581,7 @@ REM: Use z in this view to select desired period e.g. week/month
 [SPC] a a & deadlines shown in pink
 
 ** checkboxes - Make a new checkbox i.e. [ ]
+Note: Checkboxes are not included in the global TODO list so they are often great to split a task into a number of simple steps.
 **** checkbox
 my ]] shortcut conflicts with making manual links ending in ]]. This is resolved by using the quickie C-c C-l
 The shortcut (set in autokey) is ]] --> - [ ] (set in Autokey). To toggle checkmark, with cursor inside brackets, C-c C-c

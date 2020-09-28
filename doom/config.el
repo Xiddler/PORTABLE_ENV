@@ -95,14 +95,13 @@
  '(ansi-color-names-vector
    ["#00212B" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#839496"])
  '(custom-safe-themes
-   (quote
-    ("76bfa9318742342233d8b0b42e824130b3a50dcc732866ff8e47366aed69de11" default)))
+   '("76bfa9318742342233d8b0b42e824130b3a50dcc732866ff8e47366aed69de11" default))
  '(fci-rule-color "#405A61")
  '(jdee-db-active-breakpoint-face-colors (cons "#073642" "#268bd2"))
  '(jdee-db-requested-breakpoint-face-colors (cons "#073642" "#859900"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#073642" "#56697A"))
  '(objed-cursor-color "#dc322f")
- '(package-selected-packages (quote (org-projectile treemacs-projectile)))
+ '(package-selected-packages '(latex-pretty-symbols org-projectile treemacs-projectile))
  '(pdf-view-midnight-colors (cons "#839496" "#002b36"))
  '(rustic-ansi-faces
    ["#002b36" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#839496"])

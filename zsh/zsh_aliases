@@ -10,7 +10,7 @@ alias -g P='pwd -P'
 alias -g PS='ps aux | egrep -i --color=auto'
 alias -g catt='cat $HOME/ziim/Computer/11SignUps.txt|rg -i -A5 '
 alias -g contin='python3 /media/donagh/3520-FD13/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/contin.py' # input new contact
-alias -g contout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 '
+alias -g contout='cat /home/donagh/sd64/zim/ORG/03_CONTACTS/Contacts.txt | rg -i -A18 -B2 '
 alias -g ep='echo $PATH'
 alias -g exa='~/Applications/exa-linux-x86_64' # modern ls
 alias -g kontout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 ' # get contact  
@@ -127,11 +127,7 @@ alias vb='vim ~/.bashrc'
 alias vv='vim ~/.vimrc'
 alias vz="vim ~/.zshrc"
 alias vza="vim ~/.zsh_aliases"
-alias vs="vim ~/.spacemacs"
-alias cs="cat ~/.spacemacs"
 
-# Doom emacs
-alias doom='/home/donagh/.emacs.d/doom-emacs/bin/doom run'
 
 
 # Donaghs shortcuts
