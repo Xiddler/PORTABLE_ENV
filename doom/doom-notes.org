@@ -1,10 +1,11 @@
 #+TITLE: doom-notes.org
+#+STARTIP: fold
+
 * frontmatter
 #+about: notes for doom
 #+date: Started 2020-05-17
 #+author: donagh mccarthy
 #+options: il
-#+startup: overview
 #+tags: help orgmode org-mode donaghs
 
 * Spacemacs notes
@@ -305,52 +306,14 @@ There are a number of templates to save notes to
 REM: Doesn't use emacs packages.el it uses straight.el instead for package management
 **** install new package
 [SPC] : (or M-x)
-Then type: package-install
+Then type: package-install (but this only installs if for the current sesssion - best is to use packages.el)
 ------
-in config.el - (require '<package>) and then C-h r r {Need to check if this works}
-in config.el - copy the treemacs line then run doom sync in the /home/donagh/.emacs.d/doom-emacs/bin folder
-OR
 in packages.el (require '<package>) and then ->% doom sync
 **** to run a package
    M-x (also [SPC] :)
    - list-packages (available, installed, builtin )
-*** from github
-**** About
-see
-**** Org-roam
-***** Install
-Successful on 2020-08-04
-In [[file:packages.el][Packages.el]]
-(package! org-roam
-  :recipe (:host github :repo "org-roam/org-roam"))
-
-*** dired
-**** About
-Like Ranger for emacs
-**** Commands
-New buffer for (current) directory
-[SPC] f d
-
-To remove details: ( [ie show file/dir names only]
-To go to parent:   -
-Add a new directory: +
-Delete: D [to mark the file/dir] then x
-Copy: D [to mark the file/dir] then C
-chmod: M
-Select only directories: /* and then t to toggle between directories and files
-Select a file or directory: m and then u to unselect
-CONFLICT HERE: 'u' in dired unmarks, but evil-mode it is undo
-Change a file / dir name: i and then make changes
-
-*** treemacs
-**** About
-view directory in a separate panel
-**** Commands
-[SPC] d
-M-x treemacs <-- opens explorer for CURRENT directory
-[SPC] d <-- toggles close / open
-:q in treemacs pane to quit
-use vim keys for navigating
+**** List available, built-in and installed packages
+[SPC] : list-packages
 *** avy
 **** About
 For navigation within a file.
@@ -370,13 +333,82 @@ To move to f of fruit <-- g s s fr then press hl letter
 elephants in your head
 oranges are not the only fruit
 plain herds are better than awful
+*** from github
+**** About
+see
+**** Org-roam
+***** Install
+Successful on 2020-08-04
+In [[file:packages.el][Packages.el]]
+(package! org-roam
+  :recipe (:host github :repo "org-roam/org-roam"))
+
+*** dired
+**** About
+File explorer
+New buffer below showing the contents of (current) directory
+**** Commands
+C-x d OR [SPC] .  OR [SPC] f d
+
+Close with q
+
+To remove details: ( [ie show file/dir names only]
+To go to parent:   -
+Add a new directory: +
+Delete: D [to mark the file/dir] then x
+Copy: D [to mark the file/dir] then C
+chmod: M
+Select only directories: /* and then t to toggle between directories and files
+Select a file or directory: m and then u to unselect
+CONFLICT HERE: 'u' in dired unmarks, but evil-mode it is undo
+Change a file / dir name: i and then make changes
+
+*** evil
+NOTE: Pre-installed in doom
+vim bindings for emacs / DOOM
+**** evil-snipe
+Navigating in files - short distances [but see [[avy]]]
+Enable: M-x evil-snipe <-- toggles on/off
+f <letter> highlights all <letter>s forward and ; moves to next one.
+NOTE: For more comprehensive in-file search look at avy.
 *** eww
     emacs web browser M-x e
+*** flycheck
+Syntax highlighting
+
+*** helm
+*** image-dired
+For viewing images (not great)
 *** ivy
 Ivy, a generic completion mechanism for Emacs - in insert mode.
 Toggle ivy using M-x ivy
 Select one string from a list of strings in a pop-up instead of having to type it out.
 Also there is a jumplist available with ivy. [SPC] s j
+*** neotree
+- use [[treemacs]]
+View directory tree in a panel
+added (require 'neotree) to config.el on 2020-05-20
+*** org-babel
+Invoke using <s[TAB] <language>
+#+BEGIN_SRC python
+#!/usr/sbin/python
+def fib(n):
+    a = 0
+    b = 1
+    for _ in range(n-1):
+        a, b = b, a+b
+    return b if n > 0 else 0
+
+print(fib(5))
+#+END_SRC
+
+#+RESULTS:
+: None
+
+
+
+Allows to have short snippets of code that can be run inside org-mode. ?Literate programming?
+See [[snippets ][snippets]] below
 *** projectile
 **** About
  Its goal is to provide a nice set of features operating on a project level without introducing external dependencies
@@ -399,49 +431,26 @@ For example, my username is “jdemaris” so my folder is /home/donagh/.emacs.d
     (projectile-add-known-project "/home/donagh/Projects/playground/elixir")
     (projectile-add-known-project "/home/donagh/Projects/playground/otp")
 '
-   
+
     test addition
 **** Commands
 REM: The projects must be made known to Doom in the init.el file. cf.[[Background][Background]]
 ---------
 [SPC] p p (OR in the Doom splash screen select open project)
 **** Idea of a project
-*** org-babel
-Invoke using <s[TAB] <language>
-#+BEGIN_SRC python
-#!/usr/sbin/python
-def fib(n):
-    a = 0
-    b = 1
-    for _ in range(n-1):
-        a, b = b, a+b
-    return b if n > 0 else 0
-
-print(fib(5))
-#+END_SRC
-
-#+RESULTS:
-: None
-
-
-
-Allows to have short snippets of code that can be run inside org-mode. ?Literate programming?
-See [[snippets ][snippets]] below
-*** evil
-vim bindings for emacs / DOOM
-NOTE: Pre-installed in doom
-**** evil-snipe
-Navigating in files - short distances [but see [[avy]]]
-Enable: M-x evil-snipe <-- toggles on/off
-f <letter> highlights all <letter>s forward and ; moves to next one.
-NOTE: For more comprehensive in-file search look at avy.
-*** neotree - use treemacs
-View directory tree in a panel
-added (require 'neotree) to config.el on 2020-05-20
 *** swiper
 For searching for text in a buffer
 [SPC] s b
 [SPC] s s  <-- swiper that is not line based - input two letters and [ENTER]
+*** treemacs
+**** About
+View directories in a tree structure in a separate panel
+**** Commands
+[SPC] d
+M-x treemacs <-- opens explorer for CURRENT directory
+[SPC] d <-- toggles close / open
+:q in treemacs pane to quit OR [SPC] b d
+use vim keys for navigating
 ** projects
 *** manage projects
 using [[projectile][projectile]]
@@ -636,6 +645,7 @@ Search current buffer:
 2. gss CHAR1 CHAR2 <-- this is avy
 3. [SPC] s b       <-- Swiper = 'isearch-forward'
    [SPC] s s       <-- Swiper that is not line-based
+4. f term          <-- evil-snipe [SPC] : evil-snipe-mode enable / disable (basically vim jump motions f,F t,I ; , etc. )
 ** shortcuts
 Set in [[file:config.el][config.el]]
 *** Modifier keys

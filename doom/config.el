@@ -33,8 +33,8 @@
 ;; `load-theme' function. This is the default:
 ;; (setq doom-theme 'doom-one)
 ;;; Code:
-;; (setq doom-theme 'doom-solarized-dark)
-(setq doom-theme 'tsdh-dark)
+(setq doom-theme 'doom-solarized-dark)
+;; (setq doom-theme 'tsdh-dark)
 
 ;;; org-roam
 (setq org-roam-directory "~/org-roam")
@@ -61,17 +61,53 @@
 ;; - `map!' for binding new keys
 ;;
 ;; Donaghs - the following keybinding *did* work. :n indicates normal mode
-(map! :n "Q" 'org-babel-execute-src-block ) ;; Quantify!
-(map! :n "SPC d" 'treemacs ) ;; Directory for files / folders
+(map! :n "Q" 'org-babel-execute-src-block ) ;; Quantify! or Execute snippet!
+(map! :n "SPC d" 'treemacs ) ;; Tree directory for files / folders
 (map! :n "tt" 'org-todo )
 (map! :n "ts" 'org-schedule )
 (map! :n "SPC a" 'org-agenda )
-(map! :n "SPC w SPC" 'save-buffer )
+(map! :n "SPC w SPC" 'ido-kill-buffer )
 (map! :n "SPC s SPC" 'save-buffer ) ;; even simpler than w
 (map! :n "SPC j" 'outline-next-visible-heading )
 (map! :n "SPC k" 'outline-previous-visible-heading )
 (map! :n "SPC l" 'org-insert-link )
 
+;; THE FOLLOWING LINES COPIED FROM THE FILE ~/.emacs.d/modules/lang/org/config.el
+;; but placed here in case I need it after a new emacs install
+;; The only change is that I have added REPT status
+;; HACK Face specs fed directly to `org-todo-keyword-faces' don't respect
+;;      underlying faces like the `org-todo' face does, so we define our own
+;;      intermediary faces that extend from org-todo.
+   ;; (with-no-warnings
+     ;; (custom-declare-face '+org-todo-active  '((t (:inherit (bold font-lock-constant-face org-todo)))) "")
+     ;; (custom-declare-face '+org-todo-project '((t (:inherit (bold font-lock-doc-face org-todo)))) "")
+     ;; (custom-declare-face '+org-todo-onhold  '((t (:inherit (bold warning org-todo)))) ""))
+   ;; (setq org-todo-keywords
+     ;;     '((sequence
+     ;;        "TODO(t)"  ; A task that needs doing & is ready to do
+     ;;        "PROJ(p)"  ; A project, which usually contains other tasks
+     ;;        "STRT(s)"  ; A task that is in progress
+     ;;        "WAIT(w)"  ; Something external is holding up this task
+     ;;        "HOLD(h)"  ; This task is paused/on hold because of me
+            ;; "REPT(r)" ; Task repeates monthly or annually like Car Tax
+     ;;        "|"      ; Items before the bar are active and show up in Org Agenda 
+     ;;        "DONE(d)"  ; Task successfully completed
+            ;; "KILL(k)"); Task was cancelled, aborted or is no longer applicable
+           ;; (sequence
+            ;; "[ ](T)"   ; A task that needs doing
+            ;; "[-](S)"   ; Task is in progress
+            ;; "[?](W)"   ; Task is being held up or paused
+            ;; "|"
+            ;; "[X](D)")) ; Task was completed
+         ;; org-todo-keyword-faces
+         ;; '(("[-]"  . +org-todo-active)
+           ;; ("STRT" . +org-todo-active)
+           ;; ("[?]"  . +org-todo-onhold)
+           ;; ("WAIT" . +org-todo-onhold)
+           ;; ("HOLD" . +org-todo-onhold)
+           ;; ("PROJ" . +org-todo-project)
+           ;; ("REPT" . +org-todo-project)))
+   
 
 ;; To refresh config.el --> C-h r r
 ;;
