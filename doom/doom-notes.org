@@ -1,5 +1,5 @@
 #+TITLE: doom-notes.org
-#+STARTIP: fold
+#+STARTUP: fold
 
 * frontmatter
 #+about: notes for doom
@@ -553,6 +553,9 @@ eg C-c / r navig
 [SPC] w L <-- to split window
 [SPC] w w (toggles) <-- to move to next window
 
+** workspaces
+[SPC] [TAB] n create new workspace
+[SPC] [TAB] <#> switch to Workspace <#> Displayed at bottom of window.
 * Org-mode
 ** about
 Maybe see [[file:~/sd64/TODO/ORG-MODE/first.org][first.org]]  for my preliminary notes
@@ -622,22 +625,31 @@ M-x info    :: the help manual
 https://orgmode.org/worg/               :: wiki for org-mode
 https://orgmode.org/worg/org-faq.html   :: FAQ
 ** org-capture
-Save notes to [[/home/donagh/Dropbox/org-mode/org/notes.org][notes.org]] using [SPC] X
-Then select the appropriate letter - [n] [j] etc.
+It's essentially a templating system for various types of notes e.g. journal, personal todos
+Save personal notes to [[/home/donagh/Dropbox/org-mode/org/notes.org][notes.org]] using [SPC] X n
+
 ** org-roam
 *** About
 2020-08-04
     A plain-text personal knowledge management system
     org-mode implementation of Roam as in RoamResearch - networked notetaking
+    Keypoint is that it has back-links so you can build up a network of information points
 *** Install
 Successful on 2020-08-04
 In [[file:packages.el][Packages.el]]
 (package! org-roam
   :recipe (:host github :repo "org-roam/org-roam"))
-*** Help
-https://www.orgroam.com/manual/Getting-Started.html#Getting-Started
+  and in [[file:config.el][config.el]]  under :lang (org +roam)
+*** Commands
+[SPC] n r
+then
+I for insert new blank file
+r for buffer showing backlinks
+g for graph of information points
+
 *** Links
 https://www.orgroam.com/
+https://www.orgroam.com/manual/Getting-Started.html#Getting-Started
 
 ** search
 Search current buffer:
@@ -666,6 +678,9 @@ To call TODO menu or make a new todo :
   tt OR C-c C-t and select from the menu
 *** Add TODO item
 C-c C-t OR tt and select from the menu
+*** Priorities
+S-uparrow / S-downarrow on a headline - default [#B]
+**** [#A] Test
 *** Progress Markers
 TODO [1/2] [50%] progress markers - without checkboxes
 **** DONE item 1

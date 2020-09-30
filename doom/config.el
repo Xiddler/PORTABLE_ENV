@@ -71,6 +71,7 @@
 (map! :n "SPC j" 'outline-next-visible-heading )
 (map! :n "SPC k" 'outline-previous-visible-heading )
 (map! :n "SPC l" 'org-insert-link )
+(map! :n "SPC z" '+org/close-all-folds ) ;; z M is such a pain
 
 ;; THE FOLLOWING LINES COPIED FROM THE FILE ~/.emacs.d/modules/lang/org/config.el
 ;; but placed here in case I need it after a new emacs install
@@ -89,9 +90,9 @@
      ;;        "STRT(s)"  ; A task that is in progress
      ;;        "WAIT(w)"  ; Something external is holding up this task
      ;;        "HOLD(h)"  ; This task is paused/on hold because of me
-            ;; "REPT(r)" ; Task repeates monthly or annually like Car Tax
-     ;;        "|"      ; Items before the bar are active and show up in Org Agenda 
-     ;;        "DONE(d)"  ; Task successfully completed
+     ;;        "REPT(r)" ; Task repeates monthly or annually like Car Tax
+     ;;        "|"      ; Items before the bar are active and show up in Org Agenda
+        ;;        "DONE(d)"  ; Task successfully completed
             ;; "KILL(k)"); Task was cancelled, aborted or is no longer applicable
            ;; (sequence
             ;; "[ ](T)"   ; A task that needs doing
@@ -119,6 +120,25 @@
 ;; they are implemented.
 ;; More Donaghs
 (setq message-kill-buffer-on-exit t)
+
+;; org-roam dependencies - ref https://www.ianjones.us/own-your-second-brain
+(require 'company-org-roam)
+    (use-package company-org-roam
+      :when (featurep! :completion company)
+      :after org-roam
+      :config
+      (set-company-backend! 'org-mode '(company-org-roam company-yasnippet company-dabbrev)))
+
+(use-package org-journal
+      :bind
+      ("C-c n j" . org-journal-new-entry)
+      :custom
+      (org-journal-dir "~/org-roam/")
+      (org-journal-date-prefix "#+TITLE: ")
+      (org-journal-file-format "%Y-%m-%d.org")
+      (org-journal-date-format "%A, %d %B %Y"))
+    (setq org-journal-enable-agenda-integration t)
+
 
 ;; (require 'neotree)
 (setq neo-window-fixed-size nil)

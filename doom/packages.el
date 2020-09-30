@@ -28,6 +28,12 @@
 (package! org-roam
   :recipe (:host github :repo "org-roam/org-roam"))
 ;
+(package! company-org-roam
+   :recipe (:host github :repo "jethrokuan/company-org-roam"))
+
+(package! org-journal)
+
+
 ;; If the package you are trying to install does not contain a PACKAGENAME.el
 ;; file, or is located in a subdirectory of the repo, you'll need to specify
 ;; `:files' in the `:recipe':
