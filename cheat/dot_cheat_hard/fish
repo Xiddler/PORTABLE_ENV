@@ -1,0 +1,7 @@
+# Opened 2020-10-01
+
+# directory history
+dirh
+
+# to select required dir, use Alt+Left and Alt+Right
+# Note: The Alt + Left and Alt + Right shortcuts might have been grabbed by your terminal program, like GNOME Terminal. They need to be freed for this to work. I use Terminator, where I disabled these keybindings by right-clicking in the terminal -> Preferences -> Keybindings. Then I REASSIGNED the Alt Left and Alt Right accelerator keys by double clicking on them.
