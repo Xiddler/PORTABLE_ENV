@@ -1,0 +1,2 @@
+alias -g night='blueshift -t 1800'
+alias -g day='blueshift -t 3000'

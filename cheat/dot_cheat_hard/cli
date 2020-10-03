@@ -137,8 +137,11 @@ column -t <filename>
 ->% which "$0" 
 ->%   realpath /proc/$$/exe
 
+# to display hidden files only
+ls -la | awk '{ print $9 }' | grep '^\.' | xargs -n 6
+exa -la | awk '{ print $7 }' | grep '^\.' | xargs -n 6
 
-
-
+# create file with today's date
+touch "file_$(date +%Y-%m-%d)"
 
 

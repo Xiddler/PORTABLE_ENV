@@ -1,4 +1,5 @@
 #!/bin/bash
+# script to copy zim_BU to Dropbox
 
 # 2020-02-27 Manjaro
 

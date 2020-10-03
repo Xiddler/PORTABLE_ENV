@@ -3,6 +3,12 @@
 # 
 set  -gx EDITOR /usr/bin/vim
 
-set -g fish_key_bindings fish_vi_key_bindings
+set -U MYVIMRC $HOME/.vimrc
 
+set -g fish_key_bindings fish_vi_key_bindings
+# or as per docs 2.2
+# fish_vi_mode
+
+# rem: PATH items are separated by a space in fish (not a colon)
+set -g PATH /home/donagh/.local/bin /usr/local/sbin /usr/local/bin /usr/bin /usr/lib/jvm/default/bin /usr/bin/site_perl /usr/bin/vendor_perl /usr/bin/core_perl /var/lib/snapd/snap/bin /home/donagh/.vim/pack/SuperMan/start/vim-superman/bin
 

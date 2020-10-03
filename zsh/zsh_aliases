@@ -82,7 +82,7 @@ alias -g hf='$HOME/'
 jour() { cd $journal && ls }
 po() { cd $HOME/PORTABLE_ENV }
 tt() { cd $HOME/TESTING }
-az() { cd $HOME/ALL_ORG }
+az() { cd $HOME/all_org }
 sd() { cd $HOME/sd64/ }
 pers() { cd $personal && ls }
 planning() { cd  $personal/planning/ }
@@ -136,6 +136,7 @@ alias -g scr='cd $HOME/.scripts/' # cd to /home/donagh/.scripts
 # alias -g mj=md_journal # opens todays journal as a markdown file in vim for editing.
 alias -g mj='$HOME/.scripts/markdown_journal.sh'
 alias -g mdd='$HOME/.scripts/markdown_diary.sh' # md is taken as mkdir -p <dir>
+alias -g backup="$HOME/.scripts/backup_all_and_encrypt.sh" # backsup ALL_ZIM, personal and org to Dropbox in .7z format
 alias -g mn='$HOME/.scripts/mynotes.sh'
 alias -g wcmj='$HOME/.scripts/wordCount_journal.sh' # word count my journal (markdown journal) - usage ->% wcmj 05 [ie June]
 alias hanging='cd $HOME/ziim/Computer/ && tail -n4 0_Hanging.txt && cd $HOME/ziim/Donaghs/00_Home/ && tail -n4 0_Hanging.txt'
