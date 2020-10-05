@@ -687,3 +687,9 @@ TODO [1/2] [50%] progress markers - without checkboxes
      CLOSED: [2020-05-15 Fri 15:43]
 **** item 2
 **** TODO item 3
+** issues with org
+*** Can't list agenda or TODOS after replacing directory
+Today - 2020-10-03 - I changed org directory from ~/ALL_ORG/org to ~/all_org/org
+
+Now I can't list agenda or todo using [SPC] a a / [SPC] a t
+I did change the files config.el and init.el but to not great avail

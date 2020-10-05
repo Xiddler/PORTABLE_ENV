@@ -10,5 +10,5 @@ set -g fish_key_bindings fish_vi_key_bindings
 # fish_vi_mode
 
 # rem: PATH items are separated by a space in fish (not a colon)
-set -g PATH /home/donagh/.local/bin /usr/local/sbin /usr/local/bin /usr/bin /usr/lib/jvm/default/bin /usr/bin/site_perl /usr/bin/vendor_perl /usr/bin/core_perl /var/lib/snapd/snap/bin /home/donagh/.vim/pack/SuperMan/start/vim-superman/bin
+set -g PATH /home/donagh/.local/bin /usr/local/sbin /usr/local/bin /usr/bin /usr/lib/jvm/default/bin /usr/bin/ /usr/bin/ /usr/bin/ /var/lib/snapd/snap/bin /home/donagh/.vim/pack/SuperMan/start/vim-superman/bin /home/donagh/.fzf/bin/
 

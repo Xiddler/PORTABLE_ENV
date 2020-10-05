@@ -31,6 +31,11 @@ tar -cf $tarred/ALL_ZIM_$today.tar $backups/ALL_ZIM_RSYNC
 
 echo "ALL_ZIM, personal and org successfully compressed and encrypted and sent to Dropbox today: $today"
 
+## Clear folders
+# rsync - will sync the diffs in the $backups directory
+
+# tarred
+rm $tarred/*.tar
 
 
 
@@ -46,5 +51,7 @@ echo "ALL_ZIM, personal and org successfully compressed and encrypted and sent t
 
 
 
-echo "org successfully compressed and encrypted and sent to Dropbox $today"
+
+
+
 
