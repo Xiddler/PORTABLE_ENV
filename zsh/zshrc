@@ -1,7 +1,7 @@
 # NOTE: Aliases handled in .zsh_aliases or .bash_aliases
 
 # to disable the Toshiba touchpad
-# xinput disable 13
+# xinput disable 12 (or 13 - check with $ xinput list)
 
 # locale
 export LANG=en_US.utf8
@@ -10,6 +10,7 @@ export LANG=en_US.utf8
 if [ -f $HOME/.zsh_aliases ]; then
     source $HOME/.zsh_aliases
 fi
+
 
 # Increase scrolling history. This is __NOT__ the number of items listed from a command. That'd be a Terminator setting.
 set -g history-limit 2000
@@ -21,7 +22,7 @@ setxkbmap -option caps:escape
 source ~/.fzf/shell/key-bindings.zsh
 
 # enable grc - for colorizing output
-source /etc/grc.zsh
+# source /etc/grc.zsh
 
 # Path to your oh-my-zsh installation.
 # export ZSH=/home/ubuntu/.oh-my-zsh
@@ -114,6 +115,7 @@ plugins=(
 )
 # the following is a workaround to solve a problem with not going to vi-cmd-mode on "jk" on the CLI
 # this seems to have gotten resolved somehow...
+# Ans: zsh has bindings for vi on the CLI
 # https://github.com/zsh-users/zsh-autosuggestions/issues/126
 # if [ -z "$_zsh_custom_scripts_loaded" ]; then
 #   _zsh_custom_scripts_loaded=1
@@ -130,7 +132,7 @@ source $ZSH/oh-my-zsh.sh
 # PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin"
 #
 
-PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin:/home/donagh/.emacs.d/bin/:/home/donagh/.cargo/bin:/home/donagh/PORTABLE_ENV/:/opt/texlive/2020/bin/x86_64-linux/"
+PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin:/home/donagh/.emacs.d/bin/:/home/donagh/.cargo/bin:/home/donagh/PORTABLE_ENV_tmp/:/opt/texlive/2020/bin/x86_64-linux/"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 # You may need to manually set your language environment
