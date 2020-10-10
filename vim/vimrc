@@ -249,7 +249,7 @@ autocmd BufWritePre *.py :%s/\s\+$//e
     map <leader>tk <C-w>t<C-w>K
     " Capitalize/minusculize letter under cursor
     nnoremap <leader>u v~
-    " MY FUNCTIONS
+    " MY FUNCTIONS - sample function
     function Simple()
         echom "Running simple function"
     endfunction
