@@ -1,6 +1,20 @@
 2020-04-23 
 
-# TL;DR
+
+On a new system, to install cheat
+$ pip install cheat
+
+then
+ donagh [12:55:07] [~] 
+-> % echo  $CHEAT_PATH
+/home/donagh/.cheat
+
+and / or
+ln -s $HOME/PORTABLE_ENV/cheat/dot_cheat_hard $HOME/.cheat
+
+This way, when i create a cheatsheet using $cheat -e <test>
+the new sheet is saved to the PORTABLE_ENV/cheat/dot_cheat_hard directory.
+
 
 Copy the contents of /usr/share/cheat to dot_cheat_hard
 cp -f /home/donagh/.cheat/* dot_cheat_hard && cp -f /usr/share/cheat/* dot_cheat_hard
