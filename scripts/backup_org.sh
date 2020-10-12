@@ -3,7 +3,6 @@
 
 # declare variables
 today=$(date +%Y-%m-%d)
-password=""
 
 home="/home/donagh"
 dropbox="/home/donagh/Dropbox"
@@ -14,7 +13,7 @@ orghome="/home/donagh/all_org"
 
 rsync -avz $orghome/org $backups/org_RSYNC
 tar -cf $tarred/org_$today.tar $backups/org_RSYNC
-7z a -p2nkfoo65FFDR!!dOJjklere $dropbox/org/org_$today.7z $tarred/org_$today.tar
+# 7z a -p2nkfoo65FFDR!!dOJjklere $dropbox/org/org_$today.7z $tarred/org_$today.tar
 
 echo "org successfully compressed and encrypted and sent to Dropbox $today"
 

@@ -33,7 +33,8 @@
 ;; `load-theme' function. This is the default:
 ;; (setq doom-theme 'doom-one)
 ;;; Code:
-(setq doom-theme 'doom-solarized-dark)
+;; (setq doom-theme 'doom-solarized-dark)
+(setq doom-theme 'tsdh-dark )
 ;; (setq doom-theme 'tsdh-dark)
 
 ;;; org-roam
@@ -122,22 +123,22 @@
 (setq message-kill-buffer-on-exit t)
 
 ;; org-roam dependencies - ref https://www.ianjones.us/own-your-second-brain
-(require 'company-org-roam)
-    (use-package company-org-roam
-      :when (featurep! :completion company)
-      :after org-roam
-      :config
-      (set-company-backend! 'org-mode '(company-org-roam company-yasnippet company-dabbrev)))
+; (require 'company-org-roam)
+    ; (use-package company-org-roam
+      ; :when (featurep! :completion company)
+      ; :after org-roam
+      ; :config
+      ; (set-company-backend! 'org-mode '(company-org-roam company-yasnippet company-dabbrev)))
 
-(use-package org-journal
-      :bind
-      ("C-c n j" . org-journal-new-entry)
-      :custom
-      (org-journal-dir "~/org-roam/")
-      (org-journal-date-prefix "#+TITLE: ")
-      (org-journal-file-format "%Y-%m-%d.org")
-      (org-journal-date-format "%A, %d %B %Y"))
-    (setq org-journal-enable-agenda-integration t)
+; (use-package org-journal
+      ; :bind
+      ; ("C-c n j" . org-journal-new-entry)
+      ; :custom
+      ; (org-journal-dir "~/org-roam/")
+      ; (org-journal-date-prefix "#+TITLE: ")
+      ; (org-journal-file-format "%Y-%m-%d.org")
+      ; (org-journal-date-format "%A, %d %B %Y"))
+    ; (setq org-journal-enable-agenda-integration t)
 
 
 ;; (require 'neotree)

@@ -42,7 +42,7 @@ bindkey 'kk' copy-earlier-word
 # ZSH_THEME="agnoster"
 # ZSH_THEME="amuse_dm"
 # ## ZSH_THEME="candy-kingdom"
-ZSH_THEME="crcandy"
+ZSH_THEME="crcandy_dm"
 ## ZSH_THEME="powerlevel9k/powerlevel9k"
 
 ## Keep 1000 lines of history within the shell and save it to ~/.zsh_history:

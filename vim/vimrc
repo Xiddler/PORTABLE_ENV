@@ -102,6 +102,7 @@ map <c-h> <c-w>h
 " Packages using Packpath {{{
 " This is for using the package manager that utilises the folder
 " $HOME/.vim/pack - introduced by me in 2019
+" see "=== Preferred Plugins === below for my list of usually installed plugins
 " === packpath ===
 " load packpath
 filetype off
@@ -184,7 +185,7 @@ autocmd BufWritePre *.py :%s/\s\+$//e
     set modelines=1
     "vim:foldmethod=marker:foldlevel=0
     "}}}
-   " Preferred Plugins {{{
+   "Preferred Plugins {{{
    " "=== Preferred Plugins === 
    " Rundown of good plugins available at https://catonmat.net/vim-plugins
    " --- My Preferred Plugins ---  
@@ -204,9 +205,19 @@ autocmd BufWritePre *.py :%s/\s\+$//e
    " airline - powerline for vim
    " https://github.com/vim-airline/vim-airline.git
    "
+   " markdown
    " masukomi
    " vim-markdown-folding
    " https://github.com/masukomi/vim-markdown-folding.git
+   "
+   " vim-markdown
+   " git clone https://github.com/plasticboy/vim-markdown.git
+   "
+   "
+   "vim-pencil
+   " pure typing / writing experience for vim text files
+   " git clone https://github.com/reedes/vim-pencil
+   "
    "
    " mattn
    " emmet-vim
