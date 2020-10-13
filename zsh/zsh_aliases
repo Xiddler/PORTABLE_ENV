@@ -26,7 +26,10 @@ alias -g jc='jupyter-console'
 # instead of plain rm usd trash rm to move the file to Trash so as to be able to recover it like on the Desktop
 alias -g trm='mv --force -t ~/.local/share/Trash '
 # to copy all new and old cheats to /home/donag/PORTABLE_ENV/cheat/dot_cheat_hard
+# NOTE: the following is maybe not needed of ALL cheats are stored in
+# PORTANBLE_ENV includeing the /usr/share/cheat ones - do this first
 # alias ccheat="cp -f /usr/share/cheat/* /home/donagh/PORTABLE_ENV/cheat/dot_cheat_hard/ && cp -f /home/donagh/.cheat/* /home/donagh/PORTABLE_ENV/cheat/dot_cheat_hard/"
+#
 alias -g ifconfig="echo 'Use the ip command'"
 alias -g lanner="/home/donagh/.scripts/lanner_start.sh" 
 # 
@@ -159,17 +162,17 @@ alias -g filepath='$HOME/.scripts/filename.sh'
 
 #----------  TODO
 # Superceded by org-mode in May 2020
-org() { cd $HOME/TODO/ORG-MODE }
-todo() { cd $HOME/TODO }
-alias t="/home/donagh/TODO && ls"
-alias td="/home/donagh/TODO && ls"
+# org() { cd $HOME/TODO/ORG-MODE }
+# todo() { cd $HOME/TODO }
+# alias t="/home/donagh/TODO && ls"
+# alias td="/home/donagh/TODO && ls"
 # Libre Office open TODO.ods / PROJECTS.ods
-alias lot="/usr/sbin/libreoffice $HOME\/TODO\/TODO.ods &"
-alias lop="/usr/sbin/libreoffice $HOME\/TODO\/PROJECTS.ods &"
+# alias lot="/usr/sbin/libreoffice $HOME\/TODO\/TODO.ods &"
+# alias lop="/usr/sbin/libreoffice $HOME\/TODO\/PROJECTS.ods &"
 # View todo / lists in the terminal
-alias -g vt="/home/donagh/.scripts/todo-ods-to-csv.sh"
-alias -g vp="/home/donagh/.scripts/projects-ods-to-csv.sh"
-alias -g meta="/home/donagh/TODO/META"
+# alias -g vt="/home/donagh/.scripts/todo-ods-to-csv.sh"
+# alias -g vp="/home/donagh/.scripts/projects-ods-to-csv.sh"
+# alias -g meta="/home/donagh/TODO/META"
 
 # git shortcuts - but see $alias from zsh
 alias cm='git commit -m '

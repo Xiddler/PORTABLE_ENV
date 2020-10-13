@@ -186,3 +186,8 @@ https://catonmat.net/vim-plugins
 
 # bulk rename files using vim and ranger
 # cheat rename
+#
+# change the point at which a sentence wraps
+set textwidth=79
+#
+#
