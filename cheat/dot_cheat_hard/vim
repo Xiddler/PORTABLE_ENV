@@ -190,4 +190,32 @@ https://catonmat.net/vim-plugins
 # change the point at which a sentence wraps
 set textwidth=79
 #
-#
+# get info on character under cursor
+ga
+g8
+
+# find non-ascii chars in the file
+/[^\x00-\x7F]
+
+# replace a non-ascii character 
+# example  ”
+# and replace that with the ascii "
+# 1. cursor over the character and yl to yank into the " register
+# :s/<Ctrl-R ">/"/g ie after the first / press Ctrl-R then " to paste
+# the contents of the " register into the command line
+# after pressing enter the substitution should be made
+# for the whole file
+:%s/<Ctrl-R ">/"/g 
+
+# to enter that non-ascii character ”
+# in insert mode
+Ctrl-V u 201d
+
+# to identify what unicode number ” is hover over it and 
+ga
+# the number after the word Hex is 201d
+
+
+
+
+
