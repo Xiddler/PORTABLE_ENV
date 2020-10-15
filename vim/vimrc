@@ -9,8 +9,12 @@ set <esc>=jk "" my inline comment in a set command
 set number
 set relativenumber
 set virtualedit=all
+set textwidth=100
 ab i I
 ab wiht with
+ab dont don't
+ab cant can't
+
 "}}}
 " Spaces And Tabs {{{ 
 "=== Spaces And Tabs ===
@@ -240,6 +244,8 @@ autocmd BufWritePre *.py :%s/\s\+$//e
    "https://github.com/junegunn/vim-peekaboo
    "
    "easymotion
+   " using ,/ to move to highlighted letter
+   "https://github.com/easymotion/vim-easymotion.git
    "
    "}}}
    " Customised {{{
