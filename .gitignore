@@ -1,5 +1,7 @@
+nb/*
 .git/*
 .git/
+*.swp
 zshrc_from_ohMYzsh
 TODO/.*
 TRIALS/.*
