@@ -205,18 +205,20 @@ autocmd BufWritePre *.py :%s/\s\+$//e
    " map <leader>f :Ranger<CR>
    "
    " theme
-   " nightsense
+   " .vim/pack/nightsense/start
    " https://github.com/nightsense/stellarized.git
    "
    " airline - powerline for vim
    " https://github.com/vim-airline/vim-airline.git
    "
    " markdown
+   " .vim/pack/
    " masukomi
    " vim-markdown-folding
    " https://github.com/masukomi/vim-markdown-folding.git
    "
    " vim-markdown
+   " .vim/pack/vim-markdown/start/vim-markdown
    " git clone https://github.com/plasticboy/vim-markdown.git
    "
    "
