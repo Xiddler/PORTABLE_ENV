@@ -39,6 +39,7 @@ alias -g lanner="/home/donagh/.scripts/lanner_start.sh"
 alias -s md=vim
 
 
+
 # ____________________________________________________________________________________
 # shortcuts for when I want to Search Zim - Computer ORG 
 alias -g ziim='$HOME/sd64/zim/'
@@ -53,6 +54,9 @@ alias -g share='cd /home/donagh/linuxShared'
 # for changing color of the monitor against eyestrain
 alias -g night='blueshift -t 1800'
 alias -g day='blueshift -t 3000'
+
+# Rung 3
+alias -g rung3='cd /home/donagh/Donaghs_Tmp/Rung_3'
 
 
 # FUNCTIONS (See Separate functions for my personal journal below)
