@@ -1,4 +1,5 @@
 2020-10-12
+edited: 2020-10-17
 
 # About
 
@@ -16,12 +17,15 @@ when the laptop is working. (Or i get another one)
 
 /home/donagh/BACKUPS            :: a storage area for the backups and archives of the above folders
 
-Inside the BACKUPS/ directory are two (maybe more) script files for rsyncing and tarring
+Inside the BACKUPS/ directory are some script files for rsyncing, tarring, compressing and
+encrypting
 
-a_backup_to_RSYNC.sh            :: using rsync -avz
+a_backup_to_RSYNC.sh            :: using rsync -avz --exclude-file=ignore.txt
 b_tar_to_tarred.sh              :: tarring the folders from RSYNC/ to tarred/ 
 c_compress_to_compressed.sh     :: to minimize size for copying to external
-d_encrypt_to_encrypted.sh       :: for storing in Dropbox and elsewhere
+d_backup_to_128USB.sh           :: contents of tarred to
+                                    ::: /media/pi/B693-3C22/from_RaspberryPi/Oct2020 
+e_encrypt_to_encrypted.sh       :: for storing in Dropbox and elsewhere
 
 Why so complcated? 
 I am afraid of losing my data.

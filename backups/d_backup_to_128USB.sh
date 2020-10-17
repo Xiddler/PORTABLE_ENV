@@ -12,11 +12,12 @@ zim="$HOME/MY_ZIM/zim"
 zim_R="$backups/zim_RSYNC"
 tmp="$HOME/Donaghs_Tmp"
 tmp_R="$backups/Donaghs_Tmp_RSYNC"
+USB128="/media/pi/B693-3C22/Oct_2020_BACKUPS/RSYNC"
 
 
-rsync -avz --exclude-from=ignore.txt $org $org_R
+sudo rsync -avz --exclude-from=ignore.txt $org $USB128
 
-rsync -avz --exclude-from=ignore.txt $tmp $tmp_R
+# sudo rsync -avz --exclude-from=ignore.txt $tmp $USB128
 
-rsync -avz --exclude-from=ignore.txt $zim $zim_R
+# sudo rsync -avz --exclude-from=ignore.txt $zim $USB128
 
