@@ -17,7 +17,7 @@ USB128="/media/pi/B693-3C22/Oct_2020_BACKUPS/RSYNC"
 
 sudo rsync -avz --exclude-from=ignore.txt $org $USB128
 
-# sudo rsync -avz --exclude-from=ignore.txt $tmp $USB128
+sudo rsync -avz --exclude-from=ignore.txt $tmp $USB128
 
-# sudo rsync -avz --exclude-from=ignore.txt $zim $USB128
+sudo rsync -avz --exclude-from=ignore.txt $zim $USB128
 
