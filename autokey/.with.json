@@ -1,31 +1,31 @@
 {
-    "type": "phrase",
-    "description": "with",
-    "modes": [
-        1
-    ],
-    "usageCount": 3,
-    "prompt": false,
-    "omitTrigger": false,
-    "matchCase": false,
-    "showInTrayMenu": false,
+    "usageCount": 0, 
+    "omitTrigger": false, 
+    "prompt": false, 
+    "description": "with", 
     "abbreviation": {
+        "wordChars": "[\\w]", 
         "abbreviations": [
             "wiht"
-        ],
-        "backspace": true,
-        "ignoreCase": false,
-        "immediate": true,
-        "triggerInside": false,
-        "wordChars": "[\\w]"
-    },
+        ], 
+        "immediate": true, 
+        "ignoreCase": false, 
+        "backspace": true, 
+        "triggerInside": false
+    }, 
     "hotkey": {
-        "modifiers": [],
-        "hotKey": null
-    },
+        "hotKey": null, 
+        "modifiers": []
+    }, 
+    "modes": [
+        1
+    ], 
+    "showInTrayMenu": false, 
+    "matchCase": false, 
     "filter": {
-        "regex": null,
+        "regex": null, 
         "isRecursive": false
-    },
+    }, 
+    "type": "phrase", 
     "sendMode": "kb"
 }

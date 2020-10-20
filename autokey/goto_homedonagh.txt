@@ -1,0 +1,2 @@
+output = system.exec_command("cd")
+keyboard.send_keys(output)

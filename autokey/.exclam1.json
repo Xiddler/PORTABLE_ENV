@@ -1,28 +1,30 @@
 {
-    "type": "script",
-    "description": "exclam!",
-    "store": {},
-    "modes": [],
-    "usageCount": 36,
-    "prompt": false,
-    "omitTrigger": false,
-    "showInTrayMenu": false,
+    "usageCount": 14, 
+    "omitTrigger": false, 
+    "prompt": false, 
+    "description": "exclam!", 
     "abbreviation": {
+        "wordChars": "[\\w]", 
         "abbreviations": [
             "xx"
-        ],
-        "backspace": true,
-        "ignoreCase": false,
-        "immediate": true,
-        "triggerInside": true,
-        "wordChars": "[\\w]"
-    },
+        ], 
+        "immediate": true, 
+        "ignoreCase": false, 
+        "backspace": true, 
+        "triggerInside": false
+    }, 
     "hotkey": {
-        "modifiers": [],
-        "hotKey": null
-    },
+        "hotKey": null, 
+        "modifiers": []
+    }, 
+    "modes": [
+        1
+    ], 
+    "showInTrayMenu": false, 
     "filter": {
-        "regex": null,
+        "regex": null, 
         "isRecursive": false
-    }
+    }, 
+    "type": "script", 
+    "store": {}
 }
