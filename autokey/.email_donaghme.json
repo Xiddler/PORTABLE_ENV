@@ -1,12 +1,12 @@
 {
-    "usageCount": 7, 
+    "usageCount": 0, 
     "omitTrigger": false, 
     "prompt": false, 
-    "description": "email_eir", 
+    "description": "email_donaghme", 
     "abbreviation": {
         "wordChars": "[\\w]", 
         "abbreviations": [
-            "@@@"
+            "@@d"
         ], 
         "immediate": true, 
         "ignoreCase": false, 
@@ -17,7 +17,9 @@
         "hotKey": null, 
         "modifiers": []
     }, 
-    "modes": [], 
+    "modes": [
+        1
+    ], 
     "showInTrayMenu": false, 
     "matchCase": false, 
     "filter": {

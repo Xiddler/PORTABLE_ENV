@@ -73,6 +73,7 @@
 (map! :n "SPC k" 'outline-previous-visible-heading )
 (map! :n "SPC l" 'org-insert-link )
 (map! :n "SPC z" '+org/close-all-folds ) ;; z M is such a pain
+(map! :n "SPC c SPC" 'calendar) ;; quick calendar
 
 ;; THE FOLLOWING LINES COPIED FROM THE FILE ~/.emacs.d/modules/lang/org/config.el
 ;; but placed here in case I need it after a new emacs install

@@ -1,0 +1,23 @@
+# various commands to get system info
+
+$ cat /etc/os-release
+
+# OR
+
+$ lsb_release -a
+
+# with systemd installed
+
+$ hostnamectl
+
+# get the kernel details 
+
+$ uname -a
+OR
+$ uname -r
+
+
+# INXI utility
+# see $ inxi -h and /or man inxi e.g. $ inxi -u for UUIDS
+$ inxi
+

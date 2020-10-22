@@ -11,6 +11,9 @@ if [ -f $HOME/.zsh_aliases ]; then
     source $HOME/.zsh_aliases
 fi
 
+# my vimrc
+MYVIMRC=/home/donagh/.vimrc
+
 
 # Increase scrolling history. This is __NOT__ the number of items listed from a command. That'd be a Terminator setting.
 set -g history-limit 2000

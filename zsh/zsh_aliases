@@ -11,6 +11,8 @@ alias -g PS='ps aux | egrep -i --color=auto'
 # alias -g catt='cat $HOME/ziim/Computer/11SignUps.txt|rg -i -A5 '
 # RPi version
 alias -g catt='cat $HOME/MY_ZIM/zim/Computer/11SignUps.txt|rg -i -A5 '
+alias webdav='cd /var/www/webdav'
+
 alias -g contin='python3 /media/donagh/3520-FD13/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/contin.py' # input new contact
 alias -g contout='cat /home/donagh/sd64/zim/ORG/03_CONTACTS/Contacts.txt | rg -i -A18 -B2 '
 alias -g ep='echo $PATH'
@@ -44,7 +46,7 @@ alias -s md=vim
 
 # ____________________________________________________________________________________
 # shortcuts for when I want to Search Zim - Computer ORG 
-alias -g ziim='$HOME/sd64/zim/'
+alias -g ziim='$HOME/MY_ZIM/zim/'
 # go to zim/Computer
 alias -g szc='cd $HOME/sd64/zim/Computer/'
 # go to zim/ORG

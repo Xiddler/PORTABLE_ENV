@@ -10,6 +10,7 @@ set number
 set relativenumber
 set virtualedit=all
 set textwidth=100
+set noswapfile
 ab i I
 ab wiht with
 ab dont don't

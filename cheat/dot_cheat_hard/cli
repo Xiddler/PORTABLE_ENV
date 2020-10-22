@@ -117,8 +117,10 @@ mplayer <mediafile>
 # view .jpg or .gif __directly__ in the terminal
 chafa <imgfilename>
 
-# rename files in current directory in a vim buffer
+# rename files in current directory in a vim buffer - this comes with the renameutils (RPi, Ubuntu)
 qmv -A
+# Note that imv only allows you to rename one file at a time.
+imv <filepath/filename>
 
 # Versatile replacement for vmstat, iostat and ifstat.
 dstat --vmstat -sn
@@ -150,5 +152,11 @@ b3b6cd7b225d43c102489bdc81fb18cf9d56147cb039e80b517055d34cc515324c930bd9ed0ef5c7
 
 # -> % openssl rand -base64 10
 EDPXfQaQbZqmWg==
+
+# sudo vim <sudo-accessible-file>
+$ sudoedit /etc/ssh/ssh_config
+OR
+$ sudo -E vim /etc/ssh/sshd_config
+
 
 

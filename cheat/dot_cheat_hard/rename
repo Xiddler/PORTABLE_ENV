@@ -10,7 +10,7 @@ rename 's/sometext/replacedby/' *
 # org-mode files]
 zmv '(*)\(z-lib.org\).pdf' '$1.pdf'
 
-# using ranger (the way!!)
+# using ranger (one way!!)
 # use the bulk rename function in ranger. It opens a buffer in vim
 # see YouTube Luke Smith https://www.youtube.com/watch?v=NzD2UdQl5Gc
 1. open the dir in ranger (shortcut ->% ra)
@@ -20,5 +20,18 @@ zmv '(*)\(z-lib.org\).pdf' '$1.pdf'
 5. save changes e.g.  :wq
 6. confirm everything before committing with :q<enter>
 
+# on Raspian / Ubuntu install renameutils
+#
+
+#########################
+#       THE WAY         #
+#########################
 # using moreutils command - opens $EDITOR buffer containing contents of directory
 vidir <directory>
+
+# qmv (and imv) require renameutils to be installed
+qmv -A
+#This will open a window where the left column displays the original names of the files. Whereas, the right column is for the name which you wish to set for your files. Edit the right column to set the names you wish for your file.
+
+
+

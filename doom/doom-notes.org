@@ -609,7 +609,7 @@ or replace ' ' with X (or vice versa)
 ** convert headline into a todo
 tt and then select from menu
 Example - hover over STRT and press tt
-**** STRT
+**** .STRT
 ** help / reference
 *** In doom-emacs
 [SPC] h d h :: Documetation (located at /home/donagh/.emacs.d/docs/index.org)
@@ -686,7 +686,7 @@ TODO [1/2] [50%] progress markers - without checkboxes
 **** DONE item 1
      CLOSED: [2020-05-15 Fri 15:43]
 **** item 2
-**** TODO item 3
+**** .TODO item 3
 ** issues with org
 *** Can't list agenda or TODOS after replacing directory
 Today - 2020-10-03 - I changed org directory from ~/ALL_ORG/org to ~/all_org/org

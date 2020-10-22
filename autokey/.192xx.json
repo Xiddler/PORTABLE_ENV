@@ -2,11 +2,11 @@
     "usageCount": 0, 
     "omitTrigger": false, 
     "prompt": false, 
-    "description": "email_Croom", 
+    "description": "192xx", 
     "abbreviation": {
         "wordChars": "[\\w]", 
         "abbreviations": [
-            "@@c"
+            "192"
         ], 
         "immediate": true, 
         "ignoreCase": false, 
