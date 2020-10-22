@@ -21,6 +21,8 @@ alias -g kontout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt |
 alias -g lsd='du -s -- *(D) | sort -k1n' # list size of directories
 alias -g nt='terminator --geometry +500+100' # open a new zsh terminal  
 alias -g passin='python3 $HOME/sd64/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
+# Raspberry Pi
+alias -g tpassin='sudo --prompt=1234 /home/donagh/.scripts/passin_terminal.py'
 # alias -g passin='/home/donagh/.scripts/passin.sh' # a non-GUI version
 alias -g passout='cat /home/donagh/sd64/zim/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias for catt
 alias -g xn='| xargs -n 1'
