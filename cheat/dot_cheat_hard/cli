@@ -158,5 +158,11 @@ $ sudoedit /etc/ssh/ssh_config
 OR
 $ sudo -E vim /etc/ssh/sshd_config
 
+# substitution on the command line - is this grep?
+-> % in="don_agh"
+-> % out="${in/_/-}" 
+-> % echo $out
+don-agh
+ 
 
 
