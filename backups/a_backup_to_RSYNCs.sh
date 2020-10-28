@@ -14,9 +14,9 @@ tmp="$HOME/Donaghs_Tmp"
 tmp_R="$backups/Donaghs_Tmp_RSYNC"
 
 
-rsync -avz --exclude-from=ignore.txt $org $org_R
+rsync -uavz --exclude-from=ignore.txt $org $org_R
 
-rsync -avz --exclude-from=ignore.txt $tmp $tmp_R
+rsync -uavz --exclude-from=ignore.txt $tmp $tmp_R
 
-rsync -avz --exclude-from=ignore.txt $zim $zim_R
+rsync -uavz --exclude-from=ignore.txt $zim $zim_R
 

@@ -16,10 +16,10 @@ MYVIMRC=/home/donagh/.vimrc
 
 
 # Increase scrolling history. This is __NOT__ the number of items listed from a command. That'd be a Terminator setting.
-set -g history-limit 2000
-#
+set -g history-limit 9000 #
 #set Caps Lock key to Escape
 setxkbmap -option caps:escape
+
 
 # get fzf to enable Ctrl-R & Ctrl-T
 source ~/.fzf/shell/key-bindings.zsh
@@ -350,5 +350,5 @@ export RANGER_LOAD_DEFAULT_RC=false
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # source /home/donagh/.config/broot/launcher/bash/br
-# call the zsh-syntax-highlighting plugin last
+# call the zsh-syntax-highlighting plugin last thing in this file
 plugins=( zsh-syntax-highlighting )

@@ -164,5 +164,20 @@ $ sudo -E vim /etc/ssh/sshd_config
 -> % echo $out
 don-agh
  
+# trouble shoot :0-0 display issues
+uname -a
+env | grep -e DISPLAY -e AUTHORITY
+loginctl show-session $XDG_SESSION_ID
+# check that $USERNAME is LOGIN Name
+
+# read info pages with vim navigation
+info --vi-keys wget
+
+# in RPi - allow username donagh to sudo without passwd
+sudo visudo /etc/sudoers.d/010_pi-nopasswd 
+and add
+%sudo ALL=(ALL) NOPASSWD: ALL
+
+
 
 

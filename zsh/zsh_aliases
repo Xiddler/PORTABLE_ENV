@@ -94,7 +94,8 @@ alias -g hf='$HOME/'
 # Functions for shortcuts - equivalent to aliases.
 jour() { cd $journal && ls }
 po() { cd $HOME/PORTABLE_ENV }
-tt() { cd $HOME/TESTING }
+dm() { cd $HOME/Donaghs_Tmp }
+te() { cd $HOME/Testing }
 az() { cd $HOME/all_org }
 sd() { cd $HOME/sd64/ }
 pers() { cd $personal && ls }
