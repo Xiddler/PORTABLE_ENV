@@ -46,3 +46,15 @@ TXT: Plain text files don't retain special characters or formatting; basic notep
 
 WOLF: The proprietary format for Hanlin ebook readers, aka BeBook; extension .wol.
 
+
++-------------+--------------+
+|  Format     |    Reader    |
++-------------+--------------+
+|  pdf        |   okular     |
+|             |   zathura    |
+|             |   evince     |
+|  epub       |   fbreader   |
+|             |   calibre    |
+|  djvu       |   djview4    |
++-------------+--------------+
+

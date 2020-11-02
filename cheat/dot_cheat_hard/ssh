@@ -44,3 +44,39 @@ sshfs name@server:/path/to/folder /path/to/mount/point
 # Emacs can read file through SSH
 # Doc: http://www.gnu.org/software/emacs/manual/html_node/emacs/Remote-Files.html
 emacs /ssh:name@server:/path/to/file
+
+#####################################
+#           Donaghs
+#####################################
+# authorized_keys
+# This file is on the server and contains the contents of the local file $HOME/.ssh/id_rsa.pub or
+# $HOME/.ssh/id_rsa_do.pub or similar NOTE: extension is .pub it is public
+#
+# known_hosts
+# This file is on the local machine (relative to the server) and has data about the server (remote)
+#
+# To generate new key pair
+-> % ssh-keygen
+
+# inform server that this DIR_PATH/keypairforssh is the private key
+-> % ssh-add ~/.ssh/id_rsa_GH
+
+# Make the ssh connection
+-> % ssh donagh@142.23.24.11
+-> % ssh -i $HOME/.ssh/id_rsa_do donagh@142.23.24.11 # note the -i flag points to the private key
+
+# using scp to copy from local to remote 
+-> % scp ~/Documents/documentForLinux.txt donagh@142.23.24.11:~/Documents
+# remote to local
+-> % scp donagh@142.23.24.11:~/Documents ~/Documents/documentForLinux.txt 
+
+# To mount remote system directories to the client, sshfs is the tool developed for this specific purpose.
+# (Ensure that the /mnt/projects directory exists on the local machine)
+-> % sshfs donagh@142.23.24.11:/home/donagh/projects /mnt/myprojects
+
+# To unmount sshfs
+-> % killall sshfs
+-> % sudo fusermount -u /mnt/myprojects
+-> % sudo umount -l /mnt/myprojects 
+
+

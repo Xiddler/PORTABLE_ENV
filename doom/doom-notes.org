@@ -189,13 +189,15 @@ this allows to explore outside the current project
 ** elisp
 *** REPL
 M-x ielm or [SPC] o r
-*** see snippets below for begin_src
+*** see [[snippets]] below for begin_src
 ** files
 - save file -> :w OR [SPC] f s
 - save buffer -> [SPC] b s OR :w
 - open a file -> [SPC] f f and select your file for opening
+- open a recent file -> [SPC] f r
 - insert current file path [SPC] i F <-- /home/donagh/PORTABLE_ENV/doom/doom-notes.org
-- Finding files: [SPC] f
+- finding files: [SPC] f
+- rename an existing file - C-x d (for dired) nav to required dir and edit filename  in the buffer
 ** general notes
 - See spacemacs_notes above. Lots of stuff applies in doom-emacs.
 ** headlines
@@ -347,6 +349,25 @@ In [[file:packages.el][Packages.el]]
 **** About
 File explorer
 New buffer below showing the contents of (current) directory
+**** A short intro to Dired
+Dired is how you interface with a directory
+Name comes from Directory Editor
+Move with h,j,k,l
+toggle ( for simple view
+enter to go into a directory
+- to go back up
++ and enter a file name to create a directory
+d to mark for deletion, x to delete
+space . to create or find a file
+\*/ to select all directories, t to switch between files and directories
+U to unselect all
+m to mark a specific file or directory
+CTRL + w + v window split vertically
+CTRL + w + w to switch windows
+C copy to another window
+R move to another window
+dired-do-what-i-mean-target set to true
+i to edit file/dir name
 **** Commands
 C-x d OR [SPC] .  OR [SPC] f d
 
@@ -503,6 +524,7 @@ The following was a begin src block
 #+RESULTS:
 : Hello Dolly
 
+
 (To execute: M-x org-babel-execute-source-block :: I made a keybinding to do this. It is Q )
 
 
@@ -515,12 +537,12 @@ The following was a begin src block
 #+RESULTS:
 : 54
 
-
-
 <l and [TAB]
-#+BEGIN_LaTeX
+#+BEGIN_EXPORT latex
 /rarrow
-#+END_LaTeX
+#+END_EXPORT
+
+
 
 appear
 defamation

@@ -1,0 +1,3 @@
+# basic use
+$ pandoc -o filename.html myfile.pdf
+

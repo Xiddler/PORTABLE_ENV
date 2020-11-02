@@ -20,7 +20,8 @@ alias -g exa='~/Applications/exa-linux-x86_64' # modern ls
 alias -g kontout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 ' # get contact  
 alias -g lsd='du -s -- *(D) | sort -k1n' # list size of directories
 alias -g nt='terminator --geometry +500+100' # open a new zsh terminal  
-alias -g passin='python3 $HOME/sd64/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
+# alias -g passin='python3 $HOME/sd64/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
+alias -g passin='python3 /media/pi/B693-3C22/ALL_DONAGH/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
 # Raspberry Pi
 alias -g tpassin='sudo --prompt=1234 /home/donagh/.scripts/passin_terminal.py'
 # alias -g passin='/home/donagh/.scripts/passin.sh' # a non-GUI version
@@ -37,7 +38,7 @@ alias -g trm='mv --force -t ~/.local/share/Trash '
 # alias ccheat="cp -f /usr/share/cheat/* /home/donagh/PORTABLE_ENV/cheat/dot_cheat_hard/ && cp -f /home/donagh/.cheat/* /home/donagh/PORTABLE_ENV/cheat/dot_cheat_hard/"
 #
 alias -g ifconfig="echo 'Use the ip command'"
-alias -g lanner="/home/donagh/.scripts/lanner_start.sh" 
+# alias -g lanner="/home/donagh/.scripts/lanner_start.sh" 
 # 
 # alias -g cx='clear'
 # the following shortcut alias means that pressing enter after just a 
