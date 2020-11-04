@@ -4,6 +4,7 @@
 # alias contout='$HOME/contact_out.sh' # refers to contacts.csv which is /media/ubuntu/3520-FD13/0My_Folders/00Donaghs_ORG/14_Donaghs_CONTACTS/00_Main_Contacts.csv
 # alias ggp='git push git@github.com:Xiddler/xiddler.github.io.git gh-pages:master'
 # alias vim='sudo vim '
+alias -g lido="ssh -i .ssh/id_rsa_do donagh@142.93.37.252"
 alias -g C=' | xclip'
 alias -g G='| egrep -i --color=auto'
 alias -g P='pwd -P'

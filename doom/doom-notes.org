@@ -695,6 +695,52 @@ M = Alt; S = Shift; C = Ctrl; RET = Enter / Return
 [SPC] w [SPC] <-- save-buffer
 AND
 [SPC] s [SPC] <-- save-buffer
+** tables
+see [[https://orgmode.org/manual/Built_002din-Table-Editor.html#Built_002din-Table-Editor][org-mode tables]] (webref)
+
+*** insert table
+Type:
+|-
+|name  |address  |age  |
+|-
+
+then press TAB to get this:
+
+|------+---------+-----|
+| name | address | age |
+|------+---------+-----|
+|      |         |     |
+
+*** example table
+|-------+-------------+----------------------|
+| name  | address     |                  age |
+|-------+-------------+----------------------|
+| Denis | Ballygran   |                   43 |
+| Joe   | Charleville |                   33 |
+| Mary  | Mallow      |                   44 |
+|       | SUM         |                  120 |
+|       |             |                      |
+|       |             |          @2$3 + @3$3 |
+|       |             | (calc-eval 'C2+C3')? |
+
+*** table commands
+S-TAB OR M-a    :: move to column left
+M-LEFT          :: move column to the left
+M-S-LEFT        :: kill column i.e. delete column
+M-UP            :: move row up
+M-S-UP          :: kill row
+S-UP            :: swap with cell above
+C-c -           :: insert horizontal rule below current line
+C-c ^           :: sort lines (options will be given)
+C-c +           :: sum rows above :: to insert,  p followed by TAB
+*** spreadsheet
+[[https://orgmode.org/manual/The-Spreadsheet.html#The-Spreadsheet][The Spreadsheet]] (webref)
+The table editor makes use of the Emacs Calc package to implement spreadsheet-like capabilities.
+C-c ?           :: get coordinates of a cell
+C-c }           :: toggle coordinates in the table
+calc-eval       :: to evaluate an expression using calc (seems to be missing in doom-emacs?)
+
+
 ** todos
 To call TODO menu or make a new todo :
   tt OR C-c C-t and select from the menu
@@ -715,3 +761,4 @@ Today - 2020-10-03 - I changed org directory from ~/ALL_ORG/org to ~/all_org/org
 
 Now I can't list agenda or todo using [SPC] a a / [SPC] a t
 I did change the files config.el and init.el but to not great avail
+Solution: restart doom and/or doom sync
