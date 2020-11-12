@@ -1,0 +1,2 @@
+# check open ports
+lsof -Pni4 | grep LISTEN

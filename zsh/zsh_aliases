@@ -5,9 +5,11 @@
 # alias ggp='git push git@github.com:Xiddler/xiddler.github.io.git gh-pages:master'
 # alias vim='sudo vim '
 alias -g lido="ssh -i .ssh/id_rsa_do donagh@142.93.37.252"
+alias -g pyython='cd $HOME/Donaghs_Tmp/python_stuff'
 alias -g C=' | xclip'
 alias -g G='| egrep -i --color=auto'
 alias -g P='pwd -P'
+alias -g vacc='column -s, -t $HOME/Donaghs_Tmp/balance/accounts.csv'
 alias -g PS='ps aux | egrep -i --color=auto'
 # alias -g catt='cat $HOME/ziim/Computer/11SignUps.txt|rg -i -A5 '
 # RPi version

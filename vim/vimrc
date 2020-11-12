@@ -9,7 +9,8 @@ set <esc>=jk "" my inline comment in a set command
 set number
 set relativenumber
 set virtualedit=all
-set textwidth=100
+" set textwidth=150
+set wrapmargin=5
 set noswapfile
 " to make numbered list
 vnoremap <leader>1 :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR>
