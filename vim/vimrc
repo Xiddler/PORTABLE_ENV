@@ -7,9 +7,9 @@ if has("autocmd")
 endif
 set <esc>=jk "" my inline comment in a set command
 set number
-set relativenumber
-set virtualedit=all
-" set textwidth=150
+set relativenumber " also Ctrl N to toggle this
+set virtualedit=all " allows cursor to be moved anywhere in normal mode
+" set textwidth=0
 set wrapmargin=5
 set noswapfile
 " to make numbered list
@@ -18,6 +18,7 @@ ab i I
 ab wiht with
 ab dont don't
 ab cant can't
+ab wont won't
 
 "}}}
 " Spaces And Tabs {{{ 
@@ -27,7 +28,7 @@ set shiftwidth=4
 set smarttab
 set softtabstop=4   " number of spaces in tab when editing
 set expandtab       " tabs are spaces
-set wm=30           " wrap text before too far to the right
+" set wm=30           " wrap text before too far to the right
 " }}}
 " UI Config {{{
 "===  UI Config ===
@@ -183,6 +184,8 @@ autocmd BufWritePre *.py :%s/\s\+$//e
      " highlight ALL words for navigating to
      map <leader>/ <Plug>(easymotion-bd-w) 
      nmap <leader>/ <Plug>(easymotion-overwin-w) 
+     " enter the pwd in insert mode - d irectory p ath
+     :inoremap <leader>dp <C-R>=getcwd()<CR>
     " }}}
     " Status line {{{
     "=== Status line ===

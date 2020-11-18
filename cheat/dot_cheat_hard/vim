@@ -215,7 +215,13 @@ Ctrl-V u 201d
 ga
 # the number after the word Hex is 201d
 
-
-
-
-
+# resize windows
+# Maximize current window
+C-W _
+# Equalize windows
+C-W =
+# Incrementally in- de- crease window
+C-W +
+C-W -
+# Increase current window by 10 units
+10 C-W +

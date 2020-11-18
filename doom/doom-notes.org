@@ -548,7 +548,10 @@ appear
 defamation
 
 ** tags :tags:
-To search for tags C-c \ OR C-c / m
+
+To make a tag (only on headlines) add a colon before and after a word like this :tags: Now 'tags' is a tag.
+
+To search for a tag C-c \ OR C-c / m
 
 " An excellent way to implement labels and contexts for cross-correlating information is to assign tags to headlines. "
 tags are words preceded by : and ending in : e.g. :donaghs: or :work: - these can then be searched using  C-c \ OR C-c / m
