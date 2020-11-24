@@ -1,3 +1,4 @@
+*WINDOW_FOREGROUND:                      White
 URxvt*font:                             xft:Bitstream Vera Sans Mono:terminus:pixelsize:16
 URxvt*background:                       Blue
 URxvt*foreground:                       White

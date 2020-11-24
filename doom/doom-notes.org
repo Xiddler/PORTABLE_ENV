@@ -635,6 +635,7 @@ or replace ' ' with X (or vice versa)
 tt and then select from menu
 Example - hover over STRT and press tt
 **** .STRT
+** convert csv to org file
 ** help / reference
 *** In doom-emacs
 [SPC] h d h :: Documetation (located at /home/donagh/.emacs.d/docs/index.org)
@@ -742,7 +743,6 @@ The table editor makes use of the Emacs Calc package to implement spreadsheet-li
 C-c ?           :: get coordinates of a cell
 C-c }           :: toggle coordinates in the table
 calc-eval       :: to evaluate an expression using calc (seems to be missing in doom-emacs?)
-
 
 ** todos
 To call TODO menu or make a new todo :
