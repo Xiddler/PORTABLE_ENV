@@ -179,5 +179,5 @@ and add
 %sudo ALL=(ALL) NOPASSWD: ALL
 
 
-
-
+# convert from one file / document format to another example: 
+->% unoconv -f csv some-file.ods

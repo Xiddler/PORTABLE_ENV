@@ -53,7 +53,7 @@ alias -s md=vim
 
 # shortcut to Tiny 128 USB drive
 
-alias -g tiny='cd /run/media/donagh/B693-3C22'
+alias -g tiny='cd /run/media/donaghm/B693-3C22'
 
 
 # ____________________________________________________________________________________

@@ -43,7 +43,7 @@ data = f'''{{
 # Append test to end of 11SignUps.txt
 
 
-signups = '/home/donagh/MY_ZIM/zim/Computer/11SignUps.txt'
+signups = '/home/donaghm/MY_ZIM/zim/Computer/11SignUps.txt'
 
 
 with open(signups, "a") as f:
