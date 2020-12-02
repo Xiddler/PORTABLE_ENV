@@ -20,6 +20,9 @@ ab dont don't
 ab cant can't
 ab wont won't
 
+" use Ctrl / to comment
+nnoremap C-l gcc
+
 "}}}
 " Spaces And Tabs {{{ 
 "=== Spaces And Tabs ===

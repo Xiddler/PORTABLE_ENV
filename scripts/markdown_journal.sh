@@ -12,7 +12,7 @@ md_journal() {
         local today=`date +%Y-%m-%d`
         # local myDir='/home/donagh/sd64/1donaghs-stuff/personal/journal/'$year/$month
         local
-        myDir='/home/donagh/Donaghs_Tmp/journal/'$year/$month
+        myDir='/home/donaghm/Donaghs_Tmp/journal/'$year/$month
         mkdir -p $myDir
         local filen=$myDir/`date +%d-%m`\.md
         if [ ! -f $filen ]; 

@@ -6,7 +6,8 @@
 # alias vim='sudo vim '
 alias -g lido="ssh -i .ssh/id_rsa_do donagh@142.93.37.252"
 alias -g pyython='cd $HOME/Donaghs_Tmp/python_stuff'
-alias -g C=' | xclip'
+alias -g C=' | gpaste-client'
+# alias -g C=' | clipit'
 alias -g G='| egrep -i --color=auto'
 alias -g P='pwd -P'
 alias -g vacc='column -s, -t $HOME/Donaghs_Tmp/balance/accounts.csv'
@@ -14,14 +15,14 @@ alias -g tmp='cd $HOME/Donaghs_Tmp/'
 alias -g PS='ps aux | egrep -i --color=auto'
 # alias -g catt='cat $HOME/ziim/Computer/11SignUps.txt|rg -i -A5 '
 # RPi version
-alias -g catt='cat $HOME/MY_ZIM/zim/Computer/11SignUps.txt|rg -i -A5 '
+alias -g catt='cat $HOME/ZIM/Computer/11SignUps.txt|rg -i -A5 '
 alias webdav='cd /var/www/webdav'
 
 alias -g contin='python3 /media/donagh/3520-FD13/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/contin.py' # input new contact
-alias -g contout='cat /home/donagh/sd64/zim/ORG/03_CONTACTS/Contacts.txt | rg -i -A18 -B2 '
+alias -g contout='cat /home/donagh/ZIM/ORG/03_CONTACTS/Contacts.txt | rg -i -A18 -B2 '
 alias -g ep='echo $PATH'
 alias -g exa='~/Applications/exa-linux-x86_64' # modern ls
-alias -g kontout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 ' # get contact  
+# alias -g kontout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 ' # get contact  
 alias -g lsd='du -s -- *(D) | sort -k1n' # list size of directories
 alias -g nt='terminator --geometry +500+100' # open a new zsh terminal  
 # alias -g passin='python3 $HOME/sd64/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
@@ -29,7 +30,7 @@ alias -g passin='python3 /media/pi/B693-3C22/ALL_DONAGH/2programming_repository/
 # Raspberry Pi
 alias -g tpassin='sudo --prompt=1234 /home/donagh/.scripts/passin_terminal.py'
 # alias -g passin='/home/donagh/.scripts/passin.sh' # a non-GUI version
-alias -g passout='cat /home/donagh/MY_ZIM/zim/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias for catt
+alias -g passout='cat /home/donagh/ZIM/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias for catt
 alias -g xn='| xargs -n 1'
 alias -g zimbu='/home/donagh/.scripts/zim_backup_to_tinyUSB.sh'
 alias -g zz='zsh -l'
@@ -50,14 +51,18 @@ alias -g ifconfig="echo 'Use the ip command'"
 alias -s md=vim
 
 
+# shortcut to Tiny 128 USB drive
+
+alias -g tiny='cd /run/media/donaghm/B693-3C22'
+
 
 # ____________________________________________________________________________________
 # shortcuts for when I want to Search Zim - Computer ORG 
-alias -g ziim='$HOME/MY_ZIM/zim/'
+alias -g ziim='$HOME/ZIM/'
 # go to zim/Computer
-alias -g szc='cd $HOME/sd64/zim/Computer/'
+alias -g szc='cd $HOME/ZIM/Computer/'
 # go to zim/ORG
-alias -g szo='cd $HOME/sd64/zim/ORG/'
+alias -g szo='cd $HOME/ZIM/ORG/'
 # ____________________________________________________________________________________
 
 alias -g 2p='cd $HOME/sd64/2programming_repository/'
@@ -158,7 +163,7 @@ alias -g mdd='$HOME/.scripts/markdown_diary.sh' # md is taken as mkdir -p <dir>
 alias -g backup="$HOME/.scripts/backup_all_and_encrypt.sh" # backsup ALL_ZIM, personal and org to Dropbox in .7z format
 alias -g mn='$HOME/.scripts/mynotes.sh'
 alias -g wcmj='$HOME/.scripts/wordCount_journal.sh' # word count my journal (markdown journal) - usage ->% wcmj 05 [ie June]
-alias hanging='cd $HOME/ziim/Computer/ && tail -n4 0_Hanging.txt && cd $HOME/ziim/Donaghs/00_Home/ && tail -n4 0_Hanging.txt'
+alias hanging='cd $HOME/ZIM/Computer/ && tail -n4 0_Hanging.txt && cd $HOME/ziim/Donaghs/00_Home/ && tail -n4 0_Hanging.txt'
 alias hg=histgrep
 alias hj='history'
 alias pss='python3 -m http.server 5000'
@@ -169,7 +174,7 @@ alias tm="calc -d 'read qtime; qtime(0)'" # sudo apt install apcalc WINTER TIME
 # alias tm="calc -d 'read qtime; qtime(1)'" # sudo apt install apcalc SUMMER TIME
 alias tn='t | festival --tts'
 alias tn='t | spd-say --pipe-mode'
-alias pip='pip3'
+#alias pip='pip3'
 alias speedtest="curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 alias wett='curl wttr.in/limerick'
 alias def='~/.scripts/get_defs.sh ' # dictionary addition to $dict
@@ -216,9 +221,9 @@ alias pf='source $HOME/.virtualenvs/flask/bin/activate'
 
 # networking shortcuts
 # alias ipe='dig @resolver1.opendns.com ANY myip.opendns.com +short' # external ip -- better
-alias ipe='dig myip.opendns.com @resolver1.opendns.com +short'
-alias ipi="ip -4 addr  | grep 192 | cut -d '/' -f1"
-alias ping='ping -c3 '
+alias -g ipe='dig myip.opendns.com @resolver1.opendns.com +short'
+alias -g ipi="ip -4 addr  | grep 192 | cut -d '/' -f1"
+# alias -g ping='ping -c3 '
 alias png='ping -c4 8.8.8.8' # ping google to check if there is internet access
 alias avg='png G rtt | cut -d'/' -f5' # average png time atm. Compared to what? Is internet slow or not?
 

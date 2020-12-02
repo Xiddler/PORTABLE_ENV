@@ -1,31 +1,29 @@
 {
-    "usageCount": 4, 
-    "omitTrigger": false, 
-    "prompt": false, 
-    "description": "line_w4", 
+    "type": "phrase",
+    "description": "line_w4",
+    "modes": [],
+    "usageCount": 4,
+    "prompt": false,
+    "omitTrigger": false,
+    "matchCase": false,
+    "showInTrayMenu": false,
     "abbreviation": {
-        "wordChars": "[\\w]", 
         "abbreviations": [
             "w4"
-        ], 
-        "immediate": true, 
-        "ignoreCase": false, 
-        "backspace": true, 
-        "triggerInside": false
-    }, 
+        ],
+        "backspace": true,
+        "ignoreCase": false,
+        "immediate": true,
+        "triggerInside": false,
+        "wordChars": "[\\w]"
+    },
     "hotkey": {
-        "hotKey": null, 
-        "modifiers": []
-    }, 
-    "modes": [
-        1
-    ], 
-    "showInTrayMenu": false, 
-    "matchCase": false, 
+        "modifiers": [],
+        "hotKey": null
+    },
     "filter": {
-        "regex": null, 
+        "regex": null,
         "isRecursive": false
-    }, 
-    "type": "phrase", 
+    },
     "sendMode": "kb"
 }

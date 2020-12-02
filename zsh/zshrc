@@ -12,15 +12,17 @@ if [ -f $HOME/.zsh_aliases ]; then
 fi
 
 # my vimrc
-MYVIMRC=/home/donagh/.vimrc
+MYVIMRC=/home/donaghm/.vimrc
 
 
 # Increase scrolling history. This is __NOT__ the number of items listed from a command. That'd be a Terminator setting.
 set -g history-limit 9000 #
+
 #set Caps Lock key to Escape
 setxkbmap -option caps:escape
 # time and date data added to zsh history
 setopt extendedhistory 
+
 
 # get fzf to enable Ctrl-R & Ctrl-T
 source ~/.fzf/shell/key-bindings.zsh
@@ -134,10 +136,11 @@ source $ZSH/oh-my-zsh.sh
 # export PATH="your-dir:$PATH"
 # "export" in included within the zsh PATH command - check if true
 # added to include Zotero path 2020-02-19
-# PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin"
+# PATH="/home/donaghm/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donaghm/.fzf/bin:/home/donaghm/Applications/Zotero/Zotero_linux-x86_64:/home/donaghm/.vim/pack/SuperMan/start/vim-superman/bin"
 #
 
-PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin:/home/donagh/.emacs.d/bin/:/home/donagh/.cargo/bin:/home/donagh/PORTABLE_ENV_tmp/:/opt/texlive/2020/bin/x86_64-linux/"
+PATH="/home/donaghm/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donaghm/.fzf/bin:/home/donaghm/Applications/Zotero/Zotero_linux-x86_64:/home/donaghm/.vim/pack/SuperMan/start/vim-superman/bin:/home/donaghm/.emacs.d/bin/:/home/donaghm/.cargo/bin:/home/donaghm/PORTABLE_ENV_tmp/:/opt/texlive/2020/bin/x86_64-linux/:/home/donaghm/.emacs/bin"
+# PATH="/home/donaghm/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donaghm/.fzf/bin:/home/donaghm/Applications/Zotero/Zotero_linux-x86_64:/home/donaghm/.vim/pack/SuperMan/start/vim-superman/bin:/home/donaghm/.emacs.d/bin/:/home/donaghm/.cargo/bin:/home/donaghm/PORTABLE_ENV_tmp/:/opt/texlive/2020/bin/x86_64-linux/"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 # You may need to manually set your language environment
@@ -273,7 +276,7 @@ bindkey 'cx' clear-screen
 # Navigation shortcuts
 # bal() { cd $HOME/sd35/0My_Folders/11Balmurry/Balmurry_Sale/}
 # sd3() { cd $HOME/sd35/}
-# ziim() { cd $HOME/downloads/home/donagh/sd35/zim}
+# ziim() { cd $HOME/downloads/home/donaghm/sd35/zim}
 # don() { cd $HOME/sd35/1donaghs-stuff/Big_Projects/2019_new_earn}
 
 # ccl() { cd $HOME/sd35/1donaghs-stuff/croom_concrete/ }
@@ -300,7 +303,7 @@ typeset -U path
 # Set up the journal directory on the SD64 Card
 # journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
 #
-journal='/home/donagh/sd64/1donaghs-stuff/personal/journal'
+journal='/home/donaghm/sd64/1donaghs-stuff/personal/journal'
 
 jour() { cd $journal && ls }
 
@@ -316,14 +319,14 @@ md_journal() {
 # CLI tool
 # t is aliased to .../todo.sh in .zsh_aliases
 # export TODOTXT_DEFAULT_ACTION=ls
-# todo_folder='/home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli/'
+# todo_folder='/home/donaghm/journal/2019/TODO/todo-cli-tool/todo.txt-cli/'
 # the following function greps a term as in $ grep <term> <Enter>
 v()
 {
     grep "$1" $todo_folder/todo.txt 
 }
 # put the following in .zsh_aliases - alias t='./todo.sh -d /path/to/your/todo.cfg'
-# alias -g td='/home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli/tododo.sh -d ~/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.cfg' 
+# alias -g td='/home/donaghm/journal/2019/TODO/todo-cli-tool/todo.txt-cli/tododo.sh -d ~/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.cfg' 
 # alias t='./todo.sh -d /path/to/your/todo.cfg'
 #
 #
@@ -345,12 +348,12 @@ export RANGER_LOAD_DEFAULT_RC=false
 
 
 # br is an alternative file searcher - described in HackerNews Jan 2020
-# source /home/donagh/.config/broot/launcher/bash/br
+# source /home/donaghm/.config/broot/launcher/bash/br
 #
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# source /home/donagh/.config/broot/launcher/bash/br
+# source /home/donaghm/.config/broot/launcher/bash/br
 # call the zsh-syntax-highlighting plugin last thing in this file
 plugins=( zsh-syntax-highlighting )
