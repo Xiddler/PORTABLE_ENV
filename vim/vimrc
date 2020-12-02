@@ -37,6 +37,7 @@ nnoremap <space> :
 set wildmenu            " visual autocomplete for command menu
 "allow  yanked text to be copied to the X11 system clipboard....
 set clipboard=unnamedplus
+" set clipboard=unnamed
 " turn off highlight at underscore in .md files 
 
 " remove highlight to the _ in markdown (very annoying) (not fixed - 2020-10-02)

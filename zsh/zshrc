@@ -19,7 +19,8 @@ MYVIMRC=/home/donagh/.vimrc
 set -g history-limit 9000 #
 #set Caps Lock key to Escape
 setxkbmap -option caps:escape
-
+# time and date data added to zsh history
+setopt extendedhistory 
 
 # get fzf to enable Ctrl-R & Ctrl-T
 source ~/.fzf/shell/key-bindings.zsh
