@@ -1,12 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
-let g:netrw_dirhist_2='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/zim/LOOK_AT_ME'
-let g:netrw_dirhist_1='/home/donagh/.config/omf'
-let g:netrw_dirhist_0='/home/donagh/TESTING/PORTABLE_ENV/cheat/dot_cheat_hard'
-let g:netrw_dirhist_9='/home/donagh/TESTING/PORTABLE_ENV/cheat'
-let g:netrw_dirhist_8='/home/donagh/TESTING/PORTABLE_ENV'
-let g:netrw_dirhist_7='/home/donagh/TESTING'
-let g:netrw_dirhist_6='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/zim/Computer/Hardware'
-let g:netrw_dirhist_5='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/books/Computer_books'
-let g:netrw_dirhist_4='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/books/1_Reading'
-let g:netrw_dirhist_3='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/ideas'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/donagh/PORTABLE_ENV'
