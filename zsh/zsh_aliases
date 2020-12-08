@@ -4,6 +4,8 @@
 # alias contout='$HOME/contact_out.sh' # refers to contacts.csv which is /media/ubuntu/3520-FD13/0My_Folders/00Donaghs_ORG/14_Donaghs_CONTACTS/00_Main_Contacts.csv
 # alias ggp='git push git@github.com:Xiddler/xiddler.github.io.git gh-pages:master'
 # alias vim='sudo vim '
+alias -g pas="pamac search "
+alias -g spi='sudo pamac install '
 alias -g lido="ssh -i .ssh/id_rsa_do donagh@142.93.37.252"
 alias -g pyython='cd $HOME/Donaghs_Tmp/python_stuff'
 alias -g C=' | gpaste-client'
@@ -15,11 +17,11 @@ alias -g tmp='cd $HOME/Donaghs_Tmp/'
 alias -g PS='ps aux | egrep -i --color=auto'
 # alias -g catt='cat $HOME/ziim/Computer/11SignUps.txt|rg -i -A5 '
 # RPi version
-alias -g catt='cat $HOME/ZIM/Computer/11SignUps.txt|rg -i -A5 '
+alias -g catt='cat $HOME/DONAGHS/ZIM/Computer/11SignUps.txt|rg -i -A5 '
 alias webdav='cd /var/www/webdav'
 
 alias -g contin='python3 /media/donagh/3520-FD13/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/contin.py' # input new contact
-alias -g contout='cat /home/donagh/ZIM/ORG/03_CONTACTS/Contacts.txt | rg -i -A18 -B2 '
+alias -g contout='cat $HOME/DONAGHS/ZIM/ORG/03_CONTACTS/Contacts.txt | rg -i -A18 -B2 '
 alias -g ep='echo $PATH'
 alias -g exa='~/Applications/exa-linux-x86_64' # modern ls
 # alias -g kontout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 ' # get contact  
@@ -28,11 +30,11 @@ alias -g nt='terminator --geometry +500+100' # open a new zsh terminal
 # alias -g passin='python3 $HOME/sd64/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
 alias -g passin='python3 /media/pi/B693-3C22/ALL_DONAGH/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
 # Raspberry Pi
-alias -g tpassin='sudo --prompt=1234 /home/donagh/.scripts/passin_terminal.py'
-# alias -g passin='/home/donagh/.scripts/passin.sh' # a non-GUI version
-alias -g passout='cat /home/donagh/ZIM/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias for catt
+alias -g tpassin='sudo --prompt=1234 $HOME/.scripts/passin_terminal.py'
+# alias -g passin='$HOME/.scripts/passin.sh' # a non-GUI version
+alias -g passout='cat $HOME/DONAGHS/ZIM/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias for catt
 alias -g xn='| xargs -n 1'
-alias -g zimbu='/home/donagh/.scripts/zim_backup_to_tinyUSB.sh'
+alias -g zimbu='$HOME/.scripts/zim_backup_to_tinyUSB.sh'
 alias -g zz='zsh -l'
 alias -g jc='jupyter-console'
 # instead of plain rm usd trash rm to move the file to Trash so as to be able to recover it like on the Desktop
@@ -40,10 +42,10 @@ alias -g trm='mv --force -t ~/.local/share/Trash '
 # to copy all new and old cheats to /home/donag/PORTABLE_ENV/cheat/dot_cheat_hard
 # NOTE: the following is maybe not needed of ALL cheats are stored in
 # PORTANBLE_ENV includeing the /usr/share/cheat ones - do this first
-# alias ccheat="cp -f /usr/share/cheat/* /home/donagh/PORTABLE_ENV/cheat/dot_cheat_hard/ && cp -f /home/donagh/.cheat/* /home/donagh/PORTABLE_ENV/cheat/dot_cheat_hard/"
+# alias ccheat="cp -f /usr/share/cheat/* $HOME/PORTABLE_ENV/cheat/dot_cheat_hard/ && cp -f $HOME/.cheat/* $HOME/PORTABLE_ENV/cheat/dot_cheat_hard/"
 #
 alias -g ifconfig="echo 'Use the ip command'"
-# alias -g lanner="/home/donagh/.scripts/lanner_start.sh" 
+# alias -g lanner="$HOME/.scripts/lanner_start.sh" 
 # 
 # alias -g cx='clear'
 # the following shortcut alias means that pressing enter after just a 
@@ -58,27 +60,27 @@ alias -g tiny='cd /run/media/donaghm/B693-3C22'
 
 # ____________________________________________________________________________________
 # shortcuts for when I want to Search Zim - Computer ORG 
-alias -g ziim='$HOME/ZIM/'
+alias -g ziim='$HOME/DONAGHS/ZIM/'
 # go to zim/Computer
-alias -g szc='cd $HOME/ZIM/Computer/'
+alias -g szc='cd $HOME/DONAGHS/ZIM/Computer/'
 # go to zim/ORG
-alias -g szo='cd $HOME/ZIM/ORG/'
+alias -g szo='cd $HOME/DONAGHS/ZIM/ORG/'
 # ____________________________________________________________________________________
 
 alias -g 2p='cd $HOME/sd64/2programming_repository/'
-alias -g share='cd /home/donagh/linuxShared'
+alias -g share='cd $HOME/linuxShared'
 # for changing color of the monitor against eyestrain
 alias -g night='blueshift -t 1800'
 alias -g day='blueshift -t 3000'
 
 # Rung 3
-alias -g rung3='cd /home/donagh/Donaghs_Tmp/Rung_3'
+alias -g rung3='cd $HOME/Donaghs_Tmp/Rung_3'
 
 
 # FUNCTIONS (See Separate functions for my personal journal below)
 
 toread() { vim $HOME/sd64/books/0_To_Read/books_to_read.md }
-recipes() {vim /home/donagh/sd64/1donaghs-stuff/recipes/low-carb_meals/links_to_low_carb_meals.md }
+recipes() {vim $HOME/sd64/1donaghs-stuff/recipes/low-carb_meals/links_to_low_carb_meals.md }
 
 
 
@@ -88,8 +90,8 @@ recipes() {vim /home/donagh/sd64/1donaghs-stuff/recipes/low-carb_meals/links_to_
 # journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
 # Go to Current Year/Month 
 k=$(date +"%Y/%m")
-journal='/home/donagh/sd64/1donaghs-stuff/personal/journal/'$k # short form
-personal='/home/donagh/sd64/1donaghs-stuff/personal/' # short form
+journal='$HOME/sd64/1donaghs-stuff/personal/journal/'$k # short form
+personal='$HOME/sd64/1donaghs-stuff/personal/' # short form
 
 #
 # alias mj=md_journal # opens todays journal as a markdown file in vim for editing.
@@ -110,13 +112,13 @@ az() { cd $HOME/all_org }
 sd() { cd $HOME/sd64/ }
 pers() { cd $personal && ls }
 planning() { cd  $personal/planning/ }
-humour() { cd /home/donagh/sd64/1donaghs-stuff/humour/ }
-outdoors() { cd /home/donagh/sd64/1donaghs-stuff/OUTDOOR }
-donaghs() { cd /home/donagh/sd64/1donaghs-stuff/ }
+humour() { cd $HOME/sd64/1donaghs-stuff/humour/ }
+outdoors() { cd $HOME/sd64/1donaghs-stuff/OUTDOOR }
+donaghs() { cd $HOME/sd64/1donaghs-stuff/ }
 mind() { cd $personal/minding_me }
 words() { cd $HOME/WORDS/ }
 books() { cd $HOME/sd64/books/ }
-bookmarks() { cd /home/donagh/sd64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
+bookmarks() { cd $HOME/sd64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
 reading() { cd $HOME/sd64//books/1_Reading && ls }
 alc() { cd  $personal/alcohol/ }
 
@@ -156,14 +158,14 @@ alias vza="vim ~/.zsh_aliases"
 
 # Donaghs shortcuts
 alias -g chk='$HOME/.scripts/info.sh' # quick summary of system status
-alias -g scr='cd $HOME/.scripts/' # cd to /home/donagh/.scripts
+alias -g scr='cd $HOME/.scripts/' # cd to $HOME/.scripts
 # alias -g mj=md_journal # opens todays journal as a markdown file in vim for editing.
 alias -g mj='$HOME/.scripts/markdown_journal.sh'
 alias -g mdd='$HOME/.scripts/markdown_diary.sh' # md is taken as mkdir -p <dir>
 alias -g backup="$HOME/.scripts/backup_all_and_encrypt.sh" # backsup ALL_ZIM, personal and org to Dropbox in .7z format
 alias -g mn='$HOME/.scripts/mynotes.sh'
 alias -g wcmj='$HOME/.scripts/wordCount_journal.sh' # word count my journal (markdown journal) - usage ->% wcmj 05 [ie June]
-alias hanging='cd $HOME/ZIM/Computer/ && tail -n4 0_Hanging.txt && cd $HOME/ziim/Donaghs/00_Home/ && tail -n4 0_Hanging.txt'
+alias hanging='cd $HOME/DONAGHS/ZIM/Computer/ && tail -n4 0_Hanging.txt && cd $HOME/ziim/Donaghs/00_Home/ && tail -n4 0_Hanging.txt'
 alias hg=histgrep
 alias hj='history'
 alias pss='python3 -m http.server 5000'
@@ -185,15 +187,15 @@ alias -g filepath='$HOME/.scripts/filename.sh'
 # Superceded by org-mode in May 2020
 # org() { cd $HOME/TODO/ORG-MODE }
 # todo() { cd $HOME/TODO }
-# alias t="/home/donagh/TODO && ls"
-# alias td="/home/donagh/TODO && ls"
+# alias t="$HOME/TODO && ls"
+# alias td="$HOME/TODO && ls"
 # Libre Office open TODO.ods / PROJECTS.ods
 # alias lot="/usr/sbin/libreoffice $HOME\/TODO\/TODO.ods &"
 # alias lop="/usr/sbin/libreoffice $HOME\/TODO\/PROJECTS.ods &"
 # View todo / lists in the terminal
-# alias -g vt="/home/donagh/.scripts/todo-ods-to-csv.sh"
-# alias -g vp="/home/donagh/.scripts/projects-ods-to-csv.sh"
-# alias -g meta="/home/donagh/TODO/META"
+# alias -g vt="$HOME/.scripts/todo-ods-to-csv.sh"
+# alias -g vp="$HOME/.scripts/projects-ods-to-csv.sh"
+# alias -g meta="$HOME/TODO/META"
 
 # git shortcuts - but see $alias from zsh
 alias cm='git commit -m '
