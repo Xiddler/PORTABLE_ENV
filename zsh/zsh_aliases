@@ -27,8 +27,8 @@ alias -g exa='~/Applications/exa-linux-x86_64' # modern ls
 # alias -g kontout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 ' # get contact  
 alias -g lsd='du -s -- *(D) | sort -k1n' # list size of directories
 alias -g nt='terminator --geometry +500+100' # open a new zsh terminal  
-# alias -g passin='python3 $HOME/sd64/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
-alias -g passin='python3 /media/pi/B693-3C22/ALL_DONAGH/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
+alias -g passin='python3 $HOME/SD64/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
+# alias -g passin='python3 /media/pi/B693-3C22/ALL_DONAGH/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
 # Raspberry Pi
 alias -g tpassin='sudo --prompt=1234 $HOME/.scripts/passin_terminal.py'
 # alias -g passin='$HOME/.scripts/passin.sh' # a non-GUI version
@@ -60,14 +60,14 @@ alias -g tiny='cd /run/media/donaghm/B693-3C22'
 
 # ____________________________________________________________________________________
 # shortcuts for when I want to Search Zim - Computer ORG 
-alias -g ziim='$HOME/DONAGHS/ZIM/'
+alias -g ziim='$HOME/SD64/DONAGHS/ZIM/'
 # go to zim/Computer
-alias -g szc='cd $HOME/DONAGHS/ZIM/Computer/'
+alias -g szc='cd $HOME/SD64/DONAGHS/ZIM/Computer/'
 # go to zim/ORG
-alias -g szo='cd $HOME/DONAGHS/ZIM/ORG/'
+alias -g szo='cd $HOME/SD64/DONAGHS/ZIM/ORG/'
 # ____________________________________________________________________________________
 
-alias -g 2p='cd $HOME/sd64/2programming_repository/'
+alias -g 2p='cd $HOME/SD64/2programming_repository/'
 alias -g share='cd $HOME/linuxShared'
 # for changing color of the monitor against eyestrain
 alias -g night='blueshift -t 1800'
@@ -79,8 +79,8 @@ alias -g rung3='cd $HOME/Donaghs_Tmp/Rung_3'
 
 # FUNCTIONS (See Separate functions for my personal journal below)
 
-toread() { vim $HOME/sd64/books/0_To_Read/books_to_read.md }
-recipes() {vim $HOME/sd64/1donaghs-stuff/recipes/low-carb_meals/links_to_low_carb_meals.md }
+toread() { vim $HOME/SD64/books/0_To_Read/books_to_read.md }
+recipes() {vim $HOME/SD64/1donaghs-stuff/recipes/low-carb_meals/links_to_low_carb_meals.md }
 
 
 
@@ -90,8 +90,8 @@ recipes() {vim $HOME/sd64/1donaghs-stuff/recipes/low-carb_meals/links_to_low_car
 # journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
 # Go to Current Year/Month 
 k=$(date +"%Y/%m")
-journal='$HOME/sd64/1donaghs-stuff/personal/journal/'$k # short form
-personal='$HOME/sd64/1donaghs-stuff/personal/' # short form
+journal='$HOME/SD64/1donaghs-stuff/personal/journal/'$k # short form
+personal='$HOME/SD64/1donaghs-stuff/personal/' # short form
 
 #
 # alias mj=md_journal # opens todays journal as a markdown file in vim for editing.
@@ -109,22 +109,22 @@ po() { cd $HOME/PORTABLE_ENV }
 dm() { cd $HOME/Donaghs_Tmp }
 te() { cd $HOME/Testing }
 az() { cd $HOME/all_org }
-sd() { cd $HOME/sd64/ }
+sd() { cd $HOME/SD64/ }
 pers() { cd $personal && ls }
 planning() { cd  $personal/planning/ }
-humour() { cd $HOME/sd64/1donaghs-stuff/humour/ }
-outdoors() { cd $HOME/sd64/1donaghs-stuff/OUTDOOR }
-donaghs() { cd $HOME/sd64/1donaghs-stuff/ }
+humour() { cd $HOME/SD64/1donaghs-stuff/humour/ }
+outdoors() { cd $HOME/SD64/1donaghs-stuff/OUTDOOR }
+donaghs() { cd $HOME/SD64/1donaghs-stuff/ }
 mind() { cd $personal/minding_me }
 words() { cd $HOME/WORDS/ }
-books() { cd $HOME/sd64/books/ }
-bookmarks() { cd $HOME/sd64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
-reading() { cd $HOME/sd64//books/1_Reading && ls }
+books() { cd $HOME/SD64/books/ }
+bookmarks() { cd $HOME/SD64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
+reading() { cd $HOME/SD64//books/1_Reading && ls }
 alc() { cd  $personal/alcohol/ }
 
 # Temporary functions
-web() {cd $HOME/sd64/2programming_repository/css/css_grid/donagh-dev/}
-clue() {cd  $HOME/sd64/1donaghs-stuff/Projects/Clueless-on-DO/Clueless/clueless-webapp }
+web() {cd $HOME/SD64/2programming_repository/css/css_grid/donagh-dev/}
+clue() {cd  $HOME/SD64/1donaghs-stuff/Projects/Clueless-on-DO/Clueless/clueless-webapp }
 
 # immediately edit a file
 grat() { $EDITOR $personal/minding_me/gratitude_journal.md }

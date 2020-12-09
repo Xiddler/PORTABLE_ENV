@@ -5,5 +5,6 @@ U Universal
              O   G   U
 777         rwx rwx rwx
 766         rwx rw- rw-
+764         rwx rw- r--
 755         rwx r-x r-x
 744         rwx r-- r--
