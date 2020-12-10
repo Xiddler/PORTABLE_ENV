@@ -1,23 +1,5 @@
-# ALIASES
-# REM: the functions are defined in .zshrc
-# alias chk='cd $HOME && ./info.sh'
-# alias contout='$HOME/contact_out.sh' # refers to contacts.csv which is /media/ubuntu/3520-FD13/0My_Folders/00Donaghs_ORG/14_Donaghs_CONTACTS/00_Main_Contacts.csv
-# alias ggp='git push git@github.com:Xiddler/xiddler.github.io.git gh-pages:master'
-# alias vim='sudo vim '
-alias -g pas="pamac search "
-alias -g spi='sudo pamac install '
-alias -g lido="ssh -i .ssh/id_rsa_do donagh@142.93.37.252"
-alias -g pyython='cd $HOME/Donaghs_Tmp/python_stuff'
-alias -g C=' | gpaste-client'
-# alias -g C=' | clipit'
-alias -g G='| egrep -i --color=auto'
-alias -g P='pwd -P'
-alias -g vacc='column -s, -t $HOME/Donaghs_Tmp/balance/accounts.csv'
-alias -g tmp='cd $HOME/Donaghs_Tmp/'
-alias -g PS='ps aux | egrep -i --color=auto'
-# alias -g catt='cat $HOME/ziim/Computer/11SignUps.txt|rg -i -A5 '
 # RPi version
-alias -g catt='cat $HOME/DONAGHS/ZIM/Computer/11SignUps.txt|rg -i -A5 '
+alias -g catt='cat $HOME/ZIM/Computer/11SignUps.txt|rg -i -A5 '
 alias webdav='cd /var/www/webdav'
 
 alias -g contin='python3 /media/donagh/3520-FD13/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/contin.py' # input new contact
@@ -27,12 +9,12 @@ alias -g exa='~/Applications/exa-linux-x86_64' # modern ls
 # alias -g kontout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 ' # get contact  
 alias -g lsd='du -s -- *(D) | sort -k1n' # list size of directories
 alias -g nt='terminator --geometry +500+100' # open a new zsh terminal  
-alias -g passin='python3 $HOME/SD64/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
+alias -g passin='python3 $HOME/SD64/2programming/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
 # alias -g passin='python3 /media/pi/B693-3C22/ALL_DONAGH/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
 # Raspberry Pi
 alias -g tpassin='sudo --prompt=1234 $HOME/.scripts/passin_terminal.py'
 # alias -g passin='$HOME/.scripts/passin.sh' # a non-GUI version
-alias -g passout='cat $HOME/DONAGHS/ZIM/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias for catt
+alias -g passout='cat $HOME/ZIM/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias for catt
 alias -g xn='| xargs -n 1'
 alias -g zimbu='$HOME/.scripts/zim_backup_to_tinyUSB.sh'
 alias -g zz='zsh -l'
@@ -60,7 +42,7 @@ alias -g tiny='cd /run/media/donaghm/B693-3C22'
 
 # ____________________________________________________________________________________
 # shortcuts for when I want to Search Zim - Computer ORG 
-alias -g ziim='$HOME/SD64/DONAGHS/ZIM/'
+alias -g ziim='$HOME/ZIM/'
 # go to zim/Computer
 alias -g szc='cd $HOME/SD64/DONAGHS/ZIM/Computer/'
 # go to zim/ORG
@@ -102,11 +84,12 @@ alias dl='cd ~/Downloads'
 alias ds='cd ~/Documents'
 alias dr='cd ~/Dropbox'
 alias -g hf='$HOME/'
+alias -g repos='$HOME/SD64/REPOSITORIES'
 
 # Functions for shortcuts - equivalent to aliases.
 jour() { cd $journal && ls }
 po() { cd $HOME/PORTABLE_ENV }
-dm() { cd $HOME/Donaghs_Tmp }
+# dm() { cd $HOME/Donaghs_Tmp }
 te() { cd $HOME/Testing }
 az() { cd $HOME/all_org }
 sd() { cd $HOME/SD64/ }
@@ -140,6 +123,8 @@ aj() { $EDITOR $personal/alcohol/alcohol_journal.md } # (a)lcohol-(j)ournal mode
 #
 # alias to get my IP address of digital ocean website (2020-02-17)
 alias site='dig donaghmccarthy.ie +short'
+# 2020-12-09
+alias -g sshdo='ssh -i $HOME/.ssh/id_rsa_do donagh@142.93.37.252'
 
 # dot files shortcuts 
 alias cb='cat ~/.bashrc'
