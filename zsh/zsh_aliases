@@ -1,15 +1,19 @@
-# RPi version
+# 2020-12-10 Manjaro again - may be missing some items...
+#
+# echo $HOME
 alias -g catt='cat $HOME/ZIM/Computer/11SignUps.txt|rg -i -A5 '
 alias webdav='cd /var/www/webdav'
+alias -g pas='pamac search '
+alias -g spi='sudo pamac install '
 
 alias -g contin='python3 /media/donagh/3520-FD13/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/contin.py' # input new contact
-alias -g contout='cat $HOME/DONAGHS/ZIM/ORG/03_CONTACTS/Contacts.txt | rg -i -A18 -B2 '
+alias -g contout='cat $HOME/ZIM/ORG/03_CONTACTS/Contacts.txt | rg -i -A18 -B2 '
 alias -g ep='echo $PATH'
 alias -g exa='~/Applications/exa-linux-x86_64' # modern ls
 # alias -g kontout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 ' # get contact  
 alias -g lsd='du -s -- *(D) | sort -k1n' # list size of directories
 alias -g nt='terminator --geometry +500+100' # open a new zsh terminal  
-alias -g passin='python3 $HOME/SD64/2programming/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
+alias -g passin='python3 $HOME/SD64/REPOSITORIES/2programming/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
 # alias -g passin='python3 /media/pi/B693-3C22/ALL_DONAGH/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
 # Raspberry Pi
 alias -g tpassin='sudo --prompt=1234 $HOME/.scripts/passin_terminal.py'
@@ -37,19 +41,21 @@ alias -s md=vim
 
 # shortcut to Tiny 128 USB drive
 
-alias -g tiny='cd /run/media/donaghm/B693-3C22'
+# alias -g tiny='cd /run/media/donaghm/B693-3C22'
+# 2020-12-10 
+alias -g tiny='cd /run/media/donaghm/tinyUSB'
 
 
 # ____________________________________________________________________________________
 # shortcuts for when I want to Search Zim - Computer ORG 
 alias -g ziim='$HOME/ZIM/'
 # go to zim/Computer
-alias -g szc='cd $HOME/SD64/DONAGHS/ZIM/Computer/'
+alias -g szc='cd $HOME/ZIM/Computer/'
 # go to zim/ORG
 alias -g szo='cd $HOME/SD64/DONAGHS/ZIM/ORG/'
 # ____________________________________________________________________________________
 
-alias -g 2p='cd $HOME/SD64/2programming_repository/'
+alias -g 2p='cd $HOME/SD64/REPOSITORIES/2programming/'
 alias -g share='cd $HOME/linuxShared'
 # for changing color of the monitor against eyestrain
 alias -g night='blueshift -t 1800'
@@ -72,35 +78,39 @@ recipes() {vim $HOME/SD64/1donaghs-stuff/recipes/low-carb_meals/links_to_low_car
 # journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
 # Go to Current Year/Month 
 k=$(date +"%Y/%m")
-journal='$HOME/SD64/1donaghs-stuff/personal/journal/'$k # short form
-personal='$HOME/SD64/1donaghs-stuff/personal/' # short form
+journal='$HOME/DONAGHS/personal/journal/'$k # short form
+personal='$HOME/DONAGHS/personal' # short form
+alias -g tp='cd $personal'
 
 #
 # alias mj=md_journal # opens todays journal as a markdown file in vim for editing.
 #
 # Navigation shortcuts
 alias cd..='cd ..'
-alias dl='cd ~/Downloads'
-alias ds='cd ~/Documents'
-alias dr='cd ~/Dropbox'
+alias -g dl='cd ~/Downloads'
+alias -g ds='cd ~/Documents'
+alias -g dr='cd ~/Dropbox'
+# alias -g te='cd ~/SD64/REPOSITORIES/TESTING/'
 alias -g hf='$HOME/'
 alias -g repos='$HOME/SD64/REPOSITORIES'
 
 # Functions for shortcuts - equivalent to aliases.
-jour() { cd $journal && ls }
+# jour { cd $journal && ls }
+alias -g jour='cd $HOME/DONAGHS/personal/journal'
 po() { cd $HOME/PORTABLE_ENV }
 # dm() { cd $HOME/Donaghs_Tmp }
-te() { cd $HOME/Testing }
+te() { cd $HOME/SD64/REPOSITORIES/TESTING }
 az() { cd $HOME/all_org }
 sd() { cd $HOME/SD64/ }
-pers() { cd $personal && ls }
+# pers() { cd $personal && ls }
+alias -g pers='cd $HOME/DONAGHS/personal/'
 planning() { cd  $personal/planning/ }
 humour() { cd $HOME/SD64/1donaghs-stuff/humour/ }
 outdoors() { cd $HOME/SD64/1donaghs-stuff/OUTDOOR }
 donaghs() { cd $HOME/SD64/1donaghs-stuff/ }
 mind() { cd $personal/minding_me }
-words() { cd $HOME/WORDS/ }
-books() { cd $HOME/SD64/books/ }
+words() { cd $HOME/REPOS/WORDS/ }
+books() { cd $HOME/REPOS/books/ }
 bookmarks() { cd $HOME/SD64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
 reading() { cd $HOME/SD64//books/1_Reading && ls }
 alc() { cd  $personal/alcohol/ }
@@ -115,9 +125,10 @@ ideas() { $EDITOR $personal/ideas/ideas_to_go_at.md }
 insp() { $EDITOR $personal/ideas/inspire.md }
 # See  alias -g mj=md_journal above
 pain() { $EDITOR $personal/minding_me/pain_points.md }
-wisd() { $EDITOR $personal/ideas/snippets.md }
-snippets() { $EDITOR $personal/ideas/snippets.md } # same as wisd
-aj() { $EDITOR $personal/alcohol/alcohol_journal.md } # (a)lcohol-(j)ournal modelled after (m)y (j)ournal.
+snips() { $EDITOR $HOME/DONAGHS/personal/ideas/snippets.md }
+wisd() { $EDITOR $HOME/DONAGHS/personal/ideas/snippets.md }
+aj() { $EDITOR /home/donaghm/DONAGHS/personal/minding_me/alcohol_journal.md } # (a)lcohol-(j)ournal modelled after (m)y (j)ournal.
+hme() { cd $HOME }
 
 #-------------------- END journal
 #

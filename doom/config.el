@@ -38,7 +38,7 @@
 ;; (setq doom-theme 'tsdh-dark)
 
 ;;; org-roam
-(setq org-roam-directory "~/org-roam")
+;; (setq org-roam-directory "~/org-roam")
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -50,6 +50,8 @@
 ;; (setq display-line-numbers-type t)
 (setq display-line-numbers-type t)
 
+;; use for SLIME lisp
+(setq inferior-lisp-program "sbcl")
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;

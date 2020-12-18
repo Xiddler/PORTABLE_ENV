@@ -12,11 +12,14 @@ if [ -f $HOME/.zsh_aliases ]; then
 fi
 
 # my vimrc
-MYVIMRC=/home/donaghm/.vimrc
+MYVIMRC=$HOME/.vimrc
 
 
 # Increase scrolling history. This is __NOT__ the number of items listed from a command. That'd be a Terminator setting.
 set -g history-limit 9000 #
+
+# refer to https://betterdev.blog/minimal-safe-bash-script-template/
+# set -Eeou pipefail
 
 #set Caps Lock key to Escape
 setxkbmap -option caps:escape
@@ -137,9 +140,8 @@ source $ZSH/oh-my-zsh.sh
 # "export" in included within the zsh PATH command - check if true
 # added to include Zotero path 2020-02-19
 # PATH="/home/donaghm/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donaghm/.fzf/bin:/home/donaghm/Applications/Zotero/Zotero_linux-x86_64:/home/donaghm/.vim/pack/SuperMan/start/vim-superman/bin"
-#
 
-PATH="/home/donaghm/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donaghm/.fzf/bin:/home/donaghm/Applications/Zotero/Zotero_linux-x86_64:/home/donaghm/.vim/pack/SuperMan/start/vim-superman/bin:/home/donaghm/.emacs.d/bin/:/home/donaghm/.cargo/bin:/home/donaghm/PORTABLE_ENV_tmp/:/opt/texlive/2020/bin/x86_64-linux/:/home/donaghm/.emacs/bin"
+PATH="$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donaghm/.fzf/bin:/home/donaghm/Applications/Zotero/Zotero_linux-x86_64:/home/donaghm/.vim/pack/SuperMan/start/vim-superman/bin:/home/donaghm/.emacs.d/bin/:/home/donaghm/.cargo/bin:/home/donaghm/PORTABLE_ENV_tmp/:/opt/texlive/2020/bin/x86_64-linux/:/home/donaghm/.emacs/bin"
 # PATH="/home/donaghm/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donaghm/.fzf/bin:/home/donaghm/Applications/Zotero/Zotero_linux-x86_64:/home/donaghm/.vim/pack/SuperMan/start/vim-superman/bin:/home/donaghm/.emacs.d/bin/:/home/donaghm/.cargo/bin:/home/donaghm/PORTABLE_ENV_tmp/:/opt/texlive/2020/bin/x86_64-linux/"
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -163,9 +165,7 @@ export LANG=en_US.UTF-8
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
 # My aliases are in the file .zsh_aliases
-#
 # donaghs
 autoload -U zmv # meaning zsh mv command
 # You can then run zmv to rename files according to a pattern. Both the pattern and the replacement text need to be quoted so that they are passed-as is to the zmv function which will expand them in due course.
@@ -183,59 +183,18 @@ setopt SHARE_HISTORY # uses same history for all sessions
 export EDITOR="vim"
 # export BROWSER="w3m"
 
-# alias -s
 # the following shortcut alias means that pressing enter after just a 
 # file name with .md extension will automagically open it with vim. Hurrah!
-# alias -s md=vim
 
 # Other aliases -- now taken care of in .zsh_aliases
-#
 source $HOME/.zsh_aliases
-# alias cx='clear' <-- now done using autokey which includes the <Enter> for speed!
-# alias wett='curl wttr.in/limerick'
-# alias hp='ls --hide=*.py'
-# alias gett='$HOME/.scripts/get_password.sh'
-# alias contout='$HOME/contact_out.sh' # refers to contacts.csv which is /media/ubuntu/3520-FD13/0My_Folders/00Donaghs_ORG/14_Donaghs_CONTACTS/00_Main_Contacts.csv
-# alias chk='cd $HOME && ./info.sh'
-# alias chk='$HOME/.scripts/info.sh'
-# alias ll='ls -la'
-# alias lls='ls | xargs -n1' # show ls in a single column
-# alias ld='ls -d */'
-# alias l.='ls -d .* --color=auto' # Show hidden files ##
-# alias pss='python -m SimpleHTTPServer 8000'
 # shortcuts for activating venvs. pb python basic
-alias pb='source $HOME/.virtualenvs/basic/bin/activate'
-# alias pf='source $HOME/.virtualenvs/flask/bin/activate'
-# alias pd='source $HOME/.virtualenvs/django/bin/activate'
-# alias zln='zmv -L'
-# alias zcp='zmv -C'
-# alias sb='source ~/.bashrc'
-# alias sz='source ~/.zshrc'
-# alias zs='zsh_stats' # lists last 20 commands with statistics
-# alias png='ping -c4 8.8.8.8' # ping google to check if there is internet access
-# alias ipi="ip -4 addr | grep 192 | sed 's/^[ \t]*//' | cut -d ' ' -f 2" | cut -d'/' -f1
-# alias ipi="ip -4 addr  | grep 192 | cut -d '/' -f1"
-# alias ipe='curl ipinfo.io' # external ip address
-# alias ipe='dig @resolver1.opendns.com ANY myip.opendns.com +short' # external ip -- better
-# alias synaptic='sudo synaptic'
 # git
-# alias gst='git status'
-# alias ggs='git status'
-# alias cm='git commit -m '
-# alias gcm='git commit -m '
-# alias ggl='git log'
-# alias ggp='git push git@github.com:Xiddler/xiddler.github.io.git gh-pages:master'
 # speedtest
-# alias speedtest="curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 # output time in words
-# alias t="calc -d 'read qtime; qtime(1)'" # sudo apt install apcalc SUMMER TIME
-# alias t="calc -d 'read qtime; qtime(0)'" # sudo apt install apcalc WINTER TIME
 # get latest hanging stuff
-# alias hanging='cd $HOME/ziim/Computer/ && tail -n4 0_Hanging.txt && cd $HOME/ziim/Donaghs/00_Home/ && tail -n4 0_Hanging.txt'
 # CLI dictionary
-# alias dict='cat /media/donagh/3520-FD13/1donaghs-stuff/Dictionaries/Oxford_English_Dictionary/oxford_dict.txt | grep '
 # CLI dictionary
-# alias def='~/.scripts/get_defs.sh '
 
 # bindkeys see also $ zle -al
 # switches to the command mode
@@ -250,7 +209,6 @@ bindkey 'cx' clear-screen
 
 # cd  /media/ubuntu/3520-FD13/2programming_repository/IT_projects/Dashboard_personal/ && gunicorn render_todo:app
 # eval "`dircolors -b ~/.dircolors`"
-# alias ls='ls --color=auto'
 
 # POWERLINE 
 # see https://powerline.readthedocs.io/en/latest/usage/shell-prompts.html
@@ -261,18 +219,14 @@ bindkey 'cx' clear-screen
 
 # powerline-daemon -q
 # . /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
-#
 # fast file and directory autojump
 # . /media/ubuntu/3520-FD13/compressed_utilities/zsh/z/z.sh
 
 # ls_colors
 # eval "`dircolors -b ~/.dircolors`"
-# alias ls='ls --color=auto'
-# alias lk='ls -1v'
 
 # FUNCTIONS
 # Functions can be found in the .zshrc file
-#
 # Navigation shortcuts
 # bal() { cd $HOME/sd35/0My_Folders/11Balmurry/Balmurry_Sale/}
 # sd3() { cd $HOME/sd35/}
@@ -302,19 +256,18 @@ typeset -U path
 # my easy journal 
 # Set up the journal directory on the SD64 Card
 # journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
-#
-journal='/home/donaghm/sd64/1donaghs-stuff/personal/journal'
+# journal='/home/donaghm/sd64/1donaghs-stuff/personal/journal'
+# journal='$HOME/DONAGHS/personal/journal'
 
-jour() { cd $journal && ls }
+# jour() { cd $journal && ls }
 
-md_journal() {
-        mkdir -p $journal/`date +%Y`
-        $EDITOR $journal/`date +%Y`/`date +%d-%m\.md`
-    }
-# mj on the CLI will make or open the relevant file.
+# md_journal() {
+        # mkdir -p $journal/`date +%Y`
+        # $EDITOR $journal/`date +%Y`/`date +%d-%m\.md`
+    # }
+# mj on the CLI will make or open the relevant file using a file in $HOME/.scripts called markdown_journal.sh
 
 # ----------------- END journal ------------------------------
-#
 # todo.txt
 # CLI tool
 # t is aliased to .../todo.sh in .zsh_aliases
@@ -326,11 +279,6 @@ v()
     grep "$1" $todo_folder/todo.txt 
 }
 # put the following in .zsh_aliases - alias t='./todo.sh -d /path/to/your/todo.cfg'
-# alias -g td='/home/donaghm/journal/2019/TODO/todo-cli-tool/todo.txt-cli/tododo.sh -d ~/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.cfg' 
-# alias t='./todo.sh -d /path/to/your/todo.cfg'
-#
-#
-#
 # grep hist
 histgrep() {
   grep -r "$@" ~/.history
@@ -338,8 +286,6 @@ histgrep() {
   }
 
 # speaking clock in the terminal
-# alias tn='t | festival --tts'
-# alias tn='t | spd-say --pipe-mode'
 
 # To stop ranger from loading both the default and your custom rc.conf,
 #  please set the environment variable RANGER_LOAD_DEFAULT_RC to FALSE.
@@ -349,7 +295,6 @@ export RANGER_LOAD_DEFAULT_RC=false
 
 # br is an alternative file searcher - described in HackerNews Jan 2020
 # source /home/donaghm/.config/broot/launcher/bash/br
-#
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

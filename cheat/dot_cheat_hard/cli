@@ -181,3 +181,13 @@ and add
 
 # convert from one file / document format to another example: 
 ->% unoconv -f csv some-file.ods
+
+
+# realpath <folder>
+realpath .
+
+# scan LAN - install ipscan from Angry IP
+ipscan
+
+# smb client to log into a smb server e.g. openmediavault
+smbclient -h

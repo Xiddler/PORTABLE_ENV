@@ -11,7 +11,10 @@ myword=$first$second
 echo $myword
 # the following line works so keep it safe
 # cat /media/donagh/3520-FD13/1donaghs-stuff/Dictionaries/Oxford_English_Dictionary/oxford_dict.txt | grep `echo $myword`
-cat /home/donagh/sd64/1donaghs-stuff/Dictionaries/Oxford_English_Dictionary/oxford_dict.txt | grep `echo $myword`
+cat $HOME/REPOS/WORDS/Dictionaries/Oxford_English_Dictionary/oxford_dict.txt | grep `echo $myword`
+
+# dict='$HOME/REPOS/WORDS/Dictionaries/Oxford_English_Dictionary/oxford_dict.txt'
+# cat $dict | grep `echo $myword`
 
 # line=`cat /media/donagh/3520-FD13/1donaghs-stuff/Dictionaries/Oxford_English_Dictionary/oxford_dict.txt`
 # echo $line | grep  `'^Film\s'`

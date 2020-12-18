@@ -26,10 +26,13 @@
 ;  :recipe (:host github :repo "username/repo"))
 
 (package! org-roam
-  :recipe (:host github :repo "org-roam/org-roam"))
+   :recipe (:host github :repo "org-roam/org-roam"))
 ;
-(package! company-org-roam
-   :recipe (:host github :repo "jethrokuan/company-org-roam"))
+;; (package! company-org-roam
+   ;; :recipe (:host github :repo "jethrokuan/company-org-roam"))
+
+(package! slime
+   :recipe (:host github :repo "slime/slime"))
 
 (package! org-journal)
 
