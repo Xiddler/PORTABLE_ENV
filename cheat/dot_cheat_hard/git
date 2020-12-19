@@ -177,3 +177,11 @@ donaghm [13:40 Sat 19/12] [~/SD64/REPOSITORIES/2programming/ssh/ssh_keys_2020]
 # push to ssh using id_rsa
  git push ssh://xiddler@server/opt/project master
 
+# 2020-12-19 using persona access token for git push etc.
+git push origin master
+user: Xiddler
+password: <enter pat here> 4e0ea62ed2fba5b7859ef82fb40cb6ee9d4daafa
+and no password used
+
+
+
