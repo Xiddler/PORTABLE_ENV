@@ -164,4 +164,5 @@ git revert <commit-hash>
 # Nice display
 git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit 
 
-
+# List config
+git config --list
