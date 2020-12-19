@@ -1,4 +1,5 @@
 # my dot_files
+2020-12-19 - Added new SSH key Dec_2020 as the password method is being deprecated. Stored in /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/ssh/ssh_keys_2020 
 2020-03-05 - I added cheat folders to not lose my edited cheats - using rsync ~/.cheat/* ~/PORTABLE_ENV/cheat/dot_cheat to back them up 
 2019-08-11 - made the PORTABLE_ENV directory in Github
 2019-03-04 
