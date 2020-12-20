@@ -1,5 +1,6 @@
 # my dot_files
 2020-12-19 - Added new SSH key Dec_2020 as the password method is being deprecated. Stored in /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/ssh/ssh_keys_2020 
+THEY USE personal access tokens INSTEAD OF PASSWORDS IN THE CLI
 
 tried
 git config --local core.sshCommand "/usr/bin/ssh -i run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/ssh/ssh_keys_2020/id_rsa_GH"
