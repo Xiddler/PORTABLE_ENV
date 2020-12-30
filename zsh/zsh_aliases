@@ -6,6 +6,8 @@ alias webdav='cd /var/www/webdav'
 alias -g pas='pamac search '
 alias -g spi='sudo pamac install '
 alias -g PS='ps aux | grep -i '
+alias -g G='| grep -i '
+alias -g quick='cd $HOME/DONAGHS/0_Quickies'
 
 
 alias -g contin='python3 /media/donagh/3520-FD13/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/contin.py' # input new contact
@@ -95,7 +97,7 @@ alias -g dr='cd ~/Dropbox'
 # alias -g te='cd ~/SD64/REPOSITORIES/TESTING/'
 alias -g hf='$HOME/'
 alias -g repos='$HOME/SD64/REPOSITORIES'
-alias -g cifs='cd $HOME/cifs_share'
+# alias -g cifs='cd $HOME/cifs_share'
 
 # Functions for shortcuts - equivalent to aliases.
 # jour { cd $journal && ls }
