@@ -191,3 +191,10 @@ ipscan
 
 # smb client to log into a smb server e.g. openmediavault
 smbclient -h
+
+# To check the permanently mounted drives and to add more
+sudo vim /etc/fstab
+
+# To check a disk
+sudo fsck
+

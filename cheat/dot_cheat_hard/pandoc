@@ -1,3 +1,6 @@
 # basic use
-$ pandoc -o filename.html myfile.pdf
+# show output file first
 
+$ pandoc -o output.html input.txt
+
+$ pandoc -o filename.html myfile.pdf
