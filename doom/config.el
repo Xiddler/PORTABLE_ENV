@@ -52,6 +52,8 @@
 
 ;; use for SLIME lisp
 (setq inferior-lisp-program "sbcl")
+ ; Emacs by default syncs with the system clipboard when cutting or pasting text. This can be really annoying if you do things like paste from the clipboard after a c w in normal mode, because the clipboard will be overwritten before you can paste its contents. The following line should disable this behavior:
+(setq select-enable-clipboard nil)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;

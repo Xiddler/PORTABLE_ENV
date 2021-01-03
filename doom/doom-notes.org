@@ -274,6 +274,9 @@ Then type in the name of the link and then the description
 **** Method 3
 Type [[x][]]
 and put the link / URI instead of x and the description in the second pair of [].
+** magit
+*** Getting started
+
 ** markdown for emacs
 Bold *bold*
 Italic /italic/
@@ -617,6 +620,12 @@ REM: Use z in this view to select desired period e.g. week/month
 **** View Deadlines
 [SPC] a a & deadlines shown in pink
 
+** org-mode keywords headings
+Close doom-emacs
+To add a new keyword:
+/home/donaghm/.emacs.d/modules/lang/org/config.el
+and add in the REPT(r)
+Then run doom sync and re-open doom-emacs
 ** checkboxes - Make a new checkbox i.e. [ ]
 Note: Checkboxes are not included in the global TODO list so they are often great to split a task into a number of simple steps.
 **** checkbox
