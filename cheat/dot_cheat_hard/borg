@@ -1,0 +1,1 @@
+cd $HOME/borg1 && export BORG_REPO='$HOME/borg1' && export BORG_PASSPHRASE='theboysoffairhill'

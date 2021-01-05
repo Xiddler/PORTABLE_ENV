@@ -198,3 +198,15 @@ sudo vim /etc/fstab
 # To check a disk
 sudo fsck
 
+# to compare two image files
+diff -s Folder1/file.jpg  Folder2/file.jpg
+
+# to compare two text files
+vimdiff file1.txt file2.txt
+
+# check health of a device
+# eg USB on /dev/sdb1
+smartctl -a /dev/sdb1
+(from smartmontools)
+
+
