@@ -1,6 +1,7 @@
 # various commands to get system info
 
 $ cat /etc/os-release
+$ cat /etc/issue
 
 $ lsb_release -a
 
@@ -9,8 +10,8 @@ $ hostnamectl
 
 # get the kernel details 
 $ uname -a
-OR
 $ uname -r
+$ uname -m
 
 
 # INXI utility

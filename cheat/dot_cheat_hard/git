@@ -183,5 +183,6 @@ user: Xiddler
 password: <enter pat here> 
 # NOTE: don't put PAT in here as Git will prevent it's use which is a good thing.
 
-
+# set identity
+git config --global user.name "Donagh" && git config --global user.email xiddler@gmail.com
 

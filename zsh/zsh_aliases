@@ -9,6 +9,10 @@ alias -g PS='ps aux | grep -i '
 alias -g G='| grep -i '
 alias -g quick='cd $HOME/DONAGHS/0_Quickies'
 
+# Digital Ocean
+# Digital Ocean Log In
+alias -g doli='ssh -i /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/ssh/ssh_keys_2020/id_rsa_do donagh@142.93.37.252' 
+
 
 alias -g contin='python3 /media/donagh/3520-FD13/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/contin.py' # input new contact
 alias -g contout='cat $HOME/ZIM/ORG/03_CONTACTS/Contacts.txt | rg -i -A18 -B2 '
@@ -223,8 +227,17 @@ alias pd='source $HOME/.virtualenvs/django/bin/activate'
 alias pf='source $HOME/.virtualenvs/flask/bin/activate'
 
 # networking shortcuts
+# Public IP address
 # alias ipe='dig @resolver1.opendns.com ANY myip.opendns.com +short' # external ip -- better
-alias -g ipe='dig myip.opendns.com @resolver1.opendns.com +short'
+# alias -g ipe='dig myip.opendns.com @resolver1.opendns.com +short'
+# original command = 'dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | awk -F'"' '{ print $2}'"
+alias -g ipe='dig TXT +short o-o.myaddr.l.google.com @ns1.google.com'
+# $ curl ifconfig.me
+# $ curl icanhazip.com
+# $ curl ipecho.net/plain
+# $ curl ifconfig.co
+# w3m https://duckduckgo.com/?q=ip
+#
 alias -g ipi="ip -4 addr  | grep 192 | cut -d '/' -f1"
 # alias -g ping='ping -c3 '
 alias png='ping -c4 8.8.8.8' # ping google to check if there is internet access
