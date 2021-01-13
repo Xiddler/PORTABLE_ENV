@@ -1,13 +1,14 @@
 #!/bin/bash
 
-# Generic create command
-# borg create --stats --progress --compression lz4 '.::ZIM_ALL-{now}' /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/MY_ZIM
 
 # This script uses borg to back up the following items:
 # ZIM_ALL
 # all_org
 # personal
 # 2programming
+
+# Generic create command
+# borg create --stats --progress --compression lz4 '.::ZIM_ALL-{now}' /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/MY_ZIM
 
 # to the following backup locations
 rpi_USB_2='/home/donaghm/cifs_share/USB128_2_borg_backup'

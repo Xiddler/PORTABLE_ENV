@@ -1,6 +1,6 @@
 {
     "type": "phrase",
-    "description": "email_donaghme",
+    "description": "New Phrase",
     "modes": [
         1
     ],
@@ -11,7 +11,7 @@
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "@@@"
+            "dmc"
         ],
         "backspace": true,
         "ignoreCase": false,

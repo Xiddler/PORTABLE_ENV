@@ -1,1 +1,9 @@
 cd $HOME/borg1 && export BORG_REPO='$HOME/borg1' && export BORG_PASSPHRASE='theboysoffairhill'
+
+borg create --stats --progress --compression lz4 '.::ZIM_ALL-{now}' /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/MY_ZIM
+
+borg create --stats --progress --compression lz4 '.::all_org-{now}' /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/all_org
+
+borg create --stats --progress --compression lz4 '.::personal-{now}' /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal
+
+borg create --stats --progress --compression lz4 '.::programming2-{now}' /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/2programming

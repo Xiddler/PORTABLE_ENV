@@ -13,7 +13,8 @@ md_journal() {
         # local myDir='/home/donagh/sd64/1donaghs-stuff/personal/journal/'$year/$month
         local
         # myDir='/home/donaghm/Donaghs_Tmp/journal/'$year/$month
-        myDir='/home/donaghm/SD64/DONAGHS/journal/'$year/$month
+        # myDir='/home/donaghm/SD64/DONAGHS/journal/'$year/$month
+        myDir='/run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/journal/'$year/$month
         mkdir -p $myDir
         local filen=$myDir/`date +%d-%m`\.md
         if [ ! -f $filen ]; 
