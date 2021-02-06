@@ -195,7 +195,7 @@ smbclient -h
 # To check the permanently mounted drives and to add more
 sudo vim /etc/fstab
 
-# To check a disk
+# To check a disk - disk needs to be unmounted. Do this from a live USB for the laptop HDD.
 sudo fsck
 
 # to compare two image files

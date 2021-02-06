@@ -171,3 +171,9 @@
     gpg -K
 
   Should show sec# instead of just sec.
+
+# Generate random password
+gpg --gen-random --armor 1 14
+
+
+

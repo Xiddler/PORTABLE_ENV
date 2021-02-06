@@ -11,13 +11,26 @@ alias -g quick='cd $HOME/DONAGHS/0_Quickies'
 
 # Digital Ocean
 # Digital Ocean Log In
-alias -g doli='ssh -i /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/ssh/ssh_keys_2020/id_rsa_do donagh@142.93.37.252' 
+alias -g doli='ssh -i /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/ssh/ssh_keys_2020/id_rsa_do donagh@188.166.103.14 ' 
+
+# CompTIA
+alias -g tia="cd /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/EDUCATION/Courses_2021/CompTIA_2021"
+
+
+# borg backup
+alias -g borgb="cd $HOME/borg1 && export BORG_REPO='$HOME/borg1' && export BORG_PASSPHRASE='theboysoffairhill'"
+alias -g borgs="cd $HOME/SAFE/SAFE_borg_backup && export BORG_REPO='$HOME/borg1' && export BORG_PASSPHRASE='theboysoffairhill'"
+
+# borg backup Zim_computer and CompTIA Directory
+alias -g borgz="$HOME/.scripts/aborg_backup_zim_and_TIA.sh"
+
+
 
 
 alias -g contin='python3 /media/donagh/3520-FD13/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/contin.py' # input new contact
 alias -g contout='cat $HOME/ZIM/ORG/03_CONTACTS/Contacts.txt | rg -i -A18 -B2 '
 alias -g ep='echo $PATH'
-alias -g exa='~/Applications/exa-linux-x86_64' # modern ls
+# alias -g exa='~/Applications/exa-linux-x86_64' # modern ls
 # alias -g kontout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 ' # get contact  
 alias -g lsd='du -s -- *(D) | sort -k1n' # list size of directories
 alias -g nt='terminator --geometry +500+100' # open a new zsh terminal  
@@ -46,6 +59,7 @@ alias -g ifconfig="echo 'Use the ip command'"
 # file name with .md extension will automagically open it with vim. Hurrah!
 alias -s md=vim
 
+alias -g pyython='cd /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/python'
 
 # shortcut to Tiny 128 USB drive
 
@@ -102,6 +116,7 @@ alias -g dr='cd ~/Dropbox'
 alias -g hf='$HOME/'
 alias -g repos='$HOME/SD64/REPOSITORIES'
 # alias -g cifs='cd $HOME/cifs_share'
+alias -g safe='cd $HOME/SAFE/SAFE_borg_backup'
 
 # Functions for shortcuts - equivalent to aliases.
 # jour { cd $journal && ls }

@@ -11,6 +11,8 @@ SHELL=/bin/bash
 | +------- hour (0 - 23)
 +--------- minute (0 - 59)
 
+minute hour day month dayofweek
+
 # example entries
 # every 15 min
 */15 * * * * /home/user/command.sh
@@ -20,3 +22,6 @@ SHELL=/bin/bash
 
 # every Saturday at 8:05 AM
 5 8 * * 6 /home/user/command.sh
+
+# borg backup schedule
+0 16 * * * 

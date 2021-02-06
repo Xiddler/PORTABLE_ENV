@@ -6,6 +6,9 @@
 # locale
 export LANG=en_US.utf8
 
+# borg backup
+export BORG_PASSPHRASE='theboysoffairhill'
+
 # Add zsh aliases.
 if [ -f $HOME/.zsh_aliases ]; then
     source $HOME/.zsh_aliases

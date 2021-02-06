@@ -36,5 +36,9 @@ lspci       # 00:00.0 PCI bridge: Broadcom Limited Device 2711 (rev 10)
 # Most of these commands use files in the /proc directory to extract system information.
 
 
+# state of system at a glance
+glances
+
+
 
 
