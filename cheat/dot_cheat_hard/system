@@ -39,6 +39,10 @@ lspci       # 00:00.0 PCI bridge: Broadcom Limited Device 2711 (rev 10)
 # state of system at a glance
 glances
 
+# find number of processors on this maching
+nproc
+4
+
 
 
 
