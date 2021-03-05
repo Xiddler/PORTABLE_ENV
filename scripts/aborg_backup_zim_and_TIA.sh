@@ -22,7 +22,9 @@ borg create --stats --progress --compression lz4 '/home/donaghm/SAFE/SAFE_borg_b
 borg create --stats --progress --compression lz4 '/home/donaghm/SAFE/SAFE_borg_backup/::TIA_Notes-{now}' $S_tia
 
 # copy to RPi 
-sudo cp -r $HOME/SAFE/SAFE_borg_backup $HOME/cifs_share
+# sudo cp -r $HOME/SAFE/SAFE_borg_backup $HOME/cifs_share
+# option with no intervention
+echo "1234" | sudo -S cp -r $HOME/SAFE/SAFE_borg_backup $HOME/cifs_share
 
-echo "Zim_Computer successfully compressed, encrypted and backed up to SAFE"
+echo "Zim_Computer successfully compressed, encrypted and backed up to ~/cifs_share which is the USB on the RPi"
 

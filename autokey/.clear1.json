@@ -4,18 +4,18 @@
     "modes": [
         1
     ],
-    "usageCount": 0,
+    "usageCount": 33,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "cl"
+            "xl"
         ],
         "backspace": true,
         "ignoreCase": false,
-        "immediate": true,
+        "immediate": false,
         "triggerInside": false,
         "wordChars": "[\\w]"
     },

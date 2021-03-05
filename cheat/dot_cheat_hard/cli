@@ -209,4 +209,6 @@ vimdiff file1.txt file2.txt
 smartctl -a /dev/sdb1
 (from smartmontools)
 
+# check locale
+locale -a
 

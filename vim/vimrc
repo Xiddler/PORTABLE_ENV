@@ -260,6 +260,10 @@ autocmd BufWritePre *.py :%s/\s\+$//e
    " using ,/ to move to highlighted letter
    "https://github.com/easymotion/vim-easymotion.git
    "
+   "vim-elixir
+   "elixir plugin for vim
+   "https://github.com/elixir-editors/vim-elixir
+   "
    "}}}
    " Customised {{{
    " "=== Customised === 
