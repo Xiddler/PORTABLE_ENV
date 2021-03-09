@@ -225,3 +225,10 @@ C-W +
 C-W -
 # Increase current window by 10 units
 10 C-W +
+
+# DELETE BLANK LINES
+:g/^\s*$/d
+
+
+
+

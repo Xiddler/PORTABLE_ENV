@@ -307,9 +307,11 @@ There are a number of templates to save notes to
     [SPC] n s <-- Search notes for text
 
 ** packages
+*** add new package
 *** meta
 REM: Doesn't use emacs packages.el it uses straight.el instead for package management
 **** install new package
+The following does not apply to Doom emacs. For Doom emacs,
 [SPC] : (or M-x)
 Then type: package-install (but this only installs if for the current sesssion - best is to use packages.el)
 ------

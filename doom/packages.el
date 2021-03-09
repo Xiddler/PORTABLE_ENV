@@ -28,6 +28,9 @@
 (package! org-roam
    :recipe (:host github :repo "org-roam/org-roam"))
 ;
+(package! alchemist
+   :recipe (:host github :repo "tonini/alchemist.el"))
+;
 ;; (package! company-org-roam
    ;; :recipe (:host github :repo "jethrokuan/company-org-roam"))
 

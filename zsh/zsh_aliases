@@ -16,6 +16,8 @@ alias -g doli='ssh -i /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/RE
 # CompTIA
 alias -g tia="cd /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/EDUCATION/Courses_2021/CompTIA_2021"
 
+# Elixir
+alias -g ellixir="cd $HOME/REPOS/2programming/elixir"
 
 # borg backup
 alias -g borgb="cd $HOME/borg1 && export BORG_REPO='$HOME/borg1' && export BORG_PASSPHRASE='theboysoffairhill'"
