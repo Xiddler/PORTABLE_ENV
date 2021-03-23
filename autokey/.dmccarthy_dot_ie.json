@@ -1,6 +1,6 @@
 {
     "type": "phrase",
-    "description": "New Phrase",
+    "description": "dmccarthy_dot_ie",
     "modes": [
         1
     ],
@@ -11,7 +11,7 @@
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "dmc"
+            "dmd"
         ],
         "backspace": true,
         "ignoreCase": false,

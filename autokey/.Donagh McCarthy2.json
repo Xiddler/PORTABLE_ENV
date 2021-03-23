@@ -1,17 +1,17 @@
 {
     "type": "phrase",
-    "description": "192xx",
+    "description": "Donagh McCarthy",
     "modes": [
         1
     ],
-    "usageCount": 46,
+    "usageCount": 1,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "192"
+            "dmc"
         ],
         "backspace": true,
         "ignoreCase": false,

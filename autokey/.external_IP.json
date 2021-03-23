@@ -1,6 +1,6 @@
 {
     "type": "phrase",
-    "description": "New Phrase",
+    "description": "external_IP",
     "modes": [
         1
     ],
