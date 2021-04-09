@@ -212,3 +212,15 @@ smartctl -a /dev/sdb1
 # check locale
 locale -a
 
+# copy filename into clipboard
+ readlink -f <filename> | clipcopy
+
+# find file containing a string e.g. "comenius" in a file in the current directory i.e. '.' -- will output only the file name due to the -l flag
+grep -Rnwil '.' -e 'comenius'
+
+
+# create a random long password
+openssl rand -hex 32
+
+
+

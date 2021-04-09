@@ -36,7 +36,9 @@ alias -g ep='echo $PATH'
 # alias -g kontout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 ' # get contact  
 alias -g lsd='du -s -- *(D) | sort -k1n' # list size of directories
 alias -g nt='terminator --geometry +500+100' # open a new zsh terminal  
-alias -g passin='python3 $HOME/SD64/REPOSITORIES/2programming/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
+# alias -g passin='python3 $HOME/SD64/REPOSITORIES/2programming/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
+alias -g passin='python3 /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/python/1python_projects/Tkinter_projects/tkinter_GUI/passin_credentials/pw_data-input.py'
+
 # alias -g passin='python3 /media/pi/B693-3C22/ALL_DONAGH/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
 # Raspberry Pi
 alias -g tpassin='sudo --prompt=1234 $HOME/.scripts/passin_terminal.py'
@@ -117,6 +119,7 @@ alias -g dr='cd ~/Dropbox'
 # alias -g te='cd ~/SD64/REPOSITORIES/TESTING/'
 alias -g hf='$HOME/'
 alias -g repos='$HOME/SD64/REPOSITORIES'
+alias -g maps='$HOME/SD64/REPOSITORIES/maps'
 # alias -g cifs='cd $HOME/cifs_share'
 alias -g safe='cd $HOME/SAFE/SAFE_borg_backup'
 
