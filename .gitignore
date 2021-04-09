@@ -11,4 +11,5 @@ zArchive/*
 */.git/
 vim-superman
 BU*
+backups/*
 autokey/pwgit.*
