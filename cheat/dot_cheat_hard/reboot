@@ -4,9 +4,22 @@ I 2021-03-03
 
 # cifs_share
 sudo mount -t cifs //192.168.1.108/USB128_2 /mnt/cifs_share -o username=admin,password=admin,iocharset=utf8,vers=3.1.1
-# 
 # this is required for effective backup using the borg utility
 # Laptop /home/donaghm/cifs share is mounted to 
 # RPi /srv/dev-disk-by-label-MyUSb
+# the script copies the folder SAFE_borg_backup to the USB on the RPi
+
+# 
+# IN YAKUAKE create a new shell instance for zim, dropbox and doom-emacs
+# zim - first ensure that the SD card is mounted
+sudo /usr/sbin/zim
+
+# dropbox
+echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && ~/.dropbox-dist/dropboxd
+
+# doom-emacs
+~/.emacs.d/bin/doom run
+# and maybe need to
+~/.emacs.d/bin/doom sync
 
 
