@@ -207,6 +207,23 @@ autocmd BufWritePre *.py :%s/\s\+$//e
     "}}}
    "Preferred Plugins {{{
    " "=== Preferred Plugins === 
+   "
+" donaghm [16:50 Tue 20/04] [~/.vim] 
+" -> % tree -L 2
+" .
+" └── pack
+    " ├── easymotion
+    " ├── emmet
+    " ├── foobar
+    " ├── md-folding
+    " ├── nightsense
+    " ├── ranger
+    " ├── vim-airline
+    " ├── vim-commentary
+    " ├── vim-elixir
+    " ├── vim-markdown
+    " └── vim-pencil
+    "
    " Rundown of good plugins available at https://catonmat.net/vim-plugins
    " --- My Preferred Plugins ---  
    " tpope

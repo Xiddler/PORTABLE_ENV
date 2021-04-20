@@ -167,7 +167,9 @@ Highlight word(s) using (vim) v and y
 To copy full line to system clipboard: Y (like yy)
 *** How do you paste from the system clipboard?
 Paste into current file
+[SPC] i r
 [SPC] i y <-- displays system clipboard (killring) 2020-05-17_20:36 -- at last
+Update: 2021-04-16: this did not work for me now. The [SPC] i r works!
 [SPC] i r <-- evil register <-- equivalent to :reg in vim
 
 ** configuration

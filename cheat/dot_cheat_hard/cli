@@ -1,5 +1,19 @@
 # List of tools that I may not often use but may be usefule sometimes
 
+# fstab, fdisk etc.
+# view partitions
+sudo fdisk -l
+
+# view UUIDs
+sudo blkid
+
+# view automount entries
+sudo vim /etc/fstab
+# sample line
+# UUID=14D82C19D82BF81E /data    auto nosuid,nodev,nofail,x-gvfs-show 0 0
+
+# --------------------------------------------------------------------------------
+
 # like Task Manager - shows processes in a separate GUI
 systemmonitor
 
@@ -220,7 +234,11 @@ grep -Rnwil '.' -e 'comenius'
 
 
 # create a random long password
-openssl rand -hex 32
+openssl rand -hex 64
+
+# find latest 20 docs in current directory (zsh)
+ls -lt  **/*(.om[1,20]) 
+
 
 
 
