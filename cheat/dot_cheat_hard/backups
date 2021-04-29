@@ -1,0 +1,30 @@
+# Opened Thursday, 2021-04-29
+#
+# The main things needing backup
+# zim
+# org
+# DONAGHS
+#
+
+
+
+# ZIM 
+# Computer ORG Business
+# BACKUP all of zim to RPi USB
+# cd to ~/ZIM
+# donaghm [18:15 Thu 29/04] [~/ZIM] [master *]
+-> % sudo cp -r . ~/cifs_share/all_zim_2021-04-29
+
+# not working - why?
+-> % sudo rsync -aul /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/MY_ZIM .
+# /* rsync: [generator] symlink "/mnt/cifs_share/MY_ZIM/.git" -> "/home/donaghm/BACKUPS/dot_git_for_zim" failed: Operation not supported (95) */
+#
+#
+# org 
+# todos.org doom-notes 
+# has .git
+#
+# DONAGHS 
+# personal -> 2020-10-02_recovered_personal  balance  ideas  journal  minding_me  personal.org  writing  writings
+
+

@@ -146,7 +146,7 @@ source $ZSH/oh-my-zsh.sh
 # added to include Zotero path 2020-02-19
 # PATH="/home/donaghm/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donaghm/.fzf/bin:/home/donaghm/Applications/Zotero/Zotero_linux-x86_64:/home/donaghm/.vim/pack/SuperMan/start/vim-superman/bin"
 
-PATH="$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donaghm/.fzf/bin:/home/donaghm/Applications/Zotero/Zotero_linux-x86_64:/home/donaghm/.vim/pack/SuperMan/start/vim-superman/bin:/home/donaghm/.emacs.d/bin/:/home/donaghm/.cargo/bin:/home/donaghm/PORTABLE_ENV_tmp/:/opt/texlive/2020/bin/x86_64-linux/:/home/donaghm/.emacs/bin:/home/donaghm/go/bin:/home/donaghm/Applications/shellmath/shellmath:/home/donaghm/.mix:/run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/maps/OSI_GridInQuest/GridInQuestII-Lin64-0100:/run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/golang/vugu_stuff"
+PATH="$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donaghm/.fzf/bin:/home/donaghm/Applications/Zotero/Zotero_linux-x86_64:/home/donaghm/.vim/pack/SuperMan/start/vim-superman/bin:/home/donaghm/.emacs.d/bin/:/home/donaghm/.cargo/bin:/home/donaghm/PORTABLE_ENV_tmp/:/opt/texlive/2020/bin/x86_64-linux/:/home/donaghm/.emacs/bin:/home/donaghm/go/bin:/home/donaghm/Applications/shellmath/shellmath:/home/donaghm/.mix:/run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/maps/OSI_GridInQuest/GridInQuestII-Lin64-0100:/run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/golang/vugu_stuff:$HOME/.local/bin/gron"
 # PATH="/home/donaghm/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donaghm/.fzf/bin:/home/donaghm/Applications/Zotero/Zotero_linux-x86_64:/home/donaghm/.vim/pack/SuperMan/start/vim-superman/bin:/home/donaghm/.emacs.d/bin/:/home/donaghm/.cargo/bin:/home/donaghm/PORTABLE_ENV_tmp/:/opt/texlive/2020/bin/x86_64-linux/"
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -253,6 +253,28 @@ bindkey 'cx' clear-screen
 # bus() { cd /media/donagh/3520-FD13/0My_Folders/BUSINESS }
 # # shortcut to made a screenshot e.g. grap foto1.png then make selection with mouse
 # grab() { scrot -s $1 }
+
+# MARKS
+export MARKPATH=$HOME/PORTABLE_ENV/MARKS/marks
+# ln -s $HOME/PORTABLE_ENV/MARKS/marks $HOME/.marks
+
+mark() {
+  mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
+}
+
+unmark() {
+  rm -i "$MARKPATH/$1"
+}
+
+marks() {
+  ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
+}
+
+jump() {
+  cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
+}
+
+#----- END MARKS 
 
 
 # where the -U stands for unique, tells the shell that it should not add anything to $PATH if it's there already

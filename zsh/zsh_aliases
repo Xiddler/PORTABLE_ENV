@@ -26,7 +26,9 @@ alias -g borgs="cd $HOME/SAFE/SAFE_borg_backup && export BORG_REPO='$HOME/borg1'
 # borg backup Zim_computer and CompTIA Directory
 alias -g borgz="$HOME/.scripts/aborg_backup_zim_and_TIA.sh"
 
-
+# gron
+alias norg="gron --ungron"
+alias ungron="gron --ungron"
 
 
 alias -g contin='python3 /media/donagh/3520-FD13/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/contin.py' # input new contact
@@ -96,6 +98,8 @@ alias -g rung3='cd $HOME/Donaghs_Tmp/Rung_3'
 toread() { vim $HOME/SD64/books/0_To_Read/books_to_read.md }
 recipes() {vim $HOME/SD64/1donaghs-stuff/recipes/low-carb_meals/links_to_low_carb_meals.md }
 
+# password out using jq and 11SignUps.json
+pout() { jq ".$1.password" 11SignUps.json | grep -v null }
 
 
 
