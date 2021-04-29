@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# ref item on HN April 2021
+
 # export CDPATH=.:~/.marks/
 
 # function mark {
