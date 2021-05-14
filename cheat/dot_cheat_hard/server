@@ -1,0 +1,10 @@
+# For static servers 
+
+
+# Python 3
+python -m http.server 8000
+
+
+
+# node / npm
+http://localhost:5000

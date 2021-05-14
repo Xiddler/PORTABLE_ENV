@@ -9,17 +9,22 @@ sudo mount -t cifs //192.168.1.108/USB128_2 /mnt/cifs_share -o username=admin,pa
 # RPi /srv/dev-disk-by-label-MyUSb
 # the script copies the folder SAFE_borg_backup to the USB on the RPi
 
-# 
+# zim   
+# SD card
+# remount 
 # IN YAKUAKE create a new shell instance for zim, dropbox and doom-emacs
-# zim - first ensure that the SD card is mounted
+# first ensure that the SD card is mounted
 sudo /usr/sbin/zim
 
 # dropbox
+# IN YAKUAKE create a new shell instance for zim, dropbox and doom-emacs
 echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && ~/.dropbox-dist/dropboxd
 
 # doom-emacs
+# IN YAKUAKE create a new shell instance for zim, dropbox and doom-emacs
 ~/.emacs.d/bin/doom run
 # and maybe need to
 ~/.emacs.d/bin/doom sync
 
-
+# caffeine
+# from the app menu
