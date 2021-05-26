@@ -8,6 +8,7 @@
 |  epub       |   fbreader   |
 |             |   calibre    |
 |  djvu       |   djview4    |
+|  mobi       |   fbreader   |
 +-------------+--------------+
 
 The ebook formats:
@@ -56,5 +57,5 @@ WOLF: The proprietary format for Hanlin ebook readers, aka BeBook; extension .wo
 |  epub       |   fbreader   |
 |             |   calibre    |
 |  djvu       |   djview4    |
+|  mobi       |   fbreader   |
 +-------------+--------------+
-
