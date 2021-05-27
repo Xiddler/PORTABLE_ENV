@@ -1,10 +1,18 @@
-airline                 vim info
-francoiscabrol          ranger
-masukomi                markdown folding
-mattn                   emmet 
-nightsense              vim theme
-tpope                   surround  commentary
-voom                    browser window in the file for fold viewing e.g.  markdown files - nice Note: new. Added 2020-04-25
 
-vim-instant-markdown - opens a browser when a .md file is opened and closes also
-
+# CONTENTS
+easymoton               using <leader>/ to move to highlighted letter           :: https://github.com/easymotion/vim-easymotion.git
+emmet                   emmet-vim                                               :: https://github.com/mattn/emmet-vim.git
+md-folding              vim-markdown-folding                                    :: https://github.com/masukomi/vim-markdown-folding.git
+multicursor                                                                     :: https://github.com/terryma/vim-multiple-cursors
+nightsense              preferred vim theme                                     :: https://github.com/nightsense/stellarized.git
+peekaboo                peeks into registers                                    :: https://github.com/junegunn/vim-peekaboo
+SuperMan                Man pages in vim editor: vman <app>                     :: https://github.com/jez/vim-superman
+vim-airline             vim info                                                :: https://github.com/vim-airline/vim-airline.git
+vim-commentary          adds comments                                           :: https://github.com/tpope/vim-commentary.git
+vim-elixir              elixir plugin for vim                                   :: https://github.com/elixir-editors/vim-elixir
+vim-instant-markdown    opens a browser when a .md file is opened and closes    :: https://github.com/instant-markdown/vim-instant-markdown
+vim-markdown-folding    folding for markdown in vim                             :: https://github.com/masukomi/vim-markdown-folding.git
+vim-pencil              pure typing / writing experience for vim text files     :: https://github.com/reedes/vim-pencil
+vim-ranger              ranger from vim                                         :: https://github.com/francoiscabrol/ranger.vim.git :: usage - map <leader>f :Ranger<CR>
+vim-surround            highlight and surround with anything e.g. ""            :: https://github.com/tpope/vim-surround.git
+voom                    browser window in the file for fold viewing e.g.  markdown files :: sudo pamac install vim-voom

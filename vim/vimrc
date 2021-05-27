@@ -184,13 +184,14 @@ autocmd BufWritePre *.py :%s/\s\+$//e
     inoremap <Leader>n <C-R>=expand("%:p:h")<CR>
       " To insert the name of the innermost directory (the one containing the current file) use:
     " inoremap <Leader>n <C-R>=expand("%:p:h:t")<CR>
+    "
+    " EASYMOTION
      " easymotion keybindings - for fast navigation within a file
-     " nmap f <Plug>(easymotion-overwin-f2) " this doesn't work properly
     " get , , w to make easy motion work
-     " map <Leader><Leader>w <Plug>(easymotion-prefix)
+     map <Leader><Leader>w <Plug>(easymotion-prefix)
      " highlight ALL words for navigating to
-     map <leader>/ <Plug>(easymotion-bd-w) 
-     nmap <leader>/ <Plug>(easymotion-overwin-w) 
+     " map <leader>/ <Plug>(easymotion-bd-w) 
+     " nmap <leader>/ <Plug>(easymotion-overwin-w) 
      " enter the pwd in insert mode - d irectory p ath
      :inoremap <leader>dp <C-R>=getcwd()<CR>
     " }}}
@@ -205,7 +206,40 @@ autocmd BufWritePre *.py :%s/\s\+$//e
     set modelines=1
     "vim:foldmethod=marker:foldlevel=0
     "}}}
-   "Preferred Plugins {{{
+   " Customised {{{
+   "
+   " "=== Customised === 
+   " Add header to .py file when starting a .py file
+   augroup templates
+      au!
+      " read in template files
+      autocmd BufNewFile *.py silent! execute '0r $HOME/PORTABLE_ENV/vim/py_header.temp'
+    augroup END
+
+   " for the vim-notes plugin. ~/.vim/misc/notes/user
+    " adds .txt suffix to new notes
+    :let g:notes_directories = ['/home/donagh/PORTABLE_ENV/Notes', '/home/donagh/.vim/misc/notes/user']
+    :let g:notes_suffix = '.txt'
+
+    " Splits - change default position of new splits
+    set splitbelow splitright
+    "
+    " open a terminal within vim
+    map <leader>tt :terminal<CR>
+    "
+    "Swap vertical split to hor
+    map <leader>th <C-w>t<C-w>H
+    map <leader>tk <C-w>t<C-w>K
+    " Capitalize/minusculize letter under cursor
+    nnoremap <leader>u v~
+    " MY FUNCTIONS - sample function
+    function Simple()
+        echom "Running simple function"
+    endfunction
+    nnoremap <C-l>, :call Simple()<CR>
+    "}}}
+   " Preferred Plugins {{{
+   "
    " "=== Preferred Plugins === 
    "
 " donaghm [16:50 Tue 20/04] [~/.vim] 
@@ -285,35 +319,3 @@ autocmd BufWritePre *.py :%s/\s\+$//e
    "https://github.com/elixir-editors/vim-elixir
    "
    "}}}
-   " Customised {{{
-   " "=== Customised === 
-   " Add header to .py file when starting a .py file
-   augroup templates
-      au!
-      " read in template files
-      autocmd BufNewFile *.py silent! execute '0r $HOME/PORTABLE_ENV/vim/py_header.temp'
-    augroup END
-
-   " for the vim-notes plugin. ~/.vim/misc/notes/user
-    " adds .txt suffix to new notes
-    :let g:notes_directories = ['/home/donagh/PORTABLE_ENV/Notes', '/home/donagh/.vim/misc/notes/user']
-    :let g:notes_suffix = '.txt'
-
-    " Splits - change default position of new splits
-    set splitbelow splitright
-    "
-    " open a terminal within vim
-    map <leader>tt :terminal<CR>
-    "
-    "Swap vertical split to hor
-    map <leader>th <C-w>t<C-w>H
-    map <leader>tk <C-w>t<C-w>K
-    " Capitalize/minusculize letter under cursor
-    nnoremap <leader>u v~
-    " MY FUNCTIONS - sample function
-    function Simple()
-        echom "Running simple function"
-    endfunction
-    nnoremap <C-l>, :call Simple()<CR>
-
-

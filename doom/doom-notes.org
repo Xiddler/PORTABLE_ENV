@@ -166,11 +166,19 @@ eg s S for sin
 Highlight word(s) using (vim) v and y
 To copy full line to system clipboard: Y (like yy)
 *** How do you paste from the system clipboard?
+TL;DR - use the middle button of the mouse.
+
 Paste into current file
 [SPC] i r
 [SPC] i y <-- displays system clipboard (killring) 2020-05-17_20:36 -- at last
 Update: 2021-04-16: this did not work for me now. The [SPC] i r works!
 [SPC] i r <-- evil register <-- equivalent to :reg in vim
+
+Update: 2021-05-27 NOT WORKING. I copy a URL into the system clipboard but cannot paste into doom-emacs. WTF?
+SOLUTION: Use the middle button of the mouse! This definitely worked. But why no keybinding?
+Possible alternative:
+On Linux, you can use xclip.el (https://www.emacswiki.org/emacs/xclip.el) to link the kill-ring to the clipboard from Emacs running in terminal (without losing the multiple-kill and yank capability).
+
 
 ** configuration
 .doom.d directory is the preferred place to store your custom config (not within the Doom directory itself).
