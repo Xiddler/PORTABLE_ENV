@@ -96,7 +96,7 @@ alias -g rung3='cd $HOME/Donaghs_Tmp/Rung_3'
 # FUNCTIONS (See Separate functions for my personal journal below)
 
 toread() { vim $HOME/SD64/books/0_To_Read/books_to_read.md }
-recipes() {vim $HOME/SD64/1donaghs-stuff/recipes/low-carb_meals/links_to_low_carb_meals.md }
+recipes() {cd $HOME/SD64/REPOSITORIES/cooking/recipes }
 
 # password out using jq and 11SignUps.json
 pout() { jq ".$1.password" 11SignUps.json | grep -v null }
@@ -139,7 +139,7 @@ sd() { cd $HOME/SD64/ }
 alias -g pers='cd $HOME/DONAGHS/personal/'
 planning() { cd  $personal/planning/ }
 humour() { cd $HOME/SD64/1donaghs-stuff/humour/ }
-outdoors() { cd $HOME/SD64/1donaghs-stuff/OUTDOOR }
+outdoors() { cd $HOME/SD64/REPOSITORIES/OUTDOOR }
 projs() { cd /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/Projects }
 donaghs() { cd $HOME/SD64/1donaghs-stuff/ }
 mind() { cd $personal/minding_me }

@@ -230,5 +230,5 @@ C-W -
 :g/^\s*$/d
 
 
-
-
+# <command> | vim - opens a vim file with the output of <command>
+ll | vim -
