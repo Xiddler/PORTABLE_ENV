@@ -141,7 +141,7 @@ planning() { cd  $personal/planning/ }
 humour() { cd $HOME/SD64/1donaghs-stuff/humour/ }
 outdoors() { cd $HOME/SD64/REPOSITORIES/OUTDOOR }
 projs() { cd /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/Projects }
-donaghs() { cd $HOME/SD64/1donaghs-stuff/ }
+donaghs() { cd $HOME/SD64/DONAGHS }
 mind() { cd $personal/minding_me }
 words() { cd $HOME/REPOS/WORDS/ }
 books() { cd $HOME/REPOS/books/ }

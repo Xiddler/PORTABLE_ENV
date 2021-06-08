@@ -190,8 +190,8 @@ autocmd BufWritePre *.py :%s/\s\+$//e
     " get , , w to make easy motion work
      map <Leader><Leader>w <Plug>(easymotion-prefix)
      " highlight ALL words for navigating to
-     " map <leader>/ <Plug>(easymotion-bd-w) 
-     " nmap <leader>/ <Plug>(easymotion-overwin-w) 
+     map <leader>/ <Plug>(easymotion-bd-w) 
+     nmap <leader>/ <Plug>(easymotion-overwin-w) 
      " enter the pwd in insert mode - d irectory p ath
      :inoremap <leader>dp <C-R>=getcwd()<CR>
     " }}}
