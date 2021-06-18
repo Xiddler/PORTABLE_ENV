@@ -240,5 +240,8 @@ openssl rand -hex 64
 ls -lt  **/*(.om[1,20]) 
 
 
-
+# xargs - see https://shapeshed.com/unix-xargs/
+# Whilst tools like grep can accept standard input as a parameter, many other tools cannot. Using xargs allows tools like echo and rm and mkdir to accept standard input as arguments.
+#
+#
 

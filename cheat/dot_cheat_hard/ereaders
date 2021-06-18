@@ -11,6 +11,8 @@
 |  mobi       |   fbreader   |
 |  fb2        |   fbreader   | 
 |  OpenReader |   fbreader   | 
+|  rtf        |   fbreader   | 
+|  chm        |   fbreader   | 
 +-------------+--------------+
 
 The ebook formats:

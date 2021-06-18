@@ -163,8 +163,9 @@ Usage:
 eg s S for sin
 ** copy / paste
 *** How do you copy to the system clipboard?
+use register: "+
 Highlight word(s) using (vim) v and y
-To copy full line to system clipboard: Y (like yy)
+To copy full line to system clipboard: "+Y (like yy)
 *** How do you paste from the system clipboard?
 TL;DR - use the middle button of the mouse.
 

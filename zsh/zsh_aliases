@@ -148,6 +148,7 @@ books() { cd $HOME/REPOS/books/ }
 bookmarks() { cd $HOME/SD64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
 reading() { cd $HOME/SD64//books/1_Reading && ls }
 alc() { cd  $personal/alcohol/ }
+wants() { cd $HOME/REPOS/Purchases/Wants && vim wants.md }
 
 # Temporary functions
 web() {cd $HOME/SD64/2programming_repository/css/css_grid/donagh-dev/}

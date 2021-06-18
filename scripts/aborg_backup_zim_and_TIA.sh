@@ -38,5 +38,6 @@ borg create --stats --progress --compression lz4 '/home/donaghm/SAFE/SAFE_borg_b
 # option with no intervention
 echo "1234" | sudo -S cp -r $HOME/SAFE/SAFE_borg_backup $HOME/cifs_share
 
+echo "if 1234 did not appear above this line then the backup to RPi failed. OTHERWISE..."
 echo "Successfully compressed, encrypted and backed up $S_zim_compu and $S_org to ~/cifs_share which is the USB on the RPi"
 
