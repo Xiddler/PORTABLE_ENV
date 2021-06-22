@@ -232,3 +232,11 @@ C-W -
 
 # <command> | vim - opens a vim file with the output of <command>
 ll | vim -
+
+
+# get the UTF-8 code for the letter under the cursor
+# https://vi.stackexchange.com/questions/555/see-the-unicode-code-point-of-the-current-character
+ga
+
+
+

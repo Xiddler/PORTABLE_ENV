@@ -1,3 +1,40 @@
+# Terms in git
+    Commit - stores the current contents of the index in a new commit along with a log message from the user describing the changes
+
+    Branch - a pointer to a commit
+
+    Master - the default name for the first branch
+
+    HEAD - a pointer to the most recent commit on the current branch
+
+    Merge - joining two or more commit histories
+
+    Workspace - the colloquial name for your local copy of a Git repository
+
+    Working tree - the current branch in your workspace; you see this in git status output all the time
+
+    Cache - a space intended to temporarily store uncommitted changes
+
+    Index - the cache where changes are stored before they are committed
+
+    Tracked and untracked files - files either in the index cache or not yet added to it
+
+    Stash - another cache, that acts as a stack, where changes can be stored without committing them
+
+    Origin - the default name for a remote repository
+
+    Local repository - another term for where you keep your copy of a Git repository on your workstation
+
+    Remote repository - a secondary copy of a Git repository where you push changes for collaboration or backup
+
+    Upstream repository - the colloquial term for a remote repository that you track
+
+    Pull request - a GitHub-specific term to let others know about changes you've pushed to a branch in a repository
+
+    Merge request - a GitLab-specific term to let others know about changes you've pushed to a branch in a repository
+
+    'origin/master' - the default setting for a remote repository and its primary branch
+
 # To set your identity:
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
@@ -10,10 +47,12 @@ git config --global color.ui true
 
 # To stage all changes for commit:
 git add --all
+git add .
+
 
 # To stash changes locally, this will keep the changes in a separate changelist
-# called stash and the working directory is cleaned. You can apply changes
-# from the stash anytime
+# (ie a cache) called stash and the working directory is cleaned. 
+# You can apply changes from the stash anytime
 git stash
 
 # To stash changes with a message
@@ -186,3 +225,13 @@ password: <enter pat here>
 # set identity
 git config --global user.name "Donagh" && git config --global user.email xiddler@gmail.com
 
+# useful actions
+    git branch - to find which branch you're on
+
+    git log - to see what commit you're on
+
+    git status - to see what edits you've made since the last commit
+
+    git remote - to see what remote repository you're tracking
+
+    
