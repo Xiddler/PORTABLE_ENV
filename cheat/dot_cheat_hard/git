@@ -234,4 +234,5 @@ git config --global user.name "Donagh" && git config --global user.email xiddler
 
     git remote - to see what remote repository you're tracking
 
+    git undo - see https://blog.waleedkhan.name/git-undo/
     
