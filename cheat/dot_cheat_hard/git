@@ -236,3 +236,9 @@ git config --global user.name "Donagh" && git config --global user.email xiddler
 
     git undo - see https://blog.waleedkhan.name/git-undo/
     
+    git reset --hard - To removed staged and working directory changes (this will delete all 'added' files!)
+
+    git reset <file> - undo $ git add <file> before a commit 
+
+    git show 
+

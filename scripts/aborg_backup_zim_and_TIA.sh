@@ -20,8 +20,8 @@ S_zim_compu="/run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/MY_
 # S_zim_compuTXT="/run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/MY_ZIM/Computer.txt"
 
 # S_tia="/run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/EDUCATION/Courses_2021/CompTIA_2021"
-S_org="/run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/all_org"
-
+# S_org="/run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/all_org" <-- this only backed up symlinks to files
+S_org="/home/donaghm/Dropbox/org-mode/org"
 
 
 
