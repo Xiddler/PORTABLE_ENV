@@ -8,6 +8,7 @@ alias -g spi='sudo pamac install '
 alias -g PS='ps aux | grep -i '
 alias -g G='| grep -i '
 alias -g quick='cd $HOME/DONAGHS/0_Quickies'
+alias -g sp='vim $HOME/REPOS/TESTING/scratch_pad.txt'
 
 # Digital Ocean
 # Digital Ocean Log In

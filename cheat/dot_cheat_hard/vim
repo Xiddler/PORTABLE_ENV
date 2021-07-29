@@ -239,4 +239,5 @@ ll | vim -
 ga
 
 
-
+# see how quickly Vim starts without your existing configuration:
+vim --clean --startuptime clean.log <fileName>
