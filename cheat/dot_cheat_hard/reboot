@@ -28,3 +28,6 @@ echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sys
 
 # caffeine
 # from the app menu
+#
+# Lanner (local pastebin)
+# lanner is run from RPi -> % python $HOME/lanner/run.py then check on the RPi browser

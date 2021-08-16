@@ -96,7 +96,7 @@ alias -g rung3='cd $HOME/Donaghs_Tmp/Rung_3'
 
 # FUNCTIONS (See Separate functions for my personal journal below)
 
-toread() { vim $HOME/SD64/books/0_To_Read/books_to_read.md }
+toread() { vim $HOME/REPOS/books/toRead.md }
 recipes() {cd $HOME/SD64/REPOSITORIES/cooking/recipes }
 
 # password out using jq and 11SignUps.json
@@ -150,6 +150,7 @@ bookmarks() { cd $HOME/SD64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks 
 reading() { cd $HOME/SD64//books/1_Reading && ls }
 alc() { cd  $personal/alcohol/ }
 wants() { cd $HOME/REPOS/Purchases/Wants && vim wants.md }
+rl() { readlink -f $1 | clipcopy } # readlink
 
 # Temporary functions
 web() {cd $HOME/SD64/2programming_repository/css/css_grid/donagh-dev/}
@@ -247,6 +248,7 @@ alias hh='cd ~/'
 alias llk="ll | grep '^l.*'"
 alias -g lf="ls | tr ' ' '\n'"
 alias -g latest='ls -lt  **/*(.om[1,20])' # list latest 20 files edited
+
 
 # python virtual envs shortcuts
 alias pb='source $HOME/.virtualenvs/basic/bin/activate'
