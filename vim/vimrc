@@ -12,6 +12,7 @@ set virtualedit=all " allows cursor to be moved anywhere in normal mode
 " set textwidth=0
 set wrapmargin=5
 set noswapfile
+" set mouse+=a " copy lines without line numbers
 " to make numbered list
 vnoremap <leader>1 :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR>
 " following not needed if autokey installed and working

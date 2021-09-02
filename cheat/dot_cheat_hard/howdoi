@@ -1,0 +1,9 @@
+Opened 2021-08-26
+
+# batch rename files
+# SEE cheat rename
+rename
+vidir
+# in zsh to change all .txt extensions to .md recursively:
+zmv -n '(**/)(*).txt' '$1$2.md'
+

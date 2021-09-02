@@ -241,3 +241,6 @@ ga
 
 # see how quickly Vim starts without your existing configuration:
 vim --clean --startuptime clean.log <fileName>
+
+# easymotion
+<leader> / # i.e. ,/

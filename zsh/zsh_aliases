@@ -9,6 +9,8 @@ alias -g PS='ps aux | grep -i '
 alias -g G='| grep -i '
 alias -g quick='cd $HOME/DONAGHS/0_Quickies'
 alias -g sp='vim $HOME/REPOS/TESTING/scratch_pad.txt'
+alias -g scrape='~/PORTABLE_ENV/scripts/scrape_website.sh'
+
 
 # Digital Ocean
 # Digital Ocean Log In
@@ -98,6 +100,8 @@ alias -g rung3='cd $HOME/Donaghs_Tmp/Rung_3'
 
 toread() { vim $HOME/REPOS/books/toRead.md }
 recipes() {cd $HOME/SD64/REPOSITORIES/cooking/recipes }
+
+rp() { realpath $1 | clipcopy }
 
 # password out using jq and 11SignUps.json
 pout() { jq ".$1.password" 11SignUps.json | grep -v null }
