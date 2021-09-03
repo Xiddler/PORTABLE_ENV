@@ -43,3 +43,9 @@ print(f"My name is {a}")
 # the final line
 if __name__ == "__main__":
     play()
+
+# website with good python tutorials
+https://zetcode.com/all/#python
+
+
+
