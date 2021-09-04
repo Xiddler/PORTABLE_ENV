@@ -8,9 +8,12 @@ sudo mount -t cifs //192.168.1.108/USB128_2 /mnt/cifs_share -o username=admin,pa
 # Laptop /home/donaghm/cifs share is mounted to 
 # RPi /srv/dev-disk-by-label-MyUSb
 # the script copies the folder SAFE_borg_backup to the USB on the RPi
+#
 # OpenMediaVault
 # Needs to be running on the RPi for the mounted directory to work properly (?)
 # On the RPi: chromium --> browse to 192.168.105 Creds: admin/admin. Look in System/Filesystem and check if /def/sda1 is mounted and Online
+# On the laptop check that the following line appears at the end of the output of the command -> % mount | less -n2 
+#//192.168.1.108/USB128_2 on /mnt/cifs_share type cifs (rw,relatime,vers=3.1.1,cache=strict,username=admin,uid=0,noforceuid,gid=0,noforcegid,addr=192.168.1.108,file_mode=0755,dir_mode=0755,soft,nounix,serverino,mapposix,rsize=4194304,wsize=4194304,bsize=1048576,echo_interval=60,actimeo=1)
 
 # zim   
 # SD card

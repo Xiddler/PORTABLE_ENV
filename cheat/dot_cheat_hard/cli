@@ -243,5 +243,19 @@ ls -lt  **/*(.om[1,20])
 # xargs - see https://shapeshed.com/unix-xargs/
 # Whilst tools like grep can accept standard input as a parameter, many other tools cannot. Using xargs allows tools like echo and rm and mkdir to accept standard input as arguments.
 #
-#
+# TIME DATE and ntp 
+# donaghm [01:03 Sat 04/09] [~] 
+-> % timedatectl
+               Local time: Sat 2021-09-04 01:03:13 IST
+           Universal time: Sat 2021-09-04 00:03:13 UTC
+                 RTC time: Sat 2021-09-04 00:03:13
+                Time zone: Europe/Dublin (IST, +0100)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+
+
+
+
+
 

@@ -12,6 +12,7 @@ export BORG_PASSPHRASE='theboysoffairhill'
 # Add zsh aliases.
 if [ -f $HOME/.zsh_aliases ]; then
     source $HOME/.zsh_aliases
+    source $HOME/.profile
 fi
 
 # my vimrc
