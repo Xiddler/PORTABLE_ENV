@@ -1,0 +1,36 @@
+# Opened 2021-09-04
+#
+# see: https://linuxconfig.org/how-to-schedule-tasks-with-systemd-timers-in-linux
+#
+# edit/create new service and timer
+sudo vim /etc/systemd/system/newservice.service
+sudo vim /etc/systemd/system/newservice.timer
+
+# change permissions and ownership
+sudo chown donaghm:donaghm /etc/systemd/system/newservice.*
+sudo chmod 755 /etc/systemd/system/newservice.*
+
+# start timer
+sudo systemctl enable newservice.timer
+sudo systemctl start newservice.timer
+
+# list all timers
+systemctl list-timers --all
+
+# reload timer after a change
+sudo systemctl daemon-reload              
+
+# Relevant folders, possibly
+_________________________________________________
+# Location of .service and .timer files
+/etc/systemd/system
+#
+/etc/
+cron.d
+cron.daily
+cron.hourly
+cron.monthly
+cron.weekly
+# 
+
+

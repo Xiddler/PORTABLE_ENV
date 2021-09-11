@@ -1,0 +1,18 @@
+Opened 2021-09-09
+
+# intro
+- htmlq is for scraping html files using CSS selectors
+- https://github.com/mgdm/htmlq
+
+# get links
+cat index.html | htmlq --attribute href a
+
+# get text in all p tags
+cat about.html | htmlq --text p
+
+
+
+
+
+
+
