@@ -22,6 +22,7 @@ vnoremap <leader>1 :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR>
 " ab cant can't
 " ab wont won't
 ab dod Donagh -
+" ab don Donagh -
 
 " use Ctrl / to comment
 nnoremap C-l gcc

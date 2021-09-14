@@ -13,6 +13,7 @@
 |  OpenReader |   fbreader   | 
 |  rtf        |   fbreader   | 
 |  chm        |   fbreader   | 
+|  azw3       |   calibre    |
 +-------------+--------------+
 
 The ebook formats:

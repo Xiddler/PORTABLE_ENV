@@ -38,6 +38,10 @@ rmvirtualenv env_name
 
 # Make a new virtualenv e.g.  for django
 python3 -m venv $HOME/.virtualenvs/django
+# update pip
+python -m pip install --upgrade pip
+# install wheel
+pip install wheel
 
 # Activate it
 source $HOME/.virtualenvs/django/bin/activate
