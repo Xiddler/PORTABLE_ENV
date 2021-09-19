@@ -21,7 +21,7 @@ vnoremap <leader>1 :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR>
 " ab dont don't
 " ab cant can't
 " ab wont won't
-ab dod Donagh -
+" ab dod Donagh -
 " ab don Donagh -
 
 " use Ctrl / to comment
@@ -315,7 +315,7 @@ nnoremap <C-l>, :call Simple()<CR>
    "let's you see the regs
    "https://github.com/junegunn/vim-peekaboo
    "
-   "easymotion
+   "easymotion - <leader>/ will highlight file with letters everywhere
    " using ,/ to move to highlighted letter
    "https://github.com/easymotion/vim-easymotion.git
    "

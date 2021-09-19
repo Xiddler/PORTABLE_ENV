@@ -12,9 +12,11 @@ alias -g quick='cd $HOME/DONAGHS/0_Quickies'
 alias -g sp='vim $HOME/REPOS/TESTING/scratch_pad.txt'
 alias -g scrape='~/PORTABLE_ENV/scripts/scrape_website.sh'
 alias -g ssc='sudo systemctl '
+alias -g sysc='sudo systemctl '
 alias -g scryp='scryer-prolog '
 alias -g images='cd $HOME/REPOS/images'
 alias -g videos='cd $HOME/REPOS/videos'
+
 
 # Digital Ocean
 # Digital Ocean Log In
@@ -31,7 +33,9 @@ alias -g borgb="cd $HOME/borg1 && export BORG_REPO='$HOME/borg1' && export BORG_
 alias -g borgs="cd $HOME/SAFE/SAFE_borg_backup && export BORG_REPO='$HOME/borg1' && export BORG_PASSPHRASE='theboysoffairhill'"
 
 # borg backup Zim_computer and CompTIA Directory
-alias -g borgz="$HOME/.scripts/aborg_backup_zim_and_TIA.sh"
+# alias -g borgz="$HOME/.scripts/aborg_backup_zim_and_TIA.sh"
+# weekly backup scheduled using anacron. Note: no .sh extension
+alias -g borgz="$HOME/.scripts/borg_backup_weekly"
 
 # gron
 alias norg="gron --ungron"
@@ -105,8 +109,13 @@ alias -g rung3='cd $HOME/Donaghs_Tmp/Rung_3'
 toread() { vim $HOME/REPOS/books/toRead.md }
 recipes() {cd $HOME/SD64/REPOSITORIES/cooking/recipes }
 # system timers main folder
-timers() { cd /etc/systemd/system }
+timer-s() { sudo vim "/etc/systemd/system/$1.service" }
+timer-t() { sudo vim "/etc/systemd/system/$1.timer" }
+timer-st() { sudo systemctl start "$1.timer" }
+timer-ls() { systemctl list-timers --all }
+timer-dae() { echo "1234" | sudo -S systemctl daemon-reload } 
 
+# realpath
 rp() { realpath $1 | clipcopy }
 
 # password out using jq and 11SignUps.json
@@ -249,6 +258,7 @@ alias gst='git status'
 # List directories / files
 alias l.='ls -d .* --color=auto' # Show hidden files ##
 alias ld='ls -la -d */'
+alias -g lh='ls | head'
 alias lk='ls -1v'
 alias ll='ls -la'
 alias lls='ls | xargs -n1' # show ls in a single column
