@@ -229,6 +229,10 @@ C-W -
 # DELETE BLANK LINES
 :g/^\s*$/d
 
+# insert filename / filepath (in INSERT MODE)
+<C-r>%  # full filepath
+,n      # current directory
+
 
 # <command> | vim - opens a vim file with the output of <command>
 ll | vim -
@@ -243,7 +247,7 @@ ga
 vim --clean --startuptime clean.log <fileName>
 
 # easymotion
-<leader> / # i.e. ,/
+,/
 
 # python spaces / tabs
 :retab # fixes tabs / spaces

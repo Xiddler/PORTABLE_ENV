@@ -166,7 +166,9 @@ mind() { cd $personal/minding_me }
 words() { cd $HOME/REPOS/WORDS/ }
 books() { cd $HOME/REPOS/books/ }
 bookmarks() { cd $HOME/SD64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
-reading() { cd $HOME/SD64//books/1_Reading && ls }
+reading() { cd $HOME/REPOS/books/0_Reading_notes && ls }
+
+# /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/books/ReadMe.md
 alc() { cd  $personal/alcohol/ }
 wants() { cd $HOME/REPOS/Purchases/Wants && vim wants.md }
 rl() { readlink -f $1 | clipcopy } # readlink
@@ -183,7 +185,7 @@ insp() { $EDITOR $personal/ideas/inspire.md }
 pain() { $EDITOR $personal/minding_me/pain_points.md }
 snips() { $EDITOR $HOME/DONAGHS/personal/ideas/snippets.md }
 wisd() { $EDITOR $HOME/DONAGHS/personal/ideas/snippets.md }
-aj() { $EDITOR /home/donaghm/DONAGHS/personal/minding_me/alcohol_journal.md } # (a)lcohol-(j)ournal modelled after (m)y (j)ournal.
+# aj() { $EDITOR /home/donaghm/DONAGHS/personal/minding_me/alcohol_journal.md } # (a)lcohol-(j)ournal modelled after (m)y (j)ournal.
 hme() { cd $HOME }
 
 #-------------------- END journal
@@ -212,7 +214,12 @@ alias vza="vim ~/.zsh_aliases"
 alias -g chk='$HOME/.scripts/info.sh' # quick summary of system status
 alias -g scr='cd $HOME/.scripts/' # cd to $HOME/.scripts
 # alias -g mj=md_journal # opens todays journal as a markdown file in vim for editing.
+# My Journal
 alias -g mj='$HOME/.scripts/markdown_journal.sh'
+alias -g wj='vim $HOME/DONAGHS/personal/Means/work_journal.md'
+alias -g aj='vim $HOME/DONAGHS/personal/Means/action_journal.md'
+alias -g dist='vim $HOME/DONAGHS/personal/Means/distractions.md'
+
 alias -g mdd='$HOME/.scripts/markdown_diary.sh' # md is taken as mkdir -p <dir>
 alias -g backup="$HOME/.scripts/backup_all_and_encrypt.sh" # backsup ALL_ZIM, personal and org to Dropbox in .7z format
 alias -g mn='$HOME/.scripts/mynotes.sh'
