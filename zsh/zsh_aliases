@@ -16,6 +16,9 @@ alias -g sysc='sudo systemctl '
 alias -g scryp='scryer-prolog '
 alias -g images='cd $HOME/REPOS/images'
 alias -g videos='cd $HOME/REPOS/videos'
+alias -g unum='/home/donaghm/Applications/UNUM/unum.pl'
+alias -g L=' | less'
+alias -g ment='cd ~/DONAGHS/personal/mental_stuff'
 
 
 # Digital Ocean

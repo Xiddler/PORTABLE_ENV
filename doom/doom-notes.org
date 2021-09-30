@@ -639,6 +639,7 @@ To add a new keyword:
 /home/donaghm/.emacs.d/modules/lang/org/config.el
 and add in the REPT(r)
 Then run doom sync and re-open doom-emacs
+On 2021-09-30 I changed HOLD to HAPPENING for events that are under sail and /or ongoing
 ** checkboxes - Make a new checkbox i.e. [ ]
 Note: Checkboxes are not included in the global TODO list so they are often great to split a task into a number of simple steps.
 **** checkbox
