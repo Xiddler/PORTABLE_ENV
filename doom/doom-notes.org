@@ -298,7 +298,6 @@ and put the link / URI instead of x and the description in the second pair of []
 ** magit
 *** Getting started
 
-
 ** markdown for emacs
 Bold *bold*
 Italic /italic/
