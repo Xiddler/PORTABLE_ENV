@@ -222,6 +222,7 @@ To refresh the config.el file C-h r r OR doom/reload (in the /home/donagh/.emacs
 discover new packages
 [[install new package]]
 *** Get zo, zm, zR etc. to work
+    Seems to require Hideshow Minor Mode
 *** Replace * with nicer heading markers
 *** Navigate to point in file
 **** Using [[avy]] package
@@ -229,6 +230,14 @@ g s [SPC] <letters> <-- In-file navigation.
 Mnemonic: (g)oto (s)ubject
 **** Using swiper: [spc] s s
 
+*** Set up [SPC] shortcuts
+e.g. [SPC] w w for write and quit
+
+*** Fix things in doom
+**** doom doctor
+     ~/.emacs.d/bin/doom doctor
+**** doom build
+     ~/.emacs.d/bin/doom build
 ** images
 images can be displayed within the buffer with the following command: C-c C-x C-v (org-toggle-inline-images).
 OR Move over image / link and press [Enter]
