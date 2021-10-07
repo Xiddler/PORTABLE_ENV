@@ -1,13 +1,12 @@
 #+TITLE: doom-notes.org
 #+STARTUP: fold
-
-* frontmatter
 #+about: notes for doom
 #+date: Started 2020-05-17
 #+author: donagh mccarthy
 #+options: il
 #+tags: help orgmode org-mode donaghs
 
+* frontmatter
 * Spacemacs notes
 A lot of these are useful for doom emacs. Especially, org-mode
 ** characters
@@ -180,7 +179,6 @@ SOLUTION: Use the middle button of the mouse! This definitely worked. But why no
 Possible alternative:
 On Linux, you can use xclip.el (https://www.emacswiki.org/emacs/xclip.el) to link the kill-ring to the clipboard from Emacs running in terminal (without losing the multiple-kill and yank capability).
 
-
 ** configuration
 .doom.d directory is the preferred place to store your custom config (not within the Doom directory itself).
 See the documentation (Henrik is super great about this)
@@ -223,11 +221,14 @@ To refresh the config.el file C-h r r OR doom/reload (in the /home/donagh/.emacs
 *** Add a package
 discover new packages
 [[install new package]]
+*** Get zo, zm, zR etc. to work
+*** Replace * with nicer heading markers
 *** Navigate to point in file
 **** Using [[avy]] package
 g s [SPC] <letters> <-- In-file navigation.
 Mnemonic: (g)oto (s)ubject
 **** Using swiper: [spc] s s
+
 ** images
 images can be displayed within the buffer with the following command: C-c C-x C-v (org-toggle-inline-images).
 OR Move over image / link and press [Enter]
@@ -287,6 +288,7 @@ Type [[x][]]
 and put the link / URI instead of x and the description in the second pair of [].
 ** magit
 *** Getting started
+
 
 ** markdown for emacs
 Bold *bold*

@@ -19,7 +19,7 @@ alias -g videos='cd $HOME/REPOS/videos'
 alias -g unum='/home/donaghm/Applications/UNUM/unum.pl'
 alias -g L=' | less'
 alias -g ment='cd ~/DONAGHS/personal/mental_stuff'
-
+alias -g fraud='cd ~/DONAGHS/personal/00Fraud/'
 
 # Digital Ocean
 # Digital Ocean Log In

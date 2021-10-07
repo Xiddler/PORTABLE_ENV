@@ -1,6 +1,6 @@
 {
     "type": "phrase",
-    "description": "Donagh -",
+    "description": "also",
     "modes": [
         1
     ],
@@ -11,7 +11,7 @@
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "dm"
+            "aslo"
         ],
         "backspace": true,
         "ignoreCase": false,
