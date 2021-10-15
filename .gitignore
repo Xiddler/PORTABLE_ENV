@@ -13,3 +13,4 @@ vim-superman
 BU*
 backups/*
 autokey/pwgit.*
+vim/dotvim/pack/janet/*

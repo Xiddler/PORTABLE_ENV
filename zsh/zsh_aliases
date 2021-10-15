@@ -20,6 +20,8 @@ alias -g unum='/home/donaghm/Applications/UNUM/unum.pl'
 alias -g L=' | less'
 alias -g ment='cd ~/DONAGHS/personal/mental_stuff'
 alias -g fraud='cd ~/DONAGHS/personal/00Fraud/'
+alias -g vfraud='vim ~/DONAGHS/personal/00Fraud/fraud.md'
+alias -g vt='vim ~/REPOS/TESTING/test.md'
 
 # Digital Ocean
 # Digital Ocean Log In

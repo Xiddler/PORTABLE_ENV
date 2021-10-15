@@ -1,17 +1,17 @@
 {
     "type": "phrase",
-    "description": "with",
+    "description": "New Phrase",
     "modes": [
         1
     ],
-    "usageCount": 34,
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "wiht"
+            "ffraud"
         ],
         "backspace": true,
         "ignoreCase": false,

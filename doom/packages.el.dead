@@ -25,11 +25,11 @@
 ;(package! another-package
 ;  :recipe (:host github :repo "username/repo"))
 
-(package! org-roam
-   :recipe (:host github :repo "org-roam/org-roam"))
+;; (package! org-roam
+   ;; :recipe (:host github :repo "org-roam/org-roam"))
 ;
-(package! alchemist
-   :recipe (:host github :repo "tonini/alchemist.el"))
+;; (package! alchemist
+   ;; :recipe (:host github :repo "tonini/alchemist.el"))
 ;
 ;; (package! company-org-roam
    ;; :recipe (:host github :repo "jethrokuan/company-org-roam"))
@@ -37,7 +37,7 @@
 (package! slime
    :recipe (:host github :repo "slime/slime"))
 
-(package! org-journal)
+;; (package! org-journal)
 
 
 ;; If the package you are trying to install does not contain a PACKAGENAME.el

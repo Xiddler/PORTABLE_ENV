@@ -3,11 +3,14 @@
 # this script returns the total words typed for a specified month. The files are located in the folder on the next line.
 # the command alias that calls this script is wcmj- then append the number of the month e.g. 03 for march. 
 # The full command is thus
-# ->% wdmj 03
+# ->% wcmj 03
 
-folder="/home/donagh/sd64/1donaghs-stuff/personal/journal/2020/$1"
+# folder="/home/donagh/sd64/1donaghs-stuff/personal/journal/2020/$1"
+# folder="/home/donagh/sd64/1donaghs-stuff/personal/journal/2021/$1"
+folder="/home/donaghm/DONAGHS/personal/journal/2021/$1"
 
 cd $folder
+echo "now in $folder"
 
 sum=0
 
