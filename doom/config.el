@@ -27,7 +27,7 @@
 (setq doom-font (font-spec :family "Liberation Mono" :size 20))
 
 ;; disable org-roam warning ref version2 - added 2021-10-11
-(setq org-roam-v2-ack t)
+;; (setq org-roam-v2-ack t)
 
 ;; use zo for tab key - added 2021-10-11
 ;; (evil-define-key 'normal org-mode-map (kbd "<tab>") #'org-cycle)
@@ -85,8 +85,42 @@
 (map! :n "SPC l" 'org-insert-link )
 (map! :n "SPC z" '+org/close-all-folds ) ;; z M is such a pain
 (map! :n "SPC c SPC" 'calendar) ;; quick calendar
+
+;; change the symbol on collapsed headings
+;; (setq org-ellipsis " ▼ ")
+
+(after! org
+  (setq org-hide-leading-stars t
+        org-startup-indented t))
+
+;; Function to create new scratch buffer in Org
+
+;; ref: https://emacs.stackexchange.com/questions/16492/is-it-possible-to-create-an-org-mode-scratch-buffer
+
+;;(defun org-buffer-new ()
+;;"Create a new scratch buffer -- \*hello-world\*"
+;;(interactive)
+ ;; (let ((n 0)
+  ;;      bufname buffer)
+   ;; (catch 'done
+    ;;  (while t
+     ;;   (setq bufname (concat "*org-scratch"
+      ;;    (if (= n 0) "" (int-to-string n))
+       ;;     "*"))
+        ;;(setq n (1+ n))
+       ;; (when (not (get-buffer bufname))
+        ;;  (setq buffer (get-buffer-create bufname))
+         ;; (with-current-buffer buffer
+          ;;  (org-mode))
+          ;; When called non-interactively, the `t` targets the other window (if it exists).
+          ;;(throw 'done (display-buffer buffer t))) ))))
+
+  ;; SPC x is the default doom new scratch buffer key binding
+  ;;(global-set-key (kbd "C-c x") 'org-buffer-new)
+
+
 ;; 2021-10-11
-;; problem with folding using vim's zc, zR etc. message: org mode doesn't support Hideshow Minor Mode
+;; problem with folding using vim's zc, zR etc. message: org mode doesn't support Hideshow Minor Mode; the 'fold' package incorportes HideShow
 ;; workaround - try
 ;; (map! :n "zc" 'tab )
 

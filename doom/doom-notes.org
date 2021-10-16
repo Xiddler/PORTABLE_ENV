@@ -5,6 +5,7 @@
 #+author: donagh mccarthy
 #+options: il
 #+tags: help orgmode org-mode donaghs
+#+EDITED: 2021-10-16
 
 * frontmatter
 * Spacemacs notes
@@ -139,6 +140,14 @@ Press C-c a t to enter the global todo list.
    Customize templates --> , c C
 
 * DOOM EMACS
+** appearance
+*** theme
+    [SPC] h t <-- select theme
+*** replace *** with nicer/cleaner heading markers
+HOW?
+*** Change ellipsis for folded headings
+In config.el add
+(setq org-ellipsis " ▼ ")
 ** buffers
 [SPC] ,                <-- switch buffers
 [SPC] b b              <-- list current buffers
@@ -222,8 +231,10 @@ To refresh the config.el file C-h r r OR doom/reload (in the /home/donagh/.emacs
 discover new packages
 [[install new package]]
 *** Get zo, zm, zR etc. to work
-    Seems to require Hideshow Minor Mode
-*** Replace * with nicer heading markers
+Seems to require Hideshow Minor Mode - Note: fold package in init.el incorporates HideShow
+Or just works in doom as it is vi(m) compatible
+In config there is a section headed "Donaghs" with lines like the following
+(map! :n "SPC d" 'treemacs ) ;; Tree directory for files / folders
 *** Navigate to point in file
 **** Using [[avy]] package
 g s [SPC] <letters> <-- In-file navigation.
@@ -607,6 +618,7 @@ eg C-c / r navig
 ** workspaces
 [SPC] [TAB] n create new workspace
 [SPC] [TAB] <#> switch to Workspace <#> Displayed at bottom of window.
+
 * Org-mode
 ** about
 Maybe see [[file:~/sd64/TODO/ORG-MODE/first.org][first.org]]  for my preliminary notes
