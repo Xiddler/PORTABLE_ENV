@@ -244,3 +244,12 @@ git config --global user.name "Donagh" && git config --global user.email xiddler
 
 # pretty log
 git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+# terminal help
+man giteveryday # https://git-scm.com/docs/giteveryday
+man gittutorial # https://git-scm.com/docs/gittutorial
+
+
+
+
+

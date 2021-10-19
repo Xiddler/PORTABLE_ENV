@@ -112,11 +112,8 @@ cmap ww :wq<cr>
 cmap xx :q!<cr>
 "
 "
-" splits - use ctrl-h/j/k/l to switch between splits
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
+
+
 " }}}
 " Packages using Packpath {{{
 " This is for using the package manager that utilises the folder
@@ -153,6 +150,12 @@ let mapleader=","
 noremap <leader>o <c-w>v<c-w>l
 noremap <leader>h <c-w>s<c-w>j
 noremap <leader>x <c-w>c
+" in splits - use ctrl-h/j/k/l to switch focus between splits
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+" noremap <leader>j <c-w>
 "  save file
 nnoremap <leader>s :w<cr>
 inoremap <leader>s <C-c>:w<cr>
