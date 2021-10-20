@@ -1,5 +1,7 @@
+;;; package --- Summary
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+;;; Commentary:
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
@@ -9,6 +11,7 @@
 ;;; Code:
 (setq user-full-name "Donagh McCarthy"
       user-mail-address "xiddler@gmail.com")
+
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;
@@ -22,13 +25,11 @@
 ;; (setq doom-font (font-spec :family "monospace" :size 20))
 ;;; Code:
 ;; (setq doom-font (font-spec :family "Source Code Pro" :size 20))
-;; (setq doom-font (font-spec :family "Liberation Mono" :size 20))
+(setq doom-font (font-spec :family "Liberation Mono" :size 20))
 
 ;; disable org-roam warning ref version2 - added 2021-10-11
 ;; (setq org-roam-v2-ack t)
 
-;; use zo for tab key - added 2021-10-11
-;; (evil-define-key 'normal org-mode-map (kbd "<tab>") #'org-cycle)
 
 ;; use avy search in all windows
 ;;; Code:
@@ -40,15 +41,11 @@
 ;;; Code:
 ;; (setq doom-theme 'doom-solarized-dark)
 (setq doom-theme 'tsdh-dark )
-;; (setq doom-theme 'tsdh-dark)
 
-;;; org-roam
-;; (setq org-roam-directory "~/org-roam")
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/all_org/org")
-;; (setq org-directory "~/PORTABLE_ENV/doom/org/")
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -57,7 +54,9 @@
 
 ;; use for SLIME lisp
 (setq inferior-lisp-program "sbcl")
- ; Emacs by default syncs with the system clipboard when cutting or pasting text. This can be really annoying if you do things like paste from the clipboard after a c w in normal mode, because the clipboard will be overwritten before you can paste its contents. The following line should disable this behavior:
+;; Emacs by default syncs with the system clipboard when cutting or pasting text.
+;; This can be really annoying if you do things like paste from the clipboard after a c w in normal mode,
+;; because the clipboard will be overwritten before you can paste its contents. The following line should disable this behavior:
 (setq select-enable-clipboard nil)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
@@ -65,9 +64,8 @@
 ;; - `load!' for loading external *.el files relative to this one
 ;; - `use-package' for configuring packages
 ;; - `after!' for running code after a package has loaded
-;; - `add-load-path!' for adding directories to the `load-path', relative to
-;;   this file. Emacs searches the `load-path' when you load packages with
-;;   `require' or `use-package'.
+;; - `add-load-path!' for adding directories to the `load-path', relative to this file.
+;;      Emacs searches the `load-path' when you load packages with `require' or `use-package'.
 ;; - `map!' for binding new keys
 ;;
 ;; Donaghs - the following keybinding *did* work. :n indicates normal mode
@@ -87,9 +85,9 @@
 ;; change the symbol on collapsed headings
 ;; (setq org-ellipsis " ▼ ")
 
-(after! org
-  (setq org-hide-leading-stars t
-        org-startup-indented t))
+;; (after! org
+;;   (setq org-hide-leading-stars t
+;;         org-startup-indented t))
 
 ;; Function to create new scratch buffer in Org
 
@@ -117,10 +115,6 @@
   ;;(global-set-key (kbd "C-c x") 'org-buffer-new)
 
 
-;; 2021-10-11
-;; problem with folding using vim's zc, zR etc. message: org mode doesn't support Hideshow Minor Mode; the 'fold' package incorportes HideShow
-;; workaround - try
-;; (map! :n "zc" 'tab )
 
 ;; THE FOLLOWING LINES COPIED FROM THE FILE ~/.emacs.d/modules/lang/org/config.el
 ;; but placed here in case I need it after a new emacs install

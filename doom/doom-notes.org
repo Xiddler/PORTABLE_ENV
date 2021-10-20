@@ -231,10 +231,7 @@ To refresh the config.el file C-h r r OR doom/reload (in the /home/donagh/.emacs
 discover new packages
 [[install new package]]
 *** Get zo, zm, zR etc. to work
-Seems to require Hideshow Minor Mode - Note: fold package in init.el incorporates HideShow
-Or just works in doom as it is vi(m) compatible
-In config there is a section headed "Donaghs" with lines like the following
-(map! :n "SPC d" 'treemacs ) ;; Tree directory for files / folders
+UPDATE: zo and other native vim folding commands come with evil
 *** Navigate to point in file
 **** Using [[avy]] package
 g s [SPC] <letters> <-- In-file navigation.
@@ -242,6 +239,7 @@ Mnemonic: (g)oto (s)ubject
 **** Using swiper: [spc] s s
 
 *** Set up [SPC] shortcuts
+Edit ~/PORTABLE_ENV/doom/config.el
 e.g. [SPC] w w for write and quit
 
 *** Fix things in doom
@@ -252,7 +250,7 @@ e.g. [SPC] w w for write and quit
 ** images
 images can be displayed within the buffer with the following command: C-c C-x C-v (org-toggle-inline-images).
 OR Move over image / link and press [Enter]
-[[/home/donagh/Images/BW75-thrush.png][thrush.png]]
+[[/home/donaghm/REPOS/images/BW75-thrush.png][thrush.png]]
 
 This is an image of a thrush.
 [SPC] w o to enlarge window
@@ -340,6 +338,9 @@ There are a number of templates to save notes to
 
 ** packages
 *** add new package
+https://github.com/hlissner/doom-emacs
+Packages are declared in packages.el files.
+Use -> % doom build after adding a package (or doom doctor if there are problems)
 *** meta
 REM: Doesn't use emacs packages.el it uses straight.el instead for package management
 **** install new package

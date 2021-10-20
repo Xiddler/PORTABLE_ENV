@@ -22,6 +22,7 @@ alias -g ment='cd ~/DONAGHS/personal/mental_stuff'
 alias -g fraud='cd ~/DONAGHS/personal/00Fraud/'
 alias -g vfraud='vim ~/DONAGHS/personal/00Fraud/fraud.md'
 alias -g vt='vim ~/REPOS/TESTING/test.md'
+# alias -g pmj='/run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/journal/2021/$(date +"%m")/$(date +"%m")-$(date +"%d").md' # see Autokey
 
 # Digital Ocean
 # Digital Ocean Log In
