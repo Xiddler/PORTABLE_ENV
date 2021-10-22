@@ -22,6 +22,7 @@ alias -g ment='cd ~/DONAGHS/personal/mental_stuff'
 alias -g fraud='cd ~/DONAGHS/personal/00Fraud/'
 alias -g vfraud='vim ~/DONAGHS/personal/00Fraud/fraud.md'
 alias -g vt='vim ~/REPOS/TESTING/test.md'
+alias -g wa='cd ~/REPOS/TESTING/WhatsApp/'
 # alias -g pmj='/run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/journal/2021/$(date +"%m")/$(date +"%m")-$(date +"%d").md' # see Autokey
 
 # Digital Ocean
@@ -159,7 +160,7 @@ alias -g jour='cd $HOME/DONAGHS/personal/journal'
 po() { cd $HOME/PORTABLE_ENV }
 # dm() { cd $HOME/Donaghs_Tmp }
 te() { cd $HOME/SD64/REPOSITORIES/TESTING }
-az() { cd $HOME/all_org }
+az() { cd $HOME/all_org/org }
 sd() { cd $HOME/SD64/ }
 # pers() { cd $personal && ls }
 alias -g pers='cd $HOME/DONAGHS/personal/'
@@ -228,7 +229,7 @@ alias -g dist='vim $HOME/DONAGHS/personal/Means/distractions.md'
 alias -g means='cd $HOME/DONAGHS/personal/Means'
 
 alias -g mdd='$HOME/.scripts/markdown_diary.sh' # md is taken as mkdir -p <dir>
-alias -g backup="$HOME/.scripts/backup_all_and_encrypt.sh" # backsup ALL_ZIM, personal and org to Dropbox in .7z format
+# alias -g backup="$HOME/.scripts/backup_all_and_encrypt.sh" # backsup ALL_ZIM, personal and org to Dropbox in .7z format
 alias -g mn='$HOME/.scripts/mynotes.sh'
 alias -g wcmj='$HOME/.scripts/wordCount_journal.sh' # word count my journal (markdown journal) - usage ->% wcmj 05 [ie June]
 alias hanging='cd $HOME/DONAGHS/ZIM/Computer/ && tail -n4 0_Hanging.txt && cd $HOME/ziim/Donaghs/00_Home/ && tail -n4 0_Hanging.txt'

@@ -193,3 +193,9 @@ http --session=user2 -a user2:password example.org X-Bar:Foo
 # Instead of a name, you can also directly specify a path to a session
 # file. This allows for sessions to be re-used across multiple hosts:
 http --session=/tmp/session.json example.orghttp --session=/tmp/session.json admin.example.orghttp --session=~/.httpie/sessions/another.example.org/test.json example.orghttp --session-read-only=/tmp/session.json example.org
+
+# sites
+http://info.cern.ch/
+
+
+

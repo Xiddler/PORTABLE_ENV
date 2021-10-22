@@ -218,7 +218,7 @@ M-x ielm or [SPC] o r
 - rename an existing file - C-x d (for dired) nav to required dir and edit filename  in the buffer
 ** general notes
 - See spacemacs_notes above. Lots of stuff applies in doom-emacs.
-** headlines
+** headings
 Remove a * <-- to promote to parent level
 M - up <-- to move up
 M - down <-- to move down
@@ -658,11 +658,12 @@ REM: Use z in this view to select desired period e.g. week/month
 
 ** org-mode keywords headings
 Close doom-emacs
+
 To add a new keyword:
 /home/donaghm/.emacs.d/modules/lang/org/config.el
 and add in the REPT(r)
 Then run doom sync and re-open doom-emacs
-On 2021-09-30 I changed HOLD to HAPPENING for events that are under sail and /or ongoing
+On 2021-09-30 I changed HOLD to HAPPENING for events that are under sail and /or ongoing. Repeated this on new install Oct 2021.
 ** checkboxes - Make a new checkbox i.e. [ ]
 Note: Checkboxes are not included in the global TODO list so they are often great to split a task into a number of simple steps.
 **** checkbox
@@ -677,7 +678,7 @@ or replace ' ' with X (or vice versa)
 - [X] this item [2/2]
   - [X] Subitem 1
   - [X] Subitem 2
-** convert headline into a todo
+** convert heading into a todo
 tt and then select from menu
 Example - hover over STRT and press tt
 **** .STRT

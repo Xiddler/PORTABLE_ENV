@@ -81,6 +81,7 @@
 (map! :n "SPC l" 'org-insert-link )
 (map! :n "SPC z" '+org/close-all-folds ) ;; z M is such a pain
 (map! :n "SPC c SPC" 'calendar) ;; quick calendar
+;; (map! :n "SPC v" 'org-agenda) ;; view org-agenda next 14 days
 
 ;; change the symbol on collapsed headings
 ;; (setq org-ellipsis " ▼ ")
@@ -152,7 +153,6 @@
            ;; ("PROJ" . +org-todo-project)
            ;; ("REPT" . +org-todo-project)))
    
-
 ;; To refresh config.el --> C-h r r
 ;;
 ;; To get information about any of these functions/macros, move the cursor over
