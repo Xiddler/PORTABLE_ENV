@@ -24,6 +24,7 @@ alias -g vfraud='vim ~/DONAGHS/personal/00Fraud/fraud.md'
 alias -g vt='vim ~/REPOS/TESTING/test.md'
 alias -g wa='cd ~/REPOS/TESTING/WhatsApp/'
 # alias -g pmj='/run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/journal/2021/$(date +"%m")/$(date +"%m")-$(date +"%d").md' # see Autokey
+alias -g jmj='janet ~/.scripts/my_journal.janet'
 
 # Digital Ocean
 # Digital Ocean Log In
@@ -54,7 +55,7 @@ alias -g contout='cat $HOME/ZIM/ORG/03_CONTACTS/Contacts.txt | rg -i -A18 -B2 '
 alias -g ep='echo $PATH'
 # alias -g exa='~/Applications/exa-linux-x86_64' # modern ls
 # alias -g kontout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 ' # get contact  
-alias -g lsd='du -s -- *(D) | sort -k1n' # list size of directories
+alias -g listd='du -s -- *(D) | sort -k1n' # list size of directories
 alias -g nt='terminator --geometry +500+100' # open a new zsh terminal  
 # alias -g passin='python3 $HOME/SD64/REPOSITORIES/2programming/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
 alias -g passin='python3 /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/python/1python_projects/Tkinter_projects/tkinter_GUI/passin_credentials/pw_data-input.py'
