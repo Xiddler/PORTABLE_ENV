@@ -15,10 +15,10 @@
         day (to-double-digit-string (get date :month-day))]
     (string  day  "-" month".md")))
 
-(defn get-current-date-time-string []
+(defn get-my-date []
   (get-date-time-string (os/time)))
 
-(def my-date (get-current-date-time-string))
+(var my-date (get-my-date))
 
 (def base-path "/run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/journal/")
 
@@ -31,6 +31,7 @@
   (get-year (os/time)))
 
 (var my-year (get-my-year))
+
 
 (defn get-month [time]
  (let [date  (os/date time)
@@ -45,6 +46,7 @@
 (var jour-path (string base-path my-year "/" my-month "/" my-date))
 
 
+# Now, with all the preliminaries, I can call the os/execute module to open my journal in vim
 (os/execute 
     @("/usr/sbin/vim" jour-path)
     :p)
