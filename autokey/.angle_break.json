@@ -1,15 +1,17 @@
 {
     "type": "phrase",
-    "description": "fraud.md",
-    "modes": [],
-    "usageCount": 2,
+    "description": "angle_break",
+    "modes": [
+        1
+    ],
+    "usageCount": 15,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "ffraud"
+            "brk"
         ],
         "backspace": true,
         "ignoreCase": false,

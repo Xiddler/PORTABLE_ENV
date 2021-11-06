@@ -5,12 +5,15 @@
 
 
 (defn to-double-digit-string [digit]
-  " add 1 as the months and days are 0-indexed in the output to (os/date time) in the function get-date-time-string"
+  " add 1 as the months and days are 0-indexed in the output to (os/date time) in the function get-date-time-string. The -3 means slice the last 2 items e.g. 011 --> 11."
   (string/slice (string "0" (+ digit 1)) -3)) 
 
-(defn get-date-time-string [time] # time is in the Unix epoch e.g. 1635595362
-  "gets the date in number format e.g. 08-11 and adds the .md suffix for the journal filename"
-  (let [date (os/date time) # repl:21:> (os/date 1635595362) --> {:dst false :hours 12 :minutes 2 :month 9 :month-day 29 :seconds 42 :week-day 6 :year 2021 :year-day 302}
+(defn get-date-time-string [time] 
+  `` 
+   gets the date in number format e.g. 08-11 and adds the .md suffix for the journal filename 
+   time is an argument for this function
+   repl:21:> (os/date 1635595362) --> {:dst false :hours 12 :minutes 2 :month 9 :month-day 29 :seconds 42 :week-day 6 :year 2021 :year-day 302}`` 
+  (let [date (os/date time) # here time is an argument for the os/date module and is in the Unix epoch; let is used when there are multiple variable assignments
         month (to-double-digit-string (get date :month))
         day (to-double-digit-string (get date :month-day))]
     (string  day  "-" month".md")))

@@ -7,6 +7,7 @@ alias -g pas='pamac search '
 alias -g spi='sudo pamac install '
 alias -g PS='ps aux | grep -i '
 alias -g G='| grep -i '
+alias -g L='| less '
 alias -g C='| clipcopy '
 alias -g quick='cd $HOME/DONAGHS/0_Quickies'
 alias -g sp='vim $HOME/REPOS/TESTING/scratch_pad.txt'
@@ -25,6 +26,8 @@ alias -g vt='vim ~/REPOS/TESTING/test.md'
 alias -g wa='cd ~/REPOS/TESTING/WhatsApp/'
 # alias -g pmj='/run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/journal/2021/$(date +"%m")/$(date +"%m")-$(date +"%d").md' # see Autokey
 alias -g jmj='janet ~/.scripts/my_journal.janet'
+alias -g mp='markdown_previewer '
+alias -g ap='apostrophe '
 
 # Digital Ocean
 # Digital Ocean Log In

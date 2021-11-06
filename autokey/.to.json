@@ -1,19 +1,21 @@
 {
     "type": "phrase",
-    "description": "fraud.md",
-    "modes": [],
-    "usageCount": 2,
+    "description": "to",
+    "modes": [
+        1
+    ],
+    "usageCount": 5,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "ffraud"
+            "ot"
         ],
         "backspace": true,
         "ignoreCase": false,
-        "immediate": true,
+        "immediate": false,
         "triggerInside": false,
         "wordChars": "[\\w]"
     },

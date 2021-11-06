@@ -48,5 +48,11 @@ if __name__ == "__main__":
 # website with good python tutorials
 https://zetcode.com/all/#python
 
-
+# When using VIM editor to edit PYTHON: ref- python spaces / tabs
+:retab # fixes tabs / spaces
+:set lcs+=space:· # shows a . for each space
+:set list # displays the .
+:set nolist # hides the .
+plugin --> git clone https://github.com/Yggdroot/indentLine
+# For code indented with tabs I think there is no need to support it, because you can use :set list lcs=tab:\|\
 

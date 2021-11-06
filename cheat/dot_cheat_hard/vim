@@ -65,8 +65,6 @@ d{motion}       delete text that {motion} moves over
 42G         go to line 42
 
 ### DONAGHS ###
-# sudo trick
-:w !sudo tee %
 
 # installing plugins
 .vim/pack/<name>/start/PLUGIN
@@ -226,6 +224,27 @@ C-W -
 # Increase current window by 10 units
 10 C-W +
 
+# EMOJIS
+In vim the following will get closest to 'real' emojis
+
+Press insert (i) then Ctrl-V i.e. <c-v> and type in U0001f600 or whatever your choice is
+
+<c-v>U0001f600
+😀
+<c-v>U0001f601  = 128513 (Decimal)
+😁
+<c-v>U0001f602
+😂
+<c-v>U0001f603
+😃
+<c-v>U0001f604  = 128516 (Decimal)
+😄
+<c-v>U0001f605
+😅
+<c-v>U0001f606
+😆
+
+
 # DELETE BLANK LINES
 :g/^\s*$/d
 
@@ -257,5 +276,9 @@ vim --clean --startuptime clean.log <fileName>
 plugin --> git clone https://github.com/Yggdroot/indentLine
 # For code indented with tabs I think there is no need to support it, because you can use :set list lcs=tab:\|\
 
+# sudo trick
+:w !sudo tee %
 
+# open file with no .vimrc or plugins
+vim -u NONE gargantuan.txt 
 

@@ -254,8 +254,7 @@ System clock synchronized: yes
               NTP service: active
           RTC in local TZ: no
 
-
-
-
-
-
+# list users on the system
+compgen -u
+cat /etc/passwd
+getent passwd
