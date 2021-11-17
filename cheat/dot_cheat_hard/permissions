@@ -1,3 +1,4 @@
+# file / directory permissions
 O Owner
 G Group
 U Universal
@@ -12,4 +13,20 @@ U Universal
 600         rw- --- ---
 644         rw- r-- r--
 400         r-- --- ---
+
+# ssh permissions 
+
+ Element            Permission
+----------------------------------------
+.ssh directory      700 ((drwx------)
+
+public keys         644 (-rw-r--r--)
+
+private keys        600 (-rw-------)
+
+authorized_keys     600 (-rw-------)
+
+known_hosts         600 (-rw-------)
+
+config              600 (-rw-------)
 

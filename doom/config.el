@@ -29,6 +29,9 @@
 
 ;; disable org-roam warning ref version2 - added 2021-10-11
 ;; (setq org-roam-v2-ack t)
+;;
+;; reduce delay on pressing SPC
+(setq which-key-idle-delay 0.5)
 
 
 ;; use avy search in all windows
