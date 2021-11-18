@@ -6,6 +6,10 @@
 # locale
 export LANG=en_US.utf8
 
+# machine
+COMP=$(uname -a | cut -d' ' -f2)
+
+
 # borg backup
 export BORG_PASSPHRASE='theboysoffairhill'
 
