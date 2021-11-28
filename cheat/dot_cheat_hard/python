@@ -21,11 +21,14 @@ python -mjson.tool
 # alternatively
 python -m pip install --upgrade pip
 
+# update pip - e.g. in fastapi virtualenv
+/home/donaghm/.virtualenvs/fastapi/bin/python -m pip install --upgrade pip
 
 # use requirements file
 pip install -r requirements.txt
 
 # create a new virtualenv e.g. 'flask'
+# python3.9 -m venv <path-to-venv>/venv
 python3 -m venv $HOME/.virtualenvs/flask 
 # to activate
 source $HOME/.virtualenv/flask/bin/activate

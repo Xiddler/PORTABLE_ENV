@@ -34,6 +34,10 @@
 (setq which-key-idle-delay 0.5)
 
 
+;; collapse outline when not at heading. See https://github.com/tkf/org-mode/blob/master/lisp/org.el#L963
+(setq org-cycle-emulate-tab 'white)
+
+
 ;; use avy search in all windows
 ;;; Code:
 (setq avy-all-windows t)

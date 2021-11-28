@@ -2,30 +2,36 @@
 "=== Min settings === 
 " 'set nocompatible' is never necessary in a vimrc file. When Vim detects a user vimrc file, it automatically sets nocompatible. 
 set encoding=utf-8
+" open a file in a new tab
+map gf :tabe <cfile><cr>
+" test gf with: /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/TESTING/afile.md
 if has("autocmd")
   filetype plugin indent on
 endif
-set <esc>=jk "" my inline comment in a set command
+set <esc>=jk " an inline comment
 set number
 set relativenumber " also Ctrl N to toggle this
 set virtualedit=all " allows cursor to be moved anywhere in normal mode
 " set textwidth=0
 set wrapmargin=5
 set noswapfile
+set hidden
+set nolist    " adds a - to empty spaces; do I need this?
+set listchars=tab:>\ ,trail:.
 " set mouse+=a " copy lines without line numbers
 " to make numbered list
-vnoremap <leader>1 :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR>
-" following not needed if autokey installed and working
-" ab i I
-" ab wiht with
-" ab dont don't
-" ab cant can't
-" ab wont won't
-" ab dod Donagh -
-" ab don Donagh -
+vnoremap <leader>l :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR>j
+" Goyo & limelight toggle together - see gh for instructions to change this
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+" Toggle goyo & limelight
+map <F9> :Goyo <cr>
+" use emmet for html and css only
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
 
-" use Ctrl / to comment
-nnoremap C-l gcc
+" use Ctrl l to comment
+map <C-l> gcc
 
 "}}}
 " Spaces And Tabs {{{ 
@@ -101,7 +107,7 @@ nnoremap k gk
 nnoremap H gT
 nnoremap L gt
 "
-" Save like my doom-emacs keybindings [SPC] w [SPC]
+" Save to be the same as my doom-emacs keybindings [SPC] w [SPC]
 " (This works because SPACEBAR is mapped to : above and cmap puts vim into Ex mode )
 cmap w<space> :w<cr>
 " even shorter journey to s
@@ -182,8 +188,8 @@ cmap <C-j> <Down>
 cmap <C-k> <Up>
 cmap <C-h> <Left>
 cmap <C-l> <Right>
-" open $MYVIMRC in a new tab
-noremap <leader>m :tabe $MYVIMRC<CR>
+" open $MYVIMRC in a new tab Note: in CLI the shortcut is vv.
+noremap <leader>vv :tabe $MYVIMRC<CR>
 " source $MYVIMRC
 nnoremap <Leader>r :so $MYVIMRC<CR>
 "To insert the absolute path of the directory the file is in use:
@@ -242,10 +248,16 @@ map <leader>tk <C-w>t<C-w>K
 nnoremap <leader>u v~
 " MY FUNCTIONS - sample function
 function Simple()
-    echom "Running simple function"
+echom "Running simple function"
 endfunction
 nnoremap <C-l>, :call Simple()<CR>
 "}}}
+" Keybindings collected {{{
+" K             :: get vim help for the item under the cursor
+" gf            :: open a new tab for the file under the cursor
+" <leader>vv    :: open .vimrc
+" <leader>tt    :: open a terminal in vim
+" }}}
 " Preferred Plugins {{{
 "
 " "=== Preferred Plugins === 
@@ -253,20 +265,29 @@ nnoremap <C-l>, :call Simple()<CR>
 " donaghm [16:50 Tue 20/04] [~/.vim] 
 " -> % tree -L 2
 " .
-" └── pack
-    " ├── easymotion
-    " ├── emmet
-    " ├── foobar
-    " ├── md-folding
-    " ├── nightsense
-    " ├── ranger
-    " ├── vim-airline
-    " ├── vim-commentary
-    " ├── vim-elixir
-    " ├── vim-markdown
-    " └── vim-pencil
+" └── ~/.vim/pack/start   (symlinked from PORTABLE_ENV)
+    " 1  ├── vim-surround
+    " 2  ├── vim-commentary
+    " 3  ├── ranger
+    " 4  ├── nightsense (theme)
+    " 5  ├── vim-airline
+    " 6  ├── vim-markdown-folding - masukomi
+    " 7  ├── vim-markdown - plasticboy
+    " 8  ├── vim-pencil
+    " 9  ├── emmet-vim
+    " 10 ├── vim-multiple-cursors
+    " 11 ├── vim-voom
+    " 12 ├── vim-superman
+    " 13 ├── peekaboo
+    " 14 ├── easymotion
+    " 15 ├── vim-elixir
+    " 16 ├── vim-floaterm
+    " 17 ├── vim-floaterm
+    " 18 ├── janet-vim
+    " 19 ├── goyo.vim
+    " 20 └── limelight.vim
     "
-   " Rundown of good plugins available at https://catonmat.net/vim-plugins
+   " Note: Rundown of good plugins available at https://catonmat.net/vim-plugins
    " --- My Preferred Plugins ---  
    " tpope
    " https://github.com/tpope/vim-surround.git  
@@ -277,14 +298,13 @@ nnoremap <C-l>, :call Simple()<CR>
    " vim-ranger
    " map <leader>f :Ranger<CR>
    "
-   " theme
+   " theme - nightsensee 
    " .vim/pack/nightsense/start
    " https://github.com/nightsense/stellarized.git
    "
    " airline - powerline for vim
    " https://github.com/vim-airline/vim-airline.git
    "
-   " markdown
    " .vim/pack/
    " masukomi
    " vim-markdown-folding
@@ -295,35 +315,53 @@ nnoremap <C-l>, :call Simple()<CR>
    " git clone https://github.com/plasticboy/vim-markdown.git
    "
    "
-   "vim-pencil
-   " pure typing / writing experience for vim text files
+   " vim-pencil
+   " pure typing / writing experience for vim text files - kills default vim
+   " multiline for j, k etc.
    " git clone https://github.com/reedes/vim-pencil
    "
    "
    " mattn
    " emmet-vim
+   " use <C-y>, ! to have basic html:5 skeleton template
    " https://github.com/mattn/emmet-vim.git
    "
-   "multicursor
-   "https://github.com/terryma/vim-multiple-cursors
+   " multicursor
+   " https://github.com/terryma/vim-multiple-cursors
    "
-   "Voom
-   "sudo pamac install vim-voom
+   " Voom
+   " sudo pamac install vim-voom
    "
-   "SuperMan
-   "Man pages in vim editor: vman <app>
-   "https://github.com/jez/vim-superman
+   " SuperMan
+   " Man pages in vim editor: vman <app>
+   " https://github.com/jez/vim-superman
    "
-   "peekaboo
-   "let's you see the regs
-   "https://github.com/junegunn/vim-peekaboo
+   " peekaboo
+   " let's you see the regs
+   " https://github.com/junegunn/vim-peekaboo
    "
-   "easymotion - <leader>/ will highlight file with letters everywhere
+   " easymotion - <leader>/ will highlight file with letters everywhere
    " using ,/ to move to highlighted letter
-   "https://github.com/easymotion/vim-easymotion.git
+   " https://github.com/easymotion/vim-easymotion.git
    "
-   "vim-elixir
-   "elixir plugin for vim
-   "https://github.com/elixir-editors/vim-elixir
+   " vim-elixir
+   " elixir plugin for vim
+   " https://github.com/elixir-editors/vim-elixir
+   "
+   " floaterm
+   " a floating terminal - not installed
+   " https://github.com/voldikss/vim-floaterm
+   "
+   " janet.vim
+   " plugin for janet syntax in vim
+   " https://github.com/janet-lang/janet.vim.git
+   "
+   " Goyo
+   " Make vim environment distraction free
+   " https://github.com/junegunn/goyo.vim.git
+   "
+   " Limelight
+   " Highlight only the active paragraph
+   " https://github.com/junegunn/limelight.vim.git
    "
    "}}}

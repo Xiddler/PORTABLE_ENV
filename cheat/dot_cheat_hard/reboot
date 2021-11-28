@@ -1,4 +1,4 @@
-I 2021-03-03
+:I 2021-03-03
 # This is in reference to Manjaro on 2021-03-03
 # When I reboot what services do I need to ensure are running
 
@@ -51,5 +51,13 @@ sudo /usr/sbin/zim
 echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && ~/.dropbox-dist/dropboxd
 # cifs_share
 sudo mount -t cifs //192.168.1.108/USB128_2 /mnt/cifs_share -o username=admin,password=admin,iocharset=utf8,vers=3.1.1
-# rem: caffeine & lanner
+# rem: caffeine & 
+# lanner now using htmx and looking lovely
+# LAPTOP
+ssh -i ~/.ssh/id_rsa_rpi donagh@192.168.1.108 
+# REMOTE RPi
+python3 ~/Applications/flask_htmx_lanner/app.py
+
+
+ 
 

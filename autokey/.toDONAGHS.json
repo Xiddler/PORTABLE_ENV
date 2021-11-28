@@ -1,31 +1,31 @@
 {
-    "type": "phrase",
-    "description": "New Phrase",
+    "type": "script",
+    "description": "toDONAGHS",
+    "store": {},
     "modes": [
-        1
+        3
     ],
     "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
-    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
-        "abbreviations": [
-            "ipr"
-        ],
+        "abbreviations": [],
         "backspace": true,
         "ignoreCase": false,
-        "immediate": true,
+        "immediate": false,
         "triggerInside": false,
         "wordChars": "[\\w]"
     },
     "hotkey": {
-        "modifiers": [],
-        "hotKey": null
+        "modifiers": [
+            "<alt>",
+            "<ctrl>"
+        ],
+        "hotKey": "d"
     },
     "filter": {
         "regex": null,
         "isRecursive": false
-    },
-    "sendMode": "kb"
+    }
 }

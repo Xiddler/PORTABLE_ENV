@@ -265,8 +265,21 @@ ga
 # see how quickly Vim starts without your existing configuration:
 vim --clean --startuptime clean.log <fileName>
 
+#####                   PLUGINS                 ########
 # easymotion
 ,/
+# emmet
+! <C-y>,                            # Note the , at the end.
+div>p#foo>ul>li*4 <C-y>,
+
+# goyo & limelight
+F9
+
+####
+
+# live update of <filename> in a pdf viewer with the <filename.md> open in say, Okular
+:!pandoc % -o %:t:r.pdf
+
 
 # python spaces / tabs
 :retab # fixes tabs / spaces

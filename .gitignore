@@ -14,3 +14,6 @@ BU*
 backups/*
 autokey/pwgit.*
 vim/dotvim/pack/janet/*
+vim/dotvim/pack/Goyo/*
+vim/dotvim/pack/limelight/*
+vim/dotvim/pack/*/start/*/.git/

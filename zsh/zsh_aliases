@@ -10,6 +10,8 @@ alias -g G='| grep -i '
 alias -g L='| less '
 alias -g C='| clipcopy '
 alias -g quick='cd $HOME/DONAGHS/0_Quickies'
+alias -g html='cd $HOME/REPOS/2programming/webdevelopment/html'
+alias -g htmx='cd $HOME/REPOS/2programming/webdevelopment/htmx'
 alias -g sp='vim $HOME/REPOS/TESTING/scratch_pad.txt'
 alias -g scrape='~/PORTABLE_ENV/scripts/scrape_website.sh'
 alias -g ssc='sudo systemctl '
@@ -32,6 +34,10 @@ alias -g ap='apostrophe '
 # Digital Ocean
 # Digital Ocean Log In
 alias -g doli='ssh -i /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/ssh/ssh_keys_2020/id_rsa_do donagh@188.166.103.14 ' 
+
+# To show the COMPuter name in the prompt of the ~/.oh-my-zsh/themes/crcandy_dm.zsh-theme. Specically for ssh-ing into other
+# machines
+COMP=$(uname -a | cut -d ' ' -f2)
 
 # CompTIA
 alias -g tia="cd /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/EDUCATION/Courses_2021/CompTIA_2021"
@@ -175,7 +181,7 @@ projs() { cd /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIE
 donaghs() { cd $HOME/SD64/DONAGHS }
 mind() { cd $personal/minding_me }
 words() { cd $HOME/REPOS/WORDS/ }
-# books() { cd $HOME/REPOS/books/ } # use autokey instead so as to be able to tabe in vim. Added 2021-10-25.
+books() { cd $HOME/REPOS/books/ } # use autokey instead so as to be able to tabe in vim. Added 2021-10-25.
 bookmarks() { cd $HOME/SD64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
 reading() { cd $HOME/REPOS/books/0_Reading_notes && ls }
 
