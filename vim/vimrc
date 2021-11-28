@@ -364,4 +364,13 @@ nnoremap <C-l>, :call Simple()<CR>
    " Highlight only the active paragraph
    " https://github.com/junegunn/limelight.vim.git
    "
+   " vim-orgmode
+   " (prefers also to include speedating from tpope)
+   " open .org files in vim
+   "  https://github.com/jceb/vim-orgmode
+   "
+   " speedating
+   " manages the - in dates like 2021-11-28 when opening say .org files
+   "  https://github.com/tpope/vim-speeddating.git
+   "
    "}}}
