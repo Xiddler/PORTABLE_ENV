@@ -1,17 +1,17 @@
 {
     "type": "phrase",
-    "description": "dmsaying",
+    "description": "vim 0_ToRead.md",
     "modes": [
         1
     ],
-    "usageCount": 27,
+    "usageCount": 9,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "dms"
+            "vtr"
         ],
         "backspace": true,
         "ignoreCase": false,

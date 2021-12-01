@@ -30,6 +30,7 @@ alias -g wa='cd ~/REPOS/TESTING/WhatsApp/'
 alias -g jmj='janet ~/.scripts/my_journal.janet'
 alias -g mp='markdown_previewer '
 alias -g ap='apostrophe '
+alias -g songs='cd $HOME/REPOS/songs'
 
 # Digital Ocean
 # Digital Ocean Log In

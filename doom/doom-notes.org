@@ -250,8 +250,7 @@ e.g. [SPC] w w for write and quit
 ** images
 images can be displayed within the buffer with the following command: C-c C-x C-v (org-toggle-inline-images).
 OR Move over image / link and press [Enter]
-[[/home/donaghm/REPOS/images/BW75-thrush.png][thrush.png]]
-
+[[/run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/images/square-wheel-cartoon.png]]
 This is an image of a thrush.
 [SPC] w o to enlarge window
 ** installation notes

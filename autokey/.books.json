@@ -1,10 +1,8 @@
 {
     "type": "phrase",
     "description": "books",
-    "modes": [
-        1
-    ],
-    "usageCount": 4,
+    "modes": [],
+    "usageCount": 10,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,

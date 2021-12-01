@@ -1,9 +1,7 @@
 {
     "type": "phrase",
     "description": "ipdo",
-    "modes": [
-        1
-    ],
+    "modes": [],
     "usageCount": 4,
     "prompt": false,
     "omitTrigger": false,

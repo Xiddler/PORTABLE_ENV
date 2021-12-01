@@ -1,17 +1,17 @@
 {
     "type": "phrase",
-    "description": "dmsaying",
+    "description": "path to 0_ToRead.md",
     "modes": [
         1
     ],
-    "usageCount": 27,
+    "usageCount": 3,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "dms"
+            "ptr"
         ],
         "backspace": true,
         "ignoreCase": false,

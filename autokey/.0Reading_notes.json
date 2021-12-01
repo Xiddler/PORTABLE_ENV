@@ -1,17 +1,16 @@
 {
     "type": "phrase",
     "description": "0Reading_notes",
-    "modes": [
-        1
-    ],
-    "usageCount": 2,
+    "modes": [],
+    "usageCount": 38,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "0read"
+            "0read",
+            ""
         ],
         "backspace": true,
         "ignoreCase": false,

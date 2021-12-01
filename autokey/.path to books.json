@@ -1,17 +1,17 @@
 {
     "type": "phrase",
-    "description": "dmsaying",
+    "description": "path to books",
     "modes": [
         1
     ],
-    "usageCount": 27,
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "dms"
+            "ptb"
         ],
         "backspace": true,
         "ignoreCase": false,

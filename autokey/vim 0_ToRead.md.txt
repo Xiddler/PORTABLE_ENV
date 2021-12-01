@@ -1,0 +1,1 @@
+vim $HOME/REPOS/books/0_ToRead.md

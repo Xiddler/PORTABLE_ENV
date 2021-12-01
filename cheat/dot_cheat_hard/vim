@@ -1,3 +1,4 @@
+
 # File management
 
 :e              reload file
@@ -277,9 +278,31 @@ F9
 
 ####
 
+# To edit a macro called @l 
+"lp                 # paste the macro into the buffer to edit it
+125li€ýa  # the macro in @l now pasted into the current buffer
+80i€ýa    # revised macro after editing
+B"hyE               # command to edit macro and replace it with the previous lin e but place the macro now in @h
+
+
 # live update of <filename> in a pdf viewer with the <filename.md> open in say, Okular
 :!pandoc % -o %:t:r.pdf
 
+# use vim with NO packages
+vim -u NONE <filename>
+# or
+vim -u NORC <filename>
+
+# use "= to print the $VIMRUNTIME into the current buffer
+# "=&rtp
+# then press p for paste
+
+# open a file
+# gf with the cursor on the following line will open that file in a new tab
+~/DONAGHS/personal/journal/2021/11/26-11.md
+# URL link
+# gx with the cursor on the following line will open that resource in a browser
+https://github.com/jceb/vim-orgmode/blob/master/doc/orgguide.txt
 
 # python spaces / tabs
 :retab # fixes tabs / spaces
@@ -292,6 +315,4 @@ plugin --> git clone https://github.com/Yggdroot/indentLine
 # sudo trick
 :w !sudo tee %
 
-# open file with no .vimrc or plugins
-vim -u NONE gargantuan.txt 
 

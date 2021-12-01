@@ -1,0 +1,2 @@
+# to display pretty output
+cat data.csv | column -t -s, | less -S

@@ -18,14 +18,20 @@ set noswapfile
 set hidden
 set nolist    " adds a - to empty spaces; do I need this?
 set listchars=tab:>\ ,trail:.
+" set the following to get fzf in vim working (and other plugins?)
+" usage: see $VIMRUNTIME/docs/fzf.txt :FZF and :h fzf
+set rtp+=/usr/share/vim/vim82
+" setting custom leader to comma
+let mapleader="," 
 " set mouse+=a " copy lines without line numbers
-" to make numbered list
-vnoremap <leader>l :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR>j
+" to make numbered list - keybinding not working?
+vnoremap <leader>1 :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR>j
 " Goyo & limelight toggle together - see gh for instructions to change this
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 " Toggle goyo & limelight
 map <F9> :Goyo <cr>
+nnoremap <leader>gy :Goyo <cr>
 " use emmet for html and css only
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
@@ -34,6 +40,8 @@ autocmd FileType html,css EmmetInstall
 map <C-l> gcc
 
 "}}}
+" setting custom leader to comma
+let mapleader="," 
 " Spaces And Tabs {{{ 
 "=== Spaces And Tabs ===
 set tabstop=4
@@ -48,11 +56,11 @@ set expandtab       " tabs are spaces
 " Enter command line mode using spacebar
 nnoremap <space> :
 set wildmenu            " visual autocomplete for command menu
-"allow  yanked text to be copied to the X11 system clipboard....
+"allow  yanked text to be copied directly to the X11 system clipboard....not
+" having to use the "+ register
 set clipboard=unnamedplus
-" set clipboard=unnamed
-" turn off highlight at underscore in .md files 
 
+" turn off highlight at underscore in .md files 
 " remove highlight to the _ in markdown (very annoying) (not fixed - 2020-10-02)
 " :syn clear markdownError works in a live buffer but how to add to .vimrc?
 " :hi link markdownError normal  works in a live buffer but how to add to .vimrc?
@@ -147,8 +155,6 @@ highlight Comment cterm=italic
 " Custom Leader {{{
 " === Custom Leader ===
 " See also Customised below
-" setting custom leader to comma
-let mapleader="," 
 " use ,o to make a new vertical split, ,s for horiz, ,x to close a split
     " ,v calls up VISUAL mode
 " try ,o (as in OpEd) <-- works
@@ -367,6 +373,7 @@ nnoremap <C-l>, :call Simple()<CR>
    " vim-orgmode
    " (prefers also to include speedating from tpope)
    " open .org files in vim
+   " guide at /home/donaghm/PORTABLE_ENV/vim/dotvim/pack/vim-orgmode/start/vim-orgmode/doc/orgguide.txt
    "  https://github.com/jceb/vim-orgmode
    "
    " speedating
