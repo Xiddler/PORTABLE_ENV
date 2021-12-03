@@ -233,8 +233,8 @@ FAQ - [SPC] h d f
 To refresh the config.el file C-h r r OR doom/reload (in the /home/donagh/.emacs.d/doom-emacs/bin folder)
 ** how do I
 *** Add a package
-discover new packages
-[[install new package]]
+[[install new package]] TL;DR unhighlight in init.el
+discover new packages : Alt-x lists installed packages
 *** Fix things in doom
 **** doom doctor
      ~/.emacs.d/bin/doom doctor
@@ -253,7 +253,7 @@ e.g. [SPC] w w for write and quit
 
 *** Shortcut to config dir [SPC] f p
 *** Split window vert - Ctrl x 3
-*** Use package to have hinting when file-searching - ivy
+*** Have hinting when file-searching - ivy
 2021-12-03
 say I press [SPC] f f : I would like hints / popup to select file (there is jump list but...)
 ** images
@@ -352,6 +352,7 @@ Use -> % doom build after adding a package (or doom doctor if there are problems
 *** meta
 REM: Doesn't use emacs packages.el it uses straight.el instead for package management. Use init.el
 **** install new package
+Unhiglight in init.el
 The following does not apply to Doom emacs. For Doom emacs,
 [SPC] : (or M-x)
 Then type: package-install (but this only installs if for the current sesssion - best is to use packages.el)
