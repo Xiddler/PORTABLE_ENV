@@ -31,6 +31,9 @@ alias -g jmj='janet ~/.scripts/my_journal.janet'
 alias -g mp='markdown_previewer '
 alias -g ap='apostrophe '
 alias -g songs='cd $HOME/REPOS/songs'
+alias -g music='vim $HOME/REPOS/music/music_memos.md'
+alias -g quakes='vim $HOME/DONAGHS/personal/mental_stuff/quakes.md'
+alias -g autok='python $HOME/REPOS/2programming/python/2python_studies/json_stuff/4autokey_test.py'
 
 # Digital Ocean
 # Digital Ocean Log In
@@ -94,7 +97,7 @@ alias -g ifconfig="echo 'Use the ip command'"
 # file name with .md extension will automagically open it with vim. Hurrah!
 alias -s md=vim
 
-alias -g pyython='cd /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/python'
+alias -g pyython='cd ~/REPOS/2programming/python'
 
 # shortcut to Tiny 128 USB drive
 

@@ -1,17 +1,17 @@
 {
-    "type": "script",
-    "description": "line_w3",
-    "store": {},
+    "type": "phrase",
+    "description": "P56_A394",
     "modes": [
         1
     ],
-    "usageCount": 13,
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
+    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "l3"
+            "@@p"
         ],
         "backspace": true,
         "ignoreCase": false,
@@ -26,5 +26,6 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    }
+    },
+    "sendMode": "kb"
 }

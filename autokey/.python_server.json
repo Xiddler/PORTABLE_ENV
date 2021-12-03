@@ -1,17 +1,17 @@
 {
     "type": "phrase",
-    "description": "line_w4",
+    "description": "python_server",
     "modes": [
         1
     ],
-    "usageCount": 4,
+    "usageCount": 2,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "w4"
+            "srvr"
         ],
         "backspace": true,
         "ignoreCase": false,

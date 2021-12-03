@@ -1,14 +1,18 @@
 {
     "type": "phrase",
     "description": "Books_addr",
-    "modes": [],
-    "usageCount": 0,
+    "modes": [
+        1
+    ],
+    "usageCount": 7,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
-        "abbreviations": [],
+        "abbreviations": [
+            "bz"
+        ],
         "backspace": true,
         "ignoreCase": false,
         "immediate": false,

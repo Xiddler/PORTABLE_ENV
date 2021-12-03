@@ -1,6 +1,4 @@
-# Enter script code
-# replace ch with k
-# keyboard.send_keys("<ctrl>+a")    # Select all
+# swaps k in for ch - sample file
 page = clipboard.get_selection()    # slect the page of text
 inchar = "ch"
 outchar = "k"

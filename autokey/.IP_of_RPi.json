@@ -1,21 +1,21 @@
 {
     "type": "phrase",
-    "description": "clear",
+    "description": "IP_of_RPi",
     "modes": [
         1
     ],
-    "usageCount": 33,
+    "usageCount": 18,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "xl"
+            "ipr"
         ],
         "backspace": true,
         "ignoreCase": false,
-        "immediate": false,
+        "immediate": true,
         "triggerInside": false,
         "wordChars": "[\\w]"
     },

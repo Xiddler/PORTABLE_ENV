@@ -1,17 +1,17 @@
 {
     "type": "phrase",
-    "description": "python server",
+    "description": "path_to_0Reading_Notes",
     "modes": [
         1
     ],
-    "usageCount": 1,
+    "usageCount": 6,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "srvr"
+            "ptn"
         ],
         "backspace": true,
         "ignoreCase": false,

@@ -1,17 +1,17 @@
 {
     "type": "phrase",
-    "description": "IP of RPi",
+    "description": "Donagh_McCarthy",
     "modes": [
         1
     ],
-    "usageCount": 10,
+    "usageCount": 4,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "ipr"
+            "dmc"
         ],
         "backspace": true,
         "ignoreCase": false,

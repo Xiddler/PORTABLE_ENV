@@ -1,17 +1,17 @@
 {
     "type": "phrase",
-    "description": "line_w4",
+    "description": "path_to_0_ToRead.md",
     "modes": [
         1
     ],
-    "usageCount": 4,
+    "usageCount": 9,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "w4"
+            "ptr"
         ],
         "backspace": true,
         "ignoreCase": false,

@@ -1,11 +1,11 @@
-#+TITLE: doom-notes.org
+#+TITLE : doom-notes.org
 #+STARTUP: fold
 #+about: notes for doom
-#+date: Started 2020-05-17
-#+author: donagh mccarthy
+#+date : Started 2020-05-17
+#+author : donagh mccarthy
 #+options: il
 #+tags: help orgmode org-mode donaghs
-#+EDITED: 2021-10-16
+#+EDITED: 2021-12-03
 
 * frontmatter
 * Spacemacs notes
@@ -187,6 +187,11 @@ Update: 2021-05-27 NOT WORKING. I copy a URL into the system clipboard but canno
 SOLUTION: Use the middle button of the mouse! This definitely worked. But why no keybinding?
 Possible alternative:
 On Linux, you can use xclip.el (https://www.emacswiki.org/emacs/xclip.el) to link the kill-ring to the clipboard from Emacs running in terminal (without losing the multiple-kill and yank capability).
+** completion directory searching
+2021-12-03
+when I [SPC] f f I don't want to have to type everything I want tab completion - which plugin?
+Possible assistance:
+[SPC] s j <-- jump list
 
 ** configuration
 .doom.d directory is the preferred place to store your custom config (not within the Doom directory itself).
@@ -230,6 +235,11 @@ To refresh the config.el file C-h r r OR doom/reload (in the /home/donagh/.emacs
 *** Add a package
 discover new packages
 [[install new package]]
+*** Fix things in doom
+**** doom doctor
+     ~/.emacs.d/bin/doom doctor
+**** doom build
+     ~/.emacs.d/bin/doom build
 *** Get zo, zm, zR etc. to work
 UPDATE: zo and other native vim folding commands come with evil
 *** Navigate to point in file
@@ -237,16 +247,15 @@ UPDATE: zo and other native vim folding commands come with evil
 g s [SPC] <letters> <-- In-file navigation.
 Mnemonic: (g)oto (s)ubject
 **** Using swiper: [spc] s s
-
 *** Set up [SPC] shortcuts
 Edit ~/PORTABLE_ENV/doom/config.el
 e.g. [SPC] w w for write and quit
 
-*** Fix things in doom
-**** doom doctor
-     ~/.emacs.d/bin/doom doctor
-**** doom build
-     ~/.emacs.d/bin/doom build
+*** Shortcut to config dir [SPC] f p
+*** Split window vert - Ctrl x 3
+*** Use package to have hinting when file-searching - ivy
+2021-12-03
+say I press [SPC] f f : I would like hints / popup to select file (there is jump list but...)
 ** images
 images can be displayed within the buffer with the following command: C-c C-x C-v (org-toggle-inline-images).
 OR Move over image / link and press [Enter]
@@ -341,7 +350,7 @@ https://github.com/hlissner/doom-emacs
 Packages are declared in packages.el files.
 Use -> % doom build after adding a package (or doom doctor if there are problems)
 *** meta
-REM: Doesn't use emacs packages.el it uses straight.el instead for package management
+REM: Doesn't use emacs packages.el it uses straight.el instead for package management. Use init.el
 **** install new package
 The following does not apply to Doom emacs. For Doom emacs,
 [SPC] : (or M-x)
@@ -435,10 +444,13 @@ NOTE: For more comprehensive in-file search look at avy.
 Syntax highlighting
 
 *** helm
+a generic completion mechanism for Emacs - in insert mode.
+see also : ivy, vertico (below)
 *** image-dired
 For viewing images (not great)
 *** ivy
 Ivy, a generic completion mechanism for Emacs - in insert mode.
+Useful when searching for files with [SPC] f f and tab completion
 Toggle ivy using M-x ivy
 Select one string from a list of strings in a pop-up instead of having to type it out.
 Also there is a jumplist available with ivy. [SPC] s j
@@ -509,6 +521,10 @@ M-x treemacs <-- opens explorer for CURRENT directory
 [SPC] d <-- toggles close / open
 :q in treemacs pane to quit OR [SPC] b d
 use vim keys for navigating
+*** vertico
+[[https://docs.doomemacs.org/latest/modules/completion/vertico/][vertico online]]
+This module enhances the Emacs search and completion experience, and also provides a united interface for project search and replace, powered by ripgrep.
+It does this with several modular packages focused on enhancing the built-in completing-read interface, rather than replacing it with a parallel ecosystem like ivy and helm do.
 ** projects
 *** manage projects
 using [[projectile][projectile]]

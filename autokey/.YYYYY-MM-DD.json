@@ -1,15 +1,17 @@
 {
-    "type": "phrase",
-    "description": "books",
-    "modes": [],
-    "usageCount": 10,
+    "type": "script",
+    "description": "YYYYY-MM-DD",
+    "store": {},
+    "modes": [
+        1
+    ],
+    "usageCount": 164,
     "prompt": false,
     "omitTrigger": false,
-    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "dread"
+            "qq"
         ],
         "backspace": true,
         "ignoreCase": false,
@@ -24,6 +26,5 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    },
-    "sendMode": "kb"
+    }
 }

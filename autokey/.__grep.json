@@ -1,17 +1,17 @@
 {
     "type": "phrase",
-    "description": "Donagh McCarthy",
+    "description": "_|_grep",
     "modes": [
         1
     ],
-    "usageCount": 1,
+    "usageCount": 8,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "dmc"
+            "||"
         ],
         "backspace": true,
         "ignoreCase": false,

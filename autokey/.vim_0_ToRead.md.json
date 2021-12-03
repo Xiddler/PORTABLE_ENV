@@ -1,17 +1,17 @@
 {
-    "type": "script",
-    "description": "YYYY-MM-DD",
-    "store": {},
+    "type": "phrase",
+    "description": "vim_0_ToRead.md",
     "modes": [
         1
     ],
-    "usageCount": 77,
+    "usageCount": 11,
     "prompt": false,
     "omitTrigger": false,
+    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "qq"
+            "vtr"
         ],
         "backspace": true,
         "ignoreCase": false,
@@ -26,5 +26,6 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    }
+    },
+    "sendMode": "kb"
 }

@@ -1,17 +1,17 @@
 {
     "type": "phrase",
-    "description": "vim 0_ToRead.md",
+    "description": "vim_til.md",
     "modes": [
         1
     ],
-    "usageCount": 9,
+    "usageCount": 6,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "vtr"
+            "til"
         ],
         "backspace": true,
         "ignoreCase": false,

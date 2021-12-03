@@ -1,17 +1,15 @@
 {
     "type": "phrase",
-    "description": "path to books",
-    "modes": [
-        1
-    ],
-    "usageCount": 0,
+    "description": "sudo_docker",
+    "modes": [],
+    "usageCount": 1,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "ptb"
+            "dc"
         ],
         "backspace": true,
         "ignoreCase": false,

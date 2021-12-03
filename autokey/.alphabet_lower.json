@@ -1,17 +1,17 @@
 {
     "type": "phrase",
-    "description": "line_w4",
+    "description": "alphabet_lower",
     "modes": [
         1
     ],
-    "usageCount": 4,
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "w4"
+            "abc"
         ],
         "backspace": true,
         "ignoreCase": false,

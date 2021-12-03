@@ -249,6 +249,17 @@ git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(
 man giteveryday # https://git-scm.com/docs/giteveryday
 man gittutorial # https://git-scm.com/docs/gittutorial
 
+#  retrieve a single file from an older hasj
+$ git checkout [revision_hash] [file_name]
+$ git checkout [revision_hash] [file_name]
+# HEAD - Points to the Last Commit on the current repository i.e. [revision_hash]
+# HEAD^ - Last Commit - 1;
+# HEAD^^ - Last Commit - 2;
+# HEAD~10 - 10 commits behind of HEAD;
+# example
+-> % git checkout HEAD^^ autokey/l3.py # fails
+# git restore -s f0b9ef914c7ca2 autokey/l3.py  ???
+
 
 
 
