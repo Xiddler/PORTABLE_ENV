@@ -282,13 +282,21 @@ These files are symbolic linked to /home/donagh/PORTABLE_ENV/doom/* - to keep my
 
 ** keybindings
 See also [[shortcuts]] below
+-----------------------------------------------------------------
+doom-emacs
+-----------------------------------------------------------------
 [SPC] m        <-- local to to the file type
 [SPC] :        <-- M-x
 gi             <-- go to previous insert position
 C-S-f          <-- toggle full screen - equivalent to F11
 C-=            <-- increase text size - equivalent to zoom in
 C-_            <-- decrease text size - equivalent to zoom out
+[SPC] f p      <-- select file from doom-emacs config
+[SPC] w v      <-- split vertical
+
+-----------------------------------------------------------------
 DONAGHS
+-----------------------------------------------------------------
 [SPC] w [SPC]  <-- save-buffer = [SPC] f s
 
 ** line numbers
@@ -370,12 +378,12 @@ Like easymotion plugin in vim
 NOTE: pre-installed in doom
 In-file navigation - specifically on current screen. Highlights using one or two letter pairs to highlight the target
 **** Commands
-g s [SPC] <letter> <-- In-file navigation.
+g s [SPC] <letter> <-- In-file navigation. <-- avy
 First the gs [SPC] will dim the text and then <letter> will be highlighted
 
 OR
 
-g s s CHAR1 CHAR2 and then select the single letter
+g s s CHAR1 CHAR2 and then select the single letter <-- swiper
 Example:
 To move to f of fruit <-- g s s fr then press hl letter
 
@@ -544,10 +552,17 @@ For example, my username is “jdemaris” so my folder is /home/donagh/.emacs.d
     (projectile-add-known-project “/home/donagh/Projects/playground/elixir”)
     (projectile-add-known-project “/home/donagh/Projects/playground/otp”)"
     test addition
+** search in buffer
+[[search]] in current buffer
+
+g s [SPC] <letters> <-- In-file navigation. (This is the avy package)
+
 ** shortcuts
 See also [[keybindings]] above
 Set in /home/donagh/PORTABLE_ENV/doom/config.el
+-----------------------------------------------------------------
 ;; Donaghs - the following keybinding *did* work. :n indicates normal mode
+-----------------------------------------------------------------
 (map! :n "Q" 'org-babel-execute-src-block ) ;; Quantify!
 (map! :n "SPC d" 'treemacs ) ;; Directory for files / folders
 (map! :n "tt" 'org-todo )

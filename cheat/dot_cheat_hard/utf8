@@ -1,0 +1,23 @@
+# find all non-utf8 characters in a text file:
+
+-> % grep -axv '.*' <filename>
+
+where:
+    -a, –text: Treats our FILE as text, hence preventing grep from aborting once it finds an invalid character.
+    -x ‘.*’ (–line regexp): Matches a complete line containing any UTF-8 character.
+    -v, –invert match: Inverts our output displaying lines not matched.
+    <filename>: Represents the file we want to check for invalid characters.
+# ------------------------------------------------------------------------------------------------------------
+# To automatically find and delete non-UTF-8 characters, use the iconv linux command. 
+#
+
+-> % iconv -f utf-8 -t utf-8 -c <filename> -o NEW_FILE
+
+where:
+    -f: Represents the original file format. We’ve defined it as utf-8 in our example above
+    -t: Represents the target file format that we want to convert to.
+    -c: Skips any invalid sequences
+    -o: output to newly created new file (else output is written to stdin)
+    <filename>: Represents the file we want to remove invalid characters from.
+
+

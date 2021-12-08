@@ -1,10 +1,13 @@
 #!/usr/bin/python3
 # encoding: utf-8
 
-# this iterates through all the .*.json files in ~/PORTABLE_ENV/autokey directory and displays
-# keybindings and the associated action or output
-# 2021-12-03_15:11: Your code has been rated at 9.64/10 (previous run: 9.45/10, +0.18)
-# Thanks also to doom-emacs linting!
+'''
+This script iterates through all the .*.json files in ~/PORTABLE_ENV/autokey/ and
+outputs keybindings and the associated action or output in tabular form
+2021-12-03_15:11: Your code has been rated at 9.64/10 (previous run: 9.45/10, +0.18)
+2021-12-03_18:08: Your code has been rated at 10.00/10 (previous run: 9.82/10, +0.18)
+Thanks also to doom-emacs linting!
+'''
 
 import json
 import os
@@ -36,7 +39,8 @@ for ntuple in compare:
     else:
         txt_json_pairs.append(ntuple)
 
-# separate the .py autokeys into a.triggered by 'abbreviations' and b. triggered by 'modifiers + hotkeys'
+# separate the .py autokeys into a.triggered by 'abbreviations' and
+# b. triggered by 'modifiers + hotkeys'
 py_hotk = [] # container for .py files trigged by 'hotks'
 py_abbs = [] # container for .py files trigged by 'abbs'
 

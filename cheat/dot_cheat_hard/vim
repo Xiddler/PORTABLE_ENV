@@ -280,8 +280,8 @@ F9
 
 # To edit a macro called @l 
 "lp                 # paste the macro into the buffer to edit it
-125li€ýa  # the macro in @l now pasted into the current buffer
-80i€ýa    # revised macro after editing
+# yada-yada         # the macro in @l now pasted into the current buffer NOTE: this line contains non-utf8 characters
+# yada-yada-yada    # revised macro after editing NOTE: this line contains non-utf8 characters
 B"hyE               # command to edit macro and replace it with the previous lin e but place the macro now in @h
 
 
@@ -296,6 +296,17 @@ vim -u NORC <filename>
 # use "= to print the $VIMRUNTIME into the current buffer
 # "=&rtp
 # then press p for paste
+#
+# PWD paste current full filepath into current buffer
+# Consider getbufinfo() for loads of info
+# normal mode
+:put=expand('%:p')<cr> # set to <leader>d for directory 
+# insert mode
+<C-R>=getcwd()<cr> # set to <leader>dp 
+# followed by
+<C-R>%
+
+
 
 # open a file
 # gf with the cursor on the following line will open that file in a new tab
@@ -314,5 +325,16 @@ plugin --> git clone https://github.com/Yggdroot/indentLine
 
 # sudo trick
 :w !sudo tee %
+
+# NUMBERED LIST 
+# Method #1
+# record this macro and start with cursor on first line
+# The list should have a blank line at the end
+# The actual keys are the entire sequence: ^<C-V>}kI0. <Esc>gvg<C-A> (Try it here!)
+^^V}<80>kuI0. ^[<80><fd>ag
+# Method #2
+# Select your lines in visual mode with: V, then type into ex mode i.e. :
+s/^\s*\zs/\=(line('.') - line("'<")+1).'. '
+
 
 

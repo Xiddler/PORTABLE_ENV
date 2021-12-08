@@ -1,0 +1,18 @@
+# locations
+zim/Computer/MAJORS:Fonts
+
+# list fonts on the system
+fc-list
+
+# To get new fonts
+# download font to ~/.local/share/fonts
+# unzip if file is zipped
+# then
+# inform the font configuration of the existence of the new font
+fc-cache -f
+
+# on Manjaro - System Settings
+> Font Management       :: Show installed fonts: personal / system
+> Fonts                 :: select the font face to be used by the system (not the terminal)
+
+

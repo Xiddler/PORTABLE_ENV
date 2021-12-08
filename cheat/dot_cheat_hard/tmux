@@ -51,3 +51,13 @@ Ctrl-b %
 
 # Split windows vertically:
 Ctrl-b "
+
+NOTE: C-a
+# remap prefix from 'C-b' to 'C-a'
+unbind C-b
+set-option -g prefix C-a
+bind-key C-a send-prefix
+
+# Alternatively  $ tmux source-file ~/PORTABLE_ENV/tmux.conf
+# This turns the old C-b into the new C-a (which is easier on the fingers!)
+
