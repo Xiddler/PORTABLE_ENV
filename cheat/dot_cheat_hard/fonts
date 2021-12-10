@@ -1,5 +1,17 @@
 # locations
+#---------------------------------------
 zim/Computer/MAJORS:Fonts
+#---------------------------------------
+/usr/share/fonts
+/usr/share/fontconfig/conf.avail        :: https://wiki.archlinux.org/title/Font_configuration
+~/.local/share/fonts
+/etc/fonts/fonts.conf
+/var/cache/config
+#---------------------------------------
+~/.fonts    :: NOTE this is deprecated
+# move all TTF and OTF files into the directory. Every font in ~/.fonts directory will now be available for use to your installed apps. But remember, those fonts will only be available to that one user. 
+#---------------------------------------
+
 
 # list fonts on the system
 fc-list
@@ -15,4 +27,9 @@ fc-cache -f
 > Font Management       :: Show installed fonts: personal / system
 > Fonts                 :: select the font face to be used by the system (not the terminal)
 
+# To obtain the Family name as listed in the font itself:
+$ fc-scan .fonts/lklug.ttf --format='%{family}\n'
 
+
+# in kitty
+-> % kitty list-fonts   :: lists fonts available to kitty 

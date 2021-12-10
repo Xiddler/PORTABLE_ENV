@@ -36,6 +36,9 @@ alias -g quakes='vim $HOME/DONAGHS/personal/mental_stuff/quakes.md'
 # alias -g autok='python $HOME/REPOS/2programming/python/2python_studies/json_stuff/4autokey_test.py'
 alias -g trigs='python $HOME/PORTABLE_ENV/autokey_trigger_table.py'
 
+# Kitty Terminal
+alias icat="kitty +kitten icat"
+
 
 # Digital Ocean
 # Digital Ocean Log In
@@ -164,7 +167,7 @@ alias -g dl='cd ~/Downloads'
 alias -g ds='cd ~/Documents'
 alias -g dr='cd ~/Dropbox'
 # alias -g te='cd ~/SD64/REPOSITORIES/TESTING/'
-alias -g hf='$HOME/'
+# alias -g hf='cd'
 alias -g repos='$HOME/SD64/REPOSITORIES'
 alias -g maps='$HOME/SD64/REPOSITORIES/maps'
 # alias -g cifs='cd $HOME/cifs_share'
@@ -328,4 +331,92 @@ alias zcp='zmv -C'
 alias zln='zmv -L'
 alias zs='zsh_stats' # lists last 20 commands with statistics
 
-# THE END
+# zoxide
+ # =============================================================================
+#
+# Utility functions for zoxide.
+#
+
+# pwd based on the value of _ZO_RESOLVE_SYMLINKS.
+#function __zoxide_pwd() {
+#    \builtin pwd -L
+#}
+
+## cd + custom logic based on the value of _ZO_ECHO.
+#function __zoxide_cd() {
+#    # shellcheck disable=SC2164
+#    \builtin cd "$@"
+#}
+
+## =============================================================================
+##
+## Hook configuration for zoxide.
+##
+
+## Hook to add new entries to the database.
+#function __zoxide_hook() {
+#    zoxide add -- "$(__zoxide_pwd)"
+#}
+
+## Initialize hook.
+## shellcheck disable=SC2154
+#if [[ ${precmd_functions[(Ie)__zoxide_hook]} -eq 0 ]] && [[ ${chpwd_functions[(Ie)__zoxide_hook]} -eq 0 ]]; then
+#    chpwd_functions=("${chpwd_functions[@]}" "__zoxide_hook")
+#fi
+
+## =============================================================================
+##
+## When using zoxide with --no-aliases, alias these internal functions as
+## desired.
+##
+
+## Jump to a directory using only keywords.
+#function __zoxide_z() {
+#    if [ "$#" -eq 0 ]; then
+#        __zoxide_cd ~
+#    elif [ "$#" -eq 1 ] && [ "$1" = '-' ]; then
+#        if [ -n "${OLDPWD}" ]; then
+#            __zoxide_cd "${OLDPWD}"
+#        else
+#            # shellcheck disable=SC2016
+#            \builtin printf 'zoxide: $OLDPWD is not set'
+#            return 1
+#        fi
+#    elif [ "$#" -eq 1 ] && [ -d "$1" ]; then
+#        __zoxide_cd "$1"
+#    else
+#        \builtin local result
+#        result="$(zoxide query --exclude "$(__zoxide_pwd)" -- "$@")" \
+#            && __zoxide_cd "${result}"
+#    fi
+#}
+
+## Jump to a directory using interactive search.
+#function __zoxide_zi() {
+#    \builtin local result
+#    result="$(zoxide query -i -- "$@")" && __zoxide_cd "${result}"
+#}
+
+## =============================================================================
+##
+## Convenient aliases for zoxide. Disable these using --no-aliases.
+##
+
+## Remove definitions.
+## function __zoxide_unset() {
+##     \builtin unalias "$@" &>/dev/null
+##     \builtin unfunction "$@" &>/dev/null
+##     \builtin unset "$@" &>/dev/null
+## }
+
+## __zoxide_unset 'z'
+## function z() {
+##     __zoxide_z "$@"
+## }
+
+## __zoxide_unset 'zi'
+## function zi() {
+##     __zoxide_zi "$@"
+## }
+
+## # THE END

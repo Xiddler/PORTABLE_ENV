@@ -323,6 +323,9 @@ histgrep() {
 # # ranger default config file rc.conf 
 export RANGER_LOAD_DEFAULT_RC=false
 
+# zoxide 
+eval "$(zoxide init zsh)"
+
 
 # br is an alternative file searcher - described in HackerNews Jan 2020
 # source /home/donaghm/.config/broot/launcher/bash/br
