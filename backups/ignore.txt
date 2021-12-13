@@ -1,6 +1,0 @@
-.git/
-.git/*
-doom-notes.org
-.todos*
-zim/Private/*
-zim/MyStuff/*

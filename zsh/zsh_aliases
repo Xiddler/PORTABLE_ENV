@@ -54,11 +54,12 @@ alias -g tia="cd /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSIT
 # Elixir
 alias -g ellixir="cd $HOME/REPOS/2programming/elixir"
 
-# borg backup
-alias -g borgb="cd $HOME/borg1 && export BORG_REPO='$HOME/borg1' && export BORG_PASSPHRASE='theboysoffairhill'"
-alias -g borgs="cd $HOME/SAFE/SAFE_borg_backup && export BORG_REPO='$HOME/borg1' && export BORG_PASSPHRASE='theboysoffairhill'"
+# BORG BACKUP
+# DEFUNCT borg backup. I am now rsyncing necessary folder in ~/BACKUPS
+# alias -g borgb="cd $HOME/borg1 && export BORG_REPO='$HOME/borg1' && export BORG_PASSPHRASE='theboysoffairhill'"
+# alias -g borgs="cd $HOME/SAFE/SAFE_borg_backup && export BORG_REPO='$HOME/borg1' && export BORG_PASSPHRASE='theboysoffairhill'"
 
-# borg backup Zim_computer and CompTIA Directory
+# borg backup Zim_computer and all_org (ie orgmode)
 # alias -g borgz="$HOME/.scripts/aborg_backup_zim_and_TIA.sh"
 # weekly backup scheduled using anacron. Note: no .sh extension
 alias -g borgz="$HOME/.scripts/borg_backup_weekly"

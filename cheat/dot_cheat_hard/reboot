@@ -52,11 +52,14 @@ echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sys
 # cifs_share
 sudo mount -t cifs //192.168.1.108/USB128_2 /mnt/cifs_share -o username=admin,password=admin,iocharset=utf8,vers=3.1.1
 # rem: caffeine & 
-# lanner now using htmx and looking lovely
-# LAPTOP
+# LAPTOP ssh to RPi
 ssh -i ~/.ssh/id_rsa_rpi donagh@192.168.1.108 
 # REMOTE RPi
+# lanner now using htmx and looking lovely
 python3 ~/Applications/flask_htmx_lanner/app.py
+# zim passwords
+cd ~/zArchive/serve_zim_passwords && python3 -m http.server 5000
+visit at 192.168.1.103:5000/
 
 
  

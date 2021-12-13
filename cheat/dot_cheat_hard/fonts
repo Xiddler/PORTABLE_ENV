@@ -2,13 +2,14 @@
 #---------------------------------------
 zim/Computer/MAJORS:Fonts
 #---------------------------------------
-/usr/share/fonts
+/usr/share/fonts                        :: (seen in /etc/fonts/fonts.conf)
+/usr/local/share/fonts                  :: where to place new fonts (seen in /etc/fonts/fonts.conf)
 /usr/share/fontconfig/conf.avail        :: https://wiki.archlinux.org/title/Font_configuration
-~/.local/share/fonts
+~/.local/share/fonts                    :: ? for what?
 /etc/fonts/fonts.conf
 /var/cache/config
 #---------------------------------------
-~/.fonts    :: NOTE this is deprecated
+# ~/.fonts    :: NOTE this is DEPRECATED
 # move all TTF and OTF files into the directory. Every font in ~/.fonts directory will now be available for use to your installed apps. But remember, those fonts will only be available to that one user. 
 #---------------------------------------
 
@@ -33,3 +34,4 @@ $ fc-scan .fonts/lklug.ttf --format='%{family}\n'
 
 # in kitty
 -> % kitty list-fonts   :: lists fonts available to kitty 
+

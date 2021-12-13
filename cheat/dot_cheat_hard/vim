@@ -336,5 +336,19 @@ plugin --> git clone https://github.com/Yggdroot/indentLine
 # Select your lines in visual mode with: V, then type into ex mode i.e. :
 s/^\s*\zs/\=(line('.') - line("'<")+1).'. '
 
+# Edit an existing macro
+# make a new scratch buffer to edit the macro in <leader>c   c because s c ratch  has 2 letter c's in it and s is taken
+# this function is defined in my vimrc
+# move to the scratch buffer <C-j>
+# paste the contents of the relevant macro e.g. if macro is in the d register do this: "dp
+# do the edit then yank the newly-edited macro back into the register: "dyy
+# et voilá
+
+# View & Edit the ex Mode history
+# in normal mode
+q:
+
+
+
 
 

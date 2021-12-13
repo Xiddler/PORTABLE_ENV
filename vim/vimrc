@@ -290,6 +290,18 @@ function Simple()
 echom "Running simple function"
 endfunction
 nnoremap <C-l>, :call Simple()<CR>
+" create a new scratch buffer
+function! Scratch()
+    split
+    noswapfile hide enew
+    setlocal buftype=nofile
+    setlocal bufhidden=hide
+    "setlocal nobuflisted
+    "lcd ~
+    file scratch
+endfunction
+map <leader>c :call Scratch()<cr>
+
 "}}}
 " Keybindings collected {{{
 " K             :: get vim help for the item under the cursor
