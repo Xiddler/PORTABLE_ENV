@@ -1,15 +1,17 @@
 {
-    "type": "phrase",
-    "description": "$space",
-    "modes": [],
+    "type": "script",
+    "description": "kitty_home",
+    "store": {},
+    "modes": [
+        1
+    ],
     "usageCount": 4,
     "prompt": false,
     "omitTrigger": false,
-    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "$$"
+            "kf"
         ],
         "backspace": true,
         "ignoreCase": false,
@@ -24,6 +26,5 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    },
-    "sendMode": "kb"
+    }
 }

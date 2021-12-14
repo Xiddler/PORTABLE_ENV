@@ -1,22 +1,30 @@
-
 # CONTENTS
+[Updated: 2021-12-13]
 
+______________________________________________________________________
 Intro
- ~/BACKUPS/bash_scripts
- ~/BACKUPS/<folders>
- ~/ZIM/.git/
- rsync commands 
- Clone REPOSITORIES and DONAGHS
- BORG BACKUP to Raspberry Pi
+~/BACKUPS/bash_scripts
+~/BACKUPS/<folders>
+~/ZIM/.git/
+rsync commands (for various folders)
+Clone REPOSITORIES/ and DONAGHS/
+BORG BACKUP to Raspberry Pi
+~/SAFE/SAFE_borg_backup (on the laptop)
+check backup has worked
+HELP
 
 
 ______________________________________________________________________
 # Intro
 
-This file describes the folders and files involved in backing up from the SD64 Card to the HDD on the laptop
+(Written around 2021-12-13)
+
+This file describes the folders and files and the system involved in backing up from the SD64 Card to the HDD on the laptop
 The 'remote' backup is done using borg and is backed up to the USB_128 drive attached to the Raspberry Pi
 ______________________________________________________________________
 # ~/BACKUPS/bash_scripts
+
+These scripts, when run, will rsync from the $source to the $destination
 
 List of files in bash_scripts and their functionality:
 1	./dot_git_for_Zim.sh            :: Echoes out that git is backed up to dot_git_for_Zim
@@ -30,17 +38,18 @@ List of files in bash_scripts and their functionality:
 
 ______________________________________________________________________
 # ~/BACKUPS/<folders>
+
 List of folders and their functionality:
 
 1	./CLONE_ALL_SD64                :: Archive of ~/DONAGHS and ~/REPOS in .tar.gz format
 3	./bash_scripts                  :: Collection of scripts to do the rsync and tar jobs
 4	./dot_git_for_zim               :: Actual folder for ~/ZIM/.git
-5	./rsync_DONAGHS_MY_ZIM          :: Stores the full MY_ZIM
-6	./rsync_DONAGHS_personal        :: Stores the full MY_ZIM
-7	./rsync_Zim_Computer            :: Stores the full MY_ZIM
-8	./rsync_Zim_ORG                 :: Stores the full MY_ZIM
-9	./rsync_all_org                 :: Stores the full MY_ZIM
-11	./zArchive                      :: Storage folder / trash
+5	./rsync_DONAGHS_MY_ZIM          :: Container for the full MY_ZIM
+6	./rsync_DONAGHS_personal        :: Container for personal
+7	./rsync_Zim_Computer            :: Container for zim_computer (incl. passwords)
+8	./rsync_Zim_ORG                 :: Container for zim_org
+9	./rsync_all_org                 :: Container for all_orgmode
+11	./zArchive                      :: Store rubbish?
 
 
 ______________________________________________________________________
@@ -103,3 +112,56 @@ This alias is set in zsh_aliases viz:-
 
 This alias runs the commands in the file
 ~/PORTABLE_ENV/scripts/borg_backup_weekly  (there is no .sh extension)
+The folders that are backed up by borgz are:
+
+1. zim/Computer
+2. Dropbox/org-mode/org/*
+
+As these are the two most frequently accessed folder/files.
+
+______________________________________________________________________
+# /home/donaghm/SAFE/SAFE_borg_backup
+
+This is the destination folder on the laptop that borg creates the backups to and then copies from here to the USB attached to the Raspberry Pi
+
+
+# Check backup has worked
+
+Rsync the rsync scripts in ~/PORTABLE_ENV/backups/bash_scripts/
+Run the file:
+~/PORTABLE_ENV/backups/bash_scripts/check_backups_worked.sh
+
+# HELP
+
+## If the Laptop HDD dies?
+
+The SD64 card has the latest data.
+
+## If the SD card dies?
+
+There are backups in the following locations (by ease of access):
+1. ~/BACKUPS/rsync_<folders>
+2. ~/CLONE_ALL_SD64                     :: check latest date, would need to to decompress and untar or read the .gz file
+3. ~/SAFE/SAFE_borg_backups/<folders>   :: would need to create a new temp folder and borg restore to that
+### 4. USB on the Raspberry Pi              :: would need to borg restore at 
+
+  TL;DR
+  Donaghs password on the rpi is zaq1234 (2021-12-13) 
+  To list files
+  $ borg list /srv/dev-disk-by-label-MyUSB/USB128_2/SAFE_borg_backup
+  (shortcut for this on RPi - bborg)
+  Pword: theboysoffairhill
+  
+  This file shows how to check that the backup to RPi / USB has been working successfully.
+
+## If I haven't checked that the backups are working
+
+You're f***ed.
+
+OR regularly run
+
+~/BACKUPS/bash_scripts/1run_rsyn_scripts.sh
+and
+~/BACKUPS/bash_scripts/3check_rsyn_backups_worked.sh
+
+

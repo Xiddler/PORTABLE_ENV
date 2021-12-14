@@ -30,4 +30,12 @@ echo ${PIPESTATUS[0]}  # replace 0 with N
 # to filter the output of ls to include the files containing <pattern>
 stat --printf '%y\t%n\n' -- *<pattern>*
 
- #!/usr/bin/env bash is more portable than #!/bin/bash
+#!/usr/bin/env bash is more portable than #!/bin/bash
+#
+# Regex
+# pat='[^0-9]+([0-9]+)'
+# s='I am a string with some digits 1024'
+# [[ $s =~ $pat ]] # $pat must be unquoted
+# echo "${BASH_REMATCH[0]}"
+# echo "${BASH_REMATCH[1]}"
+#

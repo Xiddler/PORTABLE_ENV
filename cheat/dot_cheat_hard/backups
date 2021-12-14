@@ -1,13 +1,33 @@
 # Opened Thursday, 2021-04-29
+# returned 2021-12-13
+
+# The information relating to this backup system is on ~/PORTABLE_ENV/backups/README.md
+
+# The main things needing backup:
+{{{ 
+# ALL_ZIM - Computer && ORG
+# orgmode - ~/all_org
+# DONAGHS - personal/journal
+}}}
+
+# NOTE: 
+# ORIGINAL source data is written to the SD64 card directly (which is attached to the Toshiba laptop -- and not to the HDD of the Laptop itself).
+
+# Final destination data is sent to rsyncs / backups as follows:
+{{{
+# Laptop            :: ~/BACKUPS                    ::: rsync                                                                     :::: read immediately
+# Laptop            :: ~/SAFE/SAFE_borg_backup      ::: borg                                                                      :::: borg restore
+# Laptop            :: ~/BACKUPS/CLONE_ALL_SD64     ::: All of DONAGHS + all of REPOSITORIES (17GB                  <-- MASSIVE)  :::: untar .tar.gz files
+# Raspberry Pi      :: USB_128                      ::: /srv/dev-disk-by-label-MyUSB/USB128_2/SAFE_borg_backup      <-- borg      :::: borg restore
 #
-# The main things needing backup
-# zim
-# org
-# DONAGHS
+# Note re borg: For a backup would need to create a temp folder to borg restore to.
 #
+}}}
 
-
-
+#******************************************************************
+# OLDER
+{{{
+#
 # ZIM 
 # Computer ORG Business
 # BACKUP all of zim to RPi USB
@@ -27,4 +47,4 @@
 # DONAGHS 
 # personal -> 2020-10-02_recovered_personal  balance  ideas  journal  minding_me  personal.org  writing  writings
 
-
+}}}

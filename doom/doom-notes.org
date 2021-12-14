@@ -5,7 +5,8 @@
 #+author : donagh mccarthy
 #+options: il
 #+tags: help orgmode org-mode donaghs
-#+EDITED: 2021-12-03
+#+EDITED: 2021-12-13
+
 
 * frontmatter
 * Spacemacs notes

@@ -1,15 +1,17 @@
 {
-    "type": "phrase",
-    "description": "$space",
-    "modes": [],
-    "usageCount": 4,
+    "type": "script",
+    "description": "kitty_prompt",
+    "store": {},
+    "modes": [
+        1
+    ],
+    "usageCount": 12,
     "prompt": false,
     "omitTrigger": false,
-    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "$$"
+            "kp"
         ],
         "backspace": true,
         "ignoreCase": false,
@@ -24,6 +26,5 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    },
-    "sendMode": "kb"
+    }
 }

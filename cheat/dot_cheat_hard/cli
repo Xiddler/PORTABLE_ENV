@@ -258,3 +258,21 @@ System clock synchronized: yes
 compgen -u
 cat /etc/passwd
 getent passwd
+
+# output the name of the kitty terminal 
+ -> % ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$) | cut -d'/' -f4
+kitty
+# output the name of the terminator terminal 
+ -> % PS $(ps -o 'ppid=' -p $$) | awk -F "/" '{print $NF}'  | head -n1 
+terminator
+
+
+# bash regex
+#
+# pat='[^0-9]+([0-9]+)'
+# s='I am a string with some digits 1024'
+# [[ $s =~ $pat ]] # $pat must be unquoted
+# echo "${BASH_REMATCH[0]}"
+# echo "${BASH_REMATCH[1]}"
+
+

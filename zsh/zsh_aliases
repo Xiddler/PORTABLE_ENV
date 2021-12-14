@@ -178,6 +178,7 @@ alias -g safe='cd $HOME/SAFE/SAFE_borg_backup'
 # jour { cd $journal && ls }
 alias -g jour='cd $HOME/DONAGHS/personal/journal'
 po() { cd $HOME/PORTABLE_ENV }
+ba() { cd $HOME/BACKUPS }
 # dm() { cd $HOME/Donaghs_Tmp }
 te() { cd $HOME/SD64/REPOSITORIES/TESTING }
 az() { cd $HOME/all_org/org }
