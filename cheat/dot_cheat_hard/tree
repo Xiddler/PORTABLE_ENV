@@ -9,3 +9,6 @@ tree --prune
 
 # To list directories only (`-d`), and at a max depth of two levels (`-L`)
 tree -d -L 2
+
+# Ignore all .pyc files
+tree -I "*.pyc"

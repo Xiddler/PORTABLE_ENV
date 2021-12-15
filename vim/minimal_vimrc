@@ -1,0 +1,9 @@
+filetype plugin indent on
+syntax on
+set backspace=indent,eol,start
+set hidden
+let $RTP=sp1it(&runtimepath, ',')[0]
+let $RC="$HOME/.vimrc"
+set noswapfile
+
+

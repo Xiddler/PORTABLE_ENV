@@ -35,6 +35,7 @@ alias -g music='vim $HOME/REPOS/music/music_memos.md'
 alias -g quakes='vim $HOME/DONAGHS/personal/mental_stuff/quakes.md'
 # alias -g autok='python $HOME/REPOS/2programming/python/2python_studies/json_stuff/4autokey_test.py'
 alias -g trigs='python $HOME/PORTABLE_ENV/autokey_trigger_table.py'
+alias -g samples='cd ~/REPOS/sample_files'
 
 # Kitty Terminal
 alias icat="kitty +kitten icat"

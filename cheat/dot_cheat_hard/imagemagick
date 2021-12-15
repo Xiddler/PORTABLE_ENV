@@ -39,4 +39,3 @@ xargs -III mv {} II: run mv (move) command, notice -III instead of -I{} , {}is a
 # Crop the image to target size 240×160 with crop starting point at x=100,y=50
 ->% convert -crop 240x160+100+50 convert-crop-img1.jpg convert-crop-img2.jpg
 
--.5 

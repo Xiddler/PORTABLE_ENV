@@ -1,16 +1,20 @@
 " Mininimum settings {{{
 "=== Min settings === 
 " 'set nocompatible' is never necessary in a vimrc file. When Vim detects a user vimrc file, it automatically sets nocompatible. 
+" set backspace=start,eol,indent " no longer needed
 set encoding=utf-8
 " open a file in a new tab
 map gf :tabe <cfile><cr>
-" :bn without pressing enter button to make it like doom-emacs setting
-" map :bn :bn<cr> " did not work
 " test gf with: /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/TESTING/afile.md
+" :bn without pressing enter button to make it like doom-emacs setting
+" map :bn :bn<cr> " did not work (because :bn is an ex command try the following)
+" cnoremap :bn :bn<cr> 
 if has("autocmd")
   filetype plugin indent on
 endif
-set <esc>=jk " an inline comment
+set <esc>=jk " an inline comment " certain problems with this, why? A. Due to next settings
+" to reduce the noticeable delay on performing certain commands
+set timeout timeoutlen=3000 ttimeoutlen=100
 set completeopt=menu,preview,longest "for a pop-up list of completions. (Replaces the existing one)
 set number
 set relativenumber " also Ctrl N to toggle this
@@ -20,13 +24,14 @@ vnoremap Q :norm @q<cr>
 set virtualedit=all " allows cursor to be moved anywhere in normal mode
 " set textwidth=0
 set wrapmargin=5
-set noswapfile
-set hidden
-set nolist    " adds a - to empty spaces; do I need this?
+set noswapfile " prevents the automatic creation of swapfiles
+set hidden    " allows switching buffers without saving
 set listchars=tab:>\ ,trail:.
+set nolist    " adds a . to empty spaces; do I need this? "set list will show the dots for spaces and tabs
 " FZF
+" :FZF 
 " set the following to get fuzzy-finder FZF in vim working (and other plugins?)
-" map <leader>g :FZF<cr> " doesn't seem to work
+map <leader>z :FZF<cr> 
 " usage: see $VIMRUNTIME/docs/fzf.txt :FZF and :h fzf
 set rtp+=/usr/share/vim/vim82
 " setting custom leader to comma
@@ -96,6 +101,10 @@ nnoremap <C-n> :exe 'set nu!' &nu ? 'rnu!' : ''
 set incsearch 
 set ignorecase            " Make searches case-insensitive.
 set smartcase
+set grepprg=/usr/sbin/rg         " use ripgrep instead of default grep
+" set very magic for searching (i.e. no need to escape brackets and other special chars)
+nnoremap / /\v
+vnoremap / /\v
 " }}}
 " Folding {{{
 " https://dougblack.io/words/a-good-vimrc.html#fold
@@ -302,6 +311,8 @@ function! Scratch()
 endfunction
 map <leader>c :call Scratch()<cr>
 
+let $RC="$HOME/.vimrc" " alternative to $MYVIMRC
+
 "}}}
 " Keybindings collected {{{
 " K             :: get vim help for the item under the cursor
@@ -426,7 +437,12 @@ map <leader>c :call Scratch()<cr>
    "  https://github.com/tpope/vim-speeddating.git
    "
    "}}}
-   " Runtimepath {{{
+   " Runtimepath and path {{{
+   " :set runtimepath?
+let $RTP=split(&runtimepath, ',')[0] " allows :set rtp?
    "RUNTIMEPATH
     " /home/donaghm/.vim,/home/donaghm/.vim/pack/vim-pencil/start/vim-pencil,/home/donaghm/.vim/pack/vim-orgmode/start/vim-orgmode,/home/donaghm/.vim/pack/vim-markdown-folding/start/vim-markdown-folding,/home/donaghm/.vim/pack/vim-markdown/start/vim-markdown,/home/donaghm/.vim/pack/vim-elixir/start/vim-elixir,/home/donaghm/.vim/pack/vim-commentary/start/vim-commentary,/home/donaghm/.vim/pack/vim-airline/start/vim-airline,/home/donaghm/.vim/pack/speeddating/start/vim-speeddating,/home/donaghm/.vim/pack/ranger/start/ranger.vim,/home/donaghm/.vim/pack/peekaboo/start/vim-peekaboo,/home/donaghm/.vim/pack/nightsense/start/BU_stellarized,/home/donaghm/.vim/pack/limelight/start/limelight.vim,/home/donaghm/.vim/pack/janet-vim/start/janet.vim,/home/donaghm/.vim/pack/emoji-terroo/start/vim-simple-emoji,/home/donaghm/.vim/pack/easymotion/start/vim-easymotion,/home/donaghm/.vim/pack/Goyo/start/goyo.vim,/home/donaghm/.vim/pack/BUemmet/start/emmet-vim,/usr/share/vim/vimfiles,/usr/share/vim/vim82,/home/donaghm/.vim/pack/vim-markdown-folding/start/vim-markdown-folding/after,/home/donaghm/.vim/pack/vim-markdown/start/vim-markdown/after,/usr/share/vim/vimfiles/after,/home/donaghm/.vim/after
+    " Path
+    " :set path?
+set path+=~/REPOS/
 " }}}

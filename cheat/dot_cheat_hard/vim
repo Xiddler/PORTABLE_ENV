@@ -52,11 +52,14 @@ dd              delete a line
 d{motion}       delete text that {motion} moves over
 
 # Search and replace with the `:substitute` (aka `:s`) command
-
+# :substitute
 :s/foo/bar/	replace the first match of 'foo' with 'bar' on the current line only
 :s/foo/bar/g	replace all matches (`g` flag) of 'foo' with 'bar' on the current line only
 :%s/foo/bar/g	replace all matches of 'foo' with 'bar' in the entire file (`:%s`)
 :%s/foo/bar/gc	ask to manually confirm (`c` flag) each replacement 
+# :global
+:g/^$/ d        delete all empty lines in a file
+:g/^$/,/./-j    reduce multiple blank lines to a single blank
 
 # Preceding a motion or edition with a number repeats it 'n' times
 # Examples:
@@ -348,7 +351,46 @@ s/^\s*\zs/\=(line('.') - line("'<")+1).'. '
 # in normal mode
 q:
 
+# the cgn trick to change any no. of occurences of a word
+# cursor on word, *, then cgn, then .   That last . is the repeat character not a period!
+# cgn = change goto next (word)
 
+# when searching I have / mapped to /\v to engage very magic search which means [ ( etc. don't need to be escaped
+#
+# vim path
+:set path
+path=.,/usr/include,,           :: the default path(s) for vim
+# to add, say, ~/REPOS/books to the path
+:set path+=~/REPOS/books        :: can set in .vimrc
 
+# find  a file
+:find 2Read.md
+# find a file and open in a new split
+:sfind 2Read.md
 
+# quickfix window
+:copen
+:cclose
+
+# REGEX 
+# :h regexp and http://vimregex.com/
+# wordboundary \< and \>
+:s/\<vim\>/VIM/g
+# \zs & \ze
+:s/\zsREPOS\ze/REPOSITORIES/g
+# Very Magic in substitions allows not escaping the ( and )
+# example1: repos (repositories) REPOSITORIES :: try the below on this lin
+:s/\v(repos)/\1zz/ig
+# example2: foo foo foo foo :: the following search will match only the final foo(d)
+/.*\zsfoo
+# example3: Lookbehind - find bar but only if it is preceded with foo
+# foobar
+# bazbar
+# foobar
+# quxbar
+/\v(foo)@<=bar
+
+# to edit commands history 
+Ctrl-f  (in command mode)
+q:      (in normalmode)
 
