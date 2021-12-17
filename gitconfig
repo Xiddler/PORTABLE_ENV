@@ -3,3 +3,5 @@
 	name = Donagh
 [credential]
 	helper = cache
+[init]
+	defaultBranch = main

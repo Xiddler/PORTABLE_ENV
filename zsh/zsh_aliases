@@ -195,7 +195,9 @@ mind() { cd $personal/minding_me }
 words() { cd $HOME/REPOS/WORDS/ }
 books() { cd $HOME/REPOS/books/ } # use autokey instead so as to be able to tabe in vim. Added 2021-10-25.
 bookmarks() { cd $HOME/SD64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
-reading() { cd $HOME/REPOS/books/0_Reading_notes && ls }
+reading() { cd $HOME/REPOS/books/0Reading_notes && ls }
+rnotes() { cd $HOME/REPOS/books/0Reading_notes && ls }
+
 
 # /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/books/ReadMe.md
 alc() { cd  $personal/alcohol/ }

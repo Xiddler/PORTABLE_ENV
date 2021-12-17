@@ -1,0 +1,7 @@
+# Tool for finding text in a pdf file
+pdfgrep "<pattern>" <filename.pdf>
+
+# Convert pdf to html
+pdftohtml
+
+

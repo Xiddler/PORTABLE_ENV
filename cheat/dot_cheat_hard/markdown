@@ -49,7 +49,8 @@ This is [an example](http://example.com "Title") inline link.
 ~~strikethrough~~
 
 # markdown editors
-apostrophe  # lightweight and works on manjaro                  << PREFERRED usage -> % apostrophe <filename.md>
+marker      # simple and works well in Manjaor                   << PREFERRED usage -> % apostrophe <filename.md>
+apostrophe  # lightweight and works on manjaro
 marktext    # difficulty instally on manjaro / npm issues etc.
 Abricotine    # difficulty instally on manjaro / npm issues etc.
 

@@ -260,7 +260,8 @@ $ git checkout [revision_hash] [file_name]
 -> % git checkout HEAD^^ autokey/l3.py # fails
 # git restore -s f0b9ef914c7ca2 autokey/l3.py  ???
 
-
+# use git blame on PORTABLE_ENV for example
+git blame vim/vimrc
 
 
 

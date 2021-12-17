@@ -394,3 +394,9 @@ path=.,/usr/include,,           :: the default path(s) for vim
 Ctrl-f  (in command mode)
 q:      (in normalmode)
 
+# edit the contents of a dir in a vim buffer
+# Method 1 
+vidir
+# Method 2 - uses basic vim!
+:r !ls
+
