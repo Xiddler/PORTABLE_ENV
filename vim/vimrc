@@ -146,9 +146,7 @@ cmap s<space> :w<cr>
 cmap ww :wq<cr>
 cmap xx :q!<cr>
 "
-"
-
-" }}}
+"}}}
 " Packages using Packpath {{{
 " This is for using the package manager that utilises the folder
 " $HOME/.vim/pack - introduced by me in 2019
@@ -200,6 +198,8 @@ nnoremap <leader>y "+y
 " use <leader>f to call up ranger file manager
 let g:ranger_map_keys = 0
 map <leader>f :Ranger<cr>
+" shorten the filepath for REPOSITORIES
+" @r  <-- macro
 "python
 "shortcut for if __name__  = ,m
 autocmd Filetype python inoremap <leader>n if __name__ ==  "__main__":<enter>
@@ -240,6 +240,8 @@ nnoremap <leader>d :put=expand('%:p')<cr>
  :inoremap <leader>dp <C-R>=getcwd()<CR>
 " list buffers and ready for a number 
 nnoremap gb :ls<cr>:b<space>
+
+
 " }}}
 " Airline {{{
 "=== Status line ===
@@ -348,6 +350,8 @@ let $RC="$HOME/.vimrc" " alternative to $MYVIMRC
     " 18 ├── janet-vim
     " 19 ├── goyo.vim
     " 20 └── limelight.vim
+    " 21 └── vim-orgmode
+    " 22 └── speeddating
     "
    " Note: Rundown of good plugins available at https://catonmat.net/vim-plugins
    " --- My Preferred Plugins ---  

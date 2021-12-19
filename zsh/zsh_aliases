@@ -36,6 +36,8 @@ alias -g quakes='vim $HOME/DONAGHS/personal/mental_stuff/quakes.md'
 # alias -g autok='python $HOME/REPOS/2programming/python/2python_studies/json_stuff/4autokey_test.py'
 alias -g trigs='python $HOME/PORTABLE_ENV/autokey_trigger_table.py'
 alias -g samples='cd ~/REPOS/sample_files'
+alias -g 2r='vim ~/REPOS/books/2Read.md'
+alias -g obs='python ~/PORTABLE_ENV/scripts/CLICK_obsid_to_ext4path.py'
 
 # Kitty Terminal
 alias icat="kitty +kitten icat"
@@ -93,7 +95,7 @@ alias -g jc='jupyter-console'
 alias -g trm='mv --force -t ~/.local/share/Trash '
 # to copy all new and old cheats to /home/donag/PORTABLE_ENV/cheat/dot_cheat_hard
 # NOTE: the following is maybe not needed of ALL cheats are stored in
-# PORTANBLE_ENV includeing the /usr/share/cheat ones - do this first
+# PORTARBLE_ENV includeing the /usr/share/cheat ones - do this first
 # alias ccheat="cp -f /usr/share/cheat/* $HOME/PORTABLE_ENV/cheat/dot_cheat_hard/ && cp -f $HOME/.cheat/* $HOME/PORTABLE_ENV/cheat/dot_cheat_hard/"
 #
 alias -g ifconfig="echo 'Use the ip command'"

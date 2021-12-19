@@ -2,10 +2,8 @@
     "type": "script",
     "description": "kitty_prompt",
     "store": {},
-    "modes": [
-        1
-    ],
-    "usageCount": 12,
+    "modes": [],
+    "usageCount": 15,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,

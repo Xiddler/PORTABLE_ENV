@@ -59,3 +59,7 @@ https://zetcode.com/all/#python
 plugin --> git clone https://github.com/Yggdroot/indentLine
 # For code indented with tabs I think there is no need to support it, because you can use :set list lcs=tab:\|\
 
+# Note on argparse
+"click to argparse is the same as requests to urllib"
+
+

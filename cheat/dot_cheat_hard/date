@@ -15,3 +15,6 @@ date -r 1440359821
 # in a script
 p=$(date +"%Y-%m-%d")
 echo $p
+# same as ...
+P=$(date -I)
+echo $P
