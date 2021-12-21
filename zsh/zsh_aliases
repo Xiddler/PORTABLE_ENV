@@ -1,3 +1,5 @@
+# 2021-12-21 Reinstall of Manjaro see SD64  
+
 # 2020-12-10 Manjaro again - may be missing some items...
 #
 # echo $HOME
@@ -19,14 +21,14 @@ alias -g sysc='sudo systemctl '
 alias -g scryp='scryer-prolog '
 alias -g images='cd $HOME/REPOS/images'
 alias -g videos='cd $HOME/REPOS/videos'
-alias -g unum='/home/donaghm/Applications/UNUM/unum.pl'
+alias -g unum='/home/donagh/gApplications/UNUM/unum.pl'
 alias -g L=' | less'
 alias -g ment='cd ~/DONAGHS/personal/mental_stuff'
 alias -g fraud='cd ~/DONAGHS/personal/00Fraud/'
 alias -g vfraud='vim ~/DONAGHS/personal/00Fraud/fraud.md'
 alias -g vt='vim ~/REPOS/TESTING/test.md'
 alias -g wa='cd ~/REPOS/TESTING/WhatsApp/'
-# alias -g pmj='/run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/journal/2021/$(date +"%m")/$(date +"%m")-$(date +"%d").md' # see Autokey
+# alias -g pmj='/run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/journal/2021/$(date +"%m")/$(date +"%m")-$(date +"%d").md' # see Autokey
 alias -g jmj='janet ~/.scripts/my_journal.janet'
 alias -g mp='markdown_previewer '
 alias -g ap='apostrophe '
@@ -34,7 +36,7 @@ alias -g songs='cd $HOME/REPOS/songs'
 alias -g music='vim $HOME/REPOS/music/music_memos.md'
 alias -g quakes='vim $HOME/DONAGHS/personal/mental_stuff/quakes.md'
 # alias -g autok='python $HOME/REPOS/2programming/python/2python_studies/json_stuff/4autokey_test.py'
-alias -g trigs='python $HOME/PORTABLE_ENV/autokey_trigger_table.py'
+alias -g trigs='python $HOME/PORTABLE_ENV/scripts/autokey_trigger_table.py'
 alias -g samples='cd ~/REPOS/sample_files'
 alias -g 2r='vim ~/REPOS/books/2Read.md'
 alias -g obs='python ~/PORTABLE_ENV/scripts/CLICK_obsid_to_ext4path.py'
@@ -45,14 +47,14 @@ alias icat="kitty +kitten icat"
 
 # Digital Ocean
 # Digital Ocean Log In
-alias -g doli='ssh -i /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/ssh/ssh_keys_2020/id_rsa_do donagh@188.166.103.14 ' 
+alias -g doli='ssh -i /run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/ssh/ssh_keys_2020/id_rsa_do donagh@188.166.103.14 ' 
 
 # To show the COMPuter name in the prompt of the ~/.oh-my-zsh/themes/crcandy_dm.zsh-theme. Specically for ssh-ing into other
 # machines
 COMP=$(uname -a | cut -d ' ' -f2)
 
 # CompTIA
-alias -g tia="cd /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/EDUCATION/Courses_2021/CompTIA_2021"
+alias -g tia="cd /run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/EDUCATION/Courses_2021/CompTIA_2021"
 
 # Elixir
 alias -g ellixir="cd $HOME/REPOS/2programming/elixir"
@@ -80,7 +82,7 @@ alias -g ep='echo $PATH'
 alias -g listd='du -s -- *(D) | sort -k1n' # list size of directories
 alias -g nt='terminator --geometry +500+100' # open a new zsh terminal  
 # alias -g passin='python3 $HOME/SD64/REPOSITORIES/2programming/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
-alias -g passin='python3 /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/python/1python_projects/Tkinter_projects/tkinter_GUI/passin_credentials/pw_data-input.py'
+alias -g passin='python3 /run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/python/1python_projects/Tkinter_projects/tkinter_GUI/passin_credentials/pw_data-input.py'
 
 # alias -g passin='python3 /media/pi/B693-3C22/ALL_DONAGH/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
 # Raspberry Pi
@@ -110,9 +112,9 @@ alias -g pyython='cd ~/REPOS/2programming/python'
 
 # shortcut to Tiny 128 USB drive
 
-# alias -g tiny='cd /run/media/donaghm/B693-3C22'
+# alias -g tiny='cd /run/media/donagh/gB693-3C22'
 # 2020-12-10 
-alias -g tiny='cd /run/media/donaghm/tinyUSB'
+alias -g tiny='cd /run/media/donagh/gtinyUSB'
 
 
 # ____________________________________________________________________________________
@@ -121,10 +123,10 @@ alias -g ziim='$HOME/ZIM/'
 # go to zim/Computer
 alias -g szc='cd $HOME/ZIM/Computer/'
 # go to zim/ORG
-alias -g szo='cd $HOME/SD64/DONAGHS/ZIM/ORG/'
+alias -g szo='cd $HOME/DONAGHS/ZIM/ORG/'
 # ____________________________________________________________________________________
 
-alias -g 2p='cd $HOME/SD64/REPOSITORIES/2programming/'
+alias -g 2p='cd $HOME/REPOSITORIES/2programming/'
 alias -g share='cd $HOME/linuxShared'
 # for changing color of the monitor against eyestrain
 alias -g night='blueshift -t 1800'
@@ -137,7 +139,7 @@ alias -g rung3='cd $HOME/Donaghs_Tmp/Rung_3'
 # FUNCTIONS (See Separate functions for my personal journal below)
 
 toread() { vim $HOME/REPOS/books/toRead.md }
-recipes() {cd $HOME/SD64/REPOSITORIES/cooking/recipes }
+recipes() {cd $HOME/REPOSITORIES/cooking/recipes }
 # system timers main folder
 timer-s() { sudo vim "/etc/systemd/system/$1.service" }
 timer-t() { sudo vim "/etc/systemd/system/$1.timer" }
@@ -146,7 +148,10 @@ timer-ls() { systemctl list-timers --all }
 timer-dae() { echo "1234" | sudo -S systemctl daemon-reload } 
 
 # realpath
-rp() { realpath $1 | clipcopy }
+# rp() { realpath $1 | clipcopy }
+# rp() { realpath $1 | xclipboard }
+# rp() { realpath $1 | clipit }
+rp() { realpath $1 | xclip }
 
 # password out using jq and 11SignUps.json
 pout() { jq ".$1.password" 11SignUps.json | grep -v null }
@@ -170,10 +175,10 @@ alias cd..='cd ..'
 alias -g dl='cd ~/Downloads'
 alias -g ds='cd ~/Documents'
 alias -g dr='cd ~/Dropbox'
-# alias -g te='cd ~/SD64/REPOSITORIES/TESTING/'
+# alias -g te='cd ~//REPOS/TESTING/'
 # alias -g hf='cd'
-alias -g repos='$HOME/SD64/REPOSITORIES'
-alias -g maps='$HOME/SD64/REPOSITORIES/maps'
+alias -g repos='$HOME/REPOS'
+alias -g maps='$HOME/REPOS/maps'
 # alias -g cifs='cd $HOME/cifs_share'
 alias -g safe='cd $HOME/SAFE/SAFE_borg_backup'
 
@@ -183,32 +188,34 @@ alias -g jour='cd $HOME/DONAGHS/personal/journal'
 po() { cd $HOME/PORTABLE_ENV }
 ba() { cd $HOME/BACKUPS }
 # dm() { cd $HOME/Donaghs_Tmp }
-te() { cd $HOME/SD64/REPOSITORIES/TESTING }
+
+tes() { cd $HOME/TESTING }
+
 az() { cd $HOME/all_org/org }
-sd() { cd $HOME/SD64/ }
+# sd() { cd $HOME/SD64/ }
 # pers() { cd $personal && ls }
 alias -g pers='cd $HOME/DONAGHS/personal/'
 planning() { cd  $personal/planning/ }
-humour() { cd $HOME/SD64/1donaghs-stuff/humour/ }
-outdoors() { cd $HOME/SD64/REPOSITORIES/OUTDOOR }
-projs() { cd /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/Projects }
-donaghs() { cd $HOME/SD64/DONAGHS }
+#humour() { cd $HOME/SD64/1donaghs-stuff/humour/ }
+#outdoors() { cd $HOME/SD64/REPOSITORIES/OUTDOOR }
+projs() { cd /run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/Projects }
+#donaghs() { cd $HOME/SD64/DONAGHS }
 mind() { cd $personal/minding_me }
 words() { cd $HOME/REPOS/WORDS/ }
 books() { cd $HOME/REPOS/books/ } # use autokey instead so as to be able to tabe in vim. Added 2021-10-25.
-bookmarks() { cd $HOME/SD64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
+#bookmarks() { cd $HOME/SD64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
 reading() { cd $HOME/REPOS/books/0Reading_notes && ls }
 rnotes() { cd $HOME/REPOS/books/0Reading_notes && ls }
 
 
-# /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/books/ReadMe.md
+# /run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/books/ReadMe.md
 alc() { cd  $personal/alcohol/ }
 wants() { cd $HOME/REPOS/Purchases/Wants && vim wants.md }
 rl() { readlink -f $1 | clipcopy } # readlink
 
 # Temporary functions
-web() {cd $HOME/SD64/2programming_repository/css/css_grid/donagh-dev/}
-clue() {cd  $HOME/SD64/1donaghs-stuff/Projects/Clueless-on-DO/Clueless/clueless-webapp }
+#web() {cd $HOME/SD64/2programming_repository/css/css_grid/donagh-dev/}
+#clue() {cd  $HOME/SD64/1donaghs-stuff/Projects/Clueless-on-DO/Clueless/clueless-webapp }
 
 # immediately edit a file
 grat() { $EDITOR $personal/minding_me/gratitude_journal.md }
@@ -218,7 +225,7 @@ insp() { $EDITOR $personal/ideas/inspire.md }
 pain() { $EDITOR $personal/minding_me/pain_points.md }
 snips() { $EDITOR $HOME/DONAGHS/personal/ideas/snippets.md }
 wisd() { $EDITOR $HOME/DONAGHS/personal/ideas/snippets.md }
-# aj() { $EDITOR /home/donaghm/DONAGHS/personal/minding_me/alcohol_journal.md } # (a)lcohol-(j)ournal modelled after (m)y (j)ournal.
+# aj() { $EDITOR /home/donagh/gDONAGHS/personal/minding_me/alcohol_journal.md } # (a)lcohol-(j)ournal modelled after (m)y (j)ournal.
 hme() { cd $HOME }
 
 #-------------------- END journal

@@ -1,2 +1,4 @@
 "jumpapp -f chromium"
   alt + c
+"jumpapp -f firefox"
+  alt + b

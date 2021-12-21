@@ -400,3 +400,7 @@ vidir
 # Method 2 - uses basic vim!
 :r !ls
 
+# turn off the highlight to the underscore in markdown
+:hi link markdownError Normal
+
+

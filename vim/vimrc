@@ -95,6 +95,8 @@ nnoremap <C-n> :exe 'set nu!' &nu ? 'rnu!' : ''
 " Default Colors for CursorLine
 " highlight  CursorLine ctermfg=white ctermbg=blue
 " set cursorcolumn
+" removes the unwanted highlight on underscores in markdown
+" set hi link markdownError Normal " error with link?
 " }}}
 " Searching {{{
 "=== Searching ===
