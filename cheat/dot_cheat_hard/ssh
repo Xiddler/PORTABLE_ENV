@@ -58,8 +58,16 @@ emacs /ssh:name@server:/path/to/file
 # To generate new key pair
 -> % ssh-keygen
 
+# You might need to start ssh-agent before you run the ssh-add command:
+eval `ssh-agent -s`
+
 # inform server that this DIR_PATH/keypairforssh is the private key
--> % ssh-add ~/.ssh/id_rsa_GH
+-> % ssh-add ~/.ssh/id_rsa_rpi
+# Output: Identity added: ./id_rsa_rpi (donagh@donagh-satellitep50c)
+
+
+# inform the remote of the new id_rsa_rpi.pub
+ssh-copy-id -i ~/.ssh/id_rsa.pub  donagh@192.168.11.108
 
 # Make the ssh connection
 -> % ssh donagh@142.23.24.11

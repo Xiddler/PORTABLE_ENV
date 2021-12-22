@@ -62,4 +62,6 @@ plugin --> git clone https://github.com/Yggdroot/indentLine
 # Note on argparse
 "click to argparse is the same as requests to urllib"
 
+# update pip - specifically in .virtualenvs
+(venv)-> % python -m pip install --upgrade pip
 

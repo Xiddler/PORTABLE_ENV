@@ -68,8 +68,10 @@ alias -g ellixir="cd $HOME/REPOS/2programming/elixir"
 # alias -g borgz="$HOME/.scripts/aborg_backup_zim_and_TIA.sh"
 # weekly backup scheduled using anacron. Note: no .sh extension
 alias -g borgz="$HOME/.scripts/borg_backup_weekly"
+# weekly rsync backup
+alias -g rsyncz="$HOME/.scripts/rsync_backup.sh"
 
-# gron
+# gron  -- Makes JSON greppable
 alias norg="gron --ungron"
 alias ungron="gron --ungron"
 
@@ -126,7 +128,7 @@ alias -g szc='cd $HOME/ZIM/Computer/'
 alias -g szo='cd $HOME/DONAGHS/ZIM/ORG/'
 # ____________________________________________________________________________________
 
-alias -g 2p='cd $HOME/REPOSITORIES/2programming/'
+alias -g 2p='cd $HOME/REPOS/2programming/'
 alias -g share='cd $HOME/linuxShared'
 # for changing color of the monitor against eyestrain
 alias -g night='blueshift -t 1800'
@@ -139,7 +141,7 @@ alias -g rung3='cd $HOME/Donaghs_Tmp/Rung_3'
 # FUNCTIONS (See Separate functions for my personal journal below)
 
 toread() { vim $HOME/REPOS/books/toRead.md }
-recipes() {cd $HOME/REPOSITORIES/cooking/recipes }
+recipes() {cd $HOME/REPO/cooking/recipes }
 # system timers main folder
 timer-s() { sudo vim "/etc/systemd/system/$1.service" }
 timer-t() { sudo vim "/etc/systemd/system/$1.timer" }
@@ -151,7 +153,7 @@ timer-dae() { echo "1234" | sudo -S systemctl daemon-reload }
 # () { realpath $1 | clipcopy }
 # rp() { realpath $1 | xclipboard }
 # rp() { realpath $1 | clipit }
-rp() { realpath $1 | xclip }
+rp() { realpath $1 | clipcopy }
 
 # password out using jq and 11SignUps.json
 pout() { jq ".$1.password" 11SignUps.json | grep -v null }
@@ -197,8 +199,8 @@ az() { cd $HOME/all_org/org }
 alias -g pers='cd $HOME/DONAGHS/personal/'
 planning() { cd  $personal/planning/ }
 #humour() { cd $HOME/SD64/1donaghs-stuff/humour/ }
-#outdoors() { cd $HOME/SD64/REPOSITORIES/OUTDOOR }
-projs() { cd /run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/Projects }
+#outdoors() { cd $HOME/SD64/REPOS/OUTDOOR }
+projs() { cd /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/Projects }
 #donaghs() { cd $HOME/SD64/DONAGHS }
 mind() { cd $personal/minding_me }
 words() { cd $HOME/REPOS/WORDS/ }

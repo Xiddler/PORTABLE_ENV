@@ -1,5 +1,11 @@
-# rsync terms
-# -a    :: archive means make an exact copy (not compressed)
+# rsync flags
+# -a            :: archive means make an exact copy (not compressed)
+# -c            :: skip based on checksum, not mod-time & size
+# -r            :: recurse into directories
+# -u            :: skip files that are newer on the receiver
+# -v            :: verbose
+# -z            :: compressed
+# --delete      :: delete extraneous files from dest dirs
 #
 # To copy files from remote to local, maintaining file properties and sym-links (-a), zipping for faster transfer (-z), verbose (-v).  
 rsync -avz host:file1 :file1 /dest/

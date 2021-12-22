@@ -17,10 +17,10 @@
 now=$(date +%Y_%m_%d_%H_%M)
 
 
-S_zim_compu="/run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/MY_ZIM/Computer"
-S_zim_ORG="/run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/MY_ZIM/ORG"
-S_org="/home/donagh/gDropbox/org-mode/org"
-S_pers="/run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal"
+S_zim_compu="/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/MY_ZIM/Computer"
+S_zim_ORG="/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/MY_ZIM/ORG"
+S_org="/home/donagh/Dropbox/org-mode/org"
+S_pers="/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal"
 
 
 # create new borg backup of zim/Computer in ~/SAFE/SAFE_borg_backup
@@ -47,10 +47,10 @@ echo "Successfully compressed, encrypted and backed up $S_zim_compu and $S_org t
 # **************************************************************************************************************************************
 # Removed from play - kept for the record
 # The following is only required once
-# S_zim_compuTXT="/run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/MY_ZIM/Computer.txt"
+# S_zim_compuTXT="/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/MY_ZIM/Computer.txt"
 
-# S_tia="/run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/EDUCATION/Courses_2021/CompTIA_2021"
-# S_org="/run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/all_org" <-- this only backed up symlinks to files
+# S_tia="/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/EDUCATION/Courses_2021/CompTIA_2021"
+# S_org="/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/all_org" <-- this only backed up symlinks to files
 # **************************************************************************************************************************************
 # **************************************************************************************************************************************
 

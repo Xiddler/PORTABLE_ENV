@@ -2,6 +2,7 @@ nb/*
 */.git/
 .git/*
 .git/
+reinstall/full_manjaro_reinstall_Dec2021.md
 *.swp
 zshrc_from_ohMYzsh
 TODO/.*
