@@ -148,7 +148,7 @@ timer-ls() { systemctl list-timers --all }
 timer-dae() { echo "1234" | sudo -S systemctl daemon-reload } 
 
 # realpath
-# rp() { realpath $1 | clipcopy }
+# () { realpath $1 | clipcopy }
 # rp() { realpath $1 | xclipboard }
 # rp() { realpath $1 | clipit }
 rp() { realpath $1 | xclip }
@@ -189,7 +189,7 @@ po() { cd $HOME/PORTABLE_ENV }
 ba() { cd $HOME/BACKUPS }
 # dm() { cd $HOME/Donaghs_Tmp }
 
-tes() { cd $HOME/TESTING }
+te() { cd $HOME/TESTING }
 
 az() { cd $HOME/all_org/org }
 # sd() { cd $HOME/SD64/ }

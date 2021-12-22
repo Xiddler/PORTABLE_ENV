@@ -18,6 +18,7 @@ ______________________________________________________________________
 # Intro
 
 (Written around 2021-12-13)
+(ISSUE: Added 2021-12-22:  This README.md is missing information on setting up the samba server so that the directory on the laptop [/mnt/cifs_share] is linked to the RPi.)
 
 This file describes the folders and files and the system involved in backing up from the SD64 Card to the HDD on the laptop
 The 'remote' backup is done using borg and is backed up to the USB_128 drive attached to the Raspberry Pi
