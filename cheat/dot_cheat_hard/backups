@@ -1,7 +1,15 @@
 # Opened Thursday, 2021-04-29
 # returned 2021-12-13
+# returned 2021-12-22 after Dec2021 reinstall, therefore MANY things may have changed. See section Dec 2021.
 
 # The information relating to this backup system is on ~/PORTABLE_ENV/backups/README.md
+#
+# Locations for access to information about backups in my Personal Knowledge Base PKB
+{{{
+zim-wiki/Computer/PROTOCOLS :: MAJORS:BACKING-UP 
+doom-emacs                  :: TODOS/Tasks/IT Tasks
+
+}}}
 
 # The main things needing backup:
 {{{ 
@@ -22,6 +30,13 @@
 #
 # Note re borg: For a backup would need to create a temp folder to borg restore to.
 #
+}}}
+
+# Dec 2021 - folders on $HOME
+{{{
+~/BACKUPS/RSYNCED           :: use ~/.scripts/rsync_backup.sh - alias rsyncz - to rsync files to the RPi
+~/cifs_share                :: symlinked to RPi USB_128. Used for rsyncz and borgz. NOTE: borg versions might conflict.
+~/SAFE/SAFE_borg_backup     :: repository for borg backups. Needs to be copied to RPi. NOTE: borg versions might conflict.
 }}}
 
 #******************************************************************

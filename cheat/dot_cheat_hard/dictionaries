@@ -1,6 +1,9 @@
 # Manjaro
 
 # Laptop
+/usr/share/dict
+#
+#
 ~/REPOS/WORDS/Dictionaries/Oxford_English_Dictionary/oxford_dict.txt :: can use ->% def <word> on the CLI
 
 # CLI Utilities
@@ -22,4 +25,7 @@ hunspell
 # this fails to open in ddgr. Too bad. Are there any website dictionaries still using old http:// ?
 # SOLUTION?  ->% ddgr -p URI, --proxy URI   tunnel traffic through an HTTPS proxy; URI format: [http[s]://][user:pwd@]host[:port]
 # 
-
+# lexicon - Instant Linux Dictionary. In yakuake terminal...
+-> %  lexicon
+# usage: highlight word and Ctrl Alt z
+#

@@ -34,8 +34,8 @@ tar -j ... -> tar -Ipbzip2 ...
 tar -J ... -> tar -Ipixz ...
 
 
+# Run the below command in the terminal to see the contents of a tar.gz file without extracting it:
 # to list contents of tar file called file.tar:
 $ tar -tvf file.tar
-
 
 

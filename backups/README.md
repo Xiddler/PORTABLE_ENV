@@ -1,13 +1,14 @@
 # CONTENTS
 [Updated: 2021-12-13]
+[NOTE: 2021-12-22 THIS File needs a TOTAL rewrite in light of the new rsync to RPi scripts now made. cheat reinstall.]
 
 ______________________________________________________________________
 Intro
 ~/BACKUPS/bash_scripts
 ~/BACKUPS/<folders>
 ~/ZIM/.git/
-rsync commands (for various folders)
-Clone REPOSITORIES/ and DONAGHS/
+rsync commands (for various folders) - UPDATED: Dec2021
+tar.gz --> Clone REPOSITORIES/ and DONAGHS/
 BORG BACKUP to Raspberry Pi
 ~/SAFE/SAFE_borg_backup (on the laptop)
 check backup has worked
@@ -24,6 +25,9 @@ This file describes the folders and files and the system involved in backing up 
 The 'remote' backup is done using borg and is backed up to the USB_128 drive attached to the Raspberry Pi
 ______________________________________________________________________
 # ~/BACKUPS/bash_scripts
+Status: LOST
+
+These were not backed up and are now lost. NOTE added 2021-12-22
 
 These scripts, when run, will rsync from the $source to the $destination
 
@@ -39,6 +43,7 @@ List of files in bash_scripts and their functionality:
 
 ______________________________________________________________________
 # ~/BACKUPS/<folders>
+Status: LOST
 
 List of folders and their functionality:
 
@@ -55,6 +60,8 @@ List of folders and their functionality:
 
 ______________________________________________________________________
 # ~/ZIM/.git/
+
+Status: LOST
 
 The contents of the folder ~/BACKUPS/dot_git_for_zim gets updated when I 
 1. git add / commit on the CLI when in the directory $HOME/ZIM/
@@ -88,21 +95,21 @@ cd $HOME/BACKUPS && rsync -a --delete ~/DONAGHS/personal ~/BACKUPS/rsync_DONAGHS
 cd $HOME/BACKUPS && rsync -a --delete ~/DONAGHS/MY_ZIM ~/BACKUPS/rsync_DONAGHS_MY_ZIM
 
 ______________________________________________________________________
-# Clone REPOSITORIES and DONAGHS
+# tar.gz --> Clone REPOSITORIES and DONAGHS
 
-contents of ~/BACKUPS/CLONE_ALL_SD64/README.md
+contents of ~/BACKUPS/TAR_GZ/README.md
 
 
 Opened 2021-10-27
 
 Instructions for the backup of 
 
-    1. $HOME/DONAGHS                to                  $HOME/BACKUPS/CLONE_ALL_SD64/DONAGHS_$(date +%Y-%m-%d).tar.gz 
-    2. $HOME/REPOS                  to                  $HOME/BACKUPS/CLONE_ALL_SD64/REPOSITORIES_$(date +%Y-%m-%d).tar.gz 
+    1. $HOME/DONAGHS                to                  $HOME/BACKUPS/TAR_GZ/DONAGHS_$(date +%Y-%m-%d).tar.gz 
+    2. $HOME/REPOS                  to                  $HOME/BACKUPS/TAR_GZ/REPOSITORIES_$(date +%Y-%m-%d).tar.gz 
 
-tar -czf $HOME/BACKUPS/CLONE_ALL_SD64/DONAGHS_$(date +%Y-%m-%d).tar.gz /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS
+tar -czf $HOME/BACKUPS/TAR_GZ/DONAGHS_$(date +%Y-%m-%d).tar.gz /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/
 
-tar -czf $HOME/BACKUPS/CLONE_ALL_SD64/REPOSITORIES_$(date +%Y-%m-%d).tar.gz /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES
+tar -czf $HOME/BACKUPS/TAR_GZ/REPOSITORIES_$(date +%Y-%m-%d).tar.gz /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/
 
 # BORG BACKUP to Raspberry Pi
 

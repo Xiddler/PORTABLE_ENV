@@ -23,7 +23,7 @@
 
 (var my-date (get-my-date))
 
-(def base-path "/run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/journal/")
+(def base-path "/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/journal/")
 
 (defn get-year [time]
   (let [date (os/date time)

@@ -7,7 +7,7 @@
 
 # folder="/home/donagh/sd64/1donaghs-stuff/personal/journal/2020/$1"
 # folder="/home/donagh/sd64/1donaghs-stuff/personal/journal/2021/$1"
-folder="/home/donaghm/DONAGHS/personal/journal/2021/$1"
+folder="/home/donagh/DONAGHS/personal/journal/2021/$1"
 
 cd $folder
 echo "now in $folder"

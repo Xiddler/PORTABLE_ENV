@@ -29,7 +29,7 @@ mypath = f'DONAGHS/{m[0]}/{m[1]}/{m[2]}/{m[3]}/{m[4]}-{m[5]}.md'
 # ----------------------------------------------------------------------------
 # check if file exists with option to open in vim
 
-base_dir = '/run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/'
+base_dir = '/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/'
 my_file_path = base_dir + mypath
 
 if exists(my_file_path):
