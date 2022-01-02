@@ -67,4 +67,7 @@ find . -name \*.txt -type f -print | sed 's/\.\///g'
 # using find instead of rg - why would you?
 find . -name "*.txt" | xargs grep ping-pong
 
+# find org file Modified in the last 10 minutes (mtime, atime, ctime)
+find . -name \*.org -mtime -10
+
 # REM use fd - a modern alternative with regex!

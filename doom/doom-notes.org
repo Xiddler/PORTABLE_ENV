@@ -5,7 +5,7 @@
 #+author : donagh mccarthy
 #+options: il
 #+tags: help orgmode org-mode donaghs
-#+EDITED: 2021-12-13
+#+EDITED: 2022-01-01
 
 
 * frontmatter
@@ -216,7 +216,7 @@ M-x ielm or [SPC] o r
 *** see [[snippets]] below for begin_src
 ** files
 - save file -> :w OR [SPC] f s
-- save buffer -> [SPC] b s OR :w
+- save buffer -> [SPC] b s OR :w OR [SPC] s [SPC]
 - open a file -> [SPC] f f and select your file for opening
 - open a recent file -> [SPC] f r
 - insert current file path [SPC] i F <-- /home/donagh/PORTABLE_ENV/doom/doom-notes.org
@@ -257,10 +257,26 @@ e.g. [SPC] w w for write and quit
 *** Have hinting when file-searching - ivy
 2021-12-03
 say I press [SPC] f f : I would like hints / popup to select file (there is jump list but...)
+*** Go to my private config
+[SPC] f p      <-- go to my config folder
+** icons
+M-x all the icons 
+
+- see config.el and https://github.com/domtronn/all-the-icons.el
+https://github.com/domtronn/all-the-icons.el/wiki
+ python
+ coffee
+*** I would like to upgrade the leading * to something nicer
+How do I achieve this?
 ** images
-images can be displayed within the buffer with the following command: C-c C-x C-v (org-toggle-inline-images).
+images can be displayed within the buffer with the following command: C-c C-x C-v (org-toggle-inline-images) <-- z i
 OR Move over image / link and press [Enter]
-[[/run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/images/square-wheel-cartoon.png]]
+
+[[/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/images/square-wheel-cartoon.png]]
+[[/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/images/2_png_files/Pierse_Brosnan.png]]
+
+[/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/images/00TEST/selfie.png][selfie]]
+
 This is an image of a thrush.
 [SPC] w o to enlarge window
 ** installation notes
@@ -289,6 +305,7 @@ doom-emacs
 [SPC] m        <-- local to to the file type
 [SPC] :        <-- M-x
 gi             <-- go to previous insert position
+[SPC] f p      <-- go to my config folder
 C-S-f          <-- toggle full screen - equivalent to F11
 C-=            <-- increase text size - equivalent to zoom in
 C-_            <-- decrease text size - equivalent to zoom out
@@ -628,8 +645,13 @@ tags are words preceded by : and ending in : e.g. :donaghs: or :work: - these ca
 see https://www.gnu.org/software/emacs/manual/html_node/org/Tag-searches.html#Tag-searches
 ** themes
 [SPC] h t
+
 OR M-x load-theme <-- opens available themes
+
 Preferred theme:
+2022-01-01
+doom-acario-dark :: Different for the New Year
+2021
 tsdh-dark        :: Sky blue headlines w green subs
 Others:
 doom-solarized-dark :: Sky blue headlines w. yellow subs

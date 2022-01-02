@@ -10,6 +10,11 @@
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
+;
+;; DONAGHS
+;; add theme not available in default doom. Note: remember to call it in config.el
+;; (package! spacemacs-theme)
+
 ;;
 ;; To install a package directly from a remote git repo, you must specify a
 ;; `:recipe'. You'll find documentation on what `:recipe' accepts here:

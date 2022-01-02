@@ -2,8 +2,8 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 ;;; Commentary:
-;; Place your private configuration here! Remember, you do not need to run 'doom
-;; sync' after modifying this file!
+;; Place your private configuration here!
+;; Remember, you do not need to run 'doom sync' after modifying this file!
 
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
@@ -24,8 +24,16 @@
 ;; font string. You generally only need these two:
 ;; (setq doom-font (font-spec :family "monospace" :size 20))
 ;;; Code:
+;;; The fonts have to be available: fc-cache -l
 ;; (setq doom-font (font-spec :family "Source Code Pro" :size 20))
 (setq doom-font (font-spec :family "Liberation Mono" :size 20))
+
+;; Maximize the window upon startup.
+(setq initial-frame-alist '((top . 52) (left . 52) (width . 154) (height . 40)))
+
+;; Disable exit confirmation.
+(setq confirm-kill-emacs nil)
+
 
 ;; disable org-roam warning ref version2 - added 2021-10-11
 ;; (setq org-roam-v2-ack t)
@@ -47,17 +55,23 @@
 ;; (setq doom-theme 'doom-one)
 ;;; Code:
 ;; (setq doom-theme 'doom-solarized-dark)
-(setq doom-theme 'tsdh-dark )
+;; (setq doom-theme 'tsdh-dark )
+;; (setq doom-theme 'doom-ir-black-brighter-comments )
+;; 2022-01-01
+(setq doom-theme 'doom-acario-dark )
+;; (setq doom-theme 'spacemacs-dark )
 
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/all_org/org")
+(setq org-directory '~/all_org/org)
+
+
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
+(setq display-line-numbers-type 'relative)
 ;; (setq display-line-numbers-type t)
-(setq display-line-numbers-type t)
 
 ;; use for SLIME lisp
 (setq inferior-lisp-program "sbcl")
@@ -168,8 +182,23 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+;;
 ;; More Donaghs
 (setq message-kill-buffer-on-exit t)
+;;
+;;
+;; https://github.com/domtronn/all-the-icons.el
+;; Instructions to install the fancy icons from the above webref
+;; download the above using in doom: M-x all-the-icons-install-fonts
+;; add to  $PATH the following: ~/.local/share/fonts and
+(when (display-graphic-p)
+  (require 'all-the-icons))
+;; or
+;; (use-package all-the-icons
+  ;; :if (display-graphic-p))
+  ;;
+(all-the-icons-faicon  "cogs")         ;; FontAwesome icon for cogs
+
 
 ;; org-roam dependencies - ref https://www.ianjones.us/own-your-second-brain
 ; (require 'company-org-roam)

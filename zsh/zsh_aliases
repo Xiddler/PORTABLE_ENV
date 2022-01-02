@@ -40,9 +40,12 @@ alias -g trigs='python $HOME/PORTABLE_ENV/scripts/autokey_trigger_table.py'
 alias -g samples='cd ~/REPOS/sample_files'
 alias -g 2r='vim ~/REPOS/books/2Read.md'
 alias -g obs='python ~/PORTABLE_ENV/scripts/CLICK_obsid_to_ext4path.py'
+ff() {fortune}
+ss() {shuf -n2 ~/REPOS/Quotations/quotes.md }
+
 
 # Kitty Terminal
-alias icat="kitty +kitten icat"
+# alias icat="kitty +kitten icat"
 
 
 # Digital Ocean

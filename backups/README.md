@@ -12,6 +12,9 @@ tar.gz --> Clone REPOSITORIES/ and DONAGHS/
 BORG BACKUP to Raspberry Pi
 ~/SAFE/SAFE_borg_backup (on the laptop)
 check backup has worked
+
+Timeshift --> systmem backup / restore : no entry yet (note added 2021-12-27)
+
 HELP
 
 
