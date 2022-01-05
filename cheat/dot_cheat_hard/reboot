@@ -32,6 +32,7 @@ echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sys
 # and maybe need to
 ~/.emacs.d/bin/doom sync
 
+ln -s ~/PORTABLE_ENV/doom/dot_e_m_l_o_config.el ~/.emacs.d/modules/lang/org/config.el <-- "HAPPENING", "READING", etc.
 # caffeine
 # from the app menu
 #

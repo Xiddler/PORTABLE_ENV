@@ -35,6 +35,9 @@
 (setq confirm-kill-emacs nil)
 
 
+
+
+
 ;; disable org-roam warning ref version2 - added 2021-10-11
 ;; (setq org-roam-v2-ack t)
 ;;
@@ -64,7 +67,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory '~/all_org/org)
+(setq org-directory "~/all_org/org")
 
 
 
@@ -89,7 +92,7 @@
 ;;      Emacs searches the `load-path' when you load packages with `require' or `use-package'.
 ;; - `map!' for binding new keys
 ;;
-;; Donaghs - the following keybinding *did* work. :n indicates normal mode
+;; DONAGHS - the following keybinding *did* work. :n indicates normal mode
 (map! :n "Q" 'org-babel-execute-src-block ) ;; Quantify! or Execute snippet!
 (map! :n "SPC d" 'treemacs ) ;; Tree directory for files / folders
 (map! :n "tt" 'org-todo )
@@ -103,6 +106,16 @@
 (map! :n "SPC z" '+org/close-all-folds ) ;; z M is such a pain
 (map! :n "SPC c SPC" 'calendar) ;; quick calendar
 ;; (map! :n "SPC v" 'org-agenda) ;; view org-agenda next 14 days
+;;
+
+;; -----------------------------------
+;; Sample function as an example of elisp functionality
+;; Keybinding to delete the previous line
+;; (map! "C-u"
+      ;; (cmd! (previous-line)
+            ;; (kill-line)
+            ;; (forward-line)))
+;; -----------------------------------
 
 ;; change the symbol on collapsed headings
 ;; (setq org-ellipsis " ▼ ")

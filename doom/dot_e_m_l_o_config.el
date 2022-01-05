@@ -1,11 +1,5 @@
-;;; package --- Summary
 ;;; lang/org/config.el -*- lexical-binding: t; -*-
 
-;;; Commentary:
-;;; edited 2021-10-22. Saved in PORTABLE_ENV/doom/as dot_e_m_l_o_config.el
-;;;
-;;; Code:
-;;;
 (defvar +org-babel-native-async-langs '(python)
   "Languages that will use `ob-comint' instead of `ob-async' for `:async'.")
 
@@ -159,11 +153,13 @@ Is relative to `org-directory', unless it is absolute. Is used in Doom's default
         '((sequence
            "TODO(t)"  ; A task that needs doing & is ready to do
            "PROJ(p)"  ; A project, which usually contains other tasks
-           "REPT(r)"  ; A recurring task
+           ;"LOOP(r)"  ; A recurring task
            "STRT(s)"  ; A task that is in progress
            "WAIT(w)"  ; Something external is holding up this task
-           ; "HOLD(h)"  ; This task is paused/on hold because of me
+           ;"HOLD(h)"  ; This task is paused/on hold because of me
            "HAPPENING(h)"  ; This task is happening
+           "REPEAT(r)"  ; This task is recurring
+           "READING(g)"  ; To promote my renascent reading habit
            "IDEA(i)"  ; An unconfirmed and unapproved task or notion
            "|"
            "DONE(d)"  ; Task successfully completed
@@ -317,7 +313,12 @@ Also adds support for a `:sync' parameter to override `:async'."
   (after! python
     (unless org-babel-python-command
       (setq org-babel-python-command
-            (concat python-shell-interpreter " " python-shell-interpreter-args))))
+            (string-trim
+             (concat python-shell-interpreter " "
+                     (if (string-match-p "\\<i?python[23]?$" python-shell-interpreter)
+                         (replace-regexp-in-string
+                          "\\(^\\| \\)-i\\( \\|$\\)" " " python-shell-interpreter-args)
+                       python-shell-interpreter-args))))))
 
   (after! ob-ditaa
     ;; TODO Should be fixed upstream
@@ -805,6 +806,7 @@ between the two."
         "+" #'org-ctrl-c-minus
         "," #'org-switchb
         "." #'org-goto
+        "@" #'org-cite-insert
         (:when (featurep! :completion ivy)
          "." #'counsel-org-goto
          "/" #'counsel-org-goto-all)

@@ -5,7 +5,7 @@
 #+author : donagh mccarthy
 #+options: il
 #+tags: help orgmode org-mode donaghs
-#+EDITED: 2022-01-01
+#+EDITED: 2022-01-05
 
 
 * frontmatter
@@ -737,7 +737,8 @@ tt and then select from menu
 Example - hover over STRT and press tt
 **** .STRT
 ** convert csv to org file
-** help / reference
+** help
+***  reference
 *** In doom-emacs
 [SPC] h d h :: Documetation (located at /home/donagh/.emacs.d/docs/index.org)
 
@@ -755,6 +756,27 @@ https://orgmode.org/worg/org-faq.html   :: FAQ
 It's essentially a templating system for various types of notes e.g. journal, personal todos
 Save personal notes to [[/home/donagh/Dropbox/org-mode/org/notes.org][notes.org]] using [SPC] X n
 
+** ISSUES
+*** Can't list agenda or TODOS after replacing directory - FIXED
+**** ISSUE - 2020-10-03 - I changed org directory from ~/ALL_ORG/org to ~/all_org/org
+Now I can't list agenda or todo using [SPC] a a / [SPC] a t
+I did change the files config.el and init.el but to not great avail
+Solution: restart doom and/or doom sync
+
+STATUS - 2020-10-03 FIXED
+
+*** [SPC] a t nor [SPC] t t are functioning - not displaying global TODOS in a list - FIXED
+    ERROR MSG: Wrong type argument: stringp,<filepath> ::
+    TRIED:
+    commenting out (org +pretty) and (org-bullets) in init.el.
+    moved the newly created Custom.el to ~/.doom.d/original to see if _it_ is causing problems
+    changed ~/all_org/org to /home/donagh/all_org/org - DID NOT WORK
+    in config.el change (setq *** '~/all_org/org) to (setq *** '/home/donagh/all_org/org) - DID NOT WORK
+    in config.el change (setq *** '/home/donagh/all_org/org) to (setq *** "/home/donagh/all_org/org") - THIS WORKED!!!
+*** Directory 'hints' when going to open a file with [SPC] f f
+I think it needs Avy or some other package like it
+*** Circles of asterisks FIXED
+In init.el add (org +pretty) and sync. Also (org-bulllets) maybe.
 ** org-roam
 *** About
 2020-08-04
@@ -859,13 +881,3 @@ TODO [1/2] [50%] progress markers - without checkboxes
      CLOSED: [2020-05-15 Fri 15:43]
 **** item 2
 **** .TODO item 3
-** issues with org
-*** Can't list agenda or TODOS after replacing directory
-**** ISSUE - 2020-10-03 - I changed org directory from ~/ALL_ORG/org to ~/all_org/org
-Now I can't list agenda or todo using [SPC] a a / [SPC] a t
-I did change the files config.el and init.el but to not great avail
-Solution: restart doom and/or doom sync
-
-STATUS - 2020-10-03 FIXED
-
-*** Directory 'hints' when going to open a file with [SPC] f f
