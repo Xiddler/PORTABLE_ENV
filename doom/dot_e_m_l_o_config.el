@@ -160,6 +160,7 @@ Is relative to `org-directory', unless it is absolute. Is used in Doom's default
            "HAPPENING(h)"  ; This task is happening
            "REPEAT(r)"  ; This task is recurring
            "READING(g)"  ; To promote my renascent reading habit
+           "MAINTENANCE(m)"  ; For House and IT
            "IDEA(i)"  ; An unconfirmed and unapproved task or notion
            "|"
            "DONE(d)"  ; Task successfully completed

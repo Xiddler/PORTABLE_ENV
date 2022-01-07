@@ -130,7 +130,7 @@ set foldlevelstart=1   " start with fold level of 1
 " move to beginning B /end E of line
 nnoremap B ^
 nnoremap E $
-"set the cursor to move down a single row on the screen
+"set the cursor to move down a single row on the screen instead of full sentence
 nnoremap j gj
 nnoremap k gk
 " TABS

@@ -1,6 +1,8 @@
 ;;; package --- Summary
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+;; To refresh config.el --> C-h r r
+;;
 ;;; Commentary:
 ;; Place your private configuration here!
 ;; Remember, you do not need to run 'doom sync' after modifying this file!
@@ -32,18 +34,10 @@
 (setq initial-frame-alist '((top . 52) (left . 52) (width . 154) (height . 40)))
 
 ;; Disable exit confirmation.
-(setq confirm-kill-emacs nil)
+(setq confirm-kill-emacs nil) ;; quick exit
 
-
-
-
-
-;; disable org-roam warning ref version2 - added 2021-10-11
-;; (setq org-roam-v2-ack t)
-;;
 ;; reduce delay on pressing SPC
 (setq which-key-idle-delay 0.5)
-
 
 ;; collapse outline when not at heading. See https://github.com/tkf/org-mode/blob/master/lisp/org.el#L963
 (setq org-cycle-emulate-tab 'white)
@@ -52,6 +46,7 @@
 ;; use avy search in all windows
 ;;; Code:
 (setq avy-all-windows t)
+
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
@@ -64,12 +59,9 @@
 (setq doom-theme 'doom-acario-dark )
 ;; (setq doom-theme 'spacemacs-dark )
 
-
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/all_org/org")
-
-
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -78,6 +70,7 @@
 
 ;; use for SLIME lisp
 (setq inferior-lisp-program "sbcl")
+
 ;; Emacs by default syncs with the system clipboard when cutting or pasting text.
 ;; This can be really annoying if you do things like paste from the clipboard after a c w in normal mode,
 ;; because the clipboard will be overwritten before you can paste its contents. The following line should disable this behavior:
@@ -92,19 +85,23 @@
 ;;      Emacs searches the `load-path' when you load packages with `require' or `use-package'.
 ;; - `map!' for binding new keys
 ;;
-;; DONAGHS - the following keybinding *did* work. :n indicates normal mode
+;; DONAGHS
+;; The following keybinding *did* work. :n indicates normal mode
 (map! :n "Q" 'org-babel-execute-src-block ) ;; Quantify! or Execute snippet!
 (map! :n "SPC d" 'treemacs ) ;; Tree directory for files / folders
 (map! :n "tt" 'org-todo )
 (map! :n "ts" 'org-schedule )
 (map! :n "SPC a" 'org-agenda )
 (map! :n "SPC w SPC" 'ido-kill-buffer )
-(map! :n "SPC s SPC" 'save-buffer ) ;; even simpler than w
+(map! :n "SPC w w" 'ido-kill-buffer ) ;; like vim
+(map! :n "SPC s SPC" 'save-buffer ) ;; even simpler than w, like vim
 (map! :n "SPC j" 'outline-next-visible-heading )
 (map! :n "SPC k" 'outline-previous-visible-heading )
 (map! :n "SPC l" 'org-insert-link )
 (map! :n "SPC z" '+org/close-all-folds ) ;; z M is such a pain
 (map! :n "SPC c SPC" 'calendar) ;; quick calendar
+(map! :n "j" 'evil-next-visual-line) ;; use j to go down one visual line instead of default
+(map! :n "k" 'evil-previous-visual-line) ;; use k to go up one visual line instead of default
 ;; (map! :n "SPC v" 'org-agenda) ;; view org-agenda next 14 days
 ;;
 
@@ -151,42 +148,8 @@
 
 
 
-;; THE FOLLOWING LINES COPIED FROM THE FILE ~/.emacs.d/modules/lang/org/config.el
-;; but placed here in case I need it after a new emacs install
-;; The only change is that I have added REPT status
-;; HACK Face specs fed directly to `org-todo-keyword-faces' don't respect
-;;      underlying faces like the `org-todo' face does, so we define our own
-;;      intermediary faces that extend from org-todo.
-   ;; (with-no-warnings
-     ;; (custom-declare-face '+org-todo-active  '((t (:inherit (bold font-lock-constant-face org-todo)))) "")
-     ;; (custom-declare-face '+org-todo-project '((t (:inherit (bold font-lock-doc-face org-todo)))) "")
-     ;; (custom-declare-face '+org-todo-onhold  '((t (:inherit (bold warning org-todo)))) ""))
-   ;; (setq org-todo-keywords
-     ;;     '((sequence
-     ;;        "TODO(t)"  ; A task that needs doing & is ready to do
-     ;;        "PROJ(p)"  ; A project, which usually contains other tasks
-     ;;        "STRT(s)"  ; A task that is in progress
-     ;;        "WAIT(w)"  ; Something external is holding up this task
-     ;;        "HOLD(h)"  ; This task is paused/on hold because of me
-     ;;        "REPT(r)" ; Task repeates monthly or annually like Car Tax
-     ;;        "|"      ; Items before the bar are active and show up in Org Agenda
-        ;;        "DONE(d)"  ; Task successfully completed
-            ;; "KILL(k)"); Task was cancelled, aborted or is no longer applicable
-           ;; (sequence
-            ;; "[ ](T)"   ; A task that needs doing
-            ;; "[-](S)"   ; Task is in progress
-            ;; "[?](W)"   ; Task is being held up or paused
-            ;; "|"
-            ;; "[X](D)")) ; Task was completed
-         ;; org-todo-keyword-faces
-         ;; '(("[-]"  . +org-todo-active)
-           ;; ("STRT" . +org-todo-active)
-           ;; ("[?]"  . +org-todo-onhold)
-           ;; ("WAIT" . +org-todo-onhold)
-           ;; ("HOLD" . +org-todo-onhold)
-           ;; ("PROJ" . +org-todo-project)
-           ;; ("REPT" . +org-todo-project)))
-   
+;; I have now saved this file ~/PORTABLE_ENV/doom/dot_e_m_l_o_config.el and symlinked it to ~/.emacs.d/modules/lang/org/config.el
+
 ;; To refresh config.el --> C-h r r
 ;;
 ;; To get information about any of these functions/macros, move the cursor over

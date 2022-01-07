@@ -1,19 +1,31 @@
 # CONTENTS
 [Updated: 2021-12-13]
-[NOTE: 2021-12-22 THIS File needs a TOTAL rewrite in light of the new rsync to RPi scripts now made. cheat reinstall.]
+[NOTE: 2021-12-22 THIS File needs a TOTAL rewrite in light of the new rsync to RPi scripts now made. cheat reinstall. ~/SAFE/SAFE_borg_backup now
+defunct ]
 
 ______________________________________________________________________
-Intro
+# Contents
+
+### Relevant folders
+
 ~/BACKUPS/bash_scripts
 ~/BACKUPS/<folders>
 ~/ZIM/.git/
-rsync commands (for various folders) - UPDATED: Dec2021
-tar.gz --> Clone REPOSITORIES/ and DONAGHS/
-BORG BACKUP to Raspberry Pi
 ~/SAFE/SAFE_borg_backup (on the laptop)
+
+### Relevant commands
+ 
+rsyncz commands (for various folders) - UPDATED: Dec2021
+tar.gz --> Clone REPOSITORIES/ and DONAGHS/
+borgz --> BORG BACKUP to Raspberry Pi
+
+### Backup check
 check backup has worked
 
+### System Backup
+
 Timeshift --> systmem backup / restore : no entry yet (note added 2021-12-27)
+
 
 HELP
 

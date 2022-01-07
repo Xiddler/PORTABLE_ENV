@@ -63,6 +63,8 @@ cd ~/zArchive/serve_zim_passwords && python3 -m http.server 5000
 visit at 192.168.1.103:5000/
 # instant dictionary: usage Highlight word and Ctrl Alt z
 lexicon
+# list of autokey triggers
+pip install tabulate
 
  
 
