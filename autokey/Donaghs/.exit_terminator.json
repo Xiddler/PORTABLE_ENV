@@ -1,0 +1,28 @@
+{
+    "type": "script",
+    "description": "exit_terminator",
+    "store": {},
+    "modes": [],
+    "usageCount": 20,
+    "prompt": false,
+    "omitTrigger": false,
+    "showInTrayMenu": false,
+    "abbreviation": {
+        "abbreviations": [
+            "xc"
+        ],
+        "backspace": true,
+        "ignoreCase": false,
+        "immediate": true,
+        "triggerInside": false,
+        "wordChars": "[\\w]"
+    },
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    }
+}

@@ -1,4 +1,5 @@
 Opened 2021-12-22
+Edited: 2022-01-14 (fresh reinstall)
 
 This is a helper file when dealing with a full reinstall like I did in Dec 2021.
 

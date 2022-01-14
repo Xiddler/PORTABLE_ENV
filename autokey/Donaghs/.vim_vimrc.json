@@ -1,0 +1,29 @@
+{
+    "usageCount": 1, 
+    "omitTrigger": false, 
+    "prompt": false, 
+    "description": "vim_vimrc", 
+    "abbreviation": {
+        "wordChars": "[\\w]", 
+        "abbreviations": [
+            "vv"
+        ], 
+        "immediate": true, 
+        "ignoreCase": false, 
+        "backspace": true, 
+        "triggerInside": false
+    }, 
+    "hotkey": {
+        "hotKey": null, 
+        "modifiers": []
+    }, 
+    "modes": [], 
+    "showInTrayMenu": false, 
+    "matchCase": false, 
+    "filter": {
+        "regex": null, 
+        "isRecursive": false
+    }, 
+    "type": "phrase", 
+    "sendMode": "kb"
+}

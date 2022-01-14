@@ -88,3 +88,28 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub  donagh@192.168.11.108
 -> % sudo umount -l /mnt/myprojects 
 
 
+#####################################
+# NOTES ON CREATING SSH KEYS 
+#####################################
+
+# Creating
+ssh-keygen -t rsa -b 4096 -N "" -C "" -f keyname
+mv keyname* ~/.ssh
+
+# Setting access rights
+chmod 700 ~/.ssh && chmod 600 ~/.ssh/*
+
+# ~/.ssh/config
+Host github
+HostName github.com
+User git
+IdentityFile ~/.ssh/keyname     :: do I mean for e.g. id_rsa? 
+
+# This logs into the server, and copies the public key to it.
+ssh-copy-id -i ~/.ssh/keyname user@remote_machine
+
+# Checking the ssh procesd
+ssh -T git@github.com
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/keyname
+ssh -T git@github.com

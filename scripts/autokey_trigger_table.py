@@ -18,7 +18,7 @@ from tabulate import tabulate
 
 
 # required, iterate through full file list of .json files in BASE_DIR
-BASE_DIR = '/home/donagh/PORTABLE_ENV/autokey/'
+BASE_DIR = '/home/donagh/PORTABLE_ENV/autokey/Donaghs/'
 
 list_of_files = os.listdir(BASE_DIR) # all extensions
 

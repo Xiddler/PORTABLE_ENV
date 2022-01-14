@@ -1,0 +1,31 @@
+{
+    "usageCount": 1, 
+    "omitTrigger": false, 
+    "prompt": false, 
+    "description": "The_Quick_Fox", 
+    "abbreviation": {
+        "wordChars": "[\\w]", 
+        "abbreviations": [
+            "tq"
+        ], 
+        "immediate": true, 
+        "ignoreCase": true, 
+        "backspace": true, 
+        "triggerInside": false
+    }, 
+    "hotkey": {
+        "hotKey": null, 
+        "modifiers": []
+    }, 
+    "modes": [
+        1
+    ], 
+    "showInTrayMenu": true, 
+    "matchCase": false, 
+    "filter": {
+        "regex": null, 
+        "isRecursive": false
+    }, 
+    "type": "phrase", 
+    "sendMode": "kb"
+}

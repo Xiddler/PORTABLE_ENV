@@ -10,7 +10,8 @@ alias -g spi='sudo pamac install '
 alias -g PS='ps aux | grep -i '
 alias -g G='| grep -i '
 alias -g L='| less '
-alias -g C='| clipcopy '
+#alias -g C='| clipcopy '
+# alias -g C='| xclip '
 alias -g quick='cd $HOME/DONAGHS/0_Quickies'
 alias -g html='cd $HOME/REPOS/2programming/webdevelopment/html'
 alias -g htmx='cd $HOME/REPOS/2programming/webdevelopment/htmx'
@@ -42,6 +43,7 @@ alias -g 2r='vim ~/REPOS/books/2Read.md'
 alias -g obs='python ~/PORTABLE_ENV/scripts/CLICK_obsid_to_ext4path.py'
 ff() {fortune}
 ss() {shuf -n2 ~/REPOS/Quotations/quotes.md }
+alias -g take="mkdir -p "
 
 
 # Kitty Terminal
@@ -93,7 +95,7 @@ alias -g passin='python3 /run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68
 # Raspberry Pi
 alias -g tpassin='sudo --prompt=1234 $HOME/.scripts/passin_terminal.py'
 # alias -g passin='$HOME/.scripts/passin.sh' # a non-GUI version
-alias -g passout='cat $HOME/ZIM/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias for catt
+alias -g passout='cat $HOME/ZIM/MY_ZIM/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias for catt
 alias -g xn='| xargs -n 1'
 alias -g zimbu='$HOME/.scripts/zim_backup_to_tinyUSB.sh'
 alias -g zz='zsh -l'
@@ -156,7 +158,8 @@ timer-dae() { echo "1234" | sudo -S systemctl daemon-reload }
 # () { realpath $1 | clipcopy }
 # rp() { realpath $1 | xclipboard }
 # rp() { realpath $1 | clipit }
-rp() { realpath $1 | clipcopy }
+# rp() { realpath $1 | clipcopy }
+ rp() { realpath $1 | xclip }
 
 # password out using jq and 11SignUps.json
 pout() { jq ".$1.password" 11SignUps.json | grep -v null }

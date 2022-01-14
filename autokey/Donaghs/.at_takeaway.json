@@ -1,0 +1,29 @@
+{
+    "type": "phrase",
+    "description": "at_takeaway",
+    "modes": [],
+    "usageCount": 9,
+    "prompt": false,
+    "omitTrigger": false,
+    "matchCase": false,
+    "showInTrayMenu": false,
+    "abbreviation": {
+        "abbreviations": [
+            "att"
+        ],
+        "backspace": true,
+        "ignoreCase": false,
+        "immediate": true,
+        "triggerInside": false,
+        "wordChars": "[\\w]"
+    },
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "sendMode": "kb"
+}

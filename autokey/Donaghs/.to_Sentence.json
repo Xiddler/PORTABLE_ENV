@@ -1,0 +1,33 @@
+{
+    "usageCount": 4, 
+    "omitTrigger": false, 
+    "prompt": false, 
+    "description": "to_Sentence", 
+    "abbreviation": {
+        "wordChars": "[\\w]", 
+        "abbreviations": [
+            "kkk"
+        ], 
+        "immediate": true, 
+        "ignoreCase": false, 
+        "backspace": true, 
+        "triggerInside": false
+    }, 
+    "hotkey": {
+        "hotKey": "s", 
+        "modifiers": [
+            "<alt>", 
+            "<shift>"
+        ]
+    }, 
+    "modes": [
+        3
+    ], 
+    "showInTrayMenu": false, 
+    "filter": {
+        "regex": null, 
+        "isRecursive": false
+    }, 
+    "type": "script", 
+    "store": {}
+}

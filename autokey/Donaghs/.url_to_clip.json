@@ -1,0 +1,31 @@
+{
+    "usageCount": 84, 
+    "omitTrigger": false, 
+    "prompt": false, 
+    "description": "url_to_clip", 
+    "abbreviation": {
+        "wordChars": "[\\w]", 
+        "abbreviations": [
+            "vv"
+        ], 
+        "immediate": true, 
+        "ignoreCase": false, 
+        "backspace": true, 
+        "triggerInside": false
+    }, 
+    "hotkey": {
+        "hotKey": "x", 
+        "modifiers": [
+            "<ctrl>", 
+            "<shift>"
+        ]
+    }, 
+    "modes": [], 
+    "showInTrayMenu": false, 
+    "filter": {
+        "regex": null, 
+        "isRecursive": false
+    }, 
+    "type": "script", 
+    "store": {}
+}

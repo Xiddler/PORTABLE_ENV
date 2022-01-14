@@ -1,5 +1,20 @@
 # NOTE: Aliases handled in .zsh_aliases or .bash_aliases
 
+
+# the following was imported from the Manjaro .zshrc installed on Jan 14 2022
+
+# Source manjaro-zsh-configuration
+if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
+  source /usr/share/zsh/manjaro-zsh-config
+fi
+# Use manjaro zsh prompt
+if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
+  source /usr/share/zsh/manjaro-zsh-prompt
+fi
+
+
+
+
 # to disable the Toshiba touchpad
 # xinput disable 12 (or 13 - check with $ xinput list)
 
@@ -61,7 +76,7 @@ bindkey 'kk' copy-earlier-word
 # ZSH_THEME="agnoster"
 # ZSH_THEME="amuse_dm"
 # ## ZSH_THEME="candy-kingdom"
-ZSH_THEME="crcandy_dm"
+# ZSH_THEME="crcandy_dm"
 # to edit the above file go to: $HOME/.oh-my-zsh/themes/crcandy_dm.zsh-themes
 ## ZSH_THEME="powerlevel9k/powerlevel9k"
 
@@ -142,7 +157,7 @@ plugins=(
 #   plugins+=(zsh-syntax-highlighting)
 # fi
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 # To add a new path
@@ -326,12 +341,15 @@ export RANGER_LOAD_DEFAULT_RC=false
 # zoxide 
 eval "$(zoxide init zsh)"
 
+# mcfly
+eval "$(mcfly init zsh)"
+
 
 # br is an alternative file searcher - described in HackerNews Jan 2020
 # source /home/donagh/.config/broot/launcher/bash/br
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # source /home/donagh/.config/broot/launcher/bash/br
 # call the zsh-syntax-highlighting plugin last thing in this file
