@@ -350,6 +350,9 @@ eval "$(mcfly init zsh)"
 
 # fzf
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#
+# dirjump - use -> % d to see 10 most recent directories visited. https://github.com/imambungo/dirjump
+source ~/.config/dirjump/dirjump
 
 # source /home/donagh/.config/broot/launcher/bash/br
 # call the zsh-syntax-highlighting plugin last thing in this file

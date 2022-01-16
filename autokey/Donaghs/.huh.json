@@ -1,15 +1,15 @@
 {
-    "type": "script",
-    "description": "exit_terminator",
-    "store": {},
+    "type": "phrase",
+    "description": "huh",
     "modes": [],
-    "usageCount": 20,
+    "usageCount": 2,
     "prompt": false,
     "omitTrigger": false,
+    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "xc"
+            "huh"
         ],
         "backspace": true,
         "ignoreCase": false,
@@ -24,5 +24,6 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    }
+    },
+    "sendMode": "kb"
 }

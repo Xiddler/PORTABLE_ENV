@@ -26,6 +26,7 @@ check backup has worked
 
 Timeshift --> systmem backup / restore : no entry yet (note added 2021-12-27)
 
+COMMENT: This has _never_ come to my rescue. New fresh reinstall of Manjaro on 2022-01-14
 
 HELP
 

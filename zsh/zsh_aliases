@@ -5,8 +5,8 @@
 # echo $HOME
 alias -g catt='cat $HOME/ZIM/Computer/11SignUps.txt|rg -i -A5 '
 alias webdav='cd /var/www/webdav'
-alias -g pas='pamac search '
-alias -g spi='sudo pamac install '
+# alias -g pas='pamac search '  # now in autokey to expand spelling
+# alias -g spi='sudo pamac install ' # now in autokey to expand spelling
 alias -g PS='ps aux | grep -i '
 alias -g G='| grep -i '
 alias -g L='| less '
@@ -41,9 +41,11 @@ alias -g trigs='python $HOME/PORTABLE_ENV/scripts/autokey_trigger_table.py'
 alias -g samples='cd ~/REPOS/sample_files'
 alias -g 2r='vim ~/REPOS/books/2Read.md'
 alias -g obs='python ~/PORTABLE_ENV/scripts/CLICK_obsid_to_ext4path.py'
-ff() {fortune}
+# ff() {fortune}
 ss() {shuf -n2 ~/REPOS/Quotations/quotes.md }
-alias -g take="mkdir -p "
+# alias -g take="mkdir -p "
+take() { mkdir -p "$1" && cd "$1" }
+snipo() { /home/donagh/.scripts/add_snips_org.sh }
 
 
 # Kitty Terminal
@@ -88,10 +90,16 @@ alias -g ep='echo $PATH'
 # alias -g kontout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 ' # get contact  
 alias -g listd='du -s -- *(D) | sort -k1n' # list size of directories
 alias -g nt='terminator --geometry +500+100' # open a new zsh terminal  
+# 
 # alias -g passin='python3 $HOME/SD64/REPOSITORIES/2programming/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
-alias -g passin='python3 /run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/python/1python_projects/Tkinter_projects/tkinter_GUI/passin_credentials/pw_data-input.py'
+# alias -g passin='python3 /run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/python/1python_projects/Tkinter_projects/tkinter_GUI/passin_credentials/pw_data-input.py'
 
 # alias -g passin='python3 /media/pi/B693-3C22/ALL_DONAGH/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
+# CLI version
+alias -g passin='python3 /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/python/1python_projects/passwds_CLI/pass_in.py'
+
+#
+#
 # Raspberry Pi
 alias -g tpassin='sudo --prompt=1234 $HOME/.scripts/passin_terminal.py'
 # alias -g passin='$HOME/.scripts/passin.sh' # a non-GUI version
@@ -128,7 +136,7 @@ alias -g tiny='cd /run/media/donagh/gtinyUSB'
 # shortcuts for when I want to Search Zim - Computer ORG 
 alias -g ziim='$HOME/ZIM/'
 # go to zim/Computer
-alias -g szc='cd $HOME/ZIM/Computer/'
+alias -g szc='cd $HOME/ZIM/MY_ZIM/Computer/'
 # go to zim/ORG
 alias -g szo='cd $HOME/DONAGHS/ZIM/ORG/'
 # ____________________________________________________________________________________
@@ -159,7 +167,7 @@ timer-dae() { echo "1234" | sudo -S systemctl daemon-reload }
 # rp() { realpath $1 | xclipboard }
 # rp() { realpath $1 | clipit }
 # rp() { realpath $1 | clipcopy }
- rp() { realpath $1 | xclip }
+ rp() { realpath $1 | xclip -selection clipboard }
 
 # password out using jq and 11SignUps.json
 pout() { jq ".$1.password" 11SignUps.json | grep -v null }
@@ -255,6 +263,10 @@ alias vb='vim ~/.bashrc'
 alias vv='vim ~/.vimrc'
 alias vz="vim ~/.zshrc"
 alias vza="vim ~/.zsh_aliases"
+# grep a config file
+gza() { rg "$1" ~/.zsh_aliases }
+gz() { rg "$1" ~/.zshrc }
+gv() { rg "$1" ~/.vimrc }
 
 
 

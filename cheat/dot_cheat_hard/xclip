@@ -1,0 +1,18 @@
+# https://stackoverflow.com/questions/5130968/how-can-i-copy-the-output-of-a-command-directly-into-my-clipboard
+#
+# to copy output of a command to 'X' clipboard 
+<command> | xclip
+
+# to copy to system clipboard available to other applications
+<command> | xclip -sel clip
+
+ # explanation from man page
+ # -selection (-sel)    specify which X selection to use, options are 
+ # "primary" to use XA_PRIMARY  (default),  
+ # "secondary"  for  XA_SECONDARY  or  
+ # "clipboard"  for XA_CLIPBOARD
+
+# to paste
+xclip -o
+
+

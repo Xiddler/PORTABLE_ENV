@@ -46,4 +46,5 @@ ln -s /home/donagh/Dropbox/org-mode/org/personal.org  $HOME/all_org/org/personal
 ln -s /home/donagh/Dropbox/org-mode/org/reminders.org  $HOME/all_org/org/reminders.org
 ln -s /home/donagh/Dropbox/org-mode/org/notes.org  $HOME/all_org/org/notes.org
 
-
+# RSYNC
+ln -s  ~/cifs_share/RSYNCED ~/BACKUPS/RSYNCED

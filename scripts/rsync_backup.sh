@@ -5,6 +5,7 @@
 
 # this script backs up the files and folders of value to 
 # ~/BACKUPS/RSYNCED  which is symlinked to ~/cifs_share/RSYNCED linked to the RPi
+# ln -s  ~/cifs_share/RSYNCED ~/BACKUPS/RSYNCED
 
 
 # source directory on laptop is
