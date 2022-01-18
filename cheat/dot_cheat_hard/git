@@ -263,5 +263,31 @@ $ git checkout [revision_hash] [file_name]
 # use git blame on PORTABLE_ENV for example
 git blame vim/vimrc
 
+# A branch
+A branch in Git is only a named pointer to a specific snapshot.
 
+# HEAD
+The HEAD of the development is where you last checked out your workspace and, more importantly, where to commit the changes.
+
+# Reflog
+A reflog shows what has been changed during the lifetime of the name, from when it was created (usually by a branch) until the current state.
+
+# Create a safe point
+IF you want to create a safe point just before doing a tricky merge, just spin off a new branch pointing at the current commit:
+
+git branch blah_branch_backup
+
+Later, if your merge gets completely messed up, you can do:
+
+git merge --abort
+
+git reset --hard blah_branch_backup
+
+That final command will restore the current branch's HEAD to point to the same commit as blah_branch_backup.
+
+This same pattern is useful for other dangerous commands, like rebases or filter-branch.
+
+When you're done, just delete blah_branch_backup. 
+
+# END
 

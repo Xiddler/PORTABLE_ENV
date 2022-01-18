@@ -103,7 +103,7 @@ alias -g passin='python3 /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/
 # Raspberry Pi
 alias -g tpassin='sudo --prompt=1234 $HOME/.scripts/passin_terminal.py'
 # alias -g passin='$HOME/.scripts/passin.sh' # a non-GUI version
-alias -g passout='cat $HOME/ZIM/MY_ZIM/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias for catt
+alias -g passout='cat $HOME/DONAGHS/MY_ZIM/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias for catt
 alias -g xn='| xargs -n 1'
 alias -g zimbu='$HOME/.scripts/zim_backup_to_tinyUSB.sh'
 alias -g zz='zsh -l'
@@ -136,7 +136,7 @@ alias -g tiny='cd /run/media/donagh/gtinyUSB'
 # shortcuts for when I want to Search Zim - Computer ORG 
 alias -g ziim='$HOME/ZIM/'
 # go to zim/Computer
-alias -g szc='cd $HOME/ZIM/MY_ZIM/Computer/'
+alias -g szc='cd $HOME/DONAGHS/MY_ZIM/Computer/'
 # go to zim/ORG
 alias -g szo='cd $HOME/DONAGHS/ZIM/ORG/'
 # ____________________________________________________________________________________
