@@ -17,7 +17,7 @@ alias -g html='cd $HOME/REPOS/2programming/webdevelopment/html'
 alias -g htmx='cd $HOME/REPOS/2programming/webdevelopment/htmx'
 alias -g sp='vim $HOME/REPOS/TESTING/scratch_pad.txt'
 alias -g scrape='~/PORTABLE_ENV/scripts/scrape_website.sh'
-alias -g ssc='sudo systemctl '
+# alias -g ssc='sudo systemctl ' # replaced using Autokey
 alias -g sysc='sudo systemctl '
 alias -g scryp='scryer-prolog '
 alias -g images='cd $HOME/REPOS/images'
@@ -96,7 +96,9 @@ alias -g nt='terminator --geometry +500+100' # open a new zsh terminal
 
 # alias -g passin='python3 /media/pi/B693-3C22/ALL_DONAGH/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
 # CLI version
-alias -g passin='python3 /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/python/1python_projects/passwds_CLI/pass_in.py'
+# alias -g passin='python3 /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/python/1python_projects/passwds_CLI/pass_in.py'
+alias -g passin='python ~/PORTABLE_ENV/scripts/pass_in.py'
+
 
 #
 #

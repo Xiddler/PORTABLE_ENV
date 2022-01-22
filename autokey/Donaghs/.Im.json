@@ -1,17 +1,17 @@
 {
     "type": "phrase",
-    "description": "Ive",
+    "description": "I'm",
     "modes": [
         1
     ],
-    "usageCount": 2,
+    "usageCount": 6,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "iiv"
+            "iim"
         ],
         "backspace": true,
         "ignoreCase": false,

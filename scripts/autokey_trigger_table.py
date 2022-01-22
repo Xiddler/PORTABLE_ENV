@@ -83,14 +83,23 @@ for ntuple in txt_json_pairs:
 
 
 # KEEP THESE
-print('=======================================================')
-print("HOTKEY-TRIGGERED AUTOS - .PY SCRIPTS")
-print (tabulate(py_hotk, headers=["File", "Mod 1", "Mod 2", "Hotkey", "Action"]))
+ans = 'y'
+while ans == 'y':
+    print('=======================================================')
+    print("HOTKEY-TRIGGERED AUTOS - .PY SCRIPTS")
+    print (tabulate(py_hotk, headers=["File", "Mod 1", "Mod 2", "Hotkey", "Action"]))
+    ans = input("Continue? (press y [Enter] to continue) ")
+    print(ans)
 
-print('=======================================================')
-print('ABBS-TRIGGERED .PY SCRIPTS')
-print (tabulate(py_abbs, headers=["File", "Keys", "Output", "", ""]))
+    print('=======================================================')
+    print('ABBS-TRIGGERED .PY SCRIPTS')
+    print (tabulate(py_abbs, headers=["File", "Keys", "Output", "", ""]))
+    ans = input("Continue? (press y [Enter] to continue) ")
 
-print('=======================================================')
-print("ABBS-TRIGGERED FROM .TXT FILES")
-print (tabulate(txt_abbs, headers=["File", "Keys", "Output", "", ""]))
+    print('=======================================================')
+    print("ABBS-TRIGGERED FROM .TXT FILES")
+    print (tabulate(txt_abbs, headers=["File", "Keys", "Output", "", ""]))
+    ans = input("Continue? (press y [Enter] to continue) ")
+    ans = 'n'
+
+

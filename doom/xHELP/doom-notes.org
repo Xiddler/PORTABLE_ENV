@@ -5,7 +5,7 @@
 #+author : donagh mccarthy
 #+options: il
 #+tags: help orgmode org-mode donaghs
-#+EDITED: 2022-01-05
+#+EDITED: 2022-01-20
 
 
 * frontmatter
@@ -229,9 +229,18 @@ Remove a * <-- to promote to parent level
 M - up <-- to move up
 M - down <-- to move down
 ** help
+C-h i    :: info; list of Help Tutorials
+C-h k    :: help on keys
+C-h m    :: help on modes
+
 see also [[help / reference]] in org-mode below
+
 FAQ - [SPC] h d f
-To refresh the config.el file C-h r r OR doom/reload (in the /home/donagh/.emacs.d/doom-emacs/bin folder)
+
+To refresh the config.el file
+C-h r r
+OR doom/reload (in the /home/donagh/.emacs.d/doom-emacs/bin folder)
+
 ** how do I
 *** Add a package
 [[install new package]] TL;DR unhighlight in init.el
@@ -582,14 +591,14 @@ Set in /home/donagh/PORTABLE_ENV/doom/config.el
 ;; Donaghs - the following keybinding *did* work. :n indicates normal mode
 -----------------------------------------------------------------
 (map! :n "Q" 'org-babel-execute-src-block ) ;; Quantify!
-(map! :n "SPC d" 'treemacs ) ;; Directory for files / folders
+d" 'treemacs ) ;; Directory for files / folders
 (map! :n "tt" 'org-todo )
 (map! :n "ts" 'org-schedule )
-(map! :n "SPC a" 'org-agenda )
-(map! :n "SPC w SPC" 'save-buffer )
-(map! :n "SPC j" 'outline-next-visible-heading )
-(map! :n "SPC k" 'outline-previous-visible-heading )
-(map! :n "SPC l" 'org-insert-link )
+a" 'org-agenda )
+w SPC" 'save-buffer )
+j" 'outline-next-visible-heading )
+k" 'outline-previous-visible-heading )
+l" 'org-insert-link )
 and
 C-h r r to refresh config.el file
 
@@ -881,3 +890,200 @@ TODO [1/2] [50%] progress markers - without checkboxes
      CLOSED: [2020-05-15 Fri 15:43]
 **** item 2
 **** .TODO item 3
+* Cheat cheat for [SPC]
+SPC
+    SPC find file
+    , switch buffer
+    . browse files
+    : MX-    (Same as A-x)
+    ; EX
+    < switch buffer
+    ` eval
+    u universal arg
+    x pop up scratch
+    ~ toggle last popup
+    TAB workspace
+        TAB Display tab bar
+        . switch workspace
+        0 last workspace
+        1-9 : x workspace
+        L load session
+        S autosave current session
+        X delete sessions
+        [ previous workspace
+        ] next workspace
+        d delete workspace
+        l load workspace from file
+        n workspace
+        s save workspace to file
+        x kill all buffers'
+    / search
+        i symbols
+        I symbols accr. buffers
+        b buffer
+        d directory
+        o Online providers
+        p project
+    [ prev
+        S spelling corr
+        [ text size
+        b buffer
+        d diff
+        e error
+        h smart jump
+        s spelling error
+        t todo
+        w workspace
+    ] next
+        S spelling corr
+        [ text size
+        b buffer
+        d diff
+        e error
+        h smart jump
+        s spelling error
+        t todo
+        w workspace
+    b buffer
+        B switch buffer
+        S sudo edit
+        [ prev
+        ] next
+        b switch ws buffer
+        k kill buffer
+        n new empty buffer
+        o kill other buffers
+        s save buffer
+        x pop scratch buffer
+        z burry buffer
+    c code
+        d jump to def
+        D jump to ref
+        e evaluate buffer
+        E evaluate and replace
+        b build
+        r repl
+        x list errors
+    f file
+        . find file
+        / find file in project
+        > sudo find file
+        ? find file from here
+        E Browse emacs.d
+        P browse private config
+        R recent project files
+        a find other file
+        c open project editor config
+        d find dir
+        e find file in emacs.d
+        p find file in private config
+        r recent files
+        y yank filename
+    g git
+        c magit commit
+        C magit clone
+        G list gists
+        L list reps
+        P magic pull popup
+        R git revert
+        S git stage
+        U git unstange hunk
+        [ previous
+        ] next
+        b magic blame
+        d magic dispatch
+        f magic find
+        g magit status
+        i init repo
+        l magit buffer log
+        p push popup
+        r git revert hunk
+        s git status
+        t git time matchine
+    o open
+        M mail
+        N neotree
+        O reveal proj finder
+        b browser
+        d debugger
+        n neotree
+        o reveal in finder
+        r repl
+        t terminal
+    p project
+        ! run cmd in project root
+        . browse
+        / find in project
+        c compile project
+        o find other file
+        p switch project
+        r recent project files
+        t list project tasks
+        x invalidate cache
+    q quit
+        q save and quit
+        Q quit
+    r remote
+        . browse remote files
+        > detect remote changes
+        D diff local and remote
+        U upload local
+        d download remote
+        u upload local
+    s snippets
+        S find snippet
+        i insert snippet
+        n new snippet
+        s find snippet for mode
+    t toggle
+        F frame fullscreen
+        I indente
+        b big mode
+        f flycheck
+        g evil goggles
+        h impatient modei indet guides
+        l line numbers
+        p org-tree-slide-mode
+        s flyspell
+    w window
+        + increase height
+        - descr height
+        < dec width
+        = balance windows
+        > incr width
+        H move left
+        J move down
+        K move up
+        L move right
+        R rotate up
+        S split
+        W prev
+        _ set height
+        b bottom right
+        c close window
+        h left
+        j down
+        k up
+        l right
+        n new
+        o enlargen
+        p mru
+        q quit
+        r rotate down
+        s split
+        t top left
+        u winner undo
+        v vsplit
+        w next
+        | set width |
+    Private
+        d     'treemacs  ;; Tree directory for files / folders
+        a     'org-agenda
+        w w   'message-kill-buffer  ;; like vim
+        s SPC 'save-buffer  ;; even simpler than w, like vim
+        j     'outline-next-visible-heading
+        k     'outline-previous-visible-heading
+        l     'org-insert-link
+        z     '+org/close-all-folds  ;; z M is such a pain
+        c SPC 'calendar ;; quick calendar
+        i Y   'clipboard-yank ;; paste from system clipboard; Note: SPC i y (lowercase) pastes from emacs yank

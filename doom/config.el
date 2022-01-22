@@ -29,6 +29,7 @@
 ;;; The fonts have to be available: fc-cache -l
 ;; (setq doom-font (font-spec :family "Source Code Pro" :size 20))
 (setq doom-font (font-spec :family "Liberation Mono" :size 20))
+;; Needs to be installed from PORTABLE_ENV
 
 ;; Maximize the window upon startup.
 (setq initial-frame-alist '((top . 52) (left . 52) (width . 154) (height . 40)))
@@ -92,8 +93,7 @@
 (map! :n "tt" 'org-todo )
 (map! :n "ts" 'org-schedule )
 (map! :n "SPC a" 'org-agenda )
-(map! :n "SPC w SPC" 'ido-kill-buffer )
-(map! :n "SPC w w" 'ido-kill-buffer ) ;; like vim
+(map! :n "SPC w SPC" 'kill-buffer ) ;; like vim
 (map! :n "SPC s SPC" 'save-buffer ) ;; even simpler than w, like vim
 (map! :n "SPC j" 'outline-next-visible-heading )
 (map! :n "SPC k" 'outline-previous-visible-heading )
@@ -102,6 +102,8 @@
 (map! :n "SPC c SPC" 'calendar) ;; quick calendar
 (map! :n "j" 'evil-next-visual-line) ;; use j to go down one visual line instead of default
 (map! :n "k" 'evil-previous-visual-line) ;; use k to go up one visual line instead of default
+(map! :n "SPC i Y" 'clipboard-yank) ;; paste from system clipboard; Note: SPC i y (lowercase) pastes from emacs yank
+
 ;; (map! :n "SPC v" 'org-agenda) ;; view org-agenda next 14 days
 ;;
 

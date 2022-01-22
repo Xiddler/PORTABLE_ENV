@@ -1,4 +1,10 @@
+# Test
+
+This is a test to see if -> % git add -p allows me to stage this hunk / chunk Now 2022-01-22_18:12
+
+
 # my dot_files
+
 2020-12-19 - Added new SSH key Dec_2020 as the password method is being deprecated. Stored in /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/ssh/ssh_keys_2020 
 THEY USE personal access tokens INSTEAD OF PASSWORDS IN THE CLI
 

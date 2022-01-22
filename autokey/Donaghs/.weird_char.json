@@ -1,17 +1,17 @@
 {
-    "type": "phrase",
-    "description": "Ive",
+    "type": "script",
+    "description": "weird_char",
+    "store": {},
     "modes": [
         1
     ],
-    "usageCount": 2,
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
-    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "iiv"
+            "gjg"
         ],
         "backspace": true,
         "ignoreCase": false,
@@ -26,6 +26,5 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    },
-    "sendMode": "kb"
+    }
 }

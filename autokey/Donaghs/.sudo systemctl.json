@@ -1,17 +1,17 @@
 {
     "type": "phrase",
-    "description": "Ive",
+    "description": "sudo systemctl",
     "modes": [
         1
     ],
-    "usageCount": 2,
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "iiv"
+            "ssc"
         ],
         "backspace": true,
         "ignoreCase": false,

@@ -65,3 +65,22 @@ plugin --> git clone https://github.com/Yggdroot/indentLine
 # update pip - specifically in .virtualenvs
 (venv)-> % python -m pip install --upgrade pip
 
+# print no newline after this output
+print("\nAccessing the class attribute through an object:", end= " ")
+
+
+# choice menu
+choice = None
+while choice != "0":
+    print \
+    ("""
+    Critter Caretaker
+    0 - Quit
+    1 - Listen to your critter
+    2 - Feed your critter
+    3 - Play with your critter
+    """)
+choice = input("Choice: ")
+print()
+
+
