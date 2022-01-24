@@ -1,5 +1,3 @@
-#+TITLE : doom-notes.org
-#+STARTUP: fold
 #+about: notes for doom
 #+date : Started 2020-05-17
 #+author : donagh mccarthy

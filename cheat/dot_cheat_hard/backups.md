@@ -1,3 +1,4 @@
+
 # Opened Thursday, 2021-04-29
 # returned 2021-12-13
 # returned 2021-12-22 after Dec2021 reinstall, therefore MANY things may have changed. See section Dec 2021.
@@ -17,6 +18,18 @@ doom-emacs                  :: TODOS/Tasks/IT Tasks
 # orgmode - ~/all_org
 # DONAGHS - personal/journal
 }}}
+
+# TARGZ
+
+## DONAGHS
+
+tar -czf $HOME/BACKUPS/TARGZ/DONAGHS_$(date +%Y-%m-%d).tar.gz /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/
+
+## REPOS
+
+tar -czf $HOME/BACKUPS/TARGZ/REPOSITORIES_$(date +%Y-%m-%d).tar.gz /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/
+
+
 
 # NOTE: 
 # ORIGINAL source data is written to the SD64 card directly (which is attached to the Toshiba laptop -- and not to the HDD of the Laptop itself).
