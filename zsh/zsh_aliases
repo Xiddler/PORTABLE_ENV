@@ -350,14 +350,15 @@ alias pf='source $HOME/.virtualenvs/flask/bin/activate'
 # alias ipe='dig @resolver1.opendns.com ANY myip.opendns.com +short' # external ip -- better
 # alias -g ipe='dig myip.opendns.com @resolver1.opendns.com +short'
 # original command = 'dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | awk -F'"' '{ print $2}'"
-alias -g ipe='dig TXT +short o-o.myaddr.l.google.com @ns1.google.com'
+# alias -g ipe='dig TXT +short o-o.myaddr.l.google.com @ns1.google.com'  --> "88.87.194.23" i.e. with "" surrounding the IP Address. How to remove?
+alias -g ipe='dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | tr "\"" " " '
 # $ curl ifconfig.me
 # $ curl icanhazip.com
 # $ curl ipecho.net/plain
 # $ curl ifconfig.co
 # w3m https://duckduckgo.com/?q=ip
 #
-alias -g ipi="ip -4 addr  | grep 192 | cut -d '/' -f1"
+alias -g ipi="ip -4 addr  | grep 192 | cut -d '/' -f1 | tr 'inet' ' ' "
 # alias -g ping='ping -c3 '
 alias png='ping -c4 8.8.8.8' # ping google to check if there is internet access
 alias avg='png G rtt | cut -d'/' -f5' # average png time atm. Compared to what? Is internet slow or not?

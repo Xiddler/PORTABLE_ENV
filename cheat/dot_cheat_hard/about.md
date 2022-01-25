@@ -32,4 +32,6 @@ serverless doesn’t mean that there’s no server. It only means that you’re 
 # AWS Services
 https://expeditedsecurity.com/aws-in-plain-english/
 
+# Porcelain
+User-friendly interface for an application e.g. Magit in Emacs is a git porcelain (probably the best)
 
