@@ -12,3 +12,12 @@ mount -t nfs example.com:/remote/example/dir /local/example/dir
 
 # To mount an ISO
 mount -o loop disk1.iso /mnt/disk
+
+# findmnt
+# The findmnt command makes it easy to positively identify a device you’ve just plugged in, making the overwriting process much safer
+-> % findmnt 
+-> % findmnt -l
+# This command tells findmnt to monitor new mounts for 30 seconds.
+-> % findmnt -p --timeout 30000
+# This command tells findmnt to monitor for new mounts until it sees one new mount point created.
+-> %  findmnt -p --first-only

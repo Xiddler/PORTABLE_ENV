@@ -314,6 +314,7 @@ vim -u NORC <filename>
 # open a file
 # gf with the cursor on the following line will open that file in a new tab
 ~/DONAGHS/personal/journal/2021/11/26-11.md
+# Ctrl o reverts to departure file
 # URL link
 # gx with the cursor on the following line will open that resource in a browser
 https://github.com/jceb/vim-orgmode/blob/master/doc/orgguide.txt
@@ -402,5 +403,10 @@ vidir
 
 # turn off the highlight to the underscore in markdown
 :hi link markdownError Normal
+
+# spelling - get corrections
+with cursor at start of word, z=
+
+
 
 

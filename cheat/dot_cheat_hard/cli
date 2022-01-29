@@ -7,6 +7,7 @@ sudo fdisk -l
 # view UUIDs
 sudo blkid
 
+# File systems that are mounted at boot time are defined in the “/etc/fstab” file. 
 # view automount entries
 sudo vim /etc/fstab
 # sample line
@@ -206,11 +207,13 @@ ipscan
 # smb client to log into a smb server e.g. openmediavault
 smbclient -h
 
+# File systems that are mounted at boot time are defined in the “/etc/fstab” file. 
 # To check the permanently mounted drives and to add more
 sudo vim /etc/fstab
 
 # To check a disk - disk needs to be unmounted. Do this from a live USB for the laptop HDD.
 sudo fsck
+
 
 # to compare two image files
 diff -s Folder1/file.jpg  Folder2/file.jpg
@@ -274,5 +277,4 @@ terminator
 # [[ $s =~ $pat ]] # $pat must be unquoted
 # echo "${BASH_REMATCH[0]}"
 # echo "${BASH_REMATCH[1]}"
-
 
