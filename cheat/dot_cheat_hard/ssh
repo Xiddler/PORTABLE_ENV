@@ -118,6 +118,9 @@ ssh-copy-id -i ~/.ssh/keyname user@remote_machine
 
 # Checking the ssh procesd
 ssh -T git@github.com
-eval $(ssh-agent -s)
+eval $(ssh-agent -s)      :: This starts the ssh-agent process 
 ssh-add ~/.ssh/keyname
-ssh -T git@github.com
+
+# NOW copy id_rsa.pub to Github account in SSH keys
+ssh -T git@github.com   :: This tests ssh access to github
+
