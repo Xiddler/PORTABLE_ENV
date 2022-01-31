@@ -94,7 +94,15 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub  donagh@192.168.11.108
 
 # Creating
 ssh-keygen -t rsa -b 4096 -N "" -C "" -f keyname
+where:
+-N is new_passphrase
+-C is commet
+-f input_keyfile
+
 mv keyname* ~/.ssh
+
+## Shortform
+ssh-keygen -t rsa -b 4096
 
 # Setting access rights
 chmod 700 ~/.ssh && chmod 600 ~/.ssh/*
