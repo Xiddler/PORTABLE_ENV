@@ -407,6 +407,6 @@ vidir
 # spelling - get corrections
 with cursor at start of word, z=
 
-
-
+# to convert a file to pdf in vim
+map <F5> :!pandoc % -o %:t:r.pdf<cr>    # NOTE: needs a pdf-engine like pdflatex; LaTex or TexLive may be used
 
