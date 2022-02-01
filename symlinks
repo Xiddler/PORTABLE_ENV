@@ -34,6 +34,8 @@ ln -s /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68 $HOME/SD64
 
 ln -s  $HOME/PORTABLE_ENV/Xresources $HOME/.Xresources
 
+
+ln -s ~/PORTABLE_ENV/zim ~/.config/zim
 ln -s /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS $HOME/ZIM
 
 ln -s $HOME/PORTABLE_ENV/ranger $HOME/.config/ranger

@@ -2,6 +2,9 @@
 
 This is a test to see if -> % git add -p allows me to stage this hunk / chunk Now 2022-01-22_18:12
 
+# 2022-02-01
+ln -s ~/PORTABLE_ENV/zim ~/.config/zim
+
 
 # 2022-01-31
 successfully set up my ssh but not able to avoid username/passphrase
