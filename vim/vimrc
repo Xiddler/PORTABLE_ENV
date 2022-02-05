@@ -19,7 +19,7 @@ set completeopt=menu,preview,longest "for a pop-up list of completions. (Replace
 set number
 set relativenumber " also Ctrl N to toggle this
 "This mapping makes macros even easier to remember: hit qq to record, q to stop recording, and Q to apply.
-nnoremap Q @q
+nnoremap Q @@
 vnoremap Q :norm @q<cr>
 set virtualedit=all " allows cursor to be moved anywhere in normal mode
 " set textwidth=0
@@ -31,7 +31,8 @@ set nolist    " adds a . to empty spaces; do I need this? "set list will show th
 " FZF
 " :FZF 
 " set the following to get fuzzy-finder FZF in vim working (and other plugins?)
-map <leader>z :FZF<cr> 
+cmap <leader>z :FZF<cr> 
+
 " usage: see $VIMRUNTIME/docs/fzf.txt :FZF and :h fzf
 set rtp+=/usr/share/vim/vim82
 " setting custom leader to comma
@@ -42,7 +43,7 @@ let g:netrw_browse_split = 3 " open selected files in a new tab
 let g:netrw_liststyle = 3
 let g:netrw_winsize = 30
 " shortcut to open a :Vex on the right only 20% width of screen
-nnoremap <leader>e :lefta 20vs. <cr>
+nnoremap <leader>e :lefta 30vs. <cr>
 " set previewpopup=height:10,width:60
 " set mouse+=a " copy lines without line numbers
 " to make numbered list - keybinding not working?
@@ -141,7 +142,7 @@ nnoremap H gT
 nnoremap L gt
 "
 " Save to be the same as my doom-emacs keybindings [SPC] w [SPC]
-" (This works because SPACEBAR is mapped to : above and cmap puts vim into Ex mode )
+" (REM: This works because SPACEBAR is mapped to : above and cmap puts vim into Ex mode )
 cmap w<space> :w<cr>
 " even shorter journey to s
 cmap s<space> :w<cr>
@@ -149,6 +150,8 @@ cmap s<space> :w<cr>
 " write/quit with :ww and :xx
 cmap ww :wq<cr>
 cmap xx :q!<cr>
+" emacs kill buffer
+cmap bk :wq<cr>
 "
 "}}}
 " Packages using Packpath {{{
@@ -169,8 +172,8 @@ set termguicolors
 syntax enable
 colorscheme stellarized
 set background=dark
-    "to toggle them automatically for you:
-    map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+"to toggle them automatically for you:
+map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 " to allow italics in vim
 highlight Comment cterm=italic
 " }}}
@@ -178,7 +181,7 @@ highlight Comment cterm=italic
 " === Custom Leader ===
 " See also Customised below
 " use ,o to make a new vertical split, ,s for horiz, ,x to close a split
-    " ,v calls up VISUAL mode
+" ,v calls up VISUAL mode
 " try ,o (as in OpEd) <-- works
 " splits - to make a new split & quit split -  ,vf and ,hv to go to file
 noremap <leader>o <c-w>v<c-w>l
@@ -202,6 +205,7 @@ nnoremap <leader>y "+y
 " use <leader>f to call up ranger file manager
 let g:ranger_map_keys = 0
 map <leader>f :Ranger<cr>
+
 " shorten the filepath for REPOSITORIES
 " @r  <-- macro
 "python
@@ -210,7 +214,7 @@ autocmd Filetype python inoremap <leader>n if __name__ ==  "__main__":<enter>
 " remove trailing whitespace from python files
 autocmd BufWritePre *.py :%s/\s\+$//e
 "
-" open the file under the cursor in a new window
+" open the file under the cursor in a new window (split)
 nnoremap <leader>vf :vertical wincmd f<CR>
 nnoremap <leader>hf :below wincmd f<CR>
 " set width of Explorer window to 60 smaller
@@ -222,26 +226,27 @@ cmap <C-h> <Left>
 cmap <C-l> <Right>
 " open $MYVIMRC in a new tab Note: in CLI the shortcut is vv.
 noremap <leader>vv :tabe $MYVIMRC<CR>
+
 " source $MYVIMRC
 nnoremap <Leader>r :so $MYVIMRC<CR>
 "To insert the absolute path of the directory the file is in use:
 inoremap <Leader>n <C-R>=expand("%:p:h")<CR>
-  " To insert the name of the innermost directory (the one containing the current file) use:
+" To insert the name of the innermost directory (the one containing the current file) use:
 " inoremap <Leader>n <C-R>=expand("%:p:h:t")<CR>
 "
 " EASYMOTION
- " easymotion keybindings - for fast navigation within a file
+" easymotion keybindings - for fast navigation within a file
 " get , , w to make easy motion work
- map <Leader><Leader>w <Plug>(easymotion-prefix)
- " highlight ALL words for navigating to
- map <leader>/ <Plug>(easymotion-bd-w) 
- nmap <leader>/ <Plug>(easymotion-overwin-w) 
- "PWD
+map <Leader><Leader>w <Plug>(easymotion-prefix)
+" highlight ALL words for navigating to
+map <leader>/ <Plug>(easymotion-bd-w) 
+nmap <leader>/ <Plug>(easymotion-overwin-w) 
+"PWD
 " insert full filepath into current buffer in normal mode
 nnoremap <leader>d :put=expand('%:p')<cr>
 " nnoremap <leader>r 0dtRi$HOME/^[<80><fd>afSld " replace front paths with $HOME/REPOS/
- " enter the pwd in insert mode - d irectory p ath
- :inoremap <leader>dp <C-R>=getcwd()<CR>
+" enter the pwd in insert mode - d irectory p ath
+:inoremap <leader>dp <C-R>=getcwd()<CR>
 " list buffers and ready for a number 
 nnoremap gb :ls<cr>:b<space>
 
@@ -294,6 +299,11 @@ set splitbelow splitright
 "
 " open a terminal within vim
 map <leader>tt :terminal<CR>
+
+" open today's markdown journal in a new tab
+" map ,jj :tabe /home/donagh/DONAGHS/personal/journal/$(date +%Y)/$(date +%m)/$(date +%d)-$(date +%m).md<cr>
+" /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/journal/2022/02/03-02.md
+map ,mj !mj
 "
 "Swap vertical split to hor
 map <leader>th <C-w>t<C-w>H
@@ -301,10 +311,18 @@ map <leader>tk <C-w>t<C-w>K
 " Capitalize/minusculize letter under cursor
 nnoremap <leader>u v~
 " MY FUNCTIONS - sample function
-function Simple()
+function! Simple()
 echom "Running simple function"
 endfunction
-nnoremap <C-l>, :call Simple()<CR>
+" nnoremap <C-l>, :call Simple()<CR> " this works
+
+" make dash bullet points 
+function! Bullet_dash()
+   execute "normal!"."0i- \<Esc>j"
+endfunction
+nnoremap <leader>b :call Bullet_dash()<cr>
+
+
 " create a new scratch buffer
 function! Scratch()
     split
@@ -315,21 +333,80 @@ function! Scratch()
     "lcd ~
     file scratch
 endfunction
-map <leader>c :call Scratch()<cr>
+cmap bx :call Scratch()<cr> " doom-emacs like
+" map <leader>c :call Scratch()<cr>
+
+" open today's markdown journal in a new tab
+
+function! Myjournal()
+    " setlocal year=:!date +%Y
+    " echom $year
+    let year = strftime('%Y')
+    let month = strftime('%m')
+    let day = strftime('%d')
+    let path = '/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/journal/'.year.'/'.month
+    let filen =  path.'/'.day.'-'.month.'.md'
+
+    execute ":tabe ".filen
+endfunction 
+
+nmap mj :call Myjournal()<cr>
 
 let $RC="$HOME/.vimrc" " alternative to $MYVIMRC
 
+
 "}}}
+
 " Keybindings collected {{{
+
+" Normal Mode
 " K             :: get vim help for the item under the cursor
 " gf            :: open a new tab for the file under the cursor
-" <leader>vv    :: open .vimrc
-" <leader>tt    :: open a terminal in vim
+" ,vv           :: open .vimrc
+" ,tt           :: open a terminal in vim
+" mj            :: open today's markdown journal in a new tab
+" qq            :: to record 
+" q             :: to stop recording
+" Q             :: to run
+" ,e            :: open a file search buffer on the left
+" gy            :: Goyo
+" Y             :: y$
+" <C-n>         :: toggle number and realativenumber
+" ,1            :: ?? to make numbered list - keybinding not working?
+
+" Command Mode
+" ,z            :: FZF
 " }}}
+"
+" Enable / Disable Plugins {{{
+" === Enable / Disable Plugins ===
+" 2022-02-05 
+" https://github.com/junegunn/vim-plug
+" https://github.com/junegunn/vim-plug/wiki/tutorial
+" Remember to :so % after adding a new Plug
+call plug#begin('/home/donagh/.vim/plugins')
+Plug 'tpope/vim-commentary'
+Plug 'nightsense/stellarized'
+Plug 'https://github.com/vim-airline/vim-airline.git'
+Plug 'francoiscabrol/ranger.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'junegunn/goyo'
+Plug 'junegunn/limelight'
+call plug#end()
+"
+" }}}
+
 " Preferred Plugins {{{
 "
 " "=== Preferred Plugins === 
+" added vim-plug to manage plugins
+" cd ~/.vim
+" autoload  pack  plugins  spell
+" autoload contains plug.vim
+" pack/nightsense/start/stellarized
+" plugins - this is the location for Plug to place other plugins
 "
+" OLD - OLD - OLD - OLD - OLD - OLD - OLD - OLD  
 " donaghm [16:50 Tue 20/04] [~/.vim] 
 " -> % tree -L 2
 " .

@@ -156,7 +156,7 @@ alias -g rung3='cd $HOME/Donaghs_Tmp/Rung_3'
 # FUNCTIONS (See Separate functions for my personal journal below)
 
 toread() { vim $HOME/REPOS/books/toRead.md }
-recipes() {cd $HOME/REPO/cooking/recipes }
+recipes() {cd $HOME/REPOS/FOOD/recipes }
 # system timers main folder
 timer-s() { sudo vim "/etc/systemd/system/$1.service" }
 timer-t() { sudo vim "/etc/systemd/system/$1.timer" }
@@ -203,6 +203,11 @@ alias -g safe='cd $HOME/SAFE/SAFE_borg_backup'
 # Functions for shortcuts - equivalent to aliases.
 # jour { cd $journal && ls }
 alias -g jour='cd $HOME/DONAGHS/personal/journal'
+alias -g writing='cd $HOME/DONAGHS/personal/writings/my_writings'
+
+# battery
+alias -g battery='acpi -V G battery'
+
 po() { cd $HOME/PORTABLE_ENV }
 ba() { cd $HOME/BACKUPS }
 # dm() { cd $HOME/Donaghs_Tmp }
@@ -323,7 +328,11 @@ alias -g filepath='$HOME/.scripts/filename.sh'
 alias cm='git commit -m '
 alias gcm='git commit -m '
 alias ggs='git status'
+alias ggx='git status'
 alias gst='git status'
+alias gaa='git add -A'
+alias gga='git add -A'
+
 
 # List directories / files
 alias l.='ls -d .* --color=auto' # Show hidden files ##

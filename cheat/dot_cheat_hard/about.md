@@ -35,3 +35,7 @@ https://expeditedsecurity.com/aws-in-plain-english/
 # Porcelain
 User-friendly interface for an application e.g. Magit in Emacs is a git porcelain (probably the best)
 
+# An expression (in contrast to a statement)
+An expression is an unit of code that can be evaluated to produce a result.
+
+

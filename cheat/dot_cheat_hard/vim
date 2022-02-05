@@ -409,4 +409,27 @@ with cursor at start of word, z=
 
 # to convert a file to pdf in vim
 map <F5> :!pandoc % -o %:t:r.pdf<cr>    # NOTE: needs a pdf-engine like pdflatex; LaTex or TexLive may be used
+# The :t and :r are called filename modifiers.
+
+
+# JUMPS
+# jump lists     jumps are remembered in the jump list saurce of pnai 
+# :changes      lists the changes made to the file; use g; and g, to navigate this in normal mode
+# :jumps        jumps are things like searches, finding marks; to navigate the jumps use Ctrl-o (backwards) and Ctrl-i (forwards) : will go to other files
+# A "jump" is a command that normally moves the cursor several lines away.
+# The following commands are "jump" commands: "'", "`", "G", "/", "?", "n", "N", "%", "(", ")", "[[", "]]", "{", "}", ":s", ":tag", "L", "M", "H" 
+#
+# SPELLING
+# :setlocal spell   'misspelt' words will be underlined. Navigate using [s (previous) ]s (next)
+# Ctrl-N            drop-down list of word suggestions; insert mode; word must already be used earlier in the buffer; 
+# zg                add words to spellfile; this file will be created at /home/donagh/.vim/spell/en.utf-8.add
+# z=                in Normal mode, z= will bring up big list of suggestions for spell correction; use 1z= to select the first one; try it - spelilling
+# 
+# MACROS
+# Ctrl-R <letter>   put the contents of register <letter> into the buffer; useful for making re-usable functions; 
+
+  
+ 
+ 
+#
 

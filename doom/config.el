@@ -2,7 +2,7 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 ;; To refresh config.el --> C-h r r
-;;
+
 ;;; Commentary:
 ;; Place your private configuration here!
 ;; Remember, you do not need to run 'doom sync' after modifying this file!
@@ -56,9 +56,10 @@
 ;; (setq doom-theme 'doom-solarized-dark)
 ;; (setq doom-theme 'tsdh-dark )
 ;; (setq doom-theme 'doom-ir-black-brighter-comments )
-;; 2022-01-01
-(setq doom-theme 'doom-acario-dark )
 ;; (setq doom-theme 'spacemacs-dark )
+
+;; 2022-01-01 current preferred theme:
+(setq doom-theme 'doom-acario-dark )
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -92,7 +93,8 @@
 (map! :n "SPC d" 'treemacs ) ;; Tree directory for files / folders
 (map! :n "tt" 'org-todo )
 (map! :n "ts" 'org-schedule )
-(map! :n "SPC a" 'org-agenda )
+(map! :n "t a" 'org-agenda )
+;; (map! :n "SPC a" 'org-agenda )
 (map! :n "SPC w SPC" 'kill-buffer ) ;; like vim
 (map! :n "SPC s SPC" 'save-buffer ) ;; even simpler than w, like vim
 (map! :n "SPC j" 'outline-next-visible-heading )
@@ -103,6 +105,13 @@
 (map! :n "j" 'evil-next-visual-line) ;; use j to go down one visual line instead of default
 (map! :n "k" 'evil-previous-visual-line) ;; use k to go up one visual line instead of default
 (map! :n "SPC i Y" 'clipboard-yank) ;; paste from system clipboard; Note: SPC i y (lowercase) pastes from emacs yank
+
+;; Mappings to change the appearance for 'mybook.org'
+;; (map! :n "nm" 'display-line-numbers-mode)
+;; (map! :n "mf" 'menu-set-font "URW Gothic Book 14" )
+;; (map! :n "mt" 'load-theme "doom-homage-white" )
+;; try
+
 
 ;; (map! :n "SPC v" 'org-agenda) ;; view org-agenda next 14 days
 ;;
