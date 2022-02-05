@@ -428,8 +428,15 @@ map <F5> :!pandoc % -o %:t:r.pdf<cr>    # NOTE: needs a pdf-engine like pdflatex
 # MACROS
 # Ctrl-R <letter>   put the contents of register <letter> into the buffer; useful for making re-usable functions; 
 
-  
- 
- 
+# Open file where you left off
+# :mksess! and open with vim -S
+# To go to the same place you were in a document after closing, use vim sessions. You issue a ":mksess!" and vim will drop a Session.vim file in your current directory. This will store all the docs you had open and where you were in them. Then when you start vim, do "vim -S" to take you back to exactly where you were.
 #
+# File data - to get word count etc.
+# Use airline or in normal mode g C-g
+ 
+# VIM PLUG
+# cd ~/.vim/autoload
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 

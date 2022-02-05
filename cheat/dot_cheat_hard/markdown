@@ -53,5 +53,5 @@ marker      # simple and works well in Manjaor                   << PREFERRED us
 apostrophe  # lightweight and works on manjaro
 marktext    # difficulty instally on manjaro / npm issues etc.
 Abricotine    # difficulty instally on manjaro / npm issues etc.
-
+Obsidian    # allows live preview of markdown files and has vim keybindings available
 

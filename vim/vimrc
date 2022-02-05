@@ -214,6 +214,9 @@ autocmd Filetype python inoremap <leader>n if __name__ ==  "__main__":<enter>
 " remove trailing whitespace from python files
 autocmd BufWritePre *.py :%s/\s\+$//e
 "
+autocmd Filetype markdown set filetype=markdown
+
+"
 " open the file under the cursor in a new window (split)
 nnoremap <leader>vf :vertical wincmd f<CR>
 nnoremap <leader>hf :below wincmd f<CR>
@@ -250,9 +253,9 @@ nnoremap <leader>d :put=expand('%:p')<cr>
 " list buffers and ready for a number 
 nnoremap gb :ls<cr>:b<space>
 
-
 " }}}
 " Airline {{{
+"
 "=== Status line ===
 " NOTE: replaced by airline plugin (similar to Powerline in zsh)
 " AIRLINE
@@ -260,7 +263,7 @@ nnoremap gb :ls<cr>:b<space>
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
 " Show just the filename instead of the full path/name
-let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#fnamemod = '%:t'
 " airline fonts
 " set guifont=Liberation\ Mono\ for\ Powerline\ 10 
 set guifont="Source Code Pro for Powerline 10"
@@ -356,7 +359,6 @@ let $RC="$HOME/.vimrc" " alternative to $MYVIMRC
 
 
 "}}}
-
 " Keybindings collected {{{
 
 " Normal Mode
@@ -377,25 +379,26 @@ let $RC="$HOME/.vimrc" " alternative to $MYVIMRC
 " Command Mode
 " ,z            :: FZF
 " }}}
-"
 " Enable / Disable Plugins {{{
 " === Enable / Disable Plugins ===
-" 2022-02-05 
-" https://github.com/junegunn/vim-plug
-" https://github.com/junegunn/vim-plug/wiki/tutorial
+" 2022-02-05  vim-plug started
+" https://github.com/junegunn/vim-plug and https://github.com/junegunn/vim-plug/wiki/tutorial
 " Remember to :so % after adding a new Plug
 call plug#begin('/home/donagh/.vim/plugins')
 Plug 'tpope/vim-commentary'
-Plug 'nightsense/stellarized'
 Plug 'https://github.com/vim-airline/vim-airline.git'
+Plug 'nightsense/stellarized'              
+" cp -r ~/.vim/plugins/stellarized ~/.vim/pack/nightsense/start/      :: this seems to be necessary
 Plug 'francoiscabrol/ranger.vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'junegunn/goyo'
-Plug 'junegunn/limelight'
+Plug 'https://github.com/junegunn/goyo.vim.git'
+Plug 'https://github.com/junegunn/limelight.vim.git'
+Plug 'masukomi/vim-markdown-folding'
+" The following plugin (vim-markdown) includes Syntax Concealing - use :set conceallevel=2
+" Plug 'https://github.com/preservim/vim-markdown'                        
 call plug#end()
 "
 " }}}
-
 " Preferred Plugins {{{
 "
 " "=== Preferred Plugins === 
@@ -526,7 +529,8 @@ call plug#end()
    " :set runtimepath?
 let $RTP=split(&runtimepath, ',')[0] " allows :set rtp?
    "RUNTIMEPATH
-    " /home/donaghm/.vim,/home/donaghm/.vim/pack/vim-pencil/start/vim-pencil,/home/donaghm/.vim/pack/vim-orgmode/start/vim-orgmode,/home/donaghm/.vim/pack/vim-markdown-folding/start/vim-markdown-folding,/home/donaghm/.vim/pack/vim-markdown/start/vim-markdown,/home/donaghm/.vim/pack/vim-elixir/start/vim-elixir,/home/donaghm/.vim/pack/vim-commentary/start/vim-commentary,/home/donaghm/.vim/pack/vim-airline/start/vim-airline,/home/donaghm/.vim/pack/speeddating/start/vim-speeddating,/home/donaghm/.vim/pack/ranger/start/ranger.vim,/home/donaghm/.vim/pack/peekaboo/start/vim-peekaboo,/home/donaghm/.vim/pack/nightsense/start/BU_stellarized,/home/donaghm/.vim/pack/limelight/start/limelight.vim,/home/donaghm/.vim/pack/janet-vim/start/janet.vim,/home/donaghm/.vim/pack/emoji-terroo/start/vim-simple-emoji,/home/donaghm/.vim/pack/easymotion/start/vim-easymotion,/home/donaghm/.vim/pack/Goyo/start/goyo.vim,/home/donaghm/.vim/pack/BUemmet/start/emmet-vim,/usr/share/vim/vimfiles,/usr/share/vim/vim82,/home/donaghm/.vim/pack/vim-markdown-folding/start/vim-markdown-folding/after,/home/donaghm/.vim/pack/vim-markdown/start/vim-markdown/after,/usr/share/vim/vimfiles/after,/home/donaghm/.vim/after
+   "  runtimepath=~/.vim,~/.vim/plugins/vim-commentary,~/.vim/plugins/stellarized,~/.vim/plugins/vim-airline,~/.vim/plugins/ranger.vim,~/.vim/plugins/vim-easymotion,~/.vim/plugins/goyo.vim,~/.vim/plugins/limelight.vim,~/.vim/plugins/vim-markdown-folding,~/.vim/pack/nightsense/start/stellarized,/usr/share/vim/vimfiles,/usr/share/vim/vim82,/usr/share/vim/vimfiles/after,~/.vim/plugins/vim-markdown-folding/after,~/.vim/after
+   "
     " Path
     " :set path?
 set path+=~/REPOS/

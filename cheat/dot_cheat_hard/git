@@ -289,5 +289,16 @@ This same pattern is useful for other dangerous commands, like rebases or filter
 
 When you're done, just delete blah_branch_backup. 
 
+# Notes on git / magit                                      ACTION
+# STATE: uncreated or unmodified
+vim <filename>                                          <-- create or modify
+# STATE: untracked == unstaged == created or modified
+git add <file>     [magit s]                            <-- stage or track
+# STATE: tracked == staged == uncommitted
+git commit -m "<message>"   [magit c]                   <-- commit
+# STATE: committed
+git push origin main                                    <-- push (to remote)
+# STATE: saved in the cloud
+
 # END
 
