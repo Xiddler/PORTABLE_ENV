@@ -1,4 +1,4 @@
-:I 2021-03-03
+: 2021-03-03
 # This is in reference to Manjaro on 2021-03-03
 # When I reboot what services do I need to ensure are running
 
@@ -44,27 +44,33 @@ ln -s ~/PORTABLE_ENV/doom/dot_e_m_l_o_config.el ~/.emacs.d/modules/lang/org/conf
 #   Commands summary                 #
 #                                    #
 ######################################
+##    LAPTOP    ##
 # doom
-~/.emacs.d/bin/doom run
+# autostart (emacs command)
+# ~/.emacs.d/bin/doom run
 # zim
-sudo /usr/sbin/zim
+click on Zim icon in taskbar (or sudo /usr/sbin/zim )
 # dropbox
-echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && ~/.dropbox-dist/dropboxd
+~/.dropbox-dist/dropboxd
+# the following has been replaced by: see ~/PORTABLE_ENV/dropbox/README.md
+# echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && ~/.dropbox-dist/dropboxd
 # cifs_share
 sudo mount -t cifs //192.168.1.108/USB128_2 /mnt/cifs_share -o username=admin,password=admin,iocharset=utf8,vers=3.1.1
-# rem: caffeine & 
+# rem: caffeine  (replaced by KDE power management option in Battery icon
 # LAPTOP ssh to RPi
 ssh -i ~/.ssh/id_rsa_rpi donagh@192.168.1.108 
-# REMOTE RPi
-# lanner now using htmx and looking lovely
-python3 ~/Applications/flask_htmx_lanner/app.py
 # zim passwords
-cd ~/zArchive/serve_zim_passwords && python3 -m http.server 5000
-visit at 192.168.1.103:5000/
-# instant dictionary: usage Highlight word and Ctrl Alt z
-lexicon
+cd ~/DONAGHS/MY_ZIM/Computer/ && python3 -m http.server 5000                    :: 11SignUps.txt
+go to 192.168.1.103:5000/
 # list of autokey triggers
 pip install tabulate
+# instant dictionary: usage Highlight word and Ctrl Alt z
+lexicon
+flameshot   (autostart)
+copyq       (autostart)
 
- 
+##    REMOTE RPi    ## 
+
+# lanner now using htmx and looking lovely
+python3 ~/Applications/flask_htmx_lanner/app.py
 

@@ -55,3 +55,7 @@ marktext    # difficulty instally on manjaro / npm issues etc.
 Abricotine    # difficulty instally on manjaro / npm issues etc.
 Obsidian    # allows live preview of markdown files and has vim keybindings available
 
+# markdown in vim
+:hi link markdownError Normal
+
+

@@ -2,9 +2,13 @@
 "=== Min settings === 
 " 'set nocompatible' is never necessary in a vimrc file. When Vim detects a user vimrc file, it automatically sets nocompatible. 
 " set backspace=start,eol,indent " no longer needed
+set <esc>=jk " an inline comment " certain problems with this, why?
+" use spacebar to enter command mode. This matches doom-emacs for me
+nnoremap <space> :
 set encoding=utf-8
 " open a file in a new tab
 map gf :tabe <cfile><cr>
+" rem: gT and gt to navigate through tabs
 " test gf with: /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/TESTING/afile.md
 " :bn without pressing enter button to make it like doom-emacs setting
 " map :bn :bn<cr> " did not work (because :bn is an ex command try the following)
@@ -12,7 +16,6 @@ map gf :tabe <cfile><cr>
 if has("autocmd")
   filetype plugin indent on
 endif
-set <esc>=jk " an inline comment " certain problems with this, why? A. Due to next settings
 " to reduce the noticeable delay on performing certain commands
 set timeout timeoutlen=3000 ttimeoutlen=100
 set completeopt=menu,preview,longest "for a pop-up list of completions. (Replaces the existing one)
@@ -38,16 +41,20 @@ set rtp+=/usr/share/vim/vim82
 " setting custom leader to comma
 let mapleader=','
 " netrw stuff - file browser
-let g:netrw_banner = 0 " don't show the banner at the top of the :Vex window, it looks cleaner
-let g:netrw_browse_split = 3 " open selected files in a new tab
+let g:netrw_banner = 0          " don't show the banner at the top of the :Vex window, it looks cleaner
+let g:netrw_browse_split = 3    " open selected files in a new tab
 let g:netrw_liststyle = 3
 let g:netrw_winsize = 30
 " shortcut to open a :Vex on the right only 20% width of screen
 nnoremap <leader>e :lefta 30vs. <cr>
 " set previewpopup=height:10,width:60
-" set mouse+=a " copy lines without line numbers
-" to make numbered list - keybinding not working?
+" set mouse+=a " copy lines without line numbers - can cause side issues
+
+" create numbered list: visual select lines then ,1
 vnoremap <leader>1 :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR>j
+" create dash (see below)
+" [count]:call Bullet_dash()
+
 " Goyo & limelight toggle together - see gh for instructions to change this
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
@@ -80,19 +87,22 @@ set clipboard=unnamedplus
 " make Y copy from cursor position to end of line (like C, D)
 nnoremap Y y$
 
-" turn off highlight at underscore in .md files 
-" remove highlight to the _ in markdown (very annoying) (not fixed - 2020-10-02)
-" :syn clear markdownError works in a live buffer but how to add to .vimrc?
+" Markdown files
+" turn off ERROR highlight at underscore in .md files 
+" remove highlight to the _ in markdown (very annoying) (fixed - 2022-02-06 )
 " :hi link markdownError normal  works in a live buffer but how to add to .vimrc?
-" the following no longer seems to do the trick - 2020-10-02
-" autocmd FileType markdown syntax clear markdownError 
-" autocmd FileType markdown syntax match markdownIgnore ".*\d_\d.*"
-" au BufNewFile,BufFilePre,BufRead *.md :syntax clear markdownError
-" au BufNewFile,BufFilePre,BufRead *.md syntax match markdownIgnore ".*\d_\d.*"
-" au BufNewFile,BufFilePre,BufRead *.md syntax match markdownIgnore ".*\d_\d.*"
+" set markdown files to filetype markdown
+autocmd Filetype markdown set filetype=markdown
+" remove errors on underscore i.e. _
+autocmd Filetype markdown highlight link markdownError Normal
+" don't show markdown _, * unless cursor on the line
+autocmd Filetype markdown set conceallevel=2
+" autocmd BufNewFile,BufRead,BufEnter *.md :set conceallevel=2
+
 
 " toggle number and realativenumber
 nnoremap <C-n> :exe 'set nu!' &nu ? 'rnu!' : ''
+
 " Enable CursorLine
 " set cursorline
 " Default Colors for CursorLine
@@ -137,9 +147,9 @@ nnoremap E $
 nnoremap j gj
 nnoremap k gk
 " TABS
-" Use (UPPERCASE) H and L to move to the previous/next tabpage & tab & tabs and next tab and previous tab
-nnoremap H gT
-nnoremap L gt
+" Use (UPPERCASE) H and L to move to the previous/next tabpage & tab & tabs and next tab and previous tab: downside is you lose H and L defaults
+" nnoremap H gT
+" nnoremap L gt
 "
 " Save to be the same as my doom-emacs keybindings [SPC] w [SPC]
 " (REM: This works because SPACEBAR is mapped to : above and cmap puts vim into Ex mode )
@@ -214,7 +224,6 @@ autocmd Filetype python inoremap <leader>n if __name__ ==  "__main__":<enter>
 " remove trailing whitespace from python files
 autocmd BufWritePre *.py :%s/\s\+$//e
 "
-autocmd Filetype markdown set filetype=markdown
 
 "
 " open the file under the cursor in a new window (split)
@@ -394,6 +403,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'https://github.com/junegunn/goyo.vim.git'
 Plug 'https://github.com/junegunn/limelight.vim.git'
 Plug 'masukomi/vim-markdown-folding'
+Plug 'junegunn/vim-peekaboo'
 " The following plugin (vim-markdown) includes Syntax Concealing - use :set conceallevel=2
 " Plug 'https://github.com/preservim/vim-markdown'                        
 call plug#end()
@@ -487,7 +497,7 @@ call plug#end()
    " https://github.com/jez/vim-superman
    "
    " peekaboo
-   " let's you see the regs
+   " let's you see the regs e.g. a side buffer pops up when you press " 
    " https://github.com/junegunn/vim-peekaboo
    "
    " easymotion - <leader>/ will highlight file with letters everywhere

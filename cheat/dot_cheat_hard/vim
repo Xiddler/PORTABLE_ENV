@@ -369,7 +369,7 @@ path=.,/usr/include,,           :: the default path(s) for vim
 # find a file and open in a new split
 :sfind 2Read.md
 
-# quickfix window
+# quickfix windows used more generally to find a list of positions in files
 :copen
 :cclose
 
@@ -401,7 +401,7 @@ vidir
 # Method 2 - uses basic vim!
 :r !ls
 
-# turn off the highlight to the underscore in markdown
+# turn off the highlight to the underscore in markdown. NOTE: Solved in .vimrc/Markdown section.
 :hi link markdownError Normal
 
 # spelling - get corrections
@@ -410,7 +410,13 @@ with cursor at start of word, z=
 # to convert a file to pdf in vim
 map <F5> :!pandoc % -o %:t:r.pdf<cr>    # NOTE: needs a pdf-engine like pdflatex; LaTex or TexLive may be used
 # The :t and :r are called filename modifiers.
-
+#
+# FUNCTIONS
+# example (does not work)
+function! Underscoreoff()
+    " execute "normal!"."highlight link mardownError Normal"
+endfunction
+nnoremap <leader>g :call Underscoreoff()<cr>
 
 # JUMPS
 # jump lists     jumps are remembered in the jump list saurce of pnai 
