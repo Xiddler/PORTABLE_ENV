@@ -8,6 +8,8 @@ set <esc>=jk " an inline comment " certain problems with this, why?
 nnoremap <space> :
 set encoding=utf-8
 
+" External sub-vimrc files
+source /home/donagh/PORTABLE_ENV/vim/dotvim/vimrc_dirs/plugins.vim
 
 
 " BUFFERS
@@ -479,28 +481,28 @@ let $RC="$HOME/.vimrc" " alternative to $MYVIMRC
 " 2022-02-05  vim-plug started
 " https://github.com/junegunn/vim-plug and https://github.com/junegunn/vim-plug/wiki/tutorial
 " Remember to :so % after adding a new Plug
-call plug#begin('/home/donagh/.vim/plugins')
-Plug 'tpope/vim-commentary'
-Plug 'https://github.com/vim-airline/vim-airline.git'
-Plug 'nightsense/stellarized'              
+"call plug#begin('/home/donagh/.vim/vimrc_dirs')
+" Plug 'tpope/vim-commentary'
+" Plug 'https://github.com/vim-airline/vim-airline.git'
+" Plug 'nightsense/stellarized'              
 " cp -r ~/.vim/plugins/stellarized ~/.vim/pack/nightsense/start/      :: this seems to be necessary
-Plug 'francoiscabrol/ranger.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'https://github.com/junegunn/goyo.vim.git'
-Plug 'https://github.com/junegunn/limelight.vim.git'
+" Plug 'francoiscabrol/ranger.vim'
+" Plug 'easymotion/vim-easymotion'
+" Plug 'https://github.com/junegunn/goyo.vim.git'
+" Plug 'https://github.com/junegunn/limelight.vim.git'
 " next one shows a buffer to the right on "
-Plug 'junegunn/vim-peekaboo'
+" Plug 'junegunn/vim-peekaboo'
 " Markdown plugins
 " With none of these enabled ##'s are salmon-coloured - but no folding
 "
 " Check if this displays headings - yes but loses coloured # as in vim-mardown-folding 
-Plug 'plasticboy/vim-markdown'
+" Plug 'plasticboy/vim-markdown'
 " The following plugin (vim-markdown) includes Syntax Concealing - use :set conceallevel=2
 " Plug 'https://github.com/preservim/vim-markdown'                        
 " the following hides the heading in markdown files - a problem (is this why plasticboy is better?) - <-- use :set foldignore=#
 " Plug 'masukomi/vim-markdown-folding'
 "
-call plug#end()
+"call plug#end()
 "
 " }}}
 " Preferred Plugins {{{
