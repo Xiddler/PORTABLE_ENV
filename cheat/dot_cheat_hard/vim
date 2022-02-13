@@ -311,8 +311,8 @@ vim -u NORC <filename>
 
 
 
-# open a file
-# gf with the cursor on the following line will open that file in a new tab
+# go to a file
+# gf with the cursor on the following line will open that file in a new tab (see .vimrc)
 ~/DONAGHS/personal/journal/2021/11/26-11.md
 # Ctrl o reverts to departure file
 # URL link
@@ -332,15 +332,19 @@ plugin --> git clone https://github.com/Yggdroot/indentLine
 
 # NUMBERED LIST 
 # Method #1
+# Visual select lines and ,n 
+#
+# Method #2
 # record this macro and start with cursor on first line
 # The list should have a blank line at the end
 # The actual keys are the entire sequence: ^<C-V>}kI0. <Esc>gvg<C-A> (Try it here!)
 ^^V}<80>kuI0. ^[<80><fd>ag
-# Method #2
-# Select your lines in visual mode with: V, then type into ex mode i.e. :
-s/^\s*\zs/\=(line('.') - line("'<")+1).'. '
 
-# Edit an existing macro
+# Method #3
+# Select your lines in visual mode with: v, then type/copy into ex mode 
+:s/^\s*\zs/\=(line('.') - line("'<")+1).'. '
+
+# EDIT AN EXISTING MACRO
 # make a new scratch buffer to edit the macro in <leader>c   c because s c ratch  has 2 letter c's in it and s is taken
 # this function is defined in my vimrc
 # move to the scratch buffer <C-j>
@@ -359,10 +363,12 @@ q:
 # when searching I have / mapped to /\v to engage very magic search which means [ ( etc. don't need to be escaped
 #
 # vim path
-:set path
+# path is a list of directories which will be searched when using the gf, [f, ]f, ^Wf, :find, :sfind, :tabfind and other commands, 
+# provided that the file being searched for has a relative path (not starting with "/", "./" or "../").
+:set path= (then TAB)
 path=.,/usr/include,,           :: the default path(s) for vim
 # to add, say, ~/REPOS/books to the path
-:set path+=~/REPOS/books        :: can set in .vimrc
+:set path+=~/REPOS/books        :: can be set in .vimrc; it means that :find etc. will search in the given directory for the file.
 
 # find  a file
 :find 2Read.md
@@ -404,19 +410,44 @@ vidir
 # turn off the highlight to the underscore in markdown. NOTE: Solved in .vimrc/Markdown section.
 :hi link markdownError Normal
 
-# spelling - get corrections
-with cursor at start of word, z=
 
 # to convert a file to pdf in vim
 map <F5> :!pandoc % -o %:t:r.pdf<cr>    # NOTE: needs a pdf-engine like pdflatex; LaTex or TexLive may be used
 # The :t and :r are called filename modifiers.
 #
-# FUNCTIONS
-# example (does not work)
-function! Underscoreoff()
-    " execute "normal!"."highlight link mardownError Normal"
+#
+#
+# _____________________________________________________________________________
+# FUNCTIONS - examples
+# open my journal in a new tab
+function! Myjournal()
+    let year = strftime('%Y')
+    let month = strftime('%m')
+    let day = strftime('%d')
+    let path = '/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/journal/'.year.'/'.month
+    let filen =  path.'/'.day.'-'.month.'.md'
+
+    execute ":tabe ".filen
 endfunction
-nnoremap <leader>g :call Underscoreoff()<cr>
+# open my journal in a new tab
+nnoremap mj :call Myjournal<cr>
+
+# simple arithmetic function
+let g:sum=0
+function SumNumbers(num1,num2)
+    let l:sum = a:num1+a:num2
+    "check if previous sum was lower than this
+    if g:sum < l:sum
+        let g:sum=l:sum
+    endif
+endfunction
+
+" test code
+call SumNumbers(3,4)
+" this should return 7
+echo g:sum
+
+# _____________________________________________________________________________
 
 # JUMPS
 # jump lists     jumps are remembered in the jump list saurce of pnai 
@@ -429,20 +460,38 @@ nnoremap <leader>g :call Underscoreoff()<cr>
 # :setlocal spell   'misspelt' words will be underlined. Navigate using [s (previous) ]s (next)
 # Ctrl-N            drop-down list of word suggestions; insert mode; word must already be used earlier in the buffer; 
 # zg                add words to spellfile; this file will be created at /home/donagh/.vim/spell/en.utf-8.add
-# z=                in Normal mode, z= will bring up big list of suggestions for spell correction; use 1z= to select the first one; try it - spelilling
+# spelling - get corrections
+# z=                in Normal mode, z= will bring up big list of suggestions for spell correction; use 1z= to select the first one; 
+#                   (with or without :set spell) try it - z=spelling
 # 
 # MACROS
-# Ctrl-R <letter>   put the contents of register <letter> into the buffer; useful for making re-usable functions; 
+# In Insert mode Ctrl-R <letter>   put the contents of register <letter> into the buffer; useful for making re-usable functions or editing macros.
+ 
 
 # Open file where you left off
 # :mksess! and open with vim -S
 # To go to the same place you were in a document after closing, use vim sessions. You issue a ":mksess!" and vim will drop a Session.vim file in your current directory. This will store all the docs you had open and where you were in them. Then when you start vim, do "vim -S" to take you back to exactly where you were.
 #
-# File data - to get word count etc.
+# To display file data - for word count etc.
 # Use airline or in normal mode g C-g
  
 # VIM PLUG
+# A modern plugin manager. Started using this 2022-02-05
+# install
 # cd ~/.vim/autoload
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# the command info line - that empty line below the airline strap
+# to change it's height to 2 (ie 2 lines)
+:set cmdheight=2 
+
+# significant directories & files
+$MYVIMRC = ~/.vimrc
+$VIM = /usr/share/vim
+$RTP = ~/.vim
+
+
+
+
 

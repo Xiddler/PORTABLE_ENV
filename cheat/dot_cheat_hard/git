@@ -299,6 +299,9 @@ git commit -m "<message>"   [magit c]                   <-- commit
 # STATE: committed
 git push origin main                                    <-- push (to remote)
 # STATE: saved in the cloud
+#
+# interactive cheat sheeear
+https://ndpsoftware.com/git-cheatsheet.html#loc=local_repo
 
 # END
 

@@ -1,10 +1,11 @@
 Opened 2022-01-22
 
 # INTRO
+            
+            Computer concepts in plain English
 
 This is a cheat for things about computers that I want to keep
 Mainly it is simple high-level concepts that are sometimes missed in the thicket of programming
-Computer concepts in plain English
 
 # What is a Virtual Machine
 A VM is an isolated Operating System hosted on a base OS
@@ -27,7 +28,7 @@ The abstraction provided by say Django's ORM lets you forget about all those det
 A SPA is loaded only once and afterwards, everything is updated dynamically using Javascript. An example of a SPA application is Gmail.
 
 # Serverless
-serverless doesn’t mean that there’s no server. It only means that you’re utilizing someone else’s server.
+Serverless doesn’t mean that there’s no server. It only means that you’re utilizing someone else’s server.
 
 # AWS Services
 https://expeditedsecurity.com/aws-in-plain-english/
@@ -37,5 +38,8 @@ User-friendly interface for an application e.g. Magit in Emacs is a git porcelai
 
 # An expression (in contrast to a statement)
 An expression is an unit of code that can be evaluated to produce a result.
+
+# The browser
+A browser is a universal Virtual Machine which just only takes JS and WASM at the moment (2022).
 
 

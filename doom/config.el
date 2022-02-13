@@ -105,6 +105,9 @@
 (map! :n "j" 'evil-next-visual-line) ;; use j to go down one visual line instead of default
 (map! :n "k" 'evil-previous-visual-line) ;; use k to go up one visual line instead of default
 (map! :n "SPC i Y" 'clipboard-yank) ;; paste from system clipboard; Note: SPC i y (lowercase) pastes from emacs yank
+(map! :n ",p" 'clipboard-yank) ;; paste from system clipboard; Note: SPC i y (lowercase) pastes from emacs yank
+(map! :n "E" 'evil-end-of-line)
+(map! :n "B" 'evil-beginning-of-line)
 
 ;; Mappings to change the appearance for 'mybook.org'
 ;; (map! :n "nm" 'display-line-numbers-mode)
