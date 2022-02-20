@@ -2,6 +2,8 @@
 
 # 2020-12-10 Manjaro again - may be missing some items...
 #
+alias -g ...='../../'
+alias -g ....='../../../'
 # echo $HOME
 alias -g catt='cat $HOME/ZIM/Computer/11SignUps.txt|rg -i -A5 '
 alias webdav='cd /var/www/webdav'
@@ -39,7 +41,7 @@ alias -g quakes='vim $HOME/DONAGHS/personal/mental_stuff/quakes.md'
 # alias -g autok='python $HOME/REPOS/2programming/python/2python_studies/json_stuff/4autokey_test.py'
 alias -g trigs='python $HOME/PORTABLE_ENV/scripts/autokey_trigger_table.py'
 alias -g samples='cd ~/REPOS/sample_files'
-alias -g 2r='vim ~/REPOS/books/2Read.md'
+alias -g 2r='vim ~/REPOS/books/Reading/2Read.md'
 alias -g obs='python ~/PORTABLE_ENV/scripts/CLICK_obsid_to_ext4path.py'
 # ff() {fortune}
 ss() {shuf -n2 ~/REPOS/Quotations/quotes.md }
@@ -227,8 +229,8 @@ mind() { cd $personal/minding_me }
 words() { cd $HOME/REPOS/WORDS/ }
 books() { cd $HOME/REPOS/books/ } # use autokey instead so as to be able to tabe in vim. Added 2021-10-25.
 #bookmarks() { cd $HOME/SD64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
-reading() { cd $HOME/REPOS/books/0Reading_notes && ls }
-rnotes() { cd $HOME/REPOS/books/0Reading_notes && ls }
+reading() { cd $HOME/REPOS/books/Reading/0Reading_notes && ls }
+rnotes() { cd $HOME/REPOS/books/Reading/0Reading_notes && ls }
 
 
 # /run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/books/ReadMe.md

@@ -42,4 +42,11 @@ An expression is an unit of code that can be evaluated to produce a result.
 # The browser
 A browser is a universal Virtual Machine which just only takes JS and WASM at the moment (2022).
 
+# Fiber
+Fiber or direct Ethernet connections means that the transmitted data remains digital and is passed directly to the next network node for processing
+unlike in normal transmission where the data is sent to a modem to change into analogue so as to transmit it over wire or wireless. Hence fiber is
+much faster and more reliable.
+
+
+
 

@@ -303,5 +303,11 @@ git push origin main                                    <-- push (to remote)
 # interactive cheat sheeear
 https://ndpsoftware.com/git-cheatsheet.html#loc=local_repo
 
+# hunks
+# These are parts of files that you can update interactively. For more help -> % git add --help and search for hunk or patch
+
+# see which credentials I gave at git init
+git config -l
+
 # END
 

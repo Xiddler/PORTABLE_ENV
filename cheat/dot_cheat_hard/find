@@ -70,4 +70,11 @@ find . -name "*.txt" | xargs grep ping-pong
 # find org file Modified in the last 10 minutes (mtime, atime, ctime)
 find . -name \*.org -mtime -10
 
+# find file modified (m) or changed (c) or accessed (a) in the last 10 minutes in the current directory
+find . -maxdepth 1 -cmin -10
+
+# find a book in books/ downloaded and saved in the last day
+find ~/REPOS/books/ -maxdepth 4 -ctime -1 
+
 # REM use fd - a modern alternative with regex!
+
