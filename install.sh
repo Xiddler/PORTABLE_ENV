@@ -14,6 +14,8 @@
 
 # Signal                :: Move to VirtDesktop6 and click on Signal icon _______________________   Alt-S
 # zim                   :: Move to VirtDesktop2 and click on zim icon (ensure SD64 mounted) ____   Alt-Z
+# qalc                  :: _____________________________________________________________________   Alt-Q
+# Obsidian              :: _____________________________________________________________________   Alt-J
 
 # from script
 # cifs_share            :: script run in yakuake                     ::: requires password
@@ -28,6 +30,9 @@
 # FBreader              :: _____________________________________________________________________   Alt-F
 # VSCode                :: _____________________________________________________________________   Alt-V
 # Konsole               :: _____________________________________________________________________   Alt-K        <-- Terminal
+
+sudo pamac install  network-manager-applet 
+-> % nm-applet          :: shows that internet is connected and number of 'bars'
 
 Available letters Alt- : 
 N X E G H I J O P Q R U W Y

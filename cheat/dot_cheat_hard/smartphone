@@ -45,4 +45,6 @@ $ sftp -i ~/.ssh/id_rsa_termux -P 8022 192.168.1.104
 sftp> get image22.png
 # This will copy the file image22.png to the folder where the sftp command was invoked on the laptop
 #
-#
+# WhatsApp
+# "Unlock to link a device"
+Simply place finger on camera at back - it's a security feature!

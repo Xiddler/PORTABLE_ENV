@@ -45,6 +45,7 @@ ln -s ~/PORTABLE_ENV/doom/dot_e_m_l_o_config.el ~/.emacs.d/modules/lang/org/conf
 #                                    #
 ######################################
 ##    LAPTOP    ##
+# added to autostart: copyq, emacs, flameshot, yakuake, thunderbird, autokey, 
 # doom
 # autostart (emacs command)
 # ~/.emacs.d/bin/doom run
@@ -65,6 +66,7 @@ go to 192.168.1.103:5000/
 # list of autokey triggers
 pip install tabulate
 # instant dictionary: usage Highlight word and Ctrl Alt z
+nm-applet   (network connection)
 lexicon
 flameshot   (autostart)
 copyq       (autostart)

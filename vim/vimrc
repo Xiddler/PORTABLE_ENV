@@ -8,7 +8,7 @@ set <esc>=jk " an inline comment " certain problems with this, why?
 nnoremap <space> :
 set encoding=utf-8
 
-" External sub-vimrc files
+" Plugins -  external sub-vimrc files for plugins, specifically Plug
 source /home/donagh/PORTABLE_ENV/vim/dotvim/vimrc_dirs/plugins.vim
 
 
@@ -18,7 +18,8 @@ cnoremap bn :bn<cr>
 nnoremap bn :bn<cr>
 " emacs kill buffer
 cmap bk :wq<cr>
-" create a new scratch buffer
+
+" function to create a new scratch buffer
 function! Scratch()
     split
     noswapfile hide enew
@@ -28,9 +29,8 @@ function! Scratch()
     "lcd ~
     file scratch
 endfunction
-" doom-emacs like Scratch
+" open a doom-like scratch buffer
 cmap bx :call Scratch()<cr> 
-" map <leader>c :call Scratch()<cr>
 "
 " list buffers - ready for a buffer number 
 nnoremap gb :ls<cr>:b<space>
@@ -41,13 +41,14 @@ endif
 " to reduce the noticeable delay on performing certain commands
 set timeout timeoutlen=3000 ttimeoutlen=100
 set completeopt=menu,preview,longest "for a pop-up list of completions. (Replaces the existing one)
+
 " NUMBERS
 set number
 set relativenumber " also Ctrl N to toggle this
 " toggle number and realativenumber
 nnoremap <C-n> :exe 'set nu!' &nu ? 'rnu!' : ''
 " nnoremap <leader>n :exe 'set nu!' &nu ? 'rnu!' : ''            " <leader>n set to number a list
-"
+
 " MACROS
 "This mapping makes macros even easier to remember: hit qq to record, q to stop recording, and Q to apply.
 nnoremap Q @@
@@ -141,9 +142,10 @@ autocmd BufNewFile,BufRead,BufEnter *.md :set conceallevel=2
 " Searching {{{
 "=== Searching ===
 set incsearch 
-set ignorecase            " Make searches case-insensitive.
+set ignorecase                  " Make searches case-insensitive.
 set smartcase
-set grepprg=/usr/sbin/rg         " use ripgrep instead of default grep
+set grepprg=/usr/sbin/rg        " use ripgrep instead of default grep
+
 " set very magic for searching (i.e. no need to escape brackets and other special chars)
 nnoremap / /\v
 vnoremap / /\v
@@ -439,7 +441,6 @@ function! Neat_REPOS()
 endfunction
 command Nr call Neat_REPOS()
 
-
 function! Myjournal()
     let year = strftime('%Y')
     let month = strftime('%m')
@@ -478,6 +479,7 @@ let $RC="$HOME/.vimrc" " alternative to $MYVIMRC
 " }}}
 " Enable / Disable Plugins {{{
 " === Enable / Disable Plugins ===
+" MOVED TO /home/donagh/PORTABLE_ENV/vim/dotvim/vimrc_dirs/plugins.vim. This file is source earlier in this file.
 " 2022-02-05  vim-plug started
 " https://github.com/junegunn/vim-plug and https://github.com/junegunn/vim-plug/wiki/tutorial
 " Remember to :so % after adding a new Plug

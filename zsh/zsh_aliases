@@ -48,6 +48,7 @@ ss() {shuf -n2 ~/REPOS/Quotations/quotes.md }
 # alias -g take="mkdir -p "
 take() { mkdir -p "$1" && cd "$1" }
 snipo() { /home/donagh/.scripts/add_snips_org.sh }
+alias -g covid="cd /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/00Medical"
 
 
 # Kitty Terminal
@@ -297,7 +298,7 @@ alias -g wcmj='$HOME/.scripts/wordCount_journal.sh' # word count my journal (mar
 alias hanging='cd $HOME/DONAGHS/ZIM/Computer/ && tail -n4 0_Hanging.txt && cd $HOME/ziim/Donaghs/00_Home/ && tail -n4 0_Hanging.txt'
 alias hg=histgrep
 alias hj='history'
-alias pss='python3 -m http.server 5000'
+alias pss='python3 -m http.server 5500'
 alias -g ra='ranger'
 alias gett='$HOME/.scripts/get_password.sh'
 # alias synaptic='sudo synaptic'
@@ -369,10 +370,11 @@ alias -g ipe='dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | tr "\"" "
 # $ curl ifconfig.co
 # w3m https://duckduckgo.com/?q=ip
 #
-alias -g ipi="ip -4 addr  | grep 192 | cut -d '/' -f1 | tr 'inet' ' ' "
+alias -g ipi="ip -c -4 addr  | grep 192 | cut -d '/' -f1 | tr 'inet' ' ' "
 # alias -g ping='ping -c3 '
 alias png='ping -c4 8.8.8.8' # ping google to check if there is internet access
-alias avg='png G rtt | cut -d'/' -f5' # average png time atm. Compared to what? Is internet slow or not?
+alias -g pong='~/.scripts/pong.sh' # png but shortened; if no out put, then internet is up; if not, no. of errors;
+alias avg='png G rtt | cut -d '/' -f5' # average png time atm. Compared to what? Is internet slow or not?
 
 # zsh shortcuts
 alias zcp='zmv -C'
