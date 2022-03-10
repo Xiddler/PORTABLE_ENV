@@ -270,9 +270,18 @@ map <leader>f :Ranger<cr>
 " remove trailing whitespace from python files
 " autocmd BufWritePre .py :%s/\s\+$//e
 "
-autocmd BufNewFile  *.py      0r ~/.vim/vim_templates/skeleton.py
-autocmd BufNewFile  *.html      0r ~/.vim/vim_templates/skeleton.html
-autocmd BufNewFile  *.md      0r ~/.vim/vim_templates/skeleton.md
+" SKELETON FILES
+
+" Command for skeleton files from .vim/templates
+augroup skeletons
+    au!
+    autocmd BufNewFile *.* silent! execute '0r ~/.vim/templates/skeleton.'.expand("<afile>:e")
+augroup END
+
+" inefficient ways of doing skeleton files
+" autocmd BufNewFile  *.py      0r ~/.vim/vim_templates/skeleton.py
+" autocmd BufNewFile  *.html      0r ~/.vim/vim_templates/skeleton.html
+" autocmd BufNewFile  *.md      0r ~/.vim/vim_templates/skeleton.md
 
 " skeleton files
 " augroup skeletons
@@ -357,11 +366,6 @@ set modelines=1
   " autocmd BufNewFile *.py silent! execute '0r $HOME/PORTABLE_ENV/vim/py_header.temp'
 " augroup END
 
-" Command for skeleton files from .vim/templates
-augroup skeletons
-    au!
-    autocmd BufNewFile *.* silent! execute '0r ~/.vim/templates/skeleton.'.expand("<afile>:e")
-augroup END
 
 " for the vim-notes plugin. ~/.vim/misc/notes/user
 " adds .txt suffix to new notes
@@ -372,7 +376,7 @@ augroup END
 set splitbelow splitright
 "
 " open a terminal within vim
-map <leader>tt :terminal<CR>
+map <leader>tt :terminal zsh<CR>
 
 " open today's markdown journal in a new tab
 " map ,jj :tabe /home/donagh/DONAGHS/personal/journal/$(date +%Y)/$(date +%m)/$(date +%d)-$(date +%m).md<cr>

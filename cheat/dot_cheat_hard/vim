@@ -458,8 +458,11 @@ echo g:sum
 #
 # SPELLING
 # :setlocal spell   'misspelt' words will be underlined. Navigate using [s (previous) ]s (next)
-# Ctrl-N            drop-down list of word suggestions; insert mode; word must already be used earlier in the buffer; 
-# zg                add words to spellfile; this file will be created at /home/donagh/.vim/spell/en.utf-8.add
+# Ctrl-N            Used in Insert mode; drop-down list of word suggestions; insert mode; word must already be used earlier in the buffer; 
+# autocomplete / spelling
+# first few letters of a word in the text then (Insert mode) Ctrl+P or Ctrl+N
+
+# zg                add words to spellfile; this file will be created at /home/donagh/.vim/spell/en.utf-8.add (no .spl extension)
 # spelling - get corrections
 # z=                in Normal mode, z= will bring up big list of suggestions for spell correction; use 1z= to select the first one; 
 #                   (with or without :set spell) try it - z=spelling
@@ -468,10 +471,12 @@ echo g:sum
 # In Insert mode Ctrl-R <letter>   put the contents of register <letter> into the buffer; useful for making re-usable functions or editing macros.
  
 
+# SESSIONS
 # Open file where you left off
 # :mksess! and open with vim -S
 # To go to the same place you were in a document after closing, use vim sessions. You issue a ":mksess!" and vim will drop a Session.vim file in your current directory. This will store all the docs you had open and where you were in them. Then when you start vim, do "vim -S" to take you back to exactly where you were.
 #
+# INFO
 # To display file data - for word count etc.
 # Use airline or in normal mode g C-g
  
@@ -482,15 +487,16 @@ echo g:sum
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# COMMAND INFOLINE
 # the command info line - that empty line below the airline strap
 # to change it's height to 2 (ie 2 lines)
 :set cmdheight=2 
 
+# DIRECTORIES
 # significant directories & files
 $MYVIMRC = ~/.vimrc
 $VIM = /usr/share/vim
 $RTP = ~/.vim
-
 
 
 

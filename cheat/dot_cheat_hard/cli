@@ -284,4 +284,11 @@ man -k -
 # extract text from a pdf file
 -> %  pdftotext -layout test_pdftotext.pdf -  > mytest.txt
 
+# reset
+# clears the screen and resets the shell (say, if there is a problem in the shell)
+
+# Ctrl Z
+# send a live programme into the background and go to the terminal
+# fg will return you to the programme
+
 # END

@@ -14,7 +14,6 @@ fi
 
 
 
-
 # to disable the Toshiba touchpad
 # xinput disable 12 (or 13 - check with $ xinput list)
 

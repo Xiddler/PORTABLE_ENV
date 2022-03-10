@@ -47,6 +47,7 @@ Fiber or direct Ethernet connections means that the transmitted data remains dig
 unlike in normal transmission where the data is sent to a modem to change into analogue so as to transmit it over wire or wireless. Hence fiber is
 much faster and more reliable.
 
-
+# BiBTeX
+The LaTeX implementation of a bibliography manager 
 
 

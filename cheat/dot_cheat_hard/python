@@ -15,23 +15,33 @@ python -m smtpd -n -c DebuggingServer localhost:1025
 # Pretty print a json
 python -mjson.tool
 
-# update pip eg for a virtualenv say webscraping
-/home/donaghm/.virtualenvs/webscraping/bin/python3 -m pip install --upgrade pip
+# VIRTUALENV
+# create a new virtualenv e.g. 'flask'
+# python3.9 -m venv <path-to-venv>/venv
+python3 -m venv $HOME/.virtualenvs/flask 
 
-# alternatively
-python -m pip install --upgrade pip
+# to activate
+source $HOME/.virtualenv/flask/bin/activate
+
+# to deactivate
+deactivate
 
 # update pip - e.g. in fastapi virtualenv
 /home/donaghm/.virtualenvs/fastapi/bin/python -m pip install --upgrade pip
 
+# update pip - specifically inside a .virtualenv
+(venv)-> % python -m pip install --upgrade pip
+
+# virtualenvwrapper
+# provides a set of commands which makes working with virtual environments much more pleasant. It also places all your virtual environments in one place.
+To install (make sure virtualenv is already installed):
+$ pip install virtualenvwrapper
+$ export WORKON_HOME=~/Envs
+$ source /usr/local/bin/virtualenvwrapper.sh
+(https://virtualenvwrapper.readthedocs.io/en/latest/install.html)
+
 # use requirements file
 pip install -r requirements.txt
-
-# create a new virtualenv e.g. 'flask'
-# python3.9 -m venv <path-to-venv>/venv
-python3 -m venv $HOME/.virtualenvs/flask 
-# to activate
-source $HOME/.virtualenv/flask/bin/activate
 
 ##- python header
 ##- see .vimrc
@@ -46,10 +56,12 @@ print(f"My name is {a}")
 
 # the final line
 if __name__ == "__main__":
-    play()
+    run()
 
-# website with good python tutorials
+# websites
+https://docs.python-guide.org/
 https://zetcode.com/all/#python
+
 
 # When using VIM editor to edit PYTHON: ref- python spaces / tabs
 :retab # fixes tabs / spaces
@@ -59,11 +71,9 @@ https://zetcode.com/all/#python
 plugin --> git clone https://github.com/Yggdroot/indentLine
 # For code indented with tabs I think there is no need to support it, because you can use :set list lcs=tab:\|\
 
-# Note on argparse
-"click to argparse is the same as requests to urllib"
+# Note on libraries
+"click is to argparse is the same as requests is to urllib"
 
-# update pip - specifically in .virtualenvs
-(venv)-> % python -m pip install --upgrade pip
 
 # print no newline after this output
 print("\nAccessing the class attribute through an object:", end= " ")
@@ -73,14 +83,19 @@ print("\nAccessing the class attribute through an object:", end= " ")
 choice = None
 while choice != "0":
     print \
-    ("""
+    ('''
     Critter Caretaker
     0 - Quit
     1 - Listen to your critter
     2 - Feed your critter
     3 - Play with your critter
-    """)
+   '''
 choice = input("Choice: ")
 print()
+
+# find the user base binary directory
+python -m site --user-base
+
+
 
 
