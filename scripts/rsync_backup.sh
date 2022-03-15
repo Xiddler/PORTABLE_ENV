@@ -4,12 +4,17 @@
 # see cheat rsync or man rsync for help
 
 # this script backs up the files and folders of value to 
-# ~/BACKUPS/RSYNCED  which is symlinked to ~/cifs_share/RSYNCED linked to the RPi
-# ln -s  ~/cifs_share/RSYNCED ~/BACKUPS/RSYNCED
+# ~/BACKUPS/RSYNCED which is symlinked to ~/cifs_share/RSYNCED linked to the RPi
+# ln -s ~/cifs_share/RSYNCED ~/BACKUPS/RSYNCED
+
+# password=1234
+
+# sudo -S <<< "password" command
+# sudo -S <<< 1234  rsync 
 
 
 # source directory on laptop is
-#$HOME/BACKUPS/RSYNCED               (symlinked to ~/cifs_share/RSYNCED)
+#$HOME/BACKUPS/RSYNCED              (symlinked to ~/cifs_share/RSYNCED)
 
 # destination is RPi/usb_128/RSYNCED
 

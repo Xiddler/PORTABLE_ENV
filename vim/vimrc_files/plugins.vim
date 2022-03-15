@@ -2,7 +2,7 @@
 
 " Enable / Disable Plugins {{{
 " === Enable / Disable Plugins ===
-" 2022-02-13 New external sub-vimrc file 
+" 2022-02-13 Created this new - external - sub-vimrc file 
 " 2022-02-05  vim-plug started
 " https://github.com/junegunn/vim-plug and https://github.com/junegunn/vim-plug/wiki/tutorial
 " Remember to :so % after adding a new Plug
@@ -10,24 +10,23 @@
 call plug#begin('/home/donagh/.vim/plugins')
 Plug 'tpope/vim-commentary'
 Plug 'https://github.com/vim-airline/vim-airline.git'
+" for the following plugin, -> %cp -r ~/.vim/plugins/stellarized ~/.vim/pack/nightsense/start/      :: this seems to be necessary
 Plug 'nightsense/stellarized'              
-" cp -r ~/.vim/plugins/stellarized ~/.vim/pack/nightsense/start/      :: this seems to be necessary
 Plug 'francoiscabrol/ranger.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'https://github.com/junegunn/goyo.vim.git'
 Plug 'https://github.com/junegunn/limelight.vim.git'
-" next one shows a buffer to the right on "
+" the following plugin shows a buffer to the right on typing this " <-- yes the quote symbol!
 Plug 'junegunn/vim-peekaboo'
 " Markdown plugins
 " With none of these enabled ##'s are salmon-coloured - but no folding
-"
 " Check if this displays headings - yes but loses coloured # as in vim-mardown-folding 
 Plug 'plasticboy/vim-markdown'
-" The following plugin (vim-markdown) includes Syntax Concealing - use :set conceallevel=2
+" the following plugin (vim-markdown) includes Syntax Concealing - use :set conceallevel=2
 " Plug 'https://github.com/preservim/vim-markdown'                        
 " the following hides the heading in markdown files - a problem (is this why plasticboy is better?) - <-- use :set foldignore=#
 " Plug 'masukomi/vim-markdown-folding'
-"
+
 call plug#end()
 "
 " }}}

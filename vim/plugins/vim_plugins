@@ -1,0 +1,26 @@
+
+# CONTENTS
+# non-installed plugins begin with # (2022-03-15) 
+# -------------------------------------------------------------------------------------------------------------------------------------------
+
+# Preferred plugins
+commentary              comments in/out lines using gcc                             :: https://github.com/tpope/vim-commentary.git
+easymoton               using <leader>/ to move to highlighted letter               :: https://github.com/easymotion/vim-easymotion.git
+goyo                    zen mode for vim                                            :: https://github.com/junegunn/goyo.vim.git
+limelight               highlight current paragraph in zen mode                     :: https://github.com/junegunn/limelight.vim.git
+nightsense              stellarized  preferred vim theme                            :: https://github.com/nightsense/stellarized.git
+peekaboo                peeks into registers                                        :: https://github.com/junegunn/vim-peekaboo
+ranger                  ranger from vim                                             :: https://github.com/francoiscabrol/ranger.vim.git 
+vim-airline             vim info                                                    :: https://github.com/vim-airline/vim-airline.git
+vim-markdown-folding    folding for markdown in vim                                 :: https://github.com/masukomi/vim-markdown-folding.git
+
+
+# SuperMan                Man pages in vim editor: vman <app>                       :: https://github.com/jez/vim-superman
+# emmet                   emmet-vim - quick html/css                                :: https://github.com/mattn/emmet-vim.git
+# multicursor                                                                       :: https://github.com/terryma/vim-multiple-cursors
+# vim-surround            highlight and surround with anything e.g. ""              :: https://github.com/tpope/vim-surround.git
+# voom                    window in the file for fold viewing e.g. markdown files   :: sudo pamac install vim-voom
+# vim-elixir              elixir plugin for vim                                       :: https://github.com/elixir-editors/vim-elixir
+# vim-instant-markdown    opens a browser when a .md file is opened and closes       :: https://github.com/instant-markdown/vim-instant-markdown
+# vim-pencil              pure typing / writing experience for vim text files        :: https://github.com/reedes/vim-pencil
+

@@ -97,5 +97,18 @@ print()
 python -m site --user-base
 
 
+# all formatting methods
+foo = 'foo'
+bar = 'bar'
+
+foobar1 = '%s%s' % (foo, bar) # It is OK
+foobar2 = '{0}{1}'.format(foo, bar) # It is better
+foobar3 = '{foo}{bar}'.format(foo=foo, bar=bar) # It is even better
+foobar4 = f'{foo}{bar}' # It is best - termed f-strings
+
+myl = [foobar1, foobar2, foobar3, foobar4]    
+[print(x) for x in myl] --> 'foobar'
+
+
 
 

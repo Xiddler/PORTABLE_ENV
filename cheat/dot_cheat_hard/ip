@@ -30,3 +30,8 @@ ip link set dev eth0 address aa:bb:cc:dd:ee:ff
 
 # View neighbors (using ARP and NDP) 
 ip neighbor show
+
+# ip information websites
+https://ipinfo.io/          :: quite good; API available for SSH heatmap cf. github;
+
+

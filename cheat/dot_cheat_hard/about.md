@@ -50,4 +50,8 @@ much faster and more reliable.
 # BiBTeX
 The LaTeX implementation of a bibliography manager 
 
+# Side-effects
+Side-effects are the changes that a function makes to its implicit context. If a function saves or deletes data in a global variable or in the persistence layer, it is said to have a side-effect.
 
+# Serverless
+Serverless is a cloud-native development model that allows developers to build and run applications without having to manage servers. There are still servers in serverless, but they are abstracted away from app development. A cloud provider handles the routine work of provisioning, maintaining, and scaling the server infrastructure.

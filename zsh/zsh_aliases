@@ -50,6 +50,7 @@ take() { mkdir -p "$1" && cd "$1" }
 snipo() { /home/donagh/.scripts/add_snips_org.sh }
 alias -g covid="cd /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/00Medical"
 
+alias -g 2py="cd ~/REPOS/2programming/python/2python_studies/"
 
 # Kitty Terminal
 # alias icat="kitty +kitten icat"
@@ -217,7 +218,7 @@ ba() { cd $HOME/BACKUPS }
 
 te() { cd $HOME/TESTING }
 
-az() { cd $HOME/all_org/org }
+org() { cd $HOME/all_org/org }
 # sd() { cd $HOME/SD64/ }
 # pers() { cd $personal && ls }
 alias -g pers='cd $HOME/DONAGHS/personal/'
@@ -331,6 +332,7 @@ alias -g filepath='$HOME/.scripts/filename.sh'
 alias cm='git commit -m '
 alias gcm='git commit -m '
 alias ggs='git status'
+alias gss='git status'
 alias ggx='git status'
 alias gst='git status'
 alias gaa='git add -A'

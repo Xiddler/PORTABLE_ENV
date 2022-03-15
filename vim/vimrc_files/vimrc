@@ -8,9 +8,9 @@ set <esc>=jk " an inline comment " certain problems with this, why?
 nnoremap <space> :
 set encoding=utf-8
 
-" Plugins -  external sub-vimrc files for plugins, specifically Plug
-source /home/donagh/PORTABLE_ENV/vim/dotvim/vimrc_dirs/plugins.vim
-
+" PLUGINS 
+" external sub-vimrc files for plugins, specifically  vim-plug using Plug
+source /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim " rem: use gf to open that file!
 
 " BUFFERS
 " :bn (buffer next) without pressing enter button to make it like doom-emacs setting
@@ -332,7 +332,8 @@ inoremap <Leader>d <C-R>=expand("%:p:h")<CR>
 " Airline {{{
 "
 "=== Status line ===
-" NOTE: replaced by airline plugin (similar to Powerline in zsh)
+" set laststatus=2 "2 is for always show status line; 0 for never and 1 for when there are two windows
+" NOTE: built in is replaced by airline plugin (similar to Powerline in zsh)
 " AIRLINE
 "https://github.com/vim-airline/vim-airline and :h airline
 " config file at: 

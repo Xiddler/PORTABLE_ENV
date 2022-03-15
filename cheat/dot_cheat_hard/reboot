@@ -85,3 +85,6 @@ copyq       (autostart)
 # lanner now using htmx and looking lovely
 python3 ~/Applications/flask_htmx_lanner/app.py
 
+# password problem after rebooting on 2022-03-14. Did not accept my 1234 password?
+# How to change user password
+#

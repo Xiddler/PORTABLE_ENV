@@ -498,6 +498,12 @@ $MYVIMRC = ~/.vimrc
 $VIM = /usr/share/vim
 $RTP = ~/.vim
 
+# Ctrl R, in Ex mode,  with... 
+% --> Current file name
+" --> Last yanked text
+* --> Clipboard contents
+/ --> Last search pattern
+
 
 
 

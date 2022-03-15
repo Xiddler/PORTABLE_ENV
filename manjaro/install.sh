@@ -1,8 +1,10 @@
 #!/bin/env bash
 
+# see also: ~/SD64/Jan_2022_full_manjaro_reinstall.md
+
 # This shows how to install or start everyting after a shutdown.
 
-# Do I need to start a separate shell for some of these? How do I start a new shell in yakuake in a script?
+# (Do I need to start a separate shell for some of these? How do I start a new shell in yakuake in a script?)
 
 # Items
 
