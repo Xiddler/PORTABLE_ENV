@@ -12,3 +12,8 @@ tree -d -L 2
 
 # Ignore all .pyc files
 tree -I "*.pyc"
+
+# Show hidden files
+tree -aL 2 /home/donagh/PORTABLE_ENV/dotfiles
+
+

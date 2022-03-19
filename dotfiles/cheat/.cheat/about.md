@@ -60,5 +60,8 @@ Serverless is a cloud-native development model that allows developers to build a
 CLI - Command Line Interface means you are using a shell e.g. bash, zsh, fish etc.
 TUI - Terminal User Interface means you opened an application in the terminal and are typing in the terminal e.g. vim, nano, emacs, ranger, htop, glances
 
+# Expression (vs statement)
+an expression means that every directive returns some kind of data.
 
-
+# Functional language
+It is a declarative programming paradigm, which means programming is done with expressions or declarations instead of statements.

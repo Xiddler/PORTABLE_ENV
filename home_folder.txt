@@ -1,0 +1,89 @@
+At 2022-03-19_15:54
+
+total 696
+
+drwx------+ 37 donagh donagh   4096 Mar 19 15:53 .
+drwxr-xr-x   3 root   root     4096 Jan 14 11:12 ..
+drwxr-xr-x   2 donagh donagh   4096 Feb  3 20:37 2022
+-rw-r--r--   1 donagh donagh     37 Feb 13 10:00 afile.md
+lrwxrwxrwx   1 donagh donagh     70 Jan 14 15:27 all_org -> /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/all_org
+drwxr-xr-x   5 donagh donagh   4096 Jan 19 18:08 Applications
+drwxr-xr-x   3 donagh donagh   4096 Jan 22 22:19 BACKUPS
+-rw-------   1 donagh donagh    175 Jan 14 13:07 .bash_history
+-rw-r--r--   1 donagh donagh     21 Jul 10  2020 .bash_logout
+-rw-r--r--   1 donagh donagh     78 Jan 14 22:02 .bash_profile
+-rw-r--r--   1 donagh donagh   3860 Feb  3 21:15 .bashrc
+-rw-r--r--   1 donagh donagh   3838 Jan 14 15:20 .bashrc_install_Manjaro
+drwxr-xr-x  36 donagh donagh   4096 Mar 19 14:37 .cache
+drwxr-xr-x   3 donagh donagh   4096 Jan 14 22:02 .cargo
+lrwxrwxrwx   1 donagh donagh     46 Jan 14 18:00 .cheat -> /home/donagh/PORTABLE_ENV/cheat/dot_cheat_hard
+lrwxrwxrwx   1 donagh donagh     46 Jan 14 15:28 .cheat_install_pip -> /home/donagh/PORTABLE_ENV/cheat/dot_cheat_hard
+lrwxrwxrwx   1 donagh donagh     15 Jan 14 15:46 cifs_share -> /mnt/cifs_share
+drwxr-xr-x  45 donagh donagh   4096 Mar 19 10:58 .config
+drwxr-xr-x   2 donagh donagh   4096 Jan 14 11:16 Desktop
+drwxr-xr-x   5 donagh donagh   4096 Feb 23 18:45 .dia
+-rw-r--r--   1 donagh donagh   4855 Oct 29  2017 .dir_colors
+lrwxrwxrwx   1 donagh donagh     62 Jan 14 15:27 DONAGHS -> /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS
+drwxr-xr-x   4 donagh donagh   4096 Mar 14 22:09 .doom.d
+drwxr-xr-x   2 donagh donagh   4096 Mar 16 09:07 Downloads
+drwx------   8 donagh donagh   4096 Mar 14 17:10 .dropbox
+drwx------  10 donagh donagh   4096 Mar 14 17:47 Dropbox
+drwxrwxr-x   3 donagh donagh   4096 Feb 26 14:13 .dropbox-dist
+-rw-r--r--   1 donagh donagh  41118 Feb  1 21:37 earning.pdf
+-rw-r--r--   1 donagh donagh     15 Jan 24 18:27 echo
+drwxr-xr-x  10 donagh donagh   4096 Jan 14 18:13 .emacs.d
+-rw-r--r--   1 donagh donagh   3740 Aug  4  2020 .face
+lrwxrwxrwx   1 donagh donagh      5 Aug  4  2020 .face.icon -> .face
+drwxr-xr-x   3 donagh donagh   4096 Mar 14 21:54 .FBReader
+-rw-r--r--   1 donagh donagh  82305 Feb  9 18:19 fonts.txt
+drwxr-xr-x  11 donagh donagh   4096 Jan 14 16:13 .fzf
+-rw-r--r--   1 donagh donagh    336 Jan 14 16:13 .fzf.bash
+-rw-r--r--   1 donagh donagh    334 Jan 14 16:13 .fzf.zsh
+lrwxrwxrwx   1 donagh donagh     35 Mar 19 15:50 .gitconfig -> /home/donagh/PORTABLE_ENV/gitconfig
+drwx------   2 donagh donagh   4096 Mar 18 20:41 .gnupg
+-rw-r--r--   1 donagh donagh    338 Mar 18 20:40 .gtkrc-2.0
+lrwxrwxrwx   1 donagh donagh     74 Jan 14 15:46 images -> /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/images
+drwxr-xr-x   2 donagh donagh   4096 Mar 10 12:13 .ipynb_checkpoints
+drwxr-xr-x   3 donagh donagh   4096 Mar 10 12:10 .ipython
+drwxr-xr-x   2 donagh donagh   4096 Mar 10 12:12 .jupyter
+drwxr-xr-x   3 donagh donagh   4096 Jan 14 11:15 .kde4
+-rw-------   1 donagh donagh    299 Mar 19 12:23 .lesshst
+drwxr-xr-x   5 donagh donagh   4096 Jan 14 16:22 .local
+lrwxrwxrwx   1 donagh donagh     37 Jan 14 15:50 .marks -> /home/donagh/PORTABLE_ENV/MARKS/marks
+drwxr-xr-x   2 donagh donagh   4096 Mar 19 15:53 .mcfly
+drwx------   5 donagh donagh   4096 Jan 14 11:17 .mozilla
+drwxr-xr-x   4 donagh donagh   4096 Feb 23 15:35 .npm
+lrwxrwxrwx   1 donagh donagh     52 Mar 19 13:18 .p10k.zsh -> /home/donagh/PORTABLE_ENV/zsh/powerlevel10k/p10k.zsh
+drwx------   3 donagh donagh   4096 Jan 14 23:44 .pki
+drwxr-xr-x  28 donagh donagh   4096 Mar 19 15:53 PORTABLE_ENV
+-rw-r--r--   1 donagh donagh    107 Jan 14 22:02 .profile
+-rw-------   1 donagh donagh    355 Mar 11 23:42 .python_history
+lrwxrwxrwx   1 donagh donagh     67 Jan 14 15:27 REPOS -> /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES
+drwxr-xr-x   6 donagh donagh   4096 Jan 14 22:07 .rustup
+lrwxrwxrwx   1 donagh donagh     33 Jan 14 15:47 .scripts -> /home/donagh/PORTABLE_ENV/scripts
+lrwxrwxrwx   1 donagh donagh     54 Jan 14 15:47 SD64 -> /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68
+-rw-r--r--   1 donagh donagh  36517 Feb  5 22:07 Session.vim
+drwxr-xr-x   2 donagh donagh   4096 Jan 31 20:24 .ssh
+-rw-r--r--   1 donagh donagh  19962 Feb 25 08:45 START.md
+drwxr-xr-x   8 donagh donagh   4096 Feb 27 16:33 TESTING
+drwx------   4 donagh donagh   4096 Jan 14 17:04 .thunderbird
+-rw-r--r--   1 donagh donagh 113022 Feb 18 20:52 todos_conflicted.org
+-rw-r--r--   1 donagh donagh  32975 Feb 18 14:58 tracker.ods
+drwxr-xr-x   2 donagh donagh   4096 Mar 15 08:40 .vim
+-rw-------   1 donagh donagh  38761 Mar 19 15:52 .viminfo
+lrwxrwxrwx   1 donagh donagh     47 Mar 15 08:13 .vimrc -> /home/donagh/PORTABLE_ENV/vim/vimrc_files/vimrc
+drwxr-xr-x   3 donagh donagh   4096 Mar 12 18:10 VirtualBox VMs
+drwxr-xr-x   7 donagh donagh   4096 Mar 14 17:14 .virtualenvs
+-rw-r--r--   1 donagh donagh    217 Jan 14 19:08 .wget-hsts
+-rw-------   1 donagh donagh     65 Mar 18 20:40 .Xauthority
+-rwxr-xr-x   1 donagh donagh    100 Oct 29  2017 .Xclients
+-rwxr-xr-x   1 donagh donagh   1637 Aug  4  2020 .xinitrc
+lrwxrwxrwx   1 donagh donagh     44 Jan 14 21:57 .Xresources -> /home/donagh/PORTABLE_ENV/X_files/Xresources
+drwxr-xr-x   4 donagh donagh   4096 Feb  1 21:28 zArchive
+-rw-r--r--   1 donagh donagh  47368 Mar 16 10:20 .zcompdump
+-rw-------   1 donagh donagh  17045 Mar 19 15:53 .zhistory
+lrwxrwxrwx   1 donagh donagh     69 Jan 16 09:51 ZIM -> /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/MY_ZIM
+lrwxrwxrwx   1 donagh donagh     28 Jan 14 15:14 .zsh_aliases -> PORTABLE_ENV/zsh/zsh_aliases
+-rw-r--r--   1 donagh donagh     21 Jan 14 22:02 .zshenv
+lrwxrwxrwx   1 donagh donagh     22 Jan 14 15:17 .zshrc -> PORTABLE_ENV/zsh/zshrc
+-rw-r--r--   1 donagh donagh    256 Jan 14 15:09 .zshrc_install_Manjaro

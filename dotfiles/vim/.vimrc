@@ -8,6 +8,11 @@ set <esc>=jk " an inline comment " certain problems with this, why?
 nnoremap <space> :
 set encoding=utf-8
 
+" STOW
+" As of 2022-03-19 I am using stow to manage the symlinking of my dotfiles.
+" See $HOME/PORTABLE_ENV/dotfiles/README.md
+" Usage: On a new install -> %~ stow vim
+
 " PLUGINS 
 " external sub-vimrc files for plugins, specifically  vim-plug using Plug
 source /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim " rem: i can use gf to open that file!

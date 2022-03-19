@@ -2,6 +2,7 @@
 
 # Opened 2021-09-15
 
+# NOTE: as of 2022-03-19 I am using gnu-stow to manage symlinks for dotfiles -- see ~/PORTABLE_ENV/dotfiles/README.md
 # NOTE: ~/PORTABLE_ENV/scripts/SymLinks.sh has all of these. Just run that script.
 
 ln -s /home/donagh/PORTABLE_ENV/zsh/powerlevel10k/p10k.zsh /home/donagh/.p10k.zsh 
