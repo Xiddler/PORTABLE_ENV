@@ -55,3 +55,10 @@ Side-effects are the changes that a function makes to its implicit context. If a
 
 # Serverless
 Serverless is a cloud-native development model that allows developers to build and run applications without having to manage servers. There are still servers in serverless, but they are abstracted away from app development. A cloud provider handles the routine work of provisioning, maintaining, and scaling the server infrastructure.
+
+# TUI vs CLI
+CLI - Command Line Interface means you are using a shell e.g. bash, zsh, fish etc.
+TUI - Terminal User Interface means you opened an application in the terminal and are typing in the terminal e.g. vim, nano, emacs, ranger, htop, glances
+
+
+

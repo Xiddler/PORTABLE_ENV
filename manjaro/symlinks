@@ -4,6 +4,7 @@
 
 # NOTE: ~/PORTABLE_ENV/scripts/SymLinks.sh has all of these. Just run that script.
 
+ln -s /home/donagh/PORTABLE_ENV/zsh/powerlevel10k/p10k.zsh /home/donagh/.p10k.zsh 
 
 ln -s $HOME/PORTABLE_ENV/vim/vimrc_files/vimrc $HOME/.vimrc
 ln -s $HOME/PORTABLE_ENV/vim/en.utf-8.add    $HOME/.vim/spell           # for :set spell customised list

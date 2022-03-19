@@ -10,7 +10,7 @@ set encoding=utf-8
 
 " PLUGINS 
 " external sub-vimrc files for plugins, specifically  vim-plug using Plug
-source /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim " rem: use gf to open that file!
+source /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim " rem: i can use gf to open that file!
 
 " BUFFERS
 " :bn (buffer next) without pressing enter button to make it like doom-emacs setting
@@ -36,6 +36,7 @@ cmap bx :call Scratch()<cr>
 nnoremap gb :ls<cr>:b<space>
 
 if has("autocmd")
+" the following being set means that filetype.vim is read at startup which sets autocmds for almost all filetypes under the sun.
   filetype plugin indent on
 endif
 " to reduce the noticeable delay on performing certain commands
@@ -245,6 +246,10 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
+" move bullet point lines up / down
+nmap <c-j> ddp
+nmap <c-k> ddkkp
+
 " noremap <leader>j <c-w>
 "  save file
 nnoremap <leader>s :w<cr>
@@ -648,5 +653,12 @@ let $RTP=split(&runtimepath, ',')[0] " allows :set rtp?
     " Path
     " :set path? path to search when using find / FZF 
 set path+=~/REPOS/
+
+1
+2
+4
+3
+5
+
 " }}}
 

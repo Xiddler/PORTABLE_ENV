@@ -291,4 +291,7 @@ man -k -
 # send a live programme into the background and go to the terminal
 # fg will return you to the programme
 
+# Change CAPS button to ESC
+-> % setxkbmap -option caps:swapescape
+
 # END

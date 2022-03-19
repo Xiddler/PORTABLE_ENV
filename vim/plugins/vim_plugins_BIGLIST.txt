@@ -1,3 +1,19 @@
+
+Contents:
+1. URL to big list
+2. List of vim plugins on AUR
+
+
+_____________________________________________________________________________ 
+1. 
+Here is another long list 
+https://github.com/mhinz/vim-galore/blob/master/PLUGINS.md#plugin-managers
+
+_____________________________________________________________________________
+2. 
+
+vim plugins on AUR
+
 4kyoutubetomp3                          3.11.1.3500-1                 AUR 
   Extract audio from YouTube, Vimeo,
   Facebook and other online video

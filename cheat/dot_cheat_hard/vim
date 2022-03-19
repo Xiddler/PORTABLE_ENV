@@ -504,6 +504,19 @@ $RTP = ~/.vim
 * --> Clipboard contents
 / --> Last search pattern
 
+# Quickfix list and Location list
+The quickfix list is a data structure that holds file positions. Essentially, each entry in the quickfix list consists of a file path, a line number and optional column, and a description.
 
+Actually there are two kinds of lists: quickfix and location lists. They behave almost the same, but have the follwing differences:
+There is only one quickfix list. There can be multiple location lists; one per window.
+They use slightly different commands for navigation.
+
+Action 	        Quickfix 	Location
+open window 	:copen 	    :lopen
+close window 	:cclose 	:lclose
+next entry 	    :cnext 	    :lnext
+previous entry 	:cprevious 	:lprevious
+first entry 	:cfirst 	:lfirst
+last entry 	    :clast
 
 
