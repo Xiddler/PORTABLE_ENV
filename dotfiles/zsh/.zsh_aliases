@@ -343,8 +343,9 @@ alias gga='git add -A'
 
 # List directories / files
 alias l.='ls -d .* --color=auto' # Show hidden files ##
+alias lh='ls -d .* --color=auto' # Show hidden files ##
 alias ld='ls -la -d */'
-alias -g lh='ls | head'
+# alias -g lh='ls | head'
 alias lk='ls -1v'
 alias ll='ls -la'
 alias lls='ls | xargs -n1' # show ls in a single column

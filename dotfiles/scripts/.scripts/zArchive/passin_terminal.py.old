@@ -1,0 +1,65 @@
+#!/usr/bin/python3
+# encoding: utf-8
+
+'''
+Opened this 2020-10-21
+
+
+Update: This has been superseded.
+
+
+
+
+
+Use the following command to run in RPi
+-> % sudo python3 cli_passin.py
+
+This script is a CLI version of the tkinter GUI passin python utility
+that I wrote to provide a handy way of entering credentials and storing
+them in my zim file 11SignUps.txt in .json format.
+'''
+
+import os
+import stat
+
+
+print('''You will be prompted to enter the following fields:
+url-nick, website, email, password,username, date, notes''')
+
+url_nick = input("Enter url-nick: ")
+website = input("Enter website: ")
+email = input("Enter email: ")
+password = input("Enter password: ")
+username = input("Enter username: ")
+date = input("Enter date: ")
+notes = input("Enter notes: ")
+
+data = f'''{{
+"url_nick":"{url_nick}",
+"website":"{website}",
+"email":"{email}",
+"password":"{password}",
+"username":"{username}",
+"date":"{date}",
+"notes":"{notes}",
+}},
+'''
+
+print(data) # success
+
+# Append test to end of 11SignUps.txt
+
+
+
+signups = '/home/donaghm/MY_ZIM/zim/Computer/11SignUps.txt'
+
+
+with open(signups, "a") as f:
+    f.write(data)
+
+
+
+
+
+
+

@@ -5,7 +5,7 @@ Opened 2022-02-07
 The file startup.py can store variable names that you can use in a python repl.
 
 
-
+Quote:
 I still use the python repl in a terminal for my desktop calculator. Its a good choice since usually im already in the terminal anyways.
 
 I also do the same although when I need fractions, having to type all the words to import and use the fraction module is a pain
