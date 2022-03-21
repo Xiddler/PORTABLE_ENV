@@ -55,4 +55,10 @@ pacman -Q
 
 # To keep a file
 ->% pacman -Q > /home/donagh/PORTABLE_ENV/pacman.txt
+
+
+# update mirror list
+sudo pacman-mirrors --fasttrack
+--> ::INFO Mirror list generated and saved to: /etc/pacman.d/mirrorlist
+
  

@@ -658,12 +658,5 @@ let $RTP=split(&runtimepath, ',')[0] " allows :set rtp?
     " Path
     " :set path? path to search when using find / FZF 
 set path+=~/REPOS/
-
-1
-2
-4
-3
-5
-
 " }}}
 

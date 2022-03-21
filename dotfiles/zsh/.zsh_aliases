@@ -1,229 +1,79 @@
-# 2021-12-21 Reinstall of Manjaro see SD64  
-
-# 2020-12-10 Manjaro again - may be missing some items...
+# TITLE: .zsh_aliases
+# LOCATION: ~/PORTABLE_ENV/dotfiles/zsh
+# EDIT: 2022-03-21 Major re-organisation 2021-12-21 # Reinstall of Manjaro see SD64   # 2020-12-10 Manjaro again - may be missing some items...
 #
-alias -g ...='../../'
-alias -g ....='../../../'
-# echo $HOME
-alias -g catt='cat $HOME/ZIM/Computer/11SignUps.txt|rg -i -A5 '
-alias webdav='cd /var/www/webdav'
-# alias -g pas='pamac search '  # now in autokey to expand spelling
-# alias -g spi='sudo pamac install ' # now in autokey to expand spelling
+# CONTENTS
+# _____________________________________________________________________________ 
+
+# #{{{ GENERAL
 alias -g PS='ps aux | grep -i '
 alias -g G='| grep -i '
 alias -g L='| less '
-#alias -g C='| clipcopy '
+# alias -g C='| clipcopy '
 # alias -g C='| xclip '
-alias -g quick='cd $HOME/DONAGHS/0_Quickies'
-alias -g html='cd $HOME/REPOS/2programming/webdevelopment/html'
-alias -g htmx='cd $HOME/REPOS/2programming/webdevelopment/htmx'
-alias -g sp='vim $HOME/REPOS/TESTING/scratch_pad.txt'
+alias hg=histgrep
+alias hj='history'
+alias pss='python3 -m http.server 5500'
+alias -g ra='ranger'
+# alias synaptic='sudo synaptic'
+alias tm="calc -d 'read qtime; qtime(0)'" # sudo apt install apcalc WINTER TIME
+# alias tm="calc -d 'read qtime; qtime(1)'" # sudo apt install apcalc SUMMER TIME
+alias tn='t | festival --tts'
+alias tn='t | spd-say --pipe-mode'
+alias -g ifconfig="echo 'Use the ip command'"
+#alias pip='pip3'
+alias speedtest="curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
+alias wett='curl wttr.in/limerick'
+alias def='~/.scripts/get_defs.sh ' # dictionary addition to $dict
+alias -g define='BROWSER=w3m ddgr \!wordnik ' # ddgr is CLI DDGo and w3m is CLI browser
+alias -g filepath='$HOME/.scripts/filename.sh'
 alias -g scrape='~/PORTABLE_ENV/scripts/scrape_website.sh'
-# alias -g ssc='sudo systemctl ' # replaced using Autokey
-alias -g sysc='sudo systemctl '
 alias -g scryp='scryer-prolog '
-alias -g images='cd $HOME/REPOS/images'
-alias -g videos='cd $HOME/REPOS/videos'
 alias -g unum='/home/donagh/gApplications/UNUM/unum.pl'
-alias -g L=' | less'
-alias -g ment='cd ~/DONAGHS/personal/mental_stuff'
-alias -g fraud='cd ~/DONAGHS/personal/00Fraud/'
-alias -g vfraud='vim ~/DONAGHS/personal/00Fraud/fraud.md'
-alias -g vt='vim ~/REPOS/TESTING/test.md'
-alias -g wa='cd ~/REPOS/TESTING/WhatsApp/'
 # alias -g pmj='/run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/journal/2021/$(date +"%m")/$(date +"%m")-$(date +"%d").md' # see Autokey
 alias -g jmj='janet ~/.scripts/my_journal.janet'
 alias -g mp='markdown_previewer '
 alias -g ap='apostrophe '
-alias -g songs='cd $HOME/REPOS/songs'
-alias -g music='vim $HOME/REPOS/music/music_memos.md'
-alias -g quakes='vim $HOME/DONAGHS/personal/mental_stuff/quakes.md'
 # alias -g autok='python $HOME/REPOS/2programming/python/2python_studies/json_stuff/4autokey_test.py'
 alias -g trigs='python $HOME/PORTABLE_ENV/scripts/autokey_trigger_table.py'
-alias -g samples='cd ~/REPOS/sample_files'
-alias -g 2r='vim ~/REPOS/books/Reading/2Read.md'
 alias -g obs='python ~/PORTABLE_ENV/scripts/CLICK_obsid_to_ext4path.py'
-alias -g sd='cd $HOME/SD64'
 alias -g stow='stow -d /home/donagh/PORTABLE_ENV/dotfiles  -t /home/donagh '
 # ff() {fortune}
 ss() {shuf -n2 ~/REPOS/Quotations/quotes.md }
 # alias -g take="mkdir -p "
 take() { mkdir -p "$1" && cd "$1" }
 snipo() { /home/donagh/.scripts/add_snips_org.sh }
-alias -g covid="cd /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/00Medical"
-
-alias -g 2py="cd ~/REPOS/2programming/python/2python_studies/"
-
-# Kitty Terminal
-# alias icat="kitty +kitten icat"
-
-
-# Digital Ocean
-# Digital Ocean Log In
-alias -g doli='ssh -i /run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/ssh/ssh_keys_2020/id_rsa_do donagh@188.166.103.14 ' 
-
-# To show the COMPuter name in the prompt of the ~/.oh-my-zsh/themes/crcandy_dm.zsh-theme. Specically for ssh-ing into other
-# machines
-COMP=$(uname -a | cut -d ' ' -f2)
-
-# CompTIA
-alias -g tia="cd /run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/EDUCATION/Courses_2021/CompTIA_2021"
-
-# Elixir
-alias -g ellixir="cd $HOME/REPOS/2programming/elixir"
-
-# BORG BACKUP
-# DEFUNCT borg backup. I am now rsyncing necessary folder in ~/BACKUPS
-# alias -g borgb="cd $HOME/borg1 && export BORG_REPO='$HOME/borg1' && export BORG_PASSPHRASE='theboysoffairhill'"
-# alias -g borgs="cd $HOME/SAFE/SAFE_borg_backup && export BORG_REPO='$HOME/borg1' && export BORG_PASSPHRASE='theboysoffairhill'"
-
-# borg backup Zim_computer and all_org (ie orgmode)
-# alias -g borgz="$HOME/.scripts/aborg_backup_zim_and_TIA.sh"
-# weekly backup scheduled using anacron. Note: no .sh extension
-alias -g borgz="$HOME/.scripts/borg_backup_weekly"
-# weekly rsync backup
-alias -g rsyncz="$HOME/.scripts/rsync_backup.sh"
-
-# gron  -- Makes JSON greppable
-alias norg="gron --ungron"
-alias ungron="gron --ungron"
-
-
-alias -g contin='python3 /media/donagh/3520-FD13/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/contin.py' # input new contact
-alias -g contout='cat $HOME/ZIM/ORG/03_CONTACTS/Contacts.txt | rg -i -A18 -B2 '
 alias -g ep='echo $PATH'
 # alias -g exa='~/Applications/exa-linux-x86_64' # modern ls
 # alias -g kontout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 ' # get contact  
 alias -g listd='du -s -- *(D) | sort -k1n' # list size of directories
-alias -g nt='terminator --geometry +500+100' # open a new zsh terminal  
-# 
-# alias -g passin='python3 $HOME/SD64/REPOSITORIES/2programming/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
-# alias -g passin='python3 /run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/python/1python_projects/Tkinter_projects/tkinter_GUI/passin_credentials/pw_data-input.py'
-
-# alias -g passin='python3 /media/pi/B693-3C22/ALL_DONAGH/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
-# CLI version
-# alias -g passin='python3 /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/python/1python_projects/passwds_CLI/pass_in.py'
-alias -g passin='python ~/PORTABLE_ENV/scripts/pass_in.py'
-
-
-#
-#
-# Raspberry Pi
-alias -g tpassin='sudo --prompt=1234 $HOME/.scripts/passin_terminal.py'
-# alias -g passin='$HOME/.scripts/passin.sh' # a non-GUI version
-alias -g passout='cat $HOME/DONAGHS/MY_ZIM/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias for catt
+# alias -g nt='terminator --geometry +500+100' # open a new zsh terminal  
 alias -g xn='| xargs -n 1'
-alias -g zimbu='$HOME/.scripts/zim_backup_to_tinyUSB.sh'
 alias -g zz='zsh -l'
+alias -g zimbu='$HOME/.scripts/zim_backup_to_tinyUSB.sh'
 alias -g jc='jupyter-console'
 # instead of plain rm usd trash rm to move the file to Trash so as to be able to recover it like on the Desktop
 alias -g trm='mv --force -t ~/.local/share/Trash '
-# to copy all new and old cheats to /home/donag/PORTABLE_ENV/cheat/dot_cheat_hard
-# NOTE: the following is maybe not needed of ALL cheats are stored in
-# PORTARBLE_ENV includeing the /usr/share/cheat ones - do this first
-# alias ccheat="cp -f /usr/share/cheat/* $HOME/PORTABLE_ENV/cheat/dot_cheat_hard/ && cp -f $HOME/.cheat/* $HOME/PORTABLE_ENV/cheat/dot_cheat_hard/"
-#
-alias -g ifconfig="echo 'Use the ip command'"
-# alias -g lanner="$HOME/.scripts/lanner_start.sh" 
-# 
-# alias -g cx='clear'
-# the following shortcut alias means that pressing enter after just a 
-# file name with .md extension will automagically open it with vim. Hurrah!
-alias -s md=vim
-
-alias -g pyython='cd ~/REPOS/2programming/python'
-
-# shortcut to Tiny 128 USB drive
-
-# alias -g tiny='cd /run/media/donagh/gB693-3C22'
-# 2020-12-10 
-alias -g tiny='cd /run/media/donagh/gtinyUSB'
-
-
-# ____________________________________________________________________________________
-# shortcuts for when I want to Search Zim - Computer ORG 
-alias -g ziim='$HOME/ZIM/'
-# go to zim/Computer
-alias -g szc='cd $HOME/DONAGHS/MY_ZIM/Computer/'
-# go to zim/ORG
-alias -g szo='cd $HOME/DONAGHS/ZIM/ORG/'
-# ____________________________________________________________________________________
-
-alias -g 2p='cd $HOME/REPOS/2programming/'
-alias -g share='cd $HOME/linuxShared'
-# for changing color of the monitor against eyestrain
-alias -g night='blueshift -t 1800'
-alias -g day='blueshift -t 3000'
-
-# Rung 3
-alias -g rung3='cd $HOME/Donaghs_Tmp/Rung_3'
-
-
-# FUNCTIONS (See Separate functions for my personal journal below)
-
-toread() { vim $HOME/REPOS/books/toRead.md }
-recipes() {cd $HOME/REPOS/FOOD/recipes }
-# system timers main folder
-timer-s() { sudo vim "/etc/systemd/system/$1.service" }
-timer-t() { sudo vim "/etc/systemd/system/$1.timer" }
-timer-st() { sudo systemctl start "$1.timer" }
-timer-ls() { systemctl list-timers --all }
-timer-dae() { echo "1234" | sudo -S systemctl daemon-reload } 
-
-# realpath
-# () { realpath $1 | clipcopy }
-# rp() { realpath $1 | xclipboard }
-# rp() { realpath $1 | clipit }
-# rp() { realpath $1 | clipcopy }
- rp() { realpath $1 | xclip -selection clipboard }
-
-# password out using jq and 11SignUps.json
-pout() { jq ".$1.password" 11SignUps.json | grep -v null }
-
-
-
-
-#-------------------- START journal
-# journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
-# Go to Current Year/Month 
-k=$(date +"%Y/%m")
-journal='$HOME/DONAGHS/personal/journal/'$k # short form
-personal='$HOME/DONAGHS/personal' # short form
-alias -g tp='cd $personal'
-
-#
-# alias mj=md_journal # opens todays journal as a markdown file in vim for editing.
-#
-# Navigation shortcuts
-alias cd..='cd ..'
-alias -g dl='cd ~/Downloads'
-alias -g ds='cd ~/Documents'
-alias -g dr='cd ~/Dropbox'
-# alias -g te='cd ~//REPOS/TESTING/'
-# alias -g hf='cd'
-alias -g repos='$HOME/REPOS'
-alias -g maps='$HOME/REPOS/maps'
-# alias -g cifs='cd $HOME/cifs_share'
-alias -g safe='cd $HOME/SAFE/SAFE_borg_backup'
-
-# Functions for shortcuts - equivalent to aliases.
-# jour { cd $journal && ls }
-alias -g jour='cd $HOME/DONAGHS/personal/journal'
-alias -g writing='cd $HOME/DONAGHS/personal/writings/my_writings'
-
 # battery
 alias -g battery='acpi -V G battery'
+# System status
+alias -g chk='$HOME/.scripts/info.sh' # quick summary of system status
 
+# end general
+#}}}
+#{{{     NAVIGATION SHORTCUTS
+# NAVIGATION SHORTCUTS
+# Functions to navigate
+recipes() {cd $HOME/REPOS/FOOD/recipes }
+# jour { cd $journal && ls }
 po() { cd $HOME/PORTABLE_ENV }
 ba() { cd $HOME/BACKUPS }
 # dm() { cd $HOME/Donaghs_Tmp }
-
 te() { cd $HOME/TESTING }
-
 org() { cd $HOME/all_org/org }
+az() { cd $HOME/all_org/org }
 # sd() { cd $HOME/SD64/ }
 # pers() { cd $personal && ls }
-alias -g pers='cd $HOME/DONAGHS/personal/'
 planning() { cd  $personal/planning/ }
 #humour() { cd $HOME/SD64/1donaghs-stuff/humour/ }
 #outdoors() { cd $HOME/SD64/REPOS/OUTDOOR }
@@ -235,17 +85,107 @@ books() { cd $HOME/REPOS/books/ } # use autokey instead so as to be able to tabe
 #bookmarks() { cd $HOME/SD64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
 reading() { cd $HOME/REPOS/books/Reading/0Reading_notes && ls }
 rnotes() { cd $HOME/REPOS/books/Reading/0Reading_notes && ls }
-
-
-# /run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/books/ReadMe.md
 alc() { cd  $personal/alcohol/ }
-wants() { cd $HOME/REPOS/Purchases/Wants && vim wants.md }
-rl() { readlink -f $1 | clipcopy } # readlink
+# Search Zim - Computer, ORG 
+alias -g ziim='cd $HOME/ZIM/'
+alias -g szc='cd $HOME/DONAGHS/MY_ZIM/Computer/'
+alias -g szo='cd $HOME/DONAGHS/ZIM/ORG/'
+# shortcut to Tiny 128 USB drive
+# alias -g tiny='cd /run/media/donagh/gB693-3C22'
+# 2020-12-10 
+# alias hanging='cd $HOME/DONAGHS/ZIM/Computer/ && tail -n4 0_Hanging.txt && cd $HOME/ziim/Donaghs/00_Home/ && tail -n4 0_Hanging.txt'
+# end navigation
+#}}}
+#{{{ VIM 
+ # open a file using vim
+# Aliases - vim
+alias -g sp='vim $HOME/REPOS/TESTING/scratch_pad.txt'
+alias -g vfraud='vim ~/DONAGHS/personal/00Fraud/fraud.md'
+alias -g vt='vim ~/REPOS/TESTING/test.md'
+alias -g music='vim $HOME/REPOS/music/music_memos.md'
+alias -g quakes='vim $HOME/DONAGHS/personal/mental_stuff/quakes.md'
+alias -g 2r='vim ~/REPOS/books/Reading/2Read.md'
 
-# Temporary functions
-#web() {cd $HOME/SD64/2programming_repository/css/css_grid/donagh-dev/}
-#clue() {cd  $HOME/SD64/1donaghs-stuff/Projects/Clueless-on-DO/Clueless/clueless-webapp }
+# Functions - vim
+toread() { vim $HOME/REPOS/books/toRead.md }
+wants() { vim $HOME/REPOS/Purchases/Wants/wants.md }
+#}}}
+#{{{ RSYNC
+# weekly rsync backup
+alias -g rsyncz="$HOME/.scripts/rsync_backup.sh"
+#}}}
+#{{{ GRON
+#  Makes JSON greppable
+alias norg="gron --ungron"
+alias ungron="gron --ungron"
+#}}}
+#{{{ CONTACTS 
+alias -g contin='python3 /media/donagh/3520-FD13/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/contin.py' # input new contact
+alias -g contout='cat $HOME/ZIM/ORG/03_CONTACTS/Contacts.txt | rg -i -A18 -B2 '
+#}}}
+#{{{ CHEATS
+# to copy all new and old cheats to /home/donag/PORTABLE_ENV/cheat/dot_cheat_hard
+# NOTE: the following is maybe not needed if ALL cheats are stored in
+# PORTABLE_ENV including the /usr/share/cheat ones - do this first
+# alias ccheat="cp -f /usr/share/cheat/* $HOME/PORTABLE_ENV/cheat/dot_cheat_hard/ && cp -f $HOME/.cheat/* $HOME/PORTABLE_ENV/cheat/dot_cheat_hard/"
+#}}}
+#{{{ MARKDOWN 
+# the following shortcut alias means that pressing enter after just entering  
+# a file name with .md extension will automagically open it with vim. Hurrah!
+alias -s md=vim
+#}}}
+#{{{ SYSTEM TIMERS
+#  main folder
+timer-s() { sudo vim "/etc/systemd/system/$1.service" }
+timer-t() { sudo vim "/etc/systemd/system/$1.timer" }
+timer-st() { sudo systemctl start "$1.timer" }
+timer-ls() { systemctl list-timers --all }
+timer-dae() { echo "1234" | sudo -S systemctl daemon-reload } 
+#}}}
+#{{{ REALPATH 
+# copy the path of a file to clipboard
+ rp() { realpath $1 | xclip -selection clipboard }
+# rp() { realpath $1 | xclipboard }
+# rp() { realpath $1 | clipit }
+# rp() { realpath $1 | clipcopy }
+#}}}
+#{{{ PASSWORDS 
+# PASSWORD OUT 
+alias -g passout='cat $HOME/DONAGHS/MY_ZIM/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias for catt
+alias -g catt='cat $HOME/ZIM/Computer/11SignUps.txt|rg -i -A5 '
+# added 2022-03-20  using jq and 11SignUps.json
+pout() { jq '.passwords' $HOME/REPOS/11SignUps.json | rg -A4 $1 }
 
+# PASSIN OUT 
+alias -g passin='python ~/PORTABLE_ENV/scripts/pass_in.py'
+alias gett='$HOME/.scripts/get_password.sh'
+# alias -g tpassin='sudo --prompt=1234 $HOME/.scripts/passin_terminal.py'
+# alias -g passin='$HOME/.scripts/passin.sh' # a non-GUI version
+# alias -g passin='python3 $HOME/SD64/REPOSITORIES/2programming/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
+# alias -g passin='python3 /run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/python/1python_projects/Tkinter_projects/tkinter_GUI/passin_credentials/pw_data-input.py'
+# alias -g passin='python3 /media/pi/B693-3C22/ALL_DONAGH/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
+# alias -g passin='python3 /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/python/1python_projects/passwds_CLI/pass_in.py'
+#}}}
+#{{{ JOURNAL
+# journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
+# Go to Current Year/Month 
+k=$(date +"%Y/%m")
+journal='cd $HOME/DONAGHS/personal/journal/'$k # short form
+personal='cd $HOME/DONAGHS/personal' # short form
+alias -g mj='$HOME/.scripts/markdown_journal.sh'
+alias -g wj='vim $HOME/DONAGHS/personal/Means/work_journal.md'
+alias -g aj='vim $HOME/DONAGHS/personal/Means/action_journal.md'
+alias -g dist='vim $HOME/DONAGHS/personal/Means/distractions.md'
+alias -g mdd='$HOME/.scripts/markdown_diary.sh' # md is taken as mkdir -p <dir>
+# alias -g backup="$HOME/.scripts/backup_all_and_encrypt.sh" # backsup ALL_ZIM, personal and org to Dropbox in .7z format
+alias -g mn='$HOME/.scripts/mynotes.sh'
+alias -g wcmj='$HOME/.scripts/wordCount_journal.sh' # word count my journal (markdown journal) - usage ->% wcmj 05 [ie June]
+# end journal
+#}}}
+#{{{ PERSONAL
+alias -g jour='cd $HOME/DONAGHS/personal/journal'
+alias -g writing='cd $HOME/DONAGHS/personal/writings/my_writings'
+alias -g pers='cd $HOME/DONAGHS/personal/'
 # immediately edit a file
 grat() { $EDITOR $personal/minding_me/gratitude_journal.md }
 ideas() { $EDITOR $personal/ideas/ideas_to_go_at.md }
@@ -256,14 +196,12 @@ snips() { $EDITOR $HOME/DONAGHS/personal/ideas/snippets.md }
 wisd() { $EDITOR $HOME/DONAGHS/personal/ideas/snippets.md }
 # aj() { $EDITOR /home/donagh/gDONAGHS/personal/minding_me/alcohol_journal.md } # (a)lcohol-(j)ournal modelled after (m)y (j)ournal.
 hme() { cd $HOME }
-
-#-------------------- END journal
-#
-# alias to get my IP address of digital ocean website (2020-02-17)
-alias site='dig donaghmccarthy.ie +short'
+#}}}
+#{{{ SSH 
 # 2020-12-09
 alias -g sshdo='ssh -i $HOME/.ssh/id_rsa_do donagh@142.93.37.252'
-
+#}}}
+#{{{ DOTFILES
 # dot files shortcuts 
 alias cb='cat ~/.bashrc'
 alias cv='cat ~/.vimrc'
@@ -280,42 +218,8 @@ alias vza="vim ~/.zsh_aliases"
 gza() { rg "$1" ~/.zsh_aliases }
 gz() { rg "$1" ~/.zshrc }
 gv() { rg "$1" ~/.vimrc }
-
-
-
-# Donaghs shortcuts
-alias -g chk='$HOME/.scripts/info.sh' # quick summary of system status
-alias -g scr='cd $HOME/.scripts/' # cd to $HOME/.scripts
-# alias -g mj=md_journal # opens todays journal as a markdown file in vim for editing.
-# My Journal
-alias -g mj='$HOME/.scripts/markdown_journal.sh'
-alias -g wj='vim $HOME/DONAGHS/personal/Means/work_journal.md'
-alias -g aj='vim $HOME/DONAGHS/personal/Means/action_journal.md'
-alias -g dist='vim $HOME/DONAGHS/personal/Means/distractions.md'
-alias -g mymeans='cd $HOME/DONAGHS/personal/Means'
-
-alias -g mdd='$HOME/.scripts/markdown_diary.sh' # md is taken as mkdir -p <dir>
-# alias -g backup="$HOME/.scripts/backup_all_and_encrypt.sh" # backsup ALL_ZIM, personal and org to Dropbox in .7z format
-alias -g mn='$HOME/.scripts/mynotes.sh'
-alias -g wcmj='$HOME/.scripts/wordCount_journal.sh' # word count my journal (markdown journal) - usage ->% wcmj 05 [ie June]
-alias hanging='cd $HOME/DONAGHS/ZIM/Computer/ && tail -n4 0_Hanging.txt && cd $HOME/ziim/Donaghs/00_Home/ && tail -n4 0_Hanging.txt'
-alias hg=histgrep
-alias hj='history'
-alias pss='python3 -m http.server 5500'
-alias -g ra='ranger'
-alias gett='$HOME/.scripts/get_password.sh'
-# alias synaptic='sudo synaptic'
-alias tm="calc -d 'read qtime; qtime(0)'" # sudo apt install apcalc WINTER TIME
-# alias tm="calc -d 'read qtime; qtime(1)'" # sudo apt install apcalc SUMMER TIME
-alias tn='t | festival --tts'
-alias tn='t | spd-say --pipe-mode'
-#alias pip='pip3'
-alias speedtest="curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
-alias wett='curl wttr.in/limerick'
-alias def='~/.scripts/get_defs.sh ' # dictionary addition to $dict
-alias -g define='BROWSER=w3m ddgr \!wordnik ' # ddgr is CLI DDGo and w3m is CLI browser
-alias -g filepath='$HOME/.scripts/filename.sh'
-
+#}}}
+#{{{ TODO
 #----------  TODO
 # Superceded by org-mode in May 2020
 # org() { cd $HOME/TODO/ORG-MODE }
@@ -329,7 +233,8 @@ alias -g filepath='$HOME/.scripts/filename.sh'
 # alias -g vt="$HOME/.scripts/todo-ods-to-csv.sh"
 # alias -g vp="$HOME/.scripts/projects-ods-to-csv.sh"
 # alias -g meta="$HOME/TODO/META"
-
+#}}}
+#{{{ GIT
 # git shortcuts - but see $alias from zsh
 alias cm='git commit -m '
 alias gcm='git commit -m '
@@ -339,30 +244,30 @@ alias ggx='git status'
 alias gst='git status'
 alias gaa='git add -A'
 alias gga='git add -A'
-
-
+#}}}
+#{{{ LS
 # List directories / files
 alias l.='ls -d .* --color=auto' # Show hidden files ##
 alias lh='ls -d .* --color=auto' # Show hidden files ##
-alias ld='ls -la -d */'
+alias ld='ls -la -d */' # show directories
 # alias -g lh='ls | head'
 alias lk='ls -1v'
 alias ll='ls -la'
+alias llk="ll | grep '^l.*'"
 alias lls='ls | xargs -n1' # show ls in a single column
 alias ls='ls --color=auto'
 alias hp='ls --hide=*.py'
-alias hh='cd ~/'
-alias llk="ll | grep '^l.*'"
 alias -g lf="ls | tr ' ' '\n'"
 alias -g latest='ls -lt  **/*(.om[1,20])' # list latest 20 files edited
-
-
+#}}}
+#{{{ PYTHON
 # python virtual envs shortcuts
 alias pb='source $HOME/.virtualenvs/basic/bin/activate'
 alias pd='source $HOME/.virtualenvs/django/bin/activate'
 alias pf='source $HOME/.virtualenvs/flask/bin/activate'
-
-# networking shortcuts
+#}}}
+#{{{ NETWORKING 
+# shortcuts
 # Public IP address
 # alias ipe='dig @resolver1.opendns.com ANY myip.opendns.com +short' # external ip -- better
 # alias -g ipe='dig myip.opendns.com @resolver1.opendns.com +short'
@@ -380,13 +285,17 @@ alias -g ipi="ip -c -4 addr  | grep 192 | cut -d '/' -f1 | tr 'inet' ' ' "
 alias png='ping -c4 8.8.8.8' # ping google to check if there is internet access
 alias -g pong='~/.scripts/pong.sh' # png but shortened; if no out put, then internet is up; if not, no. of errors;
 alias avg='png G rtt | cut -d '/' -f5' # average png time atm. Compared to what? Is internet slow or not?
-
-# zsh shortcuts
+# alias to get my IP address of digital ocean website (2020-02-17)
+alias site='dig donaghmccarthy.ie +short'
+#}}}
+#{{{ ZSH 
+# shortcuts
 alias zcp='zmv -C'
 alias zln='zmv -L'
 alias zs='zsh_stats' # lists last 20 commands with statistics
+#}}}
+#{{{ ZOXIDE
 
-# zoxide
  # =============================================================================
 #
 # Utility functions for zoxide.
@@ -473,5 +382,9 @@ alias zs='zsh_stats' # lists last 20 commands with statistics
 ## function zi() {
 ##     __zoxide_zi "$@"
 ## }
+# end zoxide
+# #}}}
 
-## # THE END
+## THE END
+
+

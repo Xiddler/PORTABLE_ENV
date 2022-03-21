@@ -151,6 +151,7 @@ plugins=(
   zsh-syntax-highlighting  
   colored-man-pages
   fzf
+  fd-find
   # extract
   # systemd
 )
@@ -237,10 +238,14 @@ bindkey 'cx' clear-screen
 # xrdb ~/.Xresources  # may need to be in my .bashrc file though
 # TERM=xterm
 
+# ls_colors
+# enabled the following on 2022-03-20
+eval "`dircolors -b ~/.dir_colors`"
+#
 # cd  /media/ubuntu/3520-FD13/2programming_repository/IT_projects/Dashboard_personal/ && gunicorn render_todo:app
-# eval "`dircolors -b ~/.dircolors`"
 
 # POWERLINE 
+# replaced by powerlevel10k
 # see https://powerline.readthedocs.io/en/latest/usage/shell-prompts.html
 # powerline statusline for zsh 2018-08-05
 # Location: /usr/lib/python3.8/site-packages
@@ -252,32 +257,7 @@ bindkey 'cx' clear-screen
 # fast file and directory autojump
 # . /media/ubuntu/3520-FD13/compressed_utilities/zsh/z/z.sh
 
-# ls_colors
-# eval "`dircolors -b ~/.dircolors`"
 
-# FUNCTIONS
-# Functions can be found in the .zshrc file
-# Navigation shortcuts
-# bal() { cd $HOME/sd35/0My_Folders/11Balmurry/Balmurry_Sale/}
-# sd3() { cd $HOME/sd35/}
-# ziim() { cd $HOME/downloads/home/donagh/sd35/zim}
-# don() { cd $HOME/sd35/1donaghs-stuff/Big_Projects/2019_new_earn}
-
-# ccl() { cd $HOME/sd35/1donaghs-stuff/croom_concrete/ }
-
-# app() { cd $HOME/Applications}
-# seek() { cd /media/donagh/015C-2582/Donaghs_WORKSEARCH}
-# ts() { cd $HOME/TESTING }
-# tst() { cd $HOME/TESTING }
-# books() {cd $HOME/sd35/books }
-# what() { cd /media/donagh/3520-FD13/0My_Folders/00Donaghs_ORG/WHAT }
-# # convert a .md file to a .pdf file. Usage: $ mkp filename.md
-# mkp() { ~/.scripts/mktopdf.sh $1 }
-# cash() { /media/donagh/3520-FD13/0My_Folders/00Donaghs_ORG/03_FINANCES/GnuCash }
-# gcash() { cd ~/Applications/gnucash && flatpak run org.gnucash.GnuCash }
-# bus() { cd /media/donagh/3520-FD13/0My_Folders/BUSINESS }
-# # shortcut to made a screenshot e.g. grap foto1.png then make selection with mouse
-# grab() { scrot -s $1 }
 
 # MARKS
 export MARKPATH=$HOME/PORTABLE_ENV/MARKS/marks
@@ -304,33 +284,7 @@ jump() {
 
 # where the -U stands for unique, tells the shell that it should not add anything to $PATH if it's there already
 typeset -U path
-# ----------------- START journal ------------------------------
-# my easy journal 
-# Set up the journal directory on the SD64 Card
-# journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
-# journal='/home/donagh/sd64/1donaghs-stuff/personal/journal'
-# journal='$HOME/DONAGHS/personal/journal'
 
-# jour() { cd $journal && ls }
-
-# md_journal() {
-        # mkdir -p $journal/`date +%Y`
-        # $EDITOR $journal/`date +%Y`/`date +%d-%m\.md`
-    # }
-# mj on the CLI will make or open the relevant file using a file in $HOME/.scripts called markdown_journal.sh
-
-# ----------------- END journal ------------------------------
-# todo.txt
-# CLI tool
-# t is aliased to .../todo.sh in .zsh_aliases
-# export TODOTXT_DEFAULT_ACTION=ls
-# todo_folder='/home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli/'
-# the following function greps a term as in $ grep <term> <Enter>
-v()
-{
-    grep "$1" $todo_folder/todo.txt 
-}
-# put the following in .zsh_aliases - alias t='./todo.sh -d /path/to/your/todo.cfg'
 # grep hist
 histgrep() {
   grep -r "$@" ~/.history
@@ -354,7 +308,7 @@ eval "$(mcfly init zsh)"
 # br is an alternative file searcher - described in HackerNews Jan 2020
 # source /home/donagh/.config/broot/launcher/bash/br
 
-# fzf
+# fzf (disable this if using mcfly for Ctrl R)
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #
 # dirjump - use -> % d to see 10 most recent directories visited. https://github.com/imambungo/dirjump

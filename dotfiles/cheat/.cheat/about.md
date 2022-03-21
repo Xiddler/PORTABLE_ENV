@@ -65,3 +65,7 @@ an expression means that every directive returns some kind of data.
 
 # Functional language
 It is a declarative programming paradigm, which means programming is done with expressions or declarations instead of statements.
+
+# X11 (Linux)
+X11 is a distributed systems communication protocol which happens to have graphical output as a side effect
+
