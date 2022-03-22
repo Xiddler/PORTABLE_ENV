@@ -1,4 +1,5 @@
 " Filepath /home/donagh/PORTABLE_ENV/vim/dotvim/vimrc_dirs/plugins.vim
+" This file is where I call the plugins I want to use in vim. There is a line in .vimrc that calls this file
 
 " Enable / Disable Plugins {{{
 " === Enable / Disable Plugins ===

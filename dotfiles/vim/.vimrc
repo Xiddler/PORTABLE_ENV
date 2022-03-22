@@ -66,6 +66,7 @@ set noswapfile " prevents the automatic creation of swapfiles
 set hidden    " allows switching buffers without saving
 set listchars=tab:>\ ,trail:.
 set nolist    " adds a . to empty spaces; do I need this? "set list will show the dots for spaces and tabs
+
 " FZF
 " :FZF 
 " set the following to get fuzzy-finder FZF in vim working (and other plugins?)
@@ -365,7 +366,11 @@ let g:airline_powerline_fonts = 1
 set foldmethod=marker
 set foldlevel=0
 set modelines=1
-"vim:foldmethod=marker:foldlevel=0
+" set foldcolumn=4 
+highlight Folded guibg=grey guifg=blue
+" highlight FoldColumn guibg=darkgrey guifg=white
+"
+""vim:foldmethod=marker:foldlevel=0
 "}}}
 " Customised {{{
 "
@@ -659,4 +664,3 @@ let $RTP=split(&runtimepath, ',')[0] " allows :set rtp?
     " :set path? path to search when using find / FZF 
 set path+=~/REPOS/
 " }}}
-

@@ -69,3 +69,10 @@ It is a declarative programming paradigm, which means programming is done with e
 # X11 (Linux)
 X11 is a distributed systems communication protocol which happens to have graphical output as a side effect
 
+# reverse proxy (networking)
+It means a computer that is connected directly to the internet. A confusing term.
+
+# Virtual Network Computing (VNC) 
+a useful way to connect to a remote desktop when you need a graphical user interface (GUI) to accomplish your task.
+
+

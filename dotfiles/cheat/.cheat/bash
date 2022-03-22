@@ -44,4 +44,19 @@ stat --printf '%y\t%n\n' -- *<pattern>*
     set -euo pipefail
 
 
+# Arrays
+myIndexedArray=(one two three)
+$ echo ${myIndexedArray[*]}
+
+# using for loops and an array of filepaths
+# Template: "${arrayName[@]}"
+
+directories=( $porte $org $pers $comp $all_org )
+for mydir in "${directories[@]}"; 
+    do 
+        # echo -e "$mydir";      # same as following
+        printf '%s\n ' "$mydir"
+done
+
+
 

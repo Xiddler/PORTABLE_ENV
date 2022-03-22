@@ -1,9 +1,6 @@
-# TITLE: .zsh_aliases
 # LOCATION: ~/PORTABLE_ENV/dotfiles/zsh
-# EDIT: 2022-03-21 Major re-organisation 2021-12-21 # Reinstall of Manjaro see SD64   # 2020-12-10 Manjaro again - may be missing some items...
-#
+
 # CONTENTS
-# _____________________________________________________________________________ 
 
 # #{{{ GENERAL
 alias -g PS='ps aux | grep -i '
@@ -13,18 +10,18 @@ alias -g L='| less '
 # alias -g C='| xclip '
 alias hg=histgrep
 alias hj='history'
-alias pss='python3 -m http.server 5500'
+alias -g pss='python3 -m http.server 5500'
 alias -g ra='ranger'
 # alias synaptic='sudo synaptic'
-alias tm="calc -d 'read qtime; qtime(0)'" # sudo apt install apcalc WINTER TIME
+# alias tm="calc -d 'read qtime; qtime(0)'" # sudo apt install apcalc WINTER TIME
 # alias tm="calc -d 'read qtime; qtime(1)'" # sudo apt install apcalc SUMMER TIME
-alias tn='t | festival --tts'
+# alias tn='t | festival --tts'
 alias tn='t | spd-say --pipe-mode'
 alias -g ifconfig="echo 'Use the ip command'"
 #alias pip='pip3'
 alias speedtest="curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
-alias wett='curl wttr.in/limerick'
-alias def='~/.scripts/get_defs.sh ' # dictionary addition to $dict
+alias -g wett='curl wttr.in/limerick'
+alias -g def='~/.scripts/get_defs.sh ' # dictionary addition to $dict
 alias -g define='BROWSER=w3m ddgr \!wordnik ' # ddgr is CLI DDGo and w3m is CLI browser
 alias -g filepath='$HOME/.scripts/filename.sh'
 alias -g scrape='~/PORTABLE_ENV/scripts/scrape_website.sh'
@@ -69,6 +66,7 @@ recipes() {cd $HOME/REPOS/FOOD/recipes }
 po() { cd $HOME/PORTABLE_ENV }
 ba() { cd $HOME/BACKUPS }
 # dm() { cd $HOME/Donaghs_Tmp }
+dr() { cd $HOME/Dropbox/ }
 te() { cd $HOME/TESTING }
 org() { cd $HOME/all_org/org }
 az() { cd $HOME/all_org/org }
@@ -87,8 +85,8 @@ reading() { cd $HOME/REPOS/books/Reading/0Reading_notes && ls }
 rnotes() { cd $HOME/REPOS/books/Reading/0Reading_notes && ls }
 alc() { cd  $personal/alcohol/ }
 # Search Zim - Computer, ORG 
-alias -g ziim='cd $HOME/ZIM/'
 alias -g szc='cd $HOME/DONAGHS/MY_ZIM/Computer/'
+alias -g ziim='cd $HOME/ZIM/'
 alias -g szo='cd $HOME/DONAGHS/ZIM/ORG/'
 # shortcut to Tiny 128 USB drive
 # alias -g tiny='cd /run/media/donagh/gB693-3C22'
@@ -128,6 +126,10 @@ alias -g contout='cat $HOME/ZIM/ORG/03_CONTACTS/Contacts.txt | rg -i -A18 -B2 '
 # NOTE: the following is maybe not needed if ALL cheats are stored in
 # PORTABLE_ENV including the /usr/share/cheat ones - do this first
 # alias ccheat="cp -f /usr/share/cheat/* $HOME/PORTABLE_ENV/cheat/dot_cheat_hard/ && cp -f $HOME/.cheat/* $HOME/PORTABLE_ENV/cheat/dot_cheat_hard/"
+#
+alias -g che='cheat -e '
+ch() { cheat "$1" | less }
+
 #}}}
 #{{{ MARKDOWN 
 # the following shortcut alias means that pressing enter after just entering  
@@ -244,21 +246,51 @@ alias ggx='git status'
 alias gst='git status'
 alias gaa='git add -A'
 alias gga='git add -A'
+# cf ~/.scripts/manage_all_git_repos.sh (on the laptop)
+alias -g g_porte="$HOME/PORTABLE_ENV/"             # On github
+alias -g g_org="$HOME/Dropbox/org-mode/org/"       # this tracks my .org files
+alias -g g_pers="$HOME/DONAGHS/personal/"
+alias -g g_comp="$HOME/DONAGHS/MY_ZIM/Computer/"   # zim/Computer only
+alias -g g_all_org="$HOME/DONAGHS/all_org/"        # this only tracks doom-notes.org
+
+# echo -e "$mydir";
+alias -g g_list='echo -e "~/PORTABLE_ENV/ \n~/Dropbox/org-mode/org/ \n~/DONAGHS/personal/ \n~/DONAGHS/MY_ZIM/Computer \n~/DONAGHS/all_org/"'
+alias -g g_run='$HOME/.scripts/manage_all_git_repos.sh'
+alias -g git_list='echo -e "~/PORTABLE_ENV/ \n~/Dropbox/org-mode/org/ \n~/DONAGHS/personal/ \n~/DONAGHS/MY_ZIM/Computer \n~/DONAGHS/all_org/"'
+alias -g git_run='$HOME/.scripts/manage_all_git_repos.sh'
+
+
 #}}}
 #{{{ LS
-# List directories / files
-alias l.='ls -d .* --color=auto' # Show hidden files ##
-alias lh='ls -d .* --color=auto' # Show hidden files ##
-alias ld='ls -la -d */' # show directories
-# alias -g lh='ls | head'
-alias lk='ls -1v'
-alias ll='ls -la'
-alias llk="ll | grep '^l.*'"
-alias lls='ls | xargs -n1' # show ls in a single column
-alias ls='ls --color=auto'
-alias hp='ls --hide=*.py'
-alias -g lf="ls | tr ' ' '\n'"
+# List directories / files. Code: f file, d directory, l symlink, i item (file/directory),  n non-.
 alias -g latest='ls -lt  **/*(.om[1,20])' # list latest 20 files edited
+# ls various
+alias -g ll='ls -la' # long list everything
+alias -g lf="ls -lad --color *(R.)" # List only regular files (zsh) 
+alias -g lfr="ls -lad --color *(R.)" # List only regular files (zsh) 
+alias -g lfh="ls -la | grep -v '^[ld].*' | grep  ' \..*$'" # List only hidden regular files
+alias -g lfl="ls -la | grep '^[l]' | grep ' \..*$'" # List only files that are symlinks
+alias -g ld='ls -la -d */' # List directories incl. symlinks
+alias -g ldh="ls -la | grep '^d' | grep ' \..*$'" # List only directories that are hidden
+alias -g ldl="ls -la | grep '^[l]' | grep -v ' \..*$'" # List only directories that are symlinks
+alias -g ldnl="ls -la | grep '^[d].*' | grep -v ' \..*$'" # List only directories that are not symlinks
+alias -g l.='ls -d .* --color=auto' # List hidden files and directories  WORKS!
+# alias lh="ls -lad -- *(D.)" # List hidden files. But includes non-hidden files???
+# alias lh="ls -lad --color *(D.)" # List hidden files. But includes non-hidden files???
+# alias -g lh="ls -la | awk -F' ' '{ print $NF }' | awk -F: '/^[^a-zA-z/0-9].{2,}/ { print $0 } ' " # List only hidden files
+# alias lh=" ls -la | awk -F' ' '{ print $NF }' | awk '/^[^a-zA-Z0-9/]/ { print $0 }' "
+# lh() { ls -la | awk -F' ' '{ print $NF }' | awk '/^[^a-zA-Z0-9/].{2,}/ { print $NF }' | column  }
+# alias lr="ls -la | grep '^\-'"  # Show only regular files including hidden (Donaghs!)
+# alias lr='find . -maxdepth 1 -type f -ls' # Show only regular files
+# alias lr='find . ! -name . -prune -type f -exec ls -ldi {} +' # List only regular files (POSIXY)
+# alias lr='ls -l -- *(D.)' # List only regular files (zsh only)
+alias -g lk='ls -1v' # List non-hidden items (files and folders) 
+# alias -g lih='ll -d [a-z]*' # List non-hidden items (files and folders) 
+# alias -g lin="ls | tr ' ' '\n'" # List non-hidden items (files and folders) 
+alias -g llk="ll | grep '^l.*'" # exclude links
+alias -g lls='ls | xargs -n1' # List ls in a single column
+# alias ls='ls --color=auto'
+alias -g hp='ls --hide=*.py' # hide python files
 #}}}
 #{{{ PYTHON
 # python virtual envs shortcuts
@@ -385,6 +417,11 @@ alias zs='zsh_stats' # lists last 20 commands with statistics
 # end zoxide
 # #}}}
 
+# EDITS: 
+# 2022-03-22 variations on ls utility
+# 2022-03-21 Major re-organisation 
+# 2021-12-21 # Reinstall of Manjaro see SD64   
+# 2020-12-10 Manjaro again - may be missing some items...
 ## THE END
 
 

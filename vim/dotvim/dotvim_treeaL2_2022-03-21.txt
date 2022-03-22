@@ -1,0 +1,30 @@
+-> % tree -alL 2 
+.
+├── autoload -> /home/donagh/PORTABLE_ENV/vim/dotvim/autoload
+│   └── plug.vim
+├── .netrwhist
+├── pack -> /home/donagh/PORTABLE_ENV/vim/dotvim/pack
+│   └── nightsense
+├── plugins -> /home/donagh/PORTABLE_ENV/vim/dotvim/plugins
+│   ├── goyo.vim
+│   ├── limelight.vim
+│   ├── ranger.vim
+│   ├── stellarized
+│   ├── vim-airline
+│   ├── vim-commentary
+│   ├── vim-easymotion
+│   ├── vim-markdown
+│   └── vim-peekaboo
+├── spell -> /home/donagh/PORTABLE_ENV/vim/dotvim/spell
+│   ├── en.utf-8.add
+│   └── en.utf-8.add.spl
+├── syntax -> /home/donagh/PORTABLE_ENV/vim/dotvim/syntax
+│   └── markdown.vim
+├── vimrc_files -> /home/donagh/PORTABLE_ENV/vim/vimrc_files
+│   ├── minimal_vimrc
+│   ├── plugins.vim
+│   └── README.md
+└── vim_templates -> /home/donagh/PORTABLE_ENV/vim/dotvim/vim_templates
+    ├── skeleton.html
+    ├── skeleton.md
+    └── skeleton.py

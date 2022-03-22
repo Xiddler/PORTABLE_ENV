@@ -309,5 +309,17 @@ https://ndpsoftware.com/git-cheatsheet.html#loc=local_repo
 # see which credentials I gave at git init
 git config -l
 
+# find .git folders
+find . -type d -name '.git'  
+
+# My git repositories on laptop
+# [ see $HOME/.scripts/manage_all_git_repos.sh ]
+$HOME/PORTABLE_ENV/.git
+$HOME/Dropbox/org-mode/org/.git
+$HOME/DONAGHS/personal/.git
+$HOME/DONAGHS/MY_ZIM/Computer/.git
+$HOME/DONAGHS/all_org/.git
+
+
 # END
 
