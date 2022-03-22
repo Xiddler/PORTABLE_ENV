@@ -322,7 +322,7 @@ $HOME/DONAGHS/all_org/.git
 
 # global git config file
 #The global Git config file is stored in a file uncreatively named .gitconfig the user’s home directory i.e. $HOME/.gitconfig. 
-
+git config --global --list --show-origin
 
 # END
 

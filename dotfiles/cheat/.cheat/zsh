@@ -90,5 +90,10 @@ Alt - (repeat)
 hash -d hello=~/Documents
 ~hello/world
 
+# help from
+man zshall
+https://manpages.debian.org/bullseye/zsh-common/index.html :: contains only contents of -> % man zshall
+
+
 
 

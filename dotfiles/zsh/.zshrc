@@ -66,7 +66,7 @@ source ~/.fzf/shell/key-bindings.zsh
 
 # Path to your oh-my-zsh installation.
 # export ZSH=/home/ubuntu/.oh-my-zsh
-export ZSH=$HOME/.oh-my-zsh
+# export ZSH=$HOME/.oh-my-zsh
 
 # to allow copying of arguments - of mv - using kk
 autoload copy-earlier-word
@@ -148,7 +148,7 @@ bindkey 'kk' copy-earlier-word
 ## Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  zsh-syntax-highlighting  
+  # zsh-syntax-highlighting  
   colored-man-pages
   fzf
   fd-find
@@ -159,12 +159,12 @@ plugins=(
 # this seems to have gotten resolved somehow...
 # Ans: zsh has bindings for vi on the CLI
 # https://github.com/zsh-users/zsh-autosuggestions/issues/126
+#
 # if [ -z "$_zsh_custom_scripts_loaded" ]; then
 #   _zsh_custom_scripts_loaded=1
 #   plugins+=(zsh-syntax-highlighting)
 # fi
 
-# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 # To add a new path
@@ -260,24 +260,24 @@ eval "`dircolors -b ~/.dir_colors`"
 
 
 # MARKS
-export MARKPATH=$HOME/PORTABLE_ENV/MARKS/marks
+# export MARKPATH=$HOME/PORTABLE_ENV/MARKS/marks
 # ln -s $HOME/PORTABLE_ENV/MARKS/marks $HOME/.marks
 
-mark() {
-  mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
-}
+# mark() {
+  # mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
+# }
 
-unmark() {
-  rm -i "$MARKPATH/$1"
-}
+# unmark() {
+  # rm -i "$MARKPATH/$1"
+# }
 
-marks() {
-  ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
-}
+# marks() {
+  # ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
+# }
 
-jump() {
-  cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
-}
+# jump() {
+  # cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
+# }
 
 #----- END MARKS 
 
@@ -316,7 +316,7 @@ source ~/.config/dirjump/dirjump
 
 # source /home/donagh/.config/broot/launcher/bash/br
 # call the zsh-syntax-highlighting plugin last thing in this file
-plugins=( zsh-syntax-highlighting )
+# plugins=( zsh-syntax-highlighting )
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
