@@ -6,6 +6,8 @@
 alias -g PS='ps aux | grep -i '
 alias -g G='| grep -i '
 alias -g L='| less '
+alias -g W='| wc -l '
+alias -g C='| xclip -selection clipboard'
 # alias -g C='| clipcopy '
 # alias -g C='| xclip '
 alias hg=histgrep

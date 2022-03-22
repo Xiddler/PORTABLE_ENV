@@ -23,6 +23,7 @@ for mydir in "${directories[@]}";
         # echo -e "$mydir";
         # printf '%s\n ' "$mydir"
        echo -e "$mydir" && cd "$mydir" && git status # | tail -n 8
+       echo "-------------------------------------------------------"
        # cd "$mydir" && git add -A # | tail -n 8
 done
 

@@ -320,6 +320,9 @@ $HOME/DONAGHS/personal/.git
 $HOME/DONAGHS/MY_ZIM/Computer/.git
 $HOME/DONAGHS/all_org/.git
 
+# global git config file
+#The global Git config file is stored in a file uncreatively named .gitconfig the user’s home directory i.e. $HOME/.gitconfig. 
+
 
 # END
 
