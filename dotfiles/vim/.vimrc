@@ -372,6 +372,13 @@ highlight Folded guibg=grey guifg=blue
 "
 ""vim:foldmethod=marker:foldlevel=0
 "}}}
+"{{{ Latex
+"=== Latex ===
+"vim-latex plugin
+let g:tex_flavor='latex'
+"
+"
+"}}}
 " Customised {{{
 "
 " "=== Customised === 

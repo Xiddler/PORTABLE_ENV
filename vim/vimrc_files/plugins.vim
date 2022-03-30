@@ -1,5 +1,7 @@
 " Filepath /home/donagh/PORTABLE_ENV/vim/dotvim/vimrc_dirs/plugins.vim
 " This file is where I call the plugins I want to use in vim. There is a line in .vimrc that calls this file
+" .vimrc --> ~/.vim/plugins
+" vim starts -->  ~/.vim/autoload/plug.vim 
 
 " Enable / Disable Plugins {{{
 " === Enable / Disable Plugins ===
@@ -7,6 +9,7 @@
 " 2022-02-05  vim-plug started
 " https://github.com/junegunn/vim-plug and https://github.com/junegunn/vim-plug/wiki/tutorial
 " Remember to :so % after adding a new Plug
+"
 
 call plug#begin('/home/donagh/.vim/plugins')
 Plug 'tpope/vim-commentary'
@@ -23,6 +26,7 @@ Plug 'junegunn/vim-peekaboo'
 " With none of these enabled ##'s are salmon-coloured - but no folding
 " Check if this displays headings - yes but loses coloured # as in vim-mardown-folding 
 Plug 'plasticboy/vim-markdown'
+Plug 'vim-latex/vim-latex'
 " the following plugin (vim-markdown) includes Syntax Concealing - use :set conceallevel=2
 " Plug 'https://github.com/preservim/vim-markdown'                        
 " the following hides the heading in markdown files - a problem (is this why plasticboy is better?) - <-- use :set foldignore=#

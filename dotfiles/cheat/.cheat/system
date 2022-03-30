@@ -33,13 +33,14 @@ lspci       # 00:00.0 PCI bridge: Broadcom Limited Device 2711 (rev 10)
             # 01:00.0 USB controller: VIA Technologies, Inc. VL805 USB 3.0 Host Controller (rev 01)
             
             
-# Most of these commands use files in the /proc directory to extract system information.
+# Most of the above commands use files in the /proc directory to extract system information.
 
 
-# state of system at a glance
+# system monitoring - the state of system at a glance
 glances
+btop        # cool
 
-# find number of processors on this maching
+# find number of processors on this machine
 nproc
 4
 

@@ -1,9 +1,16 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+'''
+This python script is used to entering credentials to 11SignUps.py. The zsh command alias is passin. See .zsh_aliases. 
+(Note added 2022-03-29)
+'''
 
 
-filename = '/home/donagh/ZIM/Computer/11SignUps.txt'
+
+# ~/DONAGHS/MY_ZIM/Computer/11SignUps.txt
+filename = '/home/donagh/DONAGHS/MY_ZIM/Computer/11SignUps.txt'
+
 print(f"This will save credentials to {filename}")
 
 url_nick = input("What is the url-nick? " )

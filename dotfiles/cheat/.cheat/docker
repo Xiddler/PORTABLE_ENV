@@ -1,5 +1,6 @@
 # Start docker daemon
-docker -d
+sudo systemctl enable docker.service
+sudo systemctl start docker.service
 
 # start a container with an interactive shell
 docker run -ti <image_name> /bin/bash

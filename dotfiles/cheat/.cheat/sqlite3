@@ -18,3 +18,9 @@ sqlite example.db "SELECT * FROM 'Os' WHERE Year='1991';"
 
 # view records with fuzzy matching
 sqlite3 ~/example.db "SELECT * FROM 'Os' WHERE Year like '19%';"
+
+# if you want to include unmatched rows. 
+Left join: Include unmatched rows from the first table. 
+Right join: Include unmatched rows from the second table. 
+Outer join: Include unmatched rows from both tables. 
+Inner join: Don't include any unmatched rows.
