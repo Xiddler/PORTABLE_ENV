@@ -519,4 +519,9 @@ previous entry 	:cprevious 	:lprevious
 first entry 	:cfirst 	:lfirst
 last entry 	    :clast
 
+# Quickfix usage example
+The quickfix list is populated when you run commands such as :grep. 
+:grep ugly -r **/*.txt
+This will populate our quickfix list with a list of files with the word 'ugly' in them. You can use :copen or :clist to look at the files manually.
+
 

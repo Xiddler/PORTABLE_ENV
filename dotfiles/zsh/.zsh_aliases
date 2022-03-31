@@ -85,6 +85,7 @@ projs() { cd /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES
 mind() { cd $personal/minding_me }
 words() { cd $HOME/REPOS/WORDS/ }
 books() { cd $HOME/REPOS/books/ } # use autokey instead so as to be able to tabe in vim. Added 2021-10-25.
+repos() { cd $HOME/REPOS/ } # 
 #bookmarks() { cd $HOME/SD64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
 reading() { cd $HOME/REPOS/books/Reading/0Reading_notes && ls }
 rnotes() { cd $HOME/REPOS/books/Reading/0Reading_notes && ls }
@@ -174,7 +175,7 @@ alias -g catt='cat $HOME/ZIM/Computer/11SignUps.txt|rg -i -A5 '
 pout() { jq '.passwords' $HOME/REPOS/11SignUps.json | rg -A4 $1 }
 
 # PASSIN OUT 
-alias -g passin='python ~/PORTABLE_ENV/dotfiles/scripts/.scripts/pass_in.py'
+alias -g passin='sudo python ~/PORTABLE_ENV/dotfiles/scripts/.scripts/pass_in.py'
 alias gett='$HOME/.scripts/get_password.sh'
 # alias -g tpassin='sudo --prompt=1234 $HOME/.scripts/passin_terminal.py'
 # alias -g passin='$HOME/.scripts/passin.sh' # a non-GUI version
