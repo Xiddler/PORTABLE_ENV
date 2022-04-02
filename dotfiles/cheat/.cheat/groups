@@ -1,0 +1,14 @@
+Opened 2022-04-02
+
+# first look at 
+-> % cheat usermod
+
+# use visudo
+-> % sudo visudo
+
+    ## User privilege specification              
+    ##
+    root ALL=(ALL) ALL
+    donagh ALL=(ALL) ALL
+
+

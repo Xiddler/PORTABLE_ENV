@@ -1,15 +1,23 @@
 # LOCATION: ~/PORTABLE_ENV/dotfiles/zsh
 
+#{{{ NOTES
+## In functions, remember the 'command' prefix "$@" if the "alias" has the same name as the command. 
+#ls() {
+#      command ls --color=auto "$@"
+#    }
+#}}}
+
 # CONTENTS
 
 # #{{{ GENERAL
+# Capital letters
 alias -g PS='ps aux | grep -i '
 alias -g G='| grep -i '
 alias -g L='| less '
 alias -g W='| wc -l '
 alias -g C='| xclip -selection clipboard'
 # alias -g C='| clipcopy '
-# alias -g C='| xclip '
+#
 alias hg=histgrep
 alias hj='history'
 alias -g pss='python3 -m http.server 5500'
@@ -110,19 +118,22 @@ alias -g szo='cd $HOME/DONAGHS/ZIM/ORG/'
 # Aliases - vim
 # alias -g sp='vim $HOME/REPOS/TESTING/scratch_pad.txt'
 alias -g bx='vim $HOME/REPOS/TESTING/scratch_pad.txt' # as used in doom-emacs and in vim. Perhaps buffer X?
-alias -g vfraud='vim ~/DONAGHS/personal/00Fraud/fraud.md'
 alias -g vt='vim ~/REPOS/TESTING/test.md'
 alias -g music='vim $HOME/REPOS/music/music_memos.md'
 alias -g quakes='vim $HOME/DONAGHS/personal/mental_stuff/quakes.md'
 alias -g 2r='vim ~/REPOS/books/Reading/2Read.md'
+alias -g v_test='vim ~/REPOS/TESTING/test.md'
+alias -g v_plugins='vim /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim'
+alias -g v_fraud='vim ~/DONAGHS/personal/00Fraud/fraud.md'
 
 # Functions - vim
 toread() { vim $HOME/REPOS/books/toRead.md }
 wants() { vim $HOME/REPOS/Purchases/Wants/wants.md }
 #}}}
 #{{{ RSYNC
-# weekly rsync backup
+# manual rsync backup to the USB attached to the RPi
 alias -g rsyncz="$HOME/.scripts/rsync_backup.sh"
+# investigate using systemd timers to do this automatically Note added 2022-04-02
 #}}}
 #{{{ DOCKER & PODMAN
 alias -g docker='sudo docker '
@@ -153,9 +164,10 @@ ch() { cheat "$1" | less }
 alias -s md=vim
 #}}}
 #{{{ SYSTEM TIMERS
+# to edit / set systemd timers (as opposed to cron)
 #  main folder
-timer-s() { sudo vim "/etc/systemd/system/$1.service" }
-timer-t() { sudo vim "/etc/systemd/system/$1.timer" }
+timer-s() { sudo vim "/etc/systemd/system/$1.service" } # edit a service e.g.-> % timer-s dothisthing
+timer-t() { sudo vim "/etc/systemd/system/$1.timer" } # edit a timer e.g.-> % timer-t dothisthing
 timer-st() { sudo systemctl start "$1.timer" }
 timer-ls() { systemctl list-timers --all }
 timer-dae() { echo "1234" | sudo -S systemctl daemon-reload } 
@@ -168,13 +180,13 @@ timer-dae() { echo "1234" | sudo -S systemctl daemon-reload }
 # rp() { realpath $1 | clipcopy }
 #}}}
 #{{{ PASSWORDS 
-# PASSWORD OUT 
+# PASSWORDS OUT 
 alias -g passout='cat $HOME/DONAGHS/MY_ZIM/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias for catt
 alias -g catt='cat $HOME/ZIM/Computer/11SignUps.txt|rg -i -A5 '
 # added 2022-03-20  using jq and 11SignUps.json
 pout() { jq '.passwords' $HOME/REPOS/11SignUps.json | rg -A4 $1 }
 
-# PASSIN OUT 
+# PASSWORDS IN
 alias -g passin='sudo python ~/PORTABLE_ENV/dotfiles/scripts/.scripts/pass_in.py'
 alias gett='$HOME/.scripts/get_password.sh'
 # alias -g tpassin='sudo --prompt=1234 $HOME/.scripts/passin_terminal.py'
@@ -221,36 +233,21 @@ alias -g sshdo='ssh -i $HOME/.ssh/id_rsa_do donagh@142.93.37.252'
 #}}}
 #{{{ DOTFILES
 # dot files shortcuts 
-alias cb='cat ~/.bashrc'
-alias cv='cat ~/.vimrc'
-alias cz='cat ~/.zshrc'
-alias cza='cat ~/.zsh_aliases'
-alias sb='source ~/.bashrc'
-alias sz='source ~/.zshrc'
-alias sza='source ~/.zsh_aliases'
-alias vb='vim ~/.bashrc'
-alias vv='vim ~/.vimrc'
-alias vz="vim ~/.zshrc"
-alias vza="vim ~/.zsh_aliases"
+alias -g cb='cat ~/.bashrc'
+alias -g cv='cat ~/.vimrc'
+alias -g cz='cat ~/.zshrc'
+alias -g cza='cat ~/.zsh_aliases'
+alias -g sb='source ~/.bashrc'
+alias -g sz='source ~/.zshrc'
+alias -g sza='source ~/.zsh_aliases'
+alias -g vb='vim ~/.bashrc'
+alias -g vv='vim ~/.vimrc'
+alias -g vz="vim ~/.zshrc"
+alias -g vza="vim ~/.zsh_aliases"
 # grep a config file
 gza() { rg "$1" ~/.zsh_aliases }
 gz() { rg "$1" ~/.zshrc }
 gv() { rg "$1" ~/.vimrc }
-#}}}
-#{{{ TODO
-#----------  TODO
-# Superceded by org-mode in May 2020
-# org() { cd $HOME/TODO/ORG-MODE }
-# todo() { cd $HOME/TODO }
-# alias t="$HOME/TODO && ls"
-# alias td="$HOME/TODO && ls"
-# Libre Office open TODO.ods / PROJECTS.ods
-# alias lot="/usr/sbin/libreoffice $HOME\/TODO\/TODO.ods &"
-# alias lop="/usr/sbin/libreoffice $HOME\/TODO\/PROJECTS.ods &"
-# View todo / lists in the terminal
-# alias -g vt="$HOME/.scripts/todo-ods-to-csv.sh"
-# alias -g vp="$HOME/.scripts/projects-ods-to-csv.sh"
-# alias -g meta="$HOME/TODO/META"
 #}}}
 #{{{ GIT
 # git shortcuts - but see $alias from zsh
@@ -379,12 +376,19 @@ alias zcp='zmv -C'
 alias zln='zmv -L'
 alias zs='zsh_stats' # lists last 20 commands with statistics
 #}}}
+#{{{ ARITHMETIC
+# -> % echo $((4*34))
+# -> % perl -E 'say 235*1.15'
+#}}}
 #{{{ ZOXIDE
 
  # =============================================================================
 #
 # Utility functions for zoxide.
 #
+# the following lines are in .zshrc
+# zoxide 
+# eval "$(zoxide init zsh)"
 
 # pwd based on the value of _ZO_RESOLVE_SYMLINKS.
 #function __zoxide_pwd() {
@@ -470,11 +474,12 @@ alias zs='zsh_stats' # lists last 20 commands with statistics
 # end zoxide
 # #}}}
 
-# EDITS: 
+#{{{ EDITS: 
+# 2022-04-02 added Notes and ARITHMETIC
 # 2022-03-22 variations on ls utility - big input, success
 # 2022-03-21 Major re-organisation 
 # 2021-12-21 # Reinstall of Manjaro see SD64   
 # 2020-12-10 Manjaro again - may be missing some items...
+#}}}
+
 ## THE END
-
-

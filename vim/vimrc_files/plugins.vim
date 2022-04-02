@@ -15,7 +15,9 @@ call plug#begin('/home/donagh/.vim/plugins')
 Plug 'tpope/vim-commentary'
 Plug 'https://github.com/vim-airline/vim-airline.git'
 " for the following plugin, -> %cp -r ~/.vim/plugins/stellarized ~/.vim/pack/nightsense/start/      :: this seems to be necessary
-Plug 'nightsense/stellarized'              
+" Plug 'nightsense/stellarized'              
+" gruvbox - added 2022-04-02. For a change.
+Plug 'https://github.com/morhetz/gruvbox.git'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'https://github.com/junegunn/goyo.vim.git'

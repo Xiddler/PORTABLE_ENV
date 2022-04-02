@@ -20,7 +20,6 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
 fi
 
 
-
 # to disable the Toshiba touchpad
 # xinput disable 12 (or 13 - check with $ xinput list)
 
@@ -50,7 +49,7 @@ set -g history-limit 9000 #
 # refer to https://betterdev.blog/minimal-safe-bash-script-template/
 # set -Eeou pipefail
 
-#set Caps Lock key to Escape
+# set Caps Lock key to Escape
 # setxkbmap -option caps:escape
 # setxkbmap -option caps:caps
 #
@@ -148,7 +147,7 @@ bindkey 'kk' copy-earlier-word
 ## Add wisely, as too many plugins slow down shell startup.
 plugins=(
   # git
-  # zsh-syntax-highlighting  
+  # zsh-syntax-highlighting # built in to my current prompt p10k 
   colored-man-pages
   fzf
   fd-find

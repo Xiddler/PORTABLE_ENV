@@ -294,4 +294,7 @@ man -k -
 # Change CAPS button to ESC
 -> % setxkbmap -option caps:swapescape
 
+# get the size of a directory
+-> % du -sh ~/PORTABLE_ENV 
+
 # END

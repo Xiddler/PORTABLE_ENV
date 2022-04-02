@@ -6,4 +6,14 @@ let $RTP=split(&runtimepath, ',')[0]
 let $RC="$HOME/.vimrc"
 set noswapfile
 
+" Donaghs - for use in containers
+set <esc>=jk
+let mapleader=','
+nnoremap <space> :
+set encoding=utf-8
+" save
+cmap s<space> :w<cr>
+" save and quit
+cmap ww :wq!<cr> 
+set timeout timeoutlen=3000 ttimeoutlen=100
 
