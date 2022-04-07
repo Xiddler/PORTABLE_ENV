@@ -1,11 +1,12 @@
 "{{{ Minimum Settings
 " === Min settings === 
-
+" cf. /usr/share/vim/vim82/defaults.vim
 " 'set nocompatible' is never necessary in a vimrc file. When Vim detects a user vimrc file, it automatically sets nocompatible. 
 " set backspace=start,eol,indent " no longer needed
-set <esc>=jk " an inline comment " certain problems with this, why?
-" use spacebar to enter command mode. This matches doom-emacs for me
+" a minimal .vimrc --> /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc
 "
+set <esc>=jk 
+" use spacebar to enter command mode. This matches doom-emacs for me
 nnoremap <space> :
 set encoding=utf-8
 
@@ -511,8 +512,9 @@ let $RC="$HOME/.vimrc" " alternative to $MYVIMRC
 
 "}}}
 " Keybindings collected {{{
-
 " Normal Mode
+" nmap ee 0A €kD€ýaj0 " @e :: join lower line to upper line which is short
+
 " K             :: get vim help for the item under the cursor
 " gf            :: open a new tab for the file under the cursor
 " ,vv           :: open .vimrc

@@ -93,10 +93,12 @@ projs() { cd /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES
 mind() { cd $personal/minding_me }
 words() { cd $HOME/REPOS/WORDS/ }
 books() { cd $HOME/REPOS/books/ } # use autokey instead so as to be able to tabe in vim. Added 2021-10-25.
+bd() { cd $HOME/REPOS/books/ } # a collection of abbrs. for books; bd is books_directory; br is books_reading directory for notes; b2r is books to read;
+reading() { cd $HOME/REPOS/books/0READING/0Reading_notes/ && ls }
+br() { cd $HOME/REPOS/books/0READING/0Reading_notes/ && ls }
 repos() { cd $HOME/REPOS/ } # 
 #bookmarks() { cd $HOME/SD64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
-reading() { cd $HOME/REPOS/books/Reading/0Reading_notes && ls }
-rnotes() { cd $HOME/REPOS/books/Reading/0Reading_notes && ls }
+rnotes() { cd $HOME/REPOS/books/0Reading/0Reading_notes && ls }
 alc() { cd  $personal/alcohol/ }
 # Search Zim - Computer, ORG 
 alias -g ..='../'
@@ -121,7 +123,8 @@ alias -g bx='vim $HOME/REPOS/TESTING/scratch_pad.txt' # as used in doom-emacs an
 alias -g vt='vim ~/REPOS/TESTING/test.md'
 alias -g music='vim $HOME/REPOS/music/music_memos.md'
 alias -g quakes='vim $HOME/DONAGHS/personal/mental_stuff/quakes.md'
-alias -g 2r='vim ~/REPOS/books/Reading/2Read.md'
+alias -g 2r='vim ~/REPOS/books/0Reading/2Read.md'
+alias -g b_2r='vim ~/REPOS/books/0Reading/2Read.md' # books to read; see b_r and b_d above
 alias -g v_test='vim ~/REPOS/TESTING/test.md'
 alias -g v_plugins='vim /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim'
 alias -g v_fraud='vim ~/DONAGHS/personal/00Fraud/fraud.md'

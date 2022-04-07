@@ -19,8 +19,7 @@
 ;;
 ;; + `doom-font'
 ;; + `doom-variable-pitch-font'
-;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for
-;;   presentations or streaming.
+;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for presentations or streaming.
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
@@ -94,8 +93,7 @@
 (map! :n "tt" 'org-todo )
 (map! :n "ts" 'org-schedule )
 (map! :n "t a" 'org-agenda )
-;; (map! :n "SPC a" 'org-agenda )
-(map! :n "SPC w SPC" 'kill-buffer ) ;; like vim
+(map! :n "SPC w w" 'kill-buffer ) ;; like vim
 (map! :n "SPC s SPC" 'save-buffer ) ;; even simpler than w, like vim
 (map! :n "SPC j" 'outline-next-visible-heading )
 (map! :n "SPC k" 'outline-previous-visible-heading )
@@ -108,8 +106,9 @@
 (map! :n ",p" 'clipboard-yank) ;; paste from system clipboard; Note: SPC i y (lowercase) pastes from emacs yank
 (map! :n "E" 'evil-end-of-line)
 (map! :n "B" 'evil-beginning-of-line)
+(map! :n ",/" 'evil-avy-goto-char) ;; similar to vim-easymotion; also 'avy-goto-char and 'avy-goto-char-2
 
-;; Mappings to change the appearance for 'mybook.org'
+;; Mappings to change
 ;; (map! :n "nm" 'display-line-numbers-mode)
 ;; (map! :n "mf" 'menu-set-font "URW Gothic Book 14" )
 ;; (map! :n "mt" 'load-theme "doom-homage-white" )

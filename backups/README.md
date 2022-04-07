@@ -1,12 +1,12 @@
 # CONTENTS
-[Updated: 2021-12-13]
+[Updated: 2022-04-06; 2021-12-13]
 [NOTE: 2021-12-22 THIS File needs a TOTAL rewrite in light of the new rsync to RPi scripts now made. cheat reinstall. ~/SAFE/SAFE_borg_backup now
 defunct ]
 
 ______________________________________________________________________
 see:
 
--> % cheat backups 
+-> % cheat backups.md
 
 
 
@@ -48,6 +48,7 @@ This file describes the folders and files and the system involved in backing up 
 The 'remote' backup is done using borg and is backed up to the USB_128 drive attached to the Raspberry Pi
 ______________________________________________________________________
 # ~/BACKUPS/bash_scripts
+
 Status: LOST
 
 These were not backed up and are now lost. NOTE added 2021-12-22
