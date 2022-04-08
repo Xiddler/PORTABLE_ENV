@@ -429,9 +429,11 @@ set splitbelow splitright
 map <leader>tt :terminal zsh<CR>
 
 " open today's markdown journal in a new tab
-" map ,jj :tabe /home/donagh/DONAGHS/personal/journal/$(date +%Y)/$(date +%m)/$(date +%d)-$(date +%m).md<cr>
+nmap <leader>mj :tabe /home/donagh/DONAGHS/personal/journal/$(date +%Y)/$(date +%m)/$(date +%d)-$(date +%m).md<cr>
 " /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/journal/2022/02/03-02.md
-map ,mj !mj
+" nmap <leader>mj :!mj<CR>
+" same for work journal
+" nmap <leader>wj :!wj<CR>
 "
 "Swap vertical split to hor
 map <leader>th <C-w>t<C-w>H
@@ -495,6 +497,7 @@ function! Neat_REPOS()
 endfunction
 command Nr call Neat_REPOS()
 
+" function to open my journal for today in a new tab from vim (mj is the command I use in the shell)
 function! Myjournal()
     let year = strftime('%Y')
     let month = strftime('%m')
@@ -505,9 +508,22 @@ function! Myjournal()
     execute ":tabe ".filen
 endfunction 
 
-" open today's markdown journal in a new tab
+" open today's markdown journal in a new tab in vim
 nmap mj :call Myjournal()<cr>
 
+
+" function to open my work journal in a new tab from vim (wj is the command I use in the shell)
+function! WorkJournal()
+    let path = '/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/means/'
+    let filen =  path.'work_journal.md'
+    execute ":tabe ".filen
+endfunction 
+
+" open today's markdown journal in a new tab in vim      
+nmap wj :call WorkJournal()<cr>
+
+
+" $MYVIMRC
 let $RC="$HOME/.vimrc" " alternative to $MYVIMRC
 
 "}}}

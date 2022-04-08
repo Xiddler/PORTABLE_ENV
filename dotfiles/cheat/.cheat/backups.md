@@ -5,12 +5,36 @@ returned 2021-12-22 after Dec2021 reinstall, therefore MANY things may have chan
 
 #
 The information relating to this backup system is on ~/PORTABLE_ENV/backups/README.md
-and
+and also in:
 Locations for access to information about backups in my Personal Knowledge Base PKB
 
 zim-wiki/Computer/PROTOCOLS :: MAJORS:BACKING-UP 
 doom-emacs                  :: TODOS/Tasks/IT Tasks
 
+
+# tree 
+Opened 2022-04-05
+In my $HOME folder I have a folder called ~/BACKUPS/
+
+-> % tree -L2 
+.
+├── RSYNCED -> /home/donagh/cifs_share/RSYNCED                              :: the command -> % rsync sends these to the USB attachted to the RPi
+│   ├── all_org
+│   ├── personal
+│   ├── zim_Computer
+│   └── zim_ORG
+└── TARGZ
+     ├── DONAGHS
+     │   └── DONAGHS_2022-01-22.tar.gz                                      :: the full contents of ~/SD64/DONAGHS at that date
+     └── REPOS
+         └── REPOSITORIES_2022-01-22.tar.gz                                 :: the full contents of ~/SD64/REPOSITORIES at that date
+
+The "tiny" USB_128 attached to the laptop has a copy of DONAGHS and REPOSITORIES as has the backup USB_128 in the MemorySticks tin box.
+
+# DONAGHS
+
+run the following script:
+/home/donagh/PORTABLE_ENV/dotfiles/scripts/.scripts/backup_DONAGHS_REPOS.sh
 #
 The main things needing backup:
  

@@ -71,6 +71,7 @@ alias -g chk='$HOME/.scripts/info.sh' # quick summary of system status
 #{{{     NAVIGATION SHORTCUTS
 # NAVIGATION SHORTCUTS
 # Functions to navigate
+busb() { cd $HOME/B693_backup }
 recipes() {cd $HOME/REPOS/FOOD/recipes }
 # jour { cd $journal && ls }
 po() { cd $HOME/PORTABLE_ENV }
@@ -124,7 +125,7 @@ alias -g vt='vim ~/REPOS/TESTING/test.md'
 alias -g music='vim $HOME/REPOS/music/music_memos.md'
 alias -g quakes='vim $HOME/DONAGHS/personal/mental_stuff/quakes.md'
 alias -g 2r='vim ~/REPOS/books/0Reading/2Read.md'
-alias -g b_2r='vim ~/REPOS/books/0Reading/2Read.md' # books to read; see b_r and b_d above
+alias -g b2r='vim ~/REPOS/books/0READING/2Read.md' # books to read; see b_r and b_d above
 alias -g v_test='vim ~/REPOS/TESTING/test.md'
 alias -g v_plugins='vim /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim'
 alias -g v_fraud='vim ~/DONAGHS/personal/00Fraud/fraud.md'
@@ -206,7 +207,7 @@ k=$(date +"%Y/%m")
 journal='cd $HOME/DONAGHS/personal/journal/'$k # short form
 personal='cd $HOME/DONAGHS/personal' # short form
 alias -g mj='$HOME/.scripts/markdown_journal.sh'
-alias -g wj='vim $HOME/DONAGHS/personal/Means/work_journal.md'
+alias -g wj='vim $HOME/DONAGHS/personal/means/work_journal.md'
 alias -g aj='vim $HOME/DONAGHS/personal/Means/action_journal.md'
 alias -g dist='vim $HOME/DONAGHS/personal/Means/distractions.md'
 alias -g mdd='$HOME/.scripts/markdown_diary.sh' # md is taken as mkdir -p <dir>

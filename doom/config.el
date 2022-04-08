@@ -92,7 +92,7 @@
 (map! :n "SPC d" 'treemacs ) ;; Tree directory for files / folders
 (map! :n "tt" 'org-todo )
 (map! :n "ts" 'org-schedule )
-(map! :n "t a" 'org-agenda )
+(map! :n "ta" 'org-agenda )
 (map! :n "SPC w w" 'kill-buffer ) ;; like vim
 (map! :n "SPC s SPC" 'save-buffer ) ;; even simpler than w, like vim
 (map! :n "SPC j" 'outline-next-visible-heading )
@@ -100,6 +100,7 @@
 (map! :n "SPC l" 'org-insert-link )
 (map! :n "SPC z" '+org/close-all-folds ) ;; z M is such a pain
 (map! :n "SPC c SPC" 'calendar) ;; quick calendar
+(map! :n ",c" 'calendar) ;; quick calendar;
 (map! :n "j" 'evil-next-visual-line) ;; use j to go down one visual line instead of default
 (map! :n "k" 'evil-previous-visual-line) ;; use k to go up one visual line instead of default
 (map! :n "SPC i Y" 'clipboard-yank) ;; paste from system clipboard; Note: SPC i y (lowercase) pastes from emacs yank

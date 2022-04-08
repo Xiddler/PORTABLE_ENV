@@ -13,3 +13,7 @@ ps -eo pid,user,command
 # Exclude grep from your grepped output of ps.
 # Add [] to the first letter. Ex: sshd -> [s]shd
 ps aux | grep '[h]ttpd'
+
+# to list the threads of a running process (<PID>)
+-> % ps -T -p <PID> 
+# (Get the <PID> of the process you're concerned with from e.g. top)

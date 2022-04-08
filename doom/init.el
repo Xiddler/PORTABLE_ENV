@@ -175,7 +175,7 @@
        ;;(wanderlust +gmail)
 
        :app
-       ;;calendar
+       ;; calendar         ; I don't like it. It removes the small buffer calendar. Reverted 2022-04-08
        ;;irc               ; how neckbeards socialize
        ;;(rss +org)        ; emacs as an RSS reader
        ;;twitter           ; twitter client https://twitter.com/vnought

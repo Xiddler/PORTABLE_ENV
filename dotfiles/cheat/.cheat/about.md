@@ -75,4 +75,8 @@ It means a computer that is connected directly to the internet. A confusing term
 # Virtual Network Computing (VNC) 
 a useful way to connect to a remote desktop when you need a graphical user interface (GUI) to accomplish your task.
 
+# currying
+In functional languages, functions always take one argument and produce one output; to get more, you can chain multiple functions together, known as "currying". 
+
+
 
