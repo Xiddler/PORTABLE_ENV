@@ -15,9 +15,9 @@ if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
   source /usr/share/zsh/manjaro-zsh-config
 fi
 # Use manjaro zsh prompt
-if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
-  source /usr/share/zsh/manjaro-zsh-prompt
-fi
+# if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
+  # source /usr/share/zsh/manjaro-zsh-prompt
+# fi
 
 
 # to disable the Toshiba touchpad
@@ -145,6 +145,7 @@ bindkey 'kk' copy-earlier-word
 ## Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 ## Example format: plugins=(rails git textmate ruby lighthouse)
 ## Add wisely, as too many plugins slow down shell startup.
+## I am not using .oh-my-zsh so I am not using plugins at all? Let's turn off the following:
 plugins=(
   # git
   # zsh-syntax-highlighting # built in to my current prompt p10k 

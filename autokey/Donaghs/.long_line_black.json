@@ -1,18 +1,17 @@
 {
-    "type": "script",
-    "description": "pathToMyJournal",
-    "store": {},
+    "type": "phrase",
+    "description": "long_line_black",
     "modes": [
         1
     ],
-    "usageCount": 14,
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
+    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "pmj",
-            "jt"
+            "l0"
         ],
         "backspace": true,
         "ignoreCase": false,
@@ -27,5 +26,6 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    }
+    },
+    "sendMode": "kb"
 }

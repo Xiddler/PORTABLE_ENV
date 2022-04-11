@@ -70,6 +70,28 @@ d{motion}       delete text that {motion} moves over
 
 ### DONAGHS ###
 
+#####                   PLUGINS                 ########
+# easymotion
+,/
+# emmet
+! <C-y>,                            # Note the , at the end.
+div>p#foo>ul>li*4 <C-y>,
+
+# goyo & limelight
+F9
+
+# Check installed plugins
+:scriptnames
+:help local-additions
+
+# Plugins
+# location of info on my vim plugins on zim-wiki
+/home/donagh/sd64/zim/Computer/LINUX/1Linux_Live_USB/02a_install_extras/10vim_settings/vim_plugins.txt
+eg cd to above folder and ->% grep <surround>
+
+# list plugins
+cat /home/donagh/PORTABLE_ENV/vim/plugins/my_vim_plugins
+
 # installing plugins
 .vim/pack/<name>/start/PLUGIN
 
@@ -78,10 +100,9 @@ ls $HOME/.vim/pack/*/start/*/plugin | grep '.vim$'
 or
 tail -n30 $HOME/.vimrc G .git
 
+# source for plugin recommendations
+https://catonmat.net/vim-plugins
 
-# location of info on my vim plugins
-/home/donagh/sd64/zim/Computer/LINUX/1Linux_Live_USB/02a_install_extras/10vim_settings/vim_plugins.txt
-eg cd to above folder and ->% grep <surround>
 
 # vim surround
 # to put " around the words bear necessity - with cursor on the b of bear
@@ -117,9 +138,6 @@ tab left H
 tab right  L
 
 
-# Check installed plugins
-:scriptnames
-:help local-additions
 
 # Splits
 hor. split  : <Leader> H
@@ -183,8 +201,6 @@ https://www.vim.org/docs.php
 # doom-emacs like save file
 :w[SPC]
 
-# source for plugin recommendations
-https://catonmat.net/vim-plugins
 
 # bulk rename files using vim and ranger
 # cheat rename
@@ -269,15 +285,6 @@ ga
 # see how quickly Vim starts without your existing configuration:
 vim --clean --startuptime clean.log <fileName>
 
-#####                   PLUGINS                 ########
-# easymotion
-,/
-# emmet
-! <C-y>,                            # Note the , at the end.
-div>p#foo>ul>li*4 <C-y>,
-
-# goyo & limelight
-F9
 
 ####
 

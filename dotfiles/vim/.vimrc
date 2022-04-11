@@ -313,7 +313,7 @@ map <leader>f :Ranger<cr>
 " Command for skeleton files from .vim/templates
 augroup skeletons
     au!
-    autocmd BufNewFile *.* silent! execute '0r ~/.vim/templates/skeleton.'.expand("<afile>:e")
+    autocmd BufNewFile *.* silent! execute '0r ~/.vim/vim_templates/skeleton.'.expand("<afile>:e")
 augroup END
 
 " inefficient ways of doing skeleton files

@@ -23,4 +23,5 @@ vim-markdown-folding    folding for markdown in vim                             
 # vim-elixir              elixir plugin for vim                                       :: https://github.com/elixir-editors/vim-elixir
 # vim-instant-markdown    opens a browser when a .md file is opened and closes       :: https://github.com/instant-markdown/vim-instant-markdown
 # vim-pencil              pure typing / writing experience for vim text files        :: https://github.com/reedes/vim-pencil
-
+# vim-skeleton            opens files of type ? to give a boilerplate empty file    ::  
+# Ultisnippets            use short pieces of text to make longer bits 
