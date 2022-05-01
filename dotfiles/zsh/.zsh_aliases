@@ -71,8 +71,10 @@ alias -g chk='$HOME/.scripts/info.sh' # quick summary of system status
 #{{{     NAVIGATION SHORTCUTS
 # NAVIGATION SHORTCUTS
 # Functions to navigate
+focus() { cd $HOME/FOCUS }
 busb() { cd $HOME/B693_backup }
 recipes() {cd $HOME/REPOS/FOOD/recipes }
+maps() {cd $HOME/REPOS//maps }
 # jour { cd $journal && ls }
 po() { cd $HOME/PORTABLE_ENV }
 ba() { cd $HOME/BACKUPS }
@@ -133,6 +135,9 @@ alias -g v_fraud='vim ~/DONAGHS/personal/00Fraud/fraud.md'
 # Functions - vim
 toread() { vim $HOME/REPOS/books/toRead.md }
 wants() { vim $HOME/REPOS/Purchases/Wants/wants.md }
+#}}}
+#{{{ BOOKSEARCH
+booksearch() {find ~/REPOS/books -maxdepth 4 -name "*.*" -type f | grep -i $1 } # usage -> % booksearch 'smart'
 #}}}
 #{{{ RSYNC
 # manual rsync backup to the USB attached to the RPi
@@ -304,6 +309,7 @@ alias -g lfh="ls -la | grep -v '^[d].*' | grep  ' \..*$'" # List all hidden file
 alias -g lfnh="ls -la | grep '^\-' | grep -v ' \..*$' "  # List only files not hidden (Donaghs!) - alias
 alias -g lfl="ls -la --color=auto | grep '^[l]' | grep ' \..*$'" # List only files that are symlinks
 alias -g lfnl="ls -la | grep -v '\->' | grep -v '^d'" # List files which are not links 
+alias -g lfs="ls | xargs -n1" # simple list files in a column
 # Directories
 # alias -g ld='ls -ld -- *(R)' # List non-hidden directories incl. those that are symlinks (zsh)
 alias -g ld='ls -ld -- *(-/)'  # List non-hidden directories incl.those that are  symlinks (zsh)
@@ -320,6 +326,7 @@ alias -g ldnl="ls -ld -- *(F)" # List only directories that are not symlinks (zs
 #
 # alias -g ldnl="ls -la   | grep '^[d].*' | grep -v ' \..*$'" # List only directories that are not symlinks
 alias -g lda=" ls -ld -- *(T)" # List only actual directories i.e. not symlinked directories (zsh)
+alias -g lds="ls -ld -- *(T) | awk '{ print $NF }' "
 # 
 # spare alternatives
 # alias lh="ls -lad -- *(D.)" # List hidden files. But includes non-hidden files???

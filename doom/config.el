@@ -58,7 +58,9 @@
 ;; (setq doom-theme 'spacemacs-dark )
 
 ;; 2022-01-01 current preferred theme:
-(setq doom-theme 'doom-acario-dark )
+;;
+(setq doom-theme 'tsdh-dark )
+;; (setq doom-theme 'doom-acario-dark ) ;; the purple for diary.org is not the nicest
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -81,6 +83,9 @@
 ;;
 ;; - `load!' for loading external *.el files relative to this one
 ;; - `use-package' for configuring packages
+;; (use-package 'origami)
+(require 'origami)
+;; (require 'origami)
 ;; - `after!' for running code after a package has loaded
 ;; - `add-load-path!' for adding directories to the `load-path', relative to this file.
 ;;      Emacs searches the `load-path' when you load packages with `require' or `use-package'.

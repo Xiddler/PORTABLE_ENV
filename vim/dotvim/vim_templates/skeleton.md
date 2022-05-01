@@ -1,6 +1,4 @@
-Opened 2022-02-07
+Opened  
 
 
-## Notes
-
-
+# Notes

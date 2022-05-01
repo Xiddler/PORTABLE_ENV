@@ -3,7 +3,7 @@ DataCount=1
 
 [Data_1]
 Comment=Comment
-DataCount=24
+DataCount=25
 Enabled=true
 Name=Donaghs
 SystemGroup=0
@@ -99,7 +99,7 @@ Uuid={eb555df9-46bb-4b57-9a36-71c335acacd9}
 
 [Data_1_13]
 Comment=Comment
-Enabled=true
+Enabled=false
 Name=chromium
 Type=SIMPLE_ACTION_DATA
 
@@ -333,7 +333,7 @@ Uuid={1711b6b1-8c8b-4469-abfb-beba692171f2}
 
 [Data_1_21]
 Comment=Comment
-Enabled=true
+Enabled=false
 Name=Win10_VM
 Type=SIMPLE_ACTION_DATA
 
@@ -434,6 +434,32 @@ TriggersCount=1
 Key=Alt+U
 Type=SHORTCUT
 Uuid={d81a40bc-2df8-4145-b9ab-88db282bd859}
+
+[Data_1_25]
+Comment=Comment
+Enabled=true
+Name=xnviewmp
+Type=SIMPLE_ACTION_DATA
+
+[Data_1_25Actions]
+ActionsCount=1
+
+[Data_1_25Actions0]
+CommandURL=jumpapp xnviewmp
+Type=COMMAND_URL
+
+[Data_1_25Conditions]
+Comment=
+ConditionsCount=0
+
+[Data_1_25Triggers]
+Comment=Simple_action
+TriggersCount=1
+
+[Data_1_25Triggers0]
+Key=Alt+X
+Type=SHORTCUT
+Uuid={f5d5bf51-5826-47f4-ac40-9fec34814fab}
 
 [Data_1_2Actions]
 ActionsCount=1

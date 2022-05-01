@@ -1,0 +1,33 @@
+Opened 2022-04-11
+
+awk '/CommandURL/ { print   $2 } ' Custom_Shortcuts.khotkeys > Commands.txt
+awk '/Key/ { print $1 } ' Custom_Shortcuts.khotkeys > Keys.txt
+# append to new file
+paste -d ' ' Keys.txt Commands.txt| column  -t >> Donaghs_Desktop_Shortcuts.txt
+
+
+Key=Alt+G        gpaste-client
+Key=Alt+Y        yakuake
+Key=Alt+S        signal
+Key=Alt+C        chromium
+Key=Alt+F        FBReader
+Key=Alt+G        qgis
+Key=Alt+M        librecad
+Key=Alt+I        dbeaver
+Key=Alt+Q        qalculate-gtk
+Key=Alt+Shift+V  code
+Key=Alt+B        firefox
+Key=Alt+K        konsole
+Key=Alt+W        virt-manager
+Key=Alt+J        obsidian
+Key=Alt+I        figma-linux
+Key=Alt+U        speedcrunch
+Key=Alt+X        xnviewmp
+Key=Alt+Z        zim
+Key=Alt+N        terminator
+Key=Alt+D        emacs
+Key=Alt+T        thunderbird
+Key=Alt+L        libreoffice
+Key=Alt+O        okular
+Key=Alt+A        autokey
+Key=             kcalc

@@ -1,7 +1,8 @@
 # Running emacs
 
-  GUI mode            $ emacs
+  GUI mode            $ emacs       (with doom installed will open doom-emacs for me)
   Terminal mode       $ emacs -nw
+  Quick               $ emacs -q    (will open the non-doom raw emacs GUI)
 
 # Basic usage
 
@@ -62,3 +63,10 @@
 
     (global-set-key "\C-l" 'goto-line)
     (add-hook 'find-file-hook (lambda () (linum-mode 1)))
+
+# math / sexpressions in a buffer
+(+ 3 5) C-x C-e
+# to print to next line
+'eval-print-last-sexpression'
+# use ielm a major mode for interactively evaluating Emacs Lisp expressions.
+

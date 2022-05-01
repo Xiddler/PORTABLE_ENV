@@ -394,7 +394,8 @@ set foldmethod=marker
 set foldlevel=0
 set modelines=1
 " set foldcolumn=4 
-highlight Folded guibg=grey guifg=blue
+" highlight Folded guibg=grey guifg=blue
+highlight Folded guibg=black guifg=grey
 " highlight FoldColumn guibg=darkgrey guifg=white
 "
 ""vim:foldmethod=marker:foldlevel=0
@@ -414,7 +415,20 @@ let g:tex_flavor='latex'
   " au!
   " read in template files
   " autocmd BufNewFile *.py silent! execute '0r $HOME/PORTABLE_ENV/vim/py_header.temp'
-" augroup END
+" augroup END 
+
+" join up line with line below
+nmap ,e g0jI<backspace> <esc>jg0
+
+"we are the "best of all
+
+" abbreviations
+ab mys "Proactively engaged in making a better life for myself and/or others"
+
+
+
+
+
 
 
 " for the vim-notes plugin. ~/.vim/misc/notes/user

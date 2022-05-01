@@ -297,4 +297,9 @@ man -k -
 # get the size of a directory
 -> % du -sh ~/PORTABLE_ENV 
 
+# process, job, session
+JOB:        A job is the same as a process group; job commands include fg, bg, & and Ctrl Z;
+PROCESS:    Anything that happens on your computer depends on a process, like a run a command or program, run a GUI application.
+SESSION:    Session usually refers to shell sessions, e.g. when you have a teminal emulator open a session is in progress. 
+
 # END

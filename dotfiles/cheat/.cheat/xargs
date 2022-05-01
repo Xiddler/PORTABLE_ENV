@@ -9,6 +9,8 @@ find -name *.pdf | xargs -I{} rm -rf '{}'
 
 # xargs -I{}: on each line in the input, run the given command and replace {} with the contents of the line
 
+# using grep - find all files that contain a line ending in sh to a maxdepth of 2
+find -maxdepth 2 -name "*.*" -type f | xargs -I{} grep 'sh$' '{}'
 
 # Will show every .pdf like:
 #	&toto.pdf=

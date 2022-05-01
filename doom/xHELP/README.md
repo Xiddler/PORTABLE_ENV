@@ -1,6 +1,6 @@
 Opened 2022-01-05
 
-These files are sylinked to
+These files are symlinked to
 ~/.doom.d/*.el
 
 The file dot_e_m_l_o_config.el

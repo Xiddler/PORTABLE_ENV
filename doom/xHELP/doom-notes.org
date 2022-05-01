@@ -1,6 +1,6 @@
-#+about: notes for doom
-#+date : Started 2020-05-17
-#+author : donagh mccarthy
+#+TITLE: doom-notes.org
+#+DATE: Started 2020-05-17
+#+AUTHOR: donagh mccarthy
 #+options: il
 #+tags: help orgmode org-mode donaghs
 #+EDITED: 2022-01-20
@@ -186,6 +186,16 @@ Update: 2021-05-27 NOT WORKING. I copy a URL into the system clipboard but canno
 SOLUTION: Use the middle button of the mouse! This definitely worked. But why no keybinding?
 Possible alternative:
 On Linux, you can use xclip.el (https://www.emacswiki.org/emacs/xclip.el) to link the kill-ring to the clipboard from Emacs running in terminal (without losing the multiple-kill and yank capability).
+** completion
+:about:
+added 2022-04-25
+:end:
+Some modes/packages that are available:
+icomplete
+ivy
+company
+ido
+fido-mode - an enhanced 'icomplete-mode' that emulates 'ido-mode'
 ** completion directory searching
 2021-12-03
 when I [SPC] f f I don't want to have to type everything I want tab completion - which plugin?
@@ -378,6 +388,9 @@ There are a number of templates to save notes to
     [SPC] n s <-- Search notes for text
 
 ** packages
+*** INSTALL NEW
+- M-x packge-install
+- in config.el (use-package origami)
 *** add new package
 https://github.com/hlissner/doom-emacs
 Packages are declared in packages.el files.
@@ -474,6 +487,8 @@ f <letter> highlights all <letter>s forward and ; moves to next one.
 NOTE: For more comprehensive in-file search look at avy.
 *** eww
     emacs web browser M-x e
+*** origami
+folding in markdown
 *** flycheck
 Syntax highlighting
 
@@ -726,6 +741,9 @@ and add in the REPT(r)
 Then run doom sync and re-open doom-emacs
 On 2021-09-30 I changed HOLD to HAPPENING for events that are under sail and /or ongoing. Repeated this on new install Oct 2021.
 ** checkboxes - Make a new checkbox i.e. [ ]
+
+rem C-c C-c to update progress
+
 Note: Checkboxes are not included in the global TODO list so they are often great to split a task into a number of simple steps.
 **** checkbox
 my ]] shortcut conflicts with making manual links ending in ]]. This is resolved by using the quickie C-c C-l
@@ -734,6 +752,7 @@ or replace ' ' with X (or vice versa)
 [/] for n of m items
 [%] for percent
 **** this [1/3]
+rem C-c C-c to update progress
 - [ ] Another item
 - [ ] This funny one C-c C-x C-b
 - [X] this item [2/2]

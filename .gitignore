@@ -1,2 +1,4 @@
 BU_pack/
 .git/
+*.ipynb
+*.ipynb_checkpoint
