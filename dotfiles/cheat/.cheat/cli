@@ -293,6 +293,7 @@ man -k -
 
 # Change CAPS button to ESC
 -> % setxkbmap -option caps:swapescape
+# But it does not work well on my manjaro
 
 # get the size of a directory
 -> % du -sh ~/PORTABLE_ENV 
@@ -301,5 +302,10 @@ man -k -
 JOB:        A job is the same as a process group; job commands include fg, bg, & and Ctrl Z;
 PROCESS:    Anything that happens on your computer depends on a process, like a run a command or program, run a GUI application.
 SESSION:    Session usually refers to shell sessions, e.g. when you have a teminal emulator open a session is in progress. 
+
+# wmctrl
+# wmctrl  is a command that can be used to interact with an X Window manager can query the window manager for information, and it can request that certain window management actions be taken.
+# example
+-> % wmctrl -x -l 
 
 # END
