@@ -27,3 +27,6 @@ ps aux | grep '[h]ttpd'
 
 # Colour in red {bash} and keep all other lines
 ps aux | grep -E --color 'bash|$'
+
+# Extract text between words (e.g. w1,w2)
+grep -o -P '(?<=w1).*(?=w2)'

@@ -58,5 +58,6 @@ for mydir in "${directories[@]}";
         printf '%s\n ' "$mydir"
 done
 
-
+# bash one-liners resources
+https://github.com/onceupon/Bash-Oneliner
 

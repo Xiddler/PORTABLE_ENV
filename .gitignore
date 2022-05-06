@@ -1,4 +1,8 @@
+# You should not ignore .gitignore, since it's supposed to be included in the repository. I.e. don't have .gitignore in this file
 BU_pack/
 .git/
 *.ipynb
 *.ipynb_checkpoint
+dotfiles/git/.gitconfig
+
+

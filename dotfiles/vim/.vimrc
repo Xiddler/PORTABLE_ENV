@@ -282,6 +282,8 @@ map <c-h> <c-w>h
 " move bullet point lines up / down
 nmap <c-j> ddp
 nmap <c-k> ddkkp
+" insert @dm -
+nmap mm 0i@dm -<left><right><right>
 
 " noremap <leader>j <c-w>
 "  save file

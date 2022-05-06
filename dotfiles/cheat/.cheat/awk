@@ -29,3 +29,8 @@ match
 
 # Sample one-liner to extract balance from a csv file
 awk -F"," '/11-20/ { e=$6 } /11-11/ { l=$6 } END { print "You have spent " l-e } ' accounts.csv
+
+# Column subtraction
+cat file | awk -F '\t' 'BEGIN {SUM=0} {SUM+=$3-$2} END{print SUM}'
+
+

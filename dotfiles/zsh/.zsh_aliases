@@ -72,6 +72,7 @@ alias -g chk='$HOME/.scripts/info.sh' # quick summary of system status
 # NAVIGATION SHORTCUTS
 # Functions to navigate
 focus() { cd $HOME/FOCUS }
+rems() { vim $HOME/DONAGHS/personal/reminders.md }
 busb() { cd $HOME/B693_backup }
 recipes() {cd $HOME/REPOS/FOOD/recipes }
 maps() {cd $HOME/REPOS//maps }

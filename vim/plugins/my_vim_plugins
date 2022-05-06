@@ -15,6 +15,7 @@ vim-airline             vim info                                                
 vim-markdown-folding    folding for markdown in vim                                 :: https://github.com/masukomi/vim-markdown-folding.git
 
 
+# Of interest
 # SuperMan                Man pages in vim editor: vman <app>                       :: https://github.com/jez/vim-superman
 # emmet                   emmet-vim - quick html/css                                :: https://github.com/mattn/emmet-vim.git
 # multicursor                                                                       :: https://github.com/terryma/vim-multiple-cursors
@@ -25,3 +26,4 @@ vim-markdown-folding    folding for markdown in vim                             
 # vim-pencil              pure typing / writing experience for vim text files        :: https://github.com/reedes/vim-pencil
 # vim-skeleton            opens files of type ? to give a boilerplate empty file    ::  
 # Ultisnippets            use short pieces of text to make longer bits 
+# unicode                 utility for unicode and digraphs                          :: https://github.com/chrisbra/unicode.vim

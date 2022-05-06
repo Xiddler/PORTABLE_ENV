@@ -1,0 +1,19 @@
+# add
+expr 3 \+ 4
+7
+
+# multiply
+expr 4 \* 6
+24
+
+# divide
+expr 27 / 3
+9
+
+# equality
+expr 5 \= 5
+1               (true)
+expr 3 \= 4
+0               (false)
+
+
