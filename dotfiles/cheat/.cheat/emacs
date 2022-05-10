@@ -70,3 +70,18 @@
 'eval-print-last-sexpression'
 # use ielm a major mode for interactively evaluating Emacs Lisp expressions.
 
+Emacs jargon 	Modern parlance
+----------------------------------------------
+M-x 	        Alt + x
+C-x 	        Ctrl + x
+Frame 	        Emacs window
+Window 	        split/pane
+Buffer 	        Contiguous chunk of text/data
+Point 	        Cursor position in a buffer
+Active Region 	Text selection
+Region 	        Text selection (not highlighted)
+Face 	        Font, color and display properties
+
+# open raw emacs in a bubble shell
+$HOME/.scripts/bubble_wrap_new_shell.sh 
+bwrap-demo$ emacs -nw

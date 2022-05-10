@@ -113,6 +113,7 @@
 (map! :n "E" 'evil-end-of-line)
 (map! :n "B" 'evil-beginning-of-line)
 (map! :n ",/" 'evil-avy-goto-char) ;; similar to vim-easymotion; also 'avy-goto-char and 'avy-goto-char-2
+(map! :n "SPC w 3" 'split-window-right) ;; similar to C-x 3 which is the emacs way and SPC w r is taken
 
 ;; Mappings to change
 ;; (map! :n "nm" 'display-line-numbers-mode)

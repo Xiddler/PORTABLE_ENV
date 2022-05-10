@@ -1,0 +1,18 @@
+# gio
+gio is a utility that makes many of the GIO features available from the commandline. In doing so, it provides commands that are similar to traditional
+       utilities, but let you use GIO locations instead of local files: for example you can use something like smb://server/resource/file.txt as a location.
+
+       Plain filenames which contain a colon will be interpreted as URIs with an unknown protocol. To avoid this, prefix them with a path such as ./, or with the
+       file: protocol.
+
+# list items in trash
+gio list trash://
+
+
+# move
+
+
+# empty trash with: 
+gio trash --empty
+
+

@@ -273,7 +273,7 @@ alias gst='git status'
 alias gaa='git add -A'
 alias gga='git add -A'
 # cf ~/.scripts/manage_all_git_repos.sh (on the laptop)
-alias -g g_porte="$HOME/PORTABLE_ENV/"             # On github
+alias -g g_poe="$HOME/PORTABLE_ENV/"             # On github
 alias -g g_org="$HOME/Dropbox/org-mode/org/"       # this tracks my .org files
 alias -g g_pers="$HOME/DONAGHS/personal/"
 alias -g g_comp="$HOME/DONAGHS/MY_ZIM/Computer/"   # zim/Computer only

@@ -10,14 +10,14 @@
 # turn on debuggin -x; turn off debuggin +x
 # set -x
 
-g_porte="$HOME/PORTABLE_ENV/"             # On github
+g_poe="$HOME/PORTABLE_ENV/"             # On github
 
 g_org="$HOME/Dropbox/org-mode/org/"       # this tracks my .org files
 g_pers="$HOME/DONAGHS/personal/"
 g_comp="$HOME/DONAGHS/MY_ZIM/Computer/"   # zim/Computer only
-g_all_org="$HOME/DONAGHS/all_org/"        # this only tracks doom-notes.org
+# g_all_org="$HOME/DONAGHS/all_org/"        # this only tracks doom-notes.org
 
-directories=( $g_porte $g_org $g_pers $g_comp $g_all_org )
+directories=( $g_poe $g_org $g_pers $g_comp )
 for mydir in "${directories[@]}"; 
     do 
         # echo -e "$mydir";
