@@ -78,5 +78,7 @@ a useful way to connect to a remote desktop when you need a graphical user inter
 # currying
 In functional languages, functions always take one argument and produce one output; to get more, you can chain multiple functions together, known as "currying". 
 
-
+# closures
+Closures can avoid the use of global values and provides some form of data hiding. It can also provide an object oriented solution to a problem.
+The term closure is often used as a synonym for anonymous function. 
 

@@ -1,10 +1,8 @@
 {
     "type": "phrase",
     "description": "vim_til.md",
-    "modes": [
-        1
-    ],
-    "usageCount": 6,
+    "modes": [],
+    "usageCount": 19,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,

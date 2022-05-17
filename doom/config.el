@@ -83,8 +83,16 @@
 ;;
 ;; - `load!' for loading external *.el files relative to this one
 ;; - `use-package' for configuring packages
+;;
+;; Install use-package because that installs everything else
+;; (unless (package-installed-p 'use-package)
+  ;; (package-refresh-contents)
+  ;; (package-install 'use-package))
+
+;; (require 'use-package)
+
 ;; (use-package 'origami)
-(require 'origami)
+;; (require 'origami)
 ;; (require 'origami)
 ;; - `after!' for running code after a package has loaded
 ;; - `add-load-path!' for adding directories to the `load-path', relative to this file.

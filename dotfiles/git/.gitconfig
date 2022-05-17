@@ -5,3 +5,5 @@
 	helper = cache
 [init]
 	defaultBranch = main
+[safe]
+	directory = /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/MY_ZIM/Computer
