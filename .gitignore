@@ -4,5 +4,6 @@ BU_pack/
 *.ipynb
 *.ipynb_checkpoint
 dotfiles/git/.gitconfig
+scratch.md # Shortcut -> % vx 
 
 

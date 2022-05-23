@@ -1,4 +1,4 @@
-Opened  
+Opened
 
 
 # Notes

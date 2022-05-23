@@ -1,0 +1,14 @@
+2022-05-18 
+❯ sudo arp-scan 192.168.1.0/24                                                                                         
+[sudo] password for donagh: 
+Interface: wlp7s0, type: EN10MB, MAC: e4:f8:9c:0e:d0:26, IPv4: 192.168.1.85
+Starting arp-scan 1.9.7 with 256 hosts (https://github.com/royhills/arp-scan)
+192.168.1.1     5c:64:8e:77:2f:80       (Unknown)
+192.168.1.24    dc:a6:32:23:45:ca       Raspberry Pi Trading Ltd
+192.168.1.26    b6:72:e4:37:19:09       (Unknown: locally administered)
+192.168.1.105   dc:a6:32:23:45:ca       Raspberry Pi Trading Ltd
+192.168.1.199   a6:8b:6b:73:64:65       (Unknown: locally administered)
+192.168.1.162   54:0d:f9:d0:20:ab       (Unknown)
+
+6 packets received by filter, 0 packets dropped by kernel
+Ending arp-scan 1.9.7: 256 hosts scanned in 2.007 seconds (127.55 hosts/sec). 6 responded

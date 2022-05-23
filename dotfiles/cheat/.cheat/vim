@@ -351,7 +351,7 @@ plugin --> git clone https://github.com/Yggdroot/indentLine
 # Select your lines in visual mode with: v, then type/copy into ex mode 
 :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '
 
-# EDIT AN EXISTING MACRO
+# EDIT AN EXISTING MACRO 
 # make a new scratch buffer to edit the macro in <leader>c   c because s c ratch  has 2 letter c's in it and s is taken
 # this function is defined in my vimrc
 # move to the scratch buffer <C-j>
@@ -363,11 +363,11 @@ plugin --> git clone https://github.com/Yggdroot/indentLine
 # in normal mode
 q:
 
-# the cgn trick to change any no. of occurences of a word
+# the cgn trick to change any no. of occurences of a word 
 # cursor on word, *, then cgn, then .   That last . is the repeat character not a period!
 # cgn = change goto next (word)
 
-# when searching I have / mapped to /\v to engage very magic search which means [ ( etc. don't need to be escaped
+# when searching I have / mapped to /\v to engage very magic search which means '[ (' etc. don't need to be escaped 
 #
 # vim path
 # path is a list of directories which will be searched when using the gf, [f, ]f, ^Wf, :find, :sfind, :tabfind and other commands, 
@@ -381,10 +381,6 @@ path=.,/usr/include,,           :: the default path(s) for vim
 :find 2Read.md
 # find a file and open in a new split
 :sfind 2Read.md
-
-# quickfix windows used more generally to find a list of positions in files
-:copen
-:cclose
 
 # REGEX 
 # :h regexp and http://vimregex.com/
@@ -419,7 +415,7 @@ vidir
 
 
 # to convert a file to pdf in vim
-map <F5> :!pandoc % -o %:t:r.pdf<cr>    # NOTE: needs a pdf-engine like pdflatex; LaTex or TexLive may be used
+map <F5> :!pandoc % -o %:t:r.pdf<cr>    # NOTE: needs a pdf-engine like pdflatex; LaTex or TexLive may be used 
 # The :t and :r are called filename modifiers.
 #
 #
@@ -436,6 +432,7 @@ function! Myjournal()
 
     execute ":tabe ".filen
 endfunction
+
 # open my journal in a new tab
 nnoremap mj :call Myjournal<cr>
 
@@ -467,7 +464,7 @@ echo g:sum
 # :setlocal spell   'misspelt' words will be underlined. Navigate using [s (previous) ]s (next)
 # Ctrl-N            Used in Insert mode; drop-down list of word suggestions; insert mode; word must already be used earlier in the buffer; 
 # autocomplete / spelling
-# first few letters of a word in the text then (Insert mode) Ctrl+P or Ctrl+N
+# first few letters of a word in the text then (Insert mode) Ctrl+P or Ctrl+N 
 
 # zg                add words to spellfile; this file will be created at /home/donagh/.vim/spell/en.utf-8.add (no .spl extension)
 # spelling - get corrections
@@ -479,11 +476,13 @@ echo g:sum
  
 
 # SESSIONS
-# Open file where you left off
+# Open file where you left off 
 # :mksess! and open with vim -S
 # To go to the same place you were in a document after closing, use vim sessions. You issue a ":mksess!" and vim will drop a Session.vim file in your current directory. This will store all the docs you had open and where you were in them. Then when you start vim, do "vim -S" to take you back to exactly where you were.
-#
-# INFO
+# Not sure about the above. I have an alias vx which opens a file called scratch.md and I add :mksession! to allow me to return to the position on opening
+
+
+# INFO 
 # To display file data - for word count etc.
 # Use airline or in normal mode g C-g
  
@@ -493,6 +492,13 @@ echo g:sum
 # cd ~/.vim/autoload
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# INSTALL NEW PLUGIN - 2 steps
+# cd ~/PORTABLE_ENV/vim/dot_vim/plugins and then (usually)
+-> % git <git path to repo>
+#then in  /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim 
+# add e.g.
+Plug 'https://github.com/vim-airline/vim-airline.git'
 
 # COMMAND INFOLINE
 # the command info line - that empty line below the airline strap
@@ -530,5 +536,19 @@ last entry 	    :clast
 The quickfix list is populated when you run commands such as :grep. 
 :grep ugly -r **/*.txt
 This will populate our quickfix list with a list of files with the word 'ugly' in them. You can use :copen or :clist to look at the files manually.
+
+# to get the hex of a character place cursor on character and in noral mode type
+ga
+
+# Mdash  digraph -M 
+—  \%u2014 
+#to replace with [spc]-[spc] do 
+:%s/\%u2014/ - /g
+# HINT :help %u
+# To convert the annoying, illegible first line into the second line use @h where h contains :s/\%u2014/ - /g
+1. these—for the most part—are not good enough
+2. these - for the most part - are not good enough
+#to put :s/\%u2014/ - /g into the h register, use "hdd  
+
 
 

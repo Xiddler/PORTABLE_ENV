@@ -3,6 +3,7 @@
 
 # ----------------- START journal ------------------------------
 # my easy journal 
+# shortcut is -> % mj
 # Set up the journal directory on the SD64 Card
 # journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
 #

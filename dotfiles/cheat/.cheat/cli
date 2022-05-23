@@ -190,7 +190,7 @@ info --vi-keys wget
 
 # in RPi - allow username donagh to sudo without passwd
 sudo visudo /etc/sudoers.d/010_pi-nopasswd 
-and add
+# and add
 %sudo ALL=(ALL) NOPASSWD: ALL
 
 
@@ -307,5 +307,15 @@ SESSION:    Session usually refers to shell sessions, e.g. when you have a temin
 # wmctrl  is a command that can be used to interact with an X Window manager can query the window manager for information, and it can request that certain window management actions be taken.
 # example
 -> % wmctrl -x -l 
+
+# here document example
+-> % LANG=C tr a-z A-Z << END
+heredoc> one two three               
+heredoc> four five six                                     
+heredoc> END
+ONE TWO THREE
+FOUR FIVE SIX
+
+
 
 # END
