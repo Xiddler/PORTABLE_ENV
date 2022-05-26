@@ -15,10 +15,22 @@ ______________________________________________________________________
 
 ### Relevant folders
 
-~/BACKUPS/bash_scripts
-~/BACKUPS/<folders>
+LAPTOP
+~/BACKUPS/RSYNC (attached to the RPi)
+~/BACKUPS/TARGZ/DONAGHS
+~/BACKUPS/TARGZ/REPOS
 ~/ZIM/.git/
-~/SAFE/SAFE_borg_backup (on the laptop)
+
+SD64 Card in LAPTOP
+This contains all the my original data
+
+SD64 Card in safe (the round tin box)
+This contains an earlier copy of the previous 
+(I copy the current contents of the working SD64 card to the laptop then swap in the "spare" SD64 every 6 months or so)
+
+
+
+[~/SAFE/SAFE_borg_backup (on the laptop)]
 
 ### Relevant commands
  

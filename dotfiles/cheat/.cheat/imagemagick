@@ -39,3 +39,34 @@ xargs -III mv {} II: run mv (move) command, notice -III instead of -I{} , {}is a
 # Crop the image to target size 240×160 with crop starting point at x=100,y=50
 ->% convert -crop 240x160+100+50 convert-crop-img1.jpg convert-crop-img2.jpg
 
+
+# Makefile contents to convert a .jpg file to .png using convert 
+
+.SUFFIXES: .jpg .png
+
+.jpg.png:
+    @echo converting $< to $@
+    convert $< $@
+
+# then
+-> % make file.png 
+
+# Makefile contents to convert a number of .jpg files to .png files using convert 
+
+JPEG=$(wildcard *.jpg *.jpeg) 
+JPG=$(JPEG:.jpeg=.jpg) 
+PNG=$(JPG:.jpg=.png) 
+.SUFFIXES: .jpg .jpeg .png
+
+convert: $(PNG)
+
+.jpeg.png .jpg.png: 
+	@echo converting $< to $@ using ImageMagick… 
+	@convert $< $@ 
+	@echo conversion to $@ successful! 
+
+# then
+-> %  make convert
+# (Tested? yes, and it worked )
+
+

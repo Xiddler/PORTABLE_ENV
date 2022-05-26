@@ -1,3 +1,32 @@
+
+# _______________________________________________________________________________________________________________________________________
+# Today (2022-05-23)  I learned:
+# ref: https://www.vidarholen.net/contents/blog/?p=479 
+
+The fact of the matter is, dd is not a disk writing tool. 
+Neither “d” is for “disk”, “drive” or “device”. 
+It does not support “low level” reading or writing. 
+It has no special dominion over any kind of device whatsoever.
+
+dd just reads and writes file.
+
+On UNIX, the adage goes, everything is a file. This includes raw disks. Since raw disks are files, and dd can be used to copy files, dd be used to copy raw disks.
+
+But do you know what else can read and write files? 
+Ans: Everything. 
+Examples:
+
+# Write myfile.iso to a USB drive
+cp myfile.iso /dev/sdb
+
+# Rip a cdrom to a .iso file
+cat /dev/cdrom > myfile.iso
+
+# Create a gzipped image
+gzip -9 < /dev/sdb > /tmp/myimage.gz
+
+# _______________________________________________________________________________________________________________________________________
+
 # Read from {/dev/urandom} 2*512 Bytes and put it into {/tmp/test.txt}
 # Note: At the first iteration, we read 512 Bytes.
 # Note: At the second iteration, we read 512 Bytes.
@@ -20,3 +49,10 @@ dcfldd if=/dev/zero of=/dev/null bs=500K
 
 # This will output the sound from your microphone port to the ssh target computer's speaker port. The sound quality is very bad, so you will hear a lot of hissing.
 dd if=/dev/dsp | ssh -c arcfour -C username@host dd of=/dev/dsp
+
+# Bypass page cache 
+# This flag will bypass the page cache when reading data 
+iflag=direct
+
+# Use the flag bs=1024
+Moreover, flash drives (and all flash media) have a favorite page size, which is generally 4kB or 512kB. By defining a common denominator page size like 1024kB (with bs=1024kB), you can keep your flash drive happy with enough backlog to write, so it can perform at its peak write speed without churning, which will help with faster writes and lower write amplification, which is a win-win.

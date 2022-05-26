@@ -3,7 +3,18 @@ returned 2022-04-05
 returned 2021-12-13
 returned 2021-12-22 after Dec2021 reinstall, therefore MANY things may have changed. See section Dec 2021.
 
-#
+# Log of last backups
+
+## 2022-05-24  
+/home/donagh/BACKUPS/TARGZ/REPOS/REPOS_2022_05_24.tar.gz
+/home/donagh/BACKUPS/TARGZ/DONAGHS/DONAGHS_2022-05-24.tar.gz
+
+
+
+
+
+# Info
+
 The information relating to this backup system is on ~/PORTABLE_ENV/backups/README.md
 and also in:
 Locations for access to information about backups in my Personal Knowledge Base PKB
@@ -29,7 +40,8 @@ In my $HOME folder I have a folder called ~/BACKUPS/
      └── REPOS
          └── REPOSITORIES_2022-01-22.tar.gz                                 :: the full contents of ~/SD64/REPOSITORIES at that date
 
-The "tiny" USB_128 attached to the laptop has a copy of DONAGHS and REPOSITORIES as has the backup USB_128 in the MemorySticks tin box.
+(not sure that the "tiny" USB_128 attached to the laptop has a copy of DONAGHS and REPOSITORIES )
+The backup USB_128 in the MemorySticks tin box is not there anymore. Note added: 2022-05-24
 
 # DONAGHS
 
@@ -38,9 +50,9 @@ run the following script:
 #
 The main things needing backup:
  
-ALL_ZIM         - Computer && ORG
+ALL_ZIM         - ~/DONAGHS/MYZIM/Computer && ORG
 orgmode         - ~/all_org
-DONAGHS         - personal/journal
+DONAGHS         - ~/DONAGHS/personal/journal
 REPOSITORIES    - ~/REPOS/
 
 # 
