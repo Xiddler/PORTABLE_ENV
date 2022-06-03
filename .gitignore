@@ -5,5 +5,8 @@ BU_pack/
 *.ipynb_checkpoint
 dotfiles/git/.gitconfig
 scratch.md # Shortcut -> % vx 
+tabular
+vim-airline
+
 
 

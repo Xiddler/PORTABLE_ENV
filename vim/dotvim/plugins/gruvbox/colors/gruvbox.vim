@@ -191,7 +191,8 @@ if s:is_dark
   let s:fg4_256 = s:gb.light4_256
 
   let s:red    = s:gb.bright_red
-  let s:green  = s:gb.bright_green
+  " let s:green  = s:gb.bright_green
+  let s:green  = s:gb.bright_blue
   let s:yellow = s:gb.bright_yellow
   let s:blue   = s:gb.bright_blue
   let s:purple = s:gb.bright_purple
@@ -436,6 +437,8 @@ call s:HL('GruvboxBg4', s:bg4)
 call s:HL('GruvboxRed', s:red)
 call s:HL('GruvboxRedBold', s:red, s:none, s:bold)
 call s:HL('GruvboxGreen', s:green)
+" original
+" call s:HL('GruvboxGreenBold', s:green, s:none, s:bold)
 call s:HL('GruvboxGreenBold', s:green, s:none, s:bold)
 call s:HL('GruvboxYellow', s:yellow)
 call s:HL('GruvboxYellowBold', s:yellow, s:none, s:bold)

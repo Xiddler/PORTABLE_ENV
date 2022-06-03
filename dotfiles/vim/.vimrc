@@ -1,19 +1,22 @@
 "{{{ Minimum Settings
 " === Min settings === 
+" filepath: /home/donagh/PORTABLE_ENV/dotfiles/vim/.vimrc
+"
 " cf. /usr/share/vim/vim82/defaults.vim
 " 'set nocompatible' is never necessary in a vimrc file. When Vim detects a user vimrc file, it automatically sets nocompatible. 
 " set backspace=start,eol,indent " no longer needed
 " a minimal .vimrc --> /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc
+"
 "
 set <esc>=jk 
 " use spacebar to enter command mode. This matches doom-emacs for me
 nnoremap <space> :
 set encoding=utf-8
 
-" STOW
+" STOW 
 " As of 2022-03-19 I am using stow to manage the symlinking of my dotfiles.
-" See $HOME/PORTABLE_ENV/dotfiles/README.md
-" Usage: On a new install -> %~ stow vim
+" See $HOME/PORTABLE_ENV/dotfiles/README.md 
+" Usage: On a new install -> %~ stow vim 
 
 " PLUGINS 
 " external sub-vimrc files for plugins, specifically  vim-plug using Plug
@@ -28,8 +31,7 @@ cmap bk :wq<cr>
 
 " function to create a new scratch buffer
 function! Scratch()
-    split
-    noswapfile hide enew
+    split noswapfile hide enew
     setlocal buftype=nofile
     setlocal bufhidden=hide
     "setlocal nobuflisted
@@ -156,7 +158,7 @@ nnoremap / /\v
 vnoremap / /\v
 " }}}
 " Folding {{{
-" https://dougblack.io/words/a-good-vimrc.html#fold
+" https://dougblack.io/words/a-good-vimrc.html#fold 
 "=== folding ===
 " does not include markdown folding to enable headings to be visible with let g:markdown_folding = 1
 set foldmethod=indent   " fold based on indent level
@@ -374,19 +376,45 @@ inoremap <Leader>d <C-R>=expand("%:p:h")<CR>
 "=== Status line ===
 " set laststatus=2 "2 is for always show status line; 0 for never and 1 for when there are two windows
 " NOTE: built in is replaced by airline plugin (similar to Powerline in zsh)
+"
 " AIRLINE
 "https://github.com/vim-airline/vim-airline and :h airline
-" config file at: 
+" config file at:  ??? It is configured here no?
+"
 " show other buffers in the status airline
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
 let g:airline#extensions#whitespace#enabled = 1
+
 " Show just the filename instead of the full path/name
 " let g:airline#extensions#tabline#fnamemod = '%:t'
 let g:airline_section_c = '%t'
+" problem
+" column numbers are not showing fully / properly - how to fix this?
+" they are hidden behind the last section
+" configuration is here: /home/donagh/PORTABLE_ENV/vim/dotvim/plugins/vim-airline/autoload/airline/init.vim
+"
+" Airline Theme
+let g:airline_theme='tomorrow'
+"
+" Problem; the count for the column numbers is not showing: How to fix this?
+" let g:airline_section_z = '%f'
+" try this. It works, good enough
+" default file at /home/donagh/PORTABLE_ENV/vim/dotvim/plugins/vim-airline/autoload/airline/init.vim
+" let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'colnr', 'linenr', ':%3v']) 
+
 " airline fonts
 " set guifont=Liberation\ Mono\ for\ Powerline\ 10 
 set guifont="Source Code Pro for Powerline 10"
 let g:airline_powerline_fonts = 1
+" note:  /usr/share/fonts/OTF/PowerlineSymbols.otf: PowerlineSymbols:style=Medium
+"
+" if powerline font symbols are partially messed up
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+" powerline symbols
+" cf. https://tuckerchapman.com/2020/09/15/getting-started-vim-airline/
 
 
 "}}}
@@ -730,4 +758,5 @@ let $RTP=split(&runtimepath, ',')[0] " allows :set rtp?
     " Path
     " :set path? path to search when using find / FZF 
 set path+=~/REPOS/
+
 " }}}

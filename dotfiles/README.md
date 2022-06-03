@@ -1,5 +1,7 @@
 Opened 2022-03-19
 
+The reason for this dotfiles folder is that "stow" uses it to make the symlinks (instead of having to do this manually).
+
 usage example for vim
 (Ensure stow is installed: -> % sudo pamac install  stow )
 

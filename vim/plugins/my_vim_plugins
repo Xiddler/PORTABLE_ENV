@@ -12,6 +12,7 @@ nightsense              stellarized  preferred vim theme                        
 peekaboo                peeks into registers                                        :: https://github.com/junegunn/vim-peekaboo
 ranger                  ranger from vim                                             :: https://github.com/francoiscabrol/ranger.vim.git 
 vim-airline             vim info                                                    :: https://github.com/vim-airline/vim-airline.git
+vim-airline-theme       airline themes                                              :: https://github.com/vim-airline/vim-airline-themes.git
 vim-markdown-folding    folding for markdown in vim                                 :: https://github.com/masukomi/vim-markdown-folding.git
 
 

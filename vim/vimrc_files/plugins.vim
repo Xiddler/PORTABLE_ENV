@@ -1,4 +1,6 @@
-" Filepath /home/donagh/PORTABLE_ENV/vim/dotvim/vimrc_dirs/plugins.vim
+" Filepath  
+"/home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim
+
 " This file is where I call the plugins I want to use in vim. There is a line in .vimrc that calls this file
 " .vimrc --> ~/.vim/plugins
 " vim starts -->  ~/.vim/autoload/plug.vim 
@@ -14,6 +16,7 @@
 call plug#begin('/home/donagh/.vim/plugins')
 Plug 'tpope/vim-commentary'
 Plug 'https://github.com/vim-airline/vim-airline.git'
+Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 " for the following plugin, -> %cp -r ~/.vim/plugins/stellarized ~/.vim/pack/nightsense/start/      :: this seems to be necessary
 " Plug 'nightsense/stellarized'              
 " gruvbox - added 2022-04-02. For a change.
@@ -24,14 +27,17 @@ Plug 'https://github.com/junegunn/goyo.vim.git'
 Plug 'https://github.com/junegunn/limelight.vim.git'
 " the following plugin shows a buffer to the right on typing this " <-- yes the quote symbol!
 Plug 'junegunn/vim-peekaboo'
+"
 " Markdown plugins
 " With none of these enabled ##'s are salmon-coloured - but no folding
 " Check if this displays headings - yes but loses coloured # as in vim-mardown-folding 
+Plug 'godlygeek/tabular'  " for aligning text
+" preservim/vim-vim-markdown  https://github.com/preservim/vim-markdown.git  (this one has more stars and seems more active....)
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-latex/vim-latex'
 " the following plugin (vim-markdown) includes Syntax Concealing - use :set conceallevel=2
 " Plug 'https://github.com/preservim/vim-markdown'                        
-" the following hides the heading in markdown files - a problem (is this why plasticboy is better?) - <-- use :set foldignore=#
+" the following hides the heading in markdown files - a problem (is this why plasticboy is better?) - <-- use :set foldignore=# 
 " Plug 'masukomi/vim-markdown-folding'
 
 call plug#end()

@@ -160,10 +160,18 @@ hi SpellBad ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=#f7003c cterm=
 hi SpellCap ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=#0082ff cterm=NONE,underline gui=NONE,undercurl
 hi SpellLocal ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=#0093b3 cterm=NONE,underline gui=NONE,undercurl
 hi SpellRare ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=#c709dd cterm=NONE,underline gui=NONE,undercurl
+" change gold to sky blue
+" hi StorageClass ctermfg=94 ctermbg=NONE guifg=#009ba2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+" hi Structure ctermfg=94 ctermbg=NONE guifg=#009ba2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+" hi Type ctermfg=94 ctermbg=NONE guifg=#009ba2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+" hi Typedef ctermfg=94 ctermbg=NONE guifg=#009ba2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+
+" original 
 hi StorageClass ctermfg=94 ctermbg=NONE guifg=#8b6800 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi Structure ctermfg=94 ctermbg=NONE guifg=#8b6800 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi Type ctermfg=94 ctermbg=NONE guifg=#8b6800 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi Typedef ctermfg=94 ctermbg=NONE guifg=#8b6800 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+
 hi TooLong ctermfg=133 ctermbg=255 guifg=#a348ae guibg=#fceee0 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
 hi WarningMsg ctermfg=133 ctermbg=255 guifg=#a348ae guibg=#fceee0 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
 hi Function ctermfg=25 ctermbg=NONE guifg=#006dcc guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -179,8 +187,14 @@ hi SpecialChar ctermfg=161 ctermbg=NONE guifg=#c6394c guibg=NONE guisp=NONE cter
 hi SpecialComment ctermfg=161 ctermbg=NONE guifg=#c6394c guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi SpecialKey ctermfg=161 ctermbg=NONE guifg=#c6394c guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi Tag ctermfg=161 ctermbg=NONE guifg=#c6394c guibg=NONE guisp=NONE cterm=NONE gui=NONE
+
+" change gold to sky blue
+" hi DiffChanged ctermfg=94 ctermbg=255 guifg=#009ba2 guibg=#fceee0 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+" hi DiffText ctermfg=94 ctermbg=255 guifg=#009ba2 guibg=#fceee0 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+" original
 hi DiffChanged ctermfg=94 ctermbg=255 guifg=#8b6800 guibg=#fceee0 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
 hi DiffText ctermfg=94 ctermbg=255 guifg=#8b6800 guibg=#fceee0 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+
 hi Search ctermfg=220 ctermbg=236 guifg=#ffd506 guibg=#2d3243 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
 hi Conditional ctermfg=28 ctermbg=NONE guifg=#007f25 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi Exception ctermfg=28 ctermbg=NONE guifg=#007f25 guibg=NONE guisp=NONE cterm=NONE gui=NONE

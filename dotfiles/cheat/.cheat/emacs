@@ -4,7 +4,7 @@
   Terminal mode       $ emacs -nw
   Quick               $ emacs -q    (will open the non-doom raw emacs GUI)
 
-# Basic usage
+# Basic usage (non-evil mode)
 
   Indent              Select text then press TAB
   Cut                 CTRL-w
@@ -85,3 +85,38 @@ Face 	        Font, color and display properties
 # open raw emacs in a bubble shell
 $HOME/.scripts/bubble_wrap_new_shell.sh 
 bwrap-demo$ emacs -nw
+
+
+
+# The problem of the EN DASH
+When pasting from the web I sometimes get the following:
+This was the case–as far as I remember–when there was a blue moon.
+I want there to be spaces around that EN DASH
+– is %u2013 in vim and 20023 in emacs (in doom-emacs I can also go, in normal mode, ga )
+8211, #o20023, #x2013
+
+To replace the EN DASH with SPC-SPC i.e. "EN DASH" with " - "
+METHOD 1
+Enter --> M-% will bring up a mini-buffer with
+Query result:
+Enter --> C-X 8 RET
+UNICODE NAME
+Enter --> 002013
+Query replace – with: -
+Query replacing – with  - (press y to confirm for each instance and ESC to escape)
+
+METHOD 2
+:%s/C-q20023 SPC BACKSPACE/ - /gc
+
+To enter a EN DASH
+Insert mode (i)
+C-q
+20023
+–
+
+See also: M-x
+describe-char
+isearch-char-by-name  (enter EN DASH 
+
+# END the problem of the EN DASH
+

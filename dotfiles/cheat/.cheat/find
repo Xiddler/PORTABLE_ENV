@@ -27,16 +27,24 @@ find . -size +5M -type f -print0 | xargs -0 ls -Ssh | sort -z
 # To find files bigger than 2 Megabyte and list them:
 find . -type f -size +200000000c -exec ls -lh {} \; | awk '{ print $9 ": " $5 }'
 
+# TIME 
+# mtime     modified n*24 days so -mtime -3 is less than 3 days ago 
+# mmin      modiivied n minutes ago so -mmin -3 is less than 3 minutes ago 
+#
 # To find files modified more than 7 days ago and list file information
-find . -type f -mtime +7d -ls
+find . -type f -mtime +7 -ls
 
-# Find files modified less than 5 minutes ago
-find . -type f -mtime -5 
 
-# Find files accessed less than 5 minutes ago
+# Find files modified less than 3 days ago and list them 
+find . -type f -mtime -3 -ls # tested and this works, no 'd' after the -3 
+
+# Find files modified less than 10 minutes ago. Note -mmin not -mtime.
+find . -type f -mmin -10 -ls
+
+# Find files accessed less than 5 days ago
 find . -type f -atime -5
 
-# Find files changed less than 5 minutes ago
+# Find files changed less than 5 days ago
 find . -type f -ctime -5
 
 # To find symlinks owned by a user and list file information

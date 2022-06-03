@@ -24,8 +24,8 @@ B               previous start of whitespace-delimited word
 $               end of line
 gg              go to first line in file
 G               go to end of file
-gk		move down one displayed line
-gj		move up one displayed line
+gk		        move down one displayed line
+gj		        move up one displayed line
 
 # Insertion
 #   To exit from insert mode use Esc or Ctrl-C
@@ -38,13 +38,14 @@ I               insert at the beginning of the line
 o               create a new line under the cursor
 O               create a new line above the cursor
 R               enter insert mode but replace instead of inserting chars
-:r {file}       insert from file
+:r {file}       insert from file i.e. read (file)
 
 # Editing
 
 u               undo
 yy              yank (copy) a line
 y{motion}       yank text that {motion} moves over
+Y               yank from cursor to end of line (personal mapping)
 p               paste after cursor
 P               paste before cursor
 <Del> or x      delete a character
@@ -57,9 +58,13 @@ d{motion}       delete text that {motion} moves over
 :s/foo/bar/g	replace all matches (`g` flag) of 'foo' with 'bar' on the current line only
 :%s/foo/bar/g	replace all matches of 'foo' with 'bar' in the entire file (`:%s`)
 :%s/foo/bar/gc	ask to manually confirm (`c` flag) each replacement 
+
 # :global
+# :g executes the given command on every line of the file hence global
 :g/^$/ d        delete all empty lines in a file
 :g/^$/,/./-j    reduce multiple blank lines to a single blank
+
+
 
 # Preceding a motion or edition with a number repeats it 'n' times
 # Examples:
@@ -79,6 +84,8 @@ div>p#foo>ul>li*4 <C-y>,
 
 # goyo & limelight
 F9
+# or
+:Goyo
 
 # Check installed plugins
 :scriptnames
@@ -91,20 +98,25 @@ eg cd to above folder and ->% grep <surround>
 
 # list plugins
 cat /home/donagh/PORTABLE_ENV/vim/plugins/my_vim_plugins
+# or 
+# see /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim 
 
-# installing plugins
-.vim/pack/<name>/start/PLUGIN
+# To install a new plugin
+# 1. git clone into /home/donagh/PORTABLE_ENV/vim/dotvim/plugins (which is symlinked to ~/.vim)
+# 2. vim /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim " rem: I can use gf to open that file!
+# 3. add e.g. Plug 'https://github.com/vim-airline/vim-airline-themes.git' under call plug#begin('/home/donagh/.vim/plugins')
+# 4. run :PlugInstall 
 
 # check installed / working plugins
-ls $HOME/.vim/pack/*/start/*/plugin | grep '.vim$'
-or
-tail -n30 $HOME/.vimrc G .git
+ll $HOME/PORTABLE_ENV/vim/dotvim/plugins
+# or
+grep "^Plug" /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim
 
 # source for plugin recommendations
 https://catonmat.net/vim-plugins
 
 
-# vim surround
+# vim surround 
 # to put " around the words bear necessity - with cursor on the b of bear
 ' ys2w" '
 # use ysiw when it's only one word " 
@@ -167,11 +179,13 @@ C-F --> forward one pane
 
 # Insert filename - relative to starting folder. In INSERT MODE:
 <C-r>%
+# Insert filepath. In NORMAL MODE:
+,d 
 # Insert filepath. In INSERT MODE:
 ,n
 
 
-# Remember to use Notes (addon)
+# Remember to use Notes (addon) (defunct now with org-mode etc.)
 :Note
 
 # show lines with matching word under cursor
@@ -186,7 +200,7 @@ C-F --> forward one pane
 
 # insert a range of lines from another file
 :put =readfile('/path/to/foo/foo.c')[146:226]
-OR
+# or
 :r! sed -n 3,7p /path/to/foo/bar.md
 
 # to read in the 3 lines After 'CHALLENGE' in the specified file
@@ -199,10 +213,11 @@ Ctrl K =e <-- euro OR Ctrl K Eu <-- euro
 https://www.vim.org/docs.php
 
 # doom-emacs like save file
-:w[SPC]
+:w[SPC] # which is SPC w SPC as I have SPC mapped to : and the muscle memory carries over to doom-emacs. 
 
 
 # bulk rename files using vim and ranger
+-> % vidir
 # cheat rename
 #
 # change the point at which a sentence wraps
@@ -216,7 +231,7 @@ g8
 /[^\x00-\x7F]
 
 # replace a non-ascii character 
-# example  ”
+# example  
 # and replace that with the ascii "
 # 1. cursor over the character and yl to yank into the " register
 # :s/<Ctrl-R ">/"/g ie after the first / press Ctrl-R then " to paste
@@ -225,13 +240,14 @@ g8
 # for the whole file
 :%s/<Ctrl-R ">/"/g 
 
-# to enter that non-ascii character ”
+# to enter this non-ascii character --> ”
 # in insert mode
 Ctrl-V u 201d
 
-# to identify what unicode number ” is hover over it and 
+
+# to identify what unicode number ” is place cursor on it then type 
 ga
-# the number after the word Hex is 201d
+# the number after the word Hex is 201d 
 
 # resize windows
 # Maximize current window
@@ -268,18 +284,18 @@ Press insert (i) then Ctrl-V i.e. <c-v> and type in U0001f600 or whatever your c
 # DELETE BLANK LINES
 :g/^\s*$/d
 
-# insert filename / filepath (in INSERT MODE)
-<C-r>%  # full filepath
-,n      # current directory
+# insert filename / filepath
+<C-r>%  # full filepath - insert mode
+,d      # normal mode
 
-
+# In the CLI
 # <command> | vim - opens a vim file with the output of <command>
-ll | vim -
-
+-> % ll | vim -
 
 # get the UTF-8 code for the letter under the cursor
 # https://vi.stackexchange.com/questions/555/see-the-unicode-code-point-of-the-current-character
 ga
+g8
 
 
 # see how quickly Vim starts without your existing configuration:
@@ -328,7 +344,7 @@ https://github.com/jceb/vim-orgmode/blob/master/doc/orgguide.txt
 
 # python spaces / tabs
 :retab # fixes tabs / spaces
-:set lcs+=space:· # shows a . for each space
+:set lcs+=space: # shows a . for each space
 :set list # displays the .
 :set nolist # hides the .
 plugin --> git clone https://github.com/Yggdroot/indentLine
@@ -414,7 +430,7 @@ vidir
 :hi link markdownError Normal
 
 
-# to convert a file to pdf in vim
+# to convert a file to pdf in vim 
 map <F5> :!pandoc % -o %:t:r.pdf<cr>    # NOTE: needs a pdf-engine like pdflatex; LaTex or TexLive may be used 
 # The :t and :r are called filename modifiers.
 #
@@ -446,9 +462,9 @@ function SumNumbers(num1,num2)
     endif
 endfunction
 
-" test code
+# test code
 call SumNumbers(3,4)
-" this should return 7
+# this should return 7
 echo g:sum
 
 # _____________________________________________________________________________
@@ -518,7 +534,8 @@ $RTP = ~/.vim
 / --> Last search pattern
 
 # Quickfix list and Location list
-The quickfix list is a data structure that holds file positions. Essentially, each entry in the quickfix list consists of a file path, a line number and optional column, and a description.
+The quickfix list is a data structure that holds file positions. 
+Essentially, each entry in the quickfix list consists of a file path, a line number and optional column, and a description.
 
 Actually there are two kinds of lists: quickfix and location lists. They behave almost the same, but have the follwing differences:
 There is only one quickfix list. There can be multiple location lists; one per window.
@@ -535,7 +552,7 @@ last entry 	    :clast
 # Quickfix usage example
 The quickfix list is populated when you run commands such as :grep. 
 :grep ugly -r **/*.txt
-This will populate our quickfix list with a list of files with the word 'ugly' in them. You can use :copen or :clist to look at the files manually.
+This will populate the quickfix list with a list of files with the word 'ugly' in them. You can use :copen or :clist to look at the files manually.
 
 # to get the hex of a character place cursor on character and in noral mode type
 ga

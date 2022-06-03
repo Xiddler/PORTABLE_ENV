@@ -11,6 +11,8 @@ returned 2021-12-22 after Dec2021 reinstall, therefore MANY things may have chan
 
 
 
+# rsync backup
+/home/donagh/PORTABLE_ENV/dotfiles/scripts/.scripts/rsync_backup.sh
 
 
 # Info
