@@ -1,4 +1,5 @@
 # Tool to do lots of things with existing PDF documents
+#
 # AUR;
 pdftk
 # Use it to: 
@@ -24,6 +25,10 @@ pdfgrep "<pattern>" <filename.pdf>
 
 # Convert pdf to html
 pdftohtml / wkpdftohtml
+
+# GUI applications 
+LibreOffice Draw is a powerful tool for editing multipage pdf files. 
+Inkscape also works well but only manages single page pdfs.
 
 
 

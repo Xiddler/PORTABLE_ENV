@@ -87,4 +87,14 @@ python3 ~/Applications/flask_htmx_lanner/app.py
 
 # password problem after rebooting on 2022-03-14. Did not accept my 1234 password?
 # How to change user password
-#
+
+
+
+
+
+# QUICKLY AFTER a REBOOT 
+# cifs_share
+sudo mount -t cifs //192.168.1.24/USB128_2 /mnt/cifs_share -o username=admin,password=admin,iocharset=utf8,vers=3.1.1
+# rem: caffeine  (replaced by KDE power management option in Battery icon
+# dropbox 
+echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && ~/.dropbox-dist/dropboxd

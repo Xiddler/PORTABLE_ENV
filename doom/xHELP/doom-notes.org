@@ -3,7 +3,7 @@
 #+AUTHOR: donagh mccarthy
 #+options: il
 #+tags: help orgmode org-mode donaghs
-#+EDITED: 2022-01-20
+#+EDITED: 2022-06-08
 
 
 * frontmatter
@@ -706,7 +706,7 @@ SCHEDULE - [SPC] a s OR C-c C-s
 DEADLINE C-c C-d - to
 *** SHORTCUT New todo --> tt
 *** SHORTCUT New schedule --> ts
-*** Agenda - to view agenda beyond this week: eg next four weeks --> C-U 28 [SPC] a n
+*** Agenda - to view agenda beyond this week: eg next four weeks --> 28 t a a
 ***** Here's a link with good answers
     https://stackoverflow.com/questions/32423127/how-to-view-the-next-days-in-org-modes-agenda#32426234
 *** Schedule - How to
