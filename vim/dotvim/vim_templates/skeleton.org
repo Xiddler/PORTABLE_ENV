@@ -1,0 +1,7 @@
+#+TITLE:     <filename>.org
+#+AUTHOR:    Donagh McCarthy
+#+OPENED:      
+#+STARTUP:   overview
+#+FILEPATH:  $HOME/all_org/org/<filename>.org
+#+EDITED:        
+

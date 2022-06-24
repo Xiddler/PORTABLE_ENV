@@ -14,6 +14,7 @@ ranger                  ranger from vim                                         
 vim-airline             vim info                                                    :: https://github.com/vim-airline/vim-airline.git
 vim-airline-theme       airline themes                                              :: https://github.com/vim-airline/vim-airline-themes.git
 vim-markdown-folding    folding for markdown in vim                                 :: https://github.com/masukomi/vim-markdown-folding.git
+vim-rec                 highlighting for recutils files                             :: https://github.com/zaid/vim-rec
 
 
 # Of interest
@@ -28,3 +29,10 @@ vim-markdown-folding    folding for markdown in vim                             
 # vim-skeleton            opens files of type ? to give a boilerplate empty file    ::  
 # Ultisnippets            use short pieces of text to make longer bits 
 # unicode                 utility for unicode and digraphs                          :: https://github.com/chrisbra/unicode.vim
+
+# Quick install of new plugin 
+1. List here and give a brief description plus the github URL
+2. Edit /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim
+3. Add Plug 'dev_name/plugin' to the section for Plugs in the above file
+4. :PlugInstall 
+

@@ -7,9 +7,13 @@
 ;; on the command line, then restart Emacs for the changes to take effect -- or
 ;; use 'M-x doom/reload'.
 
+;; NOTE: (Added by Donagh McCarthy on 2022-06-23). doom does not use packages.el at all - Wait, that's not true, look at rec-mode
+;; The only line that is uncommented is at the very end - (provide 'packages)
+
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
+(package! rec-mode)
 ;
 ;; DONAGHS
 ;; add theme not available in default doom. Note: remember to call it in config.el
@@ -21,6 +25,18 @@
 ;; https://github.com/raxod502/straight.el#the-recipe-format
 ;(package! another-package
 ;  :recipe (:host github :repo "username/repo"))
+
+;;; ANOTHER EXAMPLE from /home/donagh/.emacs.d/core/packages.el
+;; core-packages.el
+; (package! straight
+;   :type 'core
+;   :recipe `(:host github
+;             :repo "raxod502/straight.el"
+;             :branch ,straight-repository-branch
+;             :local-repo "straight.el"
+;             :files ("straight*.el"))
+;   :pin "e2de88ea0e7ccf9f4846e9e756f86e0dcf469c44")
+;; END EXAMPLE
 
 ;; If the package you are trying to install does not contain a PACKAGENAME.el
 ;; file, or is located in a subdirectory of the repo, you'll need to specify

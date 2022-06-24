@@ -509,6 +509,7 @@ nmap <leader>b :call BulletList()<cr>
 " make numbered list - first Visually select the lines then ,y. Note: The
 " numbers above 9 will not be right aligned. So use the following function.
 vnoremap <leader>n :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR> 
+vnoremap <leader>c :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR> 
 
 " numbered list but RIGHT aligned higher than no. 9
 function! NumberList() range

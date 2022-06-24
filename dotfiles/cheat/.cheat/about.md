@@ -82,3 +82,6 @@ In functional languages, functions always take one argument and produce one outp
 Closures can avoid the use of global values and provides some form of data hiding. It can also provide an object oriented solution to a problem.
 The term closure is often used as a synonym for anonymous function. 
 
+# bikeshedding
+When organizations spend disproportionate time on trivial issues - in the design of a nuclear plant when 90% of the discussion is around the design of the
+bikeshed

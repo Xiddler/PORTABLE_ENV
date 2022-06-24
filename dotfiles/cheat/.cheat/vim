@@ -557,7 +557,7 @@ This will populate the quickfix list with a list of files with the word 'ugly' i
 # to get the hex of a character place cursor on character and in noral mode type
 ga
 
-# Mdash  digraph -M 
+# Mdash  digraph -M (often occurs when pasting in from the browser)
 —  \%u2014 
 #to replace with [spc]-[spc] do 
 :%s/\%u2014/ - /g
@@ -568,4 +568,17 @@ ga
 #to put :s/\%u2014/ - /g into the h register, use "hdd  
 
 
+# later / earlier
+:earlier 15 
+:later 40
+# Also very useful is 
+g+ and g- 
+# to go backward and forward in time. 
+# This is so much more powerful than an undo/redo stack since you don't lose the history when you do something after an undo.
+
+# dump, say, ls into the current buffer
+# Note  :! [command] executes an external command while you're in Vim.
+# But add a dot after the colon, 
+:.! [command]
+# and it'll dump the output of the command into your current window. Eg open a new buffer in $HOME then :. ls and the contents of $HOME will be pasted in.
 

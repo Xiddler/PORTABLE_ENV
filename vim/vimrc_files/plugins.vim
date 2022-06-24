@@ -15,7 +15,8 @@
 
 call plug#begin('/home/donagh/.vim/plugins')
 Plug 'tpope/vim-commentary'
-Plug 'https://github.com/vim-airline/vim-airline.git'
+" Plug 'https://github.com/vim-airline/vim-airline.git'
+Plug 'vim-airline/vim-airline'
 Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 " for the following plugin, -> %cp -r ~/.vim/plugins/stellarized ~/.vim/pack/nightsense/start/      :: this seems to be necessary
 " Plug 'nightsense/stellarized'              
@@ -27,7 +28,9 @@ Plug 'https://github.com/junegunn/goyo.vim.git'
 Plug 'https://github.com/junegunn/limelight.vim.git'
 " the following plugin shows a buffer to the right on typing this " <-- yes the quote symbol!
 Plug 'junegunn/vim-peekaboo'
-"
+Plug 'zaid/vim-rec' " Plug 'https://github.com/zaid/vim-rec'
+
+
 " Markdown plugins
 " With none of these enabled ##'s are salmon-coloured - but no folding
 " Check if this displays headings - yes but loses coloured # as in vim-mardown-folding 

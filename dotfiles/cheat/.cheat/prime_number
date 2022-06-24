@@ -1,0 +1,8 @@
+use factor
+e.g.
+-> % factor 187
+11 17
+
+
+
+factor 187 | grep -qE '^(.*): \1$' && echo prime || echo "not prime"

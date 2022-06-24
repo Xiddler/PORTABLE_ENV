@@ -118,5 +118,21 @@ See also: M-x
 describe-char
 isearch-char-by-name  (enter EN DASH 
 
+# literate progamming 
+# test.org (@6$2 is empty and place the cursor there then the commands that are shown below 
+| item  | amount |
+|-------+--------|
+| food  |    300 |
+| rent  |    200 |
+| drink |    463 |
+|       |        |
+| Total |    963 |
+#+TBLFM: @6$2=vsum(@2$2..@4$2)
+
+# With nothing in @6$2,
+SPC c e RET
+# With something in @6$2,
+SPC C e RET # capital C there!
+
 # END the problem of the EN DASH
 

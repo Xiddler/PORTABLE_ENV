@@ -218,6 +218,25 @@ My config files __are__ indeed in /home/donagh/.doom.d and symlinked to /home/do
 this allows to explore inside the current project
 *** files outside current project [SPC] .  <-- <space> dot
 this allows to explore outside the current project
+** discoverability
+M-x
+describe-bindings
+describe-command (SPC h x)
+which-key   (SPC)
+describe-key (SPC h k)
+menu-bar-mode
+toolbar-mode
+describe-face (SPC h F)
+appropos
+describe-function (SPC h f)
+describe-variable (SPC h v)
+describe-mode (SPC h m)
+describe-symbol (SPC h o)
+describe-syntax (SPC h s)
+describe-char (SPC h ')
+customize
+info (SPC h i)
+
 ** elisp
 *** REPL
 M-x ielm or [SPC] o r
@@ -672,8 +691,6 @@ OR M-x load-theme <-- opens available themes
 
 Preferred theme:
 2022-01-01
-doom-acario-dark :: Different for the New Year
-2021
 tsdh-dark        :: Sky blue headlines w green subs
 Others:
 doom-solarized-dark :: Sky blue headlines w. yellow subs

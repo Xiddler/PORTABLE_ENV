@@ -1,0 +1,29 @@
+Convert a space separated set of data into a tabular form for easier readability
+
+Usage example
+
+❯ cat scores.txt  
+Name Subject Score
+Bryan Arts 68
+Isaiah Arts 80
+Gabriel Health-Medicine 100
+Tysza Business 92
+Zackery Engineering 54
+
+❯ column -t scores.txt                
+Name     Subject          Score
+Bryan    Arts             68
+Isaiah   Arts             80
+Gabriel  Health-Medicine  100
+Tysza    Business         92
+Zackery  Engineering      54
+
+❯ column -t scores.txt > myscores.txt
+
+❯ cat myscores.txt 
+Name     Subject          Score
+Bryan    Arts             68
+Isaiah   Arts             80
+Gabriel  Health-Medicine  100
+Tysza    Business         92
+Zackery  Engineering      54
