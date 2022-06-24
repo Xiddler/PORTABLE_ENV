@@ -134,5 +134,20 @@ SPC c e RET
 # With something in @6$2,
 SPC C e RET # capital C there!
 
+# literate programming 
+# file contains this table 
+|-------+--------|
+| food  |    300 |
+| rent  |    200 |
+| drink |    463 |
+|       |        |
+| Total |    963 |
+#+TBLFM: @6$2=vsum(@2$2..@4$2)
+
+With nothing in @6$2,
+SPC c e RET   # small c
+With something in @6$2,
+SPC C e RET   # capital C 
+
 # END the problem of the EN DASH
 
