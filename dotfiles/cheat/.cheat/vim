@@ -581,4 +581,5 @@ g+ and g-
 # But add a dot after the colon, 
 :.! [command]
 # and it'll dump the output of the command into your current window. Eg open a new buffer in $HOME then :. ls and the contents of $HOME will be pasted in.
+#
 

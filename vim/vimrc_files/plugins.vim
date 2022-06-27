@@ -8,12 +8,12 @@
 " Enable / Disable Plugins {{{
 " === Enable / Disable Plugins ===
 " 2022-02-13 Created this new - external - sub-vimrc file 
-" 2022-02-05  vim-plug started
+" 2022-02-05  vim-plug started 
 " https://github.com/junegunn/vim-plug and https://github.com/junegunn/vim-plug/wiki/tutorial
 " Remember to :so % after adding a new Plug
 "
 
-call plug#begin('/home/donagh/.vim/plugins')
+call plug#begin('/home/donagh/PORTABLE_ENV/vim/plugins')
 Plug 'tpope/vim-commentary'
 " Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'vim-airline/vim-airline'
