@@ -1,5 +1,7 @@
 "{{{ Minimum Settings
+
 " === Min settings === 
+
 " filepath: /home/donagh/PORTABLE_ENV/dotfiles/vim/.vimrc
 "
 " cf. /usr/share/vim/vim82/defaults.vim
@@ -12,17 +14,24 @@ set <esc>=jk
 " use spacebar to enter command mode. This matches doom-emacs for me
 nnoremap <space> :
 set encoding=utf-8
+"}}}
+"{{{ Gnu STOW 
 
-" STOW 
+" === Gnu STOW === 
+
 " As of 2022-03-19 I am using stow to manage the symlinking of my dotfiles.
 " See $HOME/PORTABLE_ENV/dotfiles/README.md 
 " Usage: On a new install -> %~ stow vim 
-
-" PLUGINS 
+" }}}
+" {{{ Plugins
+" === Plugins ===
 " external sub-vimrc files for plugins, specifically  vim-plug using Plug
 source /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim " rem: i can use gf to open that file!
+"}}}
+"{{{ Buffers
 
-" BUFFERS
+" === Buffers ===
+
 " :bn (buffer next) without pressing enter button to make it like doom-emacs setting
 cnoremap bn :bn<cr> 
 nnoremap bn :bn<cr>
@@ -105,7 +114,7 @@ let g:user_emmet_install_global = 0
 " setting custom leader to comma
 " let mapleader="," 
 " }}}
-" Spaces And Tabs {{{ 
+" {{{ Spaces And Tabs  
 "=== Spaces And Tabs ===
 set tabstop=4
 set shiftwidth=4
@@ -114,7 +123,7 @@ set softtabstop=4   " number of spaces in tab when editing
 set expandtab       " tabs are spaces
 " set wm=30         " wrap text before too far to the right
 " }}}
-" UI Config {{{
+" {{{ UI Config 
 "===  UI Config ===
 set wildmenu            " visual autocomplete for command menu
 "allow  yanked text to be copied directly to the X11 system clipboard....not
@@ -146,7 +155,7 @@ autocmd BufNewFile,BufRead,BufEnter *.md :set conceallevel=2
 " removes the unwanted highlight on underscores in markdown
 " set hi link markdownError Normal " error with link?
 " }}}
-" Searching {{{
+" {{{ Searching 
 "=== Searching ===
 set incsearch 
 set ignorecase                  " Make searches case-insensitive.
@@ -157,72 +166,34 @@ set grepprg=/usr/sbin/rg        " use ripgrep instead of default grep
 nnoremap / /\v
 vnoremap / /\v
 " }}}
-" Folding {{{
+" {{{ Folding 
+
+"=== Folding ===
+
 " https://dougblack.io/words/a-good-vimrc.html#fold 
-"=== folding ===
 " does not include markdown folding to enable headings to be visible with let g:markdown_folding = 1
+
 set foldmethod=indent   " fold based on indent level
 set foldnestmax=10      " max 10 depth
 set foldenable          " don't fold files by default on open
+
+set foldmethod=marker
 set foldlevelstart=1   " start with fold level of 1
-" }}}
-" Custom Movements {{{
-    "=== Custom Movements ===
-"navigation tips
-"    H – Go to the first line of current screen. But see noremaps below.
-"    M – Go to the middle line of current screen. 
-"    L – Go to the last line of current screen. But see noremaps below.
-"    ctrl+F – Jump forward one full screen.
-"    ctrl+B – Jump backwards one full screen
-"    ctrl+D – Jump forward (down) a half screen
-"    ctrl+U – Jump back (up) one half screen
-" move to beginning B /end E of line
-nnoremap B ^
-" go to the next full stop even if it's on the next line (experimental)
-" nnoremap E f. " seems to be problematic
-nnoremap E $
-"set the cursor to move down a single row on the screen instead of full sentence. 
-nnoremap j gj
-nnoremap k gk
+" set foldcolumn=4 
+set foldlevel=0
+set modelines=1
+highlight Folded guibg=grey guifg=blue
+" highlight Folded guibg=black guifg=grey
+" highlight FoldColumn guibg=darkgrey guifg=white
 
-" TABS
-" Use (UPPERCASE) H and L to move to the previous/next tabpage & tab & tabs and next tab and previous tab: downside is you lose H and L defaults
-" nnoremap H gT
-" nnoremap L gt
-" Save to be the same as my doom-emacs keybindings [SPC] w [SPC]
-" (REM: This works because SPACEBAR is mapped to : above and cmap puts vim into Ex mode )
-cmap w<space> :w<cr>
-" even shorter journey to s
-cmap s<space> :w<cr>
+"vim:foldmethod=marker:foldlevel=0
 
-" open a file in a new tab
-map gf :tabe <cfile><cr>
-" rem: gT and gt to navigate through tabs
-" test gf with: /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/TESTING/afile.md
-"
-" EXITS
-" write/quit with :ww and :xx (which are keybindings that work for me in doom-emacs)
-cmap ww :wq<cr>
-cmap xx :q!<cr>
-"
-"}}}
-" Packages using Packpath {{{
-" SUPERSEDED BY VIM.PLUG (see below Enable / Disable Plugins)
-" This is for using the package manager that utilises the folder
-" $HOME/.vim/pack - introduced by me in 2019
-" see "=== Preferred Plugins === below for my list of usually installed plugins
-" === packpath ===
-" WHICH OF THESE DO I NEED
-" load packpath
-filetype off
-packloadall
-syntax on
-filetype plugin on
-" filetype plugin indent on
 " }}}
-" Theme & Colors {{{
+" {{{ Theme & Colors 
+
 " === Theme  & Colors ===
-set termguicolors
+
+" set termguicolors - see next
 syntax enable
 " colorscheme stellarized
 colorscheme gruvbox
@@ -233,7 +204,10 @@ map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR
 highlight Comment cterm=italic
 
 " }}}
-" {{{Vim True Color support
+" {{{ Vim True Color support
+
+" === Vim True Color support ===
+
 " https://github.com/morhetz/gruvbox/wiki/Terminal-specific
 
 "Neovim and recent Vim support true color terminal out of the box with just a single configuration option. No workarounds anymore. Just add
@@ -253,127 +227,12 @@ if (empty($TMUX))
     set termguicolors
   endif
 endif
-"
-"
-"
-" }}}
-" Custom Leader {{{
-" === Custom Leader ===
-" setting custom leader to comma
-let mapleader=','
-
-" See also Customised below
-" use ,o to make a new vertical split, ,s for horiz, ,x to close a split
-" ,v calls up VISUAL mode
-" try ,o (as in OpEd) <-- works
-"
-" SPLITS
-" splits - to make a new split & quit split -  ,vf and ,hv to go to file
-" noremap <leader>o <c-w>v<c-w>l
-" open Vertical split
-noremap <leader>v <c-w>v<c-w>l
-" open Horizontal split
-noremap <leader>h <c-w>s<c-w>j
-" close window
-noremap <leader>x <c-w>c
-" in splits - use ctrl-h/j/k/l to switch focus between splits
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
-" move bullet point lines up / down
-nmap <c-j> ddp
-nmap <c-k> ddkkp
-" insert @dm -
-nmap mm 0i@dm -<left><right><right>
-
-" noremap <leader>j <c-w>
-"  save file
-nnoremap <leader>s :w<cr>
-inoremap <leader>s <C-c>:w<cr>
-" quit file
-noremap <leader>q :q<cr>
-" use <leader>p to paste from system clipboard
-nnoremap <leader>p :set paste<cr>"+p :set nopaste<cr>
-" use <leader>y to yank to system clipboard
-nnoremap <leader>y "+y
-" use <leader>f to call up ranger file manager
-let g:ranger_map_keys = 0
-map <leader>f :Ranger<cr>
-" handy goto start of line and down one line " ;; conflicts with 'next f/w/' etc.
-" nnoremap <leader><leader> ^
-
-
-" shorten the filepath for REPOSITORIES
-" @r  <-- macro
-"python
-"shortcut for if __name__  = ,m
-" autocmd Filetype python inoremap <leader>n if __name__ ==  "__main__":<enter>
-" remove trailing whitespace from python files
-" autocmd BufWritePre .py :%s/\s\+$//e
-"
-" SKELETON FILES
-
-" Command for skeleton files from .vim/templates
-augroup skeletons
-    au!
-    autocmd BufNewFile *.* silent! execute '0r ~/.vim/vim_templates/skeleton.'.expand("<afile>:e")
-augroup END
-
-" inefficient ways of doing skeleton files
-" autocmd BufNewFile  *.py      0r ~/.vim/vim_templates/skeleton.py
-" autocmd BufNewFile  *.html      0r ~/.vim/vim_templates/skeleton.html
-" autocmd BufNewFile  *.md      0r ~/.vim/vim_templates/skeleton.md
-
-" skeleton files
-" augroup skeletons
-  " au!
-  " autocmd BufNewFile *.py silent! execute '0r /home/donagh/PORTABLE_ENV/vim/dotvim/vim_templates/skeleton.'.expand("<afile>:e")
-  " autocmd BufNewFile *.py silent! execute '0r /home/donagh/PORTABLE_ENV/vim/dotvim/vim_templates/skeleton.py
-  " autocmd BufNewFile *.py silent! execute '0r ~/.vim/vim_templates/skeleton.py
-" augroup END                               
-
-"
-" open the file under the cursor in a new window (split)
-nnoremap <leader>vf :vertical wincmd f<CR>
-nnoremap <leader>hf :below wincmd f<CR>
-" set width of Explorer window to 60 smaller
-nnoremap <leader>ws <C-w>60<
-" nav the command mode - up and down for previous commands
-cmap <C-j> <Down>
-cmap <C-k> <Up>
-cmap <C-h> <Left>
-cmap <C-l> <Right>
-" open $MYVIMRC in a new tab Note: in CLI the shortcut is vv.
-noremap <leader>vv :tabe $MYVIMRC<CR>
-
-" source $MYVIMRC
-nnoremap <Leader>r :so $MYVIMRC<CR>
-
-"
-" EASYMOTION
-" easymotion keybindings - for fast navigation within a file
-" get , , w to make easy motion work
-map <Leader><Leader>w <Plug>(easymotion-prefix)
-" highlight ALL words for navigating to
-map <leader>/ <Plug>(easymotion-bd-w) 
-nmap <leader>/ <Plug>(easymotion-overwin-w) 
-
-"PWD
-" insert full filepath into current buffer in normal mode
-nnoremap <leader>d :put=expand('%:p')<cr>
-
-" enter the pwd in insert mode - d irectory p ath
-inoremap <leader>dp <C-R>=getcwd()<CR>
-"To insert the absolute path of the directory the file is in use:
-inoremap <Leader>d <C-R>=expand("%:p:h")<CR>
-" To insert the name of the innermost directory (the one containing the current file) use:
-" inoremap <Leader>n <C-R>=expand("%:p:h:t")<CR>
 
 " }}}
-" Airline {{{
-"
-"=== Status line ===
+" {{{ Airline status line 
+
+"=== Airline status line ===
+
 " set laststatus=2 "2 is for always show status line; 0 for never and 1 for when there are two windows
 " NOTE: built in is replaced by airline plugin (similar to Powerline in zsh)
 "
@@ -418,28 +277,19 @@ let g:airline_symbols.space = "\ua0"
 
 
 "}}}
-" Vimrc Folding {{{
-" === vimrc folding settings ===
-set foldmethod=marker
-set foldlevel=0
-set modelines=1
-" set foldcolumn=4 
-" highlight Folded guibg=grey guifg=blue
-highlight Folded guibg=black guifg=grey
-" highlight FoldColumn guibg=darkgrey guifg=white
-"
-""vim:foldmethod=marker:foldlevel=0
-"}}}
 "{{{ Latex
+
 "=== Latex ===
+
 "vim-latex plugin
 let g:tex_flavor='latex'
 "
 "
 "}}}
 " Customised {{{
-"
-" "=== Customised === 
+
+"=== Customised === 
+
 " Add header to .py file when starting a .py file
 " augroup templates
   " au!
@@ -572,7 +422,168 @@ nmap wj :call WorkJournal()<cr>
 let $RC="$HOME/.vimrc" " alternative to $MYVIMRC
 
 "}}}
-" Keybindings collected {{{
+" {{{ Custom Leader 
+
+" === Custom Leader ===
+
+" setting custom leader to comma
+let mapleader=','
+
+" See also Customised below
+" use ,o to make a new vertical split, ,s for horiz, ,x to close a split
+" ,v calls up VISUAL mode
+" try ,o (as in OpEd) <-- works
+"
+" SPLITS
+" splits - to make a new split & quit split -  ,vf and ,hv to go to file
+" noremap <leader>o <c-w>v<c-w>l
+" open Vertical split
+noremap <leader>v <c-w>v<c-w>l
+" open Horizontal split
+noremap <leader>h <c-w>s<c-w>j
+" close window
+noremap <leader>x <c-w>c
+" in splits - use ctrl-h/j/k/l to switch focus between splits
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+" move bullet point lines up / down
+nmap <c-j> ddp
+nmap <c-k> ddkkp
+" insert @dm -
+nmap mm 0i@dm -<left><right><right>
+
+" noremap <leader>j <c-w>
+"  save file
+nnoremap <leader>s :w<cr>
+inoremap <leader>s <C-c>:w<cr>
+" quit file
+noremap <leader>q :q<cr>
+" use <leader>p to paste from system clipboard
+nnoremap <leader>p :set paste<cr>"+p :set nopaste<cr>
+" use <leader>y to yank to system clipboard
+nnoremap <leader>y "+y
+" use <leader>f to call up ranger file manager
+let g:ranger_map_keys = 0
+map <leader>f :Ranger<cr>
+" handy goto start of line and down one line " ;; conflicts with 'next f/w/' etc.
+" nnoremap <leader><leader> ^
+
+
+" shorten the filepath for REPOSITORIES
+" @r  <-- macro
+"python
+"shortcut for if __name__  = ,m
+" autocmd Filetype python inoremap <leader>n if __name__ ==  "__main__":<enter>
+" remove trailing whitespace from python files
+" autocmd BufWritePre .py :%s/\s\+$//e
+"
+" SKELETON FILES
+
+" Command for skeleton files from .vim/templates
+augroup skeletons
+    au!
+    autocmd BufNewFile *.* silent! execute '0r ~/.vim/vim_templates/skeleton.'.expand("<afile>:e")
+augroup END
+
+" inefficient ways of doing skeleton files
+" autocmd BufNewFile  *.py      0r ~/.vim/vim_templates/skeleton.py
+" autocmd BufNewFile  *.html      0r ~/.vim/vim_templates/skeleton.html
+" autocmd BufNewFile  *.md      0r ~/.vim/vim_templates/skeleton.md
+
+" skeleton files
+" augroup skeletons
+  " au!
+  " autocmd BufNewFile *.py silent! execute '0r /home/donagh/PORTABLE_ENV/vim/dotvim/vim_templates/skeleton.'.expand("<afile>:e")
+  " autocmd BufNewFile *.py silent! execute '0r /home/donagh/PORTABLE_ENV/vim/dotvim/vim_templates/skeleton.py
+  " autocmd BufNewFile *.py silent! execute '0r ~/.vim/vim_templates/skeleton.py
+" augroup END                               
+
+"
+" open the file under the cursor in a new window (split)
+nnoremap <leader>vf :vertical wincmd f<CR>
+nnoremap <leader>hf :below wincmd f<CR>
+" set width of Explorer window to 60 smaller
+nnoremap <leader>ws <C-w>60<
+" nav the command mode - up and down for previous commands
+cmap <C-j> <Down>
+cmap <C-k> <Up>
+cmap <C-h> <Left>
+cmap <C-l> <Right>
+" open $MYVIMRC in a new tab Note: in CLI the shortcut is vv.
+noremap <leader>vv :tabe $MYVIMRC<CR>
+
+" source $MYVIMRC
+nnoremap <Leader>ss :so $MYVIMRC<CR>
+
+"
+" EASYMOTION
+" easymotion keybindings - for fast navigation within a file
+" get , , w to make easy motion work
+map <Leader><Leader>w <Plug>(easymotion-prefix)
+" highlight ALL words for navigating to
+map <leader>/ <Plug>(easymotion-bd-w) 
+nmap <leader>/ <Plug>(easymotion-overwin-w) 
+
+"PWD
+" insert full filepath into current buffer in normal mode
+nnoremap <leader>d :put=expand('%:p')<cr>
+
+" enter the pwd in insert mode - d irectory p ath
+inoremap <leader>dp <C-R>=getcwd()<CR>
+"To insert the absolute path of the directory the file is in use:
+inoremap <Leader>d <C-R>=expand("%:p:h")<CR>
+" To insert the name of the innermost directory (the one containing the current file) use:
+" inoremap <Leader>n <C-R>=expand("%:p:h:t")<CR>
+
+" }}}
+" {{{ Custom Movements 
+
+"=== Custom Movements ===
+
+"navigation tips
+"    H – Go to the first line of current screen. But see noremaps below.
+"    M – Go to the middle line of current screen. 
+"    L – Go to the last line of current screen. But see noremaps below.
+"    ctrl+F – Jump forward one full screen.
+"    ctrl+B – Jump backwards one full screen
+"    ctrl+D – Jump forward (down) a half screen
+"    ctrl+U – Jump back (up) one half screen
+" move to beginning B /end E of line
+nnoremap B ^
+" go to the next full stop even if it's on the next line (experimental)
+" nnoremap E f. " seems to be problematic
+nnoremap E $
+"set the cursor to move down a single row on the screen instead of full sentence. 
+nnoremap j gj
+nnoremap k gk
+
+" TABS
+" Use (UPPERCASE) H and L to move to the previous/next tabpage & tab & tabs and next tab and previous tab: downside is you lose H and L defaults
+" nnoremap H gT
+" nnoremap L gt
+" Save to be the same as my doom-emacs keybindings [SPC] w [SPC]
+" (REM: This works because SPACEBAR is mapped to : above and cmap puts vim into Ex mode )
+cmap w<space> :w<cr>
+" even shorter journey to s
+cmap s<space> :w<cr>
+
+" open a file in a new tab
+map gf :tabe <cfile><cr>
+" rem: gT and gt to navigate through tabs
+" test gf with: /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/TESTING/afile.md
+"
+" EXITS
+" write/quit with :ww and :xx (which are keybindings that work for me in doom-emacs)
+cmap ww :wq<cr>
+cmap xx :q!<cr>
+"
+"}}}
+" {{{ Keybindings collected 
+
+" === Keybindings collected === 
+
 " Normal Mode
 " nmap ee 0A �kD��aj0 " @e :: join lower line to upper line which is short
 
@@ -593,163 +604,6 @@ let $RC="$HOME/.vimrc" " alternative to $MYVIMRC
 " Command Mode
 " ,z            :: FZF
 " }}}
-" Enable / Disable Plugins {{{
-" === Enable / Disable Plugins ===
-" MOVED TO /home/donagh/PORTABLE_ENV/vim/dotvim/vimrc_dirs/plugins.vim. This file is source earlier in this file.
-" 2022-02-05  vim-plug started
-" https://github.com/junegunn/vim-plug and https://github.com/junegunn/vim-plug/wiki/tutorial
-" Remember to :so % after adding a new Plug
-"call plug#begin('/home/donagh/.vim/vimrc_dirs')
-" Plug 'tpope/vim-commentary'
-" Plug 'https://github.com/vim-airline/vim-airline.git'
-" Plug 'nightsense/stellarized'              
-" cp -r ~/.vim/plugins/stellarized ~/.vim/pack/nightsense/start/      :: this seems to be necessary
-" Plug 'francoiscabrol/ranger.vim'
-" Plug 'easymotion/vim-easymotion'
-" Plug 'https://github.com/junegunn/goyo.vim.git'
-" Plug 'https://github.com/junegunn/limelight.vim.git'
-" next one shows a buffer to the right on "
-" Plug 'junegunn/vim-peekaboo'
-" Markdown plugins
-" With none of these enabled ##'s are salmon-coloured - but no folding
-"
-" Check if this displays headings - yes but loses coloured # as in vim-mardown-folding 
-" Plug 'plasticboy/vim-markdown'
-" The following plugin (vim-markdown) includes Syntax Concealing - use :set conceallevel=2
-" Plug 'https://github.com/preservim/vim-markdown'                        
-" the following hides the heading in markdown files - a problem (is this why plasticboy is better?) - <-- use :set foldignore=#
-" Plug 'masukomi/vim-markdown-folding'
-"
-"call plug#end()
-"
-" }}}
-" Preferred Plugins {{{
-" NOTE: These are now managed using vim.plug (see above Enable / Disable Plugins)
-
-" "=== Preferred Plugins === 
-" added vim-plug to manage plugins
-" cd ~/.vim
-" autoload  pack  plugins  spell
-" autoload contains plug.vim
-" pack/nightsense/start/stellarized
-" plugins - this is the location for Plug to place other plugins
-"
-" OLD - OLD - OLD - OLD - OLD - OLD - OLD - OLD  
-" donaghm [16:50 Tue 20/04] [~/.vim] 
-" -> % tree -L 2
-" .
-" └── ~/.vim/pack/start   (symlinked from PORTABLE_ENV)
-    " 1  ├── vim-surround
-    " 2  ├── vim-commentary
-    " 3  ├── ranger
-    " 4  ├── nightsense (theme)
-    " 5  ├── vim-airline
-    " 6  ├── vim-markdown-folding - masukomi
-    " 7  ├── vim-markdown - plasticboy
-    " 8  ├── vim-pencil
-    " 9  ├── emmet-vim
-    " 10 ├── vim-multiple-cursors
-    " 11 ├── vim-voom
-    " 12 ├── vim-superman
-    " 13 ├── peekaboo
-    " 14 ├── easymotion
-    " 15 ├── vim-elixir
-    " 16 ├── vim-floaterm
-    " 17 ├── vim-floaterm
-    " 18 ├── janet-vim
-    " 19 ├── goyo.vim
-    " 20 └── limelight.vim
-    " 21 └── vim-orgmode
-    " 22 └── speeddating
-    "
-   " Note: Rundown of good plugins available at https://catonmat.net/vim-plugins
-   " --- My Preferred Plugins ---  
-   " tpope
-   " https://github.com/tpope/vim-surround.git  
-   " https://github.com/tpope/vim-commentary.git  
-   "
-   " francoiscabrol
-   " https://github.com/francoiscabrol/ranger.vim.git
-   " vim-ranger
-   " map <leader>f :Ranger<CR>
-   "
-   " theme - nightsensee 
-   " .vim/pack/nightsense/start
-   " https://github.com/nightsense/stellarized.git
-   "
-   " airline - powerline for vim
-   " https://github.com/vim-airline/vim-airline.git
-   "
-   " .vim/pack/
-   " masukomi
-   " vim-markdown-folding
-   " https://github.com/masukomi/vim-markdown-folding.git
-   "
-   " md-folding
-   " .vim/pack/vim-markdown/start/vim-markdown
-   " git clone https://github.com/plasticboy/vim-markdown.git
-   "
-   "
-   " vim-pencil
-   " pure typing / writing experience for vim text files - kills default vim
-   " multiline for j, k etc.
-   " git clone https://github.com/reedes/vim-pencil
-   "
-   "
-   " mattn
-   " emmet-vim
-   " use <C-y>, ! to have basic html:5 skeleton template
-   " https://github.com/mattn/emmet-vim.git
-   "
-   " multicursor
-   " https://github.com/terryma/vim-multiple-cursors
-   "
-   " Voom
-   " sudo pamac install vim-voom
-   "
-   " SuperMan
-   " Man pages in vim editor: vman <app>
-   " https://github.com/jez/vim-superman
-   "
-   " peekaboo
-   " let's you see the regs e.g. a side buffer pops up when you press " 
-   " https://github.com/junegunn/vim-peekaboo
-   "
-   " easymotion - <leader>/ will highlight file with letters everywhere
-   " using ,/ to move to highlighted letter
-   " https://github.com/easymotion/vim-easymotion.git
-   "
-   " vim-elixir
-   " elixir plugin for vim
-   " https://github.com/elixir-editors/vim-elixir
-   "
-   " floaterm
-   " a floating terminal - not installed
-   " https://github.com/voldikss/vim-floaterm
-   "
-   " janet.vim
-   " plugin for janet syntax in vim
-   " https://github.com/janet-lang/janet.vim.git
-   "
-   " Goyo
-   " Make vim environment distraction free
-   " https://github.com/junegunn/goyo.vim.git
-   "
-   " Limelight
-   " Highlight only the active paragraph
-   " https://github.com/junegunn/limelight.vim.git
-   "
-   " vim-orgmode
-   " (prefers also to include speedating from tpope)
-   " open .org files in vim
-   " guide at /home/donaghm/PORTABLE_ENV/vim/dotvim/pack/vim-orgmode/start/vim-orgmode/doc/orgguide.txt
-   "  https://github.com/jceb/vim-orgmode
-   "
-   " speedating
-   " manages the - in dates like 2021-11-28 when opening say .org files
-   "  https://github.com/tpope/vim-speeddating.git
-   "
-   "}}}
    " Runtimepath and path {{{
    " :set runtimepath?
 let $RTP=split(&runtimepath, ',')[0] " allows :set rtp?
