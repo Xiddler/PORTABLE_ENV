@@ -1,0 +1,70 @@
+
+# Displays everything in the target directory
+ls path/to/the/target/directory
+
+# Displays everything including hidden files
+ls -a
+
+# Displays all files, along with the size (with unit suffixes) and timestamp
+ls -lh 
+
+# Display files, sorted by size
+ls -S
+
+# Display directories only
+ls -d */
+
+# Display directories only, include hidden
+ls -d .*/ */
+
+# List by date and reverse
+ls -t
+ls -tr
+
+# List links
+ls -al | awk '/^l/ { print $0 }'
+
+# List directories / files (from ~/.zsh_aliases)
+alias l.='ls -d .* --color=auto' # Show hidden files and directories
+alias lh="ls -lad --color=auto *(D.)" # Show hidden files only ##
+alias lr="ls -la | grep '\-'"  # Show only regular files (Donaghs!)
+# alias lr='find . -maxdepth 1 -type f -ls' # Show only regular files
+# alias lr='find . ! -name . -prune -type f -exec ls -ldi {} +' # Show only regular files (POSIXY)
+# alias lr='ls -l -- *(D.)' # Show only regular files (zsh only)
+alias ld='ls -la -d */' # show directories
+# alias -g lh='ls | head'
+alias lk='ls -1v'
+alias ll='ls -la'
+alias llk="ll | grep '^l.*'"
+alias lls='ls | xargs -n1' # show ls in a single column
+alias ls='ls --color=auto'
+alias hp='ls --hide=*.py'
+alias -g lf="ls | tr ' ' '\n'"
+alias -g latest='ls -lt  **/*(.om[1,20])' # list latest 20 files edited
+
+# columns in output of -> % ls -la
+-rwxrw-r--    1    root   root 2048    Jan 13 07:11 afile.exe
+    filetype (-)        [ - means a regular file; d means directory; l means symbolic link ]
+    file permissions (rwxrw-r--),
+    number of (hard) links (1),
+    owner name (root),
+    owner group (root),
+    file size in bytes (2048),
+    time of last modification (Jan 13 07:11), and
+    file/directory name (afile.exe)
+
+
+    –:  A regular file.
+    b: A block special file.
+    c: A character special file.
+    d: A directory.
+    l: A symbolic link.
+    n: A network file.
+    p: A named pipe.
+    s: A socket.
+
+
+
+# DONAGHS
+# About grepping the output of ls
+# see https://mywiki.wooledge.org/ParsingLs

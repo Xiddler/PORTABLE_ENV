@@ -1,0 +1,15 @@
+Opened 2021-07-10
+
+Sub-expression or capture group: (foo)
+
+Named capture group: (?<name>foo)
+
+Non-capturing group: (?:foo)
+
+Lookahead: (?=foo)
+
+For negative lookahead, change = to !: (?!foo)
+
+For lookbehind, add <: (?<=foo)
+
+For negative lookbehind, change = to !: (?<!foo)

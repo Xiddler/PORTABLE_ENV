@@ -1,0 +1,14 @@
+# new tab
+Ctrl Shift T
+
+# exit
+xc
+
+# ok fonts
+# must use monospaced fonts for a terminal
+monospace 14
+Hack 14
+Liberation Mono Regular
+
+# other fonts seem to go "monospaced" when selected. Why?
+A terminal font MUST be monospaced for console work. This is because the screen output uses character spacing to make columns. Variable spaced fonts sure look nicer in documents, but trying to set a column requires advanced techniques that a console just does not have. A font should be clear and easy to read.

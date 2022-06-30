@@ -1,0 +1,6 @@
+# check open ports
+lsof -Pni4 | grep LISTEN
+
+# list port numbers (and grep too)
+cat /etc/services | grep -i SSH
+

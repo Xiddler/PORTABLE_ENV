@@ -1,0 +1,38 @@
+# Tools for examining / manipulating json files
+
+
+# ----------------------------------------------------------------
+# CLI tools
+# ----------------------------------------------------------------
+# gron
+## How many losses did I have?
+gron 2programming_repository/python/2python_studies/json_handy/lichess_profile.json | grep loss | gron --ungron
+
+# jq
+jq . story_hn.json
+
+
+# ----------------------------------------------------------------
+# Python
+# ----------------------------------------------------------------
+import json
+json.loads()
+json.loads()
+json.dump()
+json.dumps()
+
+# sample script
+
+#!/usr/sbin/python3
+# encoding: utf-8
+
+import json
+
+myfile = 'story_hn.json'
+
+with open(myfile, 'r') as json_file:
+    object = json.load(json_file)
+    pretty_object = json.dumps(object, indent=2)
+    print(pretty_object)
+
+

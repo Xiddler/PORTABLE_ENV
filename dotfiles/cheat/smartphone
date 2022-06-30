@@ -1,0 +1,50 @@
+2020-09-10
+
+### Notes
+
+# This is a cheat for how to connect the laptop to my smartphone 
+# Mainly for the purposes of copying items (photos and videos) from smartphone  to laptop
+# in the easiest and most efficient way possible or suitable.
+
+# NOTE: FOR ALL THE FOLLOWING METHODS THIS STEP IS NECESSARY
+# First, copy the relevant photos into a distinct folder on the smartphone so that they can be found
+# when searching for them on the laptop via the FTP server.
+# Ideally, make a new folder with a unique identifier incl. date
+# MOST IMPORTANT STEP
+# Then copy the media into that folder. To copy, open the Files app and locate Camera folder. Select the media
+# items I want to copy over then navigate to the Newly Created Folder (which I usually place on the SD Card in the
+# Pictures folder and paste them in the Newly Created Folder there.
+
+### WiFi Pro app on the smartphone 
+# Start up the server and copy from smartphone to laptop or download. 
+# On smartphone, start the app WiFi Pro FTP Server
+# On the laptop browse to 
+ftp://192.168.1.104:2221 # or the URL indicated by the app 
+# Then click each file to download it. (Very tedious if there are a lot of files.)
+
+
+### SSH 
+# Requirements 
+# the smartphone file ~/.ssh/authorized_keys contains the contents of ~/.ssh/id_rsa_temux.pub of the laptop
+# 104 is the IP for the smartphone (or change to the correct one in the cli command below)
+# sshd is running in Termux on the smartphone 
+# On the laptop, check that a ssh connection is available to the smartphone 
+->%  ssh -i ~/.ssh/id_rsa_termux u0_a163@192.168.1.104 -p 8022
+# Then exit ssh.
+
+### SFTP Method
+# Ensure that ssh is available as in the previous
+# On the smartphone 
+# cd to /mnt (by using cd .. multiple times and then using cd /mnt - this usually gets to /mnt. 
+# Then navigate to ext_sdcard/Pictures or wherever you copied your photos to)
+# On the laptop
+$ sftp -i ~/.ssh/id_rsa_termux -P 8022 192.168.1.104
+
+# This will open the sftp> prompt at the remote location that sshd was invoked on Termux (the smartphone )
+# To copy a file from the smartphone (remote) use get as in
+sftp> get image22.png
+# This will copy the file image22.png to the folder where the sftp command was invoked on the laptop
+#
+# WhatsApp
+# "Unlock to link a device"
+Simply place finger on camera at back - it's a security feature!

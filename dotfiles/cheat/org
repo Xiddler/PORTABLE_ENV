@@ -1,0 +1,15 @@
+# There is a cheat for org-mode that is emacs based.
+# This one is Donagh's for Doom
+
+# Convert a .csv file to be an org-mode table
+Open the .csv file
+then save a .org
+Highlight all
+C-c |
+should convert to org table
+
+# from StackOverflow
+paste the data into an org file, select it, and do C-u C-c |
+
+
+

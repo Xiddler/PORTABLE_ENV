@@ -1,0 +1,49 @@
+# various commands to get system info
+
+$ cat /etc/os-release
+$ cat /etc/issue
+
+$ lsb_release -a
+
+# with systemd installed
+$ hostnamectl
+
+# get the kernel details 
+$ uname -a
+$ uname -r
+$ uname -m
+
+
+# INXI utility
+# see $ inxi -h and /or man inxi e.g. $ inxi -u for UUIDS
+$ inxi
+
+# hardware
+sudo lshw
+sudo lshw -short
+
+# cpu
+lscpu
+
+# block devices
+lsblk
+
+# pci
+lspci       # 00:00.0 PCI bridge: Broadcom Limited Device 2711 (rev 10)
+            # 01:00.0 USB controller: VIA Technologies, Inc. VL805 USB 3.0 Host Controller (rev 01)
+            
+            
+# Most of the above commands use files in the /proc directory to extract system information.
+
+
+# system monitoring - the state of system at a glance
+glances
+btop        # cool
+
+# find number of processors on this machine
+nproc
+4
+
+
+
+

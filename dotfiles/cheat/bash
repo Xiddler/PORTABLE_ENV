@@ -1,0 +1,63 @@
+# To implement a for loop:
+for file in *;
+do 
+    echo $file found;
+done
+
+# To implement a case command:
+case "$1"
+in
+    0) echo "zero found";;
+    1) echo "one found";;
+    2) echo "two found";;
+    3*) echo "something beginning with 3 found";;
+esac
+
+# Turn on debugging:
+set -x
+
+# Turn off debugging:
+set +x
+
+# Retrieve N-th piped command exit status
+printf 'foo' | fgrep 'foo' | sed 's/foo/bar/'
+echo ${PIPESTATUS[0]}  # replace 0 with N
+
+# Lock file:
+( set -o noclobber; echo > my.lock ) || echo 'Failed to create lock file'
+  
+#DONAGHS
+# to filter the output of ls to include the files containing <pattern>
+stat --printf '%y\t%n\n' -- *<pattern>*
+
+#!/usr/bin/env bash is more portable than #!/bin/bash
+#
+# Regex
+# pat='[^0-9]+([0-9]+)'
+# s='I am a string with some digits 1024'
+# [[ $s =~ $pat ]] # $pat must be unquoted
+# echo "${BASH_REMATCH[0]}"
+# echo "${BASH_REMATCH[1]}"
+#
+# Start bash scripts with the following:
+# #!/usr/bin/env bash
+    set -euo pipefail
+
+
+# Arrays
+myIndexedArray=(one two three)
+$ echo ${myIndexedArray[*]}
+
+# using for loops and an array of filepaths
+# Template: "${arrayName[@]}"
+
+directories=( $porte $org $pers $comp $all_org )
+for mydir in "${directories[@]}"; 
+    do 
+        # echo -e "$mydir";      # same as following
+        printf '%s\n ' "$mydir"
+done
+
+# bash one-liners resources
+https://github.com/onceupon/Bash-Oneliner
+

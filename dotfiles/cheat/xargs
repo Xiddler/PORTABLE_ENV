@@ -1,0 +1,25 @@
+# What does xargs do exactly?
+# runs a given command on each line of input from a piped command
+#
+# find all file name ending with .pdf and remove them
+find -name *.pdf | xargs rm -rf
+
+# if file name contains spaces you should use this instead
+find -name *.pdf | xargs -I{} rm -rf '{}'
+
+# xargs -I{}: on each line in the input, run the given command and replace {} with the contents of the line
+
+# using grep - find all files that contain a line ending in sh to a maxdepth of 2
+find -maxdepth 2 -name "*.*" -type f | xargs -I{} grep 'sh$' '{}'
+
+# Will show every .pdf like:
+#	&toto.pdf=
+#	&titi.pdf=
+# -n1 => One file by one file. ( -n2 => 2 files by 2 files )
+
+find -name *.pdf | xargs -I{} -n1 echo '&{}='
+
+# If find returns no result, do not run rm
+# This option is a GNU extension.
+find -name "*.pdf" | xargs --no-run-if-empty rm
+

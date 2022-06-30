@@ -1,0 +1,36 @@
+# https://opensource.com/article/21/2/linux-automation?utm_medium=Email&utm_campaign=weekly&sc_cid=7013a000002vqnQAAQ
+#
+# main commands
+# create the relevant folders:
+mkdir -p ~/.local/etc/cron.daily ~/.var/spool/anacron
+
+# script to run
+# ~/.local/etc/cron.daily/example
+____________________________________________________________________________________
+#!/bin/bash
+/usr/sbin/touch /tmp/hello.txt
+____________________________________________________________________________________
+
+# -----------------
+# informing anacron what and when to run script
+~/.local/etc/anacrontab
+____________________________________________________________________________________
+SHELL=/bin/sh
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+1           1       cron.mine    run-parts      /home/donaghm/.local/etc/cron.daily/
+____________________________________________________________________________________
+daily      delay    a name      executables     run all scripts in cron.daily once per day 1min. after (the delay) rebooting is complete
+
+# This file tells anacron to run all executable scripts (run-parts) found in ~/.local/etc/cron.daily every one day (that is, daily), with a zero-minute delay. Sometimes, a few minute''s delay is used so that your computer isn't hit with all the possible tasks right after you log in. These settings are suitable for testing, though. 
+
+# The cron.mine value is an arbitrary name for the process. I call it cron.mine but you could call it cron.personal or penguin or anything you want.
+
+# Verify your anacrontab file's syntax: $ anacron -T -t ~/.local/etc/anacrontab -S /home/donaghm/.var/spool/anacron
+# verify anacron
+-> % anacron -T -t ~/.local/etc/anacrontab -S /home/donaghm/.var/spool/anacron
+
+# Silence means success.
+#
+# In ~/.profile
+anacron -t /home/donaghm/.local/etc/anacrontab -S /home/donaghm/.var/spool/anacron
+

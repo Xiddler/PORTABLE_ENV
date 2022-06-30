@@ -1,0 +1,72 @@
+# IMAGEMAGICK VERBS
+
+imagemagick /usr/bin/animate					:: 
+imagemagick /usr/bin/compare				    :: 
+imagemagick /usr/bin/composite				    :: 
+imagemagick /usr/bin/conjure					:: 
+imagemagick /usr/bin/convert					:: convert  between image formats incl. resize an image, blur, crop, despeckle, dither, draw on....
+imagemagick /usr/bin/display					:: show an image using the default terminal image viewer (eg feh)
+imagemagick /usr/bin/identify					:: 
+imagemagick /usr/bin/import					    :: 
+imagemagick /usr/bin/mogrify					:: batch resize, manipulate or change formats of a whole directory full of images; 
+imagemagick /usr/bin/montage     				:: 
+imagemagick /usr/bin/stream					    :: 
+
+
+
+# a sample of a command that uses imagemagick/convert
+
+For each file | find the colors | pick only the most frequent one that is not white or black | move the file into a folder with the color name
+
+ls | xargs -I{} sh -c "convert {} -colorspace RGB -format %c histogram:info:- | grep -v FFFFFF | grep -v 000000 | sort -n | tail -1 | grep -Eo '#[^ ]*' |
+sed 's/#//' | xargs -III mv {} II"
+
+# explanation
+
+ls: list the file names
+xargs -I{} sh -c: on each line, run the script (sh -c is a useful way to run multiple commands without creating a script file)
+convert: get the colors
+{}: replace {} with the contents of the line
+grep -v FFFFFF | grep -v 000000: -v is for inverse, exclude lines with these patterns (we don’t want any white or black colors)
+sort -n: sort numerically
+tail -n 1: take only the last line (the most frequently seen color)
+grep -Eo '#[^ ]*' | sed 's/#//': find only the color value without #
+xargs -III mv {} II: run mv (move) command, notice -III instead of -I{} , {}is already taken, so we use another placeholder instead.
+
+# rotate an image by 90 deg
+-> % convert -rotate 90  girl.jpg  newgirl.jpg
+
+# Crop the image to target size 240×160 with crop starting point at x=100,y=50
+->% convert -crop 240x160+100+50 convert-crop-img1.jpg convert-crop-img2.jpg
+
+
+# Makefile contents to convert a .jpg file to .png using convert 
+
+.SUFFIXES: .jpg .png
+
+.jpg.png:
+    @echo converting $< to $@
+    convert $< $@
+
+# then
+-> % make file.png 
+
+# Makefile contents to convert a number of .jpg files to .png files using convert 
+
+JPEG=$(wildcard *.jpg *.jpeg) 
+JPG=$(JPEG:.jpeg=.jpg) 
+PNG=$(JPG:.jpg=.png) 
+.SUFFIXES: .jpg .jpeg .png
+
+convert: $(PNG)
+
+.jpeg.png .jpg.png: 
+	@echo converting $< to $@ using ImageMagick… 
+	@convert $< $@ 
+	@echo conversion to $@ successful! 
+
+# then
+-> %  make convert
+# (Tested? yes, and it worked )
+
+

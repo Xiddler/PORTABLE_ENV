@@ -1,0 +1,7 @@
+# -> % openssl rand -hex 64
+b3b6cd7b225d43c102489bdc81fb18cf9d56147cb039e80b517055d34cc515324c930bd9ed0ef5c7ea1873cb88ea3e38b430f5440c96ed2c55c92fffda819de5
+
+# -> % openssl rand -base64 10
+EDPXfQaQbZqmWg==
+
+

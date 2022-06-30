@@ -1,0 +1,61 @@
+# headers
+h1 header
+=========
+h2 header
+---------
+
+# blockquotes
+> first level and paragraph
+>> second level and first paragraph
+>
+> first level and second paragraph
+
+# lists
+## unordered - use *, +, or -
+        * Red
+        * Green
+        * Blue
+
+## ordered
+        1. First
+        2. Second
+        3. Third
+
+# code - use 4 spaces/1 tab
+regular text
+        code code code
+or:
+Use the `printf()` function
+
+# hr's - three or more of the following
+***
+---
+___
+
+# links
+# Rem: Square    Brackets -->  []  ()
+This is [an example](http://example.com "Title") inline link.
+
+# image
+# Rem: Imagine banging the title into the file -->  Image ! Text Filepath
+![Alt Text](/path/to/file.png)
+# Example
+![Backpacking items](/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/OUTDOOR/Images/00_Galtee_Overnighter_Sept2020/IMG_20200910_124754.jpg
+
+
+# formatting
+*em* _em_
+**strong** __strong__
+~~strikethrough~~
+
+# markdown editors
+marker      # simple and works well in Manjaor                   << PREFERRED usage -> % apostrophe <filename.md>
+apostrophe  # lightweight and works on manjaro
+marktext    # difficulty instally on manjaro / npm issues etc.
+Abricotine    # difficulty instally on manjaro / npm issues etc.
+Obsidian    # allows live preview of markdown files and has vim keybindings available
+
+# markdown in vim
+:hi link markdownError Normal
+
+

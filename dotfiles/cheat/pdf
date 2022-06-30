@@ -1,0 +1,35 @@
+# Tool to do lots of things with existing PDF documents
+#
+# AUR;
+pdftk
+# Use it to: 
+
+	   * Merge PDF Documents or Collate PDF Page Scans
+	   * Split PDF Pages into a New Document
+	   * Rotate PDF Documents or Pages
+	   * Decrypt Input as Necessary (Password Required)
+	   * Encrypt Output as Desired
+	   * Fill PDF Forms with X/FDF Data and/or Flatten Forms
+	   * Generate FDF Data Stencils from PDF Forms
+	   * Apply a Background Watermark or a Foreground Stamp
+	   * Report PDF Metrics, Bookmarks and Metadata
+	   * Add/Update PDF Metrics, Bookmarks or Metadata
+	   * Attach Files to PDF Pages or the PDF Document
+	   * Unpack PDF Attachments
+	   * Burst a PDF Document into Single Pages
+	   * Uncompress and Re-Compress Page Streams
+	   * Repair Corrupted PDF (Where Possible)
+
+# Tool for finding text in a pdf file
+pdfgrep "<pattern>" <filename.pdf>
+
+# Convert pdf to html
+pdftohtml / wkpdftohtml
+
+# GUI applications 
+LibreOffice Draw is a powerful tool for editing multipage pdf files. 
+Inkscape also works well but only manages single page pdfs.
+
+
+
+

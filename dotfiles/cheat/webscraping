@@ -1,0 +1,25 @@
+# Opened 2021-09-21
+
+# Tools
+# See zim-wiki for details
+htmlq
+xidel
+prolog / scryer-prolog
+python / Beautiful Soup
+
+# Note either download the page using wget <url> or use curl --silent <url> | htmlq <commands>
+
+# htmlq
+cat index.html  | htmlq --attribute href a          :: get all the links in the page
+cat index.html  | htmlq '#h-1-be-passionate-about-something'          
+        OUTPUT : <h2 id="h-1-be-passionate-about-something"><span id="1_Be_passionate_about_something">1. Be passionate about something.</span></h2>
+cat index.html  | htmlq --text '.site-main'         :: get the text of the (here) class; 
+cat index.html  | htmlq --text 'p'                  :: get the text inside all the <p> tags
+
+
+
+# xidel
+xidel index.html --xpath '//a/@href'
+xidel index.html -e //h2                            :: get (extracts -e) the text of all the h2 headers
+
+

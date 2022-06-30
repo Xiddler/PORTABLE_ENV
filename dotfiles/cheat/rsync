@@ -1,0 +1,34 @@
+# rsync flags
+# -a            :: archive means make an exact copy (not compressed)
+# -c            :: skip based on checksum, not mod-time & size
+# -r            :: recurse into directories
+# -u            :: skip files that are newer on the receiver
+# -v            :: verbose
+# -z            :: compressed
+# --delete      :: delete extraneous files from dest dirs
+#
+# To copy files from remote to local, maintaining file properties and sym-links (-a), zipping for faster transfer (-z), verbose (-v).  
+rsync -avz host:file1 :file1 /dest/
+rsync -avz /source host:/dest
+
+# Copy files using checksum (-c) rather than time to detect if the file has changed. (Useful for validating backups). 
+rsync -avc /source/ /dest/
+
+# Copy contents of /src/foo to destination:
+
+# This command will create /dest/foo if it does not already exist
+rsync -auv /src/foo /dest
+
+# Explicitly copy /src/foo to /dest/foo
+rsync -auv /src/foo/ /dest/foo
+
+# Copy file from local to remote over ssh with non standard port 1234 to destination folder in remoteuser's home directory
+rsync -avz -e "ssh -p1234" /source/file1 remoteuser@X.X.X.X:~/destination/
+
+# Basic for ~/BACKUPS/rsync_Zim_*
+rsync -a --delete ~/DONAGHS/MY_ZIM/ORG ~/BACKUPS/rsync_Zim_ORG
+rsync -a --delete ~/DONAGHS/MY_ZIM/ORG.txt ~/BACKUPS/rsync_Zim_ORG
+
+# over a network add bwlimit e.g. adds a bandwidth limit to prevent rsync hogging the resources of the device
+rsync --bwlimit=50000 -a --delete <source-folder> <backup-destination> 2>&1 | $
+

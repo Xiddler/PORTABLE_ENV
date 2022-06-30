@@ -1,5 +1,4 @@
-" Filepath  
-"/home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim
+" Filepath  /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim 
 
 " This file is where I call the plugins I want to use in vim. There is a line in .vimrc that calls this file
 " .vimrc --> ~/.vim/plugins

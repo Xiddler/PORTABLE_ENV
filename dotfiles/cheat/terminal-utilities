@@ -1,0 +1,7 @@
+# This is a repo for the rarely used but ever-so-interesting utilities in bash/zsh
+
+# monitor power see https://www.linux-magazine.com/Issues/2020/233/The-Linux-Box-of-Tricks/(tagID)/32
+->% upower -i 
+# pop-up notification e.g. ->% notify-send -t 4000 "Hello Donagh" will open a pop-up for 4 seconds
+->% notify-send "Hello Donagh"
+

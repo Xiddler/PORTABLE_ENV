@@ -1,0 +1,4 @@
+# to run vlc headless (ie without GUI)
+->% cvlc <file.mp3>
+
+

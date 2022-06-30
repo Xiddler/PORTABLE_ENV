@@ -1,0 +1,112 @@
+2020-07-06
+
+# This is a list of my preferred apps used for each activity on the comp
+
+## IMAGES
+view from the CLI                   :: feh
+view for minimal edit               :: xnviewmp
+edit raster image                   :: GIMP
+edit vector image                   :: Inkscape or kritta
+diagrams                            :: dia, pencil
+
+## TEXT
+CLI editor                          :: vim, Doom(emacs)
+rich text                           :: LibreOffice [ Alt L ]
+
+## CLIPBOARD
+clipboard manager                   :: Klipper
+
+## ORGANISING
+emacs                               :: doom [ Alt E ]
+task manager                        :: org-mode (using Doom emacs)
+
+## EMAIL
+laptop                              :: Thunderbird [ Alt T ]
+webmail                             :: gmail, gandhi, microsoft, yahoo, eircom
+
+## TERMINAL
+emulator                            :: Terminator [ Alt N ]
+shell                               :: zsh
+zsh add-on framework                :: oh-my-zsh (to be reassessed)
+text search                         :: rg
+find files                          :: fd
+command reminder                    :: cheat
+websearch engine                    :: ddgr
+system process monitor              :: htop
+file manager                        :: ranger (to access in vim: ,f )
+promt display                       :: powerline
+package manager                     :: pamac, pacman
+multiplexer                         :: tmux
+dropdown terminal                   :: yakuake (F12)
+
+## snapshot creator
+manjaro                             :: timeshift
+
+# DISPLAY
+night color temp                    :: Night Color Control, Redshift
+
+## DESKTOP ENVIRONMENT
+manjaro                             :: KDE Plasma
+
+## SCREEN CAPTURE
+yakuake (F12)                       :: spectacles
+
+
+## APP SWITCHER
+linux                               :: jumpapp (with keyboard shortcuts - see custom shortcuts), synapse ([SPC] )  
+
+
+## PERSONAL KNOWLEDGE MANAGER       
+Knowledge storage                   :: zim-wiki [ Alt Z ]
+
+## READERS
+PDF                                 :: zathura, okular
+markdown                            :: ?? typora, markdown-git, Marktext
+ebooks                              :: ?? calibre, fbookreader
+
+## WEB-BROWSER
+GUI                                 :: Firefox [ Alt B ], Chromium [ Alt C ]
+CLI                                 :: w3m
+
+## TEXT EXPANDER
+python                              :: autokey [ Alt A ]
+
+## CONTAINERIZATION
+linux                               :: Docker
+
+## VERSION CONTROL
+guess what                          :: git
+web repo                            :: (currently) github 
+
+## DEVELOPMENT ENVIRONMENT
+linux                               :: for Ubuntu Server: Multipass
+
+## COLOR PICKER
+linux                               :: pick
+
+## PYTHON PACKAGE MANAGER
+linux                               :: pip3
+
+## PASSWORD MANAGER
+linux                               :: own - zim-wiki, passin, passout
+
+## DATABASE
+linux                               :: sqlite
+
+## TUNNELLING SERVICE
+linux                               :: ngrok, tunnelto
+
+## WINDOWS MANAGER
+linux                               :: KDE 
+
+## VIM NAVIGATION
+editor                              :: vim, VSCode [ Alt V ], SublimeText
+browser                             :: Vimium
+CLI file browser                    :: ranger
+
+## WEBSCRAPING
+CLI                                 :: xidel
+
+## ALL-REFS MANAGEMENT
+linux                               :: zotero [ Ctrl Alt Z ]
+

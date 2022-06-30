@@ -1,0 +1,27 @@
+# initiate credentials (one-off)
+export BORG_REPO='$HOME/SAFE/SAFE_borg_backup' && export BORG_PASSPHRASE='theboysoffairhill'
+
+# to init a new folder
+# inside a directory 
+borg init --encryption=repokey .	
+
+# borg super alias --> borgz runs the ~/.script borg_backup_weekly
+
+---------------------------------------------------------------------------
+sample commands
+
+borg create --stats --progress --compression lz4 '/home/donagh/SAFE/SAFE_borg_backup/::ZIM_ALL-{now}' /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/MY_ZIM
+
+borg create --stats --progress --compression lz4 '/home/donagh/SAFE/SAFE_borg_backup/::ZIM_Computer-{now}' /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/MY_ZIM/Computer
+
+borg create --stats --progress --compression lz4 '/home/donagh/SAFE/SAFE_borg_backup/::ZIM_ComputerDotTxt-{now}' /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/MY_ZIM/Computer.txt
+
+borg create --stats --progress --compression lz4 '.::all_org-{now}' /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/all_org
+
+borg create --stats --progress --compression lz4 '.::personal-{now}' /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal
+
+borg create --stats --progress --compression lz4 '.::programming2-{now}' /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/2programming
+
+# delete a file
+# cd to the correct directory then:
+sudo borg delete ./::zim_compu-2021-02-24T13:42:44

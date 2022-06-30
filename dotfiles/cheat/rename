@@ -1,0 +1,37 @@
+# BATCH RENAME
+# Lowercase all files and folders in current directory
+rename 'y/A-Z/a-z/' *
+
+# Replace 'sometext' with 'replacedby' in all files in current directory
+rename 's/sometext/replacedby/' *
+
+# using zmv
+# e.g.  remove the (z-lib.org) from the filenames of the books in Computer_books [ to allow searching for
+# org-mode files]
+zmv '(*)\(z-lib.org\).pdf' '$1.pdf'
+
+# using ranger (one way!!)
+# use the bulk rename function in ranger. It opens a buffer in vim
+# see YouTube Luke Smith https://www.youtube.com/watch?v=NzD2UdQl5Gc
+1. open the dir in ranger (shortcut ->% ra)
+2. select files (all files? shortcut V)
+3. :bulkrename (this opens a buffer with all the selected files)
+4. make the changes (in vim escape the grouping parentheses e.g. \( and the capture is e.g. \1)
+5. save changes e.g.  :wq
+6. confirm everything before committing with :q<enter>
+
+# on Raspian / Ubuntu install renameutils
+#
+
+#########################
+#       THE WAY         #
+#########################
+# using moreutils command - opens $EDITOR buffer containing contents of directory
+vidir <directory>
+
+# qmv (and imv) require renameutils to be installed
+qmv -A
+#This will open a window where the left column displays the original names of the files. Whereas, the right column is for the name which you wish to set for your files. Edit the right column to set the names you wish for your file.
+
+
+

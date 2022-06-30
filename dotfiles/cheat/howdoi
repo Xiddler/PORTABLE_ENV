@@ -1,0 +1,16 @@
+Opened 2021-08-26
+
+# batch rename files
+# SEE cheat rename
+rename
+vidir
+# in zsh to change all .txt extensions to .md recursively:
+zmv -n '(**/)(*).txt' '$1$2.md'
+
+# check if backups being sent to RPi when using (the alias) borgz
+mount
+# the IP of the RPi should be showing at the bottom
+# Also the output of ls /mnt/cifs_share will show the directories on the RPi e.g. see below output
+donaghm [12:23 Sat 11/09] [/mnt/cifs_share] 
+-> % ls /mnt/cifs_share 
+borg_creds.txt  DONAGHS_BU  README.md  REPOS_BU  SAFE_borg_backup  zArchive

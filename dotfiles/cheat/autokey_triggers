@@ -1,0 +1,130 @@
+=======================================================
+HOTKEY-TRIGGERED AUTOS - .PY SCRIPTS
+File                       Mod 1    Mod 2    Hotkey    Action
+-------------------------  -------  -------  --------  ----------------------
+backu_to_forward_slash.py  <alt>    <shift>  b         backu_to_forward_slash
+get_password.py            <alt>    <ctrl>   g         get_password
+make_zim_link.py           <alt>    <shift>  z         make_zim_link
+rtr.py                     <alt>    <shift>  r         rtr
+toDONAGHS.py               <alt>    <ctrl>   d         toDONAGHS
+toREPOS.py                 <alt>    <ctrl>   r         toREPOS
+to_Sentence.py             <alt>    <shift>  s         to_Sentence
+to_UPPER.py                <alt>    <shift>  u         to_UPPER
+to_lower.py                <alt>    <shift>  l         to_lower
+to_swapcase.py             <alt>    <shift>  w         to_swapcase
+url_to_clip.py             <ctrl>   <shift>  x         url_to_clip
+wrapper.py                 <alt>    <shift>  n         wrapper
+=======================================================
+ABBS-TRIGGERED .PY SCRIPTS
+File                   Keys     Output
+---------------------  -------  ------------------
+YYYY-MM-DD_HHMM.py     aq       YYYY-MM-DD_HH:MM
+YYYYY-MM-DD.py         qq       YYYYY-MM-DD
+blizzy.py              km       blizzy
+clear.py               cx       clear
+contout.py             contout  contout
+ctrl4.py               g4       ctrl+4
+ctrl5.py               g5       ctrl+5
+dbl_1.py               {{       dbl_{}
+dbl_2.py               {%       dbl_{%
+dom_Year_Month_Day.py  dq       dom_Year_Month_Day
+exit.py                xc       exit
+groceries.py           rr       groceries
+home.py                hf       home
+parens_in.py           ()       parens_in
+parens_out.py          ,,       parens_out
+pathToMyJournal.py     pmj      pathToMyJournal
+venv_basic.py          pyb      venv_basic
+venv_script.py         pyf      venv_script
+=======================================================
+ABBS-TRIGGERED FROM .TXT FILES
+File                        Keys     Output
+--------------------------  -------  -----------------------------------------------------------------------------
+00_Overview.txt             ovv      00_Overview
+0Reading_notes.txt          0read    $HOME/REPOS/books/0Reading_notes
+192xx.txt                   192      192.168.
+55pRo.txt                   55p      55pRotected!!
+Books_addr.txt              bz       /home/donaghm/REPOS/books
+Broghill.txt                adr      Broghill
+Donagh_McCarthy.txt         dmc      Donagh McCarthy
+IP_of_RPi.txt               ipr      192.168.1.108
+Id1.txt                     idd      I'd
+Im1.txt                     imm      I'm
+Ive.txt                     ivv      I've
+Ive1.txt                    ive      I've
+Mobile_no.txt               @@m      083 086 0240
+OpenMV.txt                  opv      OpenMediaVault
+P56_A394.txt                @@p      P56 A394
+RPi.txt                     rpi      RPi
+Smartphone.txt              smp      Smartphone
+StackOverflow.txt           sff      Stack Overflow
+SubLimeText.txt             stt      Sublime Text
+The_Quick_Fox.txt           tq       The quick brown fox jumps over the lazy dog.
+YouTube.txt                 yt       You Tube
+__grep.txt                  ||       | grep -i
+alphabet_lower.txt          abc      abcdefghijklmnopqrstuvwxyz
+also.txt                    aslo     also
+angle_break.txt             brk      > ------------------------------------------------------------
+approximately.txt           apx      approximately
+backtick.txt                bb       `
+cant.txt                    cant     can't
+colon.txt                   ;;       :
+couldnt1.txt                couldnt  couldn't
+didnt.txt                   didnt    didn't
+dirb_go_to.txt              gg       g
+dmccarthy_dot_ie.txt        dmd      dmccarthy.ie
+dmsaying.txt                dms      @DMSaying -
+doesnt1.txt                 doesnt   doesn't
+dont1.txt                   dont     don't
+eg.txt                      eg       e.g.
+email_donaghme.txt          @@@      donagh@donaghmccarthy.me
+email_eir.txt               @@@      donagh99@eircom.net
+email_hotmail.txt           @@h      donagh99@hotmail.com
+email_yahoo.txt             @@y      donagh.mccarthy@yahoo.com
+exclam.txt                  xx       !
+external_IP.txt             exip     88.87.184.97
+fraud.md.txt                ffraud   /home/donaghm/DONAGHS/personal/00Fraud/fraud.md
+gmail_DMBE.txt              @@w      donaghmccarthybe@gmail.com
+gmail_jdk.txt               @@g      jamesdenismccarthy@gmail.com
+gmail_xiddler.txt           @@x      xiddler@gmail.com
+goto_Docs.txt               ds       cd ~/Documents
+goto_homedonagh.txt         hh       output = system.exec_command("cd")
+hadnt.txt                   hadnt    hadn't
+hasnt.txt                   hasnt    hasn't
+havent.txt                  havent   haven't
+history.txt                 hj       history<enter>
+home_folder.txt             hf       ~/
+i1.txt                      i        I
+if_main_python.txt          ifn      if __name__ ==  "__main__":
+ipdo.txt                    ipdo     188.166.103.14
+isnt.txt                    isnt     isn't
+know.txt                    knwo     know
+line_black.txt              l3       _____________________________________________________________________________
+line_w4.txt                 w4       _____________________________________________________________________________
+list_all.txt                ll       ll<enter>
+localhost.txt               127      127.0.0.1
+path_to_0Reading_Notes.txt  ptn      $HOME/REPOS/books/0Reading_notes
+path_to_0_ToRead.md.txt     ptr      $HOME/REPOS/books/0_ToRead.md
+path_to_books.txt           ptb      $HOME/REPOS/books/
+post_pwd_to_cli.txt         pz       pwd | xclip<enter>
+print.txt                   pp       print
+pwgit.txt                   pwgit    4d7d90168303ea5ef0d99674a8d6879553d3f464
+python_server.txt           srvr     python -m http.server 5000
+space.txt                   $$       [SPC]
+sudo_docker.txt             dc       sudo docker
+tabnext.txt                 bn       tabn
+that.txt                    taht     that
+thats.txt                   thats    that's
+the1.txt                    teh      the
+this.txt                    thsi     this
+time_now.txt                ie       i.e.
+tldr.txt                    tld      TL;DR
+to.txt                      ot       to
+vim_0_ToRead.md.txt         vtr      vim $HOME/REPOS/books/0_ToRead.md
+vim_bashrc.txt              vb       vim ~/.bashrc<enter>
+vim_til.md.txt              til      vim ~/DONAGHS/personal/til.md
+vim_vimrc.txt               vv       vim ~/.vimrc<enter>
+with.txt                    wiht     with
+xmodmap.txt                 xx       xmodmap ~/.Xmodmap<enter>
+xz-gmail.txt                @@z      xzmanno@gmail.com
+zsh_prompt.txt              zp       -> %

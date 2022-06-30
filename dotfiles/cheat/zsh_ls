@@ -1,0 +1,58 @@
+# useful zsh stuff *N*
+ls *(.)                                             # list just regular files *N*
+ls -d *(/)                                          # list just directories *C*
+ls *(.[3])                                          # third file *N*
+vi *(.om[1])                                        # vi newest file
+cd **/*.php(.om[1]:h)                               # cd to directory of neest php file *N*
+gvim.exe *~vssver.scc(.om[1]) &                     # newest file ignoring any vssver.scc
+vi -p *(.om[1,3])                                   # open 3 newest files in tabs (gvim)
+ls -lt  **/*(.om[1,20])                             # list 20 newest files anywhere in directory hierarchy 
+ls -lt  **/*.php(.om[1,20])                         # list 20 newest php files anywhere in dir hierarchy
+ls -lt **/*~*vssver.scc(.om[1,20])                  # excluding vssver.scc *N*
+ls -lt **/^vssver.scc(.om[1,20])                    #  excluding vssver.scc (simpler) *N*
+ls -lt **/^(vssver.scc|*.ini)(.om[1,20])            # excluding vssver and any *.ini *N*
+ls (../)#junk2/down.txt(:a)                         # locate a file "upwards" *N*
+vi *(m0)                                            # re-edit all files changed today!
+ls *(^m0)                                           # files NOT modified today
+ls -l *(m4)                                         # list files modified exactly 4 days ago
+ls -l *(.m4)                                        # list files modified exactly 4 days ago (ignore dirs)
+vi **/main.php                                      # where ever it is in hierarchy
+ls -l **/main.{php,js,css}                          #    *N*
+ls *(.)^php~*.c~*.txt                               # useful? *N*
+ls fred^erick*                                      # list all files fred* except frederick*    *N*
+ls ^*.pdf                                           # list all but pdf's *NN*
+ls  ^httpd.*(.)                                     # list all but httpd.* in current directory *NN*
+ls ^*.(css|php)(.)                                  # list all but css & php #N#
+ls x^[3,5]                                          # list files x* except x3 x5 *N*
+ls x*~x[3,5]                                        # list files x* except x3 x5
+ls x*~^x[3,5]                                       # list only x3 x5
+ls **/*~*/.git/*                                    # ignore all git subdirectories *~* matches a path *N*
+vi !$                                               # vi last parameter
+vi !-2:2                                            # second parameter of second but last command
+vi !$:r.php                                         # vi last parameter but change extension to .php
+^php^cfm                                            # modify previous command (good for correcting spellos)
+ls *(.L0)                                           # list pesky empty files (yes that is a zero) *N*
+ls -l *(L-2)                                        # list file size less than 2 bytes *N*
+ls -l *(.L-20)                                      # list file size less than 20 bytes - . ignore dirs *N*
+
+# zsh list largest / biggest files , files larger than
+ls -l *(Lk+100)                                     # list file size larger/greater than 100kb *N*
+ls -l *(Lm+2)                                       # list file size larger/greater than 2 mbs *N*
+ls **/*(.Lm+10)                                     # list files larger than 10MB anywhere in hierarchy *N*
+ls -hlS **/*(.Lm+2)  | less                         # list largest files  largest first  *N*
+ls -hlS /**/*(.OL[1,10])                            # find the 10 biggest files on your system *N*
+
+# find 5 largest files in hierarchy with filter by file type & exclude directories
+ls -lS **/*.(php|inc)~(libs|locallibs)/*(.OL[1,5])  # *N*
+ls *(.m0)                                           # modified today (last 24 hours)
+ls *(.m-1)                                          # modified today (last 24 hours)
+ls *(.^m0)                                          # not modified today
+ls *.*(m3)                                          # modified 3 days ago
+ls *.*(mh3)                                         # modified 3 hours ago
+ls *.*(mh-3)                                        # less than 3 hours
+ls *.*(mh+3)                                        # more than 3 hours
+ls *.*(^mh3)                                        # all files not 3 hours  old
+mv *(.mw+2) old/                                    # older than 2 weeks *N*
+mv *(.mM+6) old/                                    # older than 6 months *N*
+
+grep -i "$1" **/*.{js,php,css}~(libs|temp|tmp|test)/* # exclude directories from grep *N* EXTENDED_GLOB required

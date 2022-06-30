@@ -1,16 +1,11 @@
 # LOCATIONS
-# Updated 2022-06-30 :: change location of ~/.cheat to ~/PORTABLE_ENV/dotfiles/cheat 
-#
-#
 # /home/donaghm/.local/lib/python3.9/site-packages/cheat/sheet.py
 #
 # Folders used by cheat
 # check using ->% cheat -d
-~/.cheat            --> ~/PORTABLE_ENV/dotfiles/cheat
 /usr/share/cheat    --> ~/PORTABLE_ENV/cheat/usr_share_cheat
-# aliases
-# ch = cheat
-# che = cheat -e 
+~/.cheat            --> ~/PORTABLE_ENV/cheat/dot_cheat
+#
 # To see example usage of a program:
 cheat <command>
 

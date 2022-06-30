@@ -1,0 +1,5 @@
+# To list input configuration
+->% xinput list
+
+# To disable the touchpad - ETPS/2 Elantech Touchpad
+ xinput disable 13

@@ -1,0 +1,15 @@
+# Opened 2020-10-01
+
+# directory history
+# https://codeyarns.com/2015/05/29/directory-history-in-the-fish-shell/
+dirh
+
+# to select required dir, use Alt+Left and Alt+Right
+# Note: The Alt + Left and Alt + Right shortcuts might have been grabbed by your terminal program, like GNOME Terminal. They need to be freed for this to work. I use Terminator, where I disabled these keybindings by right-clicking in the terminal -> Preferences -> Keybindings. Then I REASSIGNED the Alt Left and Alt Right accelerator keys by double clicking on them.
+
+# math
+# rem to escape the * when multiplying using \*
+math 3 \* 33
+99
+
+

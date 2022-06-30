@@ -1,0 +1,5 @@
+venv allows creating virtual environments only for the version of python it's installed for. 
+python3 -m venv $HOME/.virtualenvs/<venv-name>
+
+virtualenv allows creating virtual environments for different versions of python by providing the path to the binary.
+ 

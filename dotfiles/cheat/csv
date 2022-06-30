@@ -1,0 +1,6 @@
+# to display pretty output
+cat data.csv | column -t -s, | less -S
+
+# tools for manipulating csv
+csvkit: cslook,,
+xsv: cat <file.csv> | xsv table

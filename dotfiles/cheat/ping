@@ -1,0 +1,20 @@
+# ping a host with a total count of 15 packets overall.    
+ping -c 15 www.example.com
+
+# ping a host with a total count of 15 packets overall, one every .5 seconds (faster ping). 
+ping -c 15 -i .5 www.example.com
+
+# test if a packet size of 1500 bytes is supported (to check the MTU for example)
+ping -s 1500 -c 10 -M do www.example.com
+
+# typical output of -> % ping -c4 8.8.8.8 (aliased to png) on 2022-02-21
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=112 time=15.5 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=112 time=26.9 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=112 time=15.5 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=112 time=17.2 ms
+
+--- 8.8.8.8 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3004ms
+rtt min/avg/max/mdev = 15.489/18.774/26.887/4.733 ms
+

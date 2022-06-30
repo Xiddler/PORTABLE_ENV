@@ -1,0 +1,33 @@
+# file / directory permissions
+O Owner
+G Group
+U Universal
+
+             O   G   U
+777         rwx rwx rwx
+774         rwx rwx r--
+766         rwx rw- rw-
+764         rwx rw- r--
+755         rwx r-x r-x
+744         rwx r-- r--
+700         rwx --- ---
+600         rw- --- ---
+644         rw- r-- r--
+400         r-- --- ---
+
+# ssh permissions 
+
+ Element            Permission
+----------------------------------------
+.ssh directory      700 ((drwx------)
+
+public keys         644 (-rw-r--r--)
+
+private keys        600 (-rw-------)
+
+authorized_keys     600 (-rw-------)
+
+known_hosts         600 (-rw-------)
+
+config              600 (-rw-------)
+

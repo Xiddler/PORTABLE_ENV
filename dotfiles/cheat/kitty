@@ -1,0 +1,49 @@
+Opened 2021-12-09
+
+--------------------------------------------------------------
+KEYBINDINGS
+kitty_mod   :: Ctrl-Shift by default
+
+
+Ctrl-Shift with
+
+F2          :: Opens ~/.config/kitty/kitty.conf
+F5          :: Refresh the config file
+
+TABS
+t           :: Makes a new tab
+<- or ->    :: move to another tab
+q           :: kill a tab
+
+SPLITS
+<Enter>     :: Makes a new split
+] or [      :: Cycles through the splits
+w           :: kill a split
+l           :: cycle through layouts
+
+--------------------------------------------------------------
+Kitty not great for:
+autokeys    :: use Terminator
+ssh         :: use Terminator
+
+--------------------------------------------------------------
+LOCATIONS
+/usr/share/doc/kitty/kitty.conf     :: original
+$HOME/.config/kitty/kitty.conf      :: user editable
+
+--------------------------------------------------------------
+KITTENS
+
+# display an image in the terminal
+kitty +kitten icat $HOME/REPOS/images/00TEST/selfie.png
+
+# show a message in a tiny panel at top of screen
+kitty +kitten panel sh -c 'printf "\n\n\nHello, world."; sleep 5s'
+
+# themes
+kitty +kittens themes
+
+--------------------------------------------------------------
+
+ -> % ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$) | cut -d'/' -f4
+kitty

@@ -1,0 +1,100 @@
+# 2021-03-03
+# This is in reference to Manjaro on 2021-03-03
+# When I reboot what services do I need to ensure are running
+
+# cifs_share / OpenMediaVault
+sudo mount -t cifs //192.168.1.24/USB128_2 /mnt/cifs_share -o username=admin,password=admin,iocharset=utf8,vers=3.1.1
+# this is required for effective backup using the borg utility
+# Laptop /home/donaghm/cifs share is mounted to 
+# RPi /srv/dev-disk-by-label-MyUSb
+# the script copies the folder SAFE_borg_backup to the USB on the RPi
+#
+# OpenMediaVault
+# Needs to be running on the RPi for the mounted directory to work properly (?)
+# On the RPi: chromium --> browse to 192.168.105 Creds: admin/admin. Look in System/Filesystem and check if /def/sda1 is mounted and Online
+# On the laptop check that the following line appears at the end of the output of the command -> % mount | less -n2 
+#//192.168.1.108/USB128_2 on /mnt/cifs_share type cifs (rw,relatime,vers=3.1.1,cache=strict,username=admin,uid=0,noforceuid,gid=0,noforcegid,addr=192.168.1.108,file_mode=0755,dir_mode=0755,soft,nounix,serverino,mapposix,rsize=4194304,wsize=4194304,bsize=1048576,echo_interval=60,actimeo=1)
+
+# zim   
+# SD card
+# remount 
+# IN YAKUAKE create a new shell instance for zim, dropbox and doom-emacs
+# first ensure that the SD card is mounted
+sudo /usr/sbin/zim
+
+# dropbox
+# IN YAKUAKE create a new shell instance for zim, dropbox and doom-emacs
+echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && ~/.dropbox-dist/dropboxd
+
+# doom-emacs
+# IN YAKUAKE create a new shell instance for zim, dropbox and doom-emacs
+~/.emacs.d/bin/doom run
+# and maybe need to
+~/.emacs.d/bin/doom sync
+
+ln -s ~/PORTABLE_ENV/doom/dot_e_m_l_o_config.el ~/.emacs.d/modules/lang/org/config.el <-- "HAPPENING", "READING", etc.
+# caffeine
+# from the app menu
+#
+# Lanner (local pastebin)
+# lanner is run from RPi -> % python $HOME/lanner/run.py then check on the RPi browser
+#
+######################################
+#                                    #
+#   Commands summary                 #
+#                                    #
+######################################
+##    LAPTOP    ##
+# added to autostart: copyq, emacs, flameshot, yakuake, thunderbird, autokey, 
+# doom
+# autostart (emacs command)
+# ~/.emacs.d/bin/doom run
+# zim
+click on Zim icon in taskbar (or sudo /usr/sbin/zim )
+
+# BACKGROUND PROCESSES
+# -----------------------------------------
+# The following 3 processes are now run from the script ~/.scripts/run_processes.sh
+# 1. dropbox
+# the following has been replaced by: see ~/PORTABLE_ENV/dropbox/README.md
+# echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && ~/.dropbox-dist/dropboxd
+
+# 2. cifs_share
+sudo mount -t cifs //192.168.1.24/USB128_2 /mnt/cifs_share -o username=admin,password=admin,iocharset=utf8,vers=3.1.1
+# rem: caffeine  (replaced by KDE power management option in Battery icon
+
+# 3. zim passwords
+cd ~/DONAGHS/MY_ZIM/Computer/ && python3 -m http.server 5000                    :: 11SignUps.txt
+# browse to 192.168.1.103:5000/11SignUps.txt
+#
+# END BACKGROUND PROCESSES
+# -----------------------------------------
+
+# LAPTOP ssh to RPi
+ssh -i ~/.ssh/id_rsa_rpi donagh@192.168.1.24 
+# list of autokey triggers
+pip install tabulate
+# instant dictionary: usage Highlight word and Ctrl Alt z
+nm-applet   (network connection)
+lexicon
+flameshot   (autostart)
+copyq       (autostart)
+
+##    REMOTE RPi    ## 
+
+# lanner now using htmx and looking lovely
+python3 ~/Applications/flask_htmx_lanner/app.py
+
+# password problem after rebooting on 2022-03-14. Did not accept my 1234 password?
+# How to change user password
+
+
+
+
+
+# QUICKLY AFTER a REBOOT 
+# cifs_share
+sudo mount -t cifs //192.168.1.24/USB128_2 /mnt/cifs_share -o username=admin,password=admin,iocharset=utf8,vers=3.1.1
+# rem: caffeine  (replaced by KDE power management option in Battery icon
+# dropbox 
+echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && ~/.dropbox-dist/dropboxd

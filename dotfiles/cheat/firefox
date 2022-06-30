@@ -1,0 +1,8 @@
+# to allow http://localhost (with no s), in about:config set the following to false
+browser.fixup.fallback-to-https         false
+
+# run a separate / sandboxed firefox
+# with a directory callled /home/donagh/JAIL available...
+HOME='/home/donagh/JAIL' firefox
+
+

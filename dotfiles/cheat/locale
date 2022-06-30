@@ -1,0 +1,9 @@
+# to change the default locale to US english, say
+LANG=en_US.utf8
+
+# to generate locales that are missing?
+sudo locale-gen en_US.UTF-8
+
+# to check current locale
+locale
+locale -a

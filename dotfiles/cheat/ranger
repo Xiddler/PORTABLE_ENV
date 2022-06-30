@@ -1,0 +1,14 @@
+# show images
+zi          Show images 
+H 	        Show hidden files and folders.
+r 	        Open with <APPLICATION>.
+D 	        Delete the marked file or the selected files.
+<Space> 	Selects the current file/folder.
+v 	        Marks all files and folders in the current directory.
+a 	        Edit the name of the file/folder by putting the cursor last.
+I 	        Edit the name of the file/folder by putting the cursor first.
+cw 	        Change the name of the file/folder.
+o 	        Sort current directory. oa to sort by time os to sort by name size and so on.
+'<LETTER> 	Jump to bookmark.
+m<LETTER> 	Bookmarks the current directory.
+:bulkrename Lets you bulk rename the selected files and folders by using your $EDITOR.

@@ -1,0 +1,12 @@
+# To give a home directory path for new user
+sudo useradd -d /home/test_user test_user
+
+# To create a user without home directory
+sudo useradd -M test_user
+
+# To create a user with expiry date
+sudo useradd -e 2020-05-30 test_user
+
+# To create a user with changed login shell e.g. zsh
+sudo useradd -s /bin/zsh test_user
+

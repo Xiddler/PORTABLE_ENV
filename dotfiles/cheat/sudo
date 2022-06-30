@@ -1,0 +1,4 @@
+# to include sudo password in a bash script
+sudo -S <<< <password> command
+
+

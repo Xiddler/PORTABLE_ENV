@@ -1,0 +1,25 @@
+# https://www.putorius.net/trash-cli-linux-terminal-recycle-bin.html
+
+# You can send a file to the trash by passing it's name to the trash command.
+$ trash filename.txt
+
+# List Contents of the Trash from Terminal
+$ trash-list 
+
+# restore files from the trash can 
+# NOTE: The trash-restore command will only show you files below the current directory.
+# You can bypass this behavior by specifying the directory of the file you want to restore.
+$ trash-restore <directory><filename>
+
+# Delete files from the trash. 
+$ trash-rm 
+# It accepts globbing patterns that allows you to delete multiple files. 
+# trash-rm test*
+
+# empty the trash
+$ trash-empty
+
+
+
+
+

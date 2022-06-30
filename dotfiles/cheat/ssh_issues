@@ -1,0 +1,23 @@
+
+
+# ssh permissions
+ Element            Permission
+----------------------------------------
+.ssh directory      700 ((drwx------)
+
+public keys         644 (-rw-r--r--)
+
+private keys        600 (-rw-------)
+
+authorized_keys     600 (-rw-------)
+
+known_hosts         600 (-rw-------)
+
+config              600 (-rw-------)
+
+
+# things that worked for me
+/etc/ssh/sshd_config
+AllowGroups root ssh users
+
+
