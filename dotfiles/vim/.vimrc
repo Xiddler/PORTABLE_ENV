@@ -345,7 +345,8 @@ endif
 let $RC="$HOME/.vimrc" " alternative to $MYVIMRC
 
 " open $MYVIMRC in a new tab Note: in CLI the alias is also vv  
-noremap <leader>vv :tabe $MYVIMRC<CR>
+" nnoremap <leader>vv :tabe $MYVIMRC<CR> - this seems to invoke visual mode...
+map <leader>vv :tabe $MYVIMRC<CR>
 
 " source $MYVIMRC
 nnoremap <leader>ss :so $MYVIMRC<CR>
