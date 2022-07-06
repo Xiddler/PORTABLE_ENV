@@ -50,6 +50,7 @@ git add --all
 git add .
 
 
+# STASH
 # To stash changes locally, this will keep the changes in a separate changelist
 # (ie a cache) called stash and the working directory is cleaned. 
 # You can apply changes from the stash anytime
@@ -67,6 +68,7 @@ git stash pop
 # To apply any stash from the list of stashes. This does not remove the stash
 # from the stash list
 git stash apply stash@{6}
+# END STASH 
 
 # To commit staged changes
 git commit -m "Your commit message"
@@ -139,7 +141,7 @@ git log @{u}..
 
 # View changes that are new on a feature branch
 git log -p feature --not master
-git diff master...feature
+git diff master...feature # note the 3 dots not 2 
 
 # Interactive rebase for the last 7 commits
 git rebase -i @~7
@@ -185,7 +187,7 @@ git checkout -p HEAD^ -- /path/to/file
 # Revert a commit and keep the history of the reverted change as a separate revert commit
 git revert <commit SHA>
 
-# Pich a commit from a branch to current branch. This is different than merge as
+# Pick a commit from a branch to current branch. This is different than merge as
 # this just applies a single commit from a branch to current branch
 git cherry-pick <commit SHA1>
 
@@ -208,8 +210,8 @@ git config --list
 
 # After ssh-keygen...
  -> % eval "$(ssh-agent -s)"
-Agent pid 588483
-
+# output is like this: Agent pid 588483
+# example
 donaghm [13:40 Sat 19/12] [~/SD64/REPOSITORIES/2programming/ssh/ssh_keys_2020] 
 -> % ssh-add id_rsa_GH 
 
@@ -220,7 +222,7 @@ donaghm [13:40 Sat 19/12] [~/SD64/REPOSITORIES/2programming/ssh/ssh_keys_2020]
 git push origin master
 user: Xiddler
 password: <enter pat here> 
-# NOTE: don't put PAT in here as Git will prevent it's use which is a good thing.
+# NOTE: don't put PAT in here (this file is on github!) as Github will prevent it's use which is a good thing.
 
 # set identity
 git config --global user.name "Donagh" && git config --global user.email xiddler@gmail.com

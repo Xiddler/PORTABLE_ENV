@@ -308,7 +308,7 @@ vim --clean --startuptime clean.log <fileName>
 "lp                 # paste the macro into the buffer to edit it
 # yada-yada         # the macro in @l now pasted into the current buffer NOTE: this line contains non-utf8 characters
 # yada-yada-yada    # revised macro after editing NOTE: this line contains non-utf8 characters
-B"hyE               # command to edit macro and replace it with the previous lin e but place the macro now in @h
+B"hyE               # command to edit macro and replace it with the previous line but place the macro now in @h
 
 
 # live update of <filename> in a pdf viewer with the <filename.md> open in say, Okular

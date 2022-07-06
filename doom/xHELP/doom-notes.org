@@ -3,141 +3,10 @@
 #+AUTHOR: donagh mccarthy
 #+options: il
 #+tags: help orgmode org-mode donaghs
-#+EDITED: 2022-06-08
+#+EDITED: 2022-07-06
 
 
 * frontmatter
-* Spacemacs notes
-A lot of these are useful for doom emacs. Especially, org-mode
-** characters
-*** LaTeX
-   - Characters: \alpha \rightarrow \beta
-see snippets below
-** drawers
-A way to hide information and reveal it when required
-   Types of drawers:
-   - Custom made - see mydrawer below
-     To open/close, place cursor on the : line and TAB
-     :mydrawer:
-     This is the content of my first drawer
-     :end:
-   - Reserved e.g.  properties drawer
-** files
-*** find files [SPC] f f OR [SPC] [SPC]
-*** save [SPC] f s
-*** copy file [SPC] f c
-*** filepath [SPC] f y
-     copy full filepath and places it in the clipboard for copying - /home/donagh/PORTABLE_ENV/spacemacs/spacemacs_notes.org
-** folding
-*** use the vim system: zc, zo, zm, zr for opening and closing folds.
-*** or use S-TAB to cycle through folds
-** formatting
-   use the symbols fore and aft OR , x and select
-*** bold is *bold*
-*** italic is /italic/
-*** verbatim is =verbatim=
-*** strikethrough +strikethrough+
-*** underline _underline_
-*** source code / literate programming
-    To insert a snippet for source code: [SPC] i s and select begin_src
-
-    Example 1 emacs-lisp
-   #+BEGIN_SRC emacs-lisp
-   (+ 3 58)
-
-   #+END_SRC
-
-   #+RESULTS:
-   : 61
-
-   and then pressing C-x C-e OR C-c C-c will show 61 in the mini buffer
-
-    Example 2 python
-   #+BEGIN_SRC python
-   print(3+43+43+4)
-
-
-   #+END_SRC
-   C-c C-c inside the code block (not working)
-   #+RESULTS:
-   : None
-
-** help
-*** to get help
-   [SPC] h d <varies>
-   C-h i     <-- info
-   Worg is the org-mode wiki at [[ https://orgmode.org/worg/ ][worg]
-** spacemacs_keybindings
-   M is the Alt key
-   M-x for package install.
-
-** killring / clipboard
-   [SPC] i y
-   and then C-j to scroll down to item you want and [RET] to insert to current buffer
-
-** links
-*** [ link ] [ description ]
-*** [[www.google.com] [ google.com] the final ] is missing as it would collapse to what you can see on the next line.
-*** URLs / links
-    [[https://www.google.com][google.com]]
-    [[http://donaghmccarthy.ie][donaghmccarthy.ie]]
-*** images / files
-    To view the following image:
-    [[file:~/Images/chainsaw-haircut.png][chainsaw-haircut]]
-    1. make a vert. split. ( [SPC] w v) <-- optional
-    2. q to cancel image
-    Link to a file
-    # C-c l to make a link in the link store
-    # , l to find and open that link
-    [[/home/donagh/PORTABLE_ENV/spacemacs][link to .spacemacs in PORTABLE_ENV]]
-
-*** C-c C-l will allow to make a link. Link:  & Description:
-To make a link start with blank line then C-c C-l
-**** link in org file
-C-c C-l <name of heading> in side double parens
-
-**** file
-C-c C-l (SHORTCUT [SPC] l) then type file: and follow the links
-After selecting the file you will be asked for the Description (which is what will appear in the file link)
-eg link to todos.org
-[[file:~/Dropbox/org-mode/org/todos.org][todos.org]]
-
-**** web-ref
-
-   [[http://www.donaghmccarthy.ie][donaghmccarthy.ie]]
-
-** multiple org files
-   Suppose you have many files that you want org-mode to 'watch'. In the dotspacemacs-configuration-layers of .spacemacs:
-   Say, work, school and home.
-#+BEGIN_SRC elisp
-(setq org-agenda-files (list "/home/donagh/org/work.org"
-                             "/home/donagh/org/school.org"
-                             "/home/donagh/org/home.org"))
-#+END_SRC
-Press C-c a t to enter the global todo list.
-
-** spacemacs_navigating
-*** switching buffers
-- [SPC] b n <-- next buffer
-- [SPC] , <-- list buffers (C-j to select)
-*** within a file
-- [SPC] j l then type link to the line (try it!)
-    will show links for every file visible in every window!
-*** directory
-- [SPC] f t to see directory tree and q to quit
-** options
-   Placed at start of file
-*** title
-    "#+TITLE:
-*** options
-    "#+OPTIONS: html-style: nil
-*** startip
-    "#+STARTIP: overview
-** org-capture
-   For keeping notes, snippets, thoughts etc.
-   org-capture --> , c
-   Customize templates --> , c C
-
 * DOOM EMACS
 ** appearance
 *** theme
@@ -191,6 +60,8 @@ On Linux, you can use xclip.el (https://www.emacswiki.org/emacs/xclip.el) to lin
 added 2022-04-25
 :end:
 Some modes/packages that are available:
+
+flycheck, an excellent as-you-type syntax checker.
 icomplete
 ivy
 company
@@ -717,6 +588,9 @@ eg C-c / r navig
 ** about
 Maybe see [[file:~/sd64/TODO/ORG-MODE/first.org][first.org]]  for my preliminary notes
 ** agenda / scheduling
+My aliases:
+t a      <-- agenda
+t s      <-- schedule
 *** NOTES on Agenda
 Agenda - [SPC] a and select from list
 SCHEDULE - [SPC] a s OR C-c C-s
@@ -729,6 +603,7 @@ DEADLINE C-c C-d - to
 *** Schedule - How to
 **** First, need to be on a headline item *** etc. not a plain list i.e. -
 then
+    t s
     C-c C-s and select date using C-j, C-h etc.
 **** To set the time
 SCHEDULED: <2020-07-04 Sat 09:50>
@@ -738,7 +613,8 @@ At the prompt insert the time e.g. 09:50
     SCHEDULED: <2020-06-13 Sat +1w>
     NOTE: This doesn't appear in the global TODOS because this file is not "registered" in the list of files to be checked.
 **** To view schedules ie your agenda
-[SPC] a a <-- to view agenda for coming week
+t a a <-- to view agenda for coming week
+31 t a a <-- to view agenda for coming month i.e. 31 days
 Shown in light green
 To appear in the global TODOS because the file must be "registered" in the list of files - how?
 
@@ -779,7 +655,6 @@ rem C-c C-c to update progress
 tt and then select from menu
 Example - hover over STRT and press tt
 **** .STRT
-** convert csv to org file
 ** help
 ***  reference
 *** In doom-emacs
@@ -795,20 +670,10 @@ M-x info    :: the help manual
 [[https://www.orgmode.org][orgmode.org]]
 https://orgmode.org/worg/               :: wiki for org-mode
 https://orgmode.org/worg/org-faq.html   :: FAQ
-** org-capture
-It's essentially a templating system for various types of notes e.g. journal, personal todos
-Save personal notes to [[/home/donagh/Dropbox/org-mode/org/notes.org][notes.org]] using [SPC] X n
-
 ** ISSUES
-*** Can't list agenda or TODOS after replacing directory - FIXED
-**** ISSUE - 2020-10-03 - I changed org directory from ~/ALL_ORG/org to ~/all_org/org
-Now I can't list agenda or todo using [SPC] a a / [SPC] a t
-I did change the files config.el and init.el but to not great avail
-Solution: restart doom and/or doom sync
-
-STATUS - 2020-10-03 FIXED
-
-*** [SPC] a t nor [SPC] t t are functioning - not displaying global TODOS in a list - FIXED
+*** DONE Circles instead of asterisks FIXED
+In init.el add (org +pretty) and sync. Also (org-bulllets) maybe.
+*** DONE [SPC] a t nor [SPC] t t are functioning - not displaying global TODOS in a list - FIXED
     ERROR MSG: Wrong type argument: stringp,<filepath> ::
     TRIED:
     commenting out (org +pretty) and (org-bullets) in init.el.
@@ -816,33 +681,15 @@ STATUS - 2020-10-03 FIXED
     changed ~/all_org/org to /home/donagh/all_org/org - DID NOT WORK
     in config.el change (setq *** '~/all_org/org) to (setq *** '/home/donagh/all_org/org) - DID NOT WORK
     in config.el change (setq *** '/home/donagh/all_org/org) to (setq *** "/home/donagh/all_org/org") - THIS WORKED!!!
-*** Directory 'hints' when going to open a file with [SPC] f f
-I think it needs Avy or some other package like it
-*** Circles of asterisks FIXED
-In init.el add (org +pretty) and sync. Also (org-bulllets) maybe.
-** org-roam
-*** About
-2020-08-04
-    A plain-text personal knowledge management system
-    org-mode implementation of Roam as in RoamResearch - networked notetaking
-    Keypoint is that it has back-links so you can build up a network of information points
-*** Install
-Successful on 2020-08-04
-In [[file:packages.el][Packages.el]]
-(package! org-roam
-  :recipe (:host github :repo "org-roam/org-roam"))
-  and in [[file:config.el][config.el]]  under :lang (org +roam)
-*** Commands
-[SPC] n r
-then
-I for insert new blank file
-r for buffer showing backlinks
-g for graph of information points
+*** DONE Directory 'hints' when going to open a file with [SPC] f f
+I think it needs Avy or Ivy or some other package like it
+*** DONE Can't list agenda or TODOS after replacing directory - FIXED
+**** ISSUE - 2020-10-03 - I changed org directory from ~/ALL_ORG/org to ~/all_org/org
+Now I can't list agenda or todo using [SPC] a a / [SPC] a t
+I did change the files config.el and init.el but to not great avail
+Solution: restart doom and/or doom sync
 
-*** Links
-https://www.orgroam.com/
-https://www.orgroam.com/manual/Getting-Started.html#Getting-Started
-
+STATUS - 2020-10-03 FIXED
 ** search
 Search current buffer:
 1. /               <-- vim-like buffer search
@@ -924,7 +771,58 @@ TODO [1/2] [50%] progress markers - without checkboxes
      CLOSED: [2020-05-15 Fri 15:43]
 **** item 2
 **** .TODO item 3
-* Cheat cheat for [SPC]
+
+** zArchive
+*** org-roam
+**** About
+2020-08-04
+    A plain-text personal knowledge management system
+    org-mode implementation of Roam as in RoamResearch - networked notetaking
+    Keypoint is that it has back-links so you can build up a network of information points
+**** Install
+Successful on 2020-08-04
+In [[file:packages.el][Packages.el]]
+(package! org-roam
+  :recipe (:host github :repo "org-roam/org-roam"))
+  and in [[file:config.el][config.el]]  under :lang (org +roam)
+**** Commands
+[SPC] n r
+then
+I for insert new blank file
+r for buffer showing backlinks
+g for graph of information points
+
+**** Links
+https://www.orgroam.com/
+https://www.orgroam.com/manual/Getting-Started.html#Getting-Started
+
+*** org-capture
+It's essentially a templating system for various types of notes e.g. journal, personal todos
+Save personal notes to [[/home/donagh/Dropbox/org-mode/org/notes.org][notes.org]] using [SPC] X n
+*** convert csv to org file
+* Magit
+** Check version
+M-x magit-version
+** Webrefs
+https://www.masteringemacs.org/article/what-new-in-magit-2x
+https://www.masteringemacs.org/article/introduction-magit-emacs-mode-git
+** Usage
+First, move to a 'git' project or open a file in a git project e.g. ~/PORTABLE_ENV
+[SPC] g g
+
+Or, the long-winded version:
+
+Run M-x magit-status
+This command will open up a window (or prompt you for a Git repository if the buffer’s file directory is not under Git control) and display Magit’s status screen
+** Commands / aliases
+[SPC] g g    :: git status
+?            :: show list of (one-letter) options
+s            :: stage
+c            :: commit
+l l          :: (in a git file) opens the "short log"
+
+
+* Cheat for [SPC]
 SPC
     SPC find file
     , switch buffer
@@ -1121,3 +1019,134 @@ SPC
         z     '+org/close-all-folds  ;; z M is such a pain
         c SPC 'calendar ;; quick calendar
         i Y   'clipboard-yank ;; paste from system clipboard; Note: SPC i y (lowercase) pastes from emacs yank
+* zArchive
+** Spacemacs notes
+A lot of these are useful for doom emacs. Especially, org-mode
+*** characters
+**** LaTeX
+   - Characters: \alpha \rightarrow \beta
+see snippets below
+*** drawers
+A way to hide information and reveal it when required
+   Types of drawers:
+   - Custom made - see mydrawer below
+     To open/close, place cursor on the : line and TAB
+     :mydrawer:
+     This is the content of my first drawer
+     :end:
+   - Reserved e.g.  properties drawer
+*** files
+**** find files [SPC] f f OR [SPC] [SPC]
+**** save [SPC] f s
+**** copy file [SPC] f c
+**** filepath [SPC] f y
+     copy full filepath and places it in the clipboard for copying - /home/donagh/PORTABLE_ENV/spacemacs/spacemacs_notes.org
+*** folding
+**** use the vim system: zc, zo, zm, zr for opening and closing folds.
+**** or use S-TAB to cycle through folds
+*** formatting
+   use the symbols fore and aft OR , x and select
+**** bold is *bold*
+**** italic is /italic/
+**** verbatim is =verbatim=
+**** strikethrough +strikethrough+
+**** underline _underline_
+**** source code / literate programming
+    To insert a snippet for source code: [SPC] i s and select begin_src
+
+    Example 1 emacs-lisp
+   #+BEGIN_SRC emacs-lisp
+   (+ 3 58)
+
+   #+END_SRC
+
+   #+RESULTS:
+   : 61
+
+   and then pressing C-x C-e OR C-c C-c will show 61 in the mini buffer
+
+    Example 2 python
+   #+BEGIN_SRC python
+   print(3+43+43+4)
+
+
+   #+END_SRC
+   C-c C-c inside the code block (not working)
+   #+RESULTS:
+   : None
+
+*** help
+**** to get help
+   [SPC] h d <varies>
+   C-h i     <-- info
+   Worg is the org-mode wiki at [[ https://orgmode.org/worg/ ][worg]
+*** spacemacs_keybindings
+   M is the Alt key
+   M-x for package install.
+
+*** killring / clipboard
+   [SPC] i y
+   and then C-j to scroll down to item you want and [RET] to insert to current buffer
+
+*** links
+**** [ link ] [ description ]
+**** [[www.google.com] [ google.com] the final ] is missing as it would collapse to what you can see on the next line.
+**** URLs / links
+    [[https://www.google.com][google.com]]
+    [[http://donaghmccarthy.ie][donaghmccarthy.ie]]
+**** images / files
+    To view the following image:
+    [[file:~/Images/chainsaw-haircut.png][chainsaw-haircut]]
+    1. make a vert. split. ( [SPC] w v) <-- optional
+    2. q to cancel image
+    Link to a file
+    # C-c l to make a link in the link store
+    # , l to find and open that link
+    [[/home/donagh/PORTABLE_ENV/spacemacs][link to .spacemacs in PORTABLE_ENV]]
+
+**** C-c C-l will allow to make a link. Link:  & Description:
+To make a link start with blank line then C-c C-l
+***** link in org file
+C-c C-l <name of heading> in side double parens
+
+***** file
+C-c C-l (SHORTCUT [SPC] l) then type file: and follow the links
+After selecting the file you will be asked for the Description (which is what will appear in the file link)
+eg link to todos.org
+[[file:~/Dropbox/org-mode/org/todos.org][todos.org]]
+
+***** web-ref
+
+   [[http://www.donaghmccarthy.ie][donaghmccarthy.ie]]
+
+*** multiple org files
+   Suppose you have many files that you want org-mode to 'watch'. In the dotspacemacs-configuration-layers of .spacemacs:
+   Say, work, school and home.
+#+BEGIN_SRC elisp
+(setq org-agenda-files (list "/home/donagh/org/work.org"
+                             "/home/donagh/org/school.org"
+                             "/home/donagh/org/home.org"))
+#+END_SRC
+Press C-c a t to enter the global todo list.
+
+*** spacemacs_navigating
+**** switching buffers
+- [SPC] b n <-- next buffer
+- [SPC] , <-- list buffers (C-j to select)
+**** within a file
+- [SPC] j l then type link to the line (try it!)
+    will show links for every file visible in every window!
+**** directory
+- [SPC] f t to see directory tree and q to quit
+*** options
+   Placed at start of file
+**** title
+    "#+TITLE:
+**** options
+    "#+OPTIONS: html-style: nil
+**** startip
+    "#+STARTIP: overview
+*** org-capture
+   For keeping notes, snippets, thoughts etc.
+   org-capture --> , c
+   Customize templates --> , c C
