@@ -246,7 +246,7 @@ Then type in the name of the link and then the description
 Type [[x][]]
 and put the link / URI instead of x and the description in the second pair of [].
 ** magit
-*** Getting started
+[[Magit][Magit]]
 
 ** markdown for emacs
 Bold *bold*
@@ -569,7 +569,8 @@ doom-acario-dark :: Blue headlines with purple subs
 doom-dark+       :: Dim sky blue headlines with dim pink subs
 doom-molokai     :: Cerise headlines with orange subs
 doom-material    :: Gre/blue headlines w dim purple subs
-
+** tramp
+[[Tramp][Tramp]]
 ** sparse trees
 [SPC] m s s r <pattern>
 For filtering all but what you want to see
@@ -804,8 +805,10 @@ Save personal notes to [[/home/donagh/Dropbox/org-mode/org/notes.org][notes.org]
 ** Check version
 M-x magit-version
 ** Webrefs
-https://www.masteringemacs.org/article/what-new-in-magit-2x
-https://www.masteringemacs.org/article/introduction-magit-emacs-mode-git
+What's new in magit            :: https://www.masteringemacs.org/article/what-new-in-magit-2x
+Intro to magit                 :: https://www.masteringemacs.org/article/introduction-magit-emacs-mode-git
+Guide to magit                 :: https://www.yanboyang.com/magit/
+
 ** Usage
 First, move to a 'git' project or open a file in a git project e.g. ~/PORTABLE_ENV
 [SPC] g g
@@ -815,14 +818,22 @@ Or, the long-winded version:
 Run M-x magit-status
 This command will open up a window (or prompt you for a Git repository if the buffer’s file directory is not under Git control) and display Magit’s status screen
 ** Commands / aliases
-[SPC] g g    :: git status
+SPC g i      :: git init
+SPC g g      :: git status
 ?            :: show list of (one-letter) options
 s            :: stage
-c            :: commit
+c            :: commit incl. write commit message. Then C-c C-c to finish the commit.
+l            :: log
 l l          :: (in a git file) opens the "short log"
+** ISSUES
+2022-07-06
+Q. When I write the commit message, do I save and how do I complete the commit?
+R. Yes, save and then C-c C-c to complete the commit
+* Tramp
+(Transparent Remote Access, Multiple Protocols)
+Remote access to files - TBD
 
-
-* Cheat for [SPC]
+* Help for [SPC]
 SPC
     SPC find file
     , switch buffer
