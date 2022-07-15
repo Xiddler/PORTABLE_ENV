@@ -27,6 +27,10 @@ fi
 # locale
 export LANG=en_US.utf8
 
+# show italics in vim etc.
+# export TERM=xterm-256color-italic
+# export TERM=xterm-256color-bold
+
 # machine
 COMP=$(uname -a | cut -d' ' -f2)
 

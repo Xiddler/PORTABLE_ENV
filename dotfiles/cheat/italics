@@ -1,0 +1,9 @@
+Opened 2022-07-07
+
+To check if a terminal supports italics:
+echo -e "\e[3m is this italics? \e[23m"
+
+
+infocmp - compare or print out terminfo descriptions
+-> % infocmp $TERM
+ 

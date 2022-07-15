@@ -7,9 +7,10 @@
 " cf. /usr/share/vim/vim82/defaults.vim 
 " 'set nocompatible' is never necessary in a vimrc file. When Vim detects a user vimrc file, it automatically sets nocompatible. 
 " set backspace=start,eol,indent " no longer needed
-"
+
+" My minimal .vimrc location 
 " I have a minimal .vimrc available --> /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc
-"
+
 set <esc>=jk 
 
 " use spacebar to enter command mode. This matches doom-emacs for me
@@ -205,6 +206,9 @@ autocmd Filetype markdown highlight link markdownError Normal
 autocmd Filetype markdown set conceallevel=2
 autocmd BufNewFile,BufRead,BufEnter *.md :set conceallevel=2
 
+" show italics
+highlight Comment cterm=italic
+
 " older
 " Enable CursorLine
 " set cursorline
@@ -260,7 +264,9 @@ colorscheme gruvbox
 set background=dark
 "to toggle them automatically for you:
 map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
-" to allow italics in vim
+
+" to allow italics in vim 
+" https://hobo.house/2017/07/17/using-italics-with-vim-in-your-terminal/
 highlight Comment cterm=italic
 
 " }}}
@@ -270,7 +276,7 @@ highlight Comment cterm=italic
 
 " https://github.com/morhetz/gruvbox/wiki/Terminal-specific
 
-"Neovim and recent Vim support true color terminal out of the box with just a single configuration option. No workarounds anymore. Just add
+"Neovim and recent Vim support true color terminal out of the box with just a single configuration option. No workarounds anymore. Just add 
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
@@ -345,8 +351,10 @@ endif
 let $RC="$HOME/.vimrc" " alternative to $MYVIMRC
 
 " open $MYVIMRC in a new tab Note: in CLI the alias is also vv  
-" nnoremap <leader>vv :tabe $MYVIMRC<CR> - this seems to invoke visual mode...
-map <leader>vv :tabe $MYVIMRC<CR>
+" nnoremap <leader>vv :tabe $MYVIMRC<CR> - this seems to invoke visual
+" mode...sometimes doesn't work
+" map <leader>vv :tabe $MYVIMRC<CR>
+nnoremap <leader>mv :tabnew $MYVIMRC<CR> 
 
 " source $MYVIMRC
 nnoremap <leader>ss :so $MYVIMRC<CR>

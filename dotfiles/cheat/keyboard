@@ -1,0 +1,26 @@
+Opened 2022-07-07 
+
+(Note: This seems to disable Autokey. If so kill and restart it.)
+
+# Intro
+The compose key will allow you to print characters not on the keyboard.
+
+  
+Set the compose key in 
+System Settings -> Input devices -> Keyboard -> Advanced and select
+Caps Lock Behaviour
+> Make Caps lock an additional Esc, and Shift Capslock is the compose key
+
+
+‽ interrobang   ! ?
+®               o r
+©               o c
+™               t m
+¹ superscript   ^ 1
+₁ subscript     _ 1
+≈ equal-ish     ~ ~
+¡ (que?)        1 1
+
+
+
+
