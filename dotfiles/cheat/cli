@@ -316,6 +316,7 @@ heredoc> END
 ONE TWO THREE
 FOUR FIVE SIX
 
-
+# previous command line argument - think ! is CLI (like in vim command mode) and $ is the last element like in regex
+!$ gets the last element of the previous command line argument. 
 
 # END

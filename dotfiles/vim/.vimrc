@@ -1,9 +1,8 @@
 "{{{ Minimum Settings
 
-" === Min settings === 
-
 " filepath: /home/donagh/PORTABLE_ENV/dotfiles/vim/.vimrc
-"
+
+" === Min settings === 
 " cf. /usr/share/vim/vim82/defaults.vim 
 " 'set nocompatible' is never necessary in a vimrc file. When Vim detects a user vimrc file, it automatically sets nocompatible. 
 " set backspace=start,eol,indent " no longer needed
@@ -13,10 +12,110 @@
 
 set <esc>=jk 
 
-" use spacebar to enter command mode. This matches doom-emacs for me
+" use spacebar to enter command mode. This matches doom-emacs for me and my muscle memory
 nnoremap <space> :
 
 set fileencoding=utf-8
+
+"}}}
+"{{{ GNU Stow 
+
+" === GNU Stow === 
+
+" As of 2022-03-19 I am using stow to manage the symlinking of my dotfiles.
+" See $HOME/PORTABLE_ENV/dotfiles/README.md 
+" Usage: On a new install -> %~ stow vim  will automatically create the necessary symlinks from this folder 
+" }}}
+" {{{ Custom Leader 
+
+" === Custom Leader ===
+
+" setting custom leader to comma. Needs to be set early!
+let mapleader=','
+
+" See also Customised below
+" use ,o to make a new vertical split, ,s for horiz, ,x to close a split
+" ,v calls up VISUAL mode
+" try ,o (as in OpEd) <-- works
+
+" move bullet point lines up / down
+" nmap <c-j> ddp - used for navigating between splits
+" nmap <c-k> ddkkp
+
+" insert @dm -
+nmap mm 0i@dm -<left><right><right>
+
+"  save file
+nnoremap <leader>s :w<cr>
+inoremap <leader>s <C-c>:w<cr>
+
+" quit file
+noremap <leader>q :q<cr>
+
+" use <leader>p to paste from system clipboard
+nnoremap <leader>p :set paste<cr>"+p :set nopaste<cr>
+
+" use <leader>y to yank to system clipboard 
+nnoremap <leader>y "+y
+
+" use <leader>f to call up ranger file manager
+let g:ranger_map_keys = 0
+map <leader>f :Ranger<cr>
+
+" handy goto start of line and down one line " ;; conflicts with 'next f/w/' etc.
+" nnoremap <leader><leader> ^
+
+
+" shorten the filepath for REPOSITORIES
+" @r  <-- macro
+"python
+"shortcut for if __name__  = ,m
+" autocmd Filetype python inoremap <leader>n if __name__ ==  "__main__":<enter>
+" remove trailing whitespace from python files
+" autocmd BufWritePre .py :%s/\s\+$//e
+"
+" nav within the command mode - up and down for previous commands
+cmap <C-j> <Down>
+cmap <C-k> <Up>
+cmap <C-h> <Left>
+cmap <C-l> <Right>
+
+
+" --- EASYMOTION PLUGIN --- 
+" easymotion keybindings - for fast navigation within a file
+" get , , w to make easy motion work
+" map <Leader><Leader>w <Plug>(easymotion-prefix)
+" highlight ALL words for navigating to
+map <leader>/ <Plug>(easymotion-bd-w) 
+nmap <leader>/ <Plug>(easymotion-overwin-w) 
+
+" --- PWD ---
+" insert full filepath into current buffer in normal mode
+nnoremap <leader>d :put=expand('%:p')<cr>
+
+" enter the pwd in insert mode - d irectory p ath
+inoremap <leader>dp <C-R>=getcwd()<CR>
+"To insert the absolute path of the directory the file is in use:
+inoremap <leader>d <C-R>=expand("%:p:h")<CR>
+" To insert the name of the innermost directory (the one containing the current file) use:
+" inoremap <Leader>n <C-R>=expand("%:p:h:t")<CR>
+
+" }}}
+"{{{ MYVIMRC 
+
+" ===  $MYVIMRC ===
+
+let $RC="$HOME/.vimrc" " alternative to $MYVIMRC
+
+" open $MYVIMRC in a new tab Note: in CLI the alias is also vv  
+" nnoremap <leader>vv :tabe $MYVIMRC<CR> - this seems to invoke visual
+" mode...sometimes doesn't work
+" map <leader>vv :tabe $MYVIMRC<CR>
+" nnoremap omv :tabe $MYVIMRC<CR> " Open My Vimrc
+nnoremap <leader>vv :tabe $MYVIMRC<CR> " Open My Vimrc
+
+" source $MYVIMRC
+nnoremap <leader>ss :so $MYVIMRC<CR>
 
 "}}}
 " {{{ Plugins
@@ -30,14 +129,6 @@ set fileencoding=utf-8
 source /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim " Rem: Use gf to open that file!
 
 "}}}
-"{{{ GNU Stow 
-
-" === GNU Stow === 
-
-" As of 2022-03-19 I am using stow to manage the symlinking of my dotfiles.
-" See $HOME/PORTABLE_ENV/dotfiles/README.md 
-" Usage: On a new install -> %~ stow vim 
-" }}}
 "{{{ Buffers
 
 " === Buffers ===
@@ -65,10 +156,11 @@ cmap bx :call Scratch()<cr>
 " list buffers - ready for a buffer number 
 nnoremap gb :ls<cr>:b<space>
 
-if has("autocmd")
 " the following being set means that filetype.vim is read at startup which sets autocmds for almost all filetypes under the sun.
+if has("autocmd")
   filetype plugin indent on
 endif
+
 " to reduce the noticeable delay on performing certain commands
 set timeout timeoutlen=3000 ttimeoutlen=100
 set completeopt=menu,preview,longest "for a pop-up list of completions. (Replaces the existing one)
@@ -344,22 +436,6 @@ if !exists('g:airline_section_z')
 endif
 
 "}}}
-"{{{ MYVIMRC 
-
-" ===  $MYVIMRC ===
-
-let $RC="$HOME/.vimrc" " alternative to $MYVIMRC
-
-" open $MYVIMRC in a new tab Note: in CLI the alias is also vv  
-" nnoremap <leader>vv :tabe $MYVIMRC<CR> - this seems to invoke visual
-" mode...sometimes doesn't work
-" map <leader>vv :tabe $MYVIMRC<CR>
-nnoremap <leader>mv :tabnew $MYVIMRC<CR> 
-
-" source $MYVIMRC
-nnoremap <leader>ss :so $MYVIMRC<CR>
-
-"}}}
 "{{{  My functions 
 
 " === My Functions === 
@@ -387,12 +463,13 @@ nmap <leader>b :call BulletList()<cr>
    " execute 'normal!'.'0i- \<Esc>j'
 " endfunction
 
-" make numbered list - first Visually select the lines then ,y. Note: The
-" numbers above 9 will not be right aligned. So use the following function.
+" make numbered list - first Visually select the lines
+" Note: The numbers above 9 will not be right aligned. So use the following function.
+" n for number
 vnoremap <leader>n :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR> 
-vnoremap <leader>c :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR> 
+vnoremap <leader>nl :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR>  
 
-" numbered list but RIGHT aligned higher than no. 9
+" numbered list but RIGHT aligned higher than no. 9 
 function! NumberList() range
 " set line numbers in front of lines - added 2022-02-12
     let beginning = line("'<")
@@ -408,6 +485,7 @@ function! NumberList() range
         let difsize=difsize-1
     endwhile
 endfunction
+command NL call NumberList()
 
 
 " --- SHORTEN SD64 filepath ---
@@ -475,6 +553,7 @@ nmap ,e g0jI<backspace> <esc>jg0
 
 " abbreviations
 ab mys "Proactively engaged in making a better life for myself and/or others"
+ab FP 'Full Picture' 
 
 " for the vim-notes plugin. ~/.vim/misc/notes/user
 " adds .txt suffix to new notes
@@ -500,81 +579,6 @@ map <leader>tk <C-w>t<C-w>K
 " Capitalize/minusculize letter under cursor
 nnoremap <leader>u v~
 "}}} 
-" {{{ Custom Leader 
-
-" === Custom Leader ===
-
-" setting custom leader to comma
-let mapleader=','
-
-" See also Customised below
-" use ,o to make a new vertical split, ,s for horiz, ,x to close a split
-" ,v calls up VISUAL mode
-" try ,o (as in OpEd) <-- works
-
-" move bullet point lines up / down
-" nmap <c-j> ddp - used for navigating between splits
-" nmap <c-k> ddkkp
-
-" insert @dm -
-nmap mm 0i@dm -<left><right><right>
-
-"  save file
-nnoremap <leader>s :w<cr>
-inoremap <leader>s <C-c>:w<cr>
-
-" quit file
-noremap <leader>q :q<cr>
-
-" use <leader>p to paste from system clipboard
-nnoremap <leader>p :set paste<cr>"+p :set nopaste<cr>
-
-" use <leader>y to yank to system clipboard
-nnoremap <leader>y "+y
-
-" use <leader>f to call up ranger file manager
-let g:ranger_map_keys = 0
-map <leader>f :Ranger<cr>
-
-" handy goto start of line and down one line " ;; conflicts with 'next f/w/' etc.
-" nnoremap <leader><leader> ^
-
-
-" shorten the filepath for REPOSITORIES
-" @r  <-- macro
-"python
-"shortcut for if __name__  = ,m
-" autocmd Filetype python inoremap <leader>n if __name__ ==  "__main__":<enter>
-" remove trailing whitespace from python files
-" autocmd BufWritePre .py :%s/\s\+$//e
-"
-" nav within the command mode - up and down for previous commands
-cmap <C-j> <Down>
-cmap <C-k> <Up>
-cmap <C-h> <Left>
-cmap <C-l> <Right>
-
-
-" --- EASYMOTION --- 
-" easymotion keybindings - for fast navigation within a file
-" get , , w to make easy motion work
-map <Leader><Leader>w <Plug>(easymotion-prefix)
-" highlight ALL words for navigating to
-map <leader>/ <Plug>(easymotion-bd-w) 
-nmap <leader>/ <Plug>(easymotion-overwin-w) 
-
-" --- PWD ---
-" insert full filepath into current buffer in normal mode
-nnoremap <leader>d :put=expand('%:p')<cr>
-
-" enter the pwd in insert mode - d irectory p ath
-inoremap <leader>dp <C-R>=getcwd()<CR>
-"To insert the absolute path of the directory the file is in use:
-inoremap <Leader>d <C-R>=expand("%:p:h")<CR>
-" To insert the name of the innermost directory (the one containing the current file) use:
-" inoremap <Leader>n <C-R>=expand("%:p:h:t")<CR>
-
-" }}}
 " {{{ Custom Movements 
 
 "=== Custom Movements ===

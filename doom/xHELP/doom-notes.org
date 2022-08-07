@@ -657,7 +657,7 @@ tt and then select from menu
 Example - hover over STRT and press tt
 **** .STRT
 ** help
-***  reference
+*** reference
 *** In doom-emacs
 [SPC] h d h :: Documetation (located at /home/donagh/.emacs.d/docs/index.org)
 

@@ -4,3 +4,8 @@ lsof -Pni4 | grep LISTEN
 # list port numbers (and grep too)
 cat /etc/services | grep -i SSH
 
+# list devices on LAN  (or use AngryIP-scanner)
+sudo arp-scan 192.168.1.0/26
+
+nmap -sP "192.168.*.*" # comprehensive, slow 
+

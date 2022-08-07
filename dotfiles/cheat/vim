@@ -314,10 +314,6 @@ B"hyE               # command to edit macro and replace it with the previous lin
 # live update of <filename> in a pdf viewer with the <filename.md> open in say, Okular
 :!pandoc % -o %:t:r.pdf
 
-# use vim with NO packages
-vim -u NONE <filename>
-# or
-vim -u NORC <filename>
 
 # use "= to print the $VIMRUNTIME into the current buffer
 # "=&rtp
@@ -581,5 +577,19 @@ g+ and g-
 # But add a dot after the colon, 
 :.! [command]
 # and it'll dump the output of the command into your current window. Eg open a new buffer in $HOME then :. ls and the contents of $HOME will be pasted in.
-#
 
+
+# use vim with NO packages
+vim -u NONE <filename>
+# or no vimrc
+vim -u NORC <filename>
+# or use a particular (eg minimal vimrc)
+vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc ~/files/sample_files/README.md
+
+# Mdash —  \%u2014 to replace with [spc]-[spc] do 
+:%s/\%u2014/ - /g
+
+# Check what may be slowing down vim 
+vim --startuptime start.log afile.txt # will create start.log listing the time taken for each operation / plugin 
+
+# END 

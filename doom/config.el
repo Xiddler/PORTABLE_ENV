@@ -53,14 +53,13 @@
 ;; (setq doom-theme 'doom-one)
 ;;; Code:
 ;; (setq doom-theme 'doom-solarized-dark)
-;; (setq doom-theme 'tsdh-dark )
 ;; (setq doom-theme 'doom-ir-black-brighter-comments )
 ;; (setq doom-theme 'spacemacs-dark )
 
 ;; 2022-01-01 current preferred theme:
 ;;
-(setq doom-theme 'tsdh-dark )
-;; (setq doom-theme 'doom-acario-dark ) ;; the purple for diary.org is not the nicest otherwise a nice theme
+;; (setq doom-theme 'tsdh-dark )
+(setq doom-theme 'doom-acario-dark ) ;; the purple for diary.org is not the nicest otherwise a nice theme
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
