@@ -1,2 +1,37 @@
 # To cut out the third field of text or stdoutput that is delimited by a #:
 cut -d# -f3
+
+_____________________________________________________________________________________________
+OTHER OPTIONS
+
+OPTION 1
+
+# hck ; AUR 
+# A drop in replacement for cut that can use a regex delimiter instead of a fixed string
+
+
+OPTION 2
+# rcut  
+# (needs to be installed from git repo - see https://github.com/learnbyexample/regexp-cut)
+# rcut allows multi-character or regexp delimiters
+$ cat spaces.txt
+   1 2	3  
+x y z
+ i          j 		k	
+
+# Example 1
+# by default, it uses awk's space/tab field separation and trimming
+# unlike cut, order matters
+$ rcut -f3,1 spaces.txt
+3 1
+z x
+k i
+
+
+# Example 2 
+# by default, rcut uses awk's space/tab field separation and trimming
+# multi-character delimiter
+$ echo 'apple:-:fig:-:guava' | rcut -d:-: -f2
+fig
+
+

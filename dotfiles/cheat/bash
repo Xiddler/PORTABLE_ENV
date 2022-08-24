@@ -1,3 +1,7 @@
+# Webrefs
+https://wiki.bash-hackers.org/
+https://mywiki.wooledge.org/BashFAQ
+
 # To implement a for loop:
 for file in *;
 do 
