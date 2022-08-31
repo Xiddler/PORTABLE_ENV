@@ -1,0 +1,3 @@
+# run doom doctor
+$HOME/.emacs.d/bin/doom doctor
+
