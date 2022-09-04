@@ -592,4 +592,13 @@ vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc ~/files/sample_fi
 # Check what may be slowing down vim 
 vim --startuptime start.log afile.txt # will create start.log listing the time taken for each operation / plugin 
 
+# toggle case
+~ one letter at a time
+g~ <movement> e.g. g~$ toggle each letter to end of the line
+# For toggling Title Case, CamelCase, dashed-case, underline_case use Tim Pope's Abolish. 
+# Tim Pope's crX command (one word at a time) from his Abolish plugin: https://github.com/tpope/vim-abolish looks good. Use macros to do a sentence or more.
+# Also consider using the Unix utility tr or sed or some regex.
+#
+#
+
 # END 

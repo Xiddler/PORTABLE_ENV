@@ -28,6 +28,8 @@ Plug 'https://github.com/junegunn/limelight.vim.git'
 " the following plugin shows a buffer to the right on typing this " <-- yes the quote symbol!
 Plug 'junegunn/vim-peekaboo'
 Plug 'zaid/vim-rec' " Plug 'https://github.com/zaid/vim-rec'
+" Plug 'tpope/vim-abolish' " Plug 'https://github.com/tpope/vim-abolish.git' - added 2022-09-02
+Plug 'https://github.com/tpope/vim-abolish.git' "  added 2022-09-02
 
 
 " Markdown plugins
@@ -36,7 +38,7 @@ Plug 'zaid/vim-rec' " Plug 'https://github.com/zaid/vim-rec'
 Plug 'godlygeek/tabular'  " for aligning text
 " preservim/vim-vim-markdown  https://github.com/preservim/vim-markdown.git  (this one has more stars and seems more active....)
 Plug 'plasticboy/vim-markdown'
-Plug 'vim-latex/vim-latex'
+" Plug 'vim-latex/vim-latex'
 " the following plugin (vim-markdown) includes Syntax Concealing - use :set conceallevel=2
 " Plug 'https://github.com/preservim/vim-markdown'                        
 " the following hides the heading in markdown files - a problem (is this why plasticboy is better?) - <-- use :set foldignore=# 
