@@ -1,0 +1,17 @@
+unmailboxes *
+set imap_user = "jamesdenismccarthy@gmail.com"
+set imap_pass = "59gMails!!"
+set smtp_url = "smtp://jamesdenismccarthy@smtp.gmail.com:587/"
+set smtp_pass = "59gMails!!"
+set from = "jamesdenismccarthy@gmail.com"
+set realname = "Donagh"
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+set header_cache = ~/.mutt/account.com.gmail.jamesdenismccarthy/cache/headers
+set message_cachedir = ~/.mutt/account.com.gmail.jamesdenismccarthy/cache/bodies
+set certificate_file = ~/.mutt/account.com.gmail.jamesdenismccarthy/certificates
+set ssl_starttls = yes
+set ssl_force_tls = yes
+set status_format = "$from -%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)---"
+

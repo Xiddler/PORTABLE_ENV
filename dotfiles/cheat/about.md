@@ -37,7 +37,9 @@ https://expeditedsecurity.com/aws-in-plain-english/
 User-friendly interface for an application e.g. Magit in Emacs is a git porcelain (probably the best)
 
 # An expression (in contrast to a statement)
-An expression is an unit of code that can be evaluated to produce a result.
+Expres­sions are things that are eval­u­ated to produce a value 
+State­ments are things that denote an action
+For instance, in Python, x = 42 is a state­ment, and x + 42 is an expres­sion.
 
 # The browser
 A browser is a universal Virtual Machine which just only takes JS and WASM at the moment (2022).

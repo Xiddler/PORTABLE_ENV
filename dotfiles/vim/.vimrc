@@ -42,8 +42,6 @@ let mapleader=','
 " nmap <c-j> ddp - used for navigating between splits
 " nmap <c-k> ddkkp
 
-" insert @dm -
-nmap mm 0i@dm -<left><right><right>
 
 "  save file
 nnoremap <leader>s :w<cr>
@@ -469,6 +467,9 @@ nmap <leader>b :call BulletList()<cr>
 vnoremap <leader>n :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR> 
 vnoremap <leader>nl :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR>  
 
+" remove line numbers - first Visually select the lines
+vnoremap <leader>nr :s/^\(\d\)\{1,2\}\. // <CR>
+
 " numbered list but RIGHT aligned higher than no. 9 
 function! NumberList() range
 " set line numbers in front of lines - added 2022-02-12
@@ -552,8 +553,15 @@ nmap ,e g0jI<backspace> <esc>jg0
 "we are the "best of all
 
 " abbreviations
+
+" insert @dm -
+nmap mm 0i@dm -<left><right><right>
+
+" need to be in insert mode for these then press <CR> or <SPC> to instigate 
 ab mys "Proactively engaged in making a better life for myself and/or others"
 ab FP 'Full Picture' 
+abb dtw - Donagh the Wise
+
 
 " for the vim-notes plugin. ~/.vim/misc/notes/user
 " adds .txt suffix to new notes

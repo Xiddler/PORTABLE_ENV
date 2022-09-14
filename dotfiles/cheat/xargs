@@ -23,3 +23,5 @@ find -name *.pdf | xargs -I{} -n1 echo '&{}='
 # This option is a GNU extension.
 find -name "*.pdf" | xargs --no-run-if-empty rm
 
+# open a book from the results of my booksearch command using okular
+❯ echo $(booksearch interface) | xargs okular # it works!!
