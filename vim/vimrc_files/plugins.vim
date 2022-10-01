@@ -30,7 +30,8 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'zaid/vim-rec' " Plug 'https://github.com/zaid/vim-rec'
 " Plug 'tpope/vim-abolish' " Plug 'https://github.com/tpope/vim-abolish.git' - added 2022-09-02
 Plug 'https://github.com/tpope/vim-abolish.git' "  added 2022-09-02
-
+"
+Plug 'https://github.com/vim-scripts/loremipsum' " added 2022-09-15 Usage: :Loremipsum 55 will output 55 latin words 
 
 " Markdown plugins
 " With none of these enabled ##'s are salmon-coloured - but no folding
@@ -43,6 +44,7 @@ Plug 'plasticboy/vim-markdown'
 " Plug 'https://github.com/preservim/vim-markdown'                        
 " the following hides the heading in markdown files - a problem (is this why plasticboy is better?) - <-- use :set foldignore=# 
 " Plug 'masukomi/vim-markdown-folding'
+Plug 'prabirshrestha/vim-lsp'
 
 call plug#end()
 "

@@ -107,6 +107,16 @@ cat /home/donagh/PORTABLE_ENV/vim/plugins/my_vim_plugins
 # 3. add e.g. Plug 'https://github.com/vim-airline/vim-airline-themes.git' under call plug#begin('/home/donagh/.vim/plugins')
 # 4. run :PlugInstall 
 
+# EXAMPLE: install vim-lsp
+# A. Clone into the correct folder
+1. cd /home/donagh/PORTABLE_ENV/vim/plugins
+2. git clone https://github.com/prabirshrestha/vim-lsp
+# B. Notify vim of new plugin 
+3. vim /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim
+4. add Plug 'prabirshrestha/vim-lsp'
+# C. Install
+5. :PlugInstall
+
 # check installed / working plugins
 ll $HOME/PORTABLE_ENV/vim/dotvim/plugins
 # or

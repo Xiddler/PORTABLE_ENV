@@ -330,7 +330,9 @@ source ~/.config/dirjump/dirjump
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # tilix terminal (testing out June 2022) 
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
-fi
+# if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        # source /etc/profile.d/vte.sh
+# fi
 
+# sd  https://github.com/ianthehenry/sd 
+# fpath=(/home/donagh/Applications/sd_scripts_dir_utility/sd/sd $fpath)

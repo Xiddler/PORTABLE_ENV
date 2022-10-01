@@ -10,6 +10,7 @@
 " My minimal .vimrc location 
 " I have a minimal .vimrc available --> /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc
 
+"inoremap jk <esc>
 set <esc>=jk 
 
 " use spacebar to enter command mode. This matches doom-emacs for me and my muscle memory
@@ -127,6 +128,11 @@ nnoremap <leader>ss :so $MYVIMRC<CR>
 source /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim " Rem: Use gf to open that file!
 
 "}}}
+" {{{ Lorem ipsum
+
+ab lorem "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
+
+" }}}
 "{{{ Buffers
 
 " === Buffers ===
@@ -536,6 +542,17 @@ let g:tex_flavor='latex'
 "
 "
 "}}}
+" LSP {{{
+" Language Server Protocol 
+" Alternatively use neovim 
+if executable('rust-analyzer')
+  au User lsp_setup call lsp#register_server({
+		\   'name': 'Rust Language Server',
+		\   'cmd': {server_info->['rust-analyzer']},
+		\   'whitelist': ['rust'],
+		\ })
+endif
+" }}}
 " Customised {{{
 
 "=== Customised === 
@@ -561,6 +578,7 @@ nmap mm 0i@dm -<left><right><right>
 ab mys "Proactively engaged in making a better life for myself and/or others"
 ab FP 'Full Picture' 
 abb dtw - Donagh the Wise
+ab lorem "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
 
 
 " for the vim-notes plugin. ~/.vim/misc/notes/user

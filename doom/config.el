@@ -6,6 +6,7 @@
 ;;; Commentary:
 ;; Place your private configuration here!
 ;; Remember, you do not need to run 'doom sync' after modifying this file!
+;; I use this file mainly for adding new key-bindings
 
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
@@ -98,9 +99,10 @@
 ;;      Emacs searches the `load-path' when you load packages with `require' or `use-package'.
 ;; - `map!' for binding new keys
 ;;
-;; DONAGHS
+;; DONAGHS KEYBINDINGS
 ;; The following keybinding *did* work. :n indicates normal mode
-(map! :n "Q" 'org-babel-execute-src-block ) ;; Quantify! or Execute snippet!
+(map! :n "Q" '@q) ; shortcut for @q to run a recorded macro
+;; (map! :n "Q" 'org-babel-execute-src-block ) ;; Quantify! or Execute snippet!
 (map! :n "SPC d" 'treemacs ) ;; Tree directory for files / folders
 (map! :n "tt" 'org-todo )
 (map! :n "ts" 'org-schedule )

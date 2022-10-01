@@ -13,8 +13,10 @@
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
+;; EXAMPLE
 (package! rec-mode)
-;
+;; then doom sync
+
 ;; DONAGHS
 ;; add theme not available in default doom. Note: remember to call it in config.el
 ;; (package! spacemacs-theme)

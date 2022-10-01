@@ -3,10 +3,8 @@
 #+AUTHOR: donagh mccarthy
 #+options: il
 #+tags: help orgmode org-mode donaghs
-#+EDITED: 2022-07-06
+#+EDITED: 2022-09-25
 
-
-* frontmatter
 * DOOM EMACS
 ** appearance
 *** theme
@@ -261,8 +259,9 @@ Strikethrough ~strikethrough~
 + [[projects][projects]]
 
 ** org-capture
-*** About
+:about:
 To quickly capture a note and save it for easy recapture
+:end:
 *** Commands
 [SPC] X
 [SPC] n n
@@ -278,14 +277,7 @@ There are a number of templates to save notes to
     [SPC] n s <-- Search notes for text
 
 ** packages
-*** INSTALL NEW
-- M-x packge-install
-- in config.el (use-package origami)
-*** add new package
-https://github.com/hlissner/doom-emacs
-Packages are declared in packages.el files.
-Use -> % doom build after adding a package (or doom doctor if there are problems)
-*** meta
+*** emacs
 REM: Doesn't use emacs packages.el it uses straight.el instead for package management. Use init.el
 **** install new package
 Unhiglight in init.el
@@ -299,9 +291,39 @@ in packages.el (require '<package>) and then ->% doom sync
    - list-packages (available, installed, builtin )
 **** List available, built-in and installed packages
 [SPC] : list-packages
+*** INSTALL Packages in doom-emacs
+**** Add new package
+
+https://github.com/hlissner/doom-emacs
+
+
+From packages.el
+
+;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
+;(package! some-package)
+;; EXAMPLE to install rec-mode [cf. AUR recutils - Set of tools and libraries to access plain text databases called recfiles ]
+(package! rec-mode)
+then do -> % doom sync
+
+
+Packages are declared in packages.el files.
+
+Use -> % doom build after adding a package (or doom doctor if there are problems)
+
+**** How do I browse available packages availble in doom-emacs?
+
+M-x package-refresh-contents
+M-x list-packages
+(current example is pdfgrep - which is present on 2022-09-25 )
+Some hints at https://github.com/doomemacs/doomemacs/issues/1468
+Note: The preferred (ONLY?) way to install packages is via packages.el
+
+**** Plain emacs
+- M-x packge-install
+- in config.el (use-package origami)
 *** avy
 **** About
-For navigation within a file.
+For fast navigation within a file.
 Like easymotion plugin in vim
 NOTE: pre-installed in doom
 In-file navigation - specifically on current screen. Highlights using one or two letter pairs to highlight the target
@@ -329,9 +351,10 @@ In [[file:packages.el][Packages.el]]
   :recipe (:host github :repo "org-roam/org-roam"))
 
 *** dired
-**** About
+:about:
 File explorer
 New buffer below showing the contents of (current) directory
+:end:
 **** A short intro to Dired
 Dired is how you interface with a directory
 Name comes from Directory Editor
@@ -368,15 +391,19 @@ CONFLICT HERE: 'u' in dired unmarks, but evil-mode it is undo
 Change a file / dir name: i and then make changes
 
 *** evil
+:about:
 NOTE: Pre-installed in doom
 vim bindings for emacs / DOOM
+:end:
 **** evil-snipe
 Navigating in files - short distances [but see [[avy]]]
 Enable: M-x evil-snipe <-- toggles on/off
 f <letter> highlights all <letter>s forward and ; moves to next one.
 NOTE: For more comprehensive in-file search look at avy.
 *** eww
+:about:
     emacs web browser M-x e
+:end:
 *** origami
 folding in markdown
 *** flycheck
@@ -466,6 +493,7 @@ This module enhances the Emacs search and completion experience, and also provid
 It does this with several modular packages focused on enhancing the built-in completing-read interface, rather than replacing it with a parallel ecosystem like ivy and helm do.
 ** projects
 *** manage projects
+
 using [[projectile][projectile]]
 -----
 If you are more familiar with IDEs like Eclipse or IntelliJ, you probably already have a concept of a project in your mind. It’s basically a folder for a particular codebase (probably under version control) that is pretty much a cohesive unit that you work on independently. In Emacs, this grouping and identification is usually managed by Projectile. With Doom, this is installed by default.
@@ -536,6 +564,18 @@ The following was a begin src block
 #+RESULTS:
 : 54
 
+ANOTHER EXAMPLE
+
+#+BEGIN_SRC emacs-lisp
+(message "hello Dolly")
+(+ 222 (* 88 32))
+#+END_SRC
+Then press Q to get...
+#+RESULTS:
+: 3038
+
+
+
 <l and [TAB]
 #+BEGIN_EXPORT latex
 /rarrow
@@ -586,8 +626,11 @@ eg C-c / r navig
 [SPC] [TAB] <#> switch to Workspace <#> Displayed at bottom of window.
 
 * Org-mode
-** about
+:about:
+THIS!
+A markup language with great flexibility and options to do many, many things.
 Maybe see [[file:~/sd64/TODO/ORG-MODE/first.org][first.org]]  for my preliminary notes
+:end:
 ** agenda / scheduling
 My aliases:
 t a      <-- agenda
@@ -802,6 +845,10 @@ It's essentially a templating system for various types of notes e.g. journal, pe
 Save personal notes to [[/home/donagh/Dropbox/org-mode/org/notes.org][notes.org]] using [SPC] X n
 *** convert csv to org file
 * Magit
+:about:
+For managing git files and repos using emacs. Sublime is too small a term for it.
+
+:end:
 ** Check version
 M-x magit-version
 ** Webrefs
@@ -830,8 +877,12 @@ l l          :: (in a git file) opens the "short log"
 Q. When I write the commit message, do I save and how do I complete the commit?
 R. Yes, save and then C-c C-c to complete the commit
 * Tramp
+:about:
 (Transparent Remote Access, Multiple Protocols)
 Remote access to files - TBD
+I haven't used it yet. Note added 2022-09-25
+Has good reputation.
+:end:
 
 * Help for [SPC]
 SPC
