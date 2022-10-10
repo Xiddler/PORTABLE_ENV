@@ -1,3 +1,13 @@
+# Quick Ref.
+#Rem: Two separate actions: Do Ctrl-a let go and then % for example.
+Start tmux						:: tmux
+Vert. split						:: C-a %
+Hor. split						:: C-a "
+Kill window						:: C-a x
+Focus window left				:: C-a ← 
+Focus window right				:: C-a → 
+Detach from tmux				:: C-a d
+
 # Start tmux:
 tmux
 

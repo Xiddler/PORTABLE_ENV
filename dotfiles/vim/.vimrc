@@ -355,7 +355,7 @@ highlight Folded guibg=grey guifg=blue
 
 " set termguicolors - see next
 syntax enable
-" colorscheme stellarized
+" colorscheme stellarized from nightsense 
 colorscheme gruvbox
 set background=dark
 "to toggle them automatically for you:

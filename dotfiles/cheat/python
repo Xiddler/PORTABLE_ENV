@@ -15,15 +15,15 @@ python -m smtpd -n -c DebuggingServer localhost:1025
 # Pretty print a json
 python -mjson.tool
 
-# VIRTUALENV
+# VIRTUALENV 
 # create a new virtualenv e.g. 'flask'
 # python3.9 -m venv <path-to-venv>/venv
 python3 -m venv $HOME/.virtualenvs/flask 
 
-# to activate
+# to activate virtenv
 source $HOME/.virtualenv/flask/bin/activate
 
-# to deactivate
+# to deactivate virtenv 
 deactivate
 
 # update pip - e.g. in fastapi virtualenv

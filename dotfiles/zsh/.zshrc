@@ -294,10 +294,10 @@ eval "`dircolors -b ~/.dir_colors`"
 typeset -U path
 
 # grep hist
-histgrep() {
-  grep -r "$@" ~/.history
-  history | grep "$@"
-  }
+# histgrep() {
+  # grep -r "$@" ~/.history
+  # history | grep "$@"
+  # }
 
 # speaking clock in the terminal
 
@@ -306,7 +306,7 @@ histgrep() {
 # # ranger default config file rc.conf 
 export RANGER_LOAD_DEFAULT_RC=false
 
-# zoxide 
+# zoxide - for directory jumping using z 
 eval "$(zoxide init zsh)"
 
 # mcfly
@@ -328,6 +328,8 @@ source ~/.config/dirjump/dirjump
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# cf. WARNING at LINUX:1Linux Live USB:01installed apps:zsh shell:ISSUES
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # tilix terminal (testing out June 2022) 
 # if [ $TILIX_ID ] || [ $VTE_VERSION ]; then

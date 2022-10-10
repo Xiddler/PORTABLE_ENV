@@ -1,6 +1,9 @@
 # Webrefs
 https://wiki.bash-hackers.org/
 https://mywiki.wooledge.org/BashFAQ
+# bash resources
+https://github.com/onceupon/Bash-Oneliner # one-liners 
+http://mywiki.wooledge.org/BashGuide # Bash Guide with loads of resources 
 
 # To implement a for loop:
 for file in *;
@@ -62,6 +65,6 @@ for mydir in "${directories[@]}";
         printf '%s\n ' "$mydir"
 done
 
-# bash one-liners resources
-https://github.com/onceupon/Bash-Oneliner
+# Arithmetic 
+$((   )) # correct syntax 
 
