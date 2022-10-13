@@ -2,6 +2,7 @@
 BU_pack/
 .git/
 */.git
+*/**/.git
 /home/donagh/PORTABLE_ENV/vim/plugins/vim-abolish/.git
 *.ipynb
 *.ipynb_checkpoint

@@ -1,6 +1,7 @@
 " Filepath  /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim 
 
 " This file is where I call the plugins I want to use in vim. There is a line in .vimrc that calls this file
+" I am using the vim-plug plugin manager from https://github.com/junegunn/vim-plug 
 " .vimrc --> ~/.vim/plugins
 " vim starts -->  ~/.vim/autoload/plug.vim 
 
@@ -22,12 +23,12 @@ Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 " gruvbox - added 2022-04-02. For a change.
 Plug 'https://github.com/morhetz/gruvbox.git'
 Plug 'francoiscabrol/ranger.vim'
-Plug 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion' " Use ./ to highlight search pairs 
 Plug 'https://github.com/junegunn/goyo.vim.git'
 Plug 'https://github.com/junegunn/limelight.vim.git'
 " the following plugin shows a buffer to the right on typing this " <-- yes the quote symbol!
 Plug 'junegunn/vim-peekaboo'
-Plug 'zaid/vim-rec' " Plug 'https://github.com/zaid/vim-rec'
+" Plug 'zaid/vim-rec'  Plug 'https://github.com/zaid/vim-rec' " for rec-files 
 " Plug 'tpope/vim-abolish' " Plug 'https://github.com/tpope/vim-abolish.git' - added 2022-09-02
 Plug 'https://github.com/tpope/vim-abolish.git' "  added 2022-09-02
 "
