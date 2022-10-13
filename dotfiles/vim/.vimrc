@@ -125,7 +125,8 @@ nnoremap <leader>ss :so $MYVIMRC<CR>
 " Remember to :PlugInstall  after adding a new Plug
 
 " external sub-vimrc files for plugins, specifically  vim-plug using Plug
-source /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim " Rem: Use gf to open that file!
+" source /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim " Rem: Use gf to open that file!
+source /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim "Rem: Use gf to open that file! CHANGED LOCATION ON 2022-10-13 
 
 "}}}
 " {{{ Lorem ipsum
