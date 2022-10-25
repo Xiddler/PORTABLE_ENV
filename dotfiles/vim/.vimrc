@@ -208,7 +208,7 @@ let g:netrw_winsize = 30
 " set previewpopup=height:10,width:60
 " set mouse+=a " copy lines without line numbers - can cause side issues
 
-" ---  Goyo ---
+" ---  Goyo --- for zen mode read/write 
 " Goyo & limelight toggle together - see gh for instructions to change this
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
@@ -284,8 +284,8 @@ set expandtab       " tabs are spaces
 "===  UI Config ===
 
 set wildmenu            " visual autocomplete for command menu
-"allow  yanked text to be copied directly to the X11 system clipboard....not
-" having to use the "+ register
+" allow  yanked text to be copied directly to the X11 system clipboard....not having to use the "+ register
+" makes y, d, c, p use the system clipboard 
 set clipboard=unnamedplus
 " make Y copy from cursor position to end of line (like C, D)
 nnoremap Y y$
@@ -326,6 +326,14 @@ set grepprg=/usr/sbin/rg        " use ripgrep instead of default grep
 " set very magic for searching (i.e. no need to escape brackets and other special chars)
 nnoremap / /\v
 vnoremap / /\v
+
+" Remember last location in file " does slow up the opening of a file though -  added 2022-10-15
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal g'\"" | endif
+endi
+
+
 " }}}
 " {{{ Folding 
 
@@ -565,15 +573,15 @@ endif
   " autocmd BufNewFile *.py silent! execute '0r $HOME/PORTABLE_ENV/vim/py_header.temp'
 " augroup END 
 
-" join up line with line below
-nmap ,e g0jI<backspace> <esc>jg0
+" join up line with line below 
+" nmap ,e g0jI<backspace> <esc>jg0 " Vim's J already does this! 
 
 "we are the "best of all
 
 " abbreviations
 
 " insert @dm -
-nmap mm 0i@dm -<left><right><right>
+" nmap mm 0i@dm -<left><right><right>
 
 " need to be in insert mode for these then press <CR> or <SPC> to instigate 
 ab mys "Proactively engaged in making a better life for myself and/or others"

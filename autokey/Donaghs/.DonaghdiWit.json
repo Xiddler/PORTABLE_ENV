@@ -1,10 +1,10 @@
 {
     "type": "phrase",
-    "description": "DonaghTheWise",
+    "description": "DonaghdiWit",
     "modes": [
         1
     ],
-    "usageCount": 0,
+    "usageCount": 5,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,

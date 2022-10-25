@@ -30,6 +30,19 @@
 ;; (setq doom-font (font-spec :family "Source Code Pro" :size 20))
 (setq doom-font (font-spec :family "Liberation Mono" :size 20))
 ;; Needs to be installed from PORTABLE_ENV
+;;
+;; Emacs dictionary (sudo pamac install  dictionary and restart emacs)
+;; For dictionary.el to have a side bar -  mandatory, as the dictionary misbehaves!
+(setq switch-to-buffer-obey-display-actions t)
+(add-to-list 'display-buffer-alist
+   '("^\\*Dictionary\\*" display-buffer-in-side-window
+     (side . left)
+     (width . 50)))
+;; did not work!
+
+;; To make Emacs use your local server instead of a remote one, customize dictionary-server to localhost:
+(setq dictionary-server "localhost")
+;; worked!
 
 ;; Maximize the window upon startup.
 (setq initial-frame-alist '((top . 52) (left . 52) (width . 154) (height . 40)))

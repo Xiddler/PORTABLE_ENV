@@ -4,14 +4,14 @@
     "modes": [
         1
     ],
-    "usageCount": 1,
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "dm"
+            "Ppl"
         ],
         "backspace": true,
         "ignoreCase": false,

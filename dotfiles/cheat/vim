@@ -250,14 +250,37 @@ g8
 # for the whole file
 :%s/<Ctrl-R ">/"/g 
 
-# to enter this non-ascii character --> ”
-# in insert mode
-Ctrl-V u 201d
+# to enter this non-ascii character --> ” [ Note: that character is not " ]
+Ctrl-V u 201d       # hexadecimal - takes 4 digits
+# To enter special characters
+Ctrl-V 221          # decimal - takes 3 digits
+Ctrl-V o A33        # octal - takes 3 digits
+Ctrl-V O 3FE        # octal - takes 3 digits
+Ctrl-V x 201d       # hexadecimal - takes 4 digits
+Ctrl-V X 201d       # hexadecimal - takes 4 digits
+Ctrl-V u 201d       # hexadecimal - takes 4 digits
+Ctrl-V U 201dd321   # hexadecimal - takes 8 digits
 
+# Note: Ctrl-Q is an alternative to Ctrl-V 
+# @
+#
 
 # to identify what unicode number ” is place cursor on it then type 
 ga
 # the number after the word Hex is 201d 
+
+# Registers
+# There are ten types of registers:
+1. The unnamed register ""
+2. 10 numbered registers "0 to "9
+3. The small delete register "-
+4. 26 named registers "a to "z or "A to "Z 
+5. Three read-only registers ":, "., "%
+6. Alternate buffer register "#
+7. The expression register "=
+8. The selection and drop registers "*, "+ and "~
+9. The black hole register "_
+10. Last search pattern register "/
 
 # resize windows
 # Maximize current window

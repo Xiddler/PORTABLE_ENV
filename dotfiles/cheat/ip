@@ -34,4 +34,9 @@ ip neighbor show
 # ip information websites
 https://ipinfo.io/          :: quite good; API available for SSH heatmap cf. github;
 
+# get ip address
+dig wordnik.com
+nslookup wordnik.com
+host wordnik.com
+ping wordnik.com
 

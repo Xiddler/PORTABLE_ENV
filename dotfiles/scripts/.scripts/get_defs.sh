@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Edit 2022-10-17
+# Replaced with def --> dict (ie dictd from AUR) 
+
 # usage $def <word_sought> where def is aliased in .zshrc as: alias def='~/.scripts/get_defs.sh '
 string=$1
 #origingal

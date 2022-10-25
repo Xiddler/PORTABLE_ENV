@@ -1,0 +1,21 @@
+see also 
+ ❯ nslookup wordnik.com
+Server:         192.168.1.1
+Address:        192.168.1.1#53
+
+Non-authoritative answer:
+Name:   wordnik.com
+Address: 50.18.110.30
+Name:   wordnik.com
+Address: 54.176.79.162
+
+
+_____________________________________________________________________________
+
+IP4
+$ dig +short A neverssl.com
+34.223.124.45
+
+IPv6
+$ dig +short AAAA neverssl.com
+2600:1f13:37c:1400:ba21:7165:5fc7:736e

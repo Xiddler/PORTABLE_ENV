@@ -12,6 +12,13 @@ python -m http.server 8000
 # SMTP-Server for debugging, messages will be discarded, and printed on stdout.
 python -m smtpd -n -c DebuggingServer localhost:1025
 
+# Server files that are accessible over the LAN to other devices
+# $ python -m http.server 8080  --directory  /home/donagh/DONAGHS/personal/journal/2022/10  --bind 0.0.0.0
+# Serve 11SignUps.txt for access from the tablet etc.
+python -m http.server 8088  --directory ~/DONAGHS/MY_ZIM/Computer --bind 0.0.0.0
+
+
+
 # Pretty print a json
 python -mjson.tool
 
