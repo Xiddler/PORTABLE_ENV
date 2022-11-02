@@ -1,5 +1,7 @@
 # sum integers from a file or stdin, one integer per line:
 printf '1\n2\n3\n' | awk '{ sum += $1} END {print sum}'
+# wants.txt with two columns and items use _ to separate the words 
+awk -F" " '{ sum += $2 } END { print sum }'
 
 # using specific character as separator to sum integers from a file or stdin
 printf '1:2:3' | awk -F ":" '{print $1+$2+$3}'

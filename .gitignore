@@ -3,13 +3,14 @@ BU_pack/
 .git/
 */.git
 */**/.git
-/home/donagh/PORTABLE_ENV/vim/plugins/vim-abolish/.git
 *.ipynb
 *.ipynb_checkpoint
 dotfiles/git/.gitconfig
 scratch.md # Shortcut -> % vx 
 tabular
 vim-airline
+/home/donagh/PORTABLE_ENV/vim/plugins/vim-abolish/.git
 /home/donagh/PORTABLE_ENV/vim/plugins/loremipsum/orig_dot_git
+/home/donagh/PORTABLE_ENV/vim/plugins/fzf/.git
 
 

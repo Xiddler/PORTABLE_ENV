@@ -541,6 +541,26 @@ endfunction
 
 " open today's markdown journal in a new tab in vim      
 nmap wj :call WorkJournal()<cr>
+
+" from https://blog.langworth.com/vim3 - finesse on Goyo 
+" also makes autocompletion pull words from the thesaurus and dictionary when I hit Tab 
+function! ProseMode()
+  call goyo#execute(0, [])
+  set spell noci nosi noai nolist noshowmode noshowcmd
+  set complete+=s
+  " set bg=light
+  set bg=dark
+  if !has('gui_running')
+    " let g:solarized_termcolors=256
+    let g:gruvbox_termcolors=256
+  endif
+  " colors solarized
+  colors gruvbox
+endfunction
+
+command! ProseMode call ProseMode()
+nmap \p :ProseMode<CR>
+
 "}}}
 "{{{ Latex
 
@@ -581,7 +601,7 @@ endif
 " abbreviations
 
 " insert @dm -
-" nmap mm 0i@dm -<left><right><right>
+nmap mm 0i@dm -<left><right><right>
 
 " need to be in insert mode for these then press <CR> or <SPC> to instigate 
 ab mys "Proactively engaged in making a better life for myself and/or others"

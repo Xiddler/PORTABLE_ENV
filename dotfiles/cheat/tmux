@@ -1,12 +1,16 @@
 # Quick Ref.
-#Rem: Two separate actions: Do Ctrl-a let go and then % for example.
+#Rem: Two separate actions: Do Ctrl-a together then let go and then % for example.
 Start tmux						:: tmux
 Vert. split						:: C-a %
 Hor. split						:: C-a "
 Kill window						:: C-a x
-Focus window left				:: C-a ← 
-Focus window right				:: C-a → 
+Focus window left				:: C-a ←  or Alt ←
+Focus window right				:: C-a →  or Alt →
 Detach from tmux				:: C-a d
+Info                            :: C-a ?
+Go full screen                  :: C-a z
+Resize pane                     :: C-a Alt →  
+Rename the current window       :: C-a , 
 
 # Start tmux:
 tmux

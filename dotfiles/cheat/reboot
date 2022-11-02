@@ -93,6 +93,8 @@ python3 ~/Applications/flask_htmx_lanner/app.py
 
 
 # QUICKLY AFTER a REBOOT 
+# zim - first mount the SD Card
+sudo /usr/sbin/zim 
 # cifs_share
 sudo mount -t cifs //192.168.1.24/USB128_2 /mnt/cifs_share -o username=admin,password=admin,iocharset=utf8,vers=3.1.1
 # rem: caffeine  (replaced by KDE power management option in Battery icon

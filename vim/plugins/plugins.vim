@@ -31,6 +31,8 @@ Plug 'junegunn/vim-peekaboo'
 " Plug 'zaid/vim-rec'  Plug 'https://github.com/zaid/vim-rec' " for rec-files 
 " Plug 'tpope/vim-abolish' " Plug 'https://github.com/tpope/vim-abolish.git' - added 2022-09-02
 Plug 'https://github.com/tpope/vim-abolish.git' "  added 2022-09-02
+" FZF 
+Plug 'https://github.com/junegunn/fzf.git' " added 2022-10-27
 "
 Plug 'https://github.com/vim-scripts/loremipsum' " added 2022-09-15 Usage: :Loremipsum 55 will output 55 latin words 
 
