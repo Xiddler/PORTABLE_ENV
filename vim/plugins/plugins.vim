@@ -15,13 +15,20 @@
 
 call plug#begin('/home/donagh/PORTABLE_ENV/vim/plugins')
 Plug 'tpope/vim-commentary'
+
 " Plug 'https://github.com/vim-airline/vim-airline.git'
-Plug 'vim-airline/vim-airline'
-Plug 'https://github.com/vim-airline/vim-airline-themes.git'
+Plug 'vim-airline/vim-airline' 
+Plug 'https://github.com/vim-airline/vim-airline-themes.git' 
+"
 " for the following plugin, -> %cp -r ~/.vim/plugins/stellarized ~/.vim/pack/nightsense/start/      :: this seems to be necessary
-" Plug 'nightsense/stellarized'              
+" nightsense seems gone from github Note added 2022-11-03 " Plug 'nightsense/stellarized'              
 " gruvbox - added 2022-04-02. For a change.
 Plug 'https://github.com/morhetz/gruvbox.git'
+" dracula - added 2022-11-04 (to get nicer markdown style - hate the yellow)
+Plug 'https://github.com/dracula/vim.git'
+
+
+
 Plug 'francoiscabrol/ranger.vim'
 Plug 'easymotion/vim-easymotion' " Use ./ to highlight search pairs 
 Plug 'https://github.com/junegunn/goyo.vim.git'

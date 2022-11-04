@@ -306,6 +306,14 @@ autocmd BufNewFile,BufRead,BufEnter *.md :set conceallevel=2
 " show italics
 highlight Comment cterm=italic
 
+
+
+
+" Make bold and italic stand out better - tesging
+highlight htmlBold gui=bold guifg=#af0000 ctermfg=124
+highlight htmlItalic gui=italic guifg=#ff8700 ctermfg=214
+
+
 " older
 " Enable CursorLine
 " set cursorline
@@ -364,8 +372,11 @@ highlight Folded guibg=grey guifg=blue
 
 " set termguicolors - see next
 syntax enable
-" colorscheme stellarized from nightsense 
+" colorscheme stellarized from nightsense -- seems to be gone from github;  note added 2022-11-03  
+"/home/donagh/PORTABLE_ENV/vim/dotvim/HELP/pack/nightsense/start/stellarised 
+" theme at 2022-11-03
 colorscheme gruvbox
+colorscheme dracula " added 2022-11-04
 set background=dark
 "to toggle them automatically for you:
 map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
@@ -719,5 +730,8 @@ let $RTP=split(&runtimepath, ',')[0] " allows :set rtp?
 " Path
 " :set path? path to search when using find / FZF 
 set path+=~/REPOS/
+
+" $VIMRUNTIME 
+" /usr/share/vim/vim90 
 
 " }}}

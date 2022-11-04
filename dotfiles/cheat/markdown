@@ -50,6 +50,7 @@ This is [an example](http://example.com "Title") inline link.
 
 # markdown editors
 marker      # simple and works well in Manjaro                   << PREFERRED usage -> % apostrophe <filename.md>
+Ghostwriter # good, simple and works well in Manjaro
 apostrophe  # lightweight and works on manjaro
 marktext    # difficulty instally on manjaro / npm issues etc.
 Abricotine  # difficulty instally on manjaro / npm issues etc.
