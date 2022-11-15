@@ -87,7 +87,9 @@ The term closure is often used as a synonym for anonymous function.
 # bikeshedding
 When organizations spend disproportionate time on trivial issues - in the design of a nuclear plant when 90% of the discussion is around the design of the
 bikeshed
+
 # microprocessors v microcontrollers
 Microprocessors (µPs) are also referred to as microprocessor units (MPUs). Early MPUs contained only a central processing unit (CPU). Over time, other functions were added like cache memory, floating point units (FPUs), memory management units (MMUs), and so on. The key point is that — other than any cache and things like FPUs and MMUs — a microprocessor doesn’t contain any internal memory or peripherals. 
+
 By comparison, microcontrollers (µCs), which are also referred to as microcontroller units (MCUs), contain non-volatile memory like Flash, volatile memory like SRAM, peripherals like counters, timers, analog-to-digital converters (ADCs), and communications interfaces like UART, I2C, and SPI. Essentially, a microcontroller is a little standalone computer presented on a single silicon chip that contains its own program, which it starts executing as soon as it powers-up. This explains why microcontrollers appear in embedded systems, and why embedded systems appear all over the place.
 

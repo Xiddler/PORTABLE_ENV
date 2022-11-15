@@ -5,4 +5,7 @@ browser.fixup.fallback-to-https         false
 # with a directory callled /home/donagh/JAIL available...
 HOME='/home/donagh/JAIL' firefox
 
+# profile
+/home/donagh/.mozilla/firefox
+
 

@@ -1,0 +1,28 @@
+Opened 2022-11-05
+
+## Mkdocs 
+
+Rather than hosting your documentation on a server, you may instead distribute the files directly, which can then be viewed in a browser using the file:// scheme.
+
+Note that, due to the security settings of all modern browsers, some things will not work the same and some features may not work at all. In fact, a few settings will need to be customized in very specific ways.
+
+    The site_url must be set to an empty string, which instructs MkDocs to build your site so that it will work with the file:// scheme.
+
+    site_url: ""
+
+## How do you do this in general?
+
+Firefox prevents this sort of thing for security reasons. Use a proper file server or else go home.
+
+Search for 
+file:// URL security issues
+Possible solution here:
+https://blog.scottlowe.org/2020/04/04/making-file-urls-work-again-in-firefox/
+
+The profile path is /home/donagh/.mozilla/firefox/fvdtvu7b.default-release 
+see /home/donagh/.mozilla/firefox/profiles.ini
+Create user.js in the profile path
+
+
+
+

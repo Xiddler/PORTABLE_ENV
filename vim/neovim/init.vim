@@ -75,9 +75,9 @@
 	syntax on
 	filetype plugin indent on
 	" }}}
-    "
-    " start neovim additions
-    "
+"
+" start neovim additions
+"
     " Plug {{{
     "
     " Plug
@@ -104,9 +104,9 @@
 	filetype plugin indent on
     
     " }}}
-    " 
-    " end neovim additions
-    "
+" 
+" end neovim additions
+"
     " Theme & Colors {{{
 	" === Theme  & Colors ===
     " set t_Co=256

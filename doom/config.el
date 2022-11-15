@@ -136,6 +136,7 @@
 (map! :n "B" 'evil-beginning-of-line)
 (map! :n ",/" 'evil-avy-goto-char) ;; similar to vim-easymotion; also 'avy-goto-char and 'avy-goto-char-2
 (map! :n "SPC w 3" 'split-window-right) ;; similar to C-x 3 which is the emacs way and SPC w r is taken
+(map! :n "SPC b SPC" 'org-mark-ring-goto) ;; go back to where link started from
 
 ;; Mappings to change
 ;; (map! :n "nm" 'display-line-numbers-mode)

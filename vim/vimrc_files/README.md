@@ -19,6 +19,24 @@ For the plugins sub-vimrc it is __plugin.vim__.
  3. add e.g. Plug 'https://github.com/vim-airline/vim-airline-themes.git' under call plug#begin('/home/donagh/.vim/plugins')
  4. run :PlugInstall 
 
+#  2022-11-15 Moved plugins.vim
+Moved plugins.vim to /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim
+and this is the file that is 'sourced' in the .vimrc file
+
+# .vimrc
+The actual .vimrc file is in the dotfiles folder to allow GNU Stow to install them.
+Linked to this folder for visibility reasons.
+
+# minimal vimrc
+example
+vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc ~/files/sample_files/README.md
+alias
+-> % vimm <file>
+
+
+
+
+
 
 
 

@@ -5,6 +5,8 @@ set hidden
 let $RTP=split(&runtimepath, ',')[0]
 let $RC="$HOME/.vimrc"
 set noswapfile
+" remove highlighting from underscores in .md files 
+hi link markdownError normal 
 
 " Donaghs - for use in containers
 set <esc>=jk

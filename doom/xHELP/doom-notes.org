@@ -1,9 +1,10 @@
-#+TITLE: doom-notes.org
-#+DATE: Started 2020-05-17
-#+AUTHOR: donagh mccarthy
+#+TITLE:   doom-notes.org
+#+DATE:    Started 2020-05-17
+#+AUTHOR:  donagh mccarthy
+#+STARTUP: overview
 #+options: il
-#+tags: help orgmode org-mode donaghs
-#+EDITED: 2022-09-25
+#+tags:    help orgmode org-mode donaghs
+#+EDITED:  2022-09-25
 
 * DOOM EMACS
 ** appearance
@@ -677,6 +678,15 @@ To add a new keyword:
 and add in the REPT(r)
 Then run doom sync and re-open doom-emacs
 On 2021-09-30 I changed HOLD to HAPPENING for events that are under sail and /or ongoing. Repeated this on new install Oct 2021.
+
+Alternatively (for example), in config.el
+(setq org-todo-keywords
+'((sequence "TODO(t)" "|" "DONE(d)")
+(sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")))
+
+The vertical bar separates the ‘TODO’ keywords (states that need action) from the ‘DONE’ states (which need no further action).
+If you do not provide the separator bar, the last state is used as the ‘DONE’ state.
+
 ** checkboxes - Make a new checkbox i.e. [ ]
 
 rem C-c C-c to update progress
@@ -875,7 +885,7 @@ l l          :: (in a git file) opens the "short log"
 ** ISSUES
 2022-07-06
 Q. When I write the commit message, do I save and how do I complete the commit?
-R. Yes, save and then C-c C-c to complete the commit
+A. Yes, save and then C-c C-c to complete the commit
 * Tramp
 :about:
 (Transparent Remote Access, Multiple Protocols)

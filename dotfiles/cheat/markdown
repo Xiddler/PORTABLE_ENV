@@ -56,7 +56,10 @@ marktext    # difficulty instally on manjaro / npm issues etc.
 Abricotine  # difficulty instally on manjaro / npm issues etc.
 Obsidian    # allows live preview of markdown files and has vim keybindings available
 
-# markdown in vim
+# markdown in vim - remove offending highlighting if visible 
 :hi link markdownError Normal
 
-
+# convert file.md to file.html
+multimarkdown file.md > file.html
+# multimarkdown is available in AUR; note added 2022-11-05;  
+# https://fletcher.github.io/MultiMarkdown-6/MMD_Users_Guide.html

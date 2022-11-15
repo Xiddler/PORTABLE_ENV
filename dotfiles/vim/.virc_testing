@@ -16,8 +16,7 @@ set <esc>=jk
 " use spacebar to enter command mode. This matches doom-emacs for me and my muscle memory
 nnoremap <space> :
 
-set encoding=utf-8
-" set fileencoding=utf-8
+set fileencoding=utf-8
 
 "}}}
 "{{{ GNU Stow 
@@ -126,10 +125,8 @@ nnoremap <leader>ss :so $MYVIMRC<CR>
 " Remember to :PlugInstall  after adding a new Plug
 
 " external sub-vimrc files for plugins, specifically  vim-plug using Plug
-" source /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim  
-" Rem: Use gf to open that file!
-source /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim 
-" Rem: Use gf to open that file! CHANGED LOCATION ON 2022-10-13 
+source /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim "Rem: Use gf to open that file! CHANGED LOCATION ON 2022-10-13 
+
 
 "}}}
 " {{{ Lorem ipsum
@@ -379,10 +376,8 @@ syntax enable
 "/home/donagh/PORTABLE_ENV/vim/dotvim/HELP/pack/nightsense/start/stellarised 
 " theme at 2022-11-03
 " colorscheme gruvbox
-" colorscheme dracula  
-" added 2022-11-04
-colorscheme iceberg   
-" added 2022-11-04
+" colorscheme dracula  added 2022-11-04
+colorscheme iceberg "  added 2022-11-04
 set background=dark
 "to toggle them automatically for you:
 map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
@@ -417,66 +412,6 @@ if (empty($TMUX))
 endif
 
 " }}}
-" {{{ Airline status line 
-
-"=== Airline status line ===
-
-" set laststatus=2 "2 is for always show status line; 0 for never and 1 for when there are two windows
-" NOTE: built in is replaced by airline plugin (similar to Powerline in zsh)
-"
-" AIRLINE
-"https://github.com/vim-airline/vim-airline and :h airline
-" config file at:  ??? It is configured here no?
-"
-" show other buffers in the status airline
-let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
-let g:airline#extensions#whitespace#enabled = 1
-
-" Show just the filename instead of the full path/name
-" let g:airline#extensions#tabline#fnamemod = '%:t'
-let g:airline_section_c = '%t'
-" problem
-" column numbers are not showing fully / properly - how to fix this?
-" they are hidden behind the last section
-" configuration is here: /home/donagh/PORTABLE_ENV/vim/dotvim/plugins/vim-airline/autoload/airline/init.vim
-"
-" Airline Theme
-let g:airline_theme='tomorrow'
-
-" airline fonts
-" set guifont=Liberation\ Mono\ for\ Powerline\ 10 
-set guifont="Source Code Pro for Powerline 10"
-" the separator used on the left side
-  " let g:airline_left_sep='>'
-
-" the separator used on the right side
-  " let g:airline_right_sep='<'
-
-" to automatically populate the g:airline_symbols dictionary with the powerline symbols.
-" let g:airline_powerline_fonts = 1
-" note:  /usr/share/fonts/OTF/PowerlineSymbols.otf: PowerlineSymbols:style=Medium 
-"  If you want to use plain ascii symbols, set this variable:
-  " let g:airline_symbols_ascii = 1
-"
-" if powerline font symbols are partially messed up
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
-" powerline symbols
-" cf. https://tuckerchapman.com/2020/09/15/getting-started-vim-airline/
-
-" To have the column number 'colnr' showing in the statusline I put it in front of the line no. linenr 
-" (copied  from /home/donagh/PORTABLE_ENV/vim/plugins/vim-airline/autoload/airline/init.vim) 
-" if !exists('g:airline_section_z')
-   " if airline#util#winwidth() > 79
-     " let g:airline_section_z = airline#section#create(['windowswap', 'obsession', '%p%%', 'colnr', 'linenr', 'maxlinenr'])
-   " endif
-" endif
-
-
-
-"}}}
 "{{{  My functions 
 
 " === My Functions === 
@@ -672,13 +607,13 @@ nnoremap <leader>u v~
 "=== Custom Movements ===
 
 "navigation tips
-"    H Ã¢ÂÂ Go to the first line of current screen. But see noremaps below.
-"    M Ã¢ÂÂ Go to the middle line of current screen. 
-"    L Ã¢ÂÂ Go to the last line of current screen. But see noremaps below.
-"    ctrl+F Ã¢ÂÂ Jump forward one full screen.
-"    ctrl+B Ã¢ÂÂ Jump backwards one full screen
-"    ctrl+D Ã¢ÂÂ Jump forward (down) a half screen
-"    ctrl+U Ã¢ÂÂ Jump back (up) one half screen
+"    H ÃÂ¢ÃÂÃÂ Go to the first line of current screen. But see noremaps below.
+"    M ÃÂ¢ÃÂÃÂ Go to the middle line of current screen. 
+"    L ÃÂ¢ÃÂÃÂ Go to the last line of current screen. But see noremaps below.
+"    ctrl+F ÃÂ¢ÃÂÃÂ Jump forward one full screen.
+"    ctrl+B ÃÂ¢ÃÂÃÂ Jump backwards one full screen
+"    ctrl+D ÃÂ¢ÃÂÃÂ Jump forward (down) a half screen
+"    ctrl+U ÃÂ¢ÃÂÃÂ Jump back (up) one half screen
 " move to beginning B /end E of line
 nnoremap B ^
 " go to the next full stop even if it's on the next line (experimental)
@@ -716,7 +651,7 @@ cmap xx :q!<cr>
 " === Keybindings collected === 
 
 " Normal Mode
-" nmap ee 0A ÂkDÂÃ½aj0 " @e :: join lower line to upper line which is short
+" nmap ee 0A ÃÂkDÃÂÃÂ½aj0 " @e :: join lower line to upper line which is short
 
 " K             :: get vim help for the item under the cursor
 " gf            :: open a new tab for the file under the cursor

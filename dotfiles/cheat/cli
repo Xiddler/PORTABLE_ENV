@@ -3,6 +3,8 @@
 # fstab, fdisk etc.
 # view partitions
 sudo fdisk -l
+# also 
+sudo cfdisk /dev/sdb 
 
 # view UUIDs
 sudo blkid

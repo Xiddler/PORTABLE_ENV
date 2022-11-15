@@ -25,3 +25,22 @@ find -name "*.pdf" | xargs --no-run-if-empty rm
 
 # open a book from the results of my booksearch command using okular
 ❯ echo $(booksearch interface) | xargs okular # it works!!
+
+# display the lines in all the files in $HOME (2022-11-08)  
+❯ lf | awk '{ print $NF }' | xargs wc -l
+grep: warning: stray \ before -
+   13 helix1.txt
+   69 mdvile2.html
+   66 mdvile.html
+   35 p_vile.html
+   23 p_vile.txt
+   30 space_BU.txt
+   76 space.txt
+   12 testament.md
+   56 vile.html
+   36 vile.md
+   23 vile.txt
+   14 wants.txt
+  453 total
+
+

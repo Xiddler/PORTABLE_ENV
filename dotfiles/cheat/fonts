@@ -2,6 +2,7 @@
 #---------------------------------------
 zim/Computer/MAJORS:Fonts
 #---------------------------------------
+#
 /usr/share/fonts                        :: (seen in /etc/fonts/fonts.conf)
 /usr/local/share/fonts                  :: where to place NEW fonts (seen in /etc/fonts/fonts.conf)
 /usr/share/fontconfig/conf.avail        :: https://wiki.archlinux.org/title/Font_configuration

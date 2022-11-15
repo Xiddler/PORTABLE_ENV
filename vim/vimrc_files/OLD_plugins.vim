@@ -1,5 +1,5 @@
 " Filepath  /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim 
-" /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim
+"/home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim
 
 " This file is where I call the plugins I want to use in vim. There is a line in .vimrc that calls this file
 " I am using the vim-plug plugin manager from https://github.com/junegunn/vim-plug 
@@ -16,31 +16,22 @@
 
 call plug#begin('/home/donagh/PORTABLE_ENV/vim/plugins')
 Plug 'tpope/vim-commentary'
-
 " Plug 'https://github.com/vim-airline/vim-airline.git'
-Plug 'vim-airline/vim-airline' 
-Plug 'https://github.com/vim-airline/vim-airline-themes.git' 
-"
+" Plug 'vim-airline/vim-airline'
+" Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 " for the following plugin, -> %cp -r ~/.vim/plugins/stellarized ~/.vim/pack/nightsense/start/      :: this seems to be necessary
-" nightsense seems gone from github Note added 2022-11-03  Plug 'nightsense/stellarized'              
+" Plug 'nightsense/stellarized'              
 " gruvbox - added 2022-04-02. For a change.
-" Plug 'https://github.com/morhetz/gruvbox.git'
-" dracula - added 2022-11-04 (to get nicer markdown style - hate the yellow)
-" Plug 'https://github.com/dracula/vim.git'
-" iceberg - added 2022-11-04
-Plug 'https://github.com/cocopon/iceberg.vim.git'
-
+Plug 'https://github.com/morhetz/gruvbox.git'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'easymotion/vim-easymotion' " Use ./ to highlight search pairs 
 Plug 'https://github.com/junegunn/goyo.vim.git'
 Plug 'https://github.com/junegunn/limelight.vim.git'
-" the following plugin shows a buffer to the right on typing this  <-- yes the quote symbol!
+" the following plugin shows a buffer to the right on typing this " <-- yes the quote symbol!
 Plug 'junegunn/vim-peekaboo'
-" Plug 'zaid/vim-rec'  Plug 'https://github.com/zaid/vim-rec'  for rec-files 
+" Plug 'zaid/vim-rec'  Plug 'https://github.com/zaid/vim-rec' " for rec-files 
 " Plug 'tpope/vim-abolish' " Plug 'https://github.com/tpope/vim-abolish.git' - added 2022-09-02
 Plug 'https://github.com/tpope/vim-abolish.git' "  added 2022-09-02
-" FZF 
-Plug 'https://github.com/junegunn/fzf.git' " added 2022-10-27
 "
 Plug 'https://github.com/vim-scripts/loremipsum' " added 2022-09-15 Usage: :Loremipsum 55 will output 55 latin words 
 
@@ -63,33 +54,13 @@ call plug#end()
 " Preferred Plugins {{{
 " NOTE: These are now managed using vim.plug (see above Enable / Disable Plugins)
 
-" === Preferred Plugins === 
+" "=== Preferred Plugins === 
 " added vim-plug to manage plugins
 " cd ~/.vim
 " autoload  pack  plugins  spell
 " autoload contains plug.vim
 " pack/nightsense/start/stellarized
 " plugins - this is the location for Plug to place other plugins
-
-" CURRENT - CURRENT - CURRENT - CURRENT - CURRENT 
-" 2022-11-15 
-
-" - Finishing ... Done!
-" - fzf: Resolving deltas: 100% (1914/1914), done.
-" - goyo.vim: Already installed
-" - iceberg.vim: Already installed
-" - limelight.vim: Already installed
-" - loremipsum: Already installed
-" - ranger.vim: Already installed
-" - tabular: Already installed
-" - vim-abolish: Already installed
-" - vim-airline-themes: Already installed
-" - vim-airline: Already installed
-" - vim-commentary: Already installed
-" - vim-easymotion: Already installed
-" - vim-lsp: Already installed
-" - vim-markdown: Already installed
-" - vim-peekaboo: Already installed
 "
 " OLD - OLD - OLD - OLD - OLD - OLD - OLD - OLD  
 " donaghm [16:50 Tue 20/04] [~/.vim] 
@@ -169,7 +140,7 @@ call plug#end()
    " https://github.com/jez/vim-superman
    "
    " peekaboo
-   " let's you see the regs e.g. a side buffer pops up when you press 
+   " let's you see the regs e.g. a side buffer pops up when you press " 
    " https://github.com/junegunn/vim-peekaboo
    "
    " easymotion - <leader>/ will highlight file with letters everywhere
