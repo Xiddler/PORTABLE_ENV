@@ -457,7 +457,10 @@ set guifont="Source Code Pro for Powerline 10"
 " note:  /usr/share/fonts/OTF/PowerlineSymbols.otf: PowerlineSymbols:style=Medium 
 "  If you want to use plain ascii symbols, set this variable:
   " let g:airline_symbols_ascii = 1
-"
+
+" disable whitespace annoyance added 2022-11-15
+let g:airline#extensions#whitespace#enabled = 0
+
 " if powerline font symbols are partially messed up
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}

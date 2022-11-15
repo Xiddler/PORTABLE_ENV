@@ -23,10 +23,14 @@ Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 "
 " for the following plugin, -> %cp -r ~/.vim/plugins/stellarized ~/.vim/pack/nightsense/start/      :: this seems to be necessary
 " nightsense seems gone from github Note added 2022-11-03  Plug 'nightsense/stellarized'              
+" 
 " gruvbox - added 2022-04-02. For a change.
 " Plug 'https://github.com/morhetz/gruvbox.git'
+"
 " dracula - added 2022-11-04 (to get nicer markdown style - hate the yellow)
+" https://github.com/dracula/dracula-theme.git
 " Plug 'https://github.com/dracula/vim.git'
+
 " iceberg - added 2022-11-04
 Plug 'https://github.com/cocopon/iceberg.vim.git'
 

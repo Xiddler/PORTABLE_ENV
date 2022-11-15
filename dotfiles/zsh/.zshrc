@@ -1,13 +1,26 @@
+# the following (uncommented line) allows profiling `zsh` to see what may be making it slow. NOTE: zprof needs to be uncommented at the last line too.
+# zmodload zsh/zprof
+# NOTE: Aliases handled in .zsh_aliases or .bash_aliases
+#
+# POWERLEVEL - START 
+
+# see End of This File 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  # source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
-# the following allows profiling `zsh` to see what may be making it slow. NOTE: zprof needs to be uncommented at the last line too.
-# zmodload zsh/zprof
-# NOTE: Aliases handled in .zsh_aliases or .bash_aliases
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  # source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -17,11 +30,10 @@ fi
   # source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 # fi
 
-# POWERLEVEL
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # cf. WARNING at LINUX:1Linux Live USB:01installed apps:zsh shell:ISSUES
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+#
+# END POWERLEVEL section
 
 
 
@@ -350,5 +362,9 @@ source ~/.config/dirjump/dirjump
 
 # sd  https://github.com/ianthehenry/sd 
 # fpath=(/home/donagh/Applications/sd_scripts_dir_utility/sd/sd $fpath)
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+ [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 # see first line regarding zprof 
 # zprof 
