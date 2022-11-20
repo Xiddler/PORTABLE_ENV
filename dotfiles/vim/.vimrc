@@ -217,7 +217,7 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 " Toggle goyo & limelight
 map <F9> :Goyo <cr>
-nnoremap <leader>gy :Goyo <cr>
+nnoremap <space>g<space> :Goyo <cr>
 
 " use emmet for html and css only
 let g:user_emmet_install_global = 0
@@ -275,12 +275,16 @@ map <c-h> <c-w>h
 "}}}
 " {{{ Spaces And Tabs  
 "=== Spaces And Tabs ===
-set tabstop=4
-set shiftwidth=4
+
+set tabstop=4       " tabs are at proper location 
+set shiftwidth=4    " indenting is 4 spaces
 set smarttab
+"set expandtab       don't use actual tab character (ctrl-v)
 set softtabstop=4   " number of spaces in tab when editing
 set expandtab       " tabs are spaces
-" set wm=30         " wrap text before too far to the right
+set smartindent     " does the right thing (mostly) in programs
+" set wm=30          wrap text before too far to the right
+
 " }}}
 " {{{ UI Config 
 
@@ -668,6 +672,14 @@ nnoremap <leader>u v~
 " {{{ My Digraphs 
 "
 " ==== DIGRAPHS ===
+
+"}}}
+"{{{ Spelling 
+" === Spelling ===
+
+set dictionary=/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/WORDS/Great_word_lists/TWL06_Scrabble_Word_List.txt
+" alternative (450,000+ words)
+" set dictionary=/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/WORDS/Great_word_lists/Word_lists/Linuxwords/linuxwords.1/dict
 
 "}}}
 " {{{ Custom Movements 

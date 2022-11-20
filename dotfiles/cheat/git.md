@@ -1,4 +1,5 @@
 # Terms in git
+
     Commit - stores the current contents of the index in a new commit along with a log message from the user describing the changes
 
     Branch - a pointer to a commit
@@ -65,8 +66,8 @@ git stash list
 # To apply the most recent change and remove the stash from the stash list
 git stash pop
 
-# To apply any stash from the list of stashes. This does not remove the stash
-# from the stash list
+## To apply any stash from the list of stashes. This does not remove the stash
+## from the stash list
 git stash apply stash@{6}
 # END STASH 
 
@@ -293,15 +294,19 @@ When you're done, just delete blah_branch_backup.
 
 # Notes on git / magit                                      ACTION
 # STATE: uncreated or unmodified
-vim <filename>                                          <-- create or modify
+
+vim <filename>                                          -- create or modify
 # STATE: untracked == unstaged == created or modified
-git add <file>     [magit s]                            <-- stage or track
+
+git add <file>     [magit s]                            -- stage or track
 # STATE: tracked == staged == uncommitted
-git commit -m "<message>"   [magit c]                   <-- commit
+
+git commit -m "<message>"   [magit c]                   -- commit
 # STATE: committed
-git push origin main                                    <-- push (to remote)
+
+git push origin main                                    -- push (to remote)
 # STATE: saved in the cloud
-#
+
 # interactive cheat sheeear
 https://ndpsoftware.com/git-cheatsheet.html#loc=local_repo
 
@@ -323,11 +328,16 @@ $HOME/DONAGHS/MY_ZIM/Computer/.git
 $HOME/DONAGHS/all_org/.git
 
 # global git config file
+
 #The global Git config file is stored in a file uncreatively named .gitconfig the user’s home directory i.e. $HOME/.gitconfig. 
 git config --global --list --show-origin
 
  # check your current global config
 git config --global -l 
 
-# END
+# git 'undo'
+git checkout foo.txt									:: Undo local changes (like svn revert)
+git reset HEAD foo.txt									:: Remove from staging area (local copy still modified).
+
+# END 
 
