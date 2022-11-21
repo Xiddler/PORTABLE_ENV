@@ -146,7 +146,7 @@
        ;;nim               ; python + lisp at the speed of c
        ;;nix               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
-        (org +pretty)        ; organize you plain life in plain text +pretty added 2022-01-03; this adds the pretty circles instead of *
+        (org +pretty)        ; organize your plain life in plain text +pretty added 2022-01-03; this adds the pretty circles instead of *
         (org-bullets)        ; temporarily removed 2022-01-05 to check issue with [SPC] a t not working
        ;;perl              ; write code no one else can comprehend
        ;;php               ; perl's insecure younger brother

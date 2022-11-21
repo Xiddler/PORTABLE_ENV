@@ -727,6 +727,7 @@ https://orgmode.org/worg/org-faq.html   :: FAQ
 ** ISSUES
 *** DONE Circles instead of asterisks FIXED
 In init.el add (org +pretty) and sync. Also (org-bulllets) maybe.
+On 2022-11-21 similar problem. I made an new temporary file newtodos.org and incrementtally imported everything piece by piece and thereby eliminated the problem.
 *** DONE [SPC] a t nor [SPC] t t are functioning - not displaying global TODOS in a list - FIXED
     ERROR MSG: Wrong type argument: stringp,<filepath> ::
     TRIED:
