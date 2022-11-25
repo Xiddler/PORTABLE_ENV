@@ -15,8 +15,10 @@
 "
 
 call plug#begin('/home/donagh/PORTABLE_ENV/vim/plugins')
+" commentary i.e. gcc  etc. 
 Plug 'tpope/vim-commentary'
 
+" ____________   THEMES _______________________________
 " Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'vim-airline/vim-airline' 
 Plug 'https://github.com/vim-airline/vim-airline-themes.git' 
@@ -34,31 +36,43 @@ Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 " iceberg - added 2022-11-04
 Plug 'https://github.com/cocopon/iceberg.vim.git'
 
+
+" ____________   END THEMES _______________________________
+
 Plug 'francoiscabrol/ranger.vim'
+
 Plug 'easymotion/vim-easymotion' " Use ./ to highlight search pairs 
-Plug 'https://github.com/junegunn/goyo.vim.git'
-Plug 'https://github.com/junegunn/limelight.vim.git'
+
+
+" ____________   UI  _______________________________
+Plug 'https://github.com/junegunn/goyo.vim.git' " Nice zen mode 
+Plug 'https://github.com/junegunn/limelight.vim.git' " Darkens non-focussed areas 
+Plug 'godlygeek/tabular'  " for aligning text
+
 " the following plugin shows a buffer to the right on typing this  <-- yes the quote symbol!
 Plug 'junegunn/vim-peekaboo'
 " Plug 'zaid/vim-rec'  Plug 'https://github.com/zaid/vim-rec'  for rec-files 
-" Plug 'tpope/vim-abolish' " Plug 'https://github.com/tpope/vim-abolish.git' - added 2022-09-02
+" Plug 'tpope/vim-abolish'  Plug 'https://github.com/tpope/vim-abolish.git' - added 2022-09-02
 Plug 'https://github.com/tpope/vim-abolish.git' "  added 2022-09-02
 " FZF 
 Plug 'https://github.com/junegunn/fzf.git' " added 2022-10-27
 "
 Plug 'https://github.com/vim-scripts/loremipsum' " added 2022-09-15 Usage: :Loremipsum 55 will output 55 latin words 
 
-" Markdown plugins
+" ____________   MARKDOWN   _______________________________
 " With none of these enabled ##'s are salmon-coloured - but no folding
 " Check if this displays headings - yes but loses coloured # as in vim-mardown-folding 
-Plug 'godlygeek/tabular'  " for aligning text
 " preservim/vim-vim-markdown  https://github.com/preservim/vim-markdown.git  (this one has more stars and seems more active....)
 Plug 'plasticboy/vim-markdown'
+" Latex 
 " Plug 'vim-latex/vim-latex'
 " the following plugin (vim-markdown) includes Syntax Concealing - use :set conceallevel=2
 " Plug 'https://github.com/preservim/vim-markdown'                        
 " the following hides the heading in markdown files - a problem (is this why plasticboy is better?) - <-- use :set foldignore=# 
 " Plug 'masukomi/vim-markdown-folding'
+"
+" ____________   Language Server Protocol _______________________________
+" 
 Plug 'prabirshrestha/vim-lsp'
 
 call plug#end()

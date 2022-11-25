@@ -1,5 +1,6 @@
 Opened 2022-01-22
 
+
 # INTRO
             
             Computer concepts in plain English
@@ -93,3 +94,11 @@ Microprocessors (µPs) are also referred to as microprocessor units (MPUs). Earl
 
 By comparison, microcontrollers (µCs), which are also referred to as microcontroller units (MCUs), contain non-volatile memory like Flash, volatile memory like SRAM, peripherals like counters, timers, analog-to-digital converters (ADCs), and communications interfaces like UART, I2C, and SPI. Essentially, a microcontroller is a little standalone computer presented on a single silicon chip that contains its own program, which it starts executing as soon as it powers-up. This explains why microcontrollers appear in embedded systems, and why embedded systems appear all over the place.
 
+# Airgap 
+refers to a computer (or network) that is physically disconnected from a larger network and the Internet.
+
+# Yggdrasil 
+a Mesh Network that is fully Encrypted and provides an IPv6 IP on the network to anyone.
+ 
+# Attention Economy
+Profiting from convincing (or, perhaps more accurately, “manipulating”) people to pay attention. 

@@ -11,6 +11,9 @@ gron 2programming_repository/python/2python_studies/json_handy/lichess_profile.j
 # jq
 jq . story_hn.json
 
+# fx 
+# https://github.com/antonmedv/fx
+#
 
 # ----------------------------------------------------------------
 # Python

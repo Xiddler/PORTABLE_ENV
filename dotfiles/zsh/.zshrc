@@ -2,6 +2,9 @@
 # zmodload zsh/zprof
 # NOTE: Aliases handled in .zsh_aliases or .bash_aliases
 #
+# issue with locale - added 2022-11-22
+LC_TIME='en_IE.UTF-8'
+#
 # POWERLEVEL - START 
 
 # see End of This File 

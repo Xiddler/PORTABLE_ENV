@@ -1,9 +1,11 @@
 # Webrefs
+https://github.com/jlevy/the-art-of-command-line    《good for a freshen up  
 https://wiki.bash-hackers.org/
-https://mywiki.wooledge.org/BashFAQ
+https://mywiki.wooledge.org/BashFAQ  AND  https://mywiki.wooledge.org/BashGuide
 # bash resources
 https://github.com/onceupon/Bash-Oneliner # one-liners 
-http://mywiki.wooledge.org/BashGuide # Bash Guide with loads of resources 
+# Bash referenc manual 
+sudo pamac install  bash-docs --> /usr/share/docs/bash/*.html 
 
 # To implement a for loop:
 for file in *;
@@ -68,3 +70,19 @@ done
 # Arithmetic 
 $((   )) # correct syntax 
 
+
+# Here doc 
+A "here document" allows redirection of multiple lines of input as if from a file:
+Example:
+cat <<EOF
+input
+on multiple lines
+EOF
+
+# octal permissions of a file
+$ stat -c '%A %a %n' pgn_2.txt | cut -d' ' -f2     
+$ 644
+# list all files with permission 755 in current folder
+stat -c '%A %a %n' *.sh | grep 755
+# alternatively 
+find "$filename" -prune -printf '%m\n'
