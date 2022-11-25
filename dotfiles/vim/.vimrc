@@ -636,7 +636,7 @@ endif
 " abbreviations
 
 " insert @dm -
-nmap mm 0i@dm -<left><right><right>
+nmap mm 0i## @dm -<left><right><right>
 
 " need to be in insert mode for these then press <CR> or <SPC> to instigate 
 ab mys "Proactively engaged in making a better life for myself and/or others"
