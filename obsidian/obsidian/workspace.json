@@ -1,0 +1,123 @@
+{
+  "main": {
+    "id": "3373ddf6a60954e4",
+    "type": "split",
+    "children": [
+      {
+        "id": "704f52ca2e14c0c1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "66832a1151e39c73",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "How_did_consciousness_evolve.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "cdb9beb4df2e7909",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Mental_Illness_Is_in_Your_Head.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "37dcfd14b195fbda",
+    "type": "split",
+    "children": [
+      {
+        "id": "797d0da25dc8faba",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b0b08ece6b48a903",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "360b2740e6c9d8bd",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 386.5
+  },
+  "right": {
+    "id": "4220f022768ab21f",
+    "type": "split",
+    "children": [
+      {
+        "id": "12f36721ebfbc12c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2de9a78a9b205ec0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "How_did_consciousness_evolve.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "66832a1151e39c73",
+  "lastOpenFiles": [
+    "Can_a_biologist_fix_a_radio.pdf",
+    "run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/books/Articles/images_for_md/Bread_Bacon_6a00d83451b2c969e2015391f27bab970b-500wi.jpg.md",
+    "images_for_md/Win_Formula_6a00d83451b2c969e2015435c5e878970c-500wi.jpg",
+    "Mental_Illness_Is_in_Your_Head.md",
+    "Fame.md",
+    "The_Abolition_of_Work.md",
+    "Hypnerotomachia.md",
+    "Malcolm_Gladwell_on_Prostate_Cancer.md",
+    "images_for_md/Chickent_Escapes_6a00d83451b2c969e2015391f27a24970b-500wi.jpg",
+    "images_for_md/Bread_Bacon_6a00d83451b2c969e2015391f27bab970b-500wi.jpg"
+  ]
+}

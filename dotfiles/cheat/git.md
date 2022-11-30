@@ -52,24 +52,23 @@ git add .
 
 
 # STASH
-# To stash changes locally, this will keep the changes in a separate changelist
-# (ie a cache) called stash and the working directory is cleaned. 
-# You can apply changes from the stash anytime
+To stash changes locally, this will keep the changes in a separate changelist
+(ie a cache) called stash and the working directory is cleaned. 
+You can apply changes from the stash anytime
 git stash
 
-# To stash changes with a message
+## To stash changes with a message
 git stash save "message"
 
-# To list all the stashed changes
+## To list all the stashed changes
 git stash list
 
-# To apply the most recent change and remove the stash from the stash list
+## To apply the most recent change and remove the stash from the stash list
 git stash pop
 
-## To apply any stash from the list of stashes. This does not remove the stash
-## from the stash list
+## To apply any stash from the list of stashes. This does not remove the stash from the stash list
 git stash apply stash@{6}
-# END STASH 
+## END STASH 
 
 # To commit staged changes
 git commit -m "Your commit message"
@@ -144,8 +143,14 @@ git log @{u}..
 git log -p feature --not master
 git diff master...feature # note the 3 dots not 2 
 
-# Interactive rebase for the last 7 commits
+# rebase
+git rebase is a tool for making cleaner histories to be used in conjunction with merge.
+eg 
+Interactive rebase for the last 7 commits
 git rebase -i @~7
+
+GOLDEN RULE:
+> "Do not rebase commits that exist outside your local repository and/or that people may have based work on."
 
 # Diff files WITHOUT considering them a part of git
 # This can be used to diff files that are not in a git repo!
@@ -239,9 +244,9 @@ git config --global user.name "Donagh" && git config --global user.email xiddler
 
     git undo - see https://blog.waleedkhan.name/git-undo/
     
+    git reset is the command we use when we want to move the repository back to a previous commit, discarding any changes made after that commit
     git reset --hard - To removed staged and working directory changes (this will delete all 'added' files!)
-
-    git reset <file> - undo $ git add <file> before a commit 
+    git reset <file> - To undo $ git add <file> before a commit 
 
     git show 
 
@@ -255,13 +260,22 @@ man gittutorial # https://git-scm.com/docs/gittutorial
 #  retrieve a single file from an older hasj
 $ git checkout [revision_hash] [file_name]
 $ git checkout [revision_hash] [file_name]
-# HEAD - Points to the Last Commit on the current repository i.e. [revision_hash]
-# HEAD^ - Last Commit - 1;
-# HEAD^^ - Last Commit - 2;
-# HEAD~10 - 10 commits behind of HEAD;
-# example
+# HEAD 
+Points to the Last Commit on the current repository i.e. [revision_hash]
+ HEAD^ - Last Commit - 1;
+ HEAD^^ - Last Commit - 2;
+ HEAD~10 - 10 commits behind of HEAD;
+ example
 -> % git checkout HEAD^^ autokey/l3.py # fails
+
+detached HEAD means that the main/master commit is not checked out and that the HEAD is at another branch.
+
 # git restore -s f0b9ef914c7ca2 autokey/l3.py  ???
+
+git restore --staged <file>
+AND
+git reset <file>
+do the same thing!
 
 # use git blame on PORTABLE_ENV for example
 git blame vim/vimrc
@@ -281,11 +295,27 @@ IF you want to create a safe point just before doing a tricky merge, just spin o
 git branch blah_branch_backup
 
 Later, if your merge gets completely messed up, you can do:
+git merge --abort
+
+WAIT!
+This may be right but it is confusing.
+Ok, I create a branch with
+git checkout -b newfuchingbranch
+OR
+git branch newfuchingbranch
+
+What then?
+Do I checkout main before merging? It's not obvious, you fuckin cunt.
+Where do I do the merge from? Which branch? Does it matter?
+Too many fucking questions you fucking cunt.
 
 git merge --abort
 
+The merge command is confusing, to say the least... so...
+
 git reset --hard blah_branch_backup
 
+Ok, in case of a fuckup....
 That final command will restore the current branch's HEAD to point to the same commit as blah_branch_backup.
 
 This same pattern is useful for other dangerous commands, like rebases or filter-branch.
@@ -329,7 +359,7 @@ $HOME/DONAGHS/all_org/.git
 
 # global git config file
 
-#The global Git config file is stored in a file uncreatively named .gitconfig the user’s home directory i.e. $HOME/.gitconfig. 
+## The global Git config file is stored in a file uncreatively named .gitconfig the user’s home directory i.e. $HOME/.gitconfig. 
 git config --global --list --show-origin
 
  # check your current global config
@@ -338,6 +368,27 @@ git config --global -l
 # git 'undo'
 git checkout foo.txt									:: Undo local changes (like svn revert)
 git reset HEAD foo.txt									:: Remove from staging area (local copy still modified).
+
+# .git/ folder
+
+The HEAD file tells Git which branch we’re working on 
+
+The config file contains repo-specific configuration. 
+
+The description file is only used by the GitWeb program
+
+The hooks directory is used to store scripts that fire on certain events – for example, running a linter before you commit.
+
+The info directory has a single file, exclude, which contains a list of per-repo ignores. Like a gitignore file, but it doesn’t need to be checked in.
+
+The objects directory should be empty when a repo is git init'ed (aside from two more empty directories)
+
+The refs directory is also empty at the start
+
+# trees & blobs
+
+blobs are like files, trees are like directories. 
+
 
 # END 
 

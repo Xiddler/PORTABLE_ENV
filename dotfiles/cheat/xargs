@@ -1,10 +1,10 @@
 # What does xargs do exactly?
-# runs a given command on each line of input from a piped command
+# Answer: runs a given command on each line of input from a piped command 
 #
 # find all file name ending with .pdf and remove them
 find -name *.pdf | xargs rm -rf
 
-# if file name contains spaces you should use this instead
+# if file name contains spaces you should use this instead 
 find -name *.pdf | xargs -I{} rm -rf '{}'
 
 # xargs -I{}: on each line in the input, run the given command and replace {} with the contents of the line

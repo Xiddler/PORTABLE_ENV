@@ -102,3 +102,17 @@ a Mesh Network that is fully Encrypted and provides an IPv6 IP on the network to
  
 # Attention Economy
 Profiting from convincing (or, perhaps more accurately, “manipulating”) people to pay attention. 
+# Stack and heap
+
+The three types of memory, and when to use them
+
+## Stack
+Stack or Automatic storage is where local variables are stored. A new region of automatic storage is created for a function when it is called, and deleted when it returns. Only the return value is kept; it is copied into the automatic storage of the function which called it. This means that it is unsafe to return a pointer to a local variable, because the underlying data will be silently deleted. Automatic storage is often called the stack.
+
+## Heap
+Heap or Allocated storage is the result of using malloc(). It survives until it is free()‘d, so can be passed wherever, including upwards to calling functions. It is often called the heap.
+
+## (other)
+Static storage is valid for the lifetime of the program. It is allocated when the process starts. Global variables are stored here.
+
+

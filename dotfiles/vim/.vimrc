@@ -184,13 +184,19 @@ nnoremap <C-n> :exe 'set nu!' &nu ? 'rnu!' : ''
 "This mapping makes macros even easier to remember: hit qq to record, q to stop recording, and Q to apply.
 nnoremap Q @@
 vnoremap Q :norm @q<cr>
+
+" Cursor
 set virtualedit=all " allows cursor to be moved anywhere in normal mode
-" set textwidth=0
-set wrapmargin=5
 set noswapfile " prevents the automatic creation of swapfiles
 set hidden    " allows switching buffers without saving
 set listchars=tab:>\ ,trail:.
-set nolist    " adds a . to empty spaces; do I need this? "set list will show the dots for spaces and tabs
+
+" Wrapping lines 
+set wrap
+set wrapmargin=5 " set wm=5 
+set linebreak " prevents wrapping in the middle of a word 
+" set nolist    " adds a . to empty spaces; do I need this? "set list will show the dots for spaces and tabs
+" set textwidth=0 " set textwidth=80 for a hard wrap 
 
 " --- FZF ---
 " :FZF 
@@ -283,7 +289,6 @@ set smarttab
 set softtabstop=4   " number of spaces in tab when editing
 set expandtab       " tabs are spaces
 set smartindent     " does the right thing (mostly) in programs
-" set wm=30          wrap text before too far to the right
 
 " }}}
 " {{{ UI Config 
