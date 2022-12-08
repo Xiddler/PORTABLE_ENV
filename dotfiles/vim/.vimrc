@@ -663,6 +663,8 @@ map <leader>tt :terminal zsh<CR>
 
 " open today's markdown journal in a new tab
 nmap <leader>mj :tabe /home/donagh/DONAGHS/personal/journal/$(date +%Y)/$(date +%m)/$(date +%d)-$(date +%m).md<cr>
+" open yesterday's markdown journal in a new tab
+" nmap <leader>my :tabe /home/donagh/DONAGHS/personal/journal/$(date +%Y)/$(date +%m)/$(date +%d-1)-$(date +%m).md<cr>
 " /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/journal/2022/02/03-02.md
 " nmap <leader>mj :!mj<CR>
 " same for work journal
@@ -673,6 +675,17 @@ map <leader>th <C-w>t<C-w>H
 map <leader>tk <C-w>t<C-w>K
 " Capitalize/minusculize letter under cursor
 nnoremap <leader>u v~
+
+" Open a file with the appropriate application - in the background 
+" relative path
+" nnoremap gX :silent :execute "!xdg-open" expand('%:p:h') . "/" . expand("<cfile>") " &"<cr>
+" what about absolute path ?  the folllowing doesn't work 
+" nnoremap gX :silent :execute "!xdg-open" expand('%:p') . "/" . expand("<cfile>") " &"<cr>
+
+
+
+
+
 "}}} 
 " {{{ My Digraphs 
 "

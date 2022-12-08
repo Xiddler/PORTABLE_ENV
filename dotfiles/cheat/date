@@ -12,7 +12,10 @@ date -d @1440359821
 # Convert Unix timestamp to Date(Mac)
 date -r 1440359821
 
-# Print date in format suitable for affixing to file names
+# Convert 'now' to Unix timestamp 
+date +"%s"
+
+# Print today's date in format suitable for affixing to file names
 date +"%Y%m%d_%H%M%S"
 
 # in a script
@@ -21,6 +24,27 @@ echo $p
 # same as ...
 P=$(date -I)
 echo $P
+
+# yesterday's date
+date --date="yesterday"
+date  --date="yesterday" +"%Y-%m-%d" # YYYY-mm-dd format
+
+# 2 days ago 
+date --date="2 days ago" 
+> Tue 29 Nov 2022 11:58:59 GMT
+
+# next Friday
+date --date='next Friday'
+
+# last day of next month  NOTE: -d = --date 
+date -d 'next month - '`date +%d`'day'
+> Sat 31 Dec 2022 12:04:18 GMT
+OR
+date --date "next month - $(date +%d) day"
+
+# 3 months ago
+date --date '3 months ago - '`date +%d`'day'
+> Wed 31 Aug 2022 13:07:39 IST
 
 %FORMAT String 	Description
 %% 	a literal %

@@ -390,5 +390,18 @@ The refs directory is also empty at the start
 blobs are like files, trees are like directories. 
 
 
+# git verbs what they do table
+
+git clone, git init								:: get a repository to work with 
+git tag, git branch								:: give commits human readable names 
+git diff										:: compare source between commits 
+gitk, git log									:: look at the whole graph of commits 
+gitk, git switch, git checkout					:: look at a commit both the code content and meta-data 
+git stage, git add								:: add commits 
+git reset, git restore, git clean, git checkout	:: discard changes both local changes and whole commits 
+git rebase, git cherry-pick						:: change/move commits around the graph 
+git push, git fetch, git remote, git merge		:: share your code and history with your friends 
+git worktree									:: have more than one commit checked out at a time 
+
 # END 
 
