@@ -1,4 +1,5 @@
 # Help
+# See ~/.cheat/time.md for timezones 
 date --help
 man date
 https://www.epochconverter.com/

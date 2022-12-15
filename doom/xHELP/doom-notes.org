@@ -4,7 +4,7 @@
 #+STARTUP: overview
 #+options: il
 #+tags:    help orgmode org-mode donaghs
-#+EDITED:  2022-09-25
+#+EDITED:  2022-12-13; 2022-09-25
 
 * DOOM EMACS
 ** appearance
@@ -887,6 +887,16 @@ l l          :: (in a git file) opens the "short log"
 2022-07-06
 Q. When I write the commit message, do I save and how do I complete the commit?
 A. Yes, save and then C-c C-c to complete the commit
+* which-key
+:overview:
+
+This is the temporary buffer that opens at the bottom when you press a key and shows the available keys
+
+:end:
+
+M-x which-key   <-- view options for which-key
+
+which-key-show-full-major-mode  -- show all bindings in the map for the current mode
 * Tramp
 :about:
 (Transparent Remote Access, Multiple Protocols)

@@ -1,16 +1,24 @@
 # Quick Ref.
 #Rem: Two separate actions: Do Ctrl-a together then let go and then % for example.
+
+# in the terminal 
 Start tmux						:: tmux
-Vert. split						:: C-a %
-Hor. split						:: C-a "
+List tmux windows               :: tmux ls
+Kill everything                 :: tmux kill-session -a
+
+# inside tmux 
+Vert. split						:: C-a % or C-a v
+Hor. split						:: C-a " or C-a h
 Kill window						:: C-a x
 Focus window left				:: C-a ←  or Alt ←
 Focus window right				:: C-a →  or Alt →
 Detach from tmux				:: C-a d
-Info                            :: C-a ?
+Info                            :: C-a ? [ list all the tmux options ] 
 Go full screen                  :: C-a z
 Resize pane                     :: C-a Alt →  
 Rename the current window       :: C-a , 
+Detach from tmux                :: C-a d
+
 
 # Start tmux:
 tmux

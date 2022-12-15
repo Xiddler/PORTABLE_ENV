@@ -3,23 +3,25 @@
 ;;; $DOOMDIR/packages.el
 ;;; Code:
 ;;; Commentary:
-;; To install a package with Doom you must declare them here and run 'doom sync'
+;; To install a package in Doom that does not come with default Doom you must declare them here and run 'doom sync'
 ;; on the command line, then restart Emacs for the changes to take effect -- or
 ;; use 'M-x doom/reload'.
 
 ;; NOTE: (Added by Donagh McCarthy on 2022-06-23). doom does not use packages.el at all - Wait, that's not true, look at rec-mode
+;; NOTE: (Added by Donagh McCarthy on 2022-12-13) . Doom has it's own packages. Install packages from melpa using this file - like rec-mode below.
+
 ;; The only line that is uncommented is at the very end - (provide 'packages)
 
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
 ;; EXAMPLE
-(package! rec-mode)
+; (package! rec-mode)
 ;; then doom sync
 
 ;; DONAGHS
 ;; add theme not available in default doom. Note: remember to call it in config.el
-;; (package! spacemacs-theme)
+;; (package! spacemacs-theme) ;; it displays the *** in org-mode - yuk
 
 ;;
 ;; To install a package directly from a remote git repo, you must specify a

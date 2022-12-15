@@ -1,8 +1,18 @@
 # Running emacs
 
   GUI mode            $ emacs       (with doom installed will open doom-emacs for me)
-  Terminal mode       $ emacs -nw
+  Terminal mode       $ emacs -nw   No Window (ie no GUI)
   Quick               $ emacs -q    (will open the non-doom raw emacs GUI)
+
+# "jk" for ESC
+# M-x package-install evil-escape 
+#To toggle the evil-escape mode globally:
+
+M-x evil-escape-mode
+
+# The key sequence can be customized with the variable evil-escape-key-sequence. For instance to change it for jk:
+# Enter the following in config.el
+(setq-default evil-escape-key-sequence "jk")
 
 # Basic usage (non-evil mode)
 

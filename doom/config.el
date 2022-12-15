@@ -74,10 +74,13 @@
 ;;
 ;; (setq doom-theme 'tsdh-dark )
 (setq doom-theme 'doom-acario-dark ) ;; the purple for diary.org is not the nicest otherwise a nice theme
+;; (setq doom-theme 'spacemacs-theme-dark ) ;; it keeps the * in org-mode - yuk
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/all_org/org")
+;; *emphasis* __bold__
+(setq org-hide-emphasis-markers t)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -137,6 +140,11 @@
 (map! :n ",/" 'evil-avy-goto-char) ;; similar to vim-easymotion; also 'avy-goto-char and 'avy-goto-char-2
 (map! :n "SPC w 3" 'split-window-right) ;; similar to C-x 3 which is the emacs way and SPC w r is taken
 (map! :n "SPC b SPC" 'org-mark-ring-goto) ;; go back to where link started from
+(map! :n "SPC s w" 'dictionary-search) ;; use "dict" i.e. Webster's et al. dictionaries (same as -> % dict <word>)
+;; NOTE about jk for esc
+;; file --> ~/.emacs.d/modules/editor/evil/config.el
+;; 329:        evil-escape-key-sequence "jk"
+
 
 ;; Mappings to change
 ;; (map! :n "nm" 'display-line-numbers-mode)
