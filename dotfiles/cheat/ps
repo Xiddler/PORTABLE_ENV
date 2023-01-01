@@ -3,6 +3,7 @@ ps aux
 
 # To list a process tree
 ps axjf
+# but what does it mean? Consider  (AUR) sysstat --> pidstat also  
 
 # To list every process owned by foouser:
 ps -aufoouser

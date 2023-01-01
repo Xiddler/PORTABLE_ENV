@@ -21,8 +21,8 @@ restic
 rsync
 
 
-# pastebins
 # Pastebin for text / code
+
 https://hastebin.com/
 
 # Pastebin for images
@@ -39,3 +39,20 @@ multimarkdown file.md > file.html
 # converting to PDF 
 
 use pandoc, html2pdf
+
+# image manipulation
+
+GIMP
+Pinta
+Xnviewmp
+imagemagick
+Inkscape
+(Photoshop)
+(Illustrator)
+
+
+# moving images
+
+GIF
+Geogebra
+

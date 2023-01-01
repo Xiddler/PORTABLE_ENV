@@ -81,7 +81,7 @@
        ;;eshell            ; the elisp shell that works everywhere
        ;;shell             ; simple shell REPL for Emacs
        ;;term              ; basic terminal emulator for Emacs
-       ;;vterm             ; the best terminal emulation in Emacs
+       vterm             ; the best terminal emulation in Emacs
 
        :checkers
        syntax              ; tasing you for every semicolon you forget
@@ -137,7 +137,7 @@
        ;;javascript        ; all(hope(abandon(ye(who(enter(here))))))
        ;;julia             ; a better, faster MATLAB
        ;;kotlin            ; a better, slicker Java(Script)
-       ;;latex             ; writing papers in Emacs has never been so fun
+       latex             ; writing papers in Emacs has never been so fun
        ;;lean
        ;;factor
        ;;ledger            ; an accounting system in Emacs
@@ -146,13 +146,14 @@
        ;;nim               ; python + lisp at the speed of c
        ;;nix               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
-        (org +pretty)        ; organize your plain life in plain text +pretty added 2022-01-03; this adds the pretty circles instead of *
-        (org-bullets)        ; temporarily removed 2022-01-05 to check issue with [SPC] a t not working
+       (org +pretty)        ; organize your plain life in plain text +pretty added 2022-01-03; this adds the pretty circles instead of *
+       ;;remove () from the following as org-bullets wasn't working - but z o stopped working now 2022-12-17
+       ;; org-bullets        ; temporarily removed 2022-01-05 to check issue with [SPC] a t not working; note org-superstar-mode also relevant
        ;;perl              ; write code no one else can comprehend
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
-       ;;python            ; beautiful is better than ugly
+       python            ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
        ;;rest              ; Emacs as a REST client
@@ -175,7 +176,7 @@
        ;;(wanderlust +gmail)
 
        :app
-       ;; calendar         ; I don't like it. It removes the small buffer calendar. Reverted 2022-04-08
+       ;; calendar         ; (DONAGH - I don't like it. It removes the small buffer calendar. Reverted 2022-04-08)
        ;;irc               ; how neckbeards socialize
        ;;(rss +org)        ; emacs as an RSS reader
        ;;twitter           ; twitter client https://twitter.com/vnought

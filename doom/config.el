@@ -31,13 +31,26 @@
 (setq doom-font (font-spec :family "Liberation Mono" :size 20))
 ;; Needs to be installed from PORTABLE_ENV
 ;;
+;; org-capture - locations for captures
+;;
+;; (setq org-capture-templates
+      ;; '(("t" "Todo" entry (file+headline "~/zArchive/Todo.org" "00 INBOX")
+         ;; "* TODO %? \n %i ")
+        ;; ("n" "Story Note" entry (file+headline "writing/story_note.org" "Story Inbox")
+         ;; "* %?  \n  %i\n  %a ")))
+;;
+;; count words
+;; no -enable-word-count available for the following. How come?
+;; (setq doom-modeline-enable-word-count t)
+;; could use M-x count-words g C-g OR higlight region (using V ) and M-= outputs to buffer
+
 ;; Emacs dictionary (sudo pamac install  dictionary and restart emacs)
 ;; For dictionary.el to have a side bar -  mandatory, as the dictionary misbehaves!
-(setq switch-to-buffer-obey-display-actions t)
-(add-to-list 'display-buffer-alist
-   '("^\\*Dictionary\\*" display-buffer-in-side-window
-     (side . left)
-     (width . 50)))
+;; (setq switch-to-buffer-obey-display-actions t) ;; this function call does not exist in Doom
+;; (add-to-list 'display-buffer-alist
+   ;; '("^\\*Dictionary\\*" display-buffer-in-side-window
+     ;; (side . left)
+     ;; (width . 50)))
 ;; did not work!
 
 ;; To make Emacs use your local server instead of a remote one, customize dictionary-server to localhost:
@@ -50,12 +63,14 @@
 ;; Disable exit confirmation.
 (setq confirm-kill-emacs nil) ;; quick exit
 
+;; use zsh in the vterm terminal
+(setq vterm-shell "/usr/sbin/zsh")
+
 ;; reduce delay on pressing SPC
-(setq which-key-idle-delay 0.5)
+(setq which-key-idle-delay 0.25)
 
 ;; collapse outline when not at heading. See https://github.com/tkf/org-mode/blob/master/lisp/org.el#L963
 (setq org-cycle-emulate-tab 'white)
-
 
 ;; use avy search in all windows
 ;;; Code:
@@ -79,7 +94,8 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/all_org/org")
-;; *emphasis* __bold__
+
+;; hide emphasis markers in //italic// in org mode. Works!
 (setq org-hide-emphasis-markers t)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
@@ -120,6 +136,7 @@
 (map! :n "Q" '@q) ; shortcut for @q to run a recorded macro
 ;; (map! :n "Q" 'org-babel-execute-src-block ) ;; Quantify! or Execute snippet!
 (map! :n "SPC d" 'treemacs ) ;; Tree directory for files / folders
+;; (map! :n "SPC t d" 'treemacs-quit ) ;; Quit treemacs - added 2022-12-17 -- Use SPC b k to kill buffer
 (map! :n "tt" 'org-todo )
 (map! :n "ts" 'org-schedule )
 (map! :n "ta" 'org-agenda )
@@ -141,6 +158,8 @@
 (map! :n "SPC w 3" 'split-window-right) ;; similar to C-x 3 which is the emacs way and SPC w r is taken
 (map! :n "SPC b SPC" 'org-mark-ring-goto) ;; go back to where link started from
 (map! :n "SPC s w" 'dictionary-search) ;; use "dict" i.e. Webster's et al. dictionaries (same as -> % dict <word>)
+;; (map! :n "z o" 'evil-open-fold) ;; for some reason z o -> +org/open-fold is not functioning - added 2022-12-18
+(map! :n "z ;" '+org/toggle-fold) ;; for some reason z o -> +org/open-fold is not functioning - added 2022-12-18
 ;; NOTE about jk for esc
 ;; file --> ~/.emacs.d/modules/editor/evil/config.el
 ;; 329:        evil-escape-key-sequence "jk"

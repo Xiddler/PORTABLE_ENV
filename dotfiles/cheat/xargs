@@ -26,7 +26,7 @@ find -name "*.pdf" | xargs --no-run-if-empty rm
 # open a book from the results of my booksearch command using okular
 ❯ echo $(booksearch interface) | xargs okular # it works!!
 
-# display the lines in all the files in $HOME (2022-11-08)  
+# display the line count in all the files in $HOME (2022-11-08)  
 ❯ lf | awk '{ print $NF }' | xargs wc -l
 grep: warning: stray \ before -
    13 helix1.txt
@@ -42,5 +42,15 @@ grep: warning: stray \ before -
    23 vile.txt
    14 wants.txt
   453 total
+(Note: lf is an alias for list (only) files )
 
+# Easily handling arguments with whitespace 
+
+  find . -type f -print | xargs wc -l
+
+vs.
+
+  find . -type f -print0 | xargs -0 wc -l
+
+> If you have filenames with whitespace, the first will skip a bunch of files, the second won't.
 

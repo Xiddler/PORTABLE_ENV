@@ -679,8 +679,7 @@ Not sure about the above. I have an alias vx which opens a file called scratch.m
  A modern plugin manager. Started using this 2022-02-05
 install
 cd ~/.vim/autoload
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 INSTALL NEW PLUGIN - 2 steps
 cd ~/PORTABLE_ENV/vim/dot_vim/plugins and then (usually)
@@ -802,5 +801,76 @@ trailing, mix-indent-file
 [573]trailing means that you have trailing whitespace on line 573, meaning that there are spaces/tabs/other whitespace following the last non-whitespace character on that line.
 
 [515]mixed-indent means that line 515 has indentation with both tabs and spaces.
+
+# Regex
+Lookaround examples using test "foobar foo barfoo"
+
+## 1. Match foo which is not followed by bar: 
+> /foo\(bar\)\@!
+
+foobar foo barfoo
+       ^      ^
+       two matches here
+
+## 2.  Match foo which is preceded by bar: 
+> /\(bar\)\@<=foo
+
+foobar foo barfoo
+              ^
+              one match here
+
+## 3.  Match foo which is not preceded by bar: 
+> /\(bar\)\@<!foo
+
+foobar foo barfoo
+^      ^
+two matches here
+
+## 4.  Match foo which is neither followed nor preceded by bar:
+> /\(bar\)\@<!foo\(bar\)\@!
+
+foobar foo barfoo
+       ^
+       one match here
+
+## 5. Match foo which is followed by bar:
+> /foo\(bar\)\@=
+
+foobar foo barfoo
+^
+one match here
+
+# \ze and \zs for positive lookaround
+
+We may also use \zs and ze for positive lookbehind and lookahead. 
+\zs means that the actual match starts from here and \ze means that the actual match ends here. 
+Take the above foobar text as an example: foobar foo barfoo
+
+    Match foo preceded by bar: \bar\zsfoo
+    Match foo followed by bar: foo\zebar
+
+In the above two match, bar is not part of the match. You can see that\ze and \zs simplify the pattern for positive lookaround.
+Think of zs meaning start 
+Think of ze meaning end
+
+# Save every line of a buffer to a new file
+
+:g/^/exe ".w ".line(".").".txt" 
+saves each line in the buffer to a separate file.
+i love (parens) and then some
+
+# Special arguments                       
+
+> Some special arguments are <silent> <Cmd> <buffer> <unique>
+
+The Vimscript function strftime is executed when the abbreviation cdate is used.
+
+:iab <expr> cdate strftime('%Y-%m-%d') - 
+
+> In that example the special argument is <expr> which says to run the function strftime
+
+Execute the command :delete without leaving INSERT mode.
+
+:inoremap <c-d> <Cmd>delete<cr> 
 
 # END

@@ -4,3 +4,12 @@
 $ pandoc -o output.html input.txt
 
 $ pandoc -o filename.html myfile.pdf
+
+# from org file to pdf
+❯ pandoc -t pdf -f org -o info1.pdf info.org
+# where the source file is info.org
+# -t to format
+# -f from format
+# -o output file
+
+

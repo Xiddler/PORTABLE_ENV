@@ -4,7 +4,7 @@
 #+STARTUP: overview
 #+options: il
 #+tags:    help orgmode org-mode donaghs
-#+EDITED:  2022-12-13; 2022-09-25
+#+EDITED:  2022-12-19; 2022-12-16; 2022-09-25
 
 * DOOM EMACS
 ** appearance
@@ -106,6 +106,8 @@ describe-syntax (SPC h s)
 describe-char (SPC h ')
 customize
 info (SPC h i)
+** drawers
+aka [[property drawers]]
 
 ** elisp
 *** REPL
@@ -149,6 +151,7 @@ discover new packages : Alt-x lists installed packages
      ~/.emacs.d/bin/doom build
 *** Get zo, zm, zR etc. to work
 UPDATE: zo and other native vim folding commands come with evil
+UPDATE: (2022-12-19) - z o is not functioning so I am using z ; instead - see config.el
 *** Navigate to point in file
 **** Using [[avy]] package
 g s [SPC] <letters> <-- In-file navigation.
@@ -165,6 +168,10 @@ e.g. [SPC] w w for write and quit
 say I press [SPC] f f : I would like hints / popup to select file (there is jump list but...)
 *** Go to my private config
 [SPC] f p      <-- go to my config folder
+*** Publish to html/pdf/Latex
+M-x org-export-dispatch SPC m e
+OR
+C-c C-e
 ** icons
 M-x all the icons 
 
@@ -279,7 +286,7 @@ There are a number of templates to save notes to
 
 ** packages
 *** emacs
-REM: Doesn't use emacs packages.el it uses straight.el instead for package management. Use init.el
+REM: DOOM doesn't use emacs packages.el it uses straight.el instead for package management. Use init.el
 **** install new package
 Unhiglight in init.el
 The following does not apply to Doom emacs. For Doom emacs,
@@ -317,7 +324,7 @@ M-x package-refresh-contents
 M-x list-packages
 (current example is pdfgrep - which is present on 2022-09-25 )
 Some hints at https://github.com/doomemacs/doomemacs/issues/1468
-Note: The preferred (ONLY?) way to install packages is via packages.el
+Note: The preferred (only?) way to install non-built-in packages is via packages.el
 
 **** Plain emacs
 - M-x packge-install
@@ -350,6 +357,10 @@ Successful on 2020-08-04
 In [[file:packages.el][Packages.el]]
 (package! org-roam
   :recipe (:host github :repo "org-roam/org-roam"))
+
+*** counsel
+*** company
+A modular text completion framework
 
 *** dired
 :about:
@@ -409,6 +420,9 @@ NOTE: For more comprehensive in-file search look at avy.
 folding in markdown
 *** flycheck
 Syntax highlighting
+cf. flymake
+*** flymake
+Syntax highlighting
 
 *** helm
 a generic completion mechanism for Emacs - in insert mode.
@@ -417,6 +431,7 @@ see also : ivy, vertico (below)
 For viewing images (not great)
 *** ivy
 Ivy, a generic completion mechanism for Emacs - in insert mode.
+
 Useful when searching for files with [SPC] f f and tab completion
 Toggle ivy using M-x ivy
 Select one string from a list of strings in a pop-up instead of having to type it out.
@@ -426,7 +441,12 @@ Also there is a jumplist available with ivy. [SPC] s j
 View directory tree in a panel
 added (require 'neotree) to config.el on 2020-05-20
 *** org-babel
+
+Org babel transforms the lowly executable source block into a complete literate programming environment,
 Invoke using <s[TAB] <language>
+
+Example:
+
 #+BEGIN_SRC python
 #!/usr/sbin/python
 def fib(n):
@@ -437,6 +457,8 @@ def fib(n):
     return b if n > 0 else 0
 
 print(fib(5))
+print("done")
+
 #+END_SRC
 
 #+RESULTS:
@@ -444,8 +466,11 @@ print(fib(5))
 
 
 
+
+
 Allows to have short snippets of code that can be run inside org-mode. ?Literate programming?
 See [[snippets ][snippets]] below
+
 *** projectile
 **** About
  Its goal is to provide a nice set of features operating on a project level without introducing external dependencies
@@ -490,6 +515,7 @@ M-x treemacs <-- opens explorer for CURRENT directory
 use vim keys for navigating
 *** vertico
 [[https://docs.doomemacs.org/latest/modules/completion/vertico/][vertico online]]
+
 This module enhances the Emacs search and completion experience, and also provides a united interface for project search and replace, powered by ripgrep.
 It does this with several modular packages focused on enhancing the built-in completing-read interface, rather than replacing it with a parallel ecosystem like ivy and helm do.
 ** projects
@@ -511,6 +537,10 @@ For example, my username is “jdemaris” so my folder is /home/donagh/.emacs.d
     (projectile-add-known-project “/home/donagh/Projects/playground/elixir”)
     (projectile-add-known-project “/home/donagh/Projects/playground/otp”)"
     test addition
+** property drawers
+
+Property drawers stay folded by default, and are intended to store a collection of key-value pairs, but they don't get exported by default, and so are a good way to keep your notes and your writing together and then export, as needed when drafting is done.
+
 ** search in buffer
 [[search]] in current buffer
 
@@ -571,6 +601,10 @@ ANOTHER EXAMPLE
 (message "hello Dolly")
 (+ 222 (* 88 32))
 #+END_SRC
+
+#+RESULTS:
+: 3038
+
 Then press Q to get...
 #+RESULTS:
 : 3038
@@ -592,6 +626,8 @@ defamation
 To make a tag (only on headlines) add a colon before and after a word like this :tags: Now 'tags' is a tag.
 
 To search for a tag C-c \ OR C-c / m
+SPC m l
+
 
 " An excellent way to implement labels and contexts for cross-correlating information is to assign tags to headlines. "
 tags are words preceded by : and ending in : e.g. :donaghs: or :work: - these can then be searched using  C-c \ OR C-c / m
@@ -670,23 +706,6 @@ REM: Use z in this view to select desired period e.g. week/month
 **** View Deadlines
 [SPC] a a & deadlines shown in pink
 
-** org-mode keywords headings
-Close doom-emacs
-
-To add a new keyword:
-/home/donaghm/.emacs.d/modules/lang/org/config.el
-and add in the REPT(r)
-Then run doom sync and re-open doom-emacs
-On 2021-09-30 I changed HOLD to HAPPENING for events that are under sail and /or ongoing. Repeated this on new install Oct 2021.
-
-Alternatively (for example), in config.el
-(setq org-todo-keywords
-'((sequence "TODO(t)" "|" "DONE(d)")
-(sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")))
-
-The vertical bar separates the ‘TODO’ keywords (states that need action) from the ‘DONE’ states (which need no further action).
-If you do not provide the separator bar, the last state is used as the ‘DONE’ state.
-
 ** checkboxes - Make a new checkbox i.e. [ ]
 
 rem C-c C-c to update progress
@@ -709,6 +728,20 @@ rem C-c C-c to update progress
 tt and then select from menu
 Example - hover over STRT and press tt
 **** .STRT
+** Clock mode
+M-x org-clock-in
+M-x org-clock-out
+M-x org-clock-report
+etc.
+
+webrefs:
+
+Clocking commands --> https://orgmode.org/manual/Clocking-commands.html
+
+Clock table --> https://orgmode.org/manual/The-clock-table.html
+
+** drawers
+[[property drawers]]
 ** help
 *** reference
 *** In doom-emacs
@@ -745,6 +778,32 @@ I did change the files config.el and init.el but to not great avail
 Solution: restart doom and/or doom sync
 
 STATUS - 2020-10-03 FIXED
+** org-refile
+Move a Heading and all it's contents to another location within the file.
+
+** org-mode keywords headings
+
+*** Method 1
+In config.el add:
+  (setq org-todo-keywords
+    '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
+      (sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "WAIT(w@/!)" "HOLD(h)" "|" "COMPLETED(c)" "CANC(k@)")))
+
+The vertical bar separates the ‘TODO’ keywords (states that need action) from the ‘DONE’ states (which need no further action).
+If you do not provide the separator bar, the last state is used as the ‘DONE’ state.
+
+*** Method 2
+
+Close doom-emacs
+
+To add a new keyword:
+/Open Welcome to the Emacs shell
+
+~/PORTABLE_ENV/doom/xHELP $ //home/donagh//.emacs.d/modules/lang/org/config.el
+and add in the REPT(r)
+Then run doom sync and re-open doom-emacs
+On 2021-09-30 I changed HOLD to HAPPENING for events that are under sail and /or ongoing. Repeated this on new install Oct 2021.
+
 ** search
 Search current buffer:
 1. /               <-- vim-like buffer search
@@ -890,7 +949,7 @@ A. Yes, save and then C-c C-c to complete the commit
 * which-key
 :overview:
 
-This is the temporary buffer that opens at the bottom when you press a key and shows the available keys
+This is the temporary buffer that opens at the bottom when you press a key and shows the available keys / options
 
 :end:
 
@@ -910,12 +969,12 @@ SPC
     SPC find file
     , switch buffer
     . browse files
-    : MX-    (Same as A-x)
+    : M-x    (Same as Alt-X)
     ; EX
     < switch buffer
     ` eval
     u universal arg
-    x pop up scratch
+    b x pop up scratch
     ~ toggle last popup
     TAB workspace
         TAB Display tab bar
@@ -1154,6 +1213,10 @@ A way to hide information and reveal it when required
 
 
    #+END_SRC
+
+   #+RESULTS:
+   : None
+
    C-c C-c inside the code block (not working)
    #+RESULTS:
    : None
@@ -1210,6 +1273,10 @@ eg link to todos.org
                              "/home/donagh/org/school.org"
                              "/home/donagh/org/home.org"))
 #+END_SRC
+
+#+RESULTS:
+| /home/donagh/org/work.org | /home/donagh/org/school.org | /home/donagh/org/home.org |
+
 Press C-c a t to enter the global todo list.
 
 *** spacemacs_navigating

@@ -13,6 +13,7 @@
 "inoremap jk <esc>
 set <esc>=jk 
 
+
 " use spacebar to enter command mode. This matches doom-emacs for me and my muscle memory
 nnoremap <space> :
 
@@ -636,7 +637,6 @@ endif
 " join up line with line below 
 " nmap ,e g0jI<backspace> <esc>jg0 " Vim's J already does this! 
 
-"we are the "best of all
 
 " abbreviations
 
@@ -648,6 +648,7 @@ ab mys "Proactively engaged in making a better life for myself and/or others"
 ab FP 'Full Picture' 
 abb dtw - Donagh the Wise
 ab lorem "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
+ab FQHB Fully Qualified Human Being 
 
 
 " for the vim-notes plugin. ~/.vim/misc/notes/user
