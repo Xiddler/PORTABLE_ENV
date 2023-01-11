@@ -116,6 +116,7 @@ foobar4 = f'{foo}{bar}' # It is best - termed f-strings
 myl = [foobar1, foobar2, foobar3, foobar4]    
 [print(x) for x in myl] --> 'foobar'
 
-
+# Update
+python -m pip install --upgrade pip setuptools wheel
 
 

@@ -1,0 +1,20 @@
+Operating System 	Package Manager
+-----------------------------------
+Alpine Linux 	    apk-tools 	
+Arch Linux 	        pacman 	
+Fedora Linux 	    DNF 	
+FreeBSD 	        pkg 	
+Gentoo Linux 	    Portage 	
+Microsoft Windows 	Chocolatey 	
+Microsoft Windows 	Scoop 	
+NixOS 	            Nix 	
+Solus 	            eopkg 	
+Various 	        Cargo 	
+Various 	        Conda 	
+Various 	        Homebrew 	
+Various 	        Nix 	
+Various 	        Snap 	
+Various 	        asdf 	
+Void Linux 	        XBPS 	
+asdf                install 
+macOS 	            MacPorts 	

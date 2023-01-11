@@ -4,7 +4,7 @@
 #+STARTUP: overview
 #+options: il
 #+tags:    help orgmode org-mode donaghs
-#+EDITED:  2022-12-19; 2022-12-16; 2022-09-25
+#+EDITED:  2023-01-03; 2022-12-19; 2022-12-16; 2022-09-25
 
 * DOOM EMACS
 ** appearance
@@ -15,6 +15,14 @@ HOW?
 *** Change ellipsis for folded headings
 In config.el add
 (setq org-ellipsis " ▼ ")
+** bookmarks
+To allow me to jump to a bookmarked file or location easily.
+
+SPC RET  Create or jump to bookmark i.e. list bookmarked files/locations
+M-x bookmark (for a list of available commands)
+SPC b m  Set bookmark   [ emacs: C-x r m ]
+M-x bookmark-bmenu-list [ emacs: C-x r l ]
+
 ** buffers
 [SPC] ,                <-- switch buffers
 [SPC] b b              <-- list current buffers
@@ -564,12 +572,54 @@ l" 'org-insert-link )
 and
 C-h r r to refresh config.el file
 
-** snippets
+** tags :tags:
+
+To make a tag (only on headlines) add a colon before and after a word like this :tags: Now 'tags' is a tag.
+
+To search for a tag C-c \ OR C-c / m
+SPC m l
+
+
+" An excellent way to implement labels and contexts for cross-correlating information is to assign tags to headlines. "
+tags are words preceded by : and ending in : e.g. :donaghs: or :work: - these can then be searched using  C-c \ OR C-c / m
+see https://www.gnu.org/software/emacs/manual/html_node/org/Tag-searches.html#Tag-searches
+** themes
+[SPC] h t
+
+OR M-x load-theme <-- opens available themes
+
+Preferred theme:
+2022-01-01
+tsdh-dark        :: Sky blue headlines w green subs
+Others:
+doom-solarized-dark :: Sky blue headlines w. yellow subs
+doom-acario-dark :: Blue headlines with purple subs
+doom-dark+       :: Dim sky blue headlines with dim pink subs
+doom-molokai     :: Cerise headlines with orange subs
+doom-material    :: Gre/blue headlines w dim purple subs
+** tramp
+[[Tramp][Tramp]]
+** sparse trees
+[SPC] m s s r <pattern>
+For filtering all but what you want to see
+C-c / r <pattern>
+eg C-c / r navig
+*** windows
+[SPC] w
+[SPC] w L <-- to split window
+[SPC] w w (toggles) <-- to move to next window
+
+** yasnippets
+
+webref:https://arjanvandergaag.nl/blog/using-yasnippet-in-emacs.html
+
    Yasnippet & Yasnippet-snippets
    [SPC] i s
   This is the "incrementally" snippet in text-mode.
- 
+
 [SPC] i s or just <s [TAB]
+
+
 The following was a begin src block
 #+BEGIN_SRC emacs-lisp
 (defun great (name)
@@ -620,43 +670,6 @@ Then press Q to get...
 
 appear
 defamation
-
-** tags :tags:
-
-To make a tag (only on headlines) add a colon before and after a word like this :tags: Now 'tags' is a tag.
-
-To search for a tag C-c \ OR C-c / m
-SPC m l
-
-
-" An excellent way to implement labels and contexts for cross-correlating information is to assign tags to headlines. "
-tags are words preceded by : and ending in : e.g. :donaghs: or :work: - these can then be searched using  C-c \ OR C-c / m
-see https://www.gnu.org/software/emacs/manual/html_node/org/Tag-searches.html#Tag-searches
-** themes
-[SPC] h t
-
-OR M-x load-theme <-- opens available themes
-
-Preferred theme:
-2022-01-01
-tsdh-dark        :: Sky blue headlines w green subs
-Others:
-doom-solarized-dark :: Sky blue headlines w. yellow subs
-doom-acario-dark :: Blue headlines with purple subs
-doom-dark+       :: Dim sky blue headlines with dim pink subs
-doom-molokai     :: Cerise headlines with orange subs
-doom-material    :: Gre/blue headlines w dim purple subs
-** tramp
-[[Tramp][Tramp]]
-** sparse trees
-[SPC] m s s r <pattern>
-For filtering all but what you want to see
-C-c / r <pattern>
-eg C-c / r navig
-*** windows
-[SPC] w
-[SPC] w L <-- to split window
-[SPC] w w (toggles) <-- to move to next window
 
 ** workspaces
 [SPC] [TAB] n create new workspace
@@ -1161,6 +1174,14 @@ SPC
         z     '+org/close-all-folds  ;; z M is such a pain
         c SPC 'calendar ;; quick calendar
         i Y   'clipboard-yank ;; paste from system clipboard; Note: SPC i y (lowercase) pastes from emacs yank
+* ISSUES
+** TODO zo not working
+Date: 2023-01-03
+Status: Unresolved
+
+using home-made 'z;' instead (for org/fold-toggle)
+Tried doom upgrade. No success.
+
 * zArchive
 ** Spacemacs notes
 A lot of these are useful for doom emacs. Especially, org-mode

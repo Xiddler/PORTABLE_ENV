@@ -1,0 +1,11 @@
+
+
+# check partition
+lsblk
+
+
+# make file system (assuming sdb1)
+sudo mkfs.ext4 /dev/sdb1 -v
+
+# check
+sudo file -sL /dev/sdb1

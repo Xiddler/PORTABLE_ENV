@@ -1,6 +1,9 @@
 # set a shell
 SHELL=/bin/bash
 
+# Pro tip: 
+Don't forget to end your cron files with an empty line or a comment, otherwise it will not work.
+
 # crontab format
 * * * * *  command_to_execute
 - - - - -
