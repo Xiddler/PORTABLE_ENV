@@ -4,6 +4,9 @@
 # in the terminal 
 Start tmux						:: tmux
 List tmux windows               :: tmux ls
+
+# sessions
+Create new session              :: tmux new -s "basic"
 Kill everything                 :: tmux kill-session -a
 
 # inside tmux 

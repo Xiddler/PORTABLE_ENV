@@ -79,7 +79,7 @@ git commit --amend
 # Git commit in the past
 git commit --date="`date --date='2 day ago'`"
 git commit --date="Jun 13 18:30:25 IST 2015"
-# more recent versions of Git also support --date="2 days ago" directly
+ more recent versions of Git also support --date="2 days ago" directly
 
 # To change the date of an existing commit
 git filter-branch --env-filter \
@@ -89,7 +89,7 @@ git filter-branch --env-filter \
          export GIT_COMMITTER_DATE="Sat May 19 01:01:01 2007 -0700"
      fi'
 
-# To removed staged and working directory changes
+# To remove staged and working directory changes
 git reset --hard
 
 # To go 2 commits back
@@ -164,7 +164,7 @@ git reset --hard origin/master
 git submodule update --init --recursive
 
 # Perform a shallow clone to only get latest commits
-# (helps save data when cloning large repos)
+ (helps save data when cloning large repos)
 git clone --depth 1 <remote-url>
 
 # To unshallow a clone
@@ -177,14 +177,14 @@ git checkout --orphan branch_name
 git checkout -b master upstream/master
 
 # Remove all stale branches (ones that have been deleted on remote)
-# So if you have a lot of useless branches, delete them on Github and then run this
+ So if you have a lot of useless branches, delete them on Github and then run this
 git remote prune origin
 
 # The following can be used to prune all remotes at once
 git remote prune $(git remote | tr '\n' ' ')
 
 # Revisions can also be identified with :/text
-# So, this will show the first commit that has "cool" in their message body
+ So, this will show the first commit that has "cool" in their message body
 git show :/cool
 
 # Undo parts of last commit in a specific file
@@ -194,7 +194,7 @@ git checkout -p HEAD^ -- /path/to/file
 git revert <commit SHA>
 
 # Pick a commit from a branch to current branch. This is different than merge as
-# this just applies a single commit from a branch to current branch
+ this just applies a single commit from a branch to current branch
 git cherry-pick <commit SHA1>
 
 # to see status of remote
@@ -202,10 +202,11 @@ git fetch --dry-run --verbose
 
 # To remove a commit done locally: 
 git reset --soft HEAD^
-# HEAD^ means go back one commit from where HEAD is now. This will get you to the state just before the last commit. 
 
-# To remove a commit you have already pushed to remote: 
-# The safest way of removing a commit from remote is to revert the bad commit. Find the commit hash and:
+ HEAD^ means go back one commit from where HEAD is now. This will get you to the state just before the last commit. 
+
+ To remove a commit you have already pushed to remote: 
+ The safest way of removing a commit from remote is to revert the bad commit. Find the commit hash and:
 git revert <commit-hash>
 
 # Nice display
@@ -216,19 +217,19 @@ git config --list
 
 # After ssh-keygen...
  -> % eval "$(ssh-agent -s)"
-# output is like this: Agent pid 588483
-# example
+ output is like this: Agent pid 588483
+ example
 donaghm [13:40 Sat 19/12] [~/SD64/REPOSITORIES/2programming/ssh/ssh_keys_2020] 
 -> % ssh-add id_rsa_GH 
 
 # push to ssh using id_rsa
  git push ssh://xiddler@server/opt/project master
 
-# 2020-12-19 using persona access token for git push etc.
+# 2020-12-19 using personal access token for git push etc.
 git push origin master
 user: Xiddler
 password: <enter pat here> 
-# NOTE: don't put PAT in here (this file is on github!) as Github will prevent it's use which is a good thing.
+ NOTE: don't put PAT in here (this file is on github!) as Github will prevent it's use which is a good thing.
 
 # set identity
 git config --global user.name "Donagh" && git config --global user.email xiddler@gmail.com
@@ -257,7 +258,7 @@ git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(
 man giteveryday # https://git-scm.com/docs/giteveryday
 man gittutorial # https://git-scm.com/docs/gittutorial
 
-#  retrieve a single file from an older hasj
+#  retrieve a single file from an older hash
 $ git checkout [revision_hash] [file_name]
 $ git checkout [revision_hash] [file_name]
 # HEAD 

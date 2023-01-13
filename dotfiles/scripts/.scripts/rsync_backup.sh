@@ -6,6 +6,12 @@
 # this script backs up the files and folders of value to 
 # ~/BACKUPS/RSYNCED which is symlinked to ~/cifs_share/RSYNCED linked to the RPi
 # ln -s ~/cifs_share/RSYNCED ~/BACKUPS/RSYNCED
+#
+########################################
+#
+# REM: after pressing enter for rsyncz (the alias for this script), zsh will prompt for sudo password, ignore and press Enter. Don't enter the # password.
+#
+########################################
 
 password=1234
 
@@ -31,5 +37,7 @@ sudo -S <<< $password rsync -a --delete ~/DONAGHS/personal/ ~/BACKUPS/RSYNCED/pe
 
 # all_orgmode
 sudo -S <<< $password rsync -a --delete  ~/Dropbox/org-mode/org ~/BACKUPS/RSYNCED/all_org/
+# sudo -S <<< 1234 rsync -a --delete  ~/Dropbox/org-mode/org ~/BACKUPS/RSYNCED/all_org/
+# echo $password | sudo -S  rsync -a --delete  ~/Dropbox/org-mode/org ~/BACKUPS/RSYNCED/all_org/
 
 
