@@ -1,0 +1,3 @@
+# Example for plotting in the terminal
+
+gnuplot -e "set terminal sixelgd;set hidden3d;set view 60, 30, 1, 1.1;set samples 50, 50;set isosamples 52, 52;set contour base;set cntrparam order 8;set cntrparam bspline;splot [-12:12.01] [-12:12.01] sin(sqrt(x**2+y**2)) / sqrt(x**2+y**2)"

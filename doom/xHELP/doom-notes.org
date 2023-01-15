@@ -743,7 +743,7 @@ rem C-c C-c to update progress
 tt and then select from menu
 Example - hover over STRT and press tt
 **** .STRT
-** Clock mode
+** clock mode
 M-x org-clock-in
 M-x org-clock-out
 M-x org-clock-report
@@ -796,8 +796,7 @@ STATUS - 2020-10-03 FIXED
 ** org-refile
 Move a Heading and all it's contents to another location within the file.
 
-** org-mode keywords headings
-
+** org-mode keywords HEADINGS
 *** Method 1
 In config.el add:
   (setq org-todo-keywords
@@ -813,8 +812,14 @@ Close doom-emacs
 
 To add a new keyword:
 /Open Welcome to the Emacs shell
+see /home/donagh/PORTABLE_ENV/doom/dot_e_m_l_o_config.el
+basically just symlink the files after a reboot
+ln -s /home/donagh/PORTABLE_ENV/doom/dot_e_m_l_o_config.el ~//.emacs.d/modules/lang/org/config.el
 
-~/PORTABLE_ENV/doom/xHELP $ //home/donagh//.emacs.d/modules/lang/org/config.el
+
+~/PORTABLE_ENV/doom/xHELP
+ //home/donagh//.emacs.d/modules/lang/org/config.el
+
 and add in the REPT(r)
 Then run doom sync and re-open doom-emacs
 On 2021-09-30 I changed HOLD to HAPPENING for events that are under sail and /or ongoing. Repeated this on new install Oct 2021.
