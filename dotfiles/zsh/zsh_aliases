@@ -96,6 +96,7 @@ projs() { cd /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES
 #donaghs() { cd $HOME/SD64/DONAGHS }
 mind() { cd $personal/minding_me }
 words() { cd $HOME/REPOS/WORDS/ }
+articles() { cd $HOME/REPOS/books/Articles/Articles_downloaded } # use autokey instead so as to be able to tabe in vim. Added 2021-10-25.
 books() { cd $HOME/REPOS/books/ } # use autokey instead so as to be able to tabe in vim. Added 2021-10-25.
 b_d() { cd $HOME/REPOS/books/ } # a collection of abbrs. for books; bd is books_directory; br is books_reading directory for notes; b2r is books to read;
 b_r() { cd $HOME/REPOS/books/0READING/0Reading_notes/ && ls } # b is prefix for books so br = books reading, b2r = books to read, bd = books directory

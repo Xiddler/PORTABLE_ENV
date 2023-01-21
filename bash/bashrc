@@ -11,7 +11,7 @@ alc() { $EDITOR $personal/minding_me/alcohol_journal.md }
 grat() { $EDITOR $personal/minding_me/gratitude_journal.md }
 ideas() { $EDITOR $personal/ideas/ideas_to_go_at.md }
 insp() { $EDITOR $personal/ideas/inspire.md }
-jour() { cd $journal && ls }
+# jour() { cd $journal && ls }
 # See  alias -g mj=md_journal above
 # mind() {cd $personal/minding_me }
 # pain() { $EDITOR $personal/minding_me/pain_points.md }

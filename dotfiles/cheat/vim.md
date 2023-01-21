@@ -77,7 +77,7 @@ y{motion}       yank text that {motion} moves over
 Y               yank from cursor to end of line (personal mapping)
 p               paste after cursor
 P               paste before cursor
-<Del> or x      delete a character
+"Del" or x      delete a character
 dd              delete a line
 d{motion}       delete text that {motion} moves over
 
