@@ -87,6 +87,7 @@ org() { cd $HOME/all_org/org }
 az() { cd $HOME/all_org/org }
 2p() { cd $HOME/REPOS/2programming/ }
 2py() { cd $HOME/REPOS/2programming/python }
+til() { jumpapp emacs  ~/DONAGHS/personal/learning/til.org }
 # sd() { cd $HOME/SD64/ }
 # pers() { cd $personal && ls }
 planning() { cd  $personal/planning/ }
@@ -96,6 +97,7 @@ projs() { cd /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES
 #donaghs() { cd $HOME/SD64/DONAGHS }
 mind() { cd $personal/minding_me }
 words() { cd $HOME/REPOS/WORDS/ }
+hard() { vim $HOME/REPOS/WORDS/MY_WORDS/hard_words.txt }
 articles() { cd $HOME/REPOS/books/Articles/Articles_downloaded } # use autokey instead so as to be able to tabe in vim. Added 2021-10-25.
 books() { cd $HOME/REPOS/books/ } # use autokey instead so as to be able to tabe in vim. Added 2021-10-25.
 b_d() { cd $HOME/REPOS/books/ } # a collection of abbrs. for books; bd is books_directory; br is books_reading directory for notes; b2r is books to read;
@@ -103,6 +105,7 @@ b_r() { cd $HOME/REPOS/books/0READING/0Reading_notes/ && ls } # b is prefix for 
 b_2r() {vim ~/REPOS/books/0READING/2Read.md } # books to read; see b_r and b_d above
 reading() { cd $HOME/REPOS/books/0READING/0Reading_notes/ && ls }
 repos() { cd $HOME/REPOS/ } # 
+projects() { cd $HOME/REPOS/projects/ }
 #bookmarks() { cd $HOME/SD64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
 # rnotes() { cd $HOME/REPOS/books/0Reading/0Reading_notes && ls }
 alc() { cd  $personal/alcohol/ }
@@ -213,23 +216,32 @@ alias gett='$HOME/.scripts/get_password.sh'
 #{{{ JOURNAL
 # journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
 # Go to Current Year/Month 
+#  variables
 k=$(date +"%Y/%m")
-journal='cd $HOME/DONAGHS/personal/journal/'$k # short form
-personal='cd $HOME/DONAGHS/personal' # short form
-alias -g mj='$HOME/.scripts/markdown_journal.sh'
-alias -g wj='vim $HOME/DONAGHS/personal/means/work_journal.md'
-alias -g aj='vim $HOME/DONAGHS/personal/Means/action_journal.md'
-alias -g dist='vim $HOME/DONAGHS/personal/Means/distractions.md'
-alias -g mdd='$HOME/.scripts/markdown_diary.sh' # md is taken as mkdir -p <dir>
+q=$(date +"%Y-%m-%d")
+y=$(date +"%Y")
+m=$(date +"%m")
+tj=$(date +"%m-%d") # today's journal 
+yd=$(date  --date="yesterday" +"%d") # day of month yesterday 
+
+mj() { $HOME/.scripts/markdown_journal.sh } # edit / open today's journal - my journal 
+pers() { cd $HOME/DONAGHS/personal } # go to personal 
+today() { cd $HOME/DONAGHS/personal/journal/$y/$m && ls -lat | head -n 10 } # go to month of today's journal and list most recent 10 items
+yj() { vim $HOME/DONAGHS/personal/journal/$y/$m/"$yd-$m.md"} # open yesterday's journal
+# alias -g mj='$HOME/.scripts/markdown_journal.sh'
+# alias -g wj='vim $HOME/DONAGHS/personal/means/work_journal.md'
+# alias -g aj='vim $HOME/DONAGHS/personal/Means/action_journal.md'
+# alias -g dist='vim $HOME/DONAGHS/personal/Means/distractions.md'
+# alias -g mdd='$HOME/.scripts/markdown_diary.sh' # md is taken as mkdir -p <dir>
 # alias -g backup="$HOME/.scripts/backup_all_and_encrypt.sh" # backsup ALL_ZIM, personal and org to Dropbox in .7z format
-alias -g mn='$HOME/.scripts/mynotes.sh'
-alias -g wcmj='$HOME/.scripts/wordCount_journal.sh' # word count my journal (markdown journal) - usage ->% wcmj 05 [ie June]
+# alias -g mn='$HOME/.scripts/mynotes.sh'
+# alias -g wcmj='$HOME/.scripts/wordCount_journal.sh' # word count my journal (markdown journal) - usage ->% wcmj 05 [ie June]
 # end journal
 #}}}
 #{{{ PERSONAL
-alias -g jour='cd $HOME/DONAGHS/personal/journal'
+# alias -g jour='cd $HOME/DONAGHS/personal/journal'
 alias -g writing='cd $HOME/DONAGHS/personal/writings/my_writings'
-alias -g pers='cd $HOME/DONAGHS/personal/'
+# alias -g pers='cd $HOME/DONAGHS/personal/'
 # immediately edit a file
 grat() { $EDITOR $personal/minding_me/gratitude_journal.md }
 ideas() { $EDITOR $personal/ideas/ideas_to_go_at.md }
@@ -243,7 +255,7 @@ hme() { cd $HOME }
 #}}}
 #{{{ SSH 
 # 2020-12-09
-alias -g sshdo='ssh -i $HOME/.ssh/id_rsa_do donagh@142.93.37.252'
+# alias -g sshdo='ssh -i $HOME/.ssh/id_rsa_do donagh@142.93.37.252'
 #}}}
 #{{{ DOTFILES
 # dot files shortcuts 
@@ -297,6 +309,7 @@ alias -g newest='ls -lt  **/*(.om[1,20])' # List latest 20 files edited - newest
 # Items (ie files and directories)
 alias -g li='ls -la' # long list everything - i.e. list items (files and folders) - alias
 alias -g ll='ls -la' # long list everything
+alias -g lt='ls -lAt | head -n 10' # list 10 most recent items in this directory 
 alias -g l.='ls -d .* ' # List hidden files and directories - short (alternative alias)
 # alias -g lih='ls -d .* ' # List all hidden items i.e. files and directories - short - alias
 alias -g lih="ls -la | grep ' \..*$'" # List all hidden items i.e. files and directories - long -  alias
@@ -388,6 +401,14 @@ alias avg='png G rtt | cut -d '/' -f5' # average png time atm. Compared to what?
 # alias to get my IP address of digital ocean website (2020-02-17)
 alias site='dig donaghmccarthy.ie +short'
 #}}}
+#{{{ TMUX
+# ==== TMUX ====
+# LAN servers for sshrpi, s_books, s_passords
+sshrpi() { ssh -i ~/.ssh/ip_rsa_rpi donagh@192.168.1.24 }
+s_books() { cd /home/donagh/REPOS/books && python -m http.server 8088 }
+s_passwords() { cd /home/donagh/REPOS/books && python -m http.server 8089 }
+#
+# }}}
 #{{{ ZSH 
 # shortcuts
 alias zcp='zmv -C'

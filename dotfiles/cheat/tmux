@@ -6,8 +6,10 @@ Start tmux						:: tmux
 List tmux windows               :: tmux ls
 
 # sessions
-Create new session              :: tmux new -s "basic"
+Create new session              :: tmux new -s basic
+Return to session               :: tmux attach-session -t servers
 Kill everything                 :: tmux kill-session -a
+Kill session                    :: tmux kill-session -t servers
 
 # inside tmux 
 Vert. split						:: C-a % or C-a v
@@ -31,6 +33,7 @@ Ctrl-a d
 
 # Restore tmux session:
 tmux attach
+tmux attach-session -t servers
 
 # Detach an already attached session (great if you are moving devices with different screen resolutions)
 tmux attach -d 

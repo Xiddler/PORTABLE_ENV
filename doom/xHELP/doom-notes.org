@@ -261,6 +261,13 @@ Then type in the name of the link and then the description
 **** Method 3
 Type [[x][]]
 and put the link / URI instead of x and the description in the second pair of [].
+**** To a heading
+example:
+[[file+emacs:org.org][Health]]
+which is the below with a ] at the end (which hides the details)
+[[file+emacs:org.org][Health]
+
+
 ** magit
 [[Magit][Magit]]
 
@@ -793,6 +800,13 @@ I did change the files config.el and init.el but to not great avail
 Solution: restart doom and/or doom sync
 
 STATUS - 2020-10-03 FIXED
+** links
+To make a link:
+SPC L  then pick the type e.g. file,
+
+To make a link to a heading in another file
+
+
 ** org-refile
 Move a Heading and all it's contents to another location within the file.
 

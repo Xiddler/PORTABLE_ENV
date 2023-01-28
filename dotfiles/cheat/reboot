@@ -103,6 +103,7 @@ sudo mount -t cifs //192.168.1.24/USB128_2 /mnt/cifs_share -o username=admin,pas
 # dropbox 
 echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && ~/.dropbox-dist/dropboxd
 
+# in tmux
 # python servers for LAN 
 # passwords
 # alias -g s_passwords='python -m http.server 8088  --directory ~/DONAGHS/MY_ZIM/Computer --bind 0.0.0.0'

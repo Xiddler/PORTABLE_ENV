@@ -11,6 +11,8 @@
 #
 ########################################
 
+# ignore this directory: --exclude '/home/donagh/cifs_share/RSYNCED/personal/.git/'
+
 password=1234
 
 # sudo -S <<< "password" command
@@ -59,10 +61,10 @@ sudo rsync -a --delete ~/DONAGHS/MY_ZIM/Computer ~/BACKUPS/RSYNCED/zim_Computer 
 #################
 
 # To the HDD of the laptop 
-sudo -S <<< $password rsync -a --delete ~/DONAGHS/personal/ ~/BACKUPS/RSYNCED/personal/
+sudo -S <<< $password rsync -a --exclude '/home/donagh/cifs_share/RSYNCED/personal/.git/' --delete ~/DONAGHS/personal/ ~/BACKUPS/RSYNCED/personal/
 
 # To the USB of the RPi 
-sudo -S <<< $password rsync -a --delete ~/DONAGHS/personal/ ~/cifs_share/RSYNCED/personal/
+# sudo -S <<< $password rsync -a --exclude '/home/donagh/cifs_share/RSYNCED/personal/.git/' --delete ~/DONAGHS/personal/ ~/cifs_share/RSYNCED/personal/
 
 
 

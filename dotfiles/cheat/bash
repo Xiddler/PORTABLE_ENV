@@ -86,3 +86,8 @@ $ 644
 stat -c '%A %a %n' *.sh | grep 755
 # alternatively 
 find "$filename" -prune -printf '%m\n'
+
+
+# date - see -> % cheat date 
+# print yesterday's date (for my jounal)
+date  --date="yesterday" +"%Y-%m-%d"
