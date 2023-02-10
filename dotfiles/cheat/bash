@@ -70,6 +70,17 @@ done
 # Arithmetic 
 $((   )) # correct syntax 
 
+# if statement
+echo -n "Enter Number: "
+read x
+
+# if else statement
+# check if number is even
+if [ $((x%2)) == 0 ]; then
+  echo "Number is Even"
+else
+  echo "Number is Odd"
+fi
 
 # Here doc 
 A "here document" allows redirection of multiple lines of input as if from a file:

@@ -91,8 +91,10 @@ map <leader>/ <Plug>(easymotion-bd-w)
 nmap <leader>/ <Plug>(easymotion-overwin-w) 
 
 " --- PWD ---
+"  See Functions <leader>d [ note added 2023-02-10 ]
+
 " insert full filepath into current buffer in normal mode
-nnoremap <leader>d :put=expand('%:p')<cr>
+" nnoremap <leader>d :put=expand('%:p')<cr>
 
 " enter the pwd in insert mode - d irectory p ath
 inoremap <leader>dp <C-R>=getcwd()<CR>
@@ -100,6 +102,10 @@ inoremap <leader>dp <C-R>=getcwd()<CR>
 inoremap <leader>d <C-R>=expand("%:p:h")<CR>
 " To insert the name of the innermost directory (the one containing the current file) use:
 " inoremap <Leader>n <C-R>=expand("%:p:h:t")<CR>
+
+" toggle case - Why so slow 4seconds lol 
+nmap <leader>t g~aW
+" dUck
 
 " }}}
 "{{{ MYVIMRC 
@@ -130,17 +136,31 @@ nnoremap <leader>ss :so $MYVIMRC<CR>
 " source /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim  
 " Rem: Use gf to open that file!
 source /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim 
+
 " Rem: Use gf to open that file! CHANGED LOCATION ON 2022-10-13 
 
 "}}}
-" {{{ Lorem ipsum
+" {{{ Navigating
+" === Navigating ===
 
+" Toggle/Open a file explorer to the right 
+nnoremap <leader>e :Lex!<cr> 
+
+" }}}
+" {{{ Lorem ipsum
+"
 ab lorem "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
 
 " }}}
-"{{{ Buffers
+"{{{ Buffers & Tabs 
 
 " === Buffers ===
+
+" TABS
+" Use (UPPERCASE) H and L to move to the previous/next tabpage & tab & tabs and next tab and previous tab: downside is you lose H and L defaults
+nnoremap H gT 
+nnoremap L gt
+
 
 " :bn (buffer next) without pressing enter button to make it like doom-emacs setting
 cnoremap bn :bn<cr> 
@@ -171,9 +191,10 @@ if has("autocmd")
 endif
 
 " to reduce the noticeable delay on performing certain commands
-set timeout timeoutlen=3000 ttimeoutlen=100
-set completeopt=menu,preview,longest "for a pop-up list of completions. (Replaces the existing one)
+" set timeout timeoutlen=3000 ttimeoutlen=100
+" set completeopt=menu,preview,longest "for a pop-up list of completions. (Replaces the existing one)
 
+" DoNAGH
 " --- NUMBERS ---
 set number
 set relativenumber " also Ctrl N to toggle this
@@ -190,7 +211,11 @@ vnoremap Q :norm @q<cr>
 set virtualedit=all " allows cursor to be moved anywhere in normal mode
 set noswapfile " prevents the automatic creation of swapfiles
 set hidden    " allows switching buffers without saving
-set listchars=tab:>\ ,trail:.
+
+" dots instead of blanks?
+" set list
+" set listchars=tab:>\ ,trail:.
+
 
 " Wrapping lines 
 set wrap
@@ -286,10 +311,10 @@ map <c-h> <c-w>h
 set tabstop=4       " tabs are at proper location 
 set shiftwidth=4    " indenting is 4 spaces
 set smarttab
-"set expandtab       don't use actual tab character (ctrl-v)
 set softtabstop=4   " number of spaces in tab when editing
 set expandtab       " tabs are spaces
 set smartindent     " does the right thing (mostly) in programs
+
 
 " }}}
 " {{{ UI Config 
@@ -319,12 +344,12 @@ autocmd BufNewFile,BufRead,BufEnter *.md :set conceallevel=2
 " show italics
 highlight Comment cterm=italic
 
-
-
-
 " Make bold and italic stand out better - tesging
 highlight htmlBold gui=bold guifg=#af0000 ctermfg=124
 highlight htmlItalic gui=italic guifg=#ff8700 ctermfg=214
+
+set updatetime=300 " reduce time for highlighting other references OPTIONAL - 2023-02-03
+set redrawtime=10000 " allow more time for loading syntax on large files OPTIONAL - 2023-02-03
 
 
 " older
@@ -339,6 +364,7 @@ highlight htmlItalic gui=italic guifg=#ff8700 ctermfg=214
 " }}}
 " {{{ Searching 
 "=== Searching ===
+
 set incsearch 
 set ignorecase                  " Make searches case-insensitive.
 set smartcase
@@ -352,8 +378,21 @@ vnoremap / /\v
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
-endi
+end
 
+" keep search centered
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+
+
+" }}}
+" {{{ Scrolling 
+" === Scrolling ===
+" stops cursor going to very top and keeps some context when mouse scrolling 
+set scrolloff=8
+set sidescrolloff=8
 
 " }}}
 " {{{ Folding 
@@ -490,9 +529,9 @@ let g:airline_symbols.space = "\ua0"
 
 
 "}}}
-"{{{  My functions 
+"{{{ Functions 
 
-" === My Functions === 
+" === Functions === 
 
 " - sample function
 function! Simple()
@@ -544,7 +583,6 @@ function! NumberList() range
 endfunction
 command NL call NumberList()
 
-
 " --- SHORTEN SD64 filepath ---
 function! Neat_DONAGH()
     " Nd = Neaten_donagh i.e. shorten the long filepath using ~
@@ -581,7 +619,7 @@ function! WorkJournal()
 endfunction 
 
 " open today's markdown journal in a new tab in vim      
-nmap wj :call WorkJournal()<cr>
+" nmap wj :call WorkJournal()<cr>
 
 " from https://blog.langworth.com/vim3 - finesse on Goyo 
 " also makes autocompletion pull words from the thesaurus and dictionary when I hit Tab 
@@ -601,6 +639,19 @@ endfunction
 
 command! ProseMode call ProseMode()
 nmap \p :ProseMode<CR>
+
+" put shortened filename in the buffer
+" replaces earlier long filename
+" nnoremap <leader>d :put=expand('%:p')<cr>
+function! Filename()
+    put=expand('%:p')
+    s:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/:\~/DONAGHS/:
+endfunction
+
+
+nmap <leader>d :call Filename()<cr>
+   
+" /home/donagh/.vimrc
 
 "}}}
 "{{{ Latex
@@ -674,6 +725,7 @@ nmap <leader>mj :tabe /home/donagh/DONAGHS/personal/journal/$(date +%Y)/$(date +
 "Swap vertical split to hor
 map <leader>th <C-w>t<C-w>H
 map <leader>tk <C-w>t<C-w>K
+
 " Capitalize/minusculize letter under cursor
 nnoremap <leader>u v~
 
@@ -684,6 +736,8 @@ nnoremap <leader>u v~
 " nnoremap gX :silent :execute "!xdg-open" expand('%:p') . "/" . expand("<cfile>") " &"<cr>
 
 
+" use gf to open a file even if it does not exist yet
+map gf :edit <cfile><cr>
 
 
 
@@ -691,6 +745,9 @@ nnoremap <leader>u v~
 " {{{ My Digraphs 
 "
 " ==== DIGRAPHS ===
+" Ctrl-K in insert mode
+" ▶  PR
+" ◀  PL 
 
 "}}}
 "{{{ Spelling 
@@ -722,12 +779,9 @@ nnoremap E $
 nnoremap j gj
 nnoremap k gk
 
-" TABS
-" Use (UPPERCASE) H and L to move to the previous/next tabpage & tab & tabs and next tab and previous tab: downside is you lose H and L defaults
-nnoremap H gT 
-nnoremap L gt
 
-" SAVE 
+" save 
+"
 " Save to be the same as my doom-emacs keybindings [SPC] w [SPC]
 " (REM: This works because SPACEBAR is mapped to : above and cmap puts vim into Ex mode )
 cmap w<space> :w<cr>

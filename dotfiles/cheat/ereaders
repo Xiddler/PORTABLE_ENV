@@ -7,6 +7,7 @@
 |             |   evince     |
 |  epub       |   fbreader   |
 |             |   calibre    |
+|             |   foliate    | added 2023-01-28; AUR;
 |  djvu       |   djview4    |
 |  mobi       |   fbreader   |
 |  fb2        |   fbreader   | 
@@ -42,7 +43,7 @@ MOBI: A widely used, very popular format by Mobipocket; also can be .prc. Mobipo
 
 PDB: Stands for palm database. This format is widely used for cellphones (BlackBerry, iPhone), and Palm devices. Plucker, PalmDOC, iSilo, eReader, zTXT, and many more.
 
-PDF: Stands for Portable Document Format. The most widely used file type. Created by Adobe. Most ebook readers support PDF, but it's a challenge to display a 14" diagonal page on a 6" diagonal screen. There are conversion softwares, such as Calibre, that reformat PDF to display better on ebook readers.
+PDF: Stands for Portable Document Format. The most widely used file type. Created by Adobe. Most ebook readers support PDF, but it's a challenge to display a 14ins diagonal page on a 6ins diagonal screen. There are conversion softwares, such as Calibre, that reformat PDF to display better on ebook readers.
 
 PRC: Stands for Palm Resource Compiler; aka MOBI.
 
@@ -52,15 +53,3 @@ TXT: Plain text files don't retain special characters or formatting; basic notep
 
 WOLF: The proprietary format for Hanlin ebook readers, aka BeBook; extension .wol.
 
-
-+-------------+--------------+
-|  Format     |    Reader    |
-+-------------+--------------+
-|  pdf        |   okular     |
-|             |   zathura    |
-|             |   evince     |
-|  epub       |   fbreader   |
-|             |   calibre    |
-|  djvu       |   djview4    |
-|  mobi       |   fbreader   |
-+-------------+--------------+

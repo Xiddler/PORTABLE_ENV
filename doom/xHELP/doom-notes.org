@@ -806,7 +806,6 @@ SPC L  then pick the type e.g. file,
 
 To make a link to a heading in another file
 
-
 ** org-refile
 Move a Heading and all it's contents to another location within the file.
 
@@ -837,6 +836,20 @@ ln -s /home/donagh/PORTABLE_ENV/doom/dot_e_m_l_o_config.el ~//.emacs.d/modules/l
 and add in the REPT(r)
 Then run doom sync and re-open doom-emacs
 On 2021-09-30 I changed HOLD to HAPPENING for events that are under sail and /or ongoing. Repeated this on new install Oct 2021.
+
+*** Method 3 <- this worked on 2023-02-10
+
+I did a vimdiff and discovered that I only have to do the following
+Replace lines in file: /home/donagh/.emacs.d/modules/lang/org/config.el
+with
+           ;"LOOP(r)"  ; A recurring task
+           "STRT(s)"  ; A task that is in progress
+           "WAIT(w)"  ; Something external is holding up this task
+           ;;"HOLD(h)"  ; This task is paused/on hold because of me
+           "HAPPENING(h)"  ; This task is happening
+           "REPEAT(r)"  ; This task is recurring
+           "READING(g)"  ; To promote my renascent reading habit
+           "MAINTENANCE(m)"  ; For House and IT
 
 ** search
 Search current buffer:

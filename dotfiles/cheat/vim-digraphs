@@ -1,4 +1,5 @@
 ®	Rg	0xae	174	REGISTERED SIGN                             ®
+™   TM  2122   8482 TRADEMARK SIGN                              ™ 
 °	DG	0xb0	176	DEGREE SIGN
 ²	2S	0xb2	178	SUPERSCRIPT TWO
 ³	3S	0xb3	179	SUPERSCRIPT THREE
@@ -18,7 +19,7 @@
 À	A!	0xc0	192	LATIN CAPITAL LETTER A WITH GRAVE 
 †	AE	0xc6	198	LATIN CAPITAL LETTER AE
 £	a?	0xe3	227	LATIN SMALL LETTER A WITH TILDE 
-÷	-:	0xf7	247	DIVISION SIGN                              
+÷	-:	0xf7	247	DIVISION SIGN
 ≪   <* 
 ≫   *>
 》  +>
@@ -28,6 +29,7 @@
 ✓   OK  
 ◁   Tl or lT
 ▷   Tr or rT
+▶   PR
 ☼   SU
 ▲   UT
 △   uT

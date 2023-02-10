@@ -94,16 +94,37 @@ python3 ~/Applications/flask_htmx_lanner/app.py
 
 # QUICKLY AFTER a REBOOT 
 
+# ***********************************************************************************************
+# run this script
+~/.scripts/tmux.sh  ◀ -> % ttmux # books, passwords and sshrpi for flask_htmx lanner app 
+# and testing these - with a view to making a tmux script for them too
+~/.scripts/cifs_zim # trial - runs cifs and (hopefully) opens zim in Workspace 2 
+~/.scripts/dropbox.sh # trial
+
+# ***********************************************************************************************
+
+
 # zim - first mount the SD Card 
 sudo /usr/sbin/zim 
 
 # cifs_share
 sudo mount -t cifs //192.168.1.24/USB128_2 /mnt/cifs_share -o username=admin,password=admin,iocharset=utf8,vers=3.1.1
+# no password
+# sudo -S <<< 1234 mount -t cifs //192.168.1.24/USB128_2 /mnt/cifs_share -o username=admin,password=admin,iocharset=utf8,vers=3.1.1
 
 # dropbox 
 echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && ~/.dropbox-dist/dropboxd
+# no password 
+# echo fs.inotify.max_user_watches=100000 | sudo -S <<< 1234 tee -a /etc/sysctl.conf; sudo -S <<< 1234 sysctl -p && ~/.dropbox-dist/dropboxd
 
-# in tmux
+# tmux
+# open servers in separate panes
+# tmux attach-session -t servers
+# OR
+# run this script
+~/.scripts/tmux.sh
+# which will open 4 panes and the commands s_books, s_passwords and sshrpi (aliases - see .zsh_aliases)
+
 # python servers for LAN 
 # passwords
 # alias -g s_passwords='python -m http.server 8088  --directory ~/DONAGHS/MY_ZIM/Computer --bind 0.0.0.0'

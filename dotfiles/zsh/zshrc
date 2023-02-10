@@ -67,7 +67,7 @@ COMP=$(uname -a | cut -d' ' -f2)
 
 
 # borg backup
-export BORG_PASSPHRASE='theboysoffairhill'
+# export BORG_PASSPHRASE='theboysoffairhill'
 
 # Add zsh aliases.
 if [ -f $HOME/.zsh_aliases ]; then
@@ -177,6 +177,8 @@ bindkey 'kk' copy-earlier-word
 ## Would you like to use another custom folder than $ZSH/custom?
 ## ZSH_CUSTOM=/path/to/new-custom-folder
 
+## oh-my-zsh plugins
+#
 ## Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 ## Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 ## Example format: plugins=(rails git textmate ruby lighthouse)
@@ -210,6 +212,7 @@ plugins=(
 # PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin"
 
 # PATH="$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin:/home/donagh/.emacs.d/bin/:/home/donagh/.cargo/bin:/home/donagh/PORTABLE_ENV_tmp/:/opt/texlive/2020/bin/x86_64-linux/:/home/donagh/.emacs/bin:/home/donagh/go/bin:/home/donagh/Applications/shellmath/shellmath:/home/donagh/.mix:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/maps/OSI_GridInQuest/GridInQuestII-Lin64-0100:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/golang/vugu_stuff:/home/donagh/.local/bin/gron:/usr/local/texlive/2021/bin/x86_64-linux:/home/donagh/Applications/nushell/nu_0_60_0_linux/nushell-0.60.0:/home/donagh/.subuser/bin"
+# Is this a good idea to have PATH defined here? 
 PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin:/home/donagh/.emacs.d/bin/:/home/donagh/.cargo/bin:/home/donagh/PORTABLE_ENV_tmp/:/home/donagh/.emacs/bin:/home/donagh/go/bin:/home/donagh/Applications/shellmath/shellmath:/home/donagh/.mix:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/maps/OSI_GridInQuest/GridInQuestII-Lin64-0100:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/golang/vugu_stuff:/home/donagh/.local/bin/gron:/usr/local/texlive/2022/bin/x86_64-linux:/home/donagh/Applications/nushell/nu_0_60_0_linux/nushell-0.60.0:/home/donagh/.subuser/bin"
 
 # source /home/donagh/.local/bin/virtualenvwrapper.sh
@@ -272,7 +275,8 @@ source $HOME/.zsh_aliases
 bindkey 'jk' vi-cmd-mode 
 # cx for clear screen
 bindkey 'cx' clear-screen
-# bindkey 'hf' cd $HOME && clear-screen
+# hf for cd ~ 
+# bindkey 'hf' cd $HOME && clear-screen # Now done in autokey as it automatically executes 
 
 # for urxvt terminal emulator
 # xrdb ~/.Xresources  # may need to be in my .bashrc file though

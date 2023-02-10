@@ -11,7 +11,17 @@
 #
 ########################################
 
+# ----------------------------------------------------------------------------------------
+
+# NOTES:
+# 3 locations !!
+# 1. the original
+# 2. BACKUPS to laptop HDD
+# 3. cifs_share which is the USB on the RPi
+
 # ignore this directory: --exclude '/home/donagh/cifs_share/RSYNCED/personal/.git/'
+#
+# ----------------------------------------------------------------------------------------
 
 password=1234
 
@@ -20,7 +30,8 @@ password=1234
 
 
 # source directory on laptop is
-#$HOME/BACKUPS/RSYNCED              (symlinked to ~/cifs_share/RSYNCED)
+#$HOME/BACKUPS/RSYNCED              
+# /mnt/cif_share is symlinked to ~/cifs_share/RSYNCED 
 
 # destination is RPi/usb_128/RSYNCED
 
@@ -53,7 +64,7 @@ sudo -S <<< $password rsync -a --delete ~/DONAGHS/MY_ZIM/Computer ~/cifs_share/R
 sudo -S <<< $password rsync -a --delete ~/DONAGHS/MY_ZIM/Computer.txt ~/cifs_share/RSYNCED/zim_Computer
 
 # One-liner and enter password TO Laptop
-sudo rsync -a --delete ~/DONAGHS/MY_ZIM/Computer ~/BACKUPS/RSYNCED/zim_Computer && sudo rsync -a --delete ~/DONAGHS/MY_ZIM/Computer.txt ~/BACKUPS/RSYNCED/zim_Computer
+# sudo rsync -a --delete ~/DONAGHS/MY_ZIM/Computer ~/BACKUPS/RSYNCED/zim_Computer && sudo rsync -a --delete ~/DONAGHS/MY_ZIM/Computer.txt ~/BACKUPS/RSYNCED/zim_Computer
 
 
 #################
@@ -64,7 +75,7 @@ sudo rsync -a --delete ~/DONAGHS/MY_ZIM/Computer ~/BACKUPS/RSYNCED/zim_Computer 
 sudo -S <<< $password rsync -a --exclude '/home/donagh/cifs_share/RSYNCED/personal/.git/' --delete ~/DONAGHS/personal/ ~/BACKUPS/RSYNCED/personal/
 
 # To the USB of the RPi 
-# sudo -S <<< $password rsync -a --exclude '/home/donagh/cifs_share/RSYNCED/personal/.git/' --delete ~/DONAGHS/personal/ ~/cifs_share/RSYNCED/personal/
+sudo -S <<< $password rsync -a --exclude '/home/donagh/cifs_share/RSYNCED/personal/.git/' --delete ~/DONAGHS/personal/ ~/cifs_share/RSYNCED/personal/
 
 
 
@@ -74,7 +85,6 @@ sudo -S <<< $password rsync -a --exclude '/home/donagh/cifs_share/RSYNCED/person
 
 # To the HDD of the laptop 
 sudo -S <<< $password rsync -a --delete  ~/Dropbox/org-mode/org ~/BACKUPS/RSYNCED/all_org/
-
 
 # To the USB of the RPi 
 sudo -S <<< $password rsync -a --delete  ~/Dropbox/org-mode/org ~/cifs_share/RSYNCED/all_org/

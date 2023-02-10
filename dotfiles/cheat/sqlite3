@@ -3,6 +3,7 @@ sqlite3 example.db
 
 # create table
 sqlite3 example.db "CREATE TABLE Os(ID INTEGER PRIMARY KEY, Name TEXT, Year INTEGER);"
+sqlite3 example.db "CREATE TABLE todos(ID INTEGER PRIMARY KEY, Item TEXT, Date INTEGER);"
 
 # insert data
 sqlite3 example.db "INSERT INTO 'Os' VALUES(1,'Linux',1991);"

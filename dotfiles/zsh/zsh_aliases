@@ -143,6 +143,11 @@ alias -g v_fraud='vim ~/DONAGHS/personal/00Fraud/fraud.md'
 
 # 2r() { vim $HOME/REPOS/books/toRead.md }
 wants() { vim $HOME/REPOS/Purchases/Wants/wants.md }
+
+# open a bare-config vim 
+vvim() { vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc $1 }
+vimm() { vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc $1 }
+
 #}}}
 #{{{ BOOKSEARCH
 booksearch() {find ~/REPOS/books -maxdepth 4 -name "*.*" -type f | grep -i $1 } # usage -> % booksearch 'smart'
@@ -227,6 +232,7 @@ yd=$(date  --date="yesterday" +"%d") # day of month yesterday
 mj() { $HOME/.scripts/markdown_journal.sh } # edit / open today's journal - my journal 
 pers() { cd $HOME/DONAGHS/personal } # go to personal 
 today() { cd $HOME/DONAGHS/personal/journal/$y/$m && ls -lat | head -n 10 } # go to month of today's journal and list most recent 10 items
+jour() { cd $HOME/DONAGHS/personal/journal/$y/$m } # go to directory of this month of today's journal 
 yj() { vim $HOME/DONAGHS/personal/journal/$y/$m/"$yd-$m.md"} # open yesterday's journal
 # alias -g mj='$HOME/.scripts/markdown_journal.sh'
 # alias -g wj='vim $HOME/DONAGHS/personal/means/work_journal.md'
@@ -297,6 +303,7 @@ alias -g g_list='echo -e "~/PORTABLE_ENV/ \n~/Dropbox/org-mode/org/ \n~/DONAGHS/
 alias -g g_run='$HOME/.scripts/manage_all_git_repos.sh'
 alias -g git_list='echo -e "~/PORTABLE_ENV/ \n~/Dropbox/org-mode/org/ \n~/DONAGHS/personal/ \n~/DONAGHS/MY_ZIM/Computer \n~/DONAGHS/all_org/"'
 alias -g git_run='$HOME/.scripts/manage_all_git_repos.sh'
+alias -g git_all='$HOME/.scripts/git_run_all.sh'
 
 
 #}}}
@@ -401,19 +408,31 @@ alias avg='png G rtt | cut -d '/' -f5' # average png time atm. Compared to what?
 # alias to get my IP address of digital ocean website (2020-02-17)
 alias site='dig donaghmccarthy.ie +short'
 #}}}
-#{{{ TMUX
+#{{{ ON REBOOT
 # ==== TMUX ====
+# on reboot
 # LAN servers for sshrpi, s_books, s_passords
 sshrpi() { ssh -i ~/.ssh/ip_rsa_rpi donagh@192.168.1.24 }
 s_books() { cd /home/donagh/REPOS/books && python -m http.server 8088 }
 s_passwords() { cd /home/donagh/REPOS/books && python -m http.server 8089 }
-#
+
+# open 4 panes with the above and one spare
+ttmux() { /home/donagh/.scripts/tmux.sh }
+
+# === SERVERS ===
+# start zim, cifs and dropbox
+zcd() { /home/donagh/.scripts/zim_cifs_dropbox.sh }
+
+
 # }}}
 #{{{ ZSH 
 # shortcuts
 alias zcp='zmv -C'
 alias zln='zmv -L'
 alias zs='zsh_stats' # lists last 20 commands with statistics
+
+und() { $HOME/.scripts/replace_space_with_underline.sh }
+
 #}}}
 #{{{ ARITHMETIC
 # -> % echo $((4*34))

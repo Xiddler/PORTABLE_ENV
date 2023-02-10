@@ -186,7 +186,7 @@ tab right  L
 1,$                 # equivalent to %
 
 
-# Open file at line 23
+# Open vim at line 23
 vim +23 <filename>
 
 
@@ -202,7 +202,7 @@ maximize split  : Ctrl W _ (hor. split)
 maximize split  : Ctrl W | (ver. split)
 resize split    :res +5 or :vert res -5
 
-# Terminal in vim
+# Open a terminal in vim
 :sp |:terminal
 <leader> tt
 
