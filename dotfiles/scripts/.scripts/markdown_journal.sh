@@ -24,8 +24,49 @@ md_journal() {
             touch $filen
             # front matter for new day's journal:
             echo "$today
+Script ~/PORTABLE_ENV/dotfiles/scripts/.scripts/markdown_journal.sh 
 
-# $day 
+
+> $day 
+
+
+# DIARY
+
+## Weather
+
+## Health
+
+### Health & food 
+
+
+### Alcohol usage
+
+
+### Outdoors / exercise
+
+
+### Food
+
+## Towards earning money
+
+
+## Ideas
+
+
+## Planning 
+Progress- / outcome-monitoring
+(applies to some activities, not journalling)
+
+
+
+## Social / personality arena
+
+
+
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# JOURNALLING 
+
+
 
 " >>  $filen
         $EDITOR +5 $filen

@@ -691,8 +691,12 @@ endif
 
 " abbreviations
 
-" insert @dm -
-nmap mm 0i## @dm -<left><right><right>
+" insert @dm - Note: dc for donagh comments
+nmap dc 0i@dm -<left><right><space>
+" inoremap dc 0i@dm -<left><right><right> 
+
+" nnoremap dms 0i@DMSaying -<left><right><right>
+" inoremap dms @DMSaying -<left><right><right> 
 
 " need to be in insert mode for these then press <CR> or <SPC> to instigate 
 ab mys "Proactively engaged in making a better life for myself and/or others"

@@ -1,10 +1,8 @@
 {
     "type": "phrase",
     "description": "at_dm",
-    "modes": [
-        1
-    ],
-    "usageCount": 1,
+    "modes": [],
+    "usageCount": 6,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
