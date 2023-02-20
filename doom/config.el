@@ -39,7 +39,14 @@
         ;; ("n" "Story Note" entry (file+headline "writing/story_note.org" "Story Inbox")
          ;; "* %?  \n  %i\n  %a ")))
          ;;
-;; added 2023-01-13
+         ;
+;;see https://orgmode.org/manual/Capture-templates.html
+(setq org-capture-templates
+      '(("u" "Todo" entry (file+headline "~/DONAGHS/personal/6_Ur_Journal.org" "Items")
+         "* %?\n  %i\n  %a")
+        ("v" "Ur_Journal" entry (file+datetree "~/org/journal.org")
+         "* %?\nEntered on %U\n  %i\n  %a")))
+
 ;;
 ;;(setq org-todo-keywords
 ;;   '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")

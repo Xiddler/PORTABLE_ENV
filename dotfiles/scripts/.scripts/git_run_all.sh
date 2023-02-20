@@ -28,7 +28,7 @@ for dir in ${git_dirs[*]}; do
     sleep 2
 done
 
-echo "All repos now 'git added'"
+echo "All repos now 'git added'       Relax."
 echo "=========================="
 echo " "
 

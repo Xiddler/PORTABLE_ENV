@@ -96,8 +96,6 @@ nmap <leader>/ <Plug>(easymotion-overwin-w)
 " insert full filepath into current buffer in normal mode
 " nnoremap <leader>d :put=expand('%:p')<cr>
 
-" enter the pwd in insert mode - d irectory p ath
-inoremap <leader>dp <C-R>=getcwd()<CR>
 "To insert the absolute path of the directory the file is in use:
 inoremap <leader>d <C-R>=expand("%:p:h")<CR>
 " To insert the name of the innermost directory (the one containing the current file) use:
@@ -541,6 +539,7 @@ endfunction
 command Simple call Simple()
 
 " --- Lists --- 
+"
 
 " make dash bullet points 
 function! BulletList()
@@ -640,7 +639,7 @@ endfunction
 command! ProseMode call ProseMode()
 nmap \p :ProseMode<CR>
 
-" put shortened filename in the buffer
+" put shortened filename/path in the buffer
 " replaces earlier long filename
 " nnoremap <leader>d :put=expand('%:p')<cr>
 function! Filename()
@@ -648,15 +647,65 @@ function! Filename()
     s:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/:\~/DONAGHS/:
 endfunction
 
-
 nmap <leader>d :call Filename()<cr>
-   
-" /home/donagh/.vimrc
 
+"====================================================
+" to Ur_Journal.md 
+"====================================================
+"
+"2023-02-17 
+
+" I want to select some text in a file, then copy it to Ur_Journal.md but also prepend today's date
+"
+" Maybe a vim script to automate extracting selections of a vim file esp. my journal where ideas are arrived at but forgotten
+" 
+" Select with v and copy to "* register [ Note: it does not appear in the copyq dropdown - for some reason ]
+" Then in a vim terminal (,tt) run -> % send_hunk
+" NOTE: send_hunk is an alias of /home/donagh/.scripts/hunk_to_ur_journal.sh
+"nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+    " i <C-R>=strftime("%A::%Y-%m-%d %a %I:%M %p")<CR><Esc>
+
+" Fri 17 Feb 2023 18:41:32 GMT
+" inoremap <leader>k <c-r>=strftime('%c')<cr>
+"iab idate <c-r>=strftime("%c")<cr>
+"
+"abbey
+"towards
+"denise
+"
+"====================================================
+" to Ur_Journal.md 
+"====================================================
+2023
+
+function SendHunk()
+    
+    " how to replace hooey with timestamp? ie how to do the following in a function▶  i <C-R>=strftime("%Y-%m-%d")
+    " doom-emacs does this very well with org-capture <SPC> n n j to journal with timestamp
+    "
+    " :call writefile(split("hoooey"), '/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/5_Ur_Journal.md', "a")
+    " this does not work 
+    " :r! date --date="today"
+    
+    " append the contents of @r into Ur_journal - THIS WORKED!
+    :call writefile(split(getreg('r'), '\n'), '/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/5_Ur_Journal.md', "a")
+
+    " this does not work 
+    " i ---------------------<Esc>
+    
+    " this also worked 
+   " :redir! >> /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/5_Ur_Journal.md | silent echon @r | redir END
+endfunction
+
+nmap <leader>j :call SendHunk()<cr>
+ 
+" end UR_JOURNAL====================================================
+
+   
 "}}}
 "{{{ Latex
 
-"=== Latex ===
+"=== latex ===
 
 "vim-latex plugin
 let g:tex_flavor='latex'
@@ -785,6 +834,7 @@ nnoremap k gk
 
 
 " save 
+" /home/donagh/.vimrc
 "
 " Save to be the same as my doom-emacs keybindings [SPC] w [SPC]
 " (REM: This works because SPACEBAR is mapped to : above and cmap puts vim into Ex mode )

@@ -87,7 +87,10 @@ org() { cd $HOME/all_org/org }
 az() { cd $HOME/all_org/org }
 2p() { cd $HOME/REPOS/2programming/ }
 2py() { cd $HOME/REPOS/2programming/python }
-til() { jumpapp emacs  ~/DONAGHS/personal/learning/til.org }
+# things I learnt  
+til() { jumpapp emacs  ~/DONAGHS/personal/learning/til.org }  
+# things to learn 
+ttl() { jumpapp emacs  ~/DONAGHS/personal/learning/things_to_learn.org } 
 # sd() { cd $HOME/SD64/ }
 # pers() { cd $personal && ls }
 planning() { cd  $personal/planning/ }
@@ -229,11 +232,16 @@ m=$(date +"%m")
 tj=$(date +"%m-%d") # today's journal 
 yd=$(date  --date="yesterday" +"%d") # day of month yesterday 
 
+vur() {vim ~/DONAGHS/personal/5_Ur_Journal.md }
+# sends selected text to the above file  use ,j in vim to run it 
+send_hunk() { /home/donagh/.scripts/hunk_to_ur_journal.sh }
+
 mj() { $HOME/.scripts/markdown_journal.sh } # edit / open today's journal - my journal 
 pers() { cd $HOME/DONAGHS/personal } # go to personal 
 today() { cd $HOME/DONAGHS/personal/journal/$y/$m && ls -lat | head -n 10 } # go to month of today's journal and list most recent 10 items
 jour() { cd $HOME/DONAGHS/personal/journal/$y/$m } # go to directory of this month of today's journal 
 yj() { vim $HOME/DONAGHS/personal/journal/$y/$m/"$yd-$m.md"} # open yesterday's journal
+iwant() { vim $HOME/I_want.md } # added 2023-02-15 
 # alias -g mj='$HOME/.scripts/markdown_journal.sh'
 # alias -g wj='vim $HOME/DONAGHS/personal/means/work_journal.md'
 # alias -g aj='vim $HOME/DONAGHS/personal/Means/action_journal.md'
@@ -316,7 +324,7 @@ alias -g newest='ls -lt  **/*(.om[1,20])' # List latest 20 files edited - newest
 # Items (ie files and directories)
 alias -g li='ls -la' # long list everything - i.e. list items (files and folders) - alias
 alias -g ll='ls -la' # long list everything
-alias -g lt='ls -lAt | head -n 10' # list 10 most recent items in this directory 
+alias -g lt='ls -lt | head -n 16' # list 10 most recent items in this directory EXCEPT dotfiles 
 alias -g l.='ls -d .* ' # List hidden files and directories - short (alternative alias)
 # alias -g lih='ls -d .* ' # List all hidden items i.e. files and directories - short - alias
 alias -g lih="ls -la | grep ' \..*$'" # List all hidden items i.e. files and directories - long -  alias
