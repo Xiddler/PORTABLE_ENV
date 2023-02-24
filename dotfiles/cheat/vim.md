@@ -221,7 +221,7 @@ C-F --> forward one pane
 [I
 
 
-# NON-ASCII CHARACTERS
+# Non-ascii characters
 
 Help on non-ascii --> :help %u
 
@@ -315,9 +315,11 @@ ga
 
  Output: <”> 8221, Hex 201d, Oct 20035, Digr "9
 
-## Symbols 2
-
+# COMMON SYMBOLS
+see also  /home/donagh/PORTABLE_ENV/dotfiles/cheat/vim-digraphs
 ```
+°	DG	0xb0	176	DEGREE SIGN
+
 ℠ 	™ 	© 	® 	¶ 	† 	‡ 	– 	±
 SM 	TM 	Co 	Rg 	PI 	/- 	/= 	– 	+-
 § 	µ 	£ 	¢ 	¥ 	¤
@@ -332,6 +334,7 @@ OK 	XX
 .P 	.M 	0m 	Sb 	Ob 	.: 	:. 	:R 	::
 ⊙ 	⊚ 	◎ 	□ 	▪
 0. 	02 	0o 	OS 	sB
+
 
 ### Math
 ø 	≃ 	≅ 	≥ 	≤ 	≡ 	≮ 	≯ 	≠
@@ -462,6 +465,7 @@ In the CLI
 ####
 
 # To edit a macro called @l
+
 
 "lp                 # paste the macro into the buffer to edit it
 yada-yada         # the macro in @l now pasted into the current buffer NOTE: this line contains non-utf8 characters

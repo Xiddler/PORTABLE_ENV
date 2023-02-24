@@ -25,37 +25,59 @@ md_journal() {
             # front matter for new day's journal:
             echo "$today
 Script ~/PORTABLE_ENV/dotfiles/scripts/.scripts/markdown_journal.sh 
-
+Ur_Journal ~/DONAGHS/all_org/org/journal.org
 
 > $day 
 
 
 # DIARY
 
+## A Main Thing
+
+
+
 ## Weather
+
+
 
 ## Health
 
-### Health & food 
+### Weight / waist 
 
 
-### Alcohol usage
+
+### Alcohol & sleep
+
+
+
+### Chest spasms
+
 
 
 ### Outdoors / exercise
 
 
+
 ### Food
 
+
+
+## IT 
+
+
+
 ## Towards earning money
+
 
 
 ## Ideas
 
 
+
 ## Planning 
+
 Progress- / outcome-monitoring
-(applies to some activities, not journalling)
+applies to some activities, not journalling
 
 
 
