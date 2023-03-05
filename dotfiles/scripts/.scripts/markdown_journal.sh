@@ -32,7 +32,7 @@ Ur_Journal ~/DONAGHS/all_org/org/journal.org
 
 # DIARY
 
-## A Main Thing
+## Highlight
 
 
 
@@ -40,17 +40,31 @@ Ur_Journal ~/DONAGHS/all_org/org/journal.org
 
 
 
+## Mind / mood
+
+
+
 ## Health
 
+
+### Hearbeat rate
+BPM= 
+
+### Chest issue
+(not pains, not continuous, what? nothing? something? - minor occasional spasms usually after food)
+
+
+
+
+### Alcohol 
+
+
+
+### Sleep
+
+
+
 ### Weight / waist 
-
-
-
-### Alcohol & sleep
-
-
-
-### Chest spasms
 
 
 
@@ -61,12 +75,14 @@ Ur_Journal ~/DONAGHS/all_org/org/journal.org
 ### Food
 
 
+## Money / Work 
+(Prompt: Realistically, there is no living without money. It goes out. Does it come in? How?)
 
-## IT 
 
 
 
-## Towards earning money
+## Towards getting real
+(incl. Money, People)
 
 
 
@@ -75,13 +91,19 @@ Ur_Journal ~/DONAGHS/all_org/org/journal.org
 
 
 ## Planning 
-
-Progress- / outcome-monitoring
-applies to some activities, not journalling
+(Prompt: Progress- / outcome-monitoring applies to some activities, not journalling)
 
 
 
-## Social / personality arena
+## Social
+
+
+
+## Personality / Character / Personal development 
+
+
+
+## IT 
 
 
 

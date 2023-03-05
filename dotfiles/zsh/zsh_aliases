@@ -141,6 +141,8 @@ alias -g v_test='vim ~/REPOS/TESTING/test.md'
 alias -g v_plugins='vim /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim'
 alias -g v_fraud='vim ~/DONAGHS/personal/00Fraud/fraud.md'
 
+alias -g email='vim ~/DONAGHS/personal/23_email_addresses.md'
+
 # Functions - vim
 # toread() { vim $HOME/REPOS/books/toRead.md }
 

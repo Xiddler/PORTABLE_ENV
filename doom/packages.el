@@ -18,6 +18,9 @@
 ;; EXAMPLE
 ; (package! rec-mode)
 ;; then doom sync
+;; nov.el Major mode for reading novels -https://depp.brause.cc/nov.el/
+(package! nov.el)
+
 
 ;; DONAGHS
 ;; add theme not available in default doom. Note: remember to call it in config.el

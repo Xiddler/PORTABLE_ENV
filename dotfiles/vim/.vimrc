@@ -104,6 +104,9 @@ inoremap <leader>d <C-R>=expand("%:p:h")<CR>
 " toggle case - Why so slow 4seconds lol 
 nmap <leader>t g~aW
 " dUck
+"
+" to open journal.org for access to snippets
+nmap <leader>n :!jumpapp emacs<cr>
 
 " }}}
 "{{{ MYVIMRC 
@@ -741,8 +744,9 @@ endif
 " abbreviations
 
 " insert @dm - Note: dc for donagh comments
-nmap dc 0i@dm -<left><right><space>
-" inoremap dc 0i@dm -<left><right><right> 
+" nmap dc 0i@dm -<left><right><space>
+nmap <leader>c 0i@dm -<left><right><space>
+inoremap <leader>c @dm - 
 
 " nnoremap dms 0i@DMSaying -<left><right><right>
 " inoremap dms @DMSaying -<left><right><right> 
