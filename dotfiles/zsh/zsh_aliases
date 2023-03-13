@@ -76,6 +76,7 @@ rems() { vim $HOME/DONAGHS/personal/reminders.md }
 busb() { cd $HOME/B693_backup }
 recipes() {cd $HOME/REPOS/FOOD/recipes }
 maps() {cd $HOME/REPOS//maps }
+contacts() { jumpapp emacs  ~/DONAGHS/personal/11_Contacts.org }
 # jour { cd $journal && ls }
 po() { cd $HOME/PORTABLE_ENV }
 ba() { cd $HOME/BACKUPS }
@@ -159,7 +160,8 @@ booksearch() {find ~/REPOS/books -maxdepth 4 -name "*.*" -type f | grep -i $1 } 
 #}}}
 #{{{ RSYNC
 # manual rsync backup to the USB attached to the RPi
-alias -g rsyncz="$HOME/.scripts/rsync_backup.sh"
+# alias -g rsyncz="$HOME/.scripts/rsync_backup.sh"
+rsyncz() { /home/donagh/.scripts/rsync_backup.sh }
 # investigate using systemd timers to do this automatically Note added 2022-04-02
 #}}}
 #{{{ DOCKER & PODMAN
@@ -541,7 +543,6 @@ und() { $HOME/.scripts/replace_space_with_underline.sh }
 ## }
 # end zoxide
 # #}}}
-
 #{{{ EDITS: 
 # 2022-04-02 added Notes and ARITHMETIC
 # 2022-03-22 variations on ls utility - big input, success
@@ -549,5 +550,5 @@ und() { $HOME/.scripts/replace_space_with_underline.sh }
 # 2021-12-21 # Reinstall of Manjaro see SD64   
 # 2020-12-10 Manjaro again - may be missing some items...
 #}}}
+# THE END
 
-## THE END

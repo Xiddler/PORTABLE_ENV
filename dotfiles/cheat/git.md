@@ -1,3 +1,8 @@
+# Refs
+
+## Webrefs
+https://gitimmersion.com/lab_10.html
+
 # Terms in git
 
     Commit - stores the current contents of the index in a new commit along with a log message from the user describing the changes
@@ -403,6 +408,15 @@ git reset, git restore, git clean, git checkout	:: discard changes both local ch
 git rebase, git cherry-pick						:: change/move commits around the graph 
 git push, git fetch, git remote, git merge		:: share your code and history with your friends 
 git worktree									:: have more than one commit checked out at a time 
+
+# see log of recent 7 days 
+
+Log for last week. Add --author=donagh if I only want to see changes I made.
+-> % git log --all --pretty=format:'%h %cd %s (%an)' --since='7 days ago'
+
+# Nice log output
+
+-> % git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
 
 # END 
 
