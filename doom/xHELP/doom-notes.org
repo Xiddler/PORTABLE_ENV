@@ -5,7 +5,7 @@
 #+STARTUP: overview
 #+options: il
 #+tags:    help orgmode org-mode donaghs
-#+EDITED:  2023-02-24; 2023-01-03; 2022-12-19; 2022-12-16; 2022-09-25
+#+EDITED:  2023-04-07; 2023-02-24; 2023-01-03; 2022-12-19; 2022-12-16; 2022-09-25
 
 
 * DOOM EMACS
@@ -282,25 +282,8 @@ Strikethrough ~strikethrough~
 *** testing links
 + [[projects][projects]]
 
-** org-capture
-:about:
-To quickly capture a note and save it for easy recapture
-:end:
-*** Commands
-[SPC] X
-[SPC] n n
-stored in /home/donagh/PORTABLE_ENV/doom/org
-stored in /home/donagh/Dropbox/org-mode/org/
-There are a number of templates to save notes to
-
-    In Doom it's waaay easier than Spacemacs IMHO:
-    [SPC] X
-    [SPC] n
-    [SPC] n n <-- new note with the following options:  pers notes, pers todo, journal, templates, templates for projects
-    [SPC] n F <-- Browse notes
-    [SPC] n s <-- Search notes for text
-
 ** packages
+see also org-mode/packages
 *** emacs
 REM: DOOM doesn't use emacs packages.el it uses straight.el instead for package management. Use init.el
 **** install new package
@@ -818,9 +801,6 @@ SPC L  then pick the type e.g. file,
 
 To make a link to a heading in another file
 
-** org-refile
-Move a Heading and all it's contents to another location within the file.
-
 ** org-mode keywords HEADINGS
 *** Method 1
 In config.el add:
@@ -862,6 +842,28 @@ with
            "REPEAT(r)"  ; This task is recurring
            "READING(g)"  ; To promote my renascent reading habit
            "MAINTENANCE(m)"  ; For House and IT
+
+** packages for org-mode
+*** org-brain: Create a personal wiki or knowledge base using Org Mode
+*** org-capture: To quickly capture a note and save it for easy recapture
+**** org-capture commands
+[SPC] X
+[SPC] n n
+stored in /home/donagh/PORTABLE_ENV/doom/org
+stored in /home/donagh/Dropbox/org-mode/org/
+There are a number of templates to save notes to
+
+    In Doom it's waaay easier than Spacemacs IMHO:
+    [SPC] X
+    [SPC] n
+    [SPC] n n <-- new note with the following options:  pers notes, pers todo, journal, templates, templates for projects
+    [SPC] n F <-- Browse notes
+    [SPC] n s <-- Search notes for text
+
+*** org-present: Create presentations using Org Mode
+
+*** org-ref: Manage citations and references within Org documents
+*** org-refile: Move a Heading and all it's contents to another location within the file.
 
 ** search
 Search current buffer:

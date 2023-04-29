@@ -800,6 +800,18 @@ g~ <movement> e.g. g~$ toggle each letter to end of the line
 # Remove trailing spaces
 :%s/\s\{0,\}$//
 
+# Remove duplicate lines
+Sort all lines and remove duplicates.
+:sort u
+
+Don't sort lines
+:g/^\(.*\)$\n\1/d
+
+
+Use awk to remove all duplicate lines, keeping their order.
+:%!awk '\!_[$0]++'
+
+
 # Status line warnings
 trailing, mix-indent-file
 

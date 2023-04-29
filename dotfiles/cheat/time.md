@@ -35,6 +35,10 @@ If the time in Mumbai is 12:30, then my local time is 07:00
 
  Note: For cities to the east of London, add hours, otherwise subtract. e.g. New York is west, therefore subtract (5) hours.
 
+## Examples
+
+chess.com 8am in Pacific Standard Time is 4pm in Dublin time i.e. add 8 hours to get my local time in Ireland --> 16:00
+
 # DST Daylight Saving Time 
 
 daylight saving time is usually observed from late March to late October
@@ -49,7 +53,8 @@ It is 11:53 now
 The GMT offset is 0  it's 11:53 GMT - 
 The BST offset is +1 it's 12:53 BST - this means that if you give me a time in BST I SUBTRACT 1 from it to get my local time 
 The CET offset is +1 it's 12:53 CET - this means that if you give me a time in CET I SUBTRACT 1 from it to get my local time 
-The PT offset is -7 / -8 it's 03:53 PT  - this means that if you give me a time in PT I ADD 8 to it to get my local time Note¹ (why -7 OR -8?) 
+The PT offset is -7 / -8 it's 03:53 PT  - this means that if you give me a time in PT I ADD 8 to it to get my local time 
+Note¹ (why -7 OR -8?) 
 
 Note¹ 
 Pacific Time Zone GMT/UTC offset

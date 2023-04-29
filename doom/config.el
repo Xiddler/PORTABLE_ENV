@@ -47,6 +47,10 @@
         ("v" "Ur_Journal" entry (file+datetree "~/org/journal.org")
          "* %?\nEntered on %U\n  %i\n  %a")))
 
+;; added 2023-04-07
+(setq org-src-fontify-natively t)
+(setq org-confirm-babel-evaluate nil)
+
 ;;
 ;;(setq org-todo-keywords
 ;;   '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
