@@ -110,6 +110,7 @@ b_2r() {vim ~/REPOS/books/0READING/2Read.md } # books to read; see b_r and b_d a
 reading() { cd $HOME/REPOS/books/0READING/0Reading_notes/ && ls }
 repos() { cd $HOME/REPOS/ } # 
 projects() { cd $HOME/REPOS/projects/ }
+thymo() { vim ~/DONAGHS/personal/health_general/THYMO/thymo.md }
 #bookmarks() { cd $HOME/SD64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
 # rnotes() { cd $HOME/REPOS/books/0Reading/0Reading_notes && ls }
 alc() { cd  $personal/alcohol/ }
@@ -234,17 +235,21 @@ q=$(date +"%Y-%m-%d")
 y=$(date +"%Y")
 m=$(date +"%m")
 tj=$(date +"%m-%d") # today's journal 
-yd=$(date  --date="yesterday" +"%d") # day of month yesterday 
+yd=$(date  --date="yesterday" +"%d") # DAY of month for yesterday 
+ym=$(date  --date="yesterday" +"%m") # MONTH for yesterday 
 
 vur() {vim ~/DONAGHS/personal/5_Ur_Journal.md }
 # sends selected text to the above file  use ,j in vim to run it 
 send_hunk() { /home/donagh/.scripts/hunk_to_ur_journal.sh }
 
 mj() { $HOME/.scripts/markdown_journal.sh } # edit / open today's journal - my journal 
+mt() { vim ~/DONAGHS/personal/health_general/THYMO/thymo.md } # open thymo file 
+
 pers() { cd $HOME/DONAGHS/personal } # go to personal 
 today() { cd $HOME/DONAGHS/personal/journal/$y/$m && ls -lat | head -n 10 } # go to month of today's journal and list most recent 10 items
+tomonth() { cd $HOME/DONAGHS/personal/journal/$y/$m && ls -lat | head -n 10 } # go to month of today's journal and list most recent 10 items
 jour() { cd $HOME/DONAGHS/personal/journal/$y/$m } # go to directory of this month of today's journal 
-yj() { vim $HOME/DONAGHS/personal/journal/$y/$m/"$yd-$m.md"} # open yesterday's journal
+yj() { vim $HOME/DONAGHS/personal/journal/$y/$ym/"$yd-$ym.md"} # open yesterday's journal
 iwant() { vim $HOME/I_want.md } # added 2023-02-15 
 # alias -g mj='$HOME/.scripts/markdown_journal.sh'
 # alias -g wj='vim $HOME/DONAGHS/personal/means/work_journal.md'
@@ -412,7 +417,7 @@ alias -g ipe='dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | tr "\"" "
 # $ curl ifconfig.co
 # w3m https://duckduckgo.com/?q=ip
 #
-alias -g ipi="ip -c -4 addr  | grep 192 | cut -d '/' -f1 | tr 'inet' ' ' "
+alias -g ipi="ip --color=auto -c -4 addr  | grep 192 | cut -d '/' -f1 | tr 'inet' ' ' "
 # alias -g ping='ping -c3 '
 alias png='ping -c4 8.8.8.8' # ping google to check if there is internet access
 alias -g pong='~/.scripts/pong.sh' # png but shortened; if no out put, then internet is up; if not, no. of errors;

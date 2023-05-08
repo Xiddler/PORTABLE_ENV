@@ -609,8 +609,12 @@ function! Myjournal()
     execute ":tabe ".filen
 endfunction 
 
+
 " open today's markdown journal in a new tab in vim
-nmap mj :call Myjournal()<cr>
+" nmap mj :call Myjournal()<cr>
+
+" edit / open today's journal - my journal 
+nmap mj :!$HOME/.scripts/markdown_journal.sh <cr> 
 
 
 " function to open my work journal in a new tab from vim (wj is the command I use in the shell)
@@ -771,7 +775,7 @@ set splitbelow splitright
 map <leader>tt :terminal zsh<CR>
 
 " open today's markdown journal in a new tab
-nmap <leader>mj :tabe /home/donagh/DONAGHS/personal/journal/$(date +%Y)/$(date +%m)/$(date +%d)-$(date +%m).md<cr>
+" nmap <leader>mj :tabe /home/donagh/DONAGHS/personal/journal/$(date +%Y)/$(date +%m)/$(date +%d)-$(date +%m).md<cr>
 " open yesterday's markdown journal in a new tab
 " nmap <leader>my :tabe /home/donagh/DONAGHS/personal/journal/$(date +%Y)/$(date +%m)/$(date +%d-1)-$(date +%m).md<cr>
 " /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/journal/2022/02/03-02.md

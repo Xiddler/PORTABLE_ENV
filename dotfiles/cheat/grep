@@ -30,3 +30,8 @@ ps aux | grep -E --color 'bash|$'
 
 # Extract text between words (e.g. w1,w2)
 grep -o -P '(?<=w1).*(?=w2)'
+
+# find multiple patterns in a file
+grep -e fox -e rat animals.txt    
+rat
+fox
