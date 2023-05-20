@@ -16,9 +16,10 @@ cryptomator (eg use in Dropbox)
 
 
 # backup
+rsync
+Alternatives:
 borg
 restic
-rsync
 
 
 # Pastebin for text / code
@@ -55,4 +56,8 @@ Inkscape
 
 GIF
 Geogebra
+
+# download a webpage fully
+
+Use the Firefox extension SingleFile (behind the extension icon i.e. the jigsaw piece). Note added 2023-05-20. It works well.
 

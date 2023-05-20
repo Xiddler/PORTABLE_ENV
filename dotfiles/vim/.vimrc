@@ -651,7 +651,7 @@ nmap \p :ProseMode<CR>
 " nnoremap <leader>d :put=expand('%:p')<cr>
 function! Filename()
     put=expand('%:p')
-    s:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/:\~/DONAGHS/:
+    " s:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/:\~/DONAGHS/:
 endfunction
 
 nmap <leader>d :call Filename()<cr>

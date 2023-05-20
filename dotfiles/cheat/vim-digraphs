@@ -1,6 +1,14 @@
 filename /home/donagh/PORTABLE_ENV/dotfiles/cheat/vim-digraphs
 
+Two methods to insert digraphs: in INSERT mode
+1. Ctrl K                   {char1} {char2}
+2. (with :set digraph on)   {char1} BS {char2}
 
+
+
+€   Eu  20ac   8364 EURO                                        [ alt. Digr =e ]
+℅   co  2105   8453 Care/of
+©   Co  00a9    169 COPYRIGHT SIGN                              ©
 ®	Rg	0xae	174	REGISTERED SIGN                             ®
 ™   TM  2122   8482 TRADEMARK SIGN                              ™ 
 °	DG	0xb0	176	DEGREE SIGN
@@ -20,8 +28,8 @@ filename /home/donagh/PORTABLE_ENV/dotfiles/cheat/vim-digraphs
 ¾	34	0xbe	190	VULGAR FRACTION THREE QUARTERS
 ¿	?I	0xbf	191	INVERTED QUESTION MARK
 À	A!	0xc0	192	LATIN CAPITAL LETTER A WITH GRAVE 
-†	AE	0xc6	198	LATIN CAPITAL LETTER AE
-£	a?	0xe3	227	LATIN SMALL LETTER A WITH TILDE 
+†	AE	0xc6	198
+£	a?	0xe3	227 POUND SIGN 
 ÷	-:	0xf7	247	DIVISION SIGN
 ≪   <* 
 ≫   *>
@@ -38,6 +46,8 @@ filename /home/donagh/PORTABLE_ENV/dotfiles/cheat/vim-digraphs
 △   uT
 ☺   0u       zero SMALL U
 ☻   0U       zero CAPITAL U
+
+
 
 
 
