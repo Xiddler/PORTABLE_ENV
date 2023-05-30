@@ -152,6 +152,7 @@ nnoremap <leader>e :Lex!<cr>
 "
 ab lorem "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
 
+" also Plugin :LoremIpsum
 " }}}
 "{{{ Buffers & Tabs 
 
@@ -169,6 +170,9 @@ nnoremap bn :bn<cr>
 
 " Similar to my doom-emacs kill buffer
 cmap bk :wq<cr>
+
+" shortcut for the sudo trick - when you need to be sudo to save a file but you entered vim without being sudo 
+cmap w!! w !sudo tee % 
 
 " function to create a new scratch buffer
 function! Scratch()
@@ -809,6 +813,7 @@ map gf :edit <cfile><cr>
 " Ctrl-K in insert mode
 " ▶  PR
 " ◀  PL 
+" € Eu
 
 "}}}
 "{{{ Spelling 

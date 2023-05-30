@@ -6,6 +6,7 @@
 # shortcut is -> % mj
 # Set up the journal directory on the SD64 Card
 # journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
+# removed ## Headings and ### Subheadings following my escape from hospital as I found them 'de trop'.
 #
 md_journal() {
         local year=`date +%Y`
@@ -32,78 +33,78 @@ Ur_Journal ~/DONAGHS/all_org/org/journal.org
 
 # DIARY
 
-## Highlight
+HIGHLIGHT
 
 
 
-## Weather
+WEATHER
 
 
 
-## Mind / mood
+MIND / MOOD
 
 
 
-## Health
+HEALTH
 
 
-### Hearbeat rate
+HEARBEAT RATE
 BPM= 
 
-### Chest issue
+CHEST ISSUE
 (not pains, not continuous, what? nothing? something? - minor occasional spasms usually after food)
 
 
 
 
-### Alcohol 
+ALCOHOL 
 
 
 
-### Sleep
+SLEEP
 
 
 
-### Weight / waist 
+WEIGHT / WAIST 
 
 
 
-### Outdoors / exercise
+OUTDOORS / EXERCISE
 
 
 
-### Food
+FOOD
 
 
-## Money / Work 
+MONEY / WORK 
 (Prompt: Realistically, there is no living without money. It goes out. Does it come in? How?)
 
 
 
 
-## Towards getting real
+TOWARDS GETTING REAL
 (incl. Money, People)
 
 
 
-## Ideas
+IDEAS
 
 
 
-## Planning 
+PLANNING 
 (Prompt: Progress- / outcome-monitoring applies to some activities, not journalling)
 
 
 
-## Social
+SOCIAL
 
 
 
-## Personality / Character / Personal development 
+PERSONALITY / CHARACTER / PERSONAL DEVELOPMENT 
 
 
 
-## IT 
+IT 
 
 
 

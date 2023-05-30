@@ -80,8 +80,20 @@ GMT I need to subtract 8 hours to get PT
 https://www.epochconverter.com/
 eg 1636231543
 
-## Linux
-See cheat date
-~/.cheat/date
+## Cheat date
 
+-> % vim ~/.cheat/date
+-> % che date  
+
+
+## Commands
+
+To see all relevant information about your system clock
+-> % timedatectl
+
+The hardware clock will continue to keep time when the computer is powered off, thanks to the CMOS battery on the motherboard.
+-> % sudo hwclock
+
+The most common way to query the system time in Linux
+-> % date
 

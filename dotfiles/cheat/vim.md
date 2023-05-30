@@ -784,6 +784,7 @@ vim -u NORC <filename>
 vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc ~/files/sample_files/README.md
 
 # See how quickly Vim starts without your existing configuration:
+simple easy vim (for later searching - trust me!)
 vim --clean --startuptime clean.log <fileName>
 
 ## Check what may be slowing down vim
@@ -799,6 +800,7 @@ g~ <movement> e.g. g~$ toggle each letter to end of the line
 
 # Remove trailing spaces
 :%s/\s\{0,\}$//
+
 
 # Remove duplicate lines
 Sort all lines and remove duplicates.

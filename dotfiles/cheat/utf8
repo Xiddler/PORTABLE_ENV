@@ -20,4 +20,23 @@ where:
     -o: output to newly created new file (else output is written to stdin)
     <filename>: Represents the file we want to remove invalid characters from.
 
+Insert a utf8 character in vim
+e.g. ⁊ is U204A <-- the amperagus (as in P⁊T)
+
+
+
+EXAMPLE
+Insert non-ascii character
+eg an M dash —
+Insert mode then Ctrl-V u 2014
+⁊
+The output of ga on that M dash is:
+
+    <—> 8212  Hex 2014 Oct 20024 Digr -M
+
+    Search for Mdash
+    Mdash —  \%u2014 to replace with [spc]-[spc] do
+    :%s/\%u2014/ - /g
+
+
 

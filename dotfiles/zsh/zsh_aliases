@@ -46,7 +46,7 @@ alias -g trigs='python $HOME/PORTABLE_ENV/scripts/autokey_trigger_table.py'
 alias -g obs='python ~/PORTABLE_ENV/scripts/CLICK_obsid_to_ext4path.py'
 alias -g stow='stow -d /home/donagh/PORTABLE_ENV/dotfiles  -t /home/donagh '
 # ff() {fortune}
-ss() {shuf -n2 ~/REPOS/Quotations/quotes.md }
+# ss() {shuf -n2 ~/REPOS/Quotations/quotes.md } # note: ss is a networking utility!
 # alias -g take="mkdir -p "
 take() { mkdir -p "$1" && cd "$1" }
 snipo() { /home/donagh/.scripts/add_snips_org.sh }
