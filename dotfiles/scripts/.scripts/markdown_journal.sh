@@ -41,7 +41,18 @@ WEATHER
 
 
 
+JOBS
+
+
+LIVING COSTS
+
+
+
 MIND / MOOD
+
+
+
+FEELINGS / EMOTIONS 
 
 
 

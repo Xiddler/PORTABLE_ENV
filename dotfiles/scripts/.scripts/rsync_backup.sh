@@ -83,10 +83,10 @@ sudo -S <<< $password rsync -a --exclude '/home/donagh/cifs_share/RSYNCED/person
 ### all_orgmode ###
 ###################
 
-# To the HDD of the laptop 
+# Back up from Dropbox to ~/BACKUPS of the HDD of the laptop 
 sudo -S <<< $password rsync -a --delete  ~/Dropbox/org-mode/org ~/BACKUPS/RSYNCED/all_org/
 
-# To the USB of the RPi 
+# Back up from Dropbox to ~/cifs_share which is mounted to the USB of the RPi 
 sudo -S <<< $password rsync -a --delete  ~/Dropbox/org-mode/org ~/cifs_share/RSYNCED/all_org/
 
 

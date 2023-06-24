@@ -76,6 +76,9 @@ GMT I need to subtract 8 hours to get PT
 
 # Epoch converter
 
+# Manual
+<timestamp-epoch> / 86400
+
 ## Website
 https://www.epochconverter.com/
 eg 1636231543

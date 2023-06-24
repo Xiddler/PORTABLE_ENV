@@ -1,4 +1,9 @@
 # List of tools that I may not often use but may be usefule sometimes
+#
+# To obviate the need to enter sudo password
+->$ sudo visudo
+# and add this at the very end
+donagh ALL=(ALL:ALL) NOPASSWD: ALL
 
 # fstab, fdisk etc.
 # view partitions

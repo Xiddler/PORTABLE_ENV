@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/donagh'
+let g:netrw_dirhist_5='/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/Symbols'
 let g:netrw_dirhist_4='/home/donagh'
 let g:netrw_dirhist_3='/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/PHP/laravel_projects/todoList/database'
 let g:netrw_dirhist_2='/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/PHP/laravel_projects/todoList'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_0='/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/RE
 let g:netrw_dirhist_9='/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/books/Articles/Articles_downloaded'
 let g:netrw_dirhist_8='/home/donagh/.kde4/share/config'
 let g:netrw_dirhist_7='/home/donagh/.kde4/share'
-let g:netrw_dirhist_6='/home/donagh/.kde4'
-let g:netrw_dirhist_5='/home/donagh'

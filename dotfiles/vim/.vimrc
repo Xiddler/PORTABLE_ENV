@@ -129,8 +129,10 @@ nnoremap <leader>ss :so $MYVIMRC<CR>
 " {{{ Plugins
 " === Plugins ===
 "
-" 2022-02-05  vim-plug started 
+" 2022-02-05  Plugin manager: vim-plug started 
 " https://github.com/junegunn/vim-plug and https://github.com/junegunn/vim-plug/wiki/tutorial
+" Run this command to installl vim-plug
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 " Remember to :PlugInstall  after adding a new Plug
 
 " external sub-vimrc files for plugins, specifically  vim-plug using Plug
@@ -146,6 +148,7 @@ source /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim
 
 " Toggle/Open a file explorer to the right 
 nnoremap <leader>e :Lex!<cr> 
+" :bd to close it!
 
 " }}}
 " {{{ Lorem ipsum
@@ -589,7 +592,7 @@ function! NumberList() range
 endfunction
 command NL call NumberList()
 
-" --- SHORTEN SD64 filepath ---
+" --- SHORTEN SD64 filepath after pasting into vim ---
 function! Neat_DONAGH()
     " Nd = Neaten_donagh i.e. shorten the long filepath using ~
     s:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/:\~/DONAGHS/:
@@ -613,10 +616,6 @@ function! Myjournal()
     execute ":tabe ".filen
 endfunction 
 
-
-" open today's markdown journal in a new tab in vim
-" nmap mj :call Myjournal()<cr>
-
 " edit / open today's journal - my journal 
 nmap mj :!$HOME/.scripts/markdown_journal.sh <cr> 
 
@@ -628,7 +627,7 @@ function! WorkJournal()
     execute ":tabe ".filen
 endfunction 
 
-" open today's markdown journal in a new tab in vim      
+" open today's markdown journal in a new tab in vim; NOT CURRENTLY USED; 
 " nmap wj :call WorkJournal()<cr>
 
 " from https://blog.langworth.com/vim3 - finesse on Goyo 
@@ -749,12 +748,29 @@ endif
 " nmap ,e g0jI<backspace> <esc>jg0 " Vim's J already does this! 
 
 
-" abbreviations
+" Abbreviations
 
 " insert @dm - Note: dc for donagh comments
 " nmap dc 0i@dm -<left><right><space>
 nmap <leader>c 0i@dm -<left><right><space>
 inoremap <leader>c @dm - 
+" while using the MacAir I have these abbreviations
+" I have found the way to do it on the MacAir inside System Settings
+inoremap i<space> I<space>
+inoremap dont don't
+inoremap cant can't
+inoremap iiv I've
+inoremap iid I'd
+inoremap £ # 
+inoremap wiht with
+" when mistyping ot instead of the word to  - but this causes long delays...
+" espanso wouldn't work 
+" inoremap <space>ot<space> to
+" inoremap gto<space> got
+" inoremap nto<space> not
+inoremap hte the
+
+
 
 " nnoremap dms 0i@DMSaying -<left><right><right>
 " inoremap dms @DMSaying -<left><right><right> 
