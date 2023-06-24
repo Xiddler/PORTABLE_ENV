@@ -72,7 +72,7 @@ COMP=$(uname -a | cut -d' ' -f2)
 # Add zsh aliases.
 if [ -f $HOME/.zsh_aliases ]; then
     source $HOME/.zsh_aliases
-    source $HOME/.profile
+    # source $HOME/.profile
 fi
 
 # my vimrc
@@ -94,7 +94,7 @@ setopt extendedhistory
 
 
 # get fzf to enable Ctrl-R & Ctrl-T
-source ~/.fzf/shell/key-bindings.zsh
+# source ~/.fzf/shell/key-bindings.zsh
 
 # enable grc - for colorizing output
 # source /etc/grc.zsh
@@ -187,7 +187,7 @@ bindkey 'kk' copy-earlier-word
 plugins=(
   # git
   # zsh-syntax-highlighting # built in to my current prompt p10k 
-  colored-man-pages
+  # colored-man-pages
   fzf
   fd-find
   # extract
@@ -284,7 +284,7 @@ bindkey 'cx' clear-screen
 
 # ls_colors
 # enabled the following on 2022-03-20
-eval "`dircolors -b ~/.dir_colors`"
+# eval "`dircolors -b ~/.dir_colors`"
 #
 # cd  /media/ubuntu/3520-FD13/2programming_repository/IT_projects/Dashboard_personal/ && gunicorn render_todo:app
 
@@ -356,7 +356,8 @@ eval "$(mcfly init zsh)"
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #
 # dirjump - use -> % d to see 10 most recent directories visited. https://github.com/imambungo/dirjump
-source ~/.config/dirjump/dirjump
+# the author says he no longer maintains this and uses zoxide instead
+# source ~/.config/dirjump/dirjump
 
 # source /home/donagh/.config/broot/launcher/bash/br
 # call the zsh-syntax-highlighting plugin last thing in this file

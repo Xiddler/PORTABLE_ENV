@@ -1,0 +1,21 @@
+https://github.com/imambungo/dirjump/blob/master/README.md
+
+Not maintained anymore. I use zoxide now.
+
+dirjump
+Easily jump to recently used directories with oh-my-zsh's 'd'-like directory history that still saved after exiting the terminal.
+
+# Installation
+
+    Download the script.
+
+     curl --create-dirs -o ~/.config/dirjump/dirjump https://raw.githubusercontent.com/imambungo/dirjump/master/dirjump
+
+    Source the script to your shell. Don't forget to restart your terminal afterward.
+
+     echo 'source ~/.config/dirjump/dirjump' >> ~/.bashrc
+
+    If you use Zsh:
+
+     echo 'source ~/.config/dirjump/dirjump' >> ~/.zshrc
+

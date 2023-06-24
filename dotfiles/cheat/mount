@@ -1,3 +1,6 @@
+#  -o means options
+#  umount to UNMOUNT; see ->% man umount 
+
 # To mount / partition as read-write in repair mode:
 mount -o remount,rw /
 
@@ -5,7 +8,11 @@ mount -o remount,rw /
 mount --bind /origin/path /destination/path
 
 # To mount Usb disk as user writable:
+#                                   <device> <mount_point>
 mount -o uid=username,gid=usergroup /dev/sdx /mnt/xxx
+
+# Actual example
+sudo mount /dev/sdb1 /mnt/Tiny_USB_SanDisk
 
 # To mount a remote NFS directory
 mount -t nfs example.com:/remote/example/dir /local/example/dir

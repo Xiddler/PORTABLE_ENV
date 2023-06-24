@@ -1,4 +1,4 @@
-" Copyright (c) 2017 Junegunn Choi
+" Copyright (c) 2013-2023 Junegunn Choi
 "
 " MIT License
 "
@@ -164,7 +164,7 @@ function s:get_version(bin)
   if has_key(s:versions, a:bin)
     return s:versions[a:bin]
   end
-  let command = (&shell =~ 'powershell' ? '&' : '') . s:fzf_call('shellescape', a:bin) . ' --version --no-height'
+  let command = (&shell =~ 'powershell\|pwsh' ? '&' : '') . s:fzf_call('shellescape', a:bin) . ' --version --no-height'
   let output = systemlist(command)
   if v:shell_error || empty(output)
     return ''
@@ -456,6 +456,30 @@ function! s:writefile(...)
   endif
 endfunction
 
+function! s:extract_option(opts, name)
+  let opt = ''
+  let expect = 0
+  " There are a few cases where this function doesn't work as expected.
+  " Let's just assume such cases are extremely unlikely in real world.
+  "   e.g. --query --border
+  for word in split(a:opts)
+    if expect && word !~ '^"\=-'
+      let opt = opt . ' ' . word
+      let expect = 0
+    elseif word == '--no-'.a:name
+      let opt = ''
+    elseif word =~ '^--'.a:name.'='
+      let opt = word
+    elseif word =~ '^--'.a:name.'$'
+      let opt = word
+      let expect = 1
+    elseif expect
+      let expect = 0
+    endif
+  endfor
+  return opt
+endfunction
+
 function! fzf#run(...) abort
 try
   let [shell, shellslash, shellcmdflag, shellxquote] = s:use_sh()
@@ -511,7 +535,8 @@ try
     let height = s:calc_size(&lines, dict.down, dict)
     let optstr .= ' --height='.height
   endif
-  let optstr .= s:border_opt(get(dict, 'window', 0))
+  " Respect --border option given in $FZF_DEFAULT_OPTS and 'options'
+  let optstr = join([s:border_opt(get(dict, 'window', 0)), s:extract_option($FZF_DEFAULT_OPTS, 'border'), optstr])
   let prev_default_command = $FZF_DEFAULT_COMMAND
   if len(source_command)
     let $FZF_DEFAULT_COMMAND = source_command
@@ -738,7 +763,7 @@ function! s:calc_size(max, val, dict)
     return size
   endif
   let margin = match(opts, '--inline-info\|--info[^-]\{-}inline') > match(opts, '--no-inline-info\|--info[^-]\{-}\(default\|hidden\)') ? 1 : 2
-  let margin += stridx(opts, '--border') > stridx(opts, '--no-border') ? 2 : 0
+  let margin += match(opts, '--border\([^-]\|$\)') > match(opts, '--no-border\([^-]\|$\)') ? 2 : 0
   if stridx(opts, '--header') > stridx(opts, '--no-header')
     let margin += len(split(opts, "\n"))
   endif
@@ -755,9 +780,9 @@ function! s:border_opt(window)
   endif
 
   " Border style
-  let style = tolower(get(a:window, 'border', 'rounded'))
-  if !has_key(a:window, 'border') && !get(a:window, 'rounded', 1)
-    let style = 'sharp'
+  let style = tolower(get(a:window, 'border', ''))
+  if !has_key(a:window, 'border') && has_key(a:window, 'rounded')
+    let style = a:window.rounded ? 'rounded' : 'sharp'
   endif
   if style == 'none' || style == 'no'
     return ''
@@ -765,7 +790,7 @@ function! s:border_opt(window)
 
   " For --border styles, we need fzf 0.24.0 or above
   call fzf#exec('0.24.0')
-  let opt = ' --border=' . style
+  let opt = ' --border ' . style
   if has_key(a:window, 'highlight')
     let color = s:get_color('fg', a:window.highlight)
     if len(color)
@@ -826,6 +851,17 @@ if exists(':tnoremap')
   tnoremap <silent> <Plug>(fzf-insert) <C-\><C-n>i
   tnoremap <silent> <Plug>(fzf-normal) <C-\><C-n>
 endif
+
+let s:warned = 0
+function! s:handle_ambidouble(dict)
+  if &ambiwidth == 'double'
+    let a:dict.env = { 'RUNEWIDTH_EASTASIAN': '1' }
+  elseif !s:warned && $RUNEWIDTH_EASTASIAN == '1' && &ambiwidth !=# 'double'
+    call s:warn("$RUNEWIDTH_EASTASIAN is '1' but &ambiwidth is not 'double'")
+    2sleep
+    let s:warned = 1
+  endif
+endfunction
 
 function! s:execute_term(dict, command, temps) abort
   let winrest = winrestcmd()
@@ -896,6 +932,7 @@ function! s:execute_term(dict, command, temps) abort
     endif
     let command .= s:term_marker
     if has('nvim')
+      call s:handle_ambidouble(fzf)
       call termopen(command, fzf)
     else
       let term_opts = {'exit_cb': function(fzf.on_exit)}
@@ -907,6 +944,7 @@ function! s:execute_term(dict, command, temps) abort
       else
         let term_opts.curwin = 1
       endif
+      call s:handle_ambidouble(term_opts)
       let fzf.buf = term_start([&shell, &shellcmdflag, command], term_opts)
       if is_popup && exists('#TerminalWinOpen')
         doautocmd <nomodeline> TerminalWinOpen

@@ -821,6 +821,12 @@ trailing, mix-indent-file
 
 [515]mixed-indent means that line 515 has indentation with both tabs and spaces.
 
+# Colorscheme
+:colorscheme <space> Ctrl d     :: list of available colorschemes
+:colorscheme <space> Tab        :: select from one of available colorschemes
+
+
+
 # Regex
 Lookaround examples using test "foobar foo barfoo"
 

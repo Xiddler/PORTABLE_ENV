@@ -3,6 +3,12 @@ O Owner
 G Group
 U Universal
 
+rwx         7
+rw-         6
+r-x         5
+r--         4
+---         0
+
              O   G   U
 777         rwx rwx rwx
 774         rwx rwx r--
