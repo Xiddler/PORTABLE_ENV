@@ -28,6 +28,15 @@ md_journal() {
 Script ~/PORTABLE_ENV/dotfiles/scripts/.scripts/markdown_journal.sh 
 Ur_Journal ~/DONAGHS/all_org/org/journal.org
 
+
+JOBS; LIVING COSTS; 
+HEALTH - HEARBEAT RATE; CHEST ISSUE; ALCOHOL; SLEEP; WEIGHT / WAIST; OUTDOORS / EXERCISE; FOOD; 
+TOWARDS GETTING REAL; MONEY / WORK 
+IDEAS; PLANNING; IT
+SOCIAL
+PERSONALITY / CHARACTER / PERSONAL DEVELOPMENT; MIND / MOOD; FEELINGS / EMOTIONS; 
+
+
 > $day 
 
 
@@ -41,81 +50,7 @@ WEATHER
 
 
 
-JOBS
 
-
-LIVING COSTS
-
-
-
-MIND / MOOD
-
-
-
-FEELINGS / EMOTIONS 
-
-
-
-HEALTH
-
-
-HEARBEAT RATE
-BPM= 
-
-CHEST ISSUE
-(not pains, not continuous, what? nothing? something? - minor occasional spasms usually after food)
-
-
-
-
-ALCOHOL 
-
-
-
-SLEEP
-
-
-
-WEIGHT / WAIST 
-
-
-
-OUTDOORS / EXERCISE
-
-
-
-FOOD
-
-
-MONEY / WORK 
-(Prompt: Realistically, there is no living without money. It goes out. Does it come in? How?)
-
-
-
-
-TOWARDS GETTING REAL
-(incl. Money, People)
-
-
-
-IDEAS
-
-
-
-PLANNING 
-(Prompt: Progress- / outcome-monitoring applies to some activities, not journalling)
-
-
-
-SOCIAL
-
-
-
-PERSONALITY / CHARACTER / PERSONAL DEVELOPMENT 
-
-
-
-IT 
 
 
 

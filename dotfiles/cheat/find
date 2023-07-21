@@ -128,6 +128,24 @@ find .  \( -name MY_ZIM -o -name zArchive -o -name all_org -o -name personal -o 
 # find all files except those listed inside the \(...\) 
 find .  \( -name MY_ZIM -o -name zArchive -o -name BACKUPS  -o -path ./personal/TestVault -o -path ./personal/self -o -path ./personal/.git \) -prune  -o -ls
 
+# Some examples
+
+Find config files that were modified in the last 10 minutes:
+find /etc -type f -name "*.conf" -mmin -10 -printf "%t\t%p\n"
+
+Change all files with 777 permissions to 644:
+find . -type f -perm 0777 -print -exec chmod 644 {} \;
+
+Remove empty directories:
+find . -type d -empty -print -delete
+
+Find duplicates of source_file.txt:
+find . -samefile source_file.txt
+
+Delete temporary files older than a day:
+find /tmp -type f -mmin +24 -print -delete
+
+
 
 # REM use fd - a modern alternative with regex!
 

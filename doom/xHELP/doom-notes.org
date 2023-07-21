@@ -5,7 +5,7 @@
 #+STARTUP: overview
 #+options: il
 #+tags:    help orgmode org-mode donaghs
-#+EDITED:  2023-04-07; 2023-02-24; 2023-01-03; 2022-12-19; 2022-12-16; 2022-09-25
+#+EDITED:  2023-07-12; 2023-04-07; 2023-02-24; 2023-01-03; 2022-12-19; 2022-12-16; 2022-09-25
 
 
 * DOOM EMACS
@@ -553,6 +553,10 @@ For example, my username is “jdemaris” so my folder is /home/donagh/.emacs.d
 
 Property drawers stay folded by default, and are intended to store a collection of key-value pairs, but they don't get exported by default, and so are a good way to keep your notes and your writing together and then export, as needed when drafting is done.
 
+Example of propert drawer. Use the TAB key to fold/unfold it.
+:contents:
+This is a drawer. Use the TAB key to fold/unfold it.
+:end:
 ** search in buffer
 [[search]] in current buffer
 
@@ -689,6 +693,7 @@ Maybe see [[file:~/sd64/TODO/ORG-MODE/first.org][first.org]]  for my preliminary
 My aliases:
 t a      <-- agenda
 t s      <-- schedule
+t a t 18 r <-- list all todos
 *** NOTES on Agenda
 Agenda - [SPC] a and select from list
 SCHEDULE - [SPC] a s OR C-c C-s
@@ -723,6 +728,7 @@ REM: Use z in this view to select desired period e.g. week/month
 **** View Deadlines
 [SPC] a a & deadlines shown in pink
 
+*** Register org-directory and org-agenda-files - see config.el
 ** checkboxes - Make a new checkbox i.e. [ ]
 
 rem C-c C-c to update progress
@@ -865,6 +871,10 @@ There are a number of templates to save notes to
 *** org-ref: Manage citations and references within Org documents
 *** org-refile: Move a Heading and all it's contents to another location within the file.
 
+** register org directory
+to allow orgmode agenda/todos to be listed with t a t
+see config.el
+also, ensure that there is a symlink between Dropbox and ~/all_org on the Toshiba laptop
 ** search
 Search current buffer:
 1. /               <-- vim-like buffer search

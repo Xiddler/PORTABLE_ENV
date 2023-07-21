@@ -387,6 +387,13 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
 end
+" Hint: use g, and g; 
+" The last change is held in the mark named . so you can jump to the mark with `. (backtick, dot) or '. (apostrophe, dot). See:
+" :help mark-motions
+" :help '.
+
+
+
 
 " keep search centered
 nnoremap n nzzzv
@@ -686,7 +693,7 @@ nmap <leader>d :call Filename()<cr>
 "====================================================
 " to Ur_Journal.md 
 "====================================================
-2023
+" 2023
 
 function SendHunk()
     
@@ -757,12 +764,13 @@ inoremap <leader>c @dm -
 " while using the MacAir I have these abbreviations
 " I have found the way to do it on the MacAir inside System Settings
 inoremap i<space> I<space>
-inoremap dont don't
-inoremap cant can't
+" inoremap dont don't
+" inoremap cant can't
 inoremap iiv I've
 inoremap iid I'd
 inoremap £ # 
 inoremap wiht with
+inoremap taht that
 " when mistyping ot instead of the word to  - but this causes long delays...
 " espanso wouldn't work 
 " inoremap <space>ot<space> to
@@ -770,6 +778,10 @@ inoremap wiht with
 " inoremap nto<space> not
 inoremap hte the
 
+" Timestamps
+" inoremap 
+inoremap qq <C-R>=strftime("%Y-%m-%d")<CR>
+inoremap aq <C-R>=strftime("%Y-%m-%d_%H:%M")<CR>
 
 
 " nnoremap dms 0i@DMSaying -<left><right><right>

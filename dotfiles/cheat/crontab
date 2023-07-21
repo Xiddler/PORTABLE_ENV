@@ -20,6 +20,8 @@ minute hour day month dayofweek
 # every 15 min
 */15 * * * * /home/user/command.sh
 
+* */1 * * * /home/donagh/.scripts/
+
 # every midnight
 0 0 * * * /home/user/command.sh
 

@@ -151,6 +151,11 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/all_org/org")
 
+(setq org-agenda-files (list "/home/donagh/all_org/org/worksearch.org"
+                             "/home/donagh/all_org/org/money.org"
+                             "/home/donagh/all_org/org/org.org"
+                             "/home/donagh/all_org/org/todos.org"))
+
 ;; hide emphasis markers in //italic// in org mode. Works!
 (setq org-hide-emphasis-markers t)
 
@@ -178,6 +183,22 @@
   ;; (package-install 'use-package))
 
 ;; (require 'use-package)
+;;
+;;Added 2023-07-10
+(defun now ()
+  "Insert string for the current time formatted like '2:34 PM' or 1507121460"
+  (interactive)                 ; permit invocation in minibuffer
+  ;; (insert (format-time-string "%D %-I:%M %p")))
+  ;; (insert (format-time-string "%D %-I:%M %p")))
+  ;; (insert (format-time-string "%02y%02m%02d%02H%02M%02S")))
+  (insert (format-time-string "%02y-%02m-%02d_%02H:%02M")))
+
+(defun today ()
+  "Insert string for today's date nicely formatted in American style,
+  e.g. Sunday, September 17, 2000 or standard 17-09-2000."
+  (interactive)       ; permit invocation in minibuffer
+  ;; (insert (format-time-string "%A, %B %e, %Y")))
+  (insert (format-time-string "%Y-%m-%d")))
 
 ;; (use-package 'origami)
 ;; (require 'origami)
@@ -188,7 +209,7 @@
 ;; - `map!' for binding new keys
 ;;
 ;; DONAGHS KEYBINDINGS
-;; The following keybinding *did* work. :n indicates normal mode
+;; The following keybinding *did* work. :n indicates normal mode. :i is insert mode.
 (map! :n "Q" '@q) ; shortcut for @q to run a recorded macro
 ;; (map! :n "Q" 'org-babel-execute-src-block ) ;; Quantify! or Execute snippet!
 (map! :n "SPC d" 'treemacs ) ;; Tree directory for files / folders
@@ -218,6 +239,9 @@
 (map! :n "z ;" '+org/toggle-fold) ;; for some reason z o -> +org/open-fold is not functioning - added 2022-12-18
 (map! :n "SPC b L" 'bookmark-bmenu-list) ;; list files/locations bookmarked in a buffer. SPC RET to quick access bookmarks
 (map! :n "SPC c h" 'org-ctrl-c-ctrl-c) ;; ch for check the box
+(map! :i "C-c d" 'today) ;; works 2023-07-10
+(map! :i "C-c t" 'now) ;; 23-07-10_10:05
+
 ;; NOTE about jk for esc
 ;; file --> ~/.emacs.d/modules/editor/evil/config.el
 ;; 329:        evil-escape-key-sequence "jk"
