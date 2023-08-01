@@ -239,8 +239,8 @@
 (map! :n "z ;" '+org/toggle-fold) ;; for some reason z o -> +org/open-fold is not functioning - added 2022-12-18
 (map! :n "SPC b L" 'bookmark-bmenu-list) ;; list files/locations bookmarked in a buffer. SPC RET to quick access bookmarks
 (map! :n "SPC c h" 'org-ctrl-c-ctrl-c) ;; ch for check the box
-(map! :i "C-c d" 'today) ;; works 2023-07-10
-(map! :i "C-c t" 'now) ;; 23-07-10_10:05
+(map! :i "C-c d" 'today) ;; works 2023-07-10; qq also works
+(map! :i "C-c t" 'now) ;; 23-07-10_10:05; qa also works
 
 ;; NOTE about jk for esc
 ;; file --> ~/.emacs.d/modules/editor/evil/config.el
