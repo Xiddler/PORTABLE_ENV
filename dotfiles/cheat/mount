@@ -28,3 +28,12 @@ mount -o loop disk1.iso /mnt/disk
 -> % findmnt -p --timeout 30000
 # This command tells findmnt to monitor for new mounts until it sees one new mount point created.
 -> %  findmnt -p --first-only
+
+
+#***************************************************
+# mount the SD64 card to /run/media/donagh/XXXX/ 
+#***************************************************
+# from ->% mount ==> /dev/mmcblk0p1 on /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68 type ext4 (rw,nosuid,nodev,relatime,errors=remount-ro,uhelper=udisks2)
+# try this: 2023-08-05
+sudo mount /dev/mmcblk0p1 /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68 
+# First maybe create /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68 ? Or mount to a different location?

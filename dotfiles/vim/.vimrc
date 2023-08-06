@@ -148,7 +148,7 @@ source /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim
 
 " Toggle/Open a file explorer to the right 
 nnoremap <leader>e :Lex!<cr> 
-" :bd to close it!
+" :bd<enter> to close it!
 
 " }}}
 " {{{ Lorem ipsum
@@ -429,6 +429,9 @@ set modelines=1
 highlight Folded guibg=grey guifg=blue
 " highlight Folded guibg=black guifg=grey
 " highlight FoldColumn guibg=darkgrey guifg=white
+
+" to match z; in emacs where zo doesn't work for some reason. ie toggle fold open/close 
+nmap z; za
 
 "vim:foldmethod=marker:foldlevel=0
 

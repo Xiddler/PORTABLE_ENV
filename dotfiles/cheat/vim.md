@@ -449,6 +449,8 @@ C-W -
 
 # DELETE BLANK LINES
 :g/^\s*$/d
+OR
+:%v/./d
 
 # Insert filename / filepath
 <C-r>%  # full filepath - insert mode

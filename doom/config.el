@@ -47,6 +47,13 @@
         ("v" "Ur_Journal" entry (file+datetree "~/org/journal.org")
          "* %?\nEntered on %U\n  %i\n  %a")))
 
+;; Improve org mode looks : https://lucidmanager.org/productivity/ricing-org-mode/ :: added 2023-08-02
+(setq org-startup-indented t
+      org-pretty-entities t
+      org-hide-emphasis-markers t
+      org-startup-with-inline-images t
+      org-image-actual-width '(300))
+
 ;; added 2023-04-07
 (setq org-src-fontify-natively t)
 (setq org-confirm-babel-evaluate nil)
@@ -129,9 +136,9 @@
 (setq org-cycle-emulate-tab 'white)
 
 ;; use avy search in all windows
-;;; Code:
 (setq avy-all-windows t)
 
+;; THEMES
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
@@ -140,17 +147,19 @@
 ;; (setq doom-theme 'doom-solarized-dark)
 ;; (setq doom-theme 'doom-ir-black-brighter-comments )
 ;; (setq doom-theme 'spacemacs-dark )
-
+;;
 ;; 2022-01-01 current preferred theme:
 ;;
 ;; (setq doom-theme 'tsdh-dark )
 (setq doom-theme 'doom-acario-dark ) ;; the purple for diary.org is not the nicest otherwise a nice theme
 ;; (setq doom-theme 'spacemacs-theme-dark ) ;; it keeps the * in org-mode - yuk
 
+;; ORG-DIRECTORY
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/all_org/org")
 
+;; Set which files will be found by org-agenda commands
 (setq org-agenda-files (list "/home/donagh/all_org/org/worksearch.org"
                              "/home/donagh/all_org/org/money.org"
                              "/home/donagh/all_org/org/org.org"
@@ -209,7 +218,7 @@
 ;; - `map!' for binding new keys
 ;;
 ;; DONAGHS KEYBINDINGS
-;; The following keybinding *did* work. :n indicates normal mode. :i is insert mode.
+;; The following keybinding *do* work. :n indicates normal mode. :i is insert mode.
 (map! :n "Q" '@q) ; shortcut for @q to run a recorded macro
 ;; (map! :n "Q" 'org-babel-execute-src-block ) ;; Quantify! or Execute snippet!
 (map! :n "SPC d" 'treemacs ) ;; Tree directory for files / folders

@@ -1,0 +1,291 @@
+This is gnu-units. Available on Ubuntu etc. Downloaded to the RPI on 2023-08-05
+
+
+FROM Hacker News 2023-08-05
+kragen 1 day ago | next [–]
+
+this page seriously undersells the versatility and utility of the units program
+
+how long will my laptop take to charge at its current rate of charging?
+
+    You have: (22.8 Wh - 16.8 Wh)/7.4W
+    You want: time
+            48 min + 38.918919 sec
+
+how long will a 2000mAh 18650 cell take to discharge at 2.5 watts, using a nominal voltage of 3.7 volts?
+
+    You have: 3.7 V 2 amp hour / 2.5 watt
+    You want: time
+            2 hr + 57 min + 36 sec
+
+what energy density is that, so i can compare it to the volume needed for other forms of energy storage?
+
+    You have: 3.7 V 2 amp hour / circlearea(half 18 mm) 65 mm
+    You want: MJ/ℓ
+            * 1.6105936
+            / 0.62088909
+
+what's the specific energy of stoichiometrically mixed oxyhydrogen fuel?
+
+    You have: 44000 J/mol / ((2 hydrogen + oxygen)g/mol)
+    You want: MJ/kg
+            * 2.4423711
+            / 0.40943818
+
+okay but how much volume? say at atmospheric pressure?
+
+    You have: 3 mol gasconstant tempC(20) / 1 atm
+    You want: l
+            * 72.165351
+            / 0.013857066
+
+so that's how much energy density?
+
+    You have: 44kJ/_
+    You want: J/l
+            * 609.71089
+            / 0.0016401216
+
+(i may be off by a factor of 2 here)
+
+how much energy can this capacitor hold?
+
+    You have: half (10V)**2 47 uF
+    You want: mJ
+            * 2.35
+            / 0.42553191
+
+how much energy density is that?
+
+    You have: half (10V)**2 47 μF / 15mm circlearea(3mm)
+    You want: J/ℓ
+            * 5.5409499
+            / 0.18047447
+
+how thick of a cable do i need to support me in a lightweight fabric-sling chair (or, from a different point of view, to pose a risk of accidental strangulation)? suppose its tensile strength is 2.7 gigapascals
+
+    You have: 120kg gravity / 2.7 GPa
+    You want: mm2
+            * 0.43585111
+            / 2.2943615
+    You have: _
+    You want: circlearea
+            0.00037247244 m
+    You have: _
+    You want: mm
+            * 0.37247244
+            / 2.6847624
+
+note that this is the radius of the cable, not its diameter!
+
+the datasheet says this 400×240 display uses 175 μW if all the pixels flip once per second and 60 μW for a static display. how much energy is that per pixel flip?
+
+    You have: (175 uW - 50 uW) / 400 240 1 Hz
+    You want: nJ
+            * 1.3020833
+            / 0.768
+
+if i overclock it to 60 fps how much power will it use?
+
+    You have: 60 Hz 400 240 1.3nJ
+    You want: μW
+            * 7488
+            / 0.00013354701
+
+and how many pixels is its diagonal?
+
+    You have: 400**2+240**2
+    You want:
+            Definition: 217600
+    You have: _**.5
+    You want:
+            Definition: 466.47615
+
+what is the visual angle subtended by the sun as seen from earth?
+
+    You have: 2 sunradius/sundist
+    You want: milliradians
+            * 9.3049358
+            / 0.10746984
+    You have: _
+    You want: dms
+            31 arcmin + 59.280781 arcsec
+
+okay, how does that compare to the moon?
+
+    You have: moonradius 2 / moondist
+    You want:
+            Definition: 0.0090426639
+
+on average the moon looks a little smaller, which is why annular eclipses are so common, but we can also calculate that total eclipses are possible because sometimes the moon looks bigger
+
+    You have: moonradius 2 / moondist_min
+    You want:
+            Definition: 0.0097530864
+
+what percentage of this copper sulfate is actual copper?
+
+    You have: copper / (copper + (sulfur + 4 oxygen))
+    You want: %
+            * 39.813395
+            / 0.025117175
+
+how fast can i write to this slc flash chip without wearing it out in 53 years, assuming perfect wear leveling and no write amplification?
+
+    You have: 100 thousand 128 MiB/53 years
+    You want: bytes/second
+            * 8024.8943
+            / 0.00012461223
+
+how much fuel will this truck need to get across the country?
+
+    You have: 4000 km / (6.5 miles/gallon)
+    You want: l
+            * 1447.4744
+            / 0.00069085852
+
+how much is that per kilogram of lettuce or sodium lauryl sulfate or whatever?
+
+    You have: _/28 tonnes
+    You want: ml/kg
+            * 51.695513
+            / 0.019344039
+
+okay, but how much energy is 52 mℓ of diesel per kg of lettuce?
+
+    You have: _ 38.6 kJ/l
+    You want: kJ/kg
+            * 1.9954468
+            / 0.5011409
+
+how much data can i transfer overnight during unmetered hours on a 2400-baud modem?
+
+    You have: 8 hours 2400 bps
+    You want: MB
+            * 8.64
+            / 0.11574074
+
+how much power does the earth receive from the sun, assuming a solar constant of 1400 W/m²?
+
+    You have: 1400 W/m**2 * circlearea(earthradius)
+    You want: petawatts
+            * 178.52313
+            / 0.0056015152
+
+what would the equilibrium temperature of an object be if it were illuminated at that brightness and had a flat emission spectrum?
+
+    You have: (1400 W/m**2 / stefanboltzmann)**(1/4)
+    You want: tempC
+            123.24583
+
+how about here in buenos aires at the winter solstice? first, what angle is the sun at anyway? we're at 34°36’ south, and the sun's latitude at the solstice is 23°26’
+
+    You have: 34° + 36' + 23° + 26'
+    You want: dms
+            58 deg + 2 arcmin
+
+so that reduces the peak insolation to how much? here underneath the atmosphere we only get 1kW/m²
+
+    You have: cos(_) 1000 W/m^2
+    You want: W/m^2
+            * 529.4258
+            / 0.0018888388
+
+and that would be what temperature in equilibrium?
+
+    You have: (_/stefanboltzmann)**(1/4)
+    You want: tempC
+            37.698189
+
+(integrating the sun's angle over the course of the day as the earth rotates is sadly beyond its capacities)
+
+how much money could a sensible heat storage reservoir of 15 kg of water save me over 16 years? say power rates go down to only 2.5¢/kWh because of solar
+
+    You have: 1500 kcal/day * 16 years * 2.5 cents/kWh
+    You want:
+            Definition: 254.69556 US$
+
+what's the surface area of a 300mm × 400mm × 150mm backpack? like how much cloth?
+
+    You have: 2 (300mm 400mm + 400mm 150mm + 150mm 300mm)
+    You want:
+            Definition: 0.45 m^2
+
+okay but in cm²
+
+    You have: _
+    You want: cm2
+            * 4500
+            / 0.00022222222
+
+what's the electrical impedance of a 1000 μF cap at an audio highpass frequency of 20Hz?
+
+    You have: 1/(2 pi 20 Hz 1000 uF)
+    You want: ohms
+            * 7.9577472
+            / 0.12566371
+
+what's the time constant of 100 pF (roughly the smallest capacitance you can get in a macroscopic circuit with any degree of precision) and 1 MΩ?
+
+    You have: 100 pF 1 megohm
+    You want: ms
+            * 0.1
+            / 10
+
+okay. so how long will an 0.1μF cap take to discharge through a 100kΩ resistor from 5 volts down to a 1.3 volt threshold?
+
+    You have: ln(5V/1.3V) .1 uF 100kilohm
+    You want: ms
+            * 13.470736
+            / 0.074234991
+
+how many bits of precision does a linear adc need to be able to measure a difference of 1.8 millivolts if 1.5 volts is full-scale?
+
+    You have: log(1.8mV/1.5V)/log(2)
+    You want:
+            Definition: -9.7027499
+
+if this oxygen absorber contains 7 grams of iron which oxidizes to Fe₂O₃, how much air can it remove all the oxygen from? air is 21% oxygen by volume (and roughly by mass) and weighs 1.2 grams per liter
+
+    You have: 3 oxygen / 2 iron * 7 g
+    You want: g
+            * 3.0082138
+            / 0.33242318
+    You have: _/21%/(1.2g/ℓ)
+    You want: ℓ
+            * 11.937356
+            / 0.083770641
+
+i've lost 7 kg over the last two months; how much of a caloric deficit does that represent in my diet?
+
+    You have: 7 kg 3500kcal/pound / 2 months
+    You want: kcal/day
+            * 887.30034
+            / 0.0011270141
+
+if you were to spread the moon evenly over russia, how deep would it be?
+
+    You have: spherevol(moonradius) / area_russia
+    You want:
+            Definition: 1286134.4 m
+
+how big is nigeria compared to massachusetts?
+
+    You have: area_nigeria/area_massachusetts
+    You want:
+            Definition: 33.793093
+
+how many ounces of platinum is a ton of oil worth at 40 dollars per megawatt hour?
+
+    You have: tonoil 40 dollars/MWh
+    You want: platinumounce
+            * 0.58368883
+            / 1.7132416
+
+or in grams?
+
+    You have: tonoil 40 dollars/MWh / platinumprice
+    You want: g
+            * 18.154752
+            / 0.055081997
+

@@ -897,14 +897,25 @@ M = Alt; S = Shift; C = Ctrl; RET = Enter / Return
 [SPC] w [SPC] <-- save-buffer
 AND
 [SPC] s [SPC] <-- save-buffer
+** symbols
+
+See M-x org-entities-help.
+
+Pro tip: Given a circle \Gamma of diameter d, the length of its circumference is \pi{}d.
+
+\dagger
+To make that \dagger symbol: M-x org-pretty-mode and <backslash>dagger.
+
+Area of circle = \pi r x r
+
 ** tables
 see [[https://orgmode.org/manual/Built_002din-Table-Editor.html#Built_002din-Table-Editor][org-mode tables]] (webref)
 
 *** insert table
 Type:
-|-
-|name  |address  |age  |
-|-
+|------+---------+-----|
+| name | address | age |
+|------+---------+-----|
 
 then press TAB to get this:
 
