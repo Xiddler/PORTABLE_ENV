@@ -6,6 +6,7 @@
 # this script backs up the files and folders of value to me
 # personal incl. journals and personal information
 # all_org - all my personal .org files for viewing/editing in doom-emacs incl. eg info.org, money.org, worksearch.org
+# The following no longer rsynced
 # !! zim_Computer - my IT knowledge base built up over 10 years almost NOTE: zim_Computer on Windows 11 now.
 # !! zim_ORG - last backed up June 2023. Not currently in use.
 #

@@ -116,6 +116,7 @@ thymo() { vim ~/DONAGHS/personal/health_general/THYMO/thymo.md }
 #bookmarks() { cd $HOME/SD64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
 # rnotes() { cd $HOME/REPOS/books/0Reading/0Reading_notes && ls }
 alc() { cd  $personal/alcohol/ }
+shared() { cd /home/donagh/samba/anonymous_shared_directory }
 # Search Zim - Computer, ORG 
 alias -g ..='../'
 alias -g ...='../../'
@@ -442,6 +443,9 @@ ttmux() { /home/donagh/.scripts/tmux.sh }
 # === SERVERS ===
 # start zim, cifs and dropbox
 zcd() { /home/donagh/.scripts/zim_cifs_dropbox.sh }
+
+# dropbox
+drop() { echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && ~/.dropbox-dist/dropboxd }
 
 
 # }}}

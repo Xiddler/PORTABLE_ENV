@@ -94,6 +94,8 @@ hash -d hello=~/Documents
 man zshall
 https://manpages.debian.org/bullseye/zsh-common/index.html :: contains only contents of -> % man zshall
 
+## zsh-syntax-highlighting
+
 
 
 
