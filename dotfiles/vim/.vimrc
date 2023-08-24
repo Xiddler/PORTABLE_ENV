@@ -796,8 +796,9 @@ inoremap hte the
 
 " Timestamps
 " inoremap 
-inoremap qq <C-R>=strftime("%Y-%m-%d")<CR>
-inoremap aq <C-R>=strftime("%Y-%m-%d_%H:%M")<CR>
+" inoremap qq <C-R>=strftime("%Y-%m-%d")<CR>
+" inoremap aq <C-R>=strftime("%Y-%m-%d_%H:%M")<CR>
+"
 
 
 " nnoremap dms 0i@DMSaying -<left><right><right>

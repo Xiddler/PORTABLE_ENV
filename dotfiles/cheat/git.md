@@ -263,9 +263,6 @@ git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(
 man giteveryday # https://git-scm.com/docs/giteveryday
 man gittutorial # https://git-scm.com/docs/gittutorial
 
-#  retrieve a single file from an older hash
-$ git checkout [revision_hash] [file_name]
-$ git checkout [revision_hash] [file_name]
 # HEAD 
 Points to the Last Commit on the current repository i.e. [revision_hash]
  HEAD^ - Last Commit - 1;
@@ -347,7 +344,7 @@ git push origin main                                    -- push (to remote)
 https://ndpsoftware.com/git-cheatsheet.html#loc=local_repo
 
 # hunks
-# These are parts of files that you can update interactively. For more help -> % git add --help and search for hunk or patch
+ These are parts of files that you can update interactively. For more help -> % git add --help and search for hunk or patch
 
 # see which credentials I gave at git init
 git config -l
@@ -417,6 +414,14 @@ Log for last week. Add --author=donagh if I only want to see changes I made.
 # Nice log output
 
 -> % git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+
+
+# Retrieve a single file from an older hash
+
+$ git checkout [revision_hash] [file_name]
+$ git checkout [revision_hash] [file_name]
+eg In the folder ~/PORTABLE_ENV/tmux/
+->% git restore --staged 2d448a8e33c91 ~/PORTABLE_ENV/tmux/tmux.conf
 
 # END 
 
