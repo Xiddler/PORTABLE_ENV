@@ -1,40 +1,42 @@
 # Quick Ref.
 #Rem: Two separate actions: Do Ctrl-a together then let go and then % for example.
+# Cheat sheet https://tmuxcheatsheet.com/ 
 
 # in the terminal 
 Start tmux						:: tmux
 List tmux windows               :: tmux ls
-
-# sessions
-Create new session              :: tmux new -s basic
-Return to session               :: tmux attach-session -t servers
-Kill everything                 :: tmux kill-session -a
-Kill session                    :: tmux kill-session -t servers
-
-# inside tmux 
-Vert. split						:: C-a % or C-a v
-Hor. split						:: C-a " or C-a h
-Create window                   :: C-a c
-Kill window						:: C-a x
-Focus split left				:: C-a ←  or Alt ←
-Focus split right				:: C-a →  or Alt →
-Detach from tmux				:: C-a d
-Info                            :: C-a ? [ list all the tmux options ] 
-Go full screen                  :: C-a z
-Resize pane                     :: C-a Alt →  
-Rename the current window       :: C-a , 
 Detach from tmux                :: C-a d
 
+# sessions
+Create new session              :: tmux new -s <name>
+Return to session               :: tmux attach-session -t <name>
+Kill everything                 :: tmux kill-session -a
+Kill session                    :: tmux kill-session -t <name>
+List current sessions           :: C-a s
 
-# Start tmux:
-tmux
+# general
+Info                            :: C-a ? [ list all the tmux options ] 
 
-# Detach from tmux:
-Ctrl-a d
+# windows
+Create window                   :: C-a c
+Rename the current window       :: C-a , 
+Go to next window               :: C-a n
+Go to previous window           :: C-a p
+Close current window            :: C-a &
 
-# Restore tmux session:
-tmux attach
-tmux attach-session -t servers
+# panes
+Vert. split						:: C-a % or C-a v
+Hor. split						:: C-a " or C-a h
+Focus split left				:: C-a ←  or Alt ←
+Focus split right				:: C-a →  or Alt →
+Go full screen                  :: C-a z
+Resize pane                     :: C-a Alt →  
+Kill current pane               :: C-a x
+
+
+# In ~/.tmux.conf
+Use vi keys in buffer           :: setw -g mode-keys vi
+
 
 # Detach an already attached session (great if you are moving devices with different screen resolutions)
 tmux attach -d 
@@ -60,6 +62,7 @@ Ctrl-a PageUp/PageDown
 
 # Reload configuation file
 Ctrl-a : source-file /path/to/file
+Ctrl-a : source-file ~/.tmux.conf
 
 # Window management
 # =================
@@ -83,6 +86,7 @@ Ctrl-a "
 
 NOTE: C-a
 # remap prefix from 'C-b' to 'C-a'
+# In the ~/.tmux.conf file 
 unbind C-b
 set-option -g prefix C-a
 bind-key C-a send-prefix

@@ -15,7 +15,9 @@ clipboard ready for pasting. What more do you want?"
 
 echo " "
 
-echo "$m" | sed -e 's/\s/_/g' | xclip -selection clipboard
+# echo "$m" | sed -e 's/\s/_/g' | xclip -selection clipboard
+echo "$m" | sed -e 's/\s/_/g'  > /tmp/clipped.txt && cat /tmp/clipped.txt
+
 
 
 

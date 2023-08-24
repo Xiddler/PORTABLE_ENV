@@ -447,6 +447,9 @@ zcd() { /home/donagh/.scripts/zim_cifs_dropbox.sh }
 # dropbox
 drop() { echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && ~/.dropbox-dist/dropboxd }
 
+# session for my journal and emacs
+tmt() { tmux attach-session -t toshy }
+
 
 # }}}
 #{{{ ZSH 

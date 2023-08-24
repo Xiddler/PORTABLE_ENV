@@ -1,9 +1,19 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # the following (uncommented line) allows profiling `zsh` to see what may be making it slow. NOTE: zprof needs to be uncommented at the last line too.
 # zmodload zsh/zprof
 # NOTE: Aliases handled in .zsh_aliases or .bash_aliases
 #
 # issue with locale - added 2022-11-22
 LC_TIME='en_IE.UTF-8'
+
+
+XDG_CONFIG_HOME="/home/donagh/.config"
 #
 # POWERLEVEL - START 
 
