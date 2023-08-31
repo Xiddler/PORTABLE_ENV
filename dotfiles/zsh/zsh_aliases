@@ -117,6 +117,7 @@ thymo() { vim ~/DONAGHS/personal/health_general/THYMO/thymo.md }
 # rnotes() { cd $HOME/REPOS/books/0Reading/0Reading_notes && ls }
 alc() { cd  $personal/alcohol/ }
 shared() { cd /home/donagh/samba/anonymous_shared_directory }
+vig() { cd /run/media/donagh/SD64GB/DONAGHS/personal/writings/my_writings/VIGNETTES/ }
 # Search Zim - Computer, ORG 
 alias -g ..='../'
 alias -g ...='../../'

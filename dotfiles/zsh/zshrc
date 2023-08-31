@@ -14,7 +14,8 @@ LC_TIME='en_IE.UTF-8'
 
 
 XDG_CONFIG_HOME="/home/donagh/.config"
-#
+
+
 # POWERLEVEL - START 
 
 # see End of This File 
@@ -355,7 +356,7 @@ export RANGER_LOAD_DEFAULT_RC=false
 # zoxide - for directory jumping using z 
 eval "$(zoxide init zsh)"
 
-# mcfly
+# mcfly - for history Ctrl-R
 eval "$(mcfly init zsh)"
 
 
@@ -391,5 +392,5 @@ source ~/.config/dirjump/dirjump
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# see first line regarding zprof 
+# see first line regarding zLINUX:1Linux Live USB:01installed apps:powerlevel10kprof 
 # zprof 

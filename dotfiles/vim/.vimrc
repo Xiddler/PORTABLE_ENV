@@ -61,7 +61,7 @@ nnoremap <leader>y "+y
 
 " use <leader>f to call up ranger file manager
 let g:ranger_map_keys = 0
-map <leader>f :Ranger<cr>
+noremap <leader>f :Ranger<cr>
 
 " handy goto start of line and down one line ;; conflicts with 'next f/w/' etc.
 " nnoremap <leader><leader> ^
@@ -87,6 +87,7 @@ cmap <C-l> <Right>
 " get , , w to make easy motion work
 " map <Leader><Leader>w <Plug>(easymotion-prefix)
 " highlight ALL words for navigating to
+" Use , / to highlight point in file
 map <leader>/ <Plug>(easymotion-bd-w) 
 nmap <leader>/ <Plug>(easymotion-overwin-w) 
 
@@ -108,14 +109,14 @@ nmap <leader>t g~aW
 " to open journal.org for access to snippets
 nmap <leader>n :!jumpapp emacs<cr>
 
-" surround a work with "word"
+" surround a word with "word"
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 
-" surround a work with 'word'
+" surround a word with 'word'
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
 
 
-" surround a work with _word_
+" surround a word with _word_
 nnoremap <leader>_ viw<esc>a_<esc>bi_<esc>lel
 
 
@@ -135,6 +136,8 @@ nnoremap <leader>vv :tabe $MYVIMRC<CR>
 
 " source $MYVIMRC
 nnoremap <leader>ss :so $MYVIMRC<CR>
+
+
 
 "}}}
 " {{{ Plugins
@@ -160,6 +163,9 @@ source /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim
 " Toggle/Open a file explorer to the right 
 nnoremap <leader>e :Lex!<cr> 
 " :bd<enter> to close it!
+"
+nnoremap <leader>vza :tabe ~/.zsh_aliases <cr>
+nnoremap <leader>vz :tabe ~/.zshrc <cr>
 
 " }}}
 " {{{ Lorem ipsum

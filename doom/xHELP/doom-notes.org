@@ -813,7 +813,7 @@ SPC L  then pick the type e.g. file,
 
 To make a link to a heading in another file
 
-** org-mode keywords HEADINGS
+** org-mode keywords HEADINGS /  KEYWORDS
 *** Method 1
 In config.el add:
   (setq org-todo-keywords

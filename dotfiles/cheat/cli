@@ -339,6 +339,10 @@ Alt + .             to recall the last argument of any of the previous commands.
 echo $(date)        is equivalent to echo `date` and to echo "$(date)" 
 -- (double dash)    means "end of the command-line options", so any argument after that is treated as a non-option argument, in this case, a filename for rm to delete.  This -- (double dash) works with many Unix commands. It was introduced relatively early on in Unix history, after the issue of filenames starting with a dash was found. Example: $ rm -- -stupidFilename  will remove the file whose name begins with a - .
 
+# Arithmetic
+echo $(( 7307/1285.0))
+echo $(( 3+57))
+
 
 
 # END

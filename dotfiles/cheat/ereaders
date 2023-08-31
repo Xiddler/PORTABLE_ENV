@@ -17,7 +17,14 @@
 |  rtf        |   fbreader   | 
 |  chm        |   fbreader   | 
 |  azw3       |   calibre    |
+| vast array  |   kavita     | added 2023-08-29; https://www.kavitareader.com/ 
 +-------------+--------------+
+
+Kavita Extensive File support
+    Manga/Comics: ZIP, RAR, RAR5, CBR, CBZ, CB7, CBT, TAR.GZ, 7ZIP/7Z
+    Books: EPUB2, EPUB3, PDF
+    Raw Images: JPG/JPEG, PNG, WebP, GIF, AVIF
+
 
 The ebook formats:
 

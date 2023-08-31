@@ -6,7 +6,7 @@
 ;;; Commentary:
 ;; Place your private configuration here!
 ;; Remember, you do not need to run 'doom sync' after modifying this file!
-;; I use this file mainly for adding new key-bindings
+;; DM - I use this file mainly for adding new key-bindings
 
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
@@ -62,7 +62,44 @@
 ;;(setq org-todo-keywords
 ;;   '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
 ;;      (sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "WAIT(w@/!)" "HOLD(h)" "|" "COMPLETED(c)" "CANC(k@)")))
-
+;;
+;; For actual keywords I was using /home/donagh.emacs.d/modules/lang/org/config.el WRONGLY
+;; (setq org-todo-keywords
+;;         '((sequence
+;;            "TODO(t)"  ; A task that needs doing & is ready to do
+;;            "PROJ(p)"  ; A project, which usually contains other tasks
+;;            ;"LOOP(r)"  ; A recurring task
+;;            "STRT(s)"  ; A task that is in progress
+;;            "WAIT(w)"  ; Something external is holding up this task
+;;            ;"HOLD(h)"  ; This task is paused/on hold because of me
+;;            "HAPPENING(h)"  ; This task is happening
+;;            "REPEAT(r)"  ; This task is recurring
+;;            "READING(g)"  ; To promote my renascent reading habit
+;;            "MAINTENANCE(m)"  ; For House and IT
+;;            "IDEA(i)"  ; An unconfirmed and unapproved task or notion
+;;            "|"
+;;            "DONE(d)"  ; Task successfully completed
+;;            "KILL(k)") ; Task was cancelled, aborted or is no longer applicable
+;;           (sequence
+;;            "[ ](T)"   ; A task that needs doing
+;;            "[-](S)"   ; Task is in progress
+;;            "[?](W)"   ; Task is being held up or paused
+;;            "|"
+;;            "[X](D)")  ; Task was completed
+;;           (sequence
+;;            "|"
+;;            "OKAY(o)"
+;;            "YES(y)"
+;;            "NO(n)"))
+;;         org-todo-keyword-faces
+;;         '(("[-]"  . +org-todo-active)
+;;           ("STRT" . +org-todo-active)
+;;           ("[?]"  . +org-todo-onhold)
+;;           ("WAIT" . +org-todo-onhold)
+;;           ("HOLD" . +org-todo-onhold)
+;;           ("PROJ" . +org-todo-project)
+;;           ("NO"   . +org-todo-cancel)
+;;           ("KILL" . +org-todo-cancel)))
 (setq org-todo-keywords
         '((sequence
            "TODO(t)"  ; A task that needs doing & is ready to do
@@ -70,7 +107,7 @@
            ;"LOOP(r)"  ; A recurring task
            "STRT(s)"  ; A task that is in progress
            "WAIT(w)"  ; Something external is holding up this task
-           ;"HOLD(h)"  ; This task is paused/on hold because of me
+           ;;"HOLD(h)"  ; This task is paused/on hold because of me
            "HAPPENING(h)"  ; This task is happening
            "REPEAT(r)"  ; This task is recurring
            "READING(g)"  ; To promote my renascent reading habit

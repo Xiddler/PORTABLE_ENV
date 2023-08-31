@@ -1,7 +1,9 @@
 #!/bin/bash
 
+# Get definitions from OED --> $HOME/REPOS/WORDS/Dictionaries/Oxford_English_Dictionary/oxford_dict.txt
+
 # Edit 2022-10-17
-# Replaced with def --> dict (ie dictd from AUR) 
+# Alternative to dict (ie dictd from AUR) 
 
 # usage $def <word_sought> where def is aliased in .zshrc as: alias def='~/.scripts/get_defs.sh '
 string=$1

@@ -1,5 +1,6 @@
 " Filepath  /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim 
 " /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim
+"
 
 " This file is where I call the plugins I want to use in vim. There is a line in .vimrc that calls this file
 " I am using the vim-plug plugin manager from https://github.com/junegunn/vim-plug 
@@ -11,14 +12,14 @@
 " 2022-02-13 Created this new - external - sub-vimrc file 
 " 2022-02-05  vim-plug started 
 " https://github.com/junegunn/vim-plug and https://github.com/junegunn/vim-plug/wiki/tutorial
-" Remember to :so % after adding a new Plug
-"
+" Remember to :so % after adding a new Plug or just PlugInstall in any vim file
+
 
 call plug#begin('/home/donagh/PORTABLE_ENV/vim/plugins')
-" commentary i.e. gcc  etc. 
-Plug 'tpope/vim-commentary'
+
 
 " ____________   THEMES _______________________________
+
 " Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'vim-airline/vim-airline' 
 Plug 'https://github.com/vim-airline/vim-airline-themes.git' 
@@ -36,28 +37,40 @@ Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 " iceberg - added 2022-11-04
 Plug 'https://github.com/cocopon/iceberg.vim.git'
 
-
 " ____________   END THEMES _______________________________
 
-Plug 'francoiscabrol/ranger.vim'
+" ------------  Plugins -----------------------------------
 
+" commentary i.e. gcc  etc. 
+Plug 'tpope/vim-commentary' " quick comment / uncomment plugin
+
+" ranger
+Plug 'francoiscabrol/ranger.vim' " call the ranger file manager from vim
+
+" easymotion
 Plug 'easymotion/vim-easymotion' " Use ./ to highlight search pairs 
 
+" peekaboo
+" the following plugin displays a buffer to the right on typing this  " <-- yes the quote symbol!
+Plug 'junegunn/vim-peekaboo'
+
+" Plug 'zaid/vim-rec'  Plug 'https://github.com/zaid/vim-rec'  for rec-files 
+"
+" Plug 'tpope/vim-abolish'  Plug 'https://github.com/tpope/vim-abolish.git' - added 2022-09-02
+Plug 'https://github.com/tpope/vim-abolish.git' "  added 2022-09-02 < create hundreds of corrections my fingers refuse to learn > 
+
+" FZF 
+Plug 'https://github.com/junegunn/fzf.git' " added 2022-10-27 fuzzy search :FZF 
+ 
+
+" LoremIpsum
+Plug 'https://github.com/vim-scripts/loremipsum' " added 2022-09-15 Usage: :Loremipsum 55 will output 55 latin words 
 
 " ____________   UI  _______________________________
 Plug 'https://github.com/junegunn/goyo.vim.git' " Nice zen mode 
 Plug 'https://github.com/junegunn/limelight.vim.git' " Darkens non-focussed areas 
 Plug 'godlygeek/tabular'  " for aligning text
 
-" the following plugin shows a buffer to the right on typing this  <-- yes the quote symbol!
-Plug 'junegunn/vim-peekaboo'
-" Plug 'zaid/vim-rec'  Plug 'https://github.com/zaid/vim-rec'  for rec-files 
-" Plug 'tpope/vim-abolish'  Plug 'https://github.com/tpope/vim-abolish.git' - added 2022-09-02
-Plug 'https://github.com/tpope/vim-abolish.git' "  added 2022-09-02
-" FZF 
-Plug 'https://github.com/junegunn/fzf.git' " added 2022-10-27
-"
-Plug 'https://github.com/vim-scripts/loremipsum' " added 2022-09-15 Usage: :Loremipsum 55 will output 55 latin words 
 
 " ____________   MARKDOWN   _______________________________
 " With none of these enabled ##'s are salmon-coloured - but no folding
