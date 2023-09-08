@@ -781,7 +781,9 @@ endif
 
 " insert @dm - Note: dc for donagh comments
 " nmap dc 0i@dm -<left><right><space>
-nmap <leader>c 0i@dm -<left><right><space>
+nnoremap <leader>c 0i@dm -<left><right><space>
+
+nnoremap <leader>m ^d0
 inoremap <leader>c @dm - 
 " while using the MacAir I have these abbreviations
 " I have found the way to do it on the MacAir inside System Settings
@@ -793,6 +795,11 @@ inoremap iid I'd
 inoremap £ # 
 inoremap wiht with
 inoremap taht that
+inoremap dont don't
+inoremap didnt didn't
+inoremap wont won't
+inoremap cant can't
+
 " when mistyping ot instead of the word to  - but this causes long delays...
 " espanso wouldn't work 
 " inoremap <space>ot<space> to

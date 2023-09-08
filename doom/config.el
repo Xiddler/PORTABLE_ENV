@@ -302,6 +302,49 @@
 
 ;; (map! :n "SPC v" 'org-agenda) ;; view org-agenda next 14 days
 ;;
+;;------------------------------------------------
+;; abbrev from https://github.com/ymarco/doom-emacs-config/blob/master/abbrevs.el
+;;
+;; (define-abbrev-table 'org-mode-abbrev-table
+;;   '(("html" "HTML" nil :count 0)
+;;     ("katex" "KaTeX" nil :count 0)
+;;     ("latex" "LaTeX" nil :count 0)
+;;     ("mathjax" "MathJax" nil :count 0)
+;;     ("pdfl" "=PDFLaTeX=" nil :count 0)
+;;     ("polyg" "=polyglossia" nil :count 0)
+;;     ("svg" "SVG" nil :count 0)
+;;     ("taht" "that" nil :count 1)
+;;     ("teh" "the" nil :count 0)
+;;     ("tex" "TeX" nil :count 0)
+;;     ("tikz" "TikZ" nil :count 0)
+;;     ("xel" "=XeLaTeX=" nil :count 0)
+;;     ("xetex" "=XeTeX=" nil :count 0)
+;;    ))
+
+;; (map! "C-x '"
+;;       (cmd! (define-abbrev-table)
+;;             ))
+;; from https://www.reddit.com/r/emacs/comments/zwmgf6/how_can_i_make_abbreviations_expand_instantly/:w
+;; THIS WORKS! 2023-09-06
+;;
+(defun abbrev-or-insert ()
+  (interactive)
+  (self-insert-command 1)
+  (expand-abbrev))
+
+(define-abbrev-table 'global-abbrev-table
+  '(
+("HH" "---~" nil :case-fixed t :count 0)
+("FOO" "facing our orriblenesses" nil :case-fixed t :count 0)
+("goo" "googling green glasses" nil :case-fixed t :count 0)
+("ii" "I" nil :case-fixed t :count 0)
+
+))
+;; not sure what this is supposed to do
+;; (global-set-key (kbd "SPC y") 'abbrev-or-insert)
+
+
+
 
 ;; -----------------------------------
 ;; Sample function as an example of elisp functionality

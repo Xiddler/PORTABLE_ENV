@@ -77,6 +77,7 @@ busb() { cd $HOME/B693_backup }
 recipes() {cd $HOME/REPOS/FOOD/recipes }
 maps() {cd $HOME/REPOS//maps }
 contacts() { jumpapp emacs  ~/DONAGHS/personal/11_Contacts.org }
+emax() { emacsclient /home/donagh/DONAGHS/personal/me.org } # using the emacs daemon 
 # jour { cd $journal && ls }
 po() { cd $HOME/PORTABLE_ENV }
 ba() { cd $HOME/BACKUPS }

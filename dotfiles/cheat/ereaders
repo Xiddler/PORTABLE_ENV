@@ -1,5 +1,12 @@
 # On linux
 
+# CLI tools
+ebookinfo  0.0.1-1 Library and utility for extracting meta-data from certain e-book files
+ebook-tools  0.2.2-7 [Installed] Tools for accessing and converting various ebook file formats
+ebook-convert  Usage: ebook-convert input_file output_file [options]
+
+
+# Readers / formats
 +-------------+--------------+
 |  Format     |    Reader    |
 +-------------+--------------+

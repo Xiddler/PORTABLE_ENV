@@ -1,9 +1,13 @@
 # List of tools that I may not often use but may be usefule sometimes
-#
+
 # To obviate the need to enter sudo password
 ->$ sudo visudo
 # and add this at the very end
 donagh ALL=(ALL:ALL) NOPASSWD: ALL
+
+# Open file listing in a vim buffer
+
+->% vidir
 
 # fstab, fdisk etc.
 # view partitions
@@ -342,6 +346,13 @@ echo $(date)        is equivalent to echo `date` and to echo "$(date)"
 # Arithmetic
 echo $(( 7307/1285.0))
 echo $(( 3+57))
+
+# Tools
+# Run a Fedora n the terminal that will close on exit. Needs podman.
+->% podman run --rm -it fedora
+
+# Check the etymology of "fun" online (needs w3m)
+->% w3m "https://www.etymonline.com/word/fun"
 
 
 

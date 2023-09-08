@@ -25,33 +25,34 @@ md_journal() {
         then
             touch $filen
             # front matter for new day's journal:
-            echo "$today
+            echo "# FRONT MATTER
+$today
 Script ~/PORTABLE_ENV/dotfiles/scripts/.scripts/markdown_journal.sh 
 Ur_Journal ~/DONAGHS/all_org/journal.org
 
-> $day 
-
-
-# ____________________________________________________________________________
-# DIARY
 
 ## PROMPTS
 
 HEALTH - HEARBEAT RATE; MEDICAL; CHEST ISSUE; ALCOHOL; APETITE; SLEEP; WEIGHT / WAIST; OUTDOORS / EXERCISE; FOOD; PAIN/ABSENCE;
 SELF - PERSONALITY / CHARACTER / PERSONAL DEVELOPMENT; 
 TOWARDS GETTING REAL; TOWARDS COMING TO LIFE
-WORK / EARNING / MONEY 
+WEM = WORK / EARNING / MONEY 
 TASKS 
 LIVING COSTS
 IDEAS; CREATIVITY
+READING
 GOALS; PLANNING; VISION;
-IT
 SOCIAL - MEETINGS; CHATS; COMMUNICATIONS; SHARING; CONTRIBUTING;
-BOTHERS;  ISSUES;
-JOYS;  GRATEFUL / BLESSINGS;
-MIND / MOOD; FEELINGS / EMOTIONS; 
+JOYS; BLESSINGS; GRATITUDE; 
+BOTHERS; ISSUES; WOES;
+STATE OF MIND; MOOD / FEELINGS / EMOTIONS; 
+IT; DATA
 
-## Today 
+
+
+# ____________________________________________________________________________
+# DIARY
+> $day 
 
 
 NOTABLE
@@ -60,6 +61,7 @@ NOTABLE
 
 WEATHER
 
+Morning: 
 
 
 
@@ -68,6 +70,7 @@ WEATHER
 
 # ____________________________________________________________________________
 # JOURNALLING 
+> $day 
 
 
 
