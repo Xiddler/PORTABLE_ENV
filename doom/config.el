@@ -57,6 +57,8 @@
 ;; added 2023-04-07
 (setq org-src-fontify-natively t)
 (setq org-confirm-babel-evaluate nil)
+;; abbrev-mode
+;; (setq abbrev-mode t)
 
 ;;
 ;;(setq org-todo-keywords
@@ -338,6 +340,7 @@
 ("FOO" "facing our orriblenesses" nil :case-fixed t :count 0)
 ("goo" "googling green glasses" nil :case-fixed t :count 0)
 ("ii" "I" nil :case-fixed t :count 0)
+(" i " "I" nil :case-fixed t :count 0)
 
 ))
 ;; not sure what this is supposed to do

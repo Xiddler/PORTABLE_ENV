@@ -4,6 +4,7 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # the following (uncommented line) allows profiling `zsh` to see what may be making it slow. NOTE: zprof needs to be uncommented at the last line too.
 # zmodload zsh/zprof
@@ -14,6 +15,9 @@ LC_TIME='en_IE.UTF-8'
 
 
 XDG_CONFIG_HOME="/home/donagh/.config"
+
+# It will set red for bold and blue for underlined. 
+export LESS='-R --use-color -Dd+r$Du+b$'
 
 
 # POWERLEVEL - START 
@@ -359,6 +363,8 @@ eval "$(zoxide init zsh)"
 # mcfly - for history Ctrl-R
 eval "$(mcfly init zsh)"
 
+# emacs - to get emacsclient to work
+export ALTERNATE_EDITOR=""
 
 # br is an alternative file searcher - described in HackerNews Jan 2020
 # source /home/donagh/.config/broot/launcher/bash/br

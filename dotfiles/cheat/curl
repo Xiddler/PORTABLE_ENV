@@ -1,4 +1,4 @@
-# Download a single file
+# Download a single file to display in the terminal
 curl http://path.to.the/file
 
 # Download a file and specify a new filename

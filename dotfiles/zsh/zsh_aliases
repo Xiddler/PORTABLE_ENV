@@ -77,7 +77,13 @@ busb() { cd $HOME/B693_backup }
 recipes() {cd $HOME/REPOS/FOOD/recipes }
 maps() {cd $HOME/REPOS//maps }
 contacts() { jumpapp emacs  ~/DONAGHS/personal/11_Contacts.org }
+# EMACS
 emax() { emacsclient /home/donagh/DONAGHS/personal/me.org } # using the emacs daemon 
+# Critical Thinking
+tnk() { vim ~/DONAGHS/personal/thinking_stuff/practising_critical_thinking.md }
+# hax
+haxe() { vim /home/donagh/PORTABLE_ENV/dotfiles/hax/$1 }
+
 # jour { cd $journal && ls }
 po() { cd $HOME/PORTABLE_ENV }
 ba() { cd $HOME/BACKUPS }
@@ -112,6 +118,8 @@ b_r() { cd $HOME/REPOS/books/0READING/0Reading_notes/ && ls } # b is prefix for 
 b_2r() {vim ~/REPOS/books/0READING/2Read.md } # books to read; see b_r and b_d above
 reading() { cd $HOME/REPOS/books/0READING/0Reading_notes/ && ls }
 repos() { cd $HOME/REPOS/ } # 
+donas() { cd $HOME/DONAGHS/ }
+
 projects() { cd $HOME/REPOS/projects/ }
 thymo() { vim ~/DONAGHS/personal/health_general/THYMO/thymo.md }
 #bookmarks() { cd $HOME/SD64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
@@ -415,6 +423,7 @@ alias pf='source $HOME/.virtualenvs/flask/bin/activate'
 # alias -g ipe='dig myip.opendns.com @resolver1.opendns.com +short'
 # original command = 'dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | awk -F'"' '{ print $2}'"
 # alias -g ipe='dig TXT +short o-o.myaddr.l.google.com @ns1.google.com'  --> "88.87.194.23" i.e. with "" surrounding the IP Address. How to remove?
+# get "external"  LAN IPv4 address
 alias -g ipe='dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | tr "\"" " " '
 # $ curl ifconfig.me
 # $ curl icanhazip.com
@@ -422,7 +431,10 @@ alias -g ipe='dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | tr "\"" "
 # $ curl ifconfig.co
 # w3m https://duckduckgo.com/?q=ip
 #
-alias -g ipi="ip --color=auto -c -4 addr  | grep 192 | cut -d '/' -f1 | tr 'inet' ' ' "
+# get "internal"  LAN IPv4 address
+# ipi() { ip --color=auto -c -4 addr | rg 192 | cut -d'/' -f1 | tr 'inet' ' ' | sed 's/\s*//' }
+alias -g ipi="ip --color=auto -c -4 addr | rg 192 | cut -d'/' -f1 | tr 'inet' ' ' | sed 's/\s*//' "
+#
 # alias -g ping='ping -c3 '
 alias png='ping -c4 8.8.8.8' # ping google to check if there is internet access
 alias -g pong='~/.scripts/pong.sh' # png but shortened; if no out put, then internet is up; if not, no. of errors;

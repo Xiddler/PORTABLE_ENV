@@ -3,8 +3,28 @@
 # jhjyL-03
 # When I reboot what services do I need to ensure are running
 
+
+# Mount the SD64GB
+->% sudo mkdir -p /run/media/donagh/SD64GB
+->% sudo chown -R donagh:donagh  /run/media/donagh
+# Then check files are accessible with something like ->% mj
+#
+# Dropboxd
+echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p
+nohup ~/.dropbox-dist/dropboxd&
+
+# emacs client
+->% emacs --daemon # will start the emacs client. To check ->% PS emacs
+# to open doom-emacs I have two ways
+# 1. Open doom-emacs with splash page
+->% emacs
+# 2. Open me.org directly
+->% emax
+# both work!   
+
+
 # cifs_share / OpenMediaVault
-sudo mount -t cifs //192.168.1.24/USB128_2 /mnt/cifs_share -o username=admin,password=admin,iocharset=utf8,vers=3.1.1
+# sudo mount -t cifs //192.168.1.24/USB128_2 /mnt/cifs_share -o username=admin,password=admin,iocharset=utf8,vers=3.1.1
 # this is required for effective backup using the borg utility
 # Laptop /home/donaghm/cifs share is mounted to 
 # RPi /srv/dev-disk-by-label-MyUSb
@@ -21,19 +41,23 @@ sudo mount -t cifs //192.168.1.24/USB128_2 /mnt/cifs_share -o username=admin,pas
 # remount 
 # IN YAKUAKE create a new shell instance for zim, dropbox and doom-emacs
 # first ensure that the SD card is mounted
-sudo /usr/sbin/zim
+# sudo /usr/sbin/zim
 
-# dropbox
+# Dropbox
 # IN YAKUAKE create a new shell instance for zim, dropbox and doom-emacs
-echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && ~/.dropbox-dist/dropboxd
+# echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && ~/.dropbox-dist/dropboxd
+# two separate commands to send everything to the background
+echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p
+nohup ~/.dropbox-dist/dropboxd&
+
 
 # doom-emacs
 # IN YAKUAKE create a new shell instance for zim, dropbox and doom-emacs
-~/.emacs.d/bin/doom run
+# ~/.emacs.d/bin/doom run
 # and maybe need to
-~/.emacs.d/bin/doom sync
+# ~/.emacs.d/bin/doom sync
 
-ln -s ~/PORTABLE_ENV/doom/dot_e_m_l_o_config.el ~/.emacs.d/modules/lang/org/config.el <-- "HAPPENING", "READING", etc.
+# ln -s ~/PORTABLE_ENV/doom/dot_e_m_l_o_config.el ~/.emacs.d/modules/lang/org/config.el <-- "HAPPENING", "READING", etc.
 # caffeine
 # from the app menu
 #
@@ -51,7 +75,9 @@ ln -s ~/PORTABLE_ENV/doom/dot_e_m_l_o_config.el ~/.emacs.d/modules/lang/org/conf
 # autostart (emacs command)
 # ~/.emacs.d/bin/doom run
 # zim
-click on Zim icon in taskbar (or sudo /usr/sbin/zim )
+# click on Zim icon in taskbar (or sudo /usr/sbin/zim )
+# Currently - Sep 2023 - using zim on windows and backing up to ~/samba/anonymous_directory/MY_ZIM/Zipped....
+#
 
 # BACKGROUND PROCESSES
 # -----------------------------------------
@@ -61,11 +87,11 @@ click on Zim icon in taskbar (or sudo /usr/sbin/zim )
 # echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && ~/.dropbox-dist/dropboxd
 
 # 2. cifs_share
-sudo mount -t cifs //192.168.1.24/USB128_2 /mnt/cifs_share -o username=admin,password=admin,iocharset=utf8,vers=3.1.1
+# sudo mount -t cifs //192.168.1.24/USB128_2 /mnt/cifs_share -o username=admin,password=admin,iocharset=utf8,vers=3.1.1
 # rem: caffeine  (replaced by KDE power management option in Battery icon
 
 # 3. zim passwords
-cd ~/DONAGHS/MY_ZIM/Computer/ && python3 -m http.server 5000                    :: 11SignUps.txt
+# cd ~/DONAGHS/MY_ZIM/Computer/ && python3 -m http.server 5000                    :: 11SignUps.txt
 # browse to 192.168.1.103:5000/11SignUps.txt
 #
 # END BACKGROUND PROCESSES
@@ -74,17 +100,19 @@ cd ~/DONAGHS/MY_ZIM/Computer/ && python3 -m http.server 5000                    
 # LAPTOP ssh to RPi
 # ssh -i ~/.ssh/id_rsa_rpi donagh@192.168.1.24 
 # list of autokey triggers
-pip install tabulate
+# pip install tabulate
+#
+#
 # instant dictionary: usage Highlight word and Ctrl Alt z
-nm-applet   (network connection)
-lexicon
-flameshot   (autostart)
-copyq       (autostart)
+# nm-applet   (network connection)
+# lexicon
+# flameshot   (autostart)
+# copyq       (autostart)
 
 ##    REMOTE RPi    ## 
 
 # lanner now using htmx and looking lovely
-python3 ~/Applications/flask_htmx_lanner/app.py
+# python3 ~/Applications/flask_htmx_lanner/app.py
 
 # password problem after rebooting on 2022-03-14. Did not accept my 1234 password?
 # How to change user password

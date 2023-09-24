@@ -19,6 +19,17 @@ nnoremap <space> :
 
 set encoding=utf-8
 " set fileencoding=utf-8
+"
+" Better COPY & PASTE
+" When you want to paste large blocks of code into vim, press F2 before you
+" paste. At the bottom you should see ``-- INSERT (paste) --``.
+set pastetoggle=<F2>
+set clipboard=unnamed
+
+" Remember more commands and search history
+set history=500
+set undolevels=500
+
 
 "}}}
 "{{{ GNU Stow 
@@ -308,6 +319,10 @@ augroup END
 "{{{ Splits 
 
 "  === Splits === 
+
+" Open new split panes to right and bottom, which feels more natural than Vim's default
+set splitbelow
+set splitright
 
 " Split Vertical alt = " noremap <leader>v <c-w>v<c-w>l
 noremap <leader>vs :vsplit<cr>
