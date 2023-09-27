@@ -388,6 +388,12 @@ The objects directory should be empty when a repo is git init'ed (aside from two
 
 The refs directory is also empty at the start
 
+# .gitignore file
+Should be tracked!
+
+The .gitignore file should be in your repository, so it should indeed be added and committed in, as git status suggests. It has to be a part of the repository tree, so that changes to it can be merged and so on.
+
+
 # trees & blobs
 
 blobs are like files, trees are like directories. 

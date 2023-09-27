@@ -1,3 +1,9 @@
+#  XDG Base Directory Specification
+XDG_CONFIG_HOME="/home/donagh/.config"
+XDG_CACHE_HOME="/home/donagh/.cache"
+# $XDG_DATA_HOME=".local/share"
+# $XDG_RUNTIME_DIR is provided by your system  Toshiba --> /run/user/1000
+#
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -11,10 +17,11 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # NOTE: Aliases handled in .zsh_aliases or .bash_aliases
 #
 # issue with locale - added 2022-11-22
-LC_TIME='en_IE.UTF-8'
+export LC_TIME='en_IE.UTF-8'
 
+# locale
+export LANG=en_US.utf8
 
-XDG_CONFIG_HOME="/home/donagh/.config"
 
 # It will set red for bold and blue for underlined. 
 export LESS='-R --use-color -Dd+r$Du+b$'
@@ -70,8 +77,6 @@ fi
 # to disable the Toshiba touchpad
 # xinput disable 12 (or 13 - check with $ xinput list)
 
-# locale
-export LANG=en_US.utf8
 
 # show italics in vim etc.
 # export TERM=xterm-256color-italic
@@ -373,7 +378,7 @@ export ALTERNATE_EDITOR=""
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #
 # dirjump - use -> % d to see 10 most recent directories visited. https://github.com/imambungo/dirjump
-# the author says he no longer maintains this and uses zoxide instead
+# the author says he no longer maintains this and uses zoxide instead. But I like it!
 source ~/.config/dirjump/dirjump
 
 # source /home/donagh/.config/broot/launcher/bash/br
