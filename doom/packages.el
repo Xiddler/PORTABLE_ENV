@@ -7,10 +7,58 @@
 ;; on the command line, then restart Emacs for the changes to take effect -- or
 ;; use 'M-x doom/reload'.
 
-;; NOTE: (Added by Donagh McCarthy on 2022-06-23). doom does not use packages.el at all - Wait, that's not true, look at rec-mode
 ;; NOTE: (Added by Donagh McCarthy on 2022-12-13) . Doom has it's own packages. Install packages from melpa using this file - like rec-mode below.
+;; NOTE: (Added by Donagh McCarthy on 2022-06-23). doom uses packages.el to install packages that doom-emacs doesn't have access to
+;; NOTE: doom-private-dir: Where your private configuration is located --> "/home/donagh/.doom.d/" (SPC f p )
+;;
+;;Example of use of packages.el and config.el
+;; in doom-private-dir/packages.el the following will "ask" doom sync to fetch the package
+;; UNCOMMENT (package! subtitle-mode :recipe (:local-repo "subtitle-mode"))
+;; in doom-private-dir/config.el
+;; check use-package documentation to associate the mode with srt files if necessary
+;; UNCOMMENT (use-package subtitle-mode)
+;; and then doom sync
+;;
+;; To fetch directly from github :
+;; UNCOMMENT (package! subtitle-mode :recipe (:host github :repo "naokiri/subtitle-mode"))
 
-;; The only line that is uncommented is at the very end - (provide 'packages)
+
+
+;; Full example of getting a github package into doom emacs (2020)
+
+    ;; Clone subtitle-mode to ~/.doom.d/lisp/subtitle-mode
+    ;; Add this to ~/.doom.d/packages.el:
+
+;; UNCOMMENT  (package! subtitle-mode
+  ;; UNCOMMENT :recipe (:local-repo "lisp/subtitle-mode" :no-byte-compile t))
+
+    ;; Run doom sync
+    ;; Restart Emacs
+
+
+;; Second example of getting a github package into doom emacs (2019)
+
+;; in ~/.doom.d/packages.el
+;; UNCOMMENT  (package! ttl-mode
+  ;; UNCOMMENT  :recipe (:host github :repo "jeeger/ttl-mode"))
+
+;; in ~/.doom.d/config.el
+;; UNCOMMENT  (use-package! ttl-mode
+  ;; UNCOMMENT  :mode "\\.n3$"
+  ;; UNCOMMENT  :mode "\\.ttl$")
+
+
+
+;; package! is specific to doom (it registers the package so that subsequent doom sync fetch and builds the package).
+;; It does the downloading, and only downloading following the recipe in the macro
+
+;; use-package configures the package, optionally including downloading the package.
+
+;; webref: https://github.com/doomemacs/doomemacs/issues/3842
+
+
+;; ;; One line that is uncommented is at the very end - (provide 'packages)
+;; This will allow doom sync to search this file for packages to install
 
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
@@ -19,8 +67,19 @@
 ; (package! rec-mode)
 ;; then doom sync
 ;; nov.el Major mode for reading novels -https://depp.brause.cc/nov.el/
-(package! nov.el)
+;; (package! nov.el)
 
+;; The long lost string manipulation tool for emacs
+;; https://github.com/magnars/s.el
+;; dependency for origami
+(package! s)
+
+;; Dash
+;; dependency for origami
+(package! dash)
+
+;; origami - folding in markdown and other filetypes : https://github.com/gregsexton/origami.el
+(package! origami)
 
 ;; DONAGHS
 ;; add theme not available in default doom. Note: remember to call it in config.el

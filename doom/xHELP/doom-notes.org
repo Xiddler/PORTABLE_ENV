@@ -379,6 +379,8 @@ File explorer
 New buffer below showing the contents of (current) directory
 :end:
 **** A short intro to Dired
+M-x dired
+
 Dired is how you interface with a directory
 Name comes from Directory Editor
 Move with h,j,k,l
@@ -397,7 +399,8 @@ C copy to another window
 R move to another window
 dired-do-what-i-mean-target set to true
 i to edit file/dir name
-**** Commands
+**** Keybindings
+
 C-x d OR [SPC] .  OR [SPC] f d
 
 Close with q
@@ -524,6 +527,10 @@ REM: The projects must be made known to Doom in the init.el file. cf.[[Backgroun
 ---------
 [SPC] p p (OR in the Doom splash screen select open project)
 **** Idea of a project
+*** s
+https://dev.to/themkat/packages-that-make-emacs-lisp-more-pleasant-12cj
+s.el
+to provide more pleasant string handling, and it touts itself as "The long lost Emacs string manipulation library"
 *** swiper
 For searching for text in a buffer
 [SPC] s b
