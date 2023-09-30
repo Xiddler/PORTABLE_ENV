@@ -19,3 +19,20 @@ This anchor tag tells a browser:
 
 
 
+# simplified valid html file
+<!doctype html>
+     <title>Hello</title>
+     <p>This is a complete conforming html document.
+
+	  <table>
+       <tr>
+           <td> are
+           <td> easier
+           <td> than
+       <tr>
+           <td> any
+           <td> markdown
+           <td> flavor
+     </table>
+
+# end

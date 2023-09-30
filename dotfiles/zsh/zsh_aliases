@@ -291,6 +291,12 @@ hme() { cd $HOME }
 #}}}
 #{{{ SSH 
 # 2020-12-09
+# donagh-satellitep50c.home 2023-09-30
+
+# ssht() { ssh -i /home/donagh/.ssh/id_rsa_toshiba donagh@192.168.1.86 } 
+ssht() { ssh -i /home/donagh/.ssh/id_rsa_toshiba donagh@donagh-satellitep50c.home }
+# ssh into the RPi
+sshrpi() { ssh -i ~/.ssh/ip_rsa_rpi donagh@192.168.1.24 }
 # alias -g sshdo='ssh -i $HOME/.ssh/id_rsa_do donagh@142.93.37.252'
 #}}}
 #{{{ DOTFILES
@@ -446,7 +452,6 @@ alias site='dig donaghmccarthy.ie +short'
 # ==== TMUX ====
 # on reboot
 # LAN servers for sshrpi, s_books, s_passords
-sshrpi() { ssh -i ~/.ssh/ip_rsa_rpi donagh@192.168.1.24 }
 # s_books() { cd /home/donagh/REPOS/books && python -m http.server 8088 }
 # s_passwords() { cd /home/donagh/DONAGHS/MY_ZIM/Computer && python -m http.server 8089 }
 s_passwords() { 'python -m http.server 8088  --directory ~/DONAGHS/MY_ZIM/Computer --bind 0.0.0.0' }
