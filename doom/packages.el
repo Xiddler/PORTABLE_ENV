@@ -81,6 +81,10 @@
 ;; origami - folding in markdown and other filetypes : https://github.com/gregsexton/origami.el
 (package! origami)
 
+;; vim-sneak emulator
+;; https://github.com/hlissner/evil-snipe
+;; (package! evil-snipe)
+
 ;; DONAGHS
 ;; add theme not available in default doom. Note: remember to call it in config.el
 ;; (package! spacemacs-theme) ;; it displays the *** in org-mode - yuk

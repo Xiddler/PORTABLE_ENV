@@ -237,6 +237,8 @@
 (use-package dash)
 ;; The above are required for origami: https://github.com/gregsexton/origami.el
 (use-package origami)
+;; evil-snipe == vim-sneak
+;; pre-installed
 
 ;;
 ;;Added 2023-07-10
