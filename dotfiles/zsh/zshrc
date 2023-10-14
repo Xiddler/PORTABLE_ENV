@@ -233,7 +233,8 @@ plugins=(
 
 # PATH="$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin:/home/donagh/.emacs.d/bin/:/home/donagh/.cargo/bin:/home/donagh/PORTABLE_ENV_tmp/:/opt/texlive/2020/bin/x86_64-linux/:/home/donagh/.emacs/bin:/home/donagh/go/bin:/home/donagh/Applications/shellmath/shellmath:/home/donagh/.mix:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/maps/OSI_GridInQuest/GridInQuestII-Lin64-0100:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/golang/vugu_stuff:/home/donagh/.local/bin/gron:/usr/local/texlive/2021/bin/x86_64-linux:/home/donagh/Applications/nushell/nu_0_60_0_linux/nushell-0.60.0:/home/donagh/.subuser/bin"
 # Is this a good idea to have PATH defined here? 
-PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin:/home/donagh/.emacs.d/bin/:/home/donagh/.cargo/bin:/home/donagh/PORTABLE_ENV_tmp/:/home/donagh/.emacs/bin:/home/donagh/go/bin:/home/donagh/Applications/shellmath/shellmath:/home/donagh/.mix:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/maps/OSI_GridInQuest/GridInQuestII-Lin64-0100:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/golang/vugu_stuff:/home/donagh/.local/bin/gron:/usr/local/texlive/2022/bin/x86_64-linux:/home/donagh/Applications/nushell/nu_0_60_0_linux/nushell-0.60.0:/home/donagh/.subuser/bin:/home/donagh/.local/bin/cheat"
+#
+PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin:/home/donagh/.emacs.d/bin/:/home/donagh/.cargo/bin:/home/donagh/PORTABLE_ENV_tmp/:/home/donagh/.emacs/bin:/home/donagh/go/bin:/home/donagh/Applications/shellmath/shellmath:/home/donagh/.mix:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/maps/OSI_GridInQuest/GridInQuestII-Lin64-0100:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/golang/vugu_stuff:/home/donagh/.local/bin/gron:/usr/local/texlive/2022/bin/x86_64-linux:/home/donagh/Applications/nushell/nu_0_60_0_linux/nushell-0.60.0:/home/donagh/.subuser/bin:/home/donagh/.local/bin/cheat:/usr/sbin/bash"
 
 # source /home/donagh/.local/bin/virtualenvwrapper.sh
 
@@ -398,6 +399,11 @@ source ~/.config/dirjump/dirjump
 # initialize pure prompt (for use in WSL etc. - p10k being too complicated)
 # https://github.com/sindresorhus/pure 
 # fpath+=($HOME/.zsh/pure)
+#
+# zsh-abbr - allows TEXT expansion in the zsh (eg pas = pamac search) 
+# see zim-wikx and che zsh
+# and https://zsh-abbr.olets.dev/
+source $HOME/PORTABLE_ENV/zsh/zsh_abbr/zsh-abbr/zsh-abbr.zsh
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

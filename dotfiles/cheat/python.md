@@ -134,3 +134,26 @@ python -m pip install --upgrade pip setuptools wheel
 # REPL
 -> % ptpython   
 2023-03-04
+->% bpython 
+
+# GUI
+
+## Install PySimpleGUI
+pip install PySimpleGUI
+
+## You Tube
+
+Python GUI Development With PySimpleGUI Real Python
+
+
+## Activate python virtualenv
+then
+### Linux
+
+source $HOME/.virtualenvs/pysimplegui/bin/activate
+
+
+
+### Windows
+C:\Users\don_l\.virtualenvs\pysimpleGUI\Scripts\activate.ps1
+

@@ -247,6 +247,12 @@ C-_            <-- decrease text size - equivalent to zoom out
 [SPC] f p      <-- select file from doom-emacs config
 [SPC] w v      <-- split vertical
 
+
+    For functions: SPC h f or C-h f
+    For variables: SPC h v or C-h v
+    For a keybind: SPC h k or C-h k
+    To search available keybinds: SPC h b b or C-h b b
+
 -----------------------------------------------------------------
 DONAGHS
 -----------------------------------------------------------------

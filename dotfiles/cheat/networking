@@ -9,3 +9,5 @@ sudo arp-scan 192.168.1.0/26
 
 nmap -sP "192.168.*.*" # comprehensive, slow 
 
+# list of ports
+->% cat /etc/services 

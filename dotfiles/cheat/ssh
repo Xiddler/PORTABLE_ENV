@@ -13,6 +13,10 @@ ssh -t user@example.com 'the-remote-command'
 # To tunnel an x session over SSH:
 ssh -X user@example.com
 
+# open the zim-wiki GUI from the RPI on the WSL-UBUNTU
+ssh -i .ssh/id_rsa_rpi -Y donagh@192.168.1.24
+## This worked on 2023-10-11
+
 # Redirect traffic with a tunnel between local host (port 8080) and a remote
 # host (remote.example.com:5000) through a proxy (personal.server.com):
 ssh -f -L 8080:remote.example.com:5000 user@personal.server.com -N
@@ -123,4 +127,7 @@ ssh-add ~/.ssh/keyname
 
 # NOW copy id_rsa.pub to Github account in SSH keys
 ssh -T git@github.com   :: This tests ssh access to github
+
+# check open ssh connections
+ss -o state established '( dport = :ssh or sport = :ssh )'
 

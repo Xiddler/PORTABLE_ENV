@@ -362,10 +362,10 @@ $HOME/DONAGHS/all_org/.git
 
 # global git config file
 
-## The global Git config file is stored in a file uncreatively named .gitconfig the user’s home directory i.e. $HOME/.gitconfig. 
+## The global Git config file is stored in a file uncreatively named .gitconfig in the user’s home directory i.e. $HOME/.gitconfig. 
 git config --global --list --show-origin
 
- # check your current global config
+## check your current global config
 git config --global -l 
 
 # git 'undo'
@@ -412,15 +412,19 @@ git rebase, git cherry-pick						:: change/move commits around the graph
 git push, git fetch, git remote, git merge		:: share your code and history with your friends 
 git worktree									:: have more than one commit checked out at a time 
 
+# git log
 # see log of recent 7 days 
 
 Log for last week. Add --author=donagh if I only want to see changes I made.
 -> % git log --all --pretty=format:'%h %cd %s (%an)' --since='7 days ago'
 
-# Nice log output
+# nice log output
 
 -> % git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
 
+
+# git log informative
+git log --graph --oneline --decorate --all -50
 
 # Retrieve a single file from an older hash
 

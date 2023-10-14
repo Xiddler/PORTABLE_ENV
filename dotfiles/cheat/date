@@ -5,6 +5,9 @@ man date
 https://www.epochconverter.com/
 #  see also
 #  dateutils - sudo pamac install dateutils. $ info dateutils for details. Can do anything with dates.
+#  today's date
+echo  $(date +"%Y-%m-%d")
+# 2023-10-05
 
 # convert epoch(Unix) time to human readable date; seconds since 1/1/1970 
 date --date="@1669807759"

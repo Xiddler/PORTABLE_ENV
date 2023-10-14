@@ -1,6 +1,8 @@
 # Contents:
 
 1. SEND FILE(S) OVER THE NET
+Dropbox - on laptops, smartphone, tablet
+Mega - on laptop only
 wormhole
 
 2. SEND FILE(S) FROM ONE COMPUTER TO ANOTHER

@@ -172,11 +172,15 @@ exa -la | awk '{ print $7 }' | grep '^\.' | xargs -n 6
 # create file with today's date
 touch "file_$(date +%Y-%m-%d)"
 
-# Create random string
-# -> % openssl rand -hex 64
+## Create random string
+-> % openssl rand -hex 64
 b3b6cd7b225d43c102489bdc81fb18cf9d56147cb039e80b517055d34cc515324c930bd9ed0ef5c7ea1873cb88ea3e38b430f5440c96ed2c55c92fffda819de5
 
-# -> % openssl rand -base64 10
+## shuf
+->% shuf --random-source='/dev/urandom' -n 1 -i 1-100;
+48
+
+-> % openssl rand -base64 10
 EDPXfQaQbZqmWg==
 
 # sudo vim <sudo-accessible-file>
@@ -251,12 +255,14 @@ grep -Rnwil '.' -e 'comenius'
 openssl rand -hex 64
 
 # find latest 20 docs in current directory (zsh)
-ls -lt  **/*(.om[1,20]) 
+        
+         ls -lt  **/*(.om[1,20]) 
 
 
 # xargs - see https://shapeshed.com/unix-xargs/
-# Whilst tools like grep can accept standard input as a parameter, many other tools cannot. Using xargs allows tools like echo and rm and mkdir to accept standard input as arguments.
-#
+
+Whilst tools like grep can accept standard input as a parameter, many other tools cannot. Using xargs allows tools like echo and rm and mkdir to accept standard input as arguments.
+
 # TIME DATE and ntp 
 # donaghm [01:03 Sat 04/09] [~] 
 -> % timedatectl
@@ -282,12 +288,12 @@ terminator
 
 
 # bash regex
-#
-# pat='[^0-9]+([0-9]+)'
-# s='I am a string with some digits 1024'
-# [[ $s =~ $pat ]] # $pat must be unquoted
-# echo "${BASH_REMATCH[0]}"
-# echo "${BASH_REMATCH[1]}"
+
+ pat='[^0-9]+([0-9]+)'
+ s='I am a string with some digits 1024'
+ [[ $s =~ $pat ]] # $pat must be unquoted
+ echo "${BASH_REMATCH[0]}"
+ echo "${BASH_REMATCH[1]}"
 
 # list all installed man pages
 man -k -
@@ -295,16 +301,16 @@ man -k -
 # extract text from a pdf file
 -> %  pdftotext -layout test_pdftotext.pdf -  > mytest.txt
 
-# reset
-# clears the screen and resets the shell (say, if there is a problem in the shell)
+ reset
+ clears the screen and resets the shell (say, if there is a problem in the shell)
 
-# Ctrl Z
-# send a live programme into the background and go to the terminal
-# fg will return you to the programme
+ Ctrl Z
+ send a live programme into the background and go to the terminal
+ fg will return you to the programme
 
 # Change CAPS button to ESC
 -> % setxkbmap -option caps:swapescape
-# But it does not work well on my manjaro
+ But it does not work well on my manjaro
 
 # get the size of a directory
 -> % du -sh ~/PORTABLE_ENV 
@@ -331,7 +337,7 @@ FOUR FIVE SIX
 !$ gets the last element of the previous command line argument. 
 
 # Clock in the terminal! 
- printf '\033c';  while true; do echo -en "  $(date)\r"; sleep 1; done
+ prirtf '\033c';  while true; do echo -en "  $(date)\r"; sleep 1; done
 
 # SPECIAL CHARATERS 
 $_ or !$            recall the last argument of the previous command (to save typing it out for a new command. Very handy!)

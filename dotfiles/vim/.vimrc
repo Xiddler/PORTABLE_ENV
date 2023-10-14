@@ -638,13 +638,13 @@ command NL call NumberList()
 function! Neat_DONAGH()
     " Nd = Neaten_donagh i.e. shorten the long filepath using ~
     " s:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/:\~/DONAGHS/:
-    s:/run/media/donagh/SD64GB/DONAGHS/:\~/DONAGHS/:
+    s:/run/media/donagh/USB128GB/DONAGHS/:\~/DONAGHS/:
 endfunction
 command Nd call Neat_DONAGH()
 
 function! Neat_REPOS()
     " Nr = Neaten_repos i.e. shorten the long filepath using ~
-    s:/run/media/donagh/SD64GB/REPOSITORIES/:\~/REPOS/:
+    s:/run/media/donagh/USB128GB/REPOSITORIES/:\~/REPOS/:
 endfunction
 command Nr call Neat_REPOS()
 
@@ -654,7 +654,7 @@ function! Myjournal()
     let month = strftime('%m')
     let day = strftime('%d')
     " let path = '/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/journal/'.year.'/'.month
-    let path = '/run/media/donagh/SD64GB/DONAGHS/personal/journal/'.year.'/'.month
+    let path = '/run/media/donagh/USB128GB/DONAGHS/personal/journal/'.year.'/'.month
     let filen =  path.'/'.day.'-'.month.'.md'
 
     execute ":tabe ".filen
@@ -892,7 +892,7 @@ map gf :edit <cfile><cr>
 "{{{ Spelling 
 " === Spelling ===
 
-set dictionary=/run/media/donagh/SD64GB/REPOSITORIES/WORDS/Great_word_lists/TWL06_Scrabble_Word_List.txt
+set dictionary=/run/media/donagh/USB128GB/REPOSITORIES/WORDS/Great_word_lists/TWL06_Scrabble_Word_List.txt
 " alternative (450,000+ words)
 " set dictionary=/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/WORDS/Great_word_lists/Word_lists/Linuxwords/linuxwords.1/dict
 

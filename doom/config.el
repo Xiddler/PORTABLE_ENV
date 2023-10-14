@@ -298,6 +298,7 @@
 (map! :n "SPC c h" 'org-ctrl-c-ctrl-c) ;; ch for check the box
 (map! :i "C-c d" 'today) ;; works 2023-07-10; qq also works
 (map! :i "C-c t" 'now) ;; 23-07-10_10:05; qa also works
+; (map! :n "ggf" 'with-editor-finish') ;; magit C-c C-c
 
 ;; NOTE about jk for esc
 ;; file --> ~/.emacs.d/modules/editor/evil/config.el

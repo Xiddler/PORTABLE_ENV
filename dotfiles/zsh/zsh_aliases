@@ -78,10 +78,13 @@ recipes() {cd $HOME/REPOS/FOOD/recipes }
 maps() {cd $HOME/REPOS//maps }
 contacts() { jumpapp emacs  ~/DONAGHS/personal/11_Contacts.org }
 # EMACS
-emax() { emacsclient /home/donagh/DONAGHS/personal/me.org } # using the emacs daemon 
+# emax() { emacsclient /home/donagh/DONAGHS/personal/me.org } # using the emacs daemon 
+# emax() { emacsclient -c } # -c, --create-frame      Create a new frame instead of trying to use the current Emacs frame
+emax() { emacsclient -t /home/donagh/DONAGHS/personal/me.org } # -t, Open a new Emacs frame on the current terminal
+
 # Critical Thinking
 tnk() { vim ~/DONAGHS/personal/thinking_stuff/practising_critical_thinking.md }
-# hax
+# hacks == hax
 haxe() { vim /home/donagh/PORTABLE_ENV/dotfiles/hax/$1 }
 
 # jour { cd $journal && ls }
@@ -169,6 +172,12 @@ vvim() { vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc $1 }
 vimm() { vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc $1 }
 
 #}}}
+# {{{ MANJARO
+# sps() { pamac search $ }
+# spi() { sudo pamac install $ }
+#
+#
+# }}}
 #{{{ BOOKSEARCH
 booksearch() {find ~/REPOS/books -maxdepth 4 -name "*.*" -type f | grep -i $1 } # usage -> % booksearch 'smart'
 #}}}
@@ -199,6 +208,7 @@ alias -g contout='cat $HOME/ZIM/ORG/03_CONTACTS/Contacts.txt | rg -i -A18 -B2 '
 #
 alias -g che='cheat -e '
 ch() { cheat "$1" | less }
+rgch() { rg -i "$1" $HOME/.cheat }
 
 #}}}
 #{{{ MARKDOWN 
@@ -328,6 +338,7 @@ alias gst='git status'
 alias gaa='git add -A'
 alias gga='git add -A'
 # cf ~/.scripts/manage_all_git_repos.sh (on the laptop)
+alias -g g_run="$HOME/.scripts/manage_all_git_repos.sh" # list state of 4 main repos
 alias -g g_poe="$HOME/PORTABLE_ENV/"             # On github
 alias -g g_org="$HOME/Dropbox/org-mode/org/"       # this tracks my .org files
 alias -g g_pers="$HOME/DONAGHS/personal/"
@@ -336,7 +347,6 @@ alias -g g_all_org="$HOME/DONAGHS/all_org/"        # this only tracks doom-notes
 
 # echo -e "$mydir";
 alias -g g_list='echo -e "~/PORTABLE_ENV/ \n~/Dropbox/org-mode/org/ \n~/DONAGHS/personal/ \n~/DONAGHS/MY_ZIM/Computer \n~/DONAGHS/all_org/"'
-alias -g g_run='$HOME/.scripts/manage_all_git_repos.sh'
 alias -g git_list='echo -e "~/PORTABLE_ENV/ \n~/Dropbox/org-mode/org/ \n~/DONAGHS/personal/ \n~/DONAGHS/MY_ZIM/Computer \n~/DONAGHS/all_org/"'
 alias -g git_run='$HOME/.scripts/manage_all_git_repos.sh'
 alias -g git_all='$HOME/.scripts/git_run_all.sh'
@@ -431,10 +441,11 @@ alias pf='source $HOME/.virtualenvs/flask/bin/activate'
 # alias -g ipe='dig TXT +short o-o.myaddr.l.google.com @ns1.google.com'  --> "88.87.194.23" i.e. with "" surrounding the IP Address. How to remove?
 # get "external"  LAN IPv4 address
 alias -g ipe='dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | tr "\"" " " '
-# $ curl ifconfig.me
-# $ curl icanhazip.com
-# $ curl ipecho.net/plain
-# $ curl ifconfig.co
+# curl ipinfo.io
+# curl ifconfig.me
+# curl icanhazip.com
+# curl ipecho.net/plain
+# curl ifconfig.co
 # w3m https://duckduckgo.com/?q=ip
 #
 # get "internal"  LAN IPv4 address
