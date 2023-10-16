@@ -12,6 +12,7 @@ From https://haydenjames.io/linux-networking-commands-scripts/
     ethtool – utility for controlling network drivers and hardware.
     gated – gateway routing daemon.
     host – DNS lookup utility.
+         host `hostname` --> donagh-satellitep50c.home has address 192.168.1.86
     hping – TCP/IP packet assembler/analyzer.
     ibmonitor – shows bandwidth and total data transferred.
     ifstat –  report network interfaces bandwidth.
@@ -54,7 +55,7 @@ From https://haydenjames.io/linux-networking-commands-scripts/
     tcptrack – Displays information about tcp connections on a network interface.
     telnet – user interface to the TELNET protocol.
     tracepath – very similar function to traceroute.
-    traceroute – print the route packets trace to network host.
+    traceroute – print the route packets trace to network host. Similar to CLI of Wireshark
     vnStat – network traffic monitor.
     websocat – Connection forwarder from/to web sockets to/from usual sockets, in style of socat.
     wget –  retrieving files using HTTP, HTTPS, FTP and FTPS.

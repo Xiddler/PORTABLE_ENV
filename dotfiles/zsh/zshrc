@@ -12,6 +12,21 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
+#####################################################
+# DROPBOXD
+#####################################################
+# Dropbox on Toshiba - to ensure dropbod runs after a reboot
+echo "Did you just reboot? Check dropboxd is running... ->% PS drobboxd"
+# TRY THIS here
+# echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p
+# sleep 5
+# nohup ~/.dropbox-dist/dropboxd&
+# OR TRY
+# in crontab -e
+# @reboot ~/.dropbox-dist/dropboxd
+# END DROPBOXD
+#####################################################
+
 # the following (uncommented line) allows profiling `zsh` to see what may be making it slow. NOTE: zprof needs to be uncommented at the last line too.
 # zmodload zsh/zprof
 # NOTE: Aliases handled in .zsh_aliases or .bash_aliases
