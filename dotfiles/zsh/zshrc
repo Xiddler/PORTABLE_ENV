@@ -4,6 +4,10 @@ XDG_CACHE_HOME="/home/donagh/.cache"
 # $XDG_DATA_HOME=".local/share"
 # $XDG_RUNTIME_DIR is provided by your system  Toshiba --> /run/user/1000
 #
+#
+#####################################################
+# Powerlevel10k Prompt
+#####################################################
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -11,6 +15,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
+#####################################################
 
 #####################################################
 # DROPBOXD
@@ -70,7 +76,7 @@ export LESS='-R --use-color -Dd+r$Du+b$'
   # source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 # fi
 
-# cf. WARNING at LINUX:1Linux Live USB:01installed apps:zsh shell:ISSUES
+# cf. WARNING at zim-wiki LINUX:1Linux Live USB:01installed apps:zsh shell:ISSUES
 # typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 #
 # END POWERLEVEL section

@@ -99,6 +99,75 @@ Possible assistance:
 See the documentation (Henrik is super great about this)
 My config files __are__ indeed in /home/donagh/.doom.d and symlinked to /home/donagh/PORTABLE_ENV/doom/*.el
 
+** dictionaries
+:notes:
+opened 2023-10-20
+
+:end:
+
+https://www.masteringemacs.org/article/wordsmithing-in-emacs
+dictionary.el?
+
+in config.el
+(setq dictionary-server "localhost")
+
+*** check dictd
+ ->% sudo systemctl status dictd.service
+[sudo] password for donagh:
+
+**** 2023-10-20
+A run - Active: failed
+
+× dictd.service - Dictd Dictionary Server Daemon
+     Loaded: loaded (/usr/lib/systemd/system/dictd.service; enabled; preset: disabled)
+     Active: failed (Result: exit-code) since Fri 2023-10-20 10:38:28 IST; 6h ago
+    Process: 1758215 ExecStart=/usr/bin/dictd $DICTD_ARGS -- $DICTD_EARGS (code=exited, status=1/FAILURE)
+        CPU: 1ms
+
+Oct 20 10:38:28 donagh-satellitep50c systemd[1]: Starting Dictd Dictionary Server Daemon...
+Oct 20 10:38:28 donagh-satellitep50c systemd[1]: dictd.service: Control process exited, code=exited, status=1/FAILURE
+Oct 20 10:38:29 donagh-satellitep50c dictd[1758215]: /etc/dict/dictd.conf:25: syntax error
+Oct 20 10:38:29 donagh-satellitep50c dictd[1758215]: /etc/dict/dictd.conf:25: #LASTLINE
+Oct 20 10:38:29 donagh-satellitep50c dictd[1758215]: /etc/dict/dictd.conf:25:          ^
+Oct 20 10:38:29 donagh-satellitep50c dictd[1758215]: dictd (yyerror): parse error
+Oct 20 10:38:29 donagh-satellitep50c dictd[1758215]: parse error
+Oct 20 10:38:28 donagh-satellitep50c systemd[1]: dictd.service: Failed with result 'exit-code'.
+Oct 20 10:38:28 donagh-satellitep50c systemd[1]: Failed to start Dictd Dictionary Server Daemon.
+
+B run - Active: active (running)
+
+❯ sudo systemctl status dictd.service
+[sudo] password for donagh:
+● dictd.service - Dictd Dictionary Server Daemon
+     Loaded: loaded (/usr/lib/systemd/system/dictd.service; enabled; preset: disabled)
+     Active: active (running) since Fri 2023-10-20 17:26:23 IST; 21min ago
+    Process: 2698857 ExecStart=/usr/bin/dictd $DICTD_ARGS -- $DICTD_EARGS (code=exited, status=0/SUCCESS)
+   Main PID: 2698858 (dictd)
+      Tasks: 1 (limit: 9406)
+     Memory: 275.1M
+        CPU: 345ms
+     CGroup: /system.slice/dictd.service
+             └─2698858 "dictd 1.13.1: 1/6"
+
+Oct 20 17:26:23 donagh-satellitep50c systemd[1]: Starting Dictd Dictionary Server Daemon...
+Oct 20 17:26:23 donagh-satellitep50c systemd[1]: Started Dictd Dictionary Server Daemon.
+
+***** solution?
+
+after the last update for some reason, the configuration file (/etc/dict/dictd.conf) had a few strange newlines inserted. Removing those fixed it.
+
+/etc/conf.d/dictd. The entry for LOCALE was wrong. Updated it and no more complains.
+actually /etc/dict/dict.conf on Manjaro
+
+Manjaro:
+❯ pacman -Qk dictd
+dictd: 56 total files, 0 missing files
+
+_WHAT WORKED_
+Exited emacs
+ ->% doom doctor
+ ->% doom run
+
 ** directory tree navigation
 *** treemacs [SPC] d
 [[treemacs]]
@@ -233,13 +302,15 @@ These files are symbolic linked to /home/donagh/PORTABLE_ENV/doom/* - to keep my
 /home/donagh/.emacs/doom-emacs/init.el
 
 ** keybindings
+doom uses vim keybindings in the buffers
+gi             <-- go to previous insert position
+
 See also [[shortcuts]] below
 -----------------------------------------------------------------
 doom-emacs
 -----------------------------------------------------------------
 [SPC] m        <-- local to to the file type
 [SPC] :        <-- M-x
-gi             <-- go to previous insert position
 [SPC] f p      <-- go to my config folder
 C-S-f          <-- toggle full screen - equivalent to F11
 C-=            <-- increase text size - equivalent to zoom in
@@ -257,6 +328,7 @@ C-_            <-- decrease text size - equivalent to zoom out
 DONAGHS
 -----------------------------------------------------------------
 [SPC] w [SPC]  <-- save-buffer = [SPC] f s
+[SPC] c [SPC]  <-- calendar minibuffer
 
 ** line numbers
 [SPC] t l <-- toggles line numbers (which are relative by default)
@@ -641,6 +713,27 @@ eg C-c / r navig
 [SPC] w
 [SPC] w L <-- to split window
 [SPC] w w (toggles) <-- to move to next window
+
+** symbols, emojis, code points
+
+ref: https://www.masteringemacs.org/article/diacritics-in-emacs
+
+To get a list of all accented characters you can type C-x 8 ' C-h, and so on.
+
+_code point_
+To insert a code point type C-x 8 RET and enter the Unicode name (type TAB twice to get a complete list).
+
+O l C-x 8 ' e
+Olé
+
+n C-x 8 ' U n a
+nÚna
+Úna
+
+_quail_
+M-x
+quail-show-key                                               Show a list of key strings to type for inputting a character at point.
+
 
 ** yasnippets
 

@@ -900,4 +900,38 @@ Execute the command :delete without leaving INSERT mode.
 
 :inoremap <c-d> <Cmd>delete<cr> 
 
+# Ctrl V issue in Windows Terminal
+
+Ctrl V in Windows conflicts with Ctrl V in vim:
+
+## Open "Windows Terminal's Settings", navigate to the "Actions", delete key bindings for CTRL+V and CTRL+C and voila! 
+
+OR
+
+## use CTRLQ instead
+
+OR (from Stackoverflow)
+
+## The following section of the settings file is initially NOT commented out. 
+
+If you comment it out, as I've shown, Ctrl+V becomes the rectangular visual select key in Vim we all know and love.
+
+// Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
+// These two lines additionally bind them to Ctrl+C and Ctrl+V.
+// To learn more about selection, visit https://aka.ms/terminal-selection
+//{
+//    "command": {
+//        "action": "copy",
+//        "singleLine": false
+//    },
+//    "keys": "ctrl+c"
+//},
+//{
+//    "command": "paste",
+//    "keys": "ctrl+v"
+//}
+
+
+
+
 # END

@@ -159,6 +159,15 @@
 (setq dictionary-server "localhost")
 ;; worked!
 
+;; mandatory, as the dictionary misbehaves!
+;; https://www.masteringemacs.org/article/wordsmithing-in-emacs
+(setq switch-to-buffer-obey-display-actions t)
+(add-to-list 'display-buffer-alist
+   '("^\\*Dictionary\\*" display-buffer-in-side-window
+     (side . left)
+     (window-width . 50)))
+;; did not work?
+
 ;; Maximize the window upon startup.
 (setq initial-frame-alist '((top . 52) (left . 52) (width . 154) (height . 40)))
 

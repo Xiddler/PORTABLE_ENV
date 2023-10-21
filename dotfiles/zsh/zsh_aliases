@@ -381,9 +381,19 @@ alias -g lfnh="ls -la | grep '^\-' | grep -v ' \..*$' "  # List only files not h
 alias -g lfl="ls -la --color=auto | grep '^[l]' | grep ' \..*$'" # List only files that are symlinks
 alias -g lfnl="ls -la | grep -v '\->' | grep -v '^d'" # List files which are not links 
 alias -g lfs="ls | xargs -n1" # simple list files in a column
+
 # Directories
 # alias -g ld='ls -ld -- *(R)' # List non-hidden directories incl. those that are symlinks (zsh)
-alias -g ld='ls -ld -- *(-/)'  # List non-hidden directories incl.those that are  symlinks (zsh)
+# alias -g ld='ls -ld -- *(-/)'  # List non-hidden directories incl.those that are  symlinks (zsh)
+# alias -g ld='ls -ld -- *(-/)' | awk '{ print $9  "/" }'
+
+# ls -ld -- *(-/) | awk '{ print $9 }'
+# alias -g ld='ls -ld -- *(-/)' | awk '{ print $9 "/" }'
+
+ld() { ls -ld -- *(-/) | awk '{ print $9  "/"}' }
+
+
+
 # alias -g ld='ls -lad */' # List non-hidden directories incl.those that are  symlinks
 alias -g ldh="ls -la  | grep '^d' | grep ' \..*$'" # List only directories that are hidden
 alias -g ldnh="ls -la | grep '^d' | grep -v ' \..*$' "  # List directories not hidden (Donaghs!)
@@ -469,6 +479,9 @@ s_passwords() { 'python -m http.server 8088  --directory ~/DONAGHS/MY_ZIM/Comput
 s_books() { 'python -m http.server 8089  --directory ~/REPOS/books --bind 0.0.0.0' }
 # open 4 panes with the above and one spare
 ttmux() { /home/donagh/.scripts/tmux.sh }
+# sesseion for emacs
+tnt() { tmux new -s toshy }
+tat() { tmux attach-session -t toshy } #  2023-10-20
 
 # === SERVERS ===
 # start zim, cifs and dropbox
