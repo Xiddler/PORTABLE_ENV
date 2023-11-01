@@ -1,9 +1,0 @@
-
-# Add yourself (ie $USER) to the <group> group
-sudo usermod -a -G <group> $USER
-
-# Add yourself (ie $USER) to the sudo group
-sudo usermod -a -G sudo $USER
-
-# Add yourself (ie $USER) to the lxc group
-sudo usermod -a -G lxc $USER

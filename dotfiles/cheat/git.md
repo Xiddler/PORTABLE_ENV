@@ -3,6 +3,7 @@
 ## Webrefs
 https://gitimmersion.com/lab_10.html
 
+
 # Terms in git
 
     Commit - stores the current contents of the index in a new commit along with a log message from the user describing the changes
@@ -423,13 +424,22 @@ Log for last week. Add --author=donagh if I only want to see changes I made.
 -> % git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
 
 
-# git log informative
+# git log pretty
+git log --oneline
+
 git log --graph --oneline --decorate --all -50
 
 # Retrieve a single file from an older hash
 
+> Get a file from a specific commit and put it in a different location
+$ git show 8a793c54:org.org > ~/org_old.org
+
+> If you are only interested in viewing the file contents in the terminal you can just run 
+$ git show 58a3db6:path/to/your/file.txt
+
+> Other ideas
 $ git checkout [revision_hash] [file_name]
-$ git checkout [revision_hash] [file_name]
+
 eg In the folder ~/PORTABLE_ENV/tmux/
 ->% git restore --staged 2d448a8e33c91 ~/PORTABLE_ENV/tmux/tmux.conf
 

@@ -234,14 +234,24 @@ timer-dae() { echo "1234" | sudo -S systemctl daemon-reload }
 #}}}
 #{{{ PASSWORDS 
 # PASSWORDS OUT 
-alias -g passout='cat $HOME/DONAGHS/MY_ZIM/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias for catt
+# LINUX - Toshiba
+# alias -g passout='cat $HOME/DONAGHS/MY_ZIM/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias for catt
+passout() { rg "$1" $HOME/DONAGHS/MY_ZIM/Computer/11SignUps.txt }
 alias -g catt='cat $HOME/ZIM/Computer/11SignUps.txt|rg -i -A5 '
 # added 2022-03-20  using jq and 11SignUps.json
 pout() { jq '.passwords' $HOME/REPOS/11SignUps.json | rg -A4 $1 }
+# Windows 11
+# C:\Users\don_l\Applications\Zim_wiki\MY_ZIM\Computer\11SignUps.txt
+# passout() { rg "$1" C:\Users\don_l\Applications\Zim_wiki\MY_ZIM\Computer\11SignUps.txt }
 
 # PASSWORDS IN
+# LINUX - Toshiba
 alias -g passin='sudo python ~/PORTABLE_ENV/dotfiles/scripts/.scripts/pass_in.py'
 alias gett='$HOME/.scripts/get_password.sh'
+# Windows 11
+# pass_in.py located at C:\Users\don_l\PORTABLE_ENV\dotfiles\scripts\.scripts\pass_in.py
+
+
 # alias -g tpassin='sudo --prompt=1234 $HOME/.scripts/passin_terminal.py'
 # alias -g passin='$HOME/.scripts/passin.sh' # a non-GUI version
 # alias -g passin='python3 $HOME/SD64/REPOSITORIES/2programming/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
@@ -251,8 +261,7 @@ alias gett='$HOME/.scripts/get_password.sh'
 #}}}
 #{{{ JOURNAL
 # journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
-# Go to Current Year/Month 
-#  variables
+# Go to Current Year/Month #  variables
 k=$(date +"%Y/%m")
 q=$(date +"%Y-%m-%d")
 y=$(date +"%Y")
@@ -489,6 +498,8 @@ zcd() { /home/donagh/.scripts/zim_cifs_dropbox.sh }
 
 # dropbox
 drop() { echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && ~/.dropbox-dist/dropboxd }
+# check the dropbox is working --> ->% ps aux | grep "dropbox" where PS is an alias for ps aux | grep 
+psd() { PS dropbox }
 
 # session for my journal and emacs
 tmt() { tmux attach-session -t toshy }

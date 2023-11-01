@@ -350,8 +350,8 @@ echo $(date)        is equivalent to echo `date` and to echo "$(date)"
 -- (double dash)    means "end of the command-line options", so any argument after that is treated as a non-option argument, in this case, a filename for rm to delete.  This -- (double dash) works with many Unix commands. It was introduced relatively early on in Unix history, after the issue of filenames starting with a dash was found. Example: $ rm -- -stupidFilename  will remove the file whose name begins with a - .
 
 # Arithmetic
-echo $(( 7307/1285.0))
-echo $(( 3+57))
+echo $(( 7307/1285.0 ))
+echo $(( 3+57 ))
 
 # Tools
 # Run a Fedora n the terminal that will close on exit. Needs podman.
@@ -360,6 +360,22 @@ echo $(( 3+57))
 # Check the etymology of "fun" online (needs w3m)
 ->% w3m "https://www.etymonline.com/word/fun"
 
+# Run the command inside a text file
+->% cat test.txt
 
+
+ls ~
+
+->% bash test.txt
+00_TOSHIBA             all_org       BACKUPS  DONAGHS    dropbox.txt  index.html  nohup.out     REPOS     temp_SUSPEND_.Xauthority  zArchive
+0_From_128USB          Applications  Books    Downloads  files        Jobsearch   novels        samba     TESTING
+111_From_RPI_JUNE2023  B693_backup   Desktop  Dropbox    go           MY_LOCKER   PORTABLE_ENV  sed.test  test.txt
+
+->% cat ls.txt
+ls -la $HOME
+
+->% eval $(cat ls.txt )
+OUTPUT
+long listing of /home/donagh
 
 # END
