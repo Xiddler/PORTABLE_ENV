@@ -4,6 +4,12 @@ XDG_CACHE_HOME="/home/donagh/.cache"
 # $XDG_DATA_HOME=".local/share"
 # $XDG_RUNTIME_DIR is provided by your system  Toshiba --> /run/user/1000
 #
+######################################
+# emax on WSL auto
+# if [ $TTY="/dev/pts/1" ]; then
+# emax
+# fi;
+#
 #
 #####################################################
 # Powerlevel10k Prompt

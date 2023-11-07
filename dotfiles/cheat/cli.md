@@ -353,29 +353,95 @@ echo $(date)        is equivalent to echo `date` and to echo "$(date)"
 echo $(( 7307/1285.0 ))
 echo $(( 3+57 ))
 
+->% expr 3+33
+
+->% foo=31
+->% foo=$(expr $f00+1)
+
 # Tools
-# Run a Fedora n the terminal that will close on exit. Needs podman.
+
+## Run a Fedora in the terminal that will close on exit. Needs podman.
 ->% podman run --rm -it fedora
 
-# Check the etymology of "fun" online (needs w3m)
+## Check the etymology of "fun" online (needs w3m)
+
 ->% w3m "https://www.etymonline.com/word/fun"
 
-# Run the command inside a text file
+# Run a bash command inside a text file
 ->% cat test.txt
-
-
+_output_
 ls ~
 
 ->% bash test.txt
+_output_
 00_TOSHIBA             all_org       BACKUPS  DONAGHS    dropbox.txt  index.html  nohup.out     REPOS     temp_SUSPEND_.Xauthority  zArchive
 0_From_128USB          Applications  Books    Downloads  files        Jobsearch   novels        samba     TESTING
 111_From_RPI_JUNE2023  B693_backup   Desktop  Dropbox    go           MY_LOCKER   PORTABLE_ENV  sed.test  test.txt
 
 ->% cat ls.txt
+_output_
 ls -la $HOME
 
 ->% eval $(cat ls.txt )
-OUTPUT
-long listing of /home/donagh
+_output_
+[long listing of contents of /home/donagh]
+
+# Count characters in a string
+
+## USING my zsh alias in $HOME/.zsh_aliases
+->% strlen          This will ask for a string (type or paste it) and then output it's length
+
+## USING expr
+->% expr length "The quick brown fox jumps over the lazy dog "
+44
+OR
+## USING wc
+->% echo -n "i3434@@fsdsdfs" | wc -c
+14
+## USING pure bash
+->% myvar="i3434@@fsdsdfs"; len=${#myvar}; echo $len 
+14
+
+AND
+
+Save the string length to another variable and use it later:
+
+->% my_str="i3434@@fsdsdfs"
+->% len=${#my_str}
+->% echo "String length is $len"
+
+## USING awk
+->%  echo "my string" | awk '{print length}'
+## USING a bash script from ~/.scripts
+
+# Arrays
+
+## Use [@]
+
+->% backup_dirs=("/etc" "/home" "/boot")
+->% echo "${backup_dirs[@]}"
+/etc /home /boot
+
+## Use for loop
+
+->%   lst=(a b c d e)
+->% echo $lst
+_output_
+a b c d e
+
+->% for i in $lst; do
+echo $i;
+done
+_output_
+a
+b
+c
+d
+e
+
+
+
+
+
 
 # END

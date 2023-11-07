@@ -1,0 +1,9 @@
+
+Print the 256 colors to the terminal
+
+for i in {0..255}; do  printf "\x1b[38;5;${i}mcolor%-5i\x1b[0m" $i ; if ! (( ($i + 1 ) % 8 )); then echo ; fi ; done
+
+AND
+
+
+for i in {0..255}; do printf '\e[48;5;%dm%-10s' "$i" "color$i"; if (( (i >= 16 && i < 232) ? (i%6 == 3) : (i%8 == 7) )); then printf '\e[m\n'; fi; done

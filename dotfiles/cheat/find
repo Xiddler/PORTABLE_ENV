@@ -145,6 +145,13 @@ find . -samefile source_file.txt
 Delete temporary files older than a day:
 find /tmp -type f -mmin +24 -print -delete
 
+Use -exec with find
+find ~ -maxdepth 1 -name "*.txt" -print -exec ls -l {} \;
+OUTPUT
+/home/donagh/dropbox.txt
+-rw------- 1 donagh donagh 120 Sep 13 22:29 /home/donagh/dropbox.txt
+/home/donagh/util.txt
+-rw-r--r-- 1 donagh donagh 801 Nov  1 18:21 /home/donagh/util.txt
 
 
 # REM use fd - a modern alternative with regex!

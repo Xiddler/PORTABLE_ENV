@@ -1,7 +1,15 @@
 # Refs
 
 ## Webrefs
+
 https://gitimmersion.com/lab_10.html
+
+## Man pages
+
+  man gittutorial
+  man giteveryday
+  man gitglossary
+  man gitworkflows
 
 
 # Terms in git
@@ -43,24 +51,29 @@ https://gitimmersion.com/lab_10.html
     'origin/master' - the default setting for a remote repository and its primary branch
 
 # To set your identity:
+
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 
 # To set your editor:
+
 git config --global core.editor emacs
 
 # To enable color:
+
 git config --global color.ui true
 
 # To stage all changes for commit:
+
 git add --all
 git add .
 
 
 # STASH
+
 To stash changes locally, this will keep the changes in a separate changelist
 (ie a cache) called stash and the working directory is cleaned. 
-You can apply changes from the stash anytime
+You can apply changes from the stash anytime with:
 git stash
 
 ## To stash changes with a message
@@ -440,8 +453,25 @@ $ git show 58a3db6:path/to/your/file.txt
 > Other ideas
 $ git checkout [revision_hash] [file_name]
 
+> restore is rather old. Git 2.23 Adds Switch and Restore Commands - cf StackOverflow
 eg In the folder ~/PORTABLE_ENV/tmux/
 ->% git restore --staged 2d448a8e33c91 ~/PORTABLE_ENV/tmux/tmux.conf
+
+# UNDOING
+
+## To demote a file from the staged/index("to be committed") list to the "not staged for commit" list
+
+->% git reset HEAD <file>
+same as 
+->% git restore --staged <file> 
+
+Example:
+->% cd  ~/PORTABLE_ENV 
+->% git reset HEAD dotfiles/scripts/.scripts/string_length_bash.sh
+Unstaged changes after reset:
+M       dotfiles/cheat/git.md
+
+## To demote a file from 
 
 # END 
 

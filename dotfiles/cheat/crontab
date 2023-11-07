@@ -14,12 +14,23 @@ Don't forget to end your cron files with an empty line or a comment, otherwise i
 | +------- hour (0 - 23)
 +--------- minute (0 - 59)
 
-minute hour day month dayofweek
+5th *
+0 Sunday
+1 Monday
+2 Tuesday
+3 Wednesday
+4 Thursday
+5 Friday
+6 Saturday
+7 Sunday
 
-# example entries
+1st *   2nd *   3rd *   4th *   5th *
+minute  hour    day     month   dayofweek
+
 # every 15 min
 */15 * * * * /home/user/command.sh
 
+# every hour
 * */1 * * * /home/donagh/.scripts/
 
 # every midnight
@@ -30,3 +41,4 @@ minute hour day month dayofweek
 
 # borg backup schedule
 0 16 * * * 
+

@@ -236,7 +236,7 @@ timer-dae() { echo "1234" | sudo -S systemctl daemon-reload }
 # PASSWORDS OUT 
 # LINUX - Toshiba
 # alias -g passout='cat $HOME/DONAGHS/MY_ZIM/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias for catt
-passout() { rg "$1" $HOME/DONAGHS/MY_ZIM/Computer/11SignUps.txt }
+passout() { rg -i "$1" $HOME/DONAGHS/MY_ZIM/Computer/11SignUps.txt }
 alias -g catt='cat $HOME/ZIM/Computer/11SignUps.txt|rg -i -A5 '
 # added 2022-03-20  using jq and 11SignUps.json
 pout() { jq '.passwords' $HOME/REPOS/11SignUps.json | rg -A4 $1 }
@@ -443,11 +443,21 @@ alias -g t4="tree -alL 4"
 
 
 #}}}
+#{{{ BASH
+# Length of a string
+strlen() { /home/donagh/.scripts/string_length_bash.sh } # will request string then give length
+# OR
+# first define mystr eg ->% mystr="donaghmccarthty"
+# len=${#mystr}
+# then ->% sz && echo $len
+#}}}
 #{{{ PYTHON
 # python virtual envs shortcuts
 alias pb='source $HOME/.virtualenvs/basic/bin/activate'
 alias pd='source $HOME/.virtualenvs/django/bin/activate'
 alias pf='source $HOME/.virtualenvs/flask/bin/activate'
+bbpython() { source ~/.virtualenvs/bpython/bin/activate && sleep 4 &&  python -m bpython }
+# bbpython() { source ~/.virtualenvs/bpython/bin/activate }
 # run a basic server in a directory
 # alias -g server='/usr/sbin/python -m http:server 9090 "$@"'
 #}}}
@@ -477,6 +487,11 @@ alias -g pong='~/.scripts/pong.sh' # png but shortened; if no out put, then inte
 alias avg='png G rtt | cut -d '/' -f5' # average png time atm. Compared to what? Is internet slow or not?
 # alias to get my IP address of digital ocean website (2020-02-17)
 alias site='dig donaghmccarthy.ie +short'
+#}}}
+#{{{ PATHS & FILES
+# For use when using rg etc. e_ for echo, like g_ for goto
+e_creds() { echo /home/donagh/DONAGHS/MY_ZIM/Computer/11SignUps.txt }
+# USAGE: rg -C3 "donagh@donaghmccarthy.me" $(e_creds)
 #}}}
 #{{{ ON REBOOT
 # ==== TMUX ====
