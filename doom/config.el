@@ -104,26 +104,26 @@
 ;;           ("KILL" . +org-todo-cancel)))
 (setq org-todo-keywords
         '((sequence
-           "TODO(t)"  ; A task that needs doing & is ready to do
-           "PROJ(p)"  ; A project, which usually contains other tasks
-           ;"LOOP(r)"  ; A recurring task
-           "STRT(s)"  ; A task that is in progress
-           "WAIT(w)"  ; Something external is holding up this task
-           ;;"HOLD(h)"  ; This task is paused/on hold because of me
-           "HAPPENING(h)"  ; This task is happening
-           "REPEAT(r)"  ; This task is recurring
-           "READING(g)"  ; To promote my renascent reading habit
-           "MAINTENANCE(m)"  ; For House and IT
-           "IDEA(i)"  ; An unconfirmed and unapproved task or notion
+           "TODO(t)"        ; A task that needs doing & is ready to do
+           "PROJ(p)"        ; A project, which usually contains other tasks
+           ;"LOOP(r)"       ; A recurring task
+           "STRT(s)"        ; A task that is in progress
+           "WAIT(w)"        ; Something external is holding up this task
+           ;;"HOLD(h)"      ; This task is paused/on hold because of me
+           "HAPPENING(h)"   ; This task is happening
+           "REPEAT(r)"      ; This task is recurring
+           "READING(g)"     ; To promote my renascent reading habit
+           "MAINTENANCE(m)" ; For House and IT
+           "IDEA(i)"        ; An unconfirmed and unapproved task or notion
            "|"
-           "DONE(d)"  ; Task successfully completed
-           "KILL(k)") ; Task was cancelled, aborted or is no longer applicable
+           "DONE(d)"        ; Task successfully completed
+           "KILL(k)")       ; Task was cancelled, aborted or is no longer applicable
           (sequence
-           "[ ](T)"   ; A task that needs doing
-           "[-](S)"   ; Task is in progress
-           "[?](W)"   ; Task is being held up or paused
+           "[ ](T)"         ; A task that needs doing
+           "[-](S)"         ; Task is in progress
+           "[?](W)"         ; Task is being held up or paused
            "|"
-           "[X](D)")  ; Task was completed
+           "[X](D)")        ; Task was completed
           (sequence
            "|"
            "OKAY(o)"
@@ -142,7 +142,7 @@
 
 ;;
 ;; count words
-;; no -enable-word-count available for the following. How come?
+;; No -enable-word-count available for the following. How come?
 ;; (setq doom-modeline-enable-word-count t)
 ;; could use M-x count-words g C-g OR higlight region (using V ) and M-= outputs to buffer
 
@@ -209,7 +209,8 @@
 
 ;; Set which files will be found by org-agenda commands
 (setq org-agenda-files (list "/home/donagh/all_org/org/worksearch.org"
-                             "/home/donagh/all_org/org/money.org"
+                             "/home/donagh/all_org/org/contacts.org"
+                             "/home/donagh/all_org/org/info.org"
                              "/home/donagh/all_org/org/org.org"
                              "/home/donagh/all_org/org/todos.org"))
 
@@ -218,6 +219,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
+;; TIP:  SPC t l to toggle line numbers
 (setq display-line-numbers-type 'relative)
 ;; (setq display-line-numbers-type t)
 
@@ -241,7 +243,7 @@
 
 (require 'use-package)
 
-;; the long lost string manipulation tool for emacs
+;; origami from gregsexton: the long lost string manipulation tool for emacs
 (use-package s)
 (use-package dash)
 ;; The above are required for origami: https://github.com/gregsexton/origami.el
@@ -250,7 +252,7 @@
 ;; pre-installed
 
 ;;
-;;Added 2023-07-10
+;; added 2023-07-10
 (defun now ()
   "Insert string for the current time formatted like '2:34 PM' or 1507121460"
   (interactive)                 ; permit invocation in minibuffer
@@ -265,6 +267,15 @@
   (interactive)       ; permit invocation in minibuffer
   ;; (insert (format-time-string "%A, %B %e, %Y")))
   (insert (format-time-string "%Y-%m-%d")))
+
+;; added 2023-11-09
+;; auto-capitalize i to I in org files - this works!
+;; https://emacs.stackexchange.com/questions/7435/automatically-capitalise-i-to-i
+(defun capitalize-i ()
+  (when (and (eq major-mode 'org-mode) (looking-back " i "))
+    (capitalize-word -1)))
+
+(add-hook 'post-self-insert-hook 'capitalize-i)
 
 ;; (use-package 'origami)
 ;; (require 'origami)

@@ -61,10 +61,13 @@ NOTABLE
 
 
 WEATHER
-
 Morning: 
 
 
+HEALTH
+
+
+DOINGTODAY
 
 
 

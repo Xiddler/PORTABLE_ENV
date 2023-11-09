@@ -50,6 +50,10 @@ https://gitimmersion.com/lab_10.html
 
     'origin/master' - the default setting for a remote repository and its primary branch
 
+# ONE LINER git log
+
+git log --oneline --all --decorate --graph
+
 # To set your identity:
 
 git config --global user.name "John Doe"

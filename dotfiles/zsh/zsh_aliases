@@ -355,7 +355,8 @@ alias -g g_comp="$HOME/DONAGHS/MY_ZIM/Computer/"   # zim/Computer only
 alias -g g_all_org="$HOME/DONAGHS/all_org/"        # this only tracks doom-notes.org
 
 # echo -e "$mydir";
-alias -g g_list='echo -e "~/PORTABLE_ENV/ \n~/Dropbox/org-mode/org/ \n~/DONAGHS/personal/ \n~/DONAGHS/MY_ZIM/Computer \n~/DONAGHS/all_org/"'
+# alias -g g_list='echo -e "~/PORTABLE_ENV/ \n~/Dropbox/org-mode/org/ \n~/DONAGHS/personal/ \n~/DONAGHS/MY_ZIM/Computer \n~/DONAGHS/all_org/"'
+alias -g g_list='$HOME/.scripts/list_all_git_repos.sh' # added 2023-11-07
 alias -g git_list='echo -e "~/PORTABLE_ENV/ \n~/Dropbox/org-mode/org/ \n~/DONAGHS/personal/ \n~/DONAGHS/MY_ZIM/Computer \n~/DONAGHS/all_org/"'
 alias -g git_run='$HOME/.scripts/manage_all_git_repos.sh'
 alias -g git_all='$HOME/.scripts/git_run_all.sh'
