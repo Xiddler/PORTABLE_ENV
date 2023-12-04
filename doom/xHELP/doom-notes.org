@@ -335,7 +335,7 @@ DONAGHS
 Mnemonic: (t)oggle (l)ine-numbers
 ** links
 *** [ [link] ][ description ]] <<< with NO spaces
-*** Make links
+*** Make file links
 **** Method 1
 [SPC] l OR C-c C-l <-- In normal mode
 Then type info
@@ -734,7 +734,6 @@ _quail_
 M-x
 quail-show-key                                               Show a list of key strings to type for inputting a character at point.
 
-
 ** yasnippets
 
 webref:https://arjanvandergaag.nl/blog/using-yasnippet-in-emacs.html
@@ -926,10 +925,13 @@ Solution: restart doom and/or doom sync
 
 STATUS - 2020-10-03 FIXED
 ** links
-To make a link:
-SPC L  then pick the type e.g. file,
+*** To make a link:
+SPC L  then pick the type e.g. file: and then follow the prompts
 
-To make a link to a heading in another file
+*** To make a link to a heading in another file
+
+1. SPC m l s ie Go to the heading and M-x org-store-link
+2. SPC m l S ie Go to the destination file and  M-x org-insert-last-stored-link
 
 ** org-mode keywords HEADINGS /  KEYWORDS
 *** Method 1

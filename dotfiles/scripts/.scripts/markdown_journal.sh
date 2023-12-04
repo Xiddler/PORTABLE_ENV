@@ -67,6 +67,12 @@ Morning:
 HEALTH
 
 
+WEMI
+
+
+BEING FULLY REAL
+
+
 DOINGTODAY
 
 

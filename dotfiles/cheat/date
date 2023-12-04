@@ -15,6 +15,15 @@ date --date="@1669807759"
 # Convert Unix timestamp to Date(Linux)
 date -d @1440359821
 
+date -ud @1700000000
+-> Tue 14 Nov 2023 22:13:20 UTC
+
+date -ud @1800000000
+-> Fri 15 Jan 2027 08:00:00 UTC
+
+date -ud @1900000000
+-> Sun 17 Mar 2030 17:46:40 UTC
+
 # Convert Unix timestamp to Date(Mac)
 date -r 1440359821
 
@@ -51,6 +60,18 @@ date --date "next month - $(date +%d) day"
 # 3 months ago
 date --date '3 months ago - '`date +%d`'day'
 > Wed 31 Aug 2022 13:07:39 IST
+
+# date of next 3 Tuesdays (today is Tuesday) at 3 week intervals
+arrVar=("3" "6" "9")
+
+for i in "${arrVar[@]}"; do
+echo $(date --date="$i weeks");
+done
+>output<
+Tue 12 Dec 2023 09:05:44 GMT
+Tue 02 Jan 2024 09:05:44 GMT
+Tue 23 Jan 2024 09:05:44 GMT
+
 
 %FORMAT String 	Description
 %% 	a literal %

@@ -62,7 +62,8 @@ see .vimrc
 a = "donagh"
 print(f"My name is {a}")
 ->% My name is donagh
- Format specifiers for types, padding, or aligning are specified after the colon character; for instance: f'{price:.3}'
+
+Format specifiers for types, padding, or aligning are specified after the colon character; for instance: f'{price:.3}'
 # The final line
 
 if __name__ == "__main__":
