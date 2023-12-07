@@ -31,6 +31,10 @@ const consoleDevice string = "/dev/tty"
 var offsetRegexp *regexp.Regexp = regexp.MustCompile("(.*)\x1b\\[([0-9]+);([0-9]+)R")
 var offsetRegexpBegin *regexp.Regexp = regexp.MustCompile("^\x1b\\[[0-9]+;[0-9]+R")
 
+func (r *LightRenderer) PassThrough(str string) {
+	r.queued.WriteString("\x1b7" + str + "\x1b8")
+}
+
 func (r *LightRenderer) stderr(str string) {
 	r.stderrInternal(str, true, "")
 }
@@ -398,7 +402,7 @@ func (r *LightRenderer) escSequence(sz *int) Event {
 			return Event{F3, 0, nil}
 		case 'S':
 			return Event{F4, 0, nil}
-		case '1', '2', '3', '4', '5', '6':
+		case '1', '2', '3', '4', '5', '6', '7', '8':
 			if len(r.buffer) < 4 {
 				return Event{Invalid, 0, nil}
 			}
@@ -449,6 +453,10 @@ func (r *LightRenderer) escSequence(sz *int) Event {
 				return Event{PgUp, 0, nil}
 			case '6':
 				return Event{PgDn, 0, nil}
+			case '7':
+				return Event{Home, 0, nil}
+			case '8':
+				return Event{End, 0, nil}
 			case '1':
 				switch r.buffer[3] {
 				case '~':
@@ -716,6 +724,10 @@ func (r *LightRenderer) Close() {
 	r.restoreTerminal()
 }
 
+func (r *LightRenderer) Top() int {
+	return r.yoffset
+}
+
 func (r *LightRenderer) MaxX() int {
 	return r.width
 }
@@ -749,6 +761,10 @@ func (r *LightRenderer) NewWindow(top int, left int, width int, height int, prev
 	}
 	w.drawBorder(false)
 	return w
+}
+
+func (w *LightWindow) DrawBorder() {
+	w.drawBorder(false)
 }
 
 func (w *LightWindow) DrawHBorder() {
@@ -1083,14 +1099,21 @@ func (w *LightWindow) CFill(fg Color, bg Color, attr Attr, text string) FillRetu
 }
 
 func (w *LightWindow) FinishFill() {
-	w.MoveAndClear(w.posy, w.posx)
+	if w.posy < w.height {
+		w.MoveAndClear(w.posy, w.posx)
+	}
 	for y := w.posy + 1; y < w.height; y++ {
 		w.MoveAndClear(y, 0)
 	}
 }
 
 func (w *LightWindow) Erase() {
-	w.drawBorder(false)
-	// We don't erase the window here to avoid flickering during scroll
+	w.DrawBorder()
 	w.Move(0, 0)
+	w.FinishFill()
+	w.Move(0, 0)
+}
+
+func (w *LightWindow) EraseMaybe() bool {
+	return false
 }

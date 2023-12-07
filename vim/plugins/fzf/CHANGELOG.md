@@ -1,6 +1,107 @@
 CHANGELOG
 =========
 
+0.44.1
+------
+- Fixed crash when preview window is hidden on `focus` event
+
+0.44.0
+------
+- (Experimental) Sixel image support in preview window (not available on Windows)
+    - [bin/fzf-preview.sh](bin/fzf-preview.sh) is added to demonstrate how to
+      display an image using Kitty image protocol or Sixel. You can use it
+      like so:
+      ```sh
+      fzf --preview='fzf-preview.sh {}'
+      ```
+- (Experimental) iTerm2 inline image protocol support in preview window (not available on Windows)
+  ```sh
+  # Using https://iterm2.com/utilities/imgcat
+  fzf --preview 'imgcat -W $FZF_PREVIEW_COLUMNS -H $FZF_PREVIEW_LINES {}'
+  ```
+- HTTP server can be configured to accept remote connections
+  ```sh
+  # FZF_API_KEY is required for a non-localhost listen address
+  export FZF_API_KEY="$(head -c 32 /dev/urandom | base64)"
+  fzf --listen 0.0.0.0:6266
+  ```
+    - To allow remote process execution, use `--listen-unsafe` instead
+      (`execute*`, `reload*`, `become`, `preview`, `change-preview`, `transform-*`)
+      ```sh
+      fzf --listen-unsafe 0.0.0.0:6266
+      ```
+- Bug fixes
+
+0.43.0
+------
+- (Experimental) Added support for Kitty image protocol in the preview window
+  (not available on Windows)
+  ```sh
+  fzf --preview='
+    if file --mime-type {} | grep -qF image/; then
+      # --transfer-mode=memory is the fastest option but if you want fzf to be able
+      # to redraw the image on terminal resize or on 'change-preview-window',
+      # you need to use --transfer-mode=stream.
+      kitty icat --clear --transfer-mode=memory --stdin=no --place=${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES}@0x0 {} | sed \$d
+    else
+      bat --color=always {}
+    fi
+  '
+  ```
+- (Experimental) `--listen` server can report program state in JSON format (`GET /`)
+  ```sh
+  # fzf server started in "headless" mode
+  fzf --listen 6266 2> /dev/null
+
+  # Get program state
+  curl localhost:6266 | jq .
+
+  # Increase the number of items returned (default: 100)
+  curl localhost:6266?limit=1000 | jq .
+  ```
+- `--listen` server can be secured by setting `$FZF_API_KEY` environment
+  variable.
+  ```sh
+  export FZF_API_KEY="$(head -c 32 /dev/urandom | base64)"
+
+  # Server
+  fzf --listen 6266
+
+  # Client
+  curl localhost:6266 -H "x-api-key: $FZF_API_KEY" -d 'change-query(yo)'
+  ```
+- Added `toggle-header` action
+- Added mouse events for `--bind`
+    - `scroll-up` (bound to `up`)
+    - `scroll-down` (bound to `down`)
+    - `shift-scroll-up` (bound to `toggle+up`)
+    - `shift-scroll-down` (bound to `toggle+down`)
+    - `shift-left-click` (bound to `toggle`)
+    - `shift-right-click` (bound to `toggle`)
+    - `preview-scroll-up` (bound to `preview-up`)
+    - `preview-scroll-down` (bound to `preview-down`)
+    ```sh
+    # Twice faster scrolling both in the main window and the preview window
+    fzf --bind 'scroll-up:up+up,scroll-down:down+down' \
+        --bind 'preview-scroll-up:preview-up+preview-up' \
+        --bind 'preview-scroll-down:preview-down+preview-down' \
+        --preview 'cat {}'
+    ```
+- Added `offset-up` and `offset-down` actions
+  ```sh
+  # Scrolling will behave similarly to CTRL-E and CTRL-Y of vim
+  fzf --bind scroll-up:offset-up,scroll-down:offset-down \
+      --bind ctrl-y:offset-up,ctrl-e:offset-down \
+      --scroll-off=5
+  ```
+- Shell extensions
+    - Updated bash completion for fzf options
+    - bash key bindings no longer requires perl; it will use awk or mawk
+      instead if perl is not found
+    - Basic context-aware completion for ssh command
+    - Applied `--scheme=path` for better ordering of the result
+- Bug fixes and improvements
+
 0.42.0
 ------
 - Added new info style: `--info=right`
@@ -353,7 +454,7 @@ CHANGELOG
           (sleep 2; seq 1000) | fzf --height ~50%
           ```
 - Fixed tcell renderer used to render full-screen fzf on Windows
-- `--no-clear` is deprecated. Use `reload` action instead.
+- ~~`--no-clear` is deprecated. Use `reload` action instead.~~
 
 0.33.0
 ------

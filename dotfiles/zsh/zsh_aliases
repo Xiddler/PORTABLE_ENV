@@ -370,10 +370,10 @@ alias -g latest='ls -lt  **/*(.om[1,20])' # List latest 20 files edited - newest
 alias -g newest='ls -lt  **/*(.om[1,20])' # List latest 20 files edited - newest on top (zsh) [o is for ordered, m is for modified] - alias
 # ls various
 # Items (ie files and directories)
-alias -g li='ls -la' # long list everything - i.e. list items (files and folders) - alias
-alias -g ll='ls -la' # long list everything
-alias -g lt='ls -lt | head -n 16' # list 10 most recent items in this directory EXCEPT dotfiles 
-alias -g l.='ls -d .* ' # List hidden files and directories - short (alternative alias)
+alias -g li='ls -la --color=always' # long list everything - i.e. list items (files and folders) - alias
+alias -g ll='ls -la --color=always' # long list everything
+alias -g lt='ls -lt --color=always | head -n 16' # list 10 most recent items in this directory EXCEPT dotfiles 
+alias -g l.='ls -d  --color=always .* ' # List hidden files and directories - short (alternative alias)
 # alias -g lih='ls -d .* ' # List all hidden items i.e. files and directories - short - alias
 alias -g lih="ls -la | grep ' \..*$'" # List all hidden items i.e. files and directories - long -  alias
 alias -g linh="ls -la --color=always | grep  -v '\..*$' " # List all items not hidden

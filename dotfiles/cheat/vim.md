@@ -130,9 +130,10 @@ cat /home/donagh/PORTABLE_ENV/vim/plugins/my_vim_plugins
  or
  see /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim
 
- To install a new plugin
- 1. git clone into /home/donagh/PORTABLE_ENV/vim/dotvim/plugins (which is symlinked to ~/.vim)
- 2. vim /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim " rem: I can use gf to open that file!
+# To install a new plugin
+
+ 1. git clone into /home/donagh/PORTABLE_ENV/vim/plugins (which is symlinked to ~/.vim)
+ 2. vim /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim " rem: I can use gf to open that file!
  3. add e.g. Plug 'https://github.com/vim-airline/vim-airline-themes.git' under call plug#begin('/home/donagh/.vim/plugins')
  4. run :PlugInstall
 

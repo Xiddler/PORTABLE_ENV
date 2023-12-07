@@ -70,7 +70,8 @@ HEALTH
 WEMI
 
 
-BEING FULLY REAL
+MOVING TOWARDS BEING FULLY REAL
+> Where/About what do I currently feel most real? 
 
 
 DOINGTODAY

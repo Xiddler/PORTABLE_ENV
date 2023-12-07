@@ -118,13 +118,15 @@ const usage = `usage: fzf [options]
     --read0                Read input delimited by ASCII NUL characters
     --print0               Print output delimited by ASCII NUL characters
     --sync                 Synchronous search for multi-staged filtering
-    --listen[=HTTP_PORT]   Start HTTP server to receive actions (POST /)
+    --listen[=[ADDR:]PORT] Start HTTP server to receive actions (POST /)
+                           (To allow remote process execution, use --listen-unsafe)
     --version              Display version information and exit
 
   Environment variables
     FZF_DEFAULT_COMMAND    Default command to use when input is tty
     FZF_DEFAULT_OPTS       Default options
                            (e.g. '--layout=reverse --inline-info')
+    FZF_API_KEY            X-API-Key header for HTTP server (--listen)
 
 `
 
@@ -333,7 +335,8 @@ type Options struct {
 	PreviewLabel labelOpts
 	Unicode      bool
 	Tabstop      int
-	ListenPort   *int
+	ListenAddr   *listenAddress
+	Unsafe       bool
 	ClearOnExit  bool
 	Version      bool
 }
@@ -403,6 +406,7 @@ func defaultOptions() *Options {
 		Tabstop:      8,
 		BorderLabel:  labelOpts{},
 		PreviewLabel: labelOpts{},
+		Unsafe:       false,
 		ClearOnExit:  true,
 		Version:      false}
 }
@@ -701,8 +705,24 @@ func parseKeyChordsImpl(str string, message string, exit func(string)) map[tui.E
 			add(tui.LeftClick)
 		case "right-click":
 			add(tui.RightClick)
+		case "shift-left-click":
+			add(tui.SLeftClick)
+		case "shift-right-click":
+			add(tui.SRightClick)
 		case "double-click":
 			add(tui.DoubleClick)
+		case "scroll-up":
+			add(tui.ScrollUp)
+		case "scroll-down":
+			add(tui.ScrollDown)
+		case "shift-scroll-up":
+			add(tui.SScrollUp)
+		case "shift-scroll-down":
+			add(tui.SScrollDown)
+		case "preview-scroll-up":
+			add(tui.PreviewScrollUp)
+		case "preview-scroll-down":
+			add(tui.PreviewScrollDown)
 		case "f10":
 			add(tui.F10)
 		case "f11":
@@ -1114,6 +1134,8 @@ func parseActionList(masked string, original string, prevActions []*action, putA
 			appendAction(actToggleSearch)
 		case "toggle-track":
 			appendAction(actToggleTrack)
+		case "toggle-header":
+			appendAction(actToggleHeader)
 		case "track":
 			appendAction(actTrack)
 		case "select":
@@ -1160,6 +1182,10 @@ func parseActionList(masked string, original string, prevActions []*action, putA
 			appendAction(actTogglePreviewWrap)
 		case "toggle-sort":
 			appendAction(actToggleSort)
+		case "offset-up":
+			appendAction(actOffsetUp)
+		case "offset-down":
+			appendAction(actOffsetDown)
 		case "preview-top":
 			appendAction(actPreviewTop)
 		case "preview-bottom":
@@ -1809,11 +1835,21 @@ func parseOptions(opts *Options, allArgs []string) {
 				nextString(allArgs, &i, "padding required (TRBL / TB,RL / T,RL,B / T,R,B,L)"))
 		case "--tabstop":
 			opts.Tabstop = nextInt(allArgs, &i, "tab stop required")
-		case "--listen":
-			port := optionalNumeric(allArgs, &i, 0)
-			opts.ListenPort = &port
-		case "--no-listen":
-			opts.ListenPort = nil
+		case "--listen", "--listen-unsafe":
+			given, str := optionalNextString(allArgs, &i)
+			addr := defaultListenAddr
+			if given {
+				var err error
+				err, addr = parseListenAddress(str)
+				if err != nil {
+					errorExit(err.Error())
+				}
+			}
+			opts.ListenAddr = &addr
+			opts.Unsafe = arg == "--listen-unsafe"
+		case "--no-listen", "--no-listen-unsafe":
+			opts.ListenAddr = nil
+			opts.Unsafe = false
 		case "--clear":
 			opts.ClearOnExit = true
 		case "--no-clear":
@@ -1904,8 +1940,19 @@ func parseOptions(opts *Options, allArgs []string) {
 			} else if match, value := optString(arg, "--tabstop="); match {
 				opts.Tabstop = atoi(value)
 			} else if match, value := optString(arg, "--listen="); match {
-				port := atoi(value)
-				opts.ListenPort = &port
+				err, addr := parseListenAddress(value)
+				if err != nil {
+					errorExit(err.Error())
+				}
+				opts.ListenAddr = &addr
+				opts.Unsafe = false
+			} else if match, value := optString(arg, "--listen-unsafe="); match {
+				err, addr := parseListenAddress(value)
+				if err != nil {
+					errorExit(err.Error())
+				}
+				opts.ListenAddr = &addr
+				opts.Unsafe = true
 			} else if match, value := optString(arg, "--hscroll-off="); match {
 				opts.HscrollOff = atoi(value)
 			} else if match, value := optString(arg, "--scroll-off="); match {
@@ -1933,10 +1980,6 @@ func parseOptions(opts *Options, allArgs []string) {
 
 	if opts.Tabstop < 1 {
 		errorExit("tab stop must be a positive integer")
-	}
-
-	if opts.ListenPort != nil && (*opts.ListenPort < 0 || *opts.ListenPort > 65535) {
-		errorExit("invalid listen port")
 	}
 
 	if len(opts.JumpLabels) == 0 {

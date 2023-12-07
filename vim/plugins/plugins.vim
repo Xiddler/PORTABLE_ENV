@@ -62,6 +62,8 @@ Plug 'https://github.com/tpope/vim-abolish.git' "  added 2022-09-02 < create hun
 " FZF 
 Plug 'https://github.com/junegunn/fzf.git' " added 2022-10-27 fuzzy search :FZF 
  
+" nim plugin " added 2023-12-07
+Plug 'https://github.com/zah/nim.vim.git'
 
 " LoremIpsum
 Plug 'https://github.com/vim-scripts/loremipsum' " added 2022-09-15 Usage: :Loremipsum 55 will output 55 latin words 

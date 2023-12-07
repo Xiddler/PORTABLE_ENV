@@ -57,7 +57,9 @@ else ifeq ($(UNAME_M),armv6l)
 else ifeq ($(UNAME_M),armv7l)
 	BINARY := $(BINARYARM7)
 else ifeq ($(UNAME_M),armv8l)
-	BINARY := $(BINARYARM8)
+	# armv8l is always 32-bit and should implement the armv7 ISA, so
+	# just use the same filename as for armv7.
+	BINARY := $(BINARYARM7)
 else ifeq ($(UNAME_M),arm64)
 	BINARY := $(BINARYARM8)
 else ifeq ($(UNAME_M),aarch64)
@@ -91,6 +93,10 @@ build:
 	goreleaser build --rm-dist --snapshot --skip-post-hooks
 
 release:
+	# Make sure that the tests pass and the build works
+	TAGS=tcell make test
+	make test build clean
+
 ifndef GITHUB_TOKEN
 	$(error GITHUB_TOKEN is not defined)
 endif
