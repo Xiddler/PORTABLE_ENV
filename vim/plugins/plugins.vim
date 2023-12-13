@@ -68,6 +68,11 @@ Plug 'https://github.com/zah/nim.vim.git'
 " LoremIpsum
 Plug 'https://github.com/vim-scripts/loremipsum' " added 2022-09-15 Usage: :Loremipsum 55 will output 55 latin words 
 
+" vim-mundo - multi undo " Added 2023-12-13 cf. HN
+Plug 'https://github.com/samhocevar/wincompose'
+
+
+
 " ____________   UI  _______________________________
 Plug 'https://github.com/junegunn/goyo.vim.git' " Nice zen mode 
 Plug 'https://github.com/junegunn/limelight.vim.git' " Darkens non-focussed areas 

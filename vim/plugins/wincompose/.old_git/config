@@ -1,0 +1,41 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://github.com/samhocevar/wincompose
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[submodule "src/3rdparty/innosetup"]
+	active = true
+	url = https://github.com/jrsoftware/issrc.git
+	update = merge
+[submodule "src/3rdparty/inserticons"]
+	active = true
+	url = https://github.com/samhocevar-forks/inserticons.git
+[submodule "src/3rdparty/libx11"]
+	active = true
+	url = https://github.com/freedesktop/xorg-libX11.git
+	update = merge
+[submodule "src/3rdparty/unicode-emoji"]
+	active = true
+	url = https://github.com/samhocevar/unicode-emoji.git
+	update = merge
+[submodule "src/3rdparty/unicode-translation"]
+	active = true
+	url = https://github.com/samhocevar/unicode-translation.git
+	update = merge
+[submodule "wpf-notifyicon"]
+	active = true
+	url = https://github.com/samhocevar-forks/wpf-notifyicon.git
+	update = merge
+[submodule "src/3rdparty/xcompose"]
+	active = true
+	url = https://github.com/samhocevar-forks/xcompose.git
+[submodule "src/3rdparty/xorgproto"]
+	active = true
+	url = https://github.com/freedesktop/xorg-xorgproto.git
+	update = merge

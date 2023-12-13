@@ -72,6 +72,8 @@ WEMI
 
 MOVING TOWARDS BEING FULLY REAL
 > Where/About what do I currently feel most real? 
+> What am I nonsensing / fooling / deceiving / lying to myself about?
+> What can I sense / decide / do that is (more) real & consequential today?
 
 
 DOINGTODAY

@@ -58,7 +58,7 @@ alias -g listd='du -s -- *(D) | sort -k1n' # list size of directories
 alias -g xn='| xargs -n 1'
 alias -g zz='zsh -l'
 alias -g zimbu='$HOME/.scripts/zim_backup_to_tinyUSB.sh'
-alias -g jc='jupyter-console'
+# alias -g jc='jupyter-console'
 # instead of plain rm usd trash rm to move the file to Trash so as to be able to recover it like on the Desktop
 alias -g trm='mv --force -t ~/.local/share/Trash '
 # battery

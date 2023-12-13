@@ -1,0 +1,19 @@
+# Our targets
+WinCompose-*.zip
+WinCompose-*.exe
+obj/
+bin/
+# Visual Studio cruft
+.vs
+*.suo
+*.csproj.user
+*.vcxproj.user
+*.opensdf
+*.opendb
+*.sdf
+*.VC.db
+packages
+# Misc
+settings.ini
+po/*.po~
+unicode/cache

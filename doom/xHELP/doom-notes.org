@@ -5,7 +5,7 @@
 #+STARTUP: overview
 #+options: il
 #+tags:    help orgmode org-mode donaghs
-#+EDITED:  2023-09-06; 2023-08-09; 2023-07-12; 2023-04-07; 2023-02-24; 2023-01-03; 2022-12-19; 2022-12-16; 2022-09-25
+#+EDITED:  2023-12-10; 2023-09-06; 2023-08-09; 2023-07-12; 2023-04-07; 2023-02-24; 2023-01-03; 2022-12-19; 2022-12-16; 2022-09-25
 
 
 * DOOM EMACS
@@ -437,23 +437,14 @@ To move to f of fruit <-- g s s fr then press hl letter
 elephants in your head
 oranges are not the only fruit
 plain herds are better than awful
-*** from github
-**** About
-see
-**** Org-roam
-***** Install
-Successful on 2020-08-04
-In [[file:packages.el][Packages.el]]
-(package! org-roam
-  :recipe (:host github :repo "org-roam/org-roam"))
-
 *** counsel
+Ivy interface for dynamically querying a search engine
 *** company
 A modular text completion framework
 
 *** dired
 :about:
-File explorer
+dired is a built-in file manager / file explorer
 New buffer below showing the contents of (current) directory
 :end:
 **** A short intro to Dired
@@ -504,6 +495,8 @@ Navigating in files - short distances [but see [[avy]]]
 Enable: M-x evil-snipe <-- toggles on/off
 f <letter> highlights all <letter>s forward and ; moves to next one.
 NOTE: For more comprehensive in-file search look at avy.
+**** evil-avy-goto-char
+keybinding: ,/ <type char>
 *** eww
 :about:
     emacs web browser M-x e
@@ -522,6 +515,8 @@ see also : ivy, vertico (below)
 *** image-dired
 For viewing images (not great)
 *** ivy
+see [[counsel]]
+
 Ivy, a generic completion mechanism for Emacs - in insert mode.
 
 Useful when searching for files with [SPC] f f and tab completion
@@ -545,37 +540,6 @@ More keybinds can be looked up with F1 m.
 **** Issues
 2023-02-24
 Not working. Can't open the epub file.
-*** org-babel
-
-Org babel transforms the lowly executable source block into a complete literate programming environment,
-Invoke using <s[TAB] <language>
-
-Example:
-
-#+BEGIN_SRC python
-#!/usr/sbin/python
-def fib(n):
-    a = 0
-    b = 1
-    for _ in range(n-1):
-        a, b = b, a+b
-    return b if n > 0 else 0
-
-print(fib(5))
-print("done")
-
-#+END_SRC
-
-#+RESULTS:
-: None
-
-
-
-
-
-Allows to have short snippets of code that can be run inside org-mode. ?Literate programming?
-See [[snippets ][snippets]] below
-
 *** projectile
 **** About
  Its goal is to provide a nice set of features operating on a project level without introducing external dependencies
@@ -613,6 +577,11 @@ to provide more pleasant string handling, and it touts itself as "The long lost 
 For searching for text in a buffer
 [SPC] s b
 [SPC] s s  <-- swiper that is not line based - input two letters and [ENTER]
+
+see also [[
+evil-avy-goto-char]]
+[[evil-snipe]]
+
 *** treemacs
 **** About
 View directories in a tree structure in a separate panel
@@ -622,7 +591,22 @@ M-x treemacs <-- opens explorer for CURRENT directory
 [SPC] d <-- toggles close / open
 :q in treemacs pane to quit OR [SPC] b d
 use vim keys for navigating
+*** various
+Added 2023-12-10
+from https://www.murilopereira.com/how-to-open-a-file-in-emacs/#part-two-computers-and-humans
++---------+----------------------------------+
+| Package | For working with                 |
++---------+----------------------------------+
+| a.el    | alists, hash tables, and vectors |
+| dash.el | lists                            |
+| f.el    | files                            |
+| ht.el   | hash tables                      |
+| map.el  | alists, hash tables, and arrays  |
+| s.el    | strings                          | see below
+| seq.el  | sequences                        |
++---------+----------------------------------+
 *** vertico
+
 [[https://docs.doomemacs.org/latest/modules/completion/vertico/][vertico online]]
 
 This module enhances the Emacs search and completion experience, and also provides a united interface for project search and replace, powered by ripgrep.
@@ -976,6 +960,37 @@ with
            "MAINTENANCE(m)"  ; For House and IT
 
 ** packages for org-mode
+*** org-babel
+
+Org babel transforms the lowly executable source block into a complete literate programming environment,
+Invoke using <s[TAB] <language>
+
+Example:
+
+#+BEGIN_SRC python
+#!/usr/sbin/python
+def fib(n):
+    a = 0
+    b = 1
+    for _ in range(n-1):
+        a, b = b, a+b
+    return b if n > 0 else 0
+
+print(fib(5))
+print("done")
+
+#+END_SRC
+
+#+RESULTS:
+: None
+
+
+
+
+
+Allows to have short snippets of code that can be run inside org-mode. ?Literate programming?
+See [[snippets ][snippets]] below
+
 *** org-brain: Create a personal wiki or knowledge base using Org Mode
 *** org-capture: To quickly capture a note and save it for easy recapture
 **** org-capture commands
@@ -996,6 +1011,13 @@ There are a number of templates to save notes to
 
 *** org-ref: Manage citations and references within Org documents
 *** org-refile: Move a Heading and all it's contents to another location within the file.
+
+*** org-roam
+**** Install
+Successful on 2020-08-04
+In [[file:packages.el][Packages.el]]
+(package! org-roam
+  :recipe (:host github :repo "org-roam/org-roam"))
 
 ** register org directory
 to allow orgmode agenda/todos to be listed with t a t
@@ -1178,6 +1200,13 @@ Remote access to files - TBD
 I haven't used it yet. Note added 2022-09-25
 Has good reputation.
 :end:
+** Usage
+_Opened 2023-12-10_
+
+Open a remote buffer via
+Generic: M-x find-file /ssh:user@remote-host:/some/project
+Specific: M-x find-file /ssh:donagh@192.168.1.86:/home/donagh/PORTABLE_ENV/README.md -- DID NOT WORK
+Needs the -i <id_rsa>
 
 * Help for [SPC]
 SPC
@@ -1381,7 +1410,7 @@ SPC
 Date: 2023-01-03
 Status: Unresolved
 
-using home-made 'z;' instead (for org/fold-toggle)
+using DIY 'z;' instead (for org/fold-toggle)
 Tried doom upgrade. No success.
 
 * zArchive

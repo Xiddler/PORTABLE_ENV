@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/donagh/files'
+let g:netrw_dirhist_5='/home/donagh'
 let g:netrw_dirhist_4='/etc/modulefiles'
 let g:netrw_dirhist_3='/home/donagh/.config/tmux/tmux.conf'
 let g:netrw_dirhist_2='/home/donagh/PORTABLE_ENV/dotfiles/hax'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_0='/home/donagh/.config/tmux/plugins/tmux-powerline'
 let g:netrw_dirhist_9='/home/donagh/111_From_RPI_JUNE2023'
 let g:netrw_dirhist_8='/home/donagh'
 let g:netrw_dirhist_7='/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/WORDS/MY_WORDS'
-let g:netrw_dirhist_6='/home/donagh'
-let g:netrw_dirhist_5='/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/Symbols'
