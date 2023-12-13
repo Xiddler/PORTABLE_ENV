@@ -1,7 +1,0 @@
-# pack-refs with: peeled fully-peeled sorted 
-c86ca57324723b1d850145830a698c7f087e6d07 refs/remotes/origin/master
-7f458c2e5d8633836f4a01e3f03c286e15d0a75c refs/remotes/origin/refactor
-b389085607e6e251e5e775d8d7565589e70175da refs/remotes/origin/resourcelib-nuget
-0fdc37f621cabb0a93cb41374c4c775f82e5e108 refs/remotes/origin/update-resourcelib
-ee91849d6538adfefbf93c3ec335d07e2f75c8e6 refs/tags/1.1
-20524d4711ca386709dc4f24936e7428ea9a209b refs/tags/1.2

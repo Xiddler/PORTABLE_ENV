@@ -69,7 +69,7 @@ Plug 'https://github.com/zah/nim.vim.git'
 Plug 'https://github.com/vim-scripts/loremipsum' " added 2022-09-15 Usage: :Loremipsum 55 will output 55 latin words 
 
 " vim-mundo - multi undo " Added 2023-12-13 cf. HN
-Plug 'https://github.com/samhocevar/wincompose'
+Plug 'https://github.com/simnalamburt/vim-mundo.git'
 
 
 
