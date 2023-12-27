@@ -1,5 +1,7 @@
 #  -o means options
+
 #  umount to UNMOUNT; see ->% man umount 
+#  sudo umount /dev/sdb1
 
 # To mount / partition as read-write in repair mode:
 mount -o remount,rw /

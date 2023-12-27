@@ -158,7 +158,13 @@ nnoremap <leader>ss :so $MYVIMRC<CR>
 " https://github.com/junegunn/vim-plug and https://github.com/junegunn/vim-plug/wiki/tutorial
 " Run this command to installl vim-plug
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-" Remember to :PlugInstall  after adding a new Plug
+" 
+" Steps to installing a new plugin
+" 1. cd  /home/donagh/PORTABLE_ENV/vim/plugins/ 
+" 2. git clone <plugin required>
+" 3. vim /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim AND edit/add Plug 'https://github.com/<plugin to be installed.vim>'
+" 4. mv the .git/ folder to .old_git to avoid terrible warnings when using ->% git add .
+" 5. :PlugInstall  after adding a new Plug
 
 " external sub-vimrc files for plugins, specifically  vim-plug using Plug
 " source /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim  
@@ -166,6 +172,9 @@ nnoremap <leader>ss :so $MYVIMRC<CR>
 source /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim 
 
 " Rem: Use gf to open that file! CHANGED LOCATION ON 2022-10-13 
+
+" vim-mundo " https://simnalamburt.github.io/vim-mundo/ ; shows the vim undo tree
+nnoremap <leader>uu :MundoToggle<CR>
 
 "}}}
 " {{{ Navigating
@@ -198,6 +207,10 @@ nnoremap L gt
 " :bn (buffer next) without pressing enter button to make it like doom-emacs setting
 cnoremap bn :bn<cr> 
 nnoremap bn :bn<cr>
+
+" :bp (buffer previours) without pressing enter button to make it like doom-emacs setting
+cnoremap bp :bp<cr> 
+nnoremap bp :bp<cr>
 
 " Similar to my doom-emacs kill buffer
 cmap bk :wq<cr>
@@ -471,16 +484,38 @@ nmap z; za
 " {{{ Theme & Colors 
 
 " === Theme  & Colors ===
+" to set a built-in colorscheme to, for example, inspect :digraphs which is " not good with 'iceberg'
+" :colorscheme <TAB> eg evening
 
-" set termguicolors - see next
+" set termguicolors - see below
+
 syntax enable
+
+" ***************** COLORSCHEME ***************************
+
+
 " colorscheme stellarized from nightsense -- seems to be gone from github;  note added 2022-11-03  
 "/home/donagh/PORTABLE_ENV/vim/dotvim/HELP/pack/nightsense/start/stellarised 
 " theme at 2022-11-03
 " colorscheme gruvbox
 " colorscheme dracula  
 " added 2022-11-04
-colorscheme iceberg   
+" colorscheme iceberg   
+"
+" added 2023-12-26
+" colorscheme everforest
+
+" added 2023-12-26 - and my current preferred colorscheme
+colorscheme base16-default-dark
+    
+" keybindings to change colorscheme
+nnoremap <leader>6 :colorscheme base16-default-dark<CR> 
+nnoremap <leader>g :colorscheme iceberg<CR>
+nnoremap <leader>e :colorscheme evening<CR>
+nnoremap <leader>v :colorscheme everforest<CR>
+
+" ***************** END COLORSCHEME ***************************
+
 " added 2022-11-04
 set background=dark
 "to toggle them automatically for you:
@@ -814,6 +849,7 @@ inoremap dont don't
 inoremap didnt didn't
 inoremap wont won't
 inoremap cant can't
+inoremap ie<space> i.e. 
 
 " when mistyping ot instead of the word to  - but this causes long delays...
 " espanso wouldn't work 
@@ -878,15 +914,26 @@ nnoremap <leader>u v~
 map gf :edit <cfile><cr>
 
 
+- " combine :ls and :bn to open / navigate buffers
+" https://stackoverflow.com/questions/53664/how-to-effectively-work-with-multiple-files-in-vim
+nnoremap <leader>k :set nomore<Bar>:ls<Bar>:set more<CR>:b<Space>
 
 "}}} 
 " {{{ My Digraphs 
 "
 " ==== DIGRAPHS ===
+" :digraphs   [ Note: my theme is not suitable for viewing the symbols ]
+" the 'iceberg' theme makes the symbols difficult to see. Instead, change the colorscheme - for example:
+" :colorscheme evening
+
+
 " Ctrl-K in insert mode
-" ▶  PR
-" ◀  PL 
-" € Eu
+" PR ▶  
+" PL ◀  
+" Eu € 
+" co ℅
+" <spc>0 °   degrees
+" 
 
 "}}}
 "{{{ Spelling 

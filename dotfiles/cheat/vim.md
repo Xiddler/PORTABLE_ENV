@@ -1,10 +1,12 @@
 # META
+
 Edited 2022-11-08 made into .md file
 
 Quick access - put the cursor on the term and press * ( an old vim trick )
 NON-ASCII
 DIGRAPHS
 EMOJIS
+SESSIONS
 Arrows
 
 # File management
@@ -320,6 +322,11 @@ ga
 see also  /home/donagh/PORTABLE_ENV/dotfiles/cheat/vim-digraphs
 ```
 °	DG	0xb0	176	DEGREE SIGN
+°   [SPC]0
+
+SUPERSCRIPTS & SUBSCRIPTS
+¹  S1
+₁  s1
 
 ℠ 	™ 	© 	® 	¶ 	† 	‡ 	– 	±
 SM 	TM 	Co 	Rg 	PI 	/- 	/= 	– 	+-
@@ -658,7 +665,9 @@ The following commands are "jump" commands: "'", "`", "G", "/", "?", "n", "N", "
 ```
 
 # SPELLING
+
 setlocal spell   'misspelt' words will be underlined. Navigate using [s (previous) ]s (next)
+
 Ctrl-N            Used in Insert mode; drop-down list of word suggestions; insert mode; word must already be used earlier in the buffer;
  autocomplete / spelling
  first few letters of a word in the text then (Insert mode) Ctrl+P or Ctrl+N
@@ -669,15 +678,41 @@ Ctrl-N            Used in Insert mode; drop-down list of word suggestions; inser
                    (with or without :set spell) try it - z=spelling
 
 # MACROS
- In Insert mode Ctrl-R <letter>   put the contents of register <letter> into the buffer; useful for making re-usable functions or editing macros.
+
+In Insert mode Ctrl-R letter   put the contents of register <letter> into the buffer; useful for making re-usable functions or editing macros.
 
 
 # SESSIONS
+
 Open file where you left off
 mksess! and open with vim -S
  To go to the same place you were in a document after closing, use vim sessions. You issue a ":mksess!" and vim will drop a Session.vim file in your current directory. This will store all the docs you had open and where you were in them. Then when you start vim, do "vim -S" to take you back to exactly where you were.
 Not sure about the above. I have an alias vx which opens a file called scratch.md and I add :mksession! to allow me to return to the position on opening
 
+## Example
+
+->% cd ~/TESTING/vim_buffers_tabs
+->% ls
+aaa.txt
+bbb.txt
+ccc.txt
+->% vim ./aaa.txt 
+:e bbb.txt             open bbb.txt in a new buffer
+:e ccc.txt             open ccc.txt in a new buffer
+:mksess!               this will create the file Session.vim in the current file
+:wqall 
+Now to open all the files:
+->% vim -S Session.vim
+
+# Open multiple buffers
+
+->% cat ./list_files
+aaa.txt
+bbb.txt
+ccc.txt
+ddd.txt
+->% vim $(cat ./list_files) 
+This will open all the files listed in list_files in buffers - handy for projects maybe
 
 # INFO
  To display file data - for word count etc.
@@ -702,11 +737,13 @@ Plug 'https://github.com/vim-airline/vim-airline.git'
 :set cmdheight=2
 
 # Quickfix list and Location list
+
 The quickfix list is a data structure that holds file positions.
 Essentially, each entry in the quickfix list consists of a file path, a line number and optional column, and a description.
 
-Actually there are two kinds of lists: quickfix and location lists. They behave almost the same, but have the follwing differences:
+Actually there are two kinds of lists: quickfix and location lists. They behave almost the same, but have the following differences:
 There is only one quickfix list. There can be multiple location lists; one per window.
+
 They use slightly different commands for navigation.
 
 Action 	        Quickfix 	Location

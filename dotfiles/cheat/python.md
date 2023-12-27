@@ -17,8 +17,11 @@ python -m smtpd -n -c DebuggingServer localhost:1025
 # Server files that are accessible over the LAN to other devices
 
 $ python -m http.server 8080  --directory  /home/donagh/DONAGHS/personal/journal/2022/10  --bind 0.0.0.0
- Serve 11SignUps.txt for access from the tablet etc.
+Serve 11SignUps.txt for access from the tablet etc.
 python -m http.server 8088  --directory ~/DONAGHS/MY_ZIM/Computer --bind 0.0.0.0
+
+RPI
+python -m http.server 8088  --directory /home/donagh/astro_blog_npm_nvm_node_STUFF/tutorial/src/pages --bind 0.0.0.0
 
 
 

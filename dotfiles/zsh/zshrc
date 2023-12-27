@@ -125,6 +125,8 @@ fi
 # my vimrc
 MYVIMRC=$HOME/.vimrc
 
+# https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html#Prompt-Expansion
+# setopt PROMPT_PERCENT 
 
 # Increase scrolling history. This is __NOT__ the number of items listed from a command. That'd be a Terminator setting.
 set -g history-limit 9000 #
@@ -410,8 +412,6 @@ export ALTERNATE_EDITOR=""
 source ~/.config/dirjump/dirjump
 
 # source /home/donagh/.config/broot/launcher/bash/br
-# call the zsh-syntax-highlighting plugin last thing in this file
-# plugins=( zsh-syntax-highlighting )
 
 
 # tilix terminal (testing out June 2022) 
@@ -438,3 +438,6 @@ source $HOME/PORTABLE_ENV/zsh/zsh_abbr/zsh-abbr/zsh-abbr.zsh
 
 # see first line regarding zLINUX:1Linux Live USB:01installed apps:powerlevel10kprof 
 # zprof 
+#
+# call the zsh-syntax-highlighting plugin last thing in this file
+# plugins=( zsh-syntax-highlighting )

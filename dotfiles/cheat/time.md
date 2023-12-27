@@ -75,6 +75,39 @@ GMT I need to subtract 8 hours to get PT
 
 
 # Epoch converter
+(Note: 10 significant digits before the decimal point)
+
+Epoch --> Date
+->% date -d @1682985600.000
+Tue 02 May 2023 01:00:00 IST 
+
+->% date -d @1682985600
+Tue 02 May 2023 01:00:00 IST 
+
+Date --> Epoch
+->% date -d '06/12/2012 07:21:22' +"%s"
+1339482082
+
+For UTC
+
+->% dat="$(date)"
+
+->% echo $dat
+Wed Dec 27 09:45:17 GMT 2023
+
+->% date  -u -d $dat +"%s"
+1703670317
+
+Also zsh/datetime strftime function
+->% strftime -r 1339482082
+
+
+## Custom format
+->% date -d @1234567890 +'%Y-%m-%d %H:%M:%S'
+2009-02-13 23:31:30
+
+
+
 
 # Manual
 <timestamp-epoch> / 86400

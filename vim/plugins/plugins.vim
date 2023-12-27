@@ -18,12 +18,14 @@
 call plug#begin('/home/donagh/PORTABLE_ENV/vim/plugins')
 
 
-" ____________   THEMES _______________________________
 
+" AIRLINE
 " Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'vim-airline/vim-airline' 
 Plug 'https://github.com/vim-airline/vim-airline-themes.git' 
-"
+
+" ____________   THEMES _______________________________
+" VIM THEME
 " for the following plugin, -> %cp -r ~/.vim/plugins/stellarized ~/.vim/pack/nightsense/start/      :: this seems to be necessary
 " nightsense seems gone from github Note added 2022-11-03  Plug 'nightsense/stellarized'              
 " 
@@ -37,9 +39,16 @@ Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 " iceberg - added 2022-11-04
 Plug 'https://github.com/cocopon/iceberg.vim.git'
 
+" everforest - added 2023-12-26 - for the new year!
+Plug 'https://github.com/sainnhe/everforest' 
+" a bit faint?
+
+" tomorrow-night - added 2023-12-26
+Plug 'chriskempson/base16-vim'
+
 " ____________   END THEMES _______________________________
 
-" ------------  Plugins -----------------------------------
+" ------------  PREFERRED PLUGINS -----------------------------------
 
 " commentary i.e. gcc  etc. 
 Plug 'tpope/vim-commentary' " quick comment / uncomment plugin
@@ -48,7 +57,8 @@ Plug 'tpope/vim-commentary' " quick comment / uncomment plugin
 Plug 'francoiscabrol/ranger.vim' " call the ranger file manager from vim
 
 " easymotion
-Plug 'easymotion/vim-easymotion' " Use ./ to highlight search pairs 
+Plug 'easymotion/vim-easymotion' " Use ./ (i.e. period backslash) to navigate around buffer using only keyboard - nice
+" similar to (doom)emacs: avy-goto-char
 
 " peekaboo
 " the following plugin displays a buffer to the right on typing this  " <-- yes the quote symbol!
@@ -57,33 +67,44 @@ Plug 'junegunn/vim-peekaboo'
 " Plug 'zaid/vim-rec'  Plug 'https://github.com/zaid/vim-rec'  for rec-files 
 "
 " Plug 'tpope/vim-abolish'  Plug 'https://github.com/tpope/vim-abolish.git' - added 2022-09-02
-Plug 'https://github.com/tpope/vim-abolish.git' "  added 2022-09-02 < create hundreds of corrections my fingers refuse to learn > 
+" Plug 'https://github.com/tpope/vim-abolish.git' "  added 2022-09-02 < create hundreds of corrections my fingers refuse to learn > 
 
 " FZF 
-Plug 'https://github.com/junegunn/fzf.git' " added 2022-10-27 fuzzy search :FZF 
+" added 2022-10-27 fuzzy search :FZF 
+" Plug 'https://github.com/junegunn/fzf.git' 
  
-" nim plugin " added 2023-12-07
-Plug 'https://github.com/zah/nim.vim.git'
+" nim 
+" plugin " added 2023-12-07
+" Plug 'https://github.com/zah/nim.vim.git'
 
-" LoremIpsum
-Plug 'https://github.com/vim-scripts/loremipsum' " added 2022-09-15 Usage: :Loremipsum 55 will output 55 latin words 
+" LoremIpsum 
+" added 2022-09-15 Usage: :Loremipsum 55 will output 55 latin words 
+Plug 'https://github.com/vim-scripts/loremipsum' 
 
-" vim-mundo - multi undo " Added 2023-12-13 cf. HN
-Plug 'https://github.com/simnalamburt/vim-mundo.git'
+" vim-mundo 
+" - multi undo " Added 2023-12-13 cf. HN - multiple / universal UNDO tree 
+" A Vim plugin to visualizes the Vim undo tree
+" Plug 'https://github.com/simnalamburt/vim-mundo.git'
 
 
 
 " ____________   UI  _______________________________
+" Goyo
 Plug 'https://github.com/junegunn/goyo.vim.git' " Nice zen mode 
+" Limelight
 Plug 'https://github.com/junegunn/limelight.vim.git' " Darkens non-focussed areas 
-Plug 'godlygeek/tabular'  " for aligning text
+" Tabular
+" Plug 'godlygeek/tabular'  " for aligning text
 
 
 " ____________   MARKDOWN   _______________________________
 " With none of these enabled ##'s are salmon-coloured - but no folding
 " Check if this displays headings - yes but loses coloured # as in vim-mardown-folding 
 " preservim/vim-vim-markdown  https://github.com/preservim/vim-markdown.git  (this one has more stars and seems more active....)
+
+" vim-markdown
 Plug 'plasticboy/vim-markdown'
+
 " Latex 
 " Plug 'vim-latex/vim-latex'
 " the following plugin (vim-markdown) includes Syntax Concealing - use :set conceallevel=2
@@ -93,11 +114,12 @@ Plug 'plasticboy/vim-markdown'
 "
 " ____________   Language Server Protocol _______________________________
 " 
-Plug 'prabirshrestha/vim-lsp'
+" Plug 'prabirshrestha/vim-lsp'
 
 call plug#end()
 "
 " }}}
+
 " Preferred Plugins {{{
 " NOTE: These are now managed using vim.plug (see above Enable / Disable Plugins)
 
