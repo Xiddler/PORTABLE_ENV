@@ -43,6 +43,7 @@ set undolevels=500
 " {{{ Custom Leader 
 
 " === Custom Leader ===
+" NOTE: <leader> may appear in other sections too
 
 " setting custom leader to comma. Needs to be set early!
 let mapleader=','
@@ -118,7 +119,7 @@ nmap <leader>t g~aW
 " dUck
 "
 " to open journal.org for access to snippets
-nmap <leader>n :!jumpapp emacs<cr>
+" nmap <leader>n :!jumpapp emacs<cr>
 
 " surround a word with "word"
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
@@ -181,11 +182,16 @@ nnoremap <leader>uu :MundoToggle<CR>
 " === Navigating ===
 
 " Toggle/Open a file explorer to the right 
-nnoremap <leader>e :Lex!<cr> 
+" nnoremap <leader>e :Lex!<cr> " NOTE ,e mapped to change colorscheme below
 " :bd<enter> to close it!
 "
 nnoremap <leader>vza :tabe ~/.zsh_aliases <cr>
 nnoremap <leader>vz :tabe ~/.zshrc <cr>
+
+" configure Vim to open a file at the last edited location
+
+au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
+                     \ exe "normal! g`\"" | endif
 
 " }}}
 " {{{ Lorem ipsum
@@ -249,7 +255,6 @@ set number
 set relativenumber " also Ctrl N to toggle this
 " toggle number and realativenumber
 nnoremap <C-n> :exe 'set nu!' &nu ? 'rnu!' : ''
-" nnoremap <leader>n :exe 'set nu!' &nu ? 'rnu!' : ''            " <leader>n set to number a list
 
 " --- MACROS --- 
 "This mapping makes macros even easier to remember: hit qq to record, q to stop recording, and Q to apply.
@@ -309,25 +314,12 @@ let g:user_emmet_install_global = 0
 
 " === Skeleton files ===
 
-" These provide templating for new files 
-" ~/.vim/vim_templates/skeleton.
+" These provide templating for new files in  ~/.vim/vim_templates/skeleton.
 augroup skeletons
     au!
     autocmd BufNewFile *.* silent! execute '0r ~/.vim/vim_templates/skeleton.'.expand("<afile>:e")
 augroup END
 
-" inefficient ways of doing skeleton files
-" autocmd BufNewFile  *.py      0r ~/.vim/vim_templates/skeleton.py
-" autocmd BufNewFile  *.html      0r ~/.vim/vim_templates/skeleton.html
-" autocmd BufNewFile  *.md      0r ~/.vim/vim_templates/skeleton.md
-
-" skeleton files
-" augroup skeletons
-  " au!
-  " autocmd BufNewFile *.py silent! execute '0r /home/donagh/PORTABLE_ENV/vim/dotvim/vim_templates/skeleton.'.expand("<afile>:e")
-  " autocmd BufNewFile *.py silent! execute '0r /home/donagh/PORTABLE_ENV/vim/dotvim/vim_templates/skeleton.py
-  " autocmd BufNewFile *.py silent! execute '0r ~/.vim/vim_templates/skeleton.py
-" augroup END                               
 " }}} 
 "{{{ Splits 
 
@@ -729,8 +721,6 @@ command! ProseMode call ProseMode()
 nmap \p :ProseMode<CR>
 
 " put shortened filename/path in the buffer
-" replaces earlier long filename
-" nnoremap <leader>d :put=expand('%:p')<cr>
 function! Filename()
     put=expand('%:p')
     " s:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/:\~/DONAGHS/:
@@ -745,23 +735,16 @@ nmap <leader>d :call Filename()<cr>
 "2023-02-17 
 
 " I want to select some text in a file, then copy it to Ur_Journal.md but also prepend today's date
-"
+
 " Maybe a vim script to automate extracting selections of a vim file esp. my journal where ideas are arrived at but forgotten
-" 
+ 
 " Select with v and copy to "* register [ Note: it does not appear in the copyq dropdown - for some reason ]
 " Then in a vim terminal (,tt) run -> % send_hunk
 " NOTE: send_hunk is an alias of /home/donagh/.scripts/hunk_to_ur_journal.sh
 "nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
     " i <C-R>=strftime("%A::%Y-%m-%d %a %I:%M %p")<CR><Esc>
 
-" Fri 17 Feb 2023 18:41:32 GMT
-" inoremap <leader>k <c-r>=strftime('%c')<cr>
-"iab idate <c-r>=strftime("%c")<cr>
-"
-"abbey
-"towards
-"denise
-"
+
 "====================================================
 " to Ur_Journal.md 
 "====================================================

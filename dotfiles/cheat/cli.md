@@ -247,9 +247,30 @@ locale -a
 # copy filename into clipboard
  readlink -f <filename> | clipcopy
 
-# find file containing a string e.g. "comenius" in a file in the current directory i.e. '.' -- will output only the file name due to the -l flag
+# find file containing a string 
+
+NOTE: the -l flag means that only the filenames are printed to stdout
+
+e.g. "comenius" in a file in the current directory i.e. '.' -- will output only the file name due to the -l flag
+
+- using grep
 grep -Rnwil '.' -e 'comenius'
 
+grep -Rnl "fool" .
+
+- using rg 
+rg -nwil '.' -e 'fool'
+
+rg -nwil 'fool' .
+
+
+## find files in current folder containing 'fool' 
+
+- will list only the file names
+find . -type f -exec rg -l 'fool' {} +
+
+- will list filenames and the relevant line
+find . -print0 | xargs -0 rg -H -n "fool"
 
 # create a random long password
 openssl rand -hex 64
@@ -440,7 +461,11 @@ d
 e
 
 
+#  infocmp xterm-colors LS_COLORS
 
+infocmp - compare or print out terminfo descriptions
+
+->% infocmp xterm-color xterm-256color 
 
 
 

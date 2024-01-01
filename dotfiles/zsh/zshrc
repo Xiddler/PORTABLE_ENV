@@ -202,7 +202,7 @@ bindkey 'kk' copy-earlier-word
 # export UPDATE_ZSH_DAYS=3
 
 ## Uncomment the following line to disable colors in ls.
-## DISABLE_LS_COLORS="true"
+# DISABLE_LS_COLORS="true"
 
 ## Uncomment the following line to disable auto-setting terminal title.
 ## DISABLE_AUTO_TITLE="true"
@@ -332,10 +332,11 @@ bindkey 'cx' clear-screen
 # xrdb ~/.Xresources  # may need to be in my .bashrc file though
 # TERM=xterm
 
-# ls_colors
+# LS_COLORS
 # enabled the following on 2022-03-20
 # eval "`dircolors -b ~/.dir_colors`"
-#
+# eval "$(dircolors -b ~/.dir_colors)"
+
 # cd  /media/ubuntu/3520-FD13/2programming_repository/IT_projects/Dashboard_personal/ && gunicorn render_todo:app
 
 # POWERLINE 

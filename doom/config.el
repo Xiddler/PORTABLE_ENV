@@ -447,7 +447,7 @@
 ;; (use-package all-the-icons
   ;; :if (display-graphic-p))
   ;;
-(all-the-icons-faicon  "cogs")         ;; FontAwesome icon for cogs
+;; (all-the-icons-faicon  "cogs")         ;; FontAwesome icon for cogs
 
 
 ;; org-roam dependencies - ref https://www.ianjones.us/own-your-second-brain

@@ -70,6 +70,7 @@ alias -g chk='$HOME/.scripts/info.sh' # quick summary of system status
 #}}}
 #{{{     NAVIGATION SHORTCUTS
 # NAVIGATION SHORTCUTS
+
 # Functions to navigate
 focus() { cd $HOME/FOCUS }
 rems() { vim $HOME/DONAGHS/personal/reminders.md }
@@ -86,6 +87,8 @@ emax() { emacsclient -t /home/donagh/DONAGHS/personal/me.org } # -t, Open a new 
 tnk() { vim ~/DONAGHS/personal/thinking_stuff/practising_critical_thinking.md }
 # hacks == hax
 haxe() { vim /home/donagh/PORTABLE_ENV/dotfiles/hax/$1 }
+# go to sample files
+sample() { cd /home/donagh/files/sample_files }
 
 # jour { cd $journal && ls }
 po() { cd $HOME/PORTABLE_ENV }

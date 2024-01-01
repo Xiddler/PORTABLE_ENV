@@ -1,7 +1,10 @@
 Opened 2021-11-06
 
+# NOTES
+Timezones, epochtime conversion etc.
 
 # Cities
+
 Paris                    CET (Central European Time)     GMT/UTC+1
 Moscow                   MSK (Moscow Time)               GMT/UTC+3
 New York                 EST (Eastern Standard Time)     GMT/UTC-5
@@ -39,12 +42,13 @@ If the time in Mumbai is 12:30, then my local time is 07:00
 
 chess.com 8am in Pacific Standard Time is 4pm in Dublin time i.e. add 8 hours to get my local time in Ireland --> 16:00
 
-# DST Daylight Saving Time 
+## DST Daylight Saving Time 
 
 daylight saving time is usually observed from late March to late October
 Rem: Summer time is the inverse in the other hemisphere
 
-# Full list of time zones 
+## Full list of time zones - website 
+
 https://24timezones.com/time-zones ; includes UTC offset and GMT offset -- handy 
 
 ## Examples
@@ -62,7 +66,7 @@ Pacific Standard Time is 8 hours behind Coordinated Universal Time (UTC).
 Pacific Daylight Time is 7 hours behind UTC.
 
 
-# If you give me:
+## If you give me:
 
 CET? -1 hr
 CET I need to subtract 1 hour to get my local time
@@ -98,9 +102,13 @@ Wed Dec 27 09:45:17 GMT 2023
 ->% date  -u -d $dat +"%s"
 1703670317
 
-Also zsh/datetime strftime function
-->% strftime -r 1339482082
+## zsh module zsh/datetime ... strftime 
 
+(First loadt the zsh/datetime module)
+->% zmodload zsh/datetime
+(Now, call the strftime function - a C function!)
+->% $ strftime -r %Y%m%d%H%M%S 20191027163020
+1572193820
 
 ## Custom format
 ->% date -d @1234567890 +'%Y-%m-%d %H:%M:%S'
@@ -109,27 +117,40 @@ Also zsh/datetime strftime function
 
 
 
-# Manual
+## Manual
 <timestamp-epoch> / 86400
 
 ## Website
 https://www.epochconverter.com/
 eg 1636231543
 
-## Cheat date
+# Cheat date
 
 -> % vim ~/.cheat/date
--> % che date  
+-> % che date
 
 
-## Commands
 
+# Unix time commands
+
+## System clock
 To see all relevant information about your system clock
 -> % timedatectl
 
+## Hardware clock
 The hardware clock will continue to keep time when the computer is powered off, thanks to the CMOS battery on the motherboard.
 -> % sudo hwclock
 
+## Unix time
 The most common way to query the system time in Linux
 -> % date
+
+# python datetime
+
+❯ bpython
+
+>>> import datetime
+>>> v = datetime.datetime.now(tz=datetime.UTC)
+>>> v
+datetime.datetime(2023, 12, 29, 13, 13, 45, 541385, tzinfo=datetime.timezone.utc)
 

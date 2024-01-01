@@ -1,15 +1,17 @@
 Opened 2023-10-17
 Webref: https://wiki.archlinux.org/title/Users_and_groups#User_management
 
-Incorporated useradd, usermod below
+Incorporating useradd, usermod below
 
 
-# A Repository 
+# about
+
 For all things related to user / group. 
 
 
-## commands
-(not exhaustive list)
+# commands
+
+(not an exhaustive list)
 
 useradd                         :: useradd -m -G sudo -s <shell> donagh (will make /home/donagh automatically. -M to stop).
 groupadd
