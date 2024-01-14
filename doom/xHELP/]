@@ -8,6 +8,7 @@
 #+EDITED:  2024-01-02; 2023-12-10; 2023-09-06; 2023-08-09; 2023-07-12; 2023-04-07; 2023-02-24; 2023-01-03; 2022-12-19; 2022-12-16; 2022-09-25
 #+LINE      ___________________________________________________________________________________________________________
 
+
 * DOOM EMACS
 ** abbrevs
 //home/donagh/.emacs.d/abbrev_defs
@@ -304,19 +305,8 @@ These files are symbolic linked to /home/donagh/PORTABLE_ENV/doom/* - to keep my
 ** insert special characters eg €
 added 2024-01-02
 
-1. M-x evil-insert-digraph
+M-x evil-insert-digraph
 custom (config.el) C-c i d  then the normal vim digraph eg Eu for €
-
-2. M-x set-input-method
-   select latin-1-prefix
-   eg "a  --> ä
-
-   To revert: M-x toggle-input-method or use the keybinding C-\
-
-Note: M-x list-input-methods displays a list of all the supported input methods.
-
-3. SPC i u <-- Insert Unicode Character
-eg Type in: POUND SIGN --> £
 
 ** keybindings
 doom uses vim keybindings in the buffers
@@ -328,10 +318,11 @@ doom-emacs
 -----------------------------------------------------------------
 [SPC] m        <-- local to to the file type
 [SPC] :        <-- M-x
-[SPC] f p      <-- select file from doom-emacs config
+[SPC] f p      <-- go to my config folder
 C-S-f          <-- toggle full screen - equivalent to F11
 C-=            <-- increase text size - equivalent to zoom in
 C-_            <-- decrease text size - equivalent to zoom out
+[SPC] f p      <-- select file from doom-emacs config
 [SPC] w v      <-- split vertical
 
 

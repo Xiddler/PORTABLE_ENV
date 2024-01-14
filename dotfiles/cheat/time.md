@@ -154,3 +154,10 @@ The most common way to query the system time in Linux
 >>> v
 datetime.datetime(2023, 12, 29, 13, 13, 45, 541385, tzinfo=datetime.timezone.utc)
 
+# moreutils ts
+
+->% echo ' ' | ts '%F %.T'
+OUTPUT 
+2024-01-01 13:00:32.863726
+
+

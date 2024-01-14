@@ -940,6 +940,7 @@ Execute the command :delete without leaving INSERT mode.
 
 # Ctrl V issue in Windows Terminal
 
+
 Ctrl V in Windows conflicts with Ctrl V in vim:
 
 ## Open "Windows Terminal's Settings", navigate to the "Actions", delete key bindings for CTRL+V and CTRL+C and voila! 
@@ -969,7 +970,12 @@ If you comment it out, as I've shown, Ctrl+V becomes the rectangular visual sele
 //    "keys": "ctrl+v"
 //}
 
+## Read a line (or lines) from another file into current buffer
 
+eg read lines 32 to 43 from <another_file> into the current buffer 
+:r !sed -n -e '32,43p' <another_file>
+also works is this simpler version:-
+:r !sed -n 32,43p <another_file>
 
 
 # END

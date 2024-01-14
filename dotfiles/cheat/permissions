@@ -19,6 +19,7 @@ r--         4
 700         rwx --- ---
 600         rw- --- ---
 644         rw- r-- r--
+664         rw- rw- r--
 400         r-- --- ---
 
 # ssh permissions 

@@ -14,4 +14,9 @@ gzip -l *.gz
 gzip -r documents_directory
 
 # To create a *.gz compressed file and keep the original
+
 gzip < test.txt > test.txt.gz
+
+# Read contents of a .tar.gz file
+
+->% tar -tf <filename.tar.gz>

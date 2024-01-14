@@ -131,6 +131,15 @@ nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
 " surround a word with _word_
 nnoremap <leader>_ viw<esc>a_<esc>bi_<esc>lel
 
+" use — (Mdash i.e. digraph -M) instead of - (normal dash) " this prevents making lines into a bullet list
+inoremap lh —
+
+" map ,a to ❯ (the pure-prompt symbol)
+inoremap <leader>a  <C-Q>u276f
+
+ 
+ 
+
 
 " }}}
 "{{{ MYVIMRC 
@@ -902,7 +911,8 @@ map gf :edit <cfile><cr>
 nnoremap <leader>k :set nomore<Bar>:ls<Bar>:set more<CR>:b<Space>
 
 "}}} 
-" {{{ My Digraphs 
+" {{{ My Digraphs & Special Characters
+" NOTE: Some are set in Custom Leader
 "
 " ==== DIGRAPHS ===
 " :digraphs   [ Note: my theme is not suitable for viewing the symbols ]
@@ -916,7 +926,20 @@ nnoremap <leader>k :set nomore<Bar>:ls<Bar>:set more<CR>:b<Space>
 " Eu € 
 " co ℅
 " <spc>0 °   degrees
-" 
+"
+" Special Characters
+" To insert a SC, in INSERT mode press Ctrl-V (or Ctrl-Q in, say Windows) and
+" insert the Unicode. Ex: for the SP `❯` In INSERT mode, Ctrl-Q then u276f
+" for ❯ alias a> 
+
+
+" inoremap ,a to ❯ (the pure-prompt symbol)
+" NOTE: see line 138 in Custom Leader for editing this or search (the pure-prompt symbol)
+" inoremap <leader>a  <C-Q>u276f
+
+ 
+
+ 
 
 "}}}
 "{{{ Spelling 

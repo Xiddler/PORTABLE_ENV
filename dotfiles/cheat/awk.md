@@ -77,3 +77,22 @@ in python
 
 
 
+# Get element from row
+
+1. The Data - eg list the latest files in the folder using my alias `lt`
+ON Toshiba — donagh@donagh-satellitep50c 
+
+❯ cd  ~/samba/anonymous_shared_directory/MY_ZIM/Zipped_MY_ZIM_date 
+❯ lt
+total 673532
+-rw-r--r-- 1 donagh donagh       704 Jan 12 10:02 top8.txt
+-rwxrwxr-- 1 donagh donagh 138237006 Jan 11 18:48 MY_ZIM_2024-01-11.zip
+
+❯ --> <❯> 10095, Hex 276f, Octal 23557
+
+
+2. Extract the filename at the end using awk
+  lt | awk 'FNR==3 { print  $9 }' | sed 's/MY_ZIM_//g' | sed 's/[\.]zip//g'
+_output_
+2024-01-11
+

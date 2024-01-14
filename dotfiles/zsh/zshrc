@@ -39,10 +39,16 @@ echo "Did you just reboot? Check dropboxd is running... ->% PS drobboxd OR ->% p
 # END DROPBOXD
 #####################################################
 
+# zsh modules (optional)
 # the following (uncommented line) allows profiling `zsh` to see what may be making it slow. NOTE: zprof needs to be uncommented at the last line too.
 # zmodload zsh/zprof
+
+zmodload zsh/mathfunc
+# allow math functionality - see che cli_calcs.md 
+# USAGE: ->% (( a = sin(44) * 44 )) && echo $a → 0.7788847046
+
 # NOTE: Aliases handled in .zsh_aliases or .bash_aliases
-#
+
 # issue with locale - added 2022-11-22
 export LC_TIME='en_IE.UTF-8'
 
@@ -174,6 +180,8 @@ bindkey 'kk' copy-earlier-word
 #HISTSIZE=1000
 #SAVEHIST=1000
 #HISTFILE=$HOME/.zsh_history
+HISTSIZE=99999 
+HISTFILESIZE=99999
 
 ## Use modern completion system
 #autoload -Uz compinit
@@ -325,6 +333,10 @@ source $HOME/.zsh_aliases
 bindkey 'jk' vi-cmd-mode 
 # cx for clear screen
 bindkey 'cx' clear-screen
+
+# / for search shell history
+# causes problems when entering / for filepaths
+
 # hf for cd ~ 
 # bindkey 'hf' cd $HOME && clear-screen # Now done in autokey as it automatically executes 
 

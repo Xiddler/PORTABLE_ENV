@@ -71,6 +71,9 @@ HEALTH
 WEMI
 
 
+DOINGTODAY
+
+
 MOVING TOWARDS BEING FULLY REAL
 Some questions to help focus on this...
 
@@ -87,11 +90,7 @@ Others
 > Am I drifting/treading water/dallying/loitering/waiting for something to happen or the opposite?
 > What things do I think are important and am faffing about with and spending time on but really getting nowhere on?
 > Can I stop asking questions that I can't / won't answer and instead look at living life itself?
-
-DOINGTODAY
-Journalling: 
-
-
+> Have I access to being serious, grounded, responsible, connected ref. adult matters incl. work, people etc.?
 
 
 

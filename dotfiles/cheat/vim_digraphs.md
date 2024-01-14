@@ -1,8 +1,10 @@
-filename /home/donagh/PORTABLE_ENV/dotfiles/cheat/vim-digraphs
+filename vim-digraphs.md
+
+see also ~/.cheat/vim_special_chars.md
 
 Two methods to insert digraphs: in INSERT mode
 1. Ctrl K                   {char1} {char2}
-2. (with :set digraph on)   {char1} BS {char2}
+2. (with :set digraph on)   {char1} BS {char2} where BS is BACKSPACE
 
 
 
@@ -46,6 +48,8 @@ Two methods to insert digraphs: in INSERT mode
 △   uT
 ☺   0u       zero SMALL U
 ☻   0U       zero CAPITAL U
+
+❯ --> <❯> 10095, Hex 276f, Octal 23557
 
 
 

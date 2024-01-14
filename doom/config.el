@@ -60,48 +60,9 @@
 ;; abbrev-mode
 ;; (setq abbrev-mode t)
 
-;;
-;;(setq org-todo-keywords
-;;   '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
-;;      (sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "WAIT(w@/!)" "HOLD(h)" "|" "COMPLETED(c)" "CANC(k@)")))
-;;
-;; For actual keywords I was using /home/donagh.emacs.d/modules/lang/org/config.el WRONGLY
-;; (setq org-todo-keywords
-;;         '((sequence
-;;            "TODO(t)"  ; A task that needs doing & is ready to do
-;;            "PROJ(p)"  ; A project, which usually contains other tasks
-;;            ;"LOOP(r)"  ; A recurring task
-;;            "STRT(s)"  ; A task that is in progress
-;;            "WAIT(w)"  ; Something external is holding up this task
-;;            ;"HOLD(h)"  ; This task is paused/on hold because of me
-;;            "HAPPENING(h)"  ; This task is happening
-;;            "REPEAT(r)"  ; This task is recurring
-;;            "READING(g)"  ; To promote my renascent reading habit
-;;            "MAINTENANCE(m)"  ; For House and IT
-;;            "IDEA(i)"  ; An unconfirmed and unapproved task or notion
-;;            "|"
-;;            "DONE(d)"  ; Task successfully completed
-;;            "KILL(k)") ; Task was cancelled, aborted or is no longer applicable
-;;           (sequence
-;;            "[ ](T)"   ; A task that needs doing
-;;            "[-](S)"   ; Task is in progress
-;;            "[?](W)"   ; Task is being held up or paused
-;;            "|"
-;;            "[X](D)")  ; Task was completed
-;;           (sequence
-;;            "|"
-;;            "OKAY(o)"
-;;            "YES(y)"
-;;            "NO(n)"))
-;;         org-todo-keyword-faces
-;;         '(("[-]"  . +org-todo-active)
-;;           ("STRT" . +org-todo-active)
-;;           ("[?]"  . +org-todo-onhold)
-;;           ("WAIT" . +org-todo-onhold)
-;;           ("HOLD" . +org-todo-onhold)
-;;           ("PROJ" . +org-todo-project)
-;;           ("NO"   . +org-todo-cancel)
-;;           ("KILL" . +org-todo-cancel)))
+;; Note: For actual keywords I was using /home/donagh.emacs.d/modules/lang/org/config.el WRONGLY
+;; The following seems to be working
+
 (setq org-todo-keywords
         '((sequence
            "TODO(t)"        ; A task that needs doing & is ready to do
@@ -139,8 +100,6 @@
           ("NO"   . +org-todo-cancel)
           ("KILL" . +org-todo-cancel)))
 
-
-;;
 ;; count words
 ;; No -enable-word-count available for the following. How come?
 ;; (setq doom-modeline-enable-word-count t)
@@ -158,6 +117,7 @@
 ;; To make Emacs use your local server instead of a remote one, customize dictionary-server to localhost:
 (setq dictionary-server "localhost")
 ;; worked!
+;; Usage: SPC s w and type word into mini buffer
 
 ;; mandatory, as the dictionary misbehaves!
 ;; https://www.masteringemacs.org/article/wordsmithing-in-emacs
@@ -207,12 +167,10 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/all_org/org")
 
-;; Set which files will be found by org-agenda commands
-(setq org-agenda-files (list "/home/donagh/all_org/org/worksearch.org"
-                             "/home/donagh/all_org/org/contacts.org"
-                             "/home/donagh/all_org/org/info.org"
-                             "/home/donagh/all_org/org/org.org"
-                             "/home/donagh/all_org/org/todos.org"))
+;; Set which files will be found by org-agenda commands - updated 2024-01-02
+(setq org-agenda-files (list "/home/donagh/Dropbox/org-mode/org/worksearch.org"
+                                "/home/donagh/Dropbox/org-mode/org/org.org"
+                                "/home/donagh/Dropbox/org-mode/org/todos.org"))
 
 ;; hide emphasis markers in //italic// in org mode. Works!
 (setq org-hide-emphasis-markers t)
@@ -316,8 +274,11 @@
 (map! :n "z ;" '+org/toggle-fold) ;; for some reason z o -> +org/open-fold is not functioning - added 2022-12-18
 (map! :n "SPC b L" 'bookmark-bmenu-list) ;; list files/locations bookmarked in a buffer. SPC RET to quick access bookmarks
 (map! :n "SPC c h" 'org-ctrl-c-ctrl-c) ;; ch for check the box
-(map! :i "C-c d" 'today) ;; works 2023-07-10; qq also works
-(map! :i "C-c t" 'now) ;; 23-07-10_10:05; qa also works
+;; NOTE: Best not to use _any_ keyboard key after " when creating a `map! :i` keybinding as it will cause trouble in INSERT mode
+;; (map! :i "C-c d" 'today) ;; works 2023-07-10; qq also works
+;; (map! :i "C-c t" 'now) ;; 23-07-10_10:05; qa also works
+;; (map! :i "C-c i d" 'evil-insert-digraph) ; C-c insert digraph ; see also doom-notes/inserting special charactersk
+
 ; (map! :n "ggf" 'with-editor-finish') ;; magit C-c C-c
 
 ;; NOTE about jk for esc
@@ -356,9 +317,12 @@
 ;; (map! "C-x '"
 ;;       (cmd! (define-abbrev-table)
 ;;             ))
+
+;; ABBREVIATIONS
 ;; from https://www.reddit.com/r/emacs/comments/zwmgf6/how_can_i_make_abbreviations_expand_instantly/:w
 ;; THIS WORKS! 2023-09-06
-;;
+;; USAGE: M-x abbrev-mode [ to toggle abbrev mode ]
+
 (defun abbrev-or-insert ()
   (interactive)
   (self-insert-command 1)
@@ -371,13 +335,10 @@
 ("goo" "googling green glasses" nil :case-fixed t :count 0)
 ("ii" "I" nil :case-fixed t :count 0)
 (" i " "I" nil :case-fixed t :count 0)
-
 ))
+
 ;; not sure what this is supposed to do
 ;; (global-set-key (kbd "SPC y") 'abbrev-or-insert)
-
-
-
 
 ;; -----------------------------------
 ;; Sample function as an example of elisp functionality

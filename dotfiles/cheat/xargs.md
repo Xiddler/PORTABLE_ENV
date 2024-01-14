@@ -1,11 +1,12 @@
 # What does xargs do exactly?
 # Answer: runs a given command on each line of input from a piped command 
-#
+
 # find all file name ending with .pdf and remove them
 find -name *.pdf | xargs rm -rf
 
 # if file name contains spaces you should use this instead 
-find -name *.pdf | xargs -I{} rm -rf '{}'
+
+    find -name *.pdf | xargs -I{} rm -rf '{}'
 
 # xargs -I{}: on each line in the input, run the given command and replace {} with the contents of the line
 
@@ -17,7 +18,7 @@ find -maxdepth 2 -name "*.*" -type f | xargs -I{} grep 'sh$' '{}'
 #	&titi.pdf=
 # -n1 => One file by one file. ( -n2 => 2 files by 2 files )
 
-find -name *.pdf | xargs -I{} -n1 echo '&{}='
+    find -name *.pdf | xargs -I{} -n1 echo '&{}='
 
 # If find returns no result, do not run rm
 # This option is a GNU extension.
@@ -53,4 +54,8 @@ vs.
   find . -type f -print0 | xargs -0 wc -l
 
 > If you have filenames with whitespace, the first will skip a bunch of files, the second won't.
+
+# bottles on the wall
+
+->% seq 10 -1 0 | xargs printf '%s bottles of beer on the wall…\n'
 

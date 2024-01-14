@@ -81,7 +81,9 @@ contacts() { jumpapp emacs  ~/DONAGHS/personal/11_Contacts.org }
 # EMACS
 # emax() { emacsclient /home/donagh/DONAGHS/personal/me.org } # using the emacs daemon 
 # emax() { emacsclient -c } # -c, --create-frame      Create a new frame instead of trying to use the current Emacs frame
-emax() { emacsclient -t /home/donagh/DONAGHS/personal/me.org } # -t, Open a new Emacs frame on the current terminal
+# emax() { emacsclient -t /home/donagh/DONAGHS/personal/me.org } # -t, Open a new Emacs frame on the current terminal
+# issue with differences between files saved when using emacsclient and emacs -nw
+# USE emacs -nw
 
 # Critical Thinking
 tnk() { vim ~/DONAGHS/personal/thinking_stuff/practising_critical_thinking.md }
@@ -163,6 +165,8 @@ alias -g v_plugins='vim /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim'
 alias -g v_fraud='vim ~/DONAGHS/personal/00Fraud/fraud.md'
 
 alias -g email='vim ~/DONAGHS/personal/23_email_addresses.md'
+
+alias -g vw='vim /home/donagh/work.md'
 
 # Functions - vim
 # toread() { vim $HOME/REPOS/books/toRead.md }
@@ -318,7 +322,8 @@ hme() { cd $HOME }
 # ssht() { ssh -i /home/donagh/.ssh/id_rsa_toshiba donagh@192.168.1.86 } 
 ssht() { ssh -i /home/donagh/.ssh/id_rsa_toshiba donagh@donagh-satellitep50c.home }
 # ssh into the RPi
-sshrpi() { ssh -i ~/.ssh/ip_rsa_rpi donagh@192.168.1.24 }
+# sshrpi() { ssh -i ~/.ssh/ip_rsa_rpi donagh@192.168.1.24 }
+sshrpi() { ssh -i ~/.ssh/id_rpi_2 donagh@192.168.1.24 }
 # alias -g sshdo='ssh -i $HOME/.ssh/id_rsa_do donagh@142.93.37.252'
 #}}}
 #{{{ DOTFILES
