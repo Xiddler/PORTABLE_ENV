@@ -123,3 +123,7 @@ https://github.com/mattn/emmet-vim.git
 
 multicursor
 ttps://github.com/terryma/vim-multiple-cursors
+
+## 2024-01-14
+
+Issue with new token. Updated to new one.
