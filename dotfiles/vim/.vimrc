@@ -137,6 +137,7 @@ inoremap lh —
 " map ,a to ❯ (the pure-prompt symbol)
 inoremap <leader>a  <C-Q>u276f
 
+nnoremap <leader>; 0:s/^\s*//g<cr>
  
  
 
@@ -155,8 +156,10 @@ let $RC="$HOME/.vimrc" " alternative to $MYVIMRC
 " nnoremap omv :tabe $MYVIMRC<CR>  Open My Vimrc
 nnoremap <leader>vv :tabe $MYVIMRC<CR>
 
-" source $MYVIMRC
+" source $MYVIMRC - I can't seem to remember the keybinding...
 nnoremap <leader>ss :so $MYVIMRC<CR>
+nnoremap <leader>sv :so $MYVIMRC<CR>
+nnoremap <leader>sm :so $MYVIMRC<CR>
 
 
 
@@ -463,7 +466,7 @@ set sidescrolloff=8
 " https://dougblack.io/words/a-good-vimrc.html#fold 
 " does not include markdown folding to enable headings to be visible with let g:markdown_folding = 1
 
-set foldmethod=indent   " fold based on indent level
+" set foldmethod=indent   " fold based on indent level
 set foldnestmax=10      " max 10 depth
 set foldenable          " don't fold files by default on open
 
@@ -782,6 +785,29 @@ nmap <leader>j :call SendHunk()<cr>
  
 " end UR_JOURNAL====================================================
 
+" Toggle slashes using ,t
+" a command and a mapping to easily toggle slashes in the current line, or a range of lines.
+" https://vim.fandom.com/wiki/Change_between_backslash_and_forward_slash
+
+function! ToggleSlash(independent) range
+  let from = ''
+  for lnum in range(a:firstline, a:lastline)
+    let line = getline(lnum)
+    let first = matchstr(line, '[/\\]')
+    if !empty(first)
+      if a:independent || empty(from)
+        let from = first
+      endif
+      let opposite = (from == '/' ? '\' : '/')
+      call setline(lnum, substitute(line, from, opposite, 'g'))
+    endif
+  endfor
+endfunction
+command! -bang -range ToggleSlash <line1>,<line2>call ToggleSlash(<bang>1)
+noremap <silent> <leader>ts :ToggleSlash<CR>
+
+" try it: C:\Users\don_l\Applications
+
    
 "}}}
 "{{{ Latex
@@ -866,6 +892,8 @@ ab FP 'Full Picture'
 abb dtw - Donagh the Wise
 ab lorem "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
 ab FQHB Fully Qualified Human Being 
+
+ab tbp The Big Picture
 
 
 " for the vim-notes plugin. ~/.vim/misc/notes/user

@@ -408,6 +408,7 @@ sort u
 :put =readfile('/path/to/foo/foo.c')[146:226]
  or
 :r! sed -n 3,7p /path/to/foo/bar.md
+:r !sed -n 3,7p /path/to/foo/bar.md
 
 # To read in the 3 lines After 'CHALLENGE' in the specified file
 r! grep -A3 "CHALLENGE" /path/to/foo/bar.md

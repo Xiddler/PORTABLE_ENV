@@ -30,6 +30,9 @@ $today
 Script ~/PORTABLE_ENV/dotfiles/scripts/.scripts/markdown_journal.sh 
 Ur_Journal ~/DONAGHS/all_org/journal.org
 me.org $HOME/DONAGHS/personal/me.org
+1LHL ~/DONAGHS/personal/ONE_LONG_HARD_LOOK.md
+QtR ~/DONAGHS/personal/Questions_to_real.md:w
+
 
 
 ## PROMPTS
@@ -56,13 +59,17 @@ LEARNING TIL (today I learnt)
 # DIARY
 > $day 
 
+WEATHER
+Morning: 
+
 
 NOTABLE
 
 
+ANYTHING DIFFERENT
 
-WEATHER
-Morning: 
+
+LEARNINGS
 
 
 HEALTH
@@ -72,26 +79,20 @@ WEMI
 
 
 DOINGTODAY
+CTS
+
+
+AGENDA
 
 
 MOVING TOWARDS BEING FULLY REAL
-Some questions to help focus on this...
+[ Some questions to help focus on this...  See file at ~/DONAGHS/personal/Questions_to_real.md ]
 
-> What level of connection to reality do I sense today?
-> Where/About what do I currently feel most real?
-> What am I nonsensing / fooling / deceiving / lying to myself about?
-> Who / what do I actually care about? (Do I care that I don't seem to care?...)
-> What can I sense / decide / do that is (more) real & consequential today?
-> Can I plan/imagine/dream some sort of future life for myself?
-Others
-> What underlying issues am I not addressing?
-> What am I planning?  What end/conclusion/goal am I actually seeking and effectively moving towards?
-> What about: joy, lightness, fun, love, laughter, liveliness, humour?
-> Am I drifting/treading water/dallying/loitering/waiting for something to happen or the opposite?
-> What things do I think are important and am faffing about with and spending time on but really getting nowhere on?
-> Can I stop asking questions that I can't / won't answer and instead look at living life itself?
-> Have I access to being serious, grounded, responsible, connected ref. adult matters incl. work, people etc.?
 
+STRUGGLES & SUCCESSES
+
+
+TRIGGERS - RECORDING & UNDERSTANDING 
 
 
 # ____________________________________________________________________________

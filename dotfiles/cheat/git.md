@@ -477,5 +477,31 @@ M       dotfiles/cheat/git.md
 
 ## To demote a file from 
 
+# `git diff` to compare two directories
+
+I setup two directories where the second has a new file, a modified file, and a removed file compared to the first:
+
+    $ tree dir1/ dir2/
+    dir1/
+    ├── empty.txt
+    ├── modified.txt
+    ├── remove-this.txt
+    └── unchanged.txt
+    dir2/
+    ├── empty.txt
+    ├── modified.txt
+    ├── new-file.txt
+    └── unchanged.txt
+
+Then `git diff --name-status dir1 dir2` outputs the following, showing the changes by file name.
+
+    $ git diff --name-status dir1 dir2
+    M       dir1/modified.txt
+    A       dir2/new-file.txt
+    D       dir1/remove-this.txt
+
+ This also doesn't require running `git init` on the two directories either, so it's immediately usable out of the box.
+
+
 # END 
 

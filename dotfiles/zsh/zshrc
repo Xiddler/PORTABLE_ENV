@@ -426,6 +426,17 @@ source ~/.config/dirjump/dirjump
 
 # source /home/donagh/.config/broot/launcher/bash/br
 
+# yazi - blazingly fast TUI file manager
+# URL: https://yazi-rs.github.io/
+# This function provides the ability to change the current working directory when exiting Yazi
+function ya() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 # tilix terminal (testing out June 2022) 
 # if [ $TILIX_ID ] || [ $VTE_VERSION ]; then

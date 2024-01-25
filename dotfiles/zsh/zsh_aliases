@@ -110,6 +110,13 @@ ttl() { jumpapp emacs  ~/DONAGHS/personal/learning/things_to_learn.org }
 # sd() { cd $HOME/SD64/ }
 # pers() { cd $personal && ls }
 planning() { cd  $personal/planning/ }
+school() { vim /home/donagh/REPOS/projects/00_engineering_projects/PRE_PROJECTS/Schoolyard_Toilets_2024/schoolyard_wc.md }
+ 
+ 
+
+# My Jan 2024 project
+one() { vim ~/DONAGHS/personal/ONE_LONG_HARD_LOOK.md }
+
 #humour() { cd $HOME/SD64/1donaghs-stuff/humour/ }
 #outdoors() { cd $HOME/SD64/REPOS/OUTDOOR }
 projs() { cd /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/Projects }
