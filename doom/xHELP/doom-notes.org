@@ -1,12 +1,13 @@
 #+TITLE:   doom-notes.org
 #+DATE:    Started 2020-05-17
 #+AUTHOR:  donagh mccarthy
-#+FILEPATH: ~/PORTABLE_ENV/doom/xHELP/doom-notes.org
 #+STARTUP: overview
+#+FILEPATH: ~/PORTABLE_ENV/doom/xHELP/doom-notes.org
 #+options: il
 #+tags:    help orgmode org-mode donaghs
-#+EDITED:  2024-01-02; 2023-12-10; 2023-09-06; 2023-08-09; 2023-07-12; 2023-04-07; 2023-02-24; 2023-01-03; 2022-12-19; 2022-12-16; 2022-09-25
+#+EDITED:  2024-02-06; 2024-01-02; 2023-12-10; 2023-09-06; 2023-08-09; 2023-07-12; 2023-04-07; 2023-02-24; 2023-01-03; 2022-12-19; 2022-12-16; 2022-09-25
 #+LINE      ___________________________________________________________________________________________________________
+#+BABEL: :session *python* :cache yes :results output graphics :exports both :tangle yes \n" "-----"
 
 * DOOM EMACS
 ** abbrevs
@@ -198,9 +199,15 @@ describe-char (SPC h ')
 customize
 info (SPC h i)
 ** drawers
+
+Added 2024-02-06
+One thing 'drawers' can do is have a "heading" in the middle of a series of headings without it "blocking" and becoming an outline.
+
+
 aka [[property drawers]]
 
 ** elisp
+see [[literate programming]]
 *** REPL
 M-x ielm or [SPC] o r
 *** see [[snippets]] below for begin_src
@@ -346,9 +353,68 @@ DONAGHS
 [SPC] w [SPC]  <-- save-buffer = [SPC] f s
 [SPC] c [SPC]  <-- calendar minibuffer
 
-** line numbers
+** line numbers SPC t l
 [SPC] t l <-- toggles line numbers (which are relative by default)
 Mnemonic: (t)oggle (l)ine-numbers
+** literate programming
+org-babel
+
+[[elisp]]
+
+*** elisp example
+
+The following was a begin src block
+
+#+BEGIN_SRC emacs-lisp
+(defun great (name)
+  (concat "Hello " name))
+
+(great "XDolly")
+
+#+END_SRC
+
+#+RESULTS:
+: Hello XDolly
+
+
+(To execute: M-x org-babel-execute-source-block :: I made a keybinding to do this. It is Q )
+C-c C-c and SPC c h also work!
+
+*** javascript example
+
+#+NAME: passes functions
+#+BEGIN_SRC js
+  function isPass(student) {
+      return student.mark >= requiredMark(student);
+  }
+
+  function requiredMark(student) {
+      return 50 + student.name.length * 5;
+  }
+#+END_SRC
+
+#+RESULTS: passes functions
+: undefined
+
+*** python example
+
+#+BEGIN_SRC python
+
+a = 2 + 22
+print(a)
+
+#+END_SRC
+
+#+RESULTS:
+: None
+*** To evaluate:
+
+org-ctrl-c-ctrl-c         <-- C-c C-c
+or
+SPC c h
+or
+org-babel-execute-buffer  <-- C-c C-v b
+
 ** links
 *** [ [link] ][ description ]] <<< with NO spaces
 *** Make file links
@@ -688,12 +754,46 @@ SPC m l
 " An excellent way to implement labels and contexts for cross-correlating information is to assign tags to headlines. "
 tags are words preceded by : and ending in : e.g. :donaghs: or :work: - these can then be searched using  C-c \ OR C-c / m
 see https://www.gnu.org/software/emacs/manual/html_node/org/Tag-searches.html#Tag-searches
+** text expansion
+aka abbreviations
+See also ~/.emacs.d/abbrev_defs
+
+*** how to
+
+_Example_
+To make yn turn into Donagh McCarthy do the following
+type yn
+C-x a i g
+(on prompt) type in Donagh McCarthy
+Turn on abbrev-mode
+(DONE!)
+
+REM: M-x write-abbrev-file - this will add your abbrev to ~/.emacs.d/abbrev-defs (Toshiba)
+
+*** links
+https://www.masteringemacs.org/article/text-expansion-hippie-expand
+https://www.emacswiki.org/emacs/AbbrevMode
+https://mutouyuguo.com/2020/03/29/emacs-text-expansion/
+*** emacs text expansion packages
+
+    Abbrev
+    DAbbrev            Dynamic Abbrev
+    Hippie expand
+    Skeletons
+    Tempo
+    YASnippet
+    Autoinsert
+
 ** themes
 [SPC] h t
+SPC h r t  doom/reload-theme
 
 OR M-x load-theme <-- opens available themes
 
 Preferred theme:
+2024-02-09
+doom-one         :: chosen by accident. Sky blue headlines w pink subs
+
 2022-01-01
 tsdh-dark        :: Sky blue headlines w green subs
 Others:
@@ -750,15 +850,17 @@ The following was a begin src block
 (defun great (name)
   (concat "Hello " name))
 
-(great "Dolly")
+(great "XYDolly")
 
 #+END_SRC
 
 #+RESULTS:
-: Hello Dolly
+: Hello XYDolly
+
 
 
 (To execute: M-x org-babel-execute-source-block :: I made a keybinding to do this. It is Q )
+C-c C-c and SPC c h also work!
 
 
 <s and [TAB]
@@ -1577,3 +1679,25 @@ Press C-c a t to enter the global todo list.
    For keeping notes, snippets, thoughts etc.
    org-capture --> , c
    Customize templates --> , c C
+
+** literate programming
+
+#+begin_src python
+
+a = 33
+print(a)
+
+#+end_src
+
+#+RESULTS:
+: None
+
+** test text expansion
+See also ~/.emacs.d/abbrev_defs
+
+To make yn turn into Donagh McCarthy do the following
+type yn
+C-x a i g
+(on prompt) type in Donagh McCarthy
+Turn on abbrev-mode
+(DONE!)

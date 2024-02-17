@@ -9,6 +9,7 @@
 
 " My minimal .vimrc location 
 " I have a minimal .vimrc available --> /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc
+" vvim <afile> is an alias on Toshiba for this — no folding, no plugins, horrible!
 
 "inoremap jk <esc>
 set <esc>=jk 
@@ -398,6 +399,7 @@ autocmd Filetype markdown highlight link markdownError Normal
 autocmd Filetype markdown set conceallevel=2
 autocmd BufNewFile,BufRead,BufEnter *.md :set conceallevel=2
 
+
 " show italics
 highlight Comment cterm=italic
 
@@ -463,6 +465,8 @@ set sidescrolloff=8
 
 "=== Folding ===
 
+set foldmethod=marker
+
 " https://dougblack.io/words/a-good-vimrc.html#fold 
 " does not include markdown folding to enable headings to be visible with let g:markdown_folding = 1
 
@@ -470,7 +474,8 @@ set sidescrolloff=8
 set foldnestmax=10      " max 10 depth
 set foldenable          " don't fold files by default on open
 
-set foldmethod=marker
+" does this work?
+autocmd FileType markdown setlocal foldmethod=marker
 " set foldlevelstart=1   " start with fold level of 1
 " set foldcolumn=4 
 " set foldlevel=0 
@@ -479,10 +484,10 @@ highlight Folded guibg=grey guifg=blue
 " highlight Folded guibg=black guifg=grey
 " highlight FoldColumn guibg=darkgrey guifg=white
 
-" to match z; in emacs where zo doesn't work for some reason. ie toggle fold open/close 
+
+" to match z; in emacs where zo doesn't (seem to) work for some reason. ie toggle fold open/close 
 nmap z; za
 
-"vim:foldmethod=marker:foldlevel=0
 
 " }}}
 " {{{ Theme & Colors 
@@ -491,7 +496,7 @@ nmap z; za
 " to set a built-in colorscheme to, for example, inspect :digraphs which is " not good with 'iceberg'
 " :colorscheme <TAB> eg evening
 
-" set termguicolors - see below
+set termguicolors " but see below for TMUX config
 
 syntax enable
 

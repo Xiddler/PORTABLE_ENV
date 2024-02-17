@@ -2,6 +2,7 @@ Opened 2021-11-06
 
 # NOTES
 Timezones, epochtime conversion etc.
+See also zim-wiki TOOLS/
 
 # Cities
 
@@ -29,6 +30,7 @@ If the time in Mumbai is 12:30, then my local time is 07:00
  CET (Central European Time)     GMT/UTC+1
  MSK (Moscow Time)               GMT/UTC+3
  EST (Eastern Standard Time)     GMT/UTC-5
+ ET (Eastern Time)               GMT/UTC-5
  CST (Central Standard Time)     GMT/UTC-6
  PST (Pacific Standard Time)     GMT/UTC-8
  NZDT (NZ Daylight Time)         GMT/UTC+13
@@ -36,11 +38,13 @@ If the time in Mumbai is 12:30, then my local time is 07:00
  IST (India Standard Time)       GMT/UTC+5:30 
  CST (China Standard Time)       GMT/UTC+8
 
- Note: For cities to the east of London, add hours, otherwise subtract. e.g. New York is west, therefore subtract (5) hours.
+ Note: For cities to the east of London, add hours, otherwise subtract. 
+ e.g. New York is west, therefore subtract (5) hours.
 
 ## Examples
 
 chess.com 8am in Pacific Standard Time is 4pm in Dublin time i.e. add 8 hours to get my local time in Ireland --> 16:00
+chess.com 11am ET is 16:00 GMT
 
 ## DST Daylight Saving Time 
 
@@ -84,6 +88,8 @@ GMT I need to subtract 8 hours to get PT
 Epoch --> Date
 ->% date -d @1682985600.000
 Tue 02 May 2023 01:00:00 IST 
+alias -g epochtodate="date -d @"$1
+epochtodate 1695641243
 
 ->% date -d @1682985600
 Tue 02 May 2023 01:00:00 IST 

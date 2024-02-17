@@ -9,6 +9,16 @@ EMOJIS
 SESSIONS
 Arrows
 
+# Other vim* cheats
+
+$HOME/.cheat/vim_digraphs.md
+$HOME/.cheat/vimium
+$HOME/.cheat/vimium_all
+$HOME/.cheat/vim_mapping.md
+$HOME/.cheat/vim_special_chars.md
+
+
+
 # File management
 
 :e              reload file
@@ -225,6 +235,7 @@ C-F --> forward one pane
 
 
 # Non-ascii characters
+See also $HOME/.cheat/vim_special_chars.md
 
 Help on non-ascii --> :help %u
 
@@ -327,6 +338,10 @@ see also  /home/donagh/PORTABLE_ENV/dotfiles/cheat/vim-digraphs
 SUPERSCRIPTS & SUBSCRIPTS
 ¹  S1
 ₁  s1
+
+²  2S
+₂  2s
+
 
 ℠ 	™ 	© 	® 	¶ 	† 	‡ 	– 	±
 SM 	TM 	Co 	Rg 	PI 	/- 	/= 	– 	+-

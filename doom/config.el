@@ -54,14 +54,20 @@
       org-startup-with-inline-images t
       org-image-actual-width '(300))
 
-;; added 2023-04-07
-(setq org-src-fontify-natively t)
-(setq org-confirm-babel-evaluate nil)
+;; added 2024-02-06
+;; To syntax highlight your code, set the following in your .emacs init file:
+
+(setq org-confirm-babel-evaluate nil
+      org-src-fontify-natively t
+      org-src-tab-acts-natively t)
+
+;; The last variable removes the annoying “Do you want to execute” your code when you type: C-c C-c
+
 ;; abbrev-mode
 ;; (setq abbrev-mode t)
 
 ;; Note: For actual keywords I was using /home/donagh.emacs.d/modules/lang/org/config.el WRONGLY
-;; The following seems to be working
+;; The following seems to be working UPDATE 2024-02-14 No, it's not
 
 (setq org-todo-keywords
         '((sequence
@@ -274,6 +280,7 @@
 (map! :n "z ;" '+org/toggle-fold) ;; for some reason z o -> +org/open-fold is not functioning - added 2022-12-18
 (map! :n "SPC b L" 'bookmark-bmenu-list) ;; list files/locations bookmarked in a buffer. SPC RET to quick access bookmarks
 (map! :n "SPC c h" 'org-ctrl-c-ctrl-c) ;; ch for check the box
+(map! :n ",o" 'org-ctrl-c-ctrl-c) ;; ch for check the box
 ;; NOTE: Best not to use _any_ keyboard key after " when creating a `map! :i` keybinding as it will cause trouble in INSERT mode
 ;; (map! :i "C-c d" 'today) ;; works 2023-07-10; qq also works
 ;; (map! :i "C-c t" 'now) ;; 23-07-10_10:05; qa also works
@@ -339,6 +346,21 @@
 
 ;; not sure what this is supposed to do
 ;; (global-set-key (kbd "SPC y") 'abbrev-or-insert)
+;;
+;; To make a paragraph end in a single newline use the function below.
+;; It works where a line ends with a newline character (”\n”) and paragraphs are separated by blank lines.
+
+;;; Stefan Monnier <foo at acm.org>. It is the opposite of fill-paragraph (ie M-x M-q)
+(defun unfill-paragraph (&optional region)
+"Takes a multi-line paragraph and makes it into a single line of text."
+(interactive (progn (barf-if-buffer-read-only) '(t)))
+(let ((fill-column (point-max))
+        ;; This would override `fill-column' if it's an integer.
+        (emacs-lisp-docstring-fill-column t))
+(fill-paragraph nil region)))
+
+;; Handy key definition
+(define-key global-map "\M-Q" 'unfill-paragraph)
 
 ;; -----------------------------------
 ;; Sample function as an example of elisp functionality
@@ -410,6 +432,10 @@
   ;;
 ;; (all-the-icons-faicon  "cogs")         ;; FontAwesome icon for cogs
 
+;; org-babel
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t)))
 
 ;; org-roam dependencies - ref https://www.ianjones.us/own-your-second-brain
 ; (require 'company-org-roam)

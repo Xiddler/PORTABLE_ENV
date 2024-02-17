@@ -1,5 +1,6 @@
 Opened 2024-01-12
 
+Key mapping is used to change the meaning of typed keys.
 
 # Mapping in vim
 

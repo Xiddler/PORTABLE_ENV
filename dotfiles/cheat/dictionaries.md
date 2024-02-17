@@ -1,5 +1,13 @@
 Opened 2023-09-07 
 
+See also zim-wiki TOOLS/Dictionaries
+
+Shortlist of CLI options:
+->% dict <word>
+->% define <word>
+->% websters1913 {Return}
+->% def <word> 
+
 # LINUX CLI Utilities
 
 ## Dictionary and Thesaurus - offline, opens a GUI
@@ -8,10 +16,13 @@ artha
 ## for spell-checking
 hunspell
 
-# dict / stardict - uses a number of dictionaries
+# dict - uses a number of dictionaries
+
 ->% dict <word> 
 
 /usr/share/dict
+
+stardict - a GUI interface
 
 # alias def
 
@@ -28,6 +39,10 @@ this searches oxford_dict.txt
 
 This opens ddgr the DuckDuckGo browser on the CLI and opens wordnik but wordnik now uses https:// 
 
+# wordnet
+->% wn happy -over
+
+See zim-wikI TOOLS/Dictionaries
 
 # lexicon - Instant Linux Dictionary. In yakuake terminal...
 

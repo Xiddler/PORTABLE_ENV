@@ -1,0 +1,16 @@
+;;-*-coding: utf-8;-*-
+(define-abbrev-table 'global-abbrev-table
+  '(
+    (" i " "I" nil :count 0 :case-fixed t)
+    ("FOO" "facing our orriblenesses" nil :count 0 :case-fixed t)
+    ("HH" "---~" nil :count 0 :case-fixed t)
+    ("cant" "can't" nil :count 1)
+    ("dont" "don't" nil :count 10)
+    ("goo" "googling green glasses" nil :count 0 :case-fixed t)
+    ("ii" "I" nil :count 0 :case-fixed t)
+    ("iid" "I'd" nil :count 1)
+    ("lh" "—" nil :count 17)
+    ("taht" "that" nil :count 7)
+    ("yn" "Donagh McCarthy" nil :count 7)
+   ))
+

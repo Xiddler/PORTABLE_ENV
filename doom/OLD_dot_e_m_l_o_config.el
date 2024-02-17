@@ -1,6 +1,4 @@
 ;;; lang/org/config.el -*- lexical-binding: t; -*-
-;;; ln -s ~/PORTABLE_ENV/doom/dot_e_m_l_o_config.el ~/.emacs.d/modules/lang/org/config.el
-;;; Latest 2024-02-14
 
 (defvar +org-babel-native-async-langs '(python)
   "Languages that will use `ob-comint' instead of `ob-async' for `:async'.")
@@ -153,20 +151,20 @@ Is relative to `org-directory', unless it is absolute. Is used in Doom's default
     (custom-declare-face '+org-todo-cancel  '((t (:inherit (bold error org-todo)))) ""))
   (setq org-todo-keywords
         '((sequence
-           "TODO(t)"        ; A task that needs doing & is ready to do
-           "PROJ(p)"        ; A project, which usually contains other tasks
-           ;"LOOP(r)"       ; A recurring task
-           "STRT(s)"        ; A task that is in progress
-           "WAIT(w)"        ; Something external is holding up this task
-           ;;"HOLD(h)"      ; This task is paused/on hold because of me
-           "HAPPENING(h)"   ; This task is happening
-           "REPEAT(r)"      ; This task is recurring
-           "READING(g)"     ; To promote my renascent reading habit
-           "MAINTENANCE(m)" ; For House and IT
-           "IDEA(i)"        ; An unconfirmed and unapproved task or notion
+           "TODO(t)"  ; A task that needs doing & is ready to do
+           "PROJ(p)"  ; A project, which usually contains other tasks
+           ;"LOOP(r)"  ; A recurring task
+           "STRT(s)"  ; A task that is in progress
+           "WAIT(w)"  ; Something external is holding up this task
+           ;"HOLD(h)"  ; This task is paused/on hold because of me
+           "HAPPENING(h)"  ; This task is happening
+           "REPEAT(r)"  ; This task is recurring
+           "READING(g)"  ; To promote my renascent reading habit
+           "MAINTENANCE(m)"  ; For House and IT
+           "IDEA(i)"  ; An unconfirmed and unapproved task or notion
            "|"
-           "DONE(d)"        ; Task successfully completed
-           "KILL(k)")       ; Task was cancelled, aborted or is no longer applicable
+           "DONE(d)"  ; Task successfully completed
+           "KILL(k)") ; Task was cancelled, aborted or is no longer applicable
           (sequence
            "[ ](T)"   ; A task that needs doing
            "[-](S)"   ; Task is in progress
@@ -187,6 +185,29 @@ Is relative to `org-directory', unless it is absolute. Is used in Doom's default
           ("PROJ" . +org-todo-project)
           ("NO"   . +org-todo-cancel)
           ("KILL" . +org-todo-cancel)))
+
+  (defadvice! +org-display-link-in-eldoc-a (&rest _)
+    "Display full link in minibuffer when cursor/mouse is over it."
+    :before-until #'org-eldoc-documentation-function
+    (when-let* ((context (org-element-context))
+                (path (org-element-property :path context)))
+      (pcase (org-element-property :type context)
+        ("kbd"
+         (format "%s %s"
+                 (propertize "Key sequence:" 'face 'bold)
+                 (propertize (+org-read-kbd-at-point path context)
+                             'face 'help-key-binding)))
+        ("doom-module"
+         (format "%s %s"
+                 (propertize "Doom module:" 'face 'bold)
+                 (propertize (+org-read-link-description-at-point path)
+                             'face 'org-priority)))
+        ("doom-package"
+         (format "%s %s"
+                 (propertize "Doom package:" 'face 'bold)
+                 (propertize (+org-read-link-description-at-point path)
+                             'face 'org-priority)))
+        (type (format "Link: %s" (org-element-property :raw-link context))))))
 
   ;; Automatic indent detection in org files is meaningless
   (add-to-list 'doom-detect-indentation-excluded-modes 'org-mode)
@@ -260,27 +281,14 @@ Also adds support for a `:sync' parameter to override `:async'."
             (funcall orig-fn arg info params)
           (funcall fn orig-fn arg info params)))))
 
-  ;; HACK Fix #6061. Seems `org-babel-do-in-edit-buffer' has the side effect of
-  ;;   deleting side windows. Should be reported upstream! This advice
-  ;;   suppresses this behavior wherever it is known to be used.
-  (defadvice! +org-fix-window-excursions-a (fn &rest args)
-    "Suppress changes to the window config anywhere
-`org-babel-do-in-edit-buffer' is used."
-    :around #'evil-org-open-below
-    :around #'evil-org-open-above
-    :around #'org-indent-region
-    :around #'org-indent-line
-    (save-window-excursion (apply fn args)))
-
   (defadvice! +org-fix-newline-and-indent-in-src-blocks-a (&optional indent _arg _interactive)
     "Mimic `newline-and-indent' in src blocks w/ lang-appropriate indentation."
     :after #'org-return
     (when (and indent
                org-src-tab-acts-natively
                (org-in-src-block-p t))
-      (save-window-excursion
-        (org-babel-do-in-edit-buffer
-         (call-interactively #'indent-for-tab-command)))))
+      (org-babel-do-in-edit-buffer
+       (call-interactively #'indent-for-tab-command))))
 
   (defadvice! +org-inhibit-mode-hooks-a (fn datum name &optional initialize &rest args)
     "Prevent potentially expensive mode hooks in `org-babel-do-in-edit-buffer' ops."
@@ -301,19 +309,7 @@ Also adds support for a `:sync' parameter to override `:async'."
 
   ;; Refresh inline images after executing src blocks (useful for plantuml or
   ;; ipython, where the result could be an image)
-  (add-hook! 'org-babel-after-execute-hook
-    (defun +org-redisplay-inline-images-in-babel-result-h ()
-      (unless (or
-               ;; ...but not while Emacs is exporting an org buffer (where
-               ;; `org-display-inline-images' can be awfully slow).
-               (bound-and-true-p org-export-current-backend)
-               ;; ...and not while tangling org buffers (which happens in a temp
-               ;; buffer where `buffer-file-name' is nil).
-               (string-match-p "^ \\*temp" (buffer-name)))
-        (save-excursion
-          (when-let ((beg (org-babel-where-is-src-block-result))
-                     (end (progn (goto-char beg) (forward-line) (org-babel-result-end))))
-            (org-display-inline-images nil nil (min beg end) (max beg end)))))))
+  (add-hook 'org-babel-after-execute-hook #'org-redisplay-inline-images)
 
   (after! python
     (unless org-babel-python-command
@@ -346,10 +342,10 @@ Also adds support for a `:sync' parameter to override `:async'."
                  (require lang nil t))
         (add-to-list 'org-babel-load-languages (cons lang t)))))
 
-  (defadvice! +org--export-lazy-load-library-h (&optional element)
+  (defadvice! +org--export-lazy-load-library-h ()
     "Lazy load a babel package when a block is executed during exporting."
     :before #'org-babel-exp-src-block
-    (+org--babel-lazy-load-library-a (org-babel-get-src-block-info nil element)))
+    (+org--babel-lazy-load-library-a (org-babel-get-src-block-info)))
 
   (defadvice! +org--src-lazy-load-library-a (lang)
     "Lazy load a babel package to ensure syntax highlighting."
@@ -476,20 +472,18 @@ relative to `org-directory', unless it is an absolute path."
     :after #'org-capture-refile
     (+org-capture-cleanup-frame-h))
 
-  (when (modulep! :ui doom-dashboard)
+  (when (featurep! :ui doom-dashboard)
     (add-hook '+doom-dashboard-inhibit-functions #'+org-capture-frame-p)))
 
 
 (defun +org-init-attachments-h ()
   "Sets up org's attachment system."
-  (setq org-attach-store-link-p 'attached     ; store link after attaching files
+  (setq org-attach-store-link-p t     ; store link after attaching files
         org-attach-use-inheritance t) ; inherit properties from parent nodes
 
   ;; Autoload all these commands that org-attach doesn't autoload itself
   (use-package! org-attach
-    :commands (org-attach-delete-one
-               org-attach-delete-all
-               org-attach-new
+    :commands (org-attach-new
                org-attach-open
                org-attach-open-in-emacs
                org-attach-reveal-in-emacs
@@ -510,13 +504,14 @@ relative to `org-directory', unless it is an absolute path."
 (defun +org-init-custom-links-h ()
   ;; Modify default file: links to colorize broken file links red
   (org-link-set-parameters
-   "file" :face (lambda (path)
-                  (if (or (file-remote-p path)
-                          ;; filter out network shares on windows (slow)
-                          (if IS-WINDOWS (string-prefix-p "\\\\" path))
-                          (file-exists-p path))
-                      'org-link
-                    '(warning org-link))))
+   "file"
+   :face (lambda (path)
+           (if (or (file-remote-p path)
+                   ;; filter out network shares on windows (slow)
+                   (and IS-WINDOWS (string-prefix-p "\\\\" path))
+                   (file-exists-p path))
+               'org-link
+             '(warning org-link))))
 
   ;; Additional custom links for convenience
   (pushnew! org-link-abbrev-alist
@@ -528,9 +523,7 @@ relative to `org-directory', unless it is an absolute path."
             '("duckduckgo"  . "https://duckduckgo.com/?q=%s")
             '("wikipedia"   . "https://en.wikipedia.org/wiki/%s")
             '("wolfram"     . "https://wolframalpha.com/input/?i=%s")
-            '("doom-repo"   . "https://github.com/doomemacs/doomemacs/%s")
-            `("emacsdir"    . ,(doom-path doom-emacs-dir "%s"))
-            `("doomdir"     . ,(doom-path doom-user-dir "%s")))
+            '("doom-repo"   . "https://github.com/hlissner/doom-emacs/%s"))
 
   (+org-define-basic-link "org" 'org-directory)
   (+org-define-basic-link "doom" 'doom-emacs-dir)
@@ -539,121 +532,19 @@ relative to `org-directory', unless it is an absolute path."
 
   ;; Add "lookup" links for packages and keystrings; useful for Emacs
   ;; documentation -- especially Doom's!
-  (letf! ((defun -call-interactively (fn)
-            (lambda (path _prefixarg)
-              (funcall
-               fn (or (intern-soft path)
-                      (user-error "Can't find documentation for %S" path))))))
-    (org-link-set-parameters
-     "kbd"
-     :follow (lambda (ev)
-               (interactive "e")
-               (minibuffer-message "%s" (+org-link-doom--help-echo-from-textprop
-                                         nil (current-buffer) (posn-point (event-start ev)))))
-     :help-echo #'+org-link-doom--help-echo-from-textprop
-     :face 'help-key-binding)
-    (org-link-set-parameters
-     "var"
-     :follow (-call-interactively #'helpful-variable)
-     :activate-func #'+org-link--var-link-activate-fn
-     :face '(font-lock-variable-name-face underline))
-    (org-link-set-parameters
-     "fn"
-     :follow (-call-interactively #'helpful-callable)
-     :activate-func #'+org-link--fn-link-activate-fn
-     :face '(font-lock-function-name-face underline))
-    (org-link-set-parameters
-     "face"
-     :follow (-call-interactively #'describe-face)
-     :activate-func #'+org-link--face-link-activate-fn
-     :face '(font-lock-type-face underline))
-    (org-link-set-parameters
-     "cmd"
-     :follow (-call-interactively #'describe-command)
-     :activate-func #'+org-link--command-link-activate-fn
-     :face 'help-key-binding
-     :help-echo #'+org-link-doom--help-echo-from-textprop)
-    (org-link-set-parameters
-     "doom-package"
-     :follow #'+org-link--doom-package-link-follow-fn
-     :activate-func #'+org-link--doom-package-link-activate-fn
-     :help-echo #'+org-link-doom--help-echo-from-textprop)
-    (org-link-set-parameters
-     "doom-module"
-     :follow #'+org-link--doom-module-link-follow-fn
-     :activate-func #'+org-link--doom-module-link-activate-fn
-     :help-echo #'+org-link-doom--help-echo-from-textprop)
-    (org-link-set-parameters
-     "doom-executable"
-     :activate-func #'+org-link--doom-executable-link-activate-fn
-     :help-echo #'+org-link-doom--help-echo-from-textprop
-     :face 'org-verbatim)
-    (org-link-set-parameters
-     "doom-ref"
-     :follow (lambda (link)
-               (let ((link (+org-link-read-desc-at-point link))
-                     (url "https://github.com")
-                     (doom-repo "doomemacs/doomemacs"))
-                 (save-match-data
-                   (browse-url
-                    (cond ((string-match "^\\([^/]+\\(?:/[^/]+\\)?\\)?#\\([0-9]+\\(?:#.*\\)?\\)" link)
-                           (format "%s/%s/issues/%s" url
-                                   (or (match-string 1 link)
-                                       doom-repo)
-                                   (match-string 2 link)))
-                          ((string-match "^\\([^/]+\\(?:/[^/]+\\)?@\\)?\\([a-z0-9]\\{7,\\}\\(?:#.*\\)?\\)" link)
-                           (format "%s/%s/commit/%s" url
-                                   (or (match-string 1 link)
-                                       doom-repo)
-                                   (match-string 2 link)))
-                          ((user-error "Invalid doom-ref link: %S" link)))))))
-     :face (lambda (link)
-             (let ((link (+org-link-read-desc-at-point link)))
-               (if (or (string-match "^\\([^/]+\\(?:/[^/]+\\)?\\)?#\\([0-9]+\\(?:#.*\\)?\\)" link)
-                       (string-match "^\\([^/]+\\(?:/[^/]+\\)?@\\)?\\([a-z0-9]\\{7,\\}\\(?:#.*\\)?\\)" link))
-                   'org-link
-                 'error))))
-    (org-link-set-parameters
-     "doom-user"
-     :follow (lambda (link)
-               (browse-url
-                (format "https://github.com/%s"
-                        (string-remove-prefix
-                         "@" (+org-link-read-desc-at-point link)))))
-     :face (lambda (_)
-             ;; Avoid confusion with function `org-priority'
-             'org-priority))
-    (org-link-set-parameters
-     "doom-changelog"
-     :follow (lambda (link)
-               (find-file (doom-path doom-docs-dir "changelog.org"))
-               (org-match-sparse-tree nil link))))
-
-  ;; TODO PR this upstream
-  (defadvice! +org--follow-search-string-a (fn link &optional arg)
-    "Support ::SEARCH syntax for id: links."
-    :around #'org-id-open
-    :around #'org-roam-id-open
-    (save-match-data
-      (cl-destructuring-bind (id &optional search)
-          (split-string link "::")
-        (prog1 (funcall fn id arg)
-          (cond ((null search))
-                ((string-match-p "\\`[0-9]+\\'" search)
-                 ;; Move N lines after the ID (in case it's a heading), instead
-                 ;; of the start of the buffer.
-                 (forward-line (string-to-number option)))
-                ((string-match "^/\\([^/]+\\)/$" search)
-                 (let ((match (match-string 1 search)))
-                   (save-excursion (org-link-search search))
-                   ;; `org-link-search' only reveals matches. Moving the point
-                   ;; to the first match after point is a sensible change.
-                   (when (re-search-forward match)
-                     (goto-char (match-beginning 0)))))
-                ((org-link-search search)))))))
-
-  ;; Add "lookup" links for packages and keystrings; useful for Emacs
-  ;; documentation -- especially Doom's!
+  (org-link-set-parameters
+   "kbd"
+   :follow (lambda (_) (minibuffer-message "%s" (+org-display-link-in-eldoc-a)))
+   :help-echo #'+org-read-kbd-at-point
+   :face 'help-key-binding)
+  (org-link-set-parameters
+   "doom-package"
+   :follow #'+org-link--doom-package-follow-fn
+   :face (lambda (_) '(:inherit org-priority :slant italic)))
+  (org-link-set-parameters
+   "doom-module"
+   :follow #'+org-link--doom-module-follow-fn
+   :face #'+org-link--doom-module-face-fn)
 
   ;; Allow inline image previews of http(s)? urls or data uris.
   ;; `+org-http-image-data-fn' will respect `org-display-remote-inline-images'.
@@ -677,15 +568,15 @@ relative to `org-directory', unless it is an absolute path."
         org-html-validation-link nil
         org-latex-prefer-user-labels t)
 
-  (when (modulep! :lang markdown)
+  (when (featurep! :lang markdown)
     (add-to-list 'org-export-backends 'md))
 
   (use-package! ox-hugo
-    :when (modulep! +hugo)
+    :when (featurep! +hugo)
     :after ox)
 
   (use-package! ox-pandoc
-    :when (modulep! +pandoc)
+    :when (featurep! +pandoc)
     :when (executable-find "pandoc")
     :after ox
     :init
@@ -706,17 +597,16 @@ mutating hooks on exported output, like formatters."
     :around '(org-export-to-file org-export-as)
     (let ((old-async-init-file org-export-async-init-file)
           (org-export-async-init-file (make-temp-file "doom-org-async-export")))
-      (doom-file-write
-       org-export-async-init-file
-       `((setq org-export-async-debug ,(or org-export-async-debug debug-on-error)
-               load-path ',load-path)
-         (unwind-protect
-             (let ((init-file ,old-async-init-file))
-               (if init-file
-                   (load init-file nil t)
-                 (load ,early-init-file nil t)
-                 (require 'doom-start)))
-           (delete-file load-file-name))))
+      (with-temp-file org-export-async-init-file
+        (prin1 `(progn (setq org-export-async-debug
+                             ,(or org-export-async-debug
+                                  debug-on-error)
+                             load-path ',load-path)
+                       (unwind-protect
+                           (load ,(or old-async-init-file user-init-file)
+                                 nil t)
+                         (delete-file load-file-name)))
+               (current-buffer)))
       (apply fn args))))
 
 
@@ -751,47 +641,23 @@ mutating hooks on exported output, like formatters."
   ;; Open help:* links with helpful-* instead of describe-*
   (advice-add #'org-link--open-help :around #'doom-use-helpful-a)
 
-  ;; Unlike the stock showNlevels options, these will also show the parents of
-  ;; the target level, recursively.
-  (pushnew! org-startup-options
-            '("show2levels*" org-startup-folded show2levels*)
-            '("show3levels*" org-startup-folded show3levels*)
-            '("show4levels*" org-startup-folded show4levels*)
-            '("show5levels*" org-startup-folded show5levels*))
-
-  ;; TODO Upstream this.
-  (defadvice! +org--recursive-org-persist-mkdir-a (fn &rest args)
-    "`org-persist-write:index' does not recursively create
-`org-persist-directory', which causes an error if it's a parent doesn't exist."
-    :before #'org-persist-write:index
-    (make-directory org-persist-directory t))
-
-  (defadvice! +org--more-startup-folded-options-a ()
-    "Adds support for 'showNlevels*' startup options.
-Unlike showNlevels, this will also unfold parent trees."
-    :before-until #'org-cycle-set-startup-visibility
-    (when-let (n (pcase org-startup-folded
-                   (`show2levels* 2)
-                   (`show3levels* 3)
-                   (`show4levels* 4)
-                   (`show5levels* 5)))
-      (org-fold-show-all '(headings))
-      (save-excursion
-        (goto-char (point-max))
-        (save-restriction
-          (narrow-to-region (point-min) (or (re-search-forward org-outline-regexp-bol nil t) (point-max)))
-          (org-fold-hide-drawer-all))
-        (goto-char (point-max))
-        (let ((regexp (if (and (wholenump n) (> n 0))
-                          (format "^\\*\\{%d,%d\\} " (1- n) n)
-                        "^\\*+ "))
-              (last (point)))
-          (while (re-search-backward regexp nil t)
-            (when (or (not (wholenump n))
-                      (= (org-current-level) n))
-              (org-fold-core-region (line-end-position) last t 'outline))
-            (setq last (line-end-position 0)))))
-      t))
+  (defadvice! +org--show-parents-a (&optional arg)
+    "Show all headlines in the buffer, like a table of contents.
+With numerical argument N, show content up to level N."
+    :override #'org-content
+    (interactive "p")
+    (org-show-all '(headings drawers))
+    (save-excursion
+      (goto-char (point-max))
+      (let ((regexp (if (and (wholenump arg) (> arg 0))
+                        (format "^\\*\\{%d,%d\\} " (1- arg) arg)
+                      "^\\*+ "))
+            (last (point)))
+        (while (re-search-backward regexp nil t)
+          (when (or (not (wholenump arg))
+                    (= (org-current-level) arg))
+            (org-flag-region (line-end-position) last t 'outline))
+          (setq last (line-end-position 0))))))
 
   ;; Some uses of `org-fix-tags-on-the-fly' occur without a check on
   ;; `org-auto-align-tags', such as in `org-self-insert-command' and
@@ -942,13 +808,13 @@ between the two."
         "," #'org-switchb
         "." #'org-goto
         "@" #'org-cite-insert
-        (:when (modulep! :completion ivy)
+        (:when (featurep! :completion ivy)
          "." #'counsel-org-goto
          "/" #'counsel-org-goto-all)
-        (:when (modulep! :completion helm)
+        (:when (featurep! :completion helm)
          "." #'helm-org-in-buffer-headings
          "/" #'helm-org-agenda-files-headings)
-        (:when (modulep! :completion vertico)
+        (:when (featurep! :completion vertico)
          "." #'consult-org-heading
          "/" #'consult-org-agenda)
         "A" #'org-archive-subtree
@@ -957,8 +823,6 @@ between the two."
         "h" #'org-toggle-heading
         "i" #'org-toggle-item
         "I" #'org-id-get-create
-        "k" #'org-babel-remove-result
-        "K" #'+org/remove-result-blocks
         "n" #'org-store-link
         "o" #'org-set-property
         "q" #'org-set-tags-command
@@ -979,7 +843,7 @@ between the two."
          "u" #'org-attach-url
          "s" #'org-attach-set-directory
          "S" #'org-attach-sync
-         (:when (modulep! +dragndrop)
+         (:when (featurep! +dragndrop)
           "c" #'org-download-screenshot
           "p" #'org-download-clipboard
           "P" #'org-download-yank))
@@ -1005,7 +869,7 @@ between the two."
          (:prefix ("t" . "toggle")
           "f" #'org-table-toggle-formula-debugger
           "o" #'org-table-toggle-coordinate-overlays)
-         (:when (modulep! +gnuplot)
+         (:when (featurep! +gnuplot)
           "p" #'org-plot/gnuplot))
         (:prefix ("c" . "clock")
          "c" #'org-clock-cancel
@@ -1030,13 +894,13 @@ between the two."
          "T" #'org-time-stamp-inactive)
         (:prefix ("g" . "goto")
          "g" #'org-goto
-         (:when (modulep! :completion ivy)
+         (:when (featurep! :completion ivy)
           "g" #'counsel-org-goto
           "G" #'counsel-org-goto-all)
-         (:when (modulep! :completion helm)
+         (:when (featurep! :completion helm)
           "g" #'helm-org-in-buffer-headings
           "G" #'helm-org-agenda-files-headings)
-         (:when (modulep! :completion vertico)
+         (:when (featurep! :completion vertico)
           "g" #'consult-org-heading
           "G" #'consult-org-agenda)
          "c" #'org-clock-goto
@@ -1053,9 +917,7 @@ between the two."
          "L" #'org-insert-all-links
          "s" #'org-store-link
          "S" #'org-insert-last-stored-link
-         "t" #'org-toggle-link-display
-         (:when (modulep! :os macos)
-          "g" #'org-mac-link-get-link))
+         "t" #'org-toggle-link-display)
         (:prefix ("P" . "publish")
          "a" #'org-publish-all
          "f" #'org-publish-current-file
@@ -1070,8 +932,7 @@ between the two."
          "o" #'+org/refile-to-other-window
          "O" #'+org/refile-to-other-buffer
          "v" #'+org/refile-to-visible
-         "r" #'org-refile
-         "R" #'org-refile-reverse) ; to all `org-refile-targets'
+         "r" #'org-refile) ; to all `org-refile-targets'
         (:prefix ("s" . "tree/subtree")
          "a" #'org-toggle-archive-tag
          "b" #'org-tree-to-indirect-buffer
@@ -1122,9 +983,48 @@ between the two."
        :slot -1 :vslot -1 :size #'+popup-shrink-to-fit :ttl 0)
       ("^\\*Org \\(?:Select\\|Attach\\)" :slot -1 :vslot -2 :ttl 0 :size 0.25)
       ("^\\*Org Agenda"     :ignore t)
-      ("^\\*Org Src"        :size 0.42  :quit nil :select t :autosave t :modeline t :ttl nil)
+      ("^\\*Org Src"        :size 0.4  :quit nil :select t :autosave t :modeline t :ttl nil)
       ("^\\*Org-Babel")
-      ("^\\*Capture\\*$\\|CAPTURE-.*$" :size 0.42 :quit nil :select t :autosave ignore))))
+      ("^\\*Capture\\*$\\|CAPTURE-.*$" :size 0.25 :quit nil :select t :autosave ignore))))
+
+
+(defun +org-init-protocol-lazy-loader-h ()
+  "Brings lazy-loaded support for org-protocol, so external programs (like
+browsers) can invoke specialized behavior from Emacs. Normally you'd simply
+require `org-protocol' and use it, but the package loads all of org for no
+compelling reason, so..."
+  (defadvice! +org--server-visit-files-a (args)
+    "Advise `server-visit-flist' to invoke `org-protocol' lazily."
+    :filter-args #'server-visit-files
+    (cl-destructuring-bind (files proc &optional nowait) args
+      (catch 'greedy
+        (let ((flist (reverse files)))
+          (dolist (var flist)
+            (when (string-match-p ":/+" (car var))
+              (require 'server)
+              (require 'org-protocol)
+              ;; `\' to `/' on windows
+              (let ((fname (org-protocol-check-filename-for-protocol
+                            (expand-file-name (car var))
+                            (member var flist)
+                            proc)))
+                (cond ((eq fname t) ; greedy? We need the t return value.
+                       (setq files nil)
+                       (throw 'greedy t))
+                      ((stringp fname) ; probably filename
+                       (setcar var fname))
+                      ((setq files (delq var files)))))))))
+      (list files proc nowait)))
+
+  ;; Disable built-in, clumsy advice
+  (after! org-protocol
+    (ad-disable-advice 'server-visit-files 'before 'org-protocol-detect-protocol-server)))
+
+
+(defun +org-init-protocol-h ()
+  ;; TODO org-board or better link grabbing support
+  ;; TODO org-capture + org-protocol instead of bin/org-capture
+  )
 
 
 (defun +org-init-smartparens-h ()
@@ -1152,7 +1052,6 @@ between the two."
 
 
 (use-package! org-crypt ; built-in
-  :when (modulep! +crypt)
   :commands org-encrypt-entries org-encrypt-entry org-decrypt-entries org-decrypt-entry
   :hook (org-reveal-start . org-decrypt-entry)
   :preface
@@ -1168,7 +1067,7 @@ between the two."
 (use-package! org-clock ; built-in
   :commands org-clock-save
   :init
-  (setq org-clock-persist-file (concat doom-data-dir "org-clock-save.el"))
+  (setq org-clock-persist-file (concat doom-etc-dir "org-clock-save.el"))
   (defadvice! +org--clock-load-a (&rest _)
     "Lazy load org-clock until its commands are used."
     :before '(org-clock-in
@@ -1189,7 +1088,7 @@ between the two."
 
 
 (use-package! org-pdftools
-  :when (modulep! :tools pdf)
+  :when (featurep! :tools pdf)
   :commands org-pdftools-export
   :init
   (after! org
@@ -1219,10 +1118,9 @@ between the two."
 
 
 (use-package! evil-org
-  :when (modulep! :editor evil +everywhere)
+  :when (featurep! :editor evil +everywhere)
   :hook (org-mode . evil-org-mode)
   :hook (org-capture-mode . evil-insert-state)
-  :hook (doom-docs-org-mode . evil-org-mode)
   :init
   (defvar evil-org-retain-visual-state-on-shift t)
   (defvar evil-org-special-o/O '(table-row))
@@ -1263,8 +1161,8 @@ between the two."
             ;; more intuitive RET keybinds
             :n [return]   #'+org/dwim-at-point
             :n "RET"      #'+org/dwim-at-point
-            :i [return]   #'+org/return
-            :i "RET"      #'+org/return
+            :i [return]   (cmd! (org-return electric-indent-mode))
+            :i "RET"      (cmd! (org-return electric-indent-mode))
             :i [S-return] #'+org/shift-return
             :i "S-RET"    #'+org/shift-return
             ;; more vim-esque org motion keys (not covered by evil-org-mode)
@@ -1301,7 +1199,7 @@ between the two."
 
 
 (use-package! evil-org-agenda
-  :when (modulep! :editor evil +everywhere)
+  :when (featurep! :editor evil +everywhere)
   :hook (org-agenda-mode . evil-org-agenda-mode)
   :config
   (evil-org-agenda-set-keys)
@@ -1325,9 +1223,8 @@ between the two."
   (defvar org-attach-id-dir nil)
   (defvar org-babel-python-command nil)
 
-  (setq org-persist-directory (concat doom-cache-dir "org/persist/")
-        org-publish-timestamp-directory (concat doom-cache-dir "org/timestamps/")
-        org-preview-latex-image-directory (concat doom-cache-dir "org/latex/")
+  (setq org-publish-timestamp-directory (concat doom-cache-dir "org-timestamps/")
+        org-preview-latex-image-directory (concat doom-cache-dir "org-latex/")
         ;; Recognize a), A), a., A., etc -- must be set before org is loaded.
         org-list-allow-alphabetical t)
 
@@ -1347,7 +1244,7 @@ between the two."
       ))
 
   ;;; Custom org modules
-  (dolist (flag (doom-module-context-get 'flags))
+  (dolist (flag doom--current-flags)
     (load! (concat "contrib/" (substring (symbol-name flag) 1)) nil t))
 
   ;; Add our general hooks after the submodules, so that any hooks the
@@ -1358,8 +1255,8 @@ between the two."
              #'doom-disable-show-paren-mode-h
              ;; disable `show-trailing-whitespace'; shows a lot of false positives
              #'doom-disable-show-trailing-whitespace-h
-             ;; #'+org-enable-auto-reformat-tables-h
-             ;; #'+org-enable-auto-update-cookies-h
+             #'+org-enable-auto-reformat-tables-h
+             #'+org-enable-auto-update-cookies-h
              #'+org-make-last-point-visible-h)
 
   (add-hook! 'org-load-hook
@@ -1377,43 +1274,18 @@ between the two."
              #'+org-init-hacks-h
              #'+org-init-keybinds-h
              #'+org-init-popup-rules-h
+             #'+org-init-protocol-h
+             #'+org-init-protocol-lazy-loader-h
              #'+org-init-smartparens-h)
 
-  ;; Wait until an org-protocol link is opened via emacsclient to load
-  ;; `org-protocol'. Normally you'd simply require `org-protocol' and use it,
-  ;; but the package loads all of org for no compelling reason, so...
-  (defadvice! +org--server-visit-files-a (fn files &rest args)
-    "Advise `server-visit-files' to load `org-protocol' lazily."
-    :around #'server-visit-files
-    (if (not (cl-loop with protocol =
-                      (if IS-WINDOWS
-                          ;; On Windows, the file arguments for `emacsclient'
-                          ;; get funnelled through `expand-file-path' by
-                          ;; `server-process-filter'. This substitutes
-                          ;; backslashes with forward slashes and converts each
-                          ;; path to an absolute one. However, *all* absolute
-                          ;; paths on Windows will match the regexp ":/+", so we
-                          ;; need a more discerning regexp.
-                          (regexp-quote
-                           (or (bound-and-true-p org-protocol-the-protocol)
-                               "org-protocol"))
-                        ;; ...but since there is a miniscule possibility users
-                        ;; have changed `org-protocol-the-protocol' I don't want
-                        ;; this behavior for macOS/Linux users.
-                        "")
-                      for var in files
-                      if (string-match-p (format "%s:/+" protocol) (car var))
-                      return t))
-        (apply fn files args)
-      (require 'org-protocol)
-      (apply #'org--protocol-detect-protocol-server fn files args)))
-  (after! org-protocol
-    (advice-remove 'server-visit-files #'org--protocol-detect-protocol-server))
+  ;; (Re)activate eldoc-mode in org-mode a little later, because it disables
+  ;; itself if started too soon (which is the case with `global-eldoc-mode').
+  (add-hook 'org-mode-local-vars-hook #'eldoc-mode)
 
   ;; In case the user has eagerly loaded org from their configs
   (when (and (featurep 'org)
              (not byte-compile-current-file))
-    (unless (doom-context-p 'reload)
+    (unless doom-reloading-p
       (message "`org' was already loaded by the time lang/org loaded, this may cause issues"))
     (run-hooks 'org-load-hook))
 
@@ -1449,9 +1321,6 @@ between the two."
     (file-writable-p org-id-locations-file))
 
   (add-hook 'org-open-at-point-functions #'doom-set-jump-h)
-  ;; HACK For functions that dodge `org-open-at-point-functions', like
-  ;;   `org-id-open', `org-goto', or roam: links.
-  (advice-add #'org-mark-ring-push :around #'doom-set-jump-a)
 
   ;; Add the ability to play gifs, at point or throughout the buffer. However,
   ;; 'playgifs' is stupid slow and there's not much I can do to fix it; use at

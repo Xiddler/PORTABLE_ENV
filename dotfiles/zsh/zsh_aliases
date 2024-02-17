@@ -77,7 +77,6 @@ rems() { vim $HOME/DONAGHS/personal/reminders.md }
 busb() { cd $HOME/B693_backup }
 recipes() {cd $HOME/REPOS/FOOD/recipes }
 maps() {cd $HOME/REPOS//maps }
-contacts() { jumpapp emacs  ~/DONAGHS/personal/11_Contacts.org }
 # EMACS
 # emax() { emacsclient /home/donagh/DONAGHS/personal/me.org } # using the emacs daemon 
 # emax() { emacsclient -c } # -c, --create-frame      Create a new frame instead of trying to use the current Emacs frame
@@ -357,6 +356,7 @@ alias cm='git commit -m '
 alias gcm='git commit -m '
 alias ggs='git status'
 alias gss='git status'
+alias gll="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all -n 15"
 alias ggx='git status'
 alias gst='git status'
 alias gaa='git add -A'
@@ -369,6 +369,11 @@ alias -g g_pers="$HOME/DONAGHS/personal/"
 alias -g g_comp="$HOME/DONAGHS/MY_ZIM/Computer/"   # zim/Computer only
 alias -g g_all_org="$HOME/DONAGHS/all_org/"        # this only tracks doom-notes.org
 
+# look at MY_PRECIOUS_DATA in the backups 
+alias -g b_locs="echo 'Toshiba\n Main --> SD64' '\n HDD' $HOME/BACKUPS && echo 'RPi\n' /media/donagh/MyUSB1/MY_LOCKER_RPi && echo 'Dropbox\n' orgmode/"
+alias -g b_run="echo /home/donagh/BACKUPS/orgmode_SNAPSHOTS && echo /home/donagh/BACKUPS/RSYNCED/personal/journal/2024/02"
+alias -g b_org="ls -last /home/donagh/BACKUPS/orgmode_SNAPSHOTS"
+alias -g b_jour="ls -last /home/donagh/BACKUPS/RSYNCED/personal/journal/2024/02"
 # echo -e "$mydir";
 # alias -g g_list='echo -e "~/PORTABLE_ENV/ \n~/Dropbox/org-mode/org/ \n~/DONAGHS/personal/ \n~/DONAGHS/MY_ZIM/Computer \n~/DONAGHS/all_org/"'
 alias -g g_list='$HOME/.scripts/list_all_git_repos.sh' # added 2023-11-07

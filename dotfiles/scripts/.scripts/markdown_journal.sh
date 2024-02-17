@@ -4,9 +4,10 @@
 # ----------------- START journal ------------------------------
 # my easy journal 
 # shortcut is -> % mj
-# Set up the journal directory on the SD64 Card
-# journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
+# Set up the journal directory on the Toshiba external 128GB USB drive. Note added 2024-02-01.
+# journal='/run/media/donagh/USB128GB/DONAGHS/personal/journal'
 # removed ## Headings and ### Subheadings following my escape from hospital as I found them 'de trop'.
+# added separate PROMPTS for DIARY & JOURNALLING on 2024-02-01
 #
 md_journal() {
         local year=`date +%Y`
@@ -27,77 +28,98 @@ md_journal() {
             # front matter for new day's journal:
             echo "# FRONT MATTER
 $today
-Script ~/PORTABLE_ENV/dotfiles/scripts/.scripts/markdown_journal.sh 
-Ur_Journal ~/DONAGHS/all_org/journal.org
-me.org $HOME/DONAGHS/personal/me.org
-1LHL ~/DONAGHS/personal/ONE_LONG_HARD_LOOK.md
-QtR ~/DONAGHS/personal/Questions_to_real.md:w
+
+~/PORTABLE_ENV/dotfiles/scripts/.scripts/markdown_journal.sh            Bash script 
+~/DONAGHS/personal/me.org                                               me.org 
+~/DONAGHS/personal/ONE_LONG_HARD_LOOK.md                                1LHL 
+~/DONAGHS/personal/Questions_to_real.md                                 QtR 
 
 
-
-## PROMPTS
-
-HEALTH - HEARBEAT RATE; MEDICAL; CHEST ISSUE; ALCOHOL; APETITE; SLEEP; WEIGHT / WAIST; OUTDOORS / EXERCISE; FOOD; PAIN/ABSENCE;
-SELF - PERSONALITY / CHARACTER / PERSONAL DEVELOPMENT; 
-TOWARDS GETTING REAL; TOWARDS COMING TO LIFE
-WEM = WORK / EARNING / MONEY / INCOME
-TASKS / TODO
-LIVING COSTS
-IDEAS; CREATIVITY
-READING
-GOALS; PLANNING; VISION;
-SOCIAL - MEETINGS; CHATS; COMMUNICATIONS; SHARING; CONTRIBUTING;
-JOYS; BLESSINGS; GRATITUDE; 
-BOTHERS; ISSUES; WOES;
-STATE OF MIND; MOOD / FEELINGS / EMOTIONS; 
-IT; DATA
-LEARNING TIL (today I learnt)
-
-
-
-# ____________________________________________________________________________
-# DIARY
+# MY DIARY
 > $day 
 
 WEATHER
 Morning: 
+Afternoon: 
+
+HEALTH
+
+
+FORM MOOD
+
+
+COGNITION
+
+
+FEEL FOR LIFE
 
 
 NOTABLE
 
 
-ANYTHING DIFFERENT
+NEW or DIFFERENT
 
 
 LEARNINGS
-
-
-HEALTH
 
 
 WEMI
 
 
 DOINGTODAY
-CTS
+ AGENDA
 
 
-AGENDA
-
-
-MOVING TOWARDS BEING FULLY REAL
-[ Some questions to help focus on this...  See file at ~/DONAGHS/personal/Questions_to_real.md ]
-
-
-STRUGGLES & SUCCESSES
-
-
-TRIGGERS - RECORDING & UNDERSTANDING 
+ CTS
+  Journalling:
+  Reading:
 
 
 # ____________________________________________________________________________
-# JOURNALLING 
+## DIARY PROMPTS
+
+WEATHER
+ Morning:
+ Afternoon:
+NOTABLE
+HEALTH 
+LEARNINGS
+
+DOINGTODAY
+ CTS
+ ILHL: entries
+
+ AGENDA / TASKS / TODO
+
+
+WEMI = WORK / EARNING / MONEY / INCOME
+NEW or DIFFERENT
+LIVING COSTS
+IDEAS; CREATIVITY
+SOCIAL - MEETINGS/INTERACTIONS
+GOAL IMPLEMENTING
+IT; DATA
+
+
+
+
+# ____________________________________________________________________________
+# MY JOURNALLING
 > $day 
+
+ 
+## JOURNALLING PROMPTS
+
+MOVING TOWARDS BEING FULLY REAL
+    [ Some questions to help focus on this...  See file at ~/DONAGHS/personal/Questions_to_real.md ]
+TOWARDS GETTING REAL; TOWARDS COMING TO LIFE
+SOCIAL - MEETINGS; CHATS; COMMUNICATIONS; SHARING; CONTRIBUTING;
+SELF - PERSONALITY / CHARACTER / PERSONAL DEVELOPMENT; 
+STRUGGLES & SUCCESSES
+TRIGGERS - RECORDING & UNDERSTANDING 
+JOYS; BLESSINGS; GRATITUDE; 
+BOTHERS; ISSUES; WOES;
+STATE OF MIND; MOOD / FEELINGS / EMOTIONS; 
 
 
 

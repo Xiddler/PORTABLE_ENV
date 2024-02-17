@@ -1,7 +1,7 @@
 # Overview
 
 This file refers to the units program available from gnu.
-This is gnu-units. Available on Ubuntu etc. Downloaded to the RPI on 2023-08-05
+This is gnu-units. I installed it on the RPi/Ubuntu. Downloaded to the RPI on 2023-08-05
 
 1. Examples from kragen on Hacker News
 2. Long, detailed item on units of all sorts from frinklang.org 
