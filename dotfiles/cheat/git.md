@@ -54,6 +54,7 @@ https://gitimmersion.com/lab_10.html
 
 git log --oneline --all --decorate --graph
 
+
 # To set your identity:
 
 git config --global user.name "John Doe"
@@ -153,8 +154,6 @@ git diff branch_1 branch_2                              # Check difference betwe
 git log                                                 # Show all the commits
 git status                                              # Show the changes from last commit
 
-# Commit history of a set of files
-git log --pretty=email --patch-with-stat --reverse --full-index -- Admin\*.py > Sripts.patch
 
 # Import commits from another repo
 git --git-dir=../some_other_repo/.git format-patch -k -1 --stdout <commit SHA> | git am -3 -k
@@ -232,8 +231,6 @@ git reset --soft HEAD^
  The safest way of removing a commit from remote is to revert the bad commit. Find the commit hash and:
 git revert <commit-hash>
 
-# Nice display
-git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit 
 
 # List config
 git config --list
@@ -274,8 +271,29 @@ git config --global user.name "Donagh" && git config --global user.email xiddler
 
     git show 
 
-# pretty log
+# pretty git log
+
 git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+alias gll="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all -n 15"
+
+## see log of recent 7 days 
+
+Log for last week. Add --author=donagh if I only want to see changes I made.
+-> % git log --all --pretty=format:'%h %cd %s (%an)' --since='7 days ago'
+
+## nice log output
+
+-> % git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+
+
+## git log pretty
+git log --oneline
+
+git log --graph --oneline --decorate --all -50
+
+## Commit history of a set of files
+git log --pretty=email --patch-with-stat --reverse --full-index -- Admin\*.py > Scripts.patch
 
 # terminal help
 man giteveryday # https://git-scm.com/docs/giteveryday
@@ -430,21 +448,6 @@ git rebase, git cherry-pick						:: change/move commits around the graph
 git push, git fetch, git remote, git merge		:: share your code and history with your friends 
 git worktree									:: have more than one commit checked out at a time 
 
-# git log
-# see log of recent 7 days 
-
-Log for last week. Add --author=donagh if I only want to see changes I made.
--> % git log --all --pretty=format:'%h %cd %s (%an)' --since='7 days ago'
-
-# nice log output
-
--> % git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-
-
-# git log pretty
-git log --oneline
-
-git log --graph --oneline --decorate --all -50
 
 # Retrieve a single file from an older hash
 

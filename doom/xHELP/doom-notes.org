@@ -11,6 +11,8 @@
 
 * DOOM EMACS
 ** abbrevs
+[[text expansion]] below for how to make new abbreviations / text expansion
+
 //home/donagh/.emacs.d/abbrev_defs
 
 If making changes to above file maybe restart doom to register this file?
@@ -414,6 +416,29 @@ or
 SPC c h
 or
 org-babel-execute-buffer  <-- C-c C-v b
+*** more examples
+
+#+begin_src elisp
+
+(print "hello")
+#+end_src
+
+#+RESULTS:
+: hello
+
+#+begin_src sh
+echo "dolly"
+#+end_src
+
+#+RESULTS:
+: dolly
+
+#+begin_src zsh
+echo "anythong?"
+#+end_src
+
+#+RESULTS:
+: anythong?
 
 ** links
 *** [ [link] ][ description ]] <<< with NO spaces
@@ -755,12 +780,12 @@ SPC m l
 tags are words preceded by : and ending in : e.g. :donaghs: or :work: - these can then be searched using  C-c \ OR C-c / m
 see https://www.gnu.org/software/emacs/manual/html_node/org/Tag-searches.html#Tag-searches
 ** text expansion
-aka abbreviations
+aka [[abbrevs]]
 See also ~/.emacs.d/abbrev_defs
 
 *** how to
 
-_Example_
+_Example 1_
 To make yn turn into Donagh McCarthy do the following
 type yn
 C-x a i g
@@ -768,7 +793,12 @@ C-x a i g
 Turn on abbrev-mode
 (DONE!)
 
+_Example 2_
+dont
+don't
+
 REM: M-x write-abbrev-file - this will add your abbrev to ~/.emacs.d/abbrev-defs (Toshiba)
+REM: Toggle on abbrev-mode
 
 *** links
 https://www.masteringemacs.org/article/text-expansion-hippie-expand

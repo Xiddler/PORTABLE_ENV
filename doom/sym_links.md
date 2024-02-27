@@ -3,11 +3,11 @@ Opened 2024-02-15
 
 
 # abbrev_defs
-ln -s ~/PORTABLE_ENV/doom/abbrev_defs ~/.emacs.d/abbrev_defs
+ln -s ~/PORTABLE_ENV/doom/abbrev_defs ~/.config/emacs/abbrev_defs
 
 # my headings config.el file
 
-ln -s ~/PORTABLE_ENV/doom/dot_e_m_l_o_config.el ~/.emacs.d/modules/lang/org/config.el
+ln -s ~/PORTABLE_ENV/doom/dot_e_m_l_o_config.el /home/donagh/.config/emacs/modules/lang/org/config.el
 
 OR
 just replace the unwanted, default lines with:

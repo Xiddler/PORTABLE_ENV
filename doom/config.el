@@ -63,9 +63,11 @@
 
 ;; The last variable removes the annoying “Do you want to execute” your code when you type: C-c C-c
 
+;; Abbreviations
 ;; abbrev-mode
-;; (setq abbrev-mode t)
+(setq abbrev-mode t)
 
+;; Keywords
 ;; Note: For actual keywords I was using /home/donagh.emacs.d/modules/lang/org/config.el WRONGLY
 ;; The following seems to be working UPDATE 2024-02-14 No, it's not
 
@@ -165,8 +167,10 @@
 ;; 2022-01-01 current preferred theme:
 ;;
 ;; (setq doom-theme 'tsdh-dark )
-(setq doom-theme 'doom-acario-dark ) ;; the purple for diary.org is not the nicest otherwise a nice theme
+;; (setq doom-theme 'doom-acario-dark ) ;; the purple for diary.org is not the nicest otherwise a nice theme
 ;; (setq doom-theme 'spacemacs-theme-dark ) ;; it keeps the * in org-mode - yuk
+;; 2024-02-27
+(setq doom-theme 'doom-one)
 
 ;; ORG-DIRECTORY
 ;; If you use `org' and don't want your org files in the default location below,
@@ -192,10 +196,7 @@
 
 ;; Emacs by default syncs with the system clipboard when cutting or pasting text.
 ;; This can be really annoying if you do things like paste from the clipboard after a c w in normal mode,
-;; because the clipboard will be overwritten before you can paste its contents. The following line should disable this behavior:
-(setq select-enable-clipboard nil)
-
-;; Here are some additional functions/macros that could help you configure Doom:
+;; because the clipboard will be overwritten before you can paste its contents. The following line should disable this behavior: (setq select-enable-clipboard nil) Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
 ;; - `use-package' for configuring packages
@@ -214,6 +215,8 @@
 (use-package origami)
 ;; evil-snipe == vim-sneak
 ;; pre-installed
+
+; (use-package org-bullets)
 
 ;;
 ;; added 2023-07-10
