@@ -1,3 +1,61 @@
+# Tool to do lots of things with existing PDF documents
+#
+# AUR;
+pdftk
+
+# Concatenate all pdf files into one:
+pdftk *.pdf cat output all.pdf
+
+# Concatenate specific pdf files into one:
+pdftk 1.pdf 2.pdf 3.pdf cat output 123.pdf
+
+# Concatenate pages 1 to 5 of first.pdf with page 3 of second.pdf
+pdftk A=fist.pdf B=second.pdf cat A1-5 B3 output new.pdf
+
+
+
+# Use it to: 
+
+	   * Merge PDF Documents or Collate PDF Page Scans
+	   * Split PDF Pages into a New Document
+	   * Rotate PDF Documents or Pages
+	   * Decrypt Input as Necessary (Password Required)
+	   * Encrypt Output as Desired
+	   * Fill PDF Forms with X/FDF Data and/or Flatten Forms
+	   * Generate FDF Data Stencils from PDF Forms
+	   * Apply a Background Watermark or a Foreground Stamp
+	   * Report PDF Metrics, Bookmarks and Metadata
+	   * Add/Update PDF Metrics, Bookmarks or Metadata
+	   * Attach Files to PDF Pages or the PDF Document
+	   * Unpack PDF Attachments
+	   * Burst a PDF Document into Single Pages
+	   * Uncompress and Re-Compress Page Streams
+	   * Repair Corrupted PDF (Where Possible)
+
+# Tool for finding text in a pdf file
+pdfgrep "<pattern>" <filename.pdf>
+
+# Convert pdf to html
+pdftohtml / wkpdftohtml
+
+# GUI applications 
+LibreOffice Draw is a powerful tool for editing multipage pdf files. 
+Inkscape also works well but only manages single page pdfs.
+
+# pikepdf  (pip)
+# a Python library for reading and writing PDF files
+https://github.com/pikepdf/pikepdf
+
+
+# PDF Conversion
+
+ #!/bin/bash
+input_file="document.docx"
+output_file="document.pdf"
+libreoffice --headless --convert-to pdf "$input_file"
+
+# cpdf
+
 # Read in.pdf, select pages 1, 2, 3 and 6, and write those pages to
 # out.pdf
 cpdf in.pdf 1-3,6 -o out.pdf
@@ -129,4 +187,5 @@ cpdf -blacktext in.pdf -o out.pdf
 # Make sure all lines in in.pdf are at least 2 pts wide, writing to
 # out.pdf.
 cpdf -thinlines 2pt in.pdf -o out.pdf
+
 

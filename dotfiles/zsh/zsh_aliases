@@ -156,6 +156,11 @@ alias -g szo='cd $HOME/DONAGHS/ZIM/ORG/'
 # alias hanging='cd $HOME/DONAGHS/ZIM/Computer/ && tail -n4 0_Hanging.txt && cd $HOME/ziim/Donaghs/00_Home/ && tail -n4 0_Hanging.txt'
 # end navigation
 #}}}
+#{{{ doom emacs
+alias -g der="doom run" # doom emacs run; 
+# alias -g drr="doom run"
+
+#}}}
 #{{{ VIM 
  # open a file using vim
 # Aliases - vim

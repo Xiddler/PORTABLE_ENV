@@ -461,12 +461,27 @@ d
 e
 
 
-#  infocmp xterm-colors LS_COLORS
+# infocmp xterm-colors LS_COLORS
 
 infocmp - compare or print out terminfo descriptions
 
 ->% infocmp xterm-color xterm-256color 
 
+# Check Service Status
 
+ #!/bin/bash
+service_name="sshd"
+if systemctl is-active --quiet "$service_name"; then
+    echo "$service_name is running."
+else
+    echo "$service_name is not running."
+fi
+
+# PDF Conversion
+
+ #!/bin/bash
+input_file="document.docx"
+output_file="document.pdf"
+libreoffice --headless --convert-to pdf "$input_file"
 
 # END

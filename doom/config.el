@@ -61,11 +61,11 @@
       org-src-fontify-natively t
       org-src-tab-acts-natively t)
 
-;; The last variable removes the annoying “Do you want to execute” your code when you type: C-c C-c
+;; In the above the last variable removes the annoying “Do you want to execute” your code when you type: C-c C-c
 
 ;; Abbreviations
-;; abbrev-mode
-(setq abbrev-mode t)
+;; Set abbrev-mode to enable on startup
+(setq-default abbrev-mode t)
 
 ;; Keywords
 ;; Note: For actual keywords I was using /home/donagh.emacs.d/modules/lang/org/config.el WRONGLY
@@ -180,7 +180,8 @@
 ;; Set which files will be found by org-agenda commands - updated 2024-01-02
 (setq org-agenda-files (list "/home/donagh/Dropbox/org-mode/org/worksearch.org"
                                 "/home/donagh/Dropbox/org-mode/org/org.org"
-                                "/home/donagh/Dropbox/org-mode/org/todos.org"))
+                                "/home/donagh/Dropbox/org-mode/org/todos.org"
+                                "/home/donagh/DONAGHS/personal/Financial_Reality/money.org"))
 
 ;; hide emphasis markers in //italic// in org mode. Works!
 (setq org-hide-emphasis-markers t)
@@ -191,8 +192,11 @@
 (setq display-line-numbers-type 'relative)
 ;; (setq display-line-numbers-type t)
 
+;; doom emacs modeline
+(setq doom-modeline-height 35)
+
 ;; use for SLIME lisp
-(setq inferior-lisp-program "sbcl")
+;; (setq inferior-lisp-program "sbcl")
 
 ;; Emacs by default syncs with the system clipboard when cutting or pasting text.
 ;; This can be really annoying if you do things like paste from the clipboard after a c w in normal mode,

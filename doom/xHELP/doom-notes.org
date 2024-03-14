@@ -9,6 +9,7 @@
 #+LINE      ___________________________________________________________________________________________________________
 #+BABEL: :session *python* :cache yes :results output graphics :exports both :tangle yes \n" "-----"
 
+
 * DOOM EMACS
 ** abbrevs
 [[text expansion]] below for how to make new abbreviations / text expansion
@@ -33,12 +34,14 @@ HOW?
 In config.el add
 (setq org-ellipsis " ▼ ")
 ** bookmarks
-To allow me to jump to a bookmarked file or location easily.
+Bookmarks a file. To allow me to jump to a bookmarked file or location easily.
 
 SPC RET  Create or jump to bookmark i.e. list bookmarked files/locations
 M-x bookmark (for a list of available commands)
 SPC b m  Set bookmark   [ emacs: C-x r m ]
 M-x bookmark-bmenu-list [ emacs: C-x r l ]
+
+NOTE: for marks see [[marks]]
 
 ** buffers
 [SPC] ,                <-- switch buffers
@@ -472,6 +475,25 @@ Bold *bold*
 Italic /italic/
 Underline __underline__
 Strikethrough ~strikethrough~
+** marks
+To go to a position in a buffer
+
+*** vim-like marks in emacs
+URL: https://www.gnu.org/software/emacs/manual/html_node/emacs/Position-Registers.html
+Set: point-to-register [and give it a letter for reference] C-x r SPC
+Go to: jump-to-register C-x r j
+
+*** global
+
+*** marks in regions
+In Emacs, we call the selected text the region. The region begins at `mark` and ends at `point`
+I am using them similar to marks in vim - which may not be correct
+Example: In org.org, I usually want to jump to HEALTH instead of jj'ing or /HEALTH
+
+URL: https://www.gnu.org/software/emacs/manual/html_node/emacs/Mark.html
+Set a mark: C-SPC
+Go to mark: SPC s r ... and select
+
 ** math
 #+CONSTANTS: pi=3.14159265358979323846
 ** minor modes
@@ -767,6 +789,14 @@ k" 'outline-previous-visible-heading )
 l" 'org-insert-link )
 and
 C-h r r to refresh config.el file
+
+** symbols
+
+in org mode:
+(To make that \dagger symbol: M-x org-pretty-mode and <backslash>dagger. See M-x org-entities-help.)
+\dagger dagger
+\pound pound
+\mdash mdash
 
 ** tags :tags:
 
@@ -1207,11 +1237,20 @@ AND
 See M-x org-entities-help.
 
 Pro tip: Given a circle \Gamma of diameter d, the length of its circumference is \pi{}d.
-
-\dagger
-To make that \dagger symbol: M-x org-pretty-mode and <backslash>dagger.
-
 Area of circle = \pi r x r
+
+
+To make that \dagger symbol: M-x org-pretty-mode and <backslash>dagger. See M-x org-entities-help.
+\dagger dagger
+\pound pound
+\eacute eacute
+\S S
+\Sigma Sigma
+\middot middot
+\P P
+\gt gt
+\lt lt
+\mdash mdash or lh  (the last by dm)
 
 ** tables
 see [[https://orgmode.org/manual/Built_002din-Table-Editor.html#Built_002din-Table-Editor][org-mode tables]] (webref)
@@ -1350,6 +1389,19 @@ This is the temporary buffer that opens at the bottom when you press a key and s
 M-x which-key   <-- view options for which-key
 
 which-key-show-full-major-mode  -- show all bindings in the map for the current mode
+* bookmarks
+Open a file and then SPC b m to mark it
+
+  books.org                                                                     /run/media/donagh/USB128GB/REPOSITORIES/books/books.org
+  doom-notes.org                                                                /home/donagh/PORTABLE_ENV/doom/xHELP/doom-notes.org
+  money.org                                                                     /run/media/donagh/USB128GB/DONAGHS/personal/Finacial_Realit…
+  plans.org                                                                     /run/media/donagh/USB128GB/DONAGHS/personal/MY_FUTURE/plans…
+  self.org                                                                      /run/media/donagh/USB128GB/DONAGHS/personal/self.org
+  me.org                                                                        /run/media/donagh/USB128GB/DONAGHS/personal/me.org
+  snips.org                                                                     /run/media/donagh/USB128GB/DONAGHS/personal/ideas/snips.org
+  todos.org                                                                     /home/donagh/Dropbox/org-mode/org/todos.org
+  org.org                                                                       /home/donagh/Dropbox/org-mode/org/org.org
+
 * Tramp
 :about:
 (Transparent Remote Access, Multiple Protocols)
@@ -1365,7 +1417,7 @@ Generic: M-x find-file /ssh:user@remote-host:/some/project
 Specific: M-x find-file /ssh:donagh@192.168.1.86:/home/donagh/PORTABLE_ENV/README.md -- DID NOT WORK
 Needs the -i <id_rsa>
 
-* Help for [SPC]
+*. Help for [SPC]
 SPC
     SPC find file
     , switch buffer

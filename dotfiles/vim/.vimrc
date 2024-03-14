@@ -138,6 +138,8 @@ inoremap lh —
 " map ,a to ❯ (the pure-prompt symbol)
 inoremap <leader>a  <C-Q>u276f
 
+
+" go to start of line and delete blanks to text i.e. shift text to start of line
 nnoremap <leader>; 0:s/^\s*//g<cr>
  
  
