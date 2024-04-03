@@ -190,7 +190,7 @@ source /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim
 " Rem: Use gf to open that file! CHANGED LOCATION ON 2022-10-13 
 
 " vim-mundo " https://simnalamburt.github.io/vim-mundo/ ; shows the vim undo tree
-nnoremap <leader>uu :MundoToggle<CR>
+" nnoremap <leader>uu :MundoToggle<CR>
 
 "}}}
 " {{{ Navigating
@@ -313,6 +313,7 @@ let g:netrw_winsize = 30
 " set mouse+=a " copy lines without line numbers - can cause side issues
 
 " ---  Goyo --- for zen mode read/write 
+
 " Goyo & limelight toggle together - see gh for instructions to change this
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!

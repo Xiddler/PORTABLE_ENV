@@ -1,5 +1,8 @@
 Opened 2024-01-11
 
+# about
+Calculators on the command line
+
 
 
 # bc

@@ -6,7 +6,8 @@ Two methods to insert digraphs: in INSERT mode
 1. Ctrl K                   {char1} {char2}
 2. (with :set digraph on)   {char1} BS {char2} where BS is BACKSPACE
 
-
+× (star)X
+† /-
 
 €   Eu  20ac   8364 EURO                                        [ alt. Digr =e ]
 ℅   co  2105   8453 Care/of

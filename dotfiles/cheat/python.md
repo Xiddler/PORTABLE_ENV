@@ -79,6 +79,9 @@ https://zetcode.com/all/#python
 Learn python
 https://github.com/Asabeneh/30-Days-Of-Python
 
+Cheatsheet
+https://kieranholland.com/best-python-cheat-sheet/
+
 # When using VIM editor to edit PYTHON: ref. python spaces / tabs
 
 :retab # fixes tabs / spaces

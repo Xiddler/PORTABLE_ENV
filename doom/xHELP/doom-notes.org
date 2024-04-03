@@ -476,6 +476,8 @@ Italic /italic/
 Underline __underline__
 Strikethrough ~strikethrough~
 ** marks
+Within a file
+
 To go to a position in a buffer
 
 *** vim-like marks in emacs
@@ -484,6 +486,7 @@ Set: point-to-register [and give it a letter for reference] C-x r SPC
 Go to: jump-to-register C-x r j
 
 *** global
+huh?
 
 *** marks in regions
 In Emacs, we call the selected text the region. The region begins at `mark` and ends at `point`
@@ -1241,8 +1244,11 @@ Area of circle = \pi r x r
 
 
 To make that \dagger symbol: M-x org-pretty-mode and <backslash>dagger. See M-x org-entities-help.
+NOTE: backslash is omitted to allow the plain text to be visible!
+
 \dagger dagger
 \pound pound
+\euro euro
 \eacute eacute
 \S S
 \Sigma Sigma
@@ -1250,7 +1256,14 @@ To make that \dagger symbol: M-x org-pretty-mode and <backslash>dagger. See M-x 
 \P P
 \gt gt
 \lt lt
-\mdash mdash or lh  (the last by dm)
+\mdash mdash or lh  (lh \mdash 'long hyphen' created by dm)
+\deg deg
+\sup1 sup1
+\sup2 sup2
+\sup3 sup3
+\check check
+\checkmark checkmark
+\radic radic
 
 ** tables
 see [[https://orgmode.org/manual/Built_002din-Table-Editor.html#Built_002din-Table-Editor][org-mode tables]] (webref)
@@ -1390,6 +1403,7 @@ M-x which-key   <-- view options for which-key
 
 which-key-show-full-major-mode  -- show all bindings in the map for the current mode
 * bookmarks
+** Outside of a file
 Open a file and then SPC b m to mark it
 
   books.org                                                                     /run/media/donagh/USB128GB/REPOSITORIES/books/books.org
@@ -1401,6 +1415,12 @@ Open a file and then SPC b m to mark it
   snips.org                                                                     /run/media/donagh/USB128GB/DONAGHS/personal/ideas/snips.org
   todos.org                                                                     /home/donagh/Dropbox/org-mode/org/todos.org
   org.org                                                                       /home/donagh/Dropbox/org-mode/org/org.org
+
+** Inside a file
+
+URL: https://www.gnu.org/software/emacs/manual/html_node/emacs/Mark.html
+Set a mark: C-SPC
+Go to mark: SPC s r ... and select
 
 * Tramp
 :about:

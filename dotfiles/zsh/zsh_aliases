@@ -228,6 +228,10 @@ alias -g che='cheat -e '
 ch() { cheat "$1" | less }
 rgch() { rg -i "$1" $HOME/.cheat }
 
+lsc() { ls ~/.cheat }
+fdc() { fd $1 ~/.cheat }
+gsc() { fd $1 ~/.cheat }
+
 #}}}
 #{{{ MARKDOWN 
 # the following shortcut alias means that pressing enter after just entering  

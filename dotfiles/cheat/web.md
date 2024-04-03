@@ -21,3 +21,12 @@ Hugo
 
 Pelican (python)
 
+## Download a complete webpage
+
+### 1. Using SingleFile extension on Firefox (or Chrome)
+
+### 2. Using the CLI tool Monolith 
+See zim/wiki LINUX:1Linux Live USB:01installed apps:monolith
+and 
+https://github.com/Y2Z/monolith (from Hacker News — https://news.ycombinator.com/item?id=39810378 )
+

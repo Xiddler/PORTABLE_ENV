@@ -51,6 +51,18 @@ FORM MOOD
 COGNITION
 
 
+FUTURE
+What can I do now to put something good in my future? What have I to look forward to?
+
+
+STRESSORS / ANXIETY INDUCERS
+
+
+
+ANTI-STRESSORS
+
+
+
 FEEL FOR LIFE
 
 
