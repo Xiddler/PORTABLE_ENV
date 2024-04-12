@@ -12,7 +12,9 @@
 
 * DOOM EMACS
 ** abbrevs
-[[text expansion]] below for how to make new abbreviations / text expansion
+
+Go to [[text expansion]] below for how to make new abbreviations / text expansion
+C-x a i g on the word
 
 //home/donagh/.emacs.d/abbrev_defs
 
@@ -1803,3 +1805,6 @@ C-x a i g
 (on prompt) type in Donagh McCarthy
 Turn on abbrev-mode
 (DONE!)
+
+* Quickies
+abbrevs:

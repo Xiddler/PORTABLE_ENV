@@ -288,6 +288,7 @@
 (map! :n "SPC b L" 'bookmark-bmenu-list) ;; list files/locations bookmarked in a buffer. SPC RET to quick access bookmarks
 (map! :n "SPC c h" 'org-ctrl-c-ctrl-c) ;; ch for check the box
 (map! :n ",o" 'org-ctrl-c-ctrl-c) ;; ch for check the box
+;; (map! :n ",d" "@dnc - ") ;; or better to use abbrev-defs?
 ;; NOTE: Best not to use _any_ keyboard key after " when creating a `map! :i` keybinding as it will cause trouble in INSERT mode
 ;; (map! :i "C-c d" 'today) ;; works 2023-07-10; qq also works
 ;; (map! :i "C-c t" 'now) ;; 23-07-10_10:05; qa also works

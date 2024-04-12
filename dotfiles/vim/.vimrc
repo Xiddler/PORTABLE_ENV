@@ -505,7 +505,6 @@ syntax enable
 
 " ***************** COLORSCHEME ***************************
 
-
 " colorscheme stellarized from nightsense -- seems to be gone from github;  note added 2022-11-03  
 "/home/donagh/PORTABLE_ENV/vim/dotvim/HELP/pack/nightsense/start/stellarised 
 " theme at 2022-11-03
@@ -858,6 +857,8 @@ endif
 " insert @dm - Note: dc for donagh comments
 " nmap dc 0i@dm -<left><right><space>
 nnoremap <leader>c 0i@dm -<left><right><space>
+inoremap dms @dmsaying -
+inoremap dme @dmediting -
 
 nnoremap <leader>m ^d0
 inoremap <leader>c @dm - 
@@ -915,6 +916,8 @@ set splitbelow splitright
 " open a terminal within vim
 map <leader>tt :terminal zsh<CR>
 
+" toggle between terminal split and code split
+
 " open today's markdown journal in a new tab
 " nmap <leader>mj :tabe /home/donagh/DONAGHS/personal/journal/$(date +%Y)/$(date +%m)/$(date +%d)-$(date +%m).md<cr>
 " open yesterday's markdown journal in a new tab
@@ -942,11 +945,11 @@ nnoremap <leader>u v~
 map gf :edit <cfile><cr>
 
 
-- " combine :ls and :bn to open / navigate buffers
+" combine :ls and :bn to open / navigate buffers
 " https://stackoverflow.com/questions/53664/how-to-effectively-work-with-multiple-files-in-vim
 nnoremap <leader>k :set nomore<Bar>:ls<Bar>:set more<CR>:b<Space>
 
-"}}} 
+"}}}
 " {{{ My Digraphs & Special Characters
 " NOTE: Some are set in Custom Leader
 "
@@ -1061,7 +1064,21 @@ cmap xx :q!<cr>
 
 " to find runtimepaths use :set <enter> 
 "RUNTIMEPATH 
-" runtimepath=~/.vim,~/.vim/plugins/vim-commentary,~/.vim/plugins/stellarized,~/.vim/plugins/vim-airline,~/.vim/plugins/ranger.vim,~/.vim/plugins/vim-easymotion,~/.vim/plugins/goyo.vim,~/.vim/plugins/limelight.vim,~/.vim/plugins/vim-markdown-folding,~/.vim/pack/nightsense/start/stellarized,/usr/share/vim/vimfiles,/usr/share/vim/vim82,/usr/share/vim/vimfiles/after,~/.vim/plugins/vim-markdown-folding/after,~/.vim/after
+" ~/.vim
+" ~/.vim/plugins/vim-commentary
+" ~/.vim/plugins/stellarized
+" ~/.vim/plugins/vim-airline
+" ~/.vim/plugins/ranger.vim
+" ~/.vim/plugins/vim-easymotion
+" ~/.vim/plugins/goyo.vim
+" ~/.vim/plugins/limelight.vim
+" ~/.vim/plugins/vim-markdown-folding
+" ~/.vim/pack/nightsense/start/stellarized
+" /usr/share/vim/vimfiles
+" /usr/share/vim/vim82
+" /usr/share/vim/vimfiles/after
+" ~/.vim/plugins/vim-markdown-folding/after
+" ~/.vim/after
    
 " :set runtimepath?
 let $RTP=split(&runtimepath, ',')[0] " allows :set rtp?

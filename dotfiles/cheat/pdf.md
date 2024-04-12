@@ -189,3 +189,6 @@ cpdf -blacktext in.pdf -o out.pdf
 cpdf -thinlines 2pt in.pdf -o out.pdf
 
 
+# Search file for "word"
+
+use docfd - see zim-wiki/Computer LINUX:1Linux Live USB:01installed apps:docfd

@@ -163,4 +163,15 @@ source $HOME/.virtualenvs/pysimplegui/bin/activate
 
 ### Windows
 C:\Users\don_l\.virtualenvs\pysimpleGUI\Scripts\activate.ps1
+# f string tricks
+
+>>> n:int = 1000000000000
+>>> print(f'{n:,}')
+1,000,000,000,000
+
+
+
+
+
+
 
