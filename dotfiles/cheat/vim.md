@@ -697,6 +697,11 @@ Ctrl-N            Used in Insert mode; drop-down list of word suggestions; inser
 
 In Insert mode Ctrl-R letter   put the contents of register <letter> into the buffer; useful for making re-usable functions or editing macros.
 
+## My macros
+
+1. Convert 2024-04-29 into path to my journal for that day i.e.  ~/DONAGHS/personal/journal/2024/04/29-04.md
+                                esc              esc    esc
+:n wi~/DONAGHS/personal/journal/^[f-r/f-r/2hy2lA-^[pa.md^[
 
 # SESSIONS
 

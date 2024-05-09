@@ -17,6 +17,10 @@ $ pandoc -o filename.html myfile.pdf
  -f from format
  -o output file
 
+# from txt file to pdf
+
+❯ pandoc -t pdf -f txt -o info.pdf info.txt
+
 # convert .md files (using template.html) to html files using bash
 
 for file in .md; do pandoc --quiet --template template.html $file -o "docs/${file%.}.html" done

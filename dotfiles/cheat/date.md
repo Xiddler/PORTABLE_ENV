@@ -3,16 +3,19 @@
 date --help
 man date
 https://www.epochconverter.com/
-#  see also
-#  dateutils - sudo pamac install dateutils. $ info dateutils for details. Can do anything with dates.
-#  today's date
+  see also
+  dateutils - sudo pamac install dateutils. $ info dateutils for details. Can do anything with dates.
+  today's date
 echo  $(date +"%Y-%m-%d")
-# 2023-10-05
+ 2023-10-05
 
 # convert epoch(Unix) time to human readable date; seconds since 1/1/1970 
+
 date --date="@1669807759"
-# alternative 
+ alternative 
+
 # Convert Unix timestamp to Date(Linux)
+
 date -d @1440359821
 
 date -ud @1700000000
@@ -33,10 +36,10 @@ date +"%s"
 # Print today's date in format suitable for affixing to file names
 date +"%Y%m%d_%H%M%S"
 
-# in a script
+ in a script
 p=$(date +"%Y-%m-%d")
 echo $p
-# same as ...
+ same as ...
 P=$(date -I)
 echo $P
 
@@ -119,3 +122,16 @@ Tue 23 Jan 2024 09:05:44 GMT
 %::z 	+hh:mm:ss numeric time zone (e.g., -04:00:00)
 %:::z 	numeric time zone with : to necessary precision (e.g., -04, +05:30)
 %Z 	alphabetic time zone abbreviation (e.g., EDT) 
+
+# from Hacker News 2024-04-13
+    date -Is -ud 'today'    --> 2024-04-12T14:04:08+00:00
+    date -Is -ud 'tomorrow' --> 2024-04-13T14:04:08+00:00
+    date -Is -ud '2 day'    --> 2024-04-14T14:04:08+00:00
+    date -Is -ud '9 week'   --> 2024-06-14T14:04:08+00:00
+    date -Is -ud '1 month'  --> 2024-05-12T14:04:08+00:00
+    date -Is -ud '2024-04-10T13:31:46+04:00'     --> 2024-04-10T09:31:46+00:00
+    date -Is -ud 'Wed, 14 Feb 2024 23:16:09 GMT' --> 2024-02-14T23:16:09+00:00
+
+And if you want Z format, you can use a custom format string:
+    date -ud '1 month' +'%FT%TTZ' --> 2024-05-12T14:13:22TZ
+

@@ -1,7 +1,19 @@
-#+TITLE:     <filename>.org
+#+TITLE:     name.org
 #+AUTHOR:    Donagh McCarthy
-#+OPENED:      
+#+OPENED:    date
 #+STARTUP:   overview
-#+FILEPATH:  $HOME/all_org/org/<filename>.org
-#+EDITED:        
+#+FILEPATH:  $HOME/DONAGHS/personal/name.org
+#+EDITED:    date
 
+
+* name
+* meta
+:notes:
+Opened date
+
+
+
+:end:
+* links
+
+    [[file:~/PORTABLE_ENV/doom/xHELP/doom-notes.org][doom-notes]]

@@ -1,3 +1,5 @@
+#  For use of tramp on doom emacs on Windows
+[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
 #  XDG Base Directory Specification
 XDG_CONFIG_HOME="/home/donagh/.config"
 XDG_CACHE_HOME="/home/donagh/.cache"
@@ -102,9 +104,9 @@ if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
   source /usr/share/zsh/manjaro-zsh-config
 fi
 # Use manjaro zsh prompt
- if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
-     source /usr/share/zsh/manjaro-zsh-prompt
- fi
+if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
+  source /usr/share/zsh/manjaro-zsh-prompt
+fi
 
 
 # to disable the Toshiba touchpad
@@ -452,7 +454,7 @@ function ya() {
 # fpath+=($HOME/.zsh/pure)
 #
 # zsh-abbr - allows TEXT expansion in the zsh (eg pas = pamac search) 
-# see zim-wikx and che zsh
+# see zim-wiki and cheats --> zsh
 # and https://zsh-abbr.olets.dev/
 source $HOME/PORTABLE_ENV/zsh/zsh_abbr/zsh-abbr/zsh-abbr.zsh
 

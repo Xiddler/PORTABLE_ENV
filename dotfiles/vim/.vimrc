@@ -31,6 +31,8 @@ set clipboard=unnamed
 set history=500
 set undolevels=500
 
+" Rendering — added 2024-04-25
+set ttyfast
 
 "}}}
 "{{{ GNU Stow 
@@ -129,8 +131,18 @@ nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
 
 
-" surround a word with _word_
-nnoremap <leader>_ viw<esc>a_<esc>bi_<esc>lel
+" surround a word with _word_ (Single Underline)
+" nnoremap <leader>_ viw<esc>a_<esc>bi_<esc>lel
+nnoremap su viw<esc>a_<esc>bi_<esc>lel
+
+
+
+" surround a word with __word__ (Double Underline)
+" nnoremap <leader>)_ viw<esc>a__<esc>bi__<esc>lel
+" noremap du F<space>wi__<esc>a__<esc>lel
+" nnoremap <leader>- viw<esc>a__<esc>bi__<esc>lel
+nnoremap du viw<esc>a__<esc>bi__<esc>lel
+" nnoremap du Bwi__<esc>a__<esc>
 
 " use — (Mdash i.e. digraph -M) instead of - (normal dash) " this prevents making lines into a bullet list
 inoremap lh —
@@ -270,6 +282,7 @@ set number
 set relativenumber " also Ctrl N to toggle this
 " toggle number and realativenumber
 nnoremap <C-n> :exe 'set nu!' &nu ? 'rnu!' : ''
+nnoremap <leader>r  :exe 'set nu!' &nu ? 'rnu!' : ''
 
 " --- MACROS --- 
 "This mapping makes macros even easier to remember: hit qq to record, q to stop recording, and Q to apply.

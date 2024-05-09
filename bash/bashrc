@@ -1,5 +1,5 @@
 # donaghs
-zsh -l
+# zsh -l
 # Add bash aliases.
 if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
@@ -7,10 +7,10 @@ fi
 
 # functions for shortcuts: original in .zsh_aliases
 # inserted in .bashrc to allow vim to access them
-alc() { $EDITOR $personal/minding_me/alcohol_journal.md }
-grat() { $EDITOR $personal/minding_me/gratitude_journal.md }
-ideas() { $EDITOR $personal/ideas/ideas_to_go_at.md }
-insp() { $EDITOR $personal/ideas/inspire.md }
+# alc() { $EDITOR $personal/minding_me/alcohol_journal.md }
+# grat() { $EDITOR $personal/minding_me/gratitude_journal.md }
+# ideas() { $EDITOR $personal/ideas/ideas_to_go_at.md }
+# insp() { $EDITOR $personal/ideas/inspire.md }
 # jour() { cd $journal && ls }
 # See  alias -g mj=md_journal above
 # mind() {cd $personal/minding_me }
@@ -19,15 +19,15 @@ insp() { $EDITOR $personal/ideas/inspire.md }
 # wisd() { $EDITOR $personal/ideas/snippets.md }
 
 # this is also in .zshrc but this allows access from vim
-export TODOTXT_DEFAULT_ACTION=ls
-todo_folder='/home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli/'
+# export TODOTXT_DEFAULT_ACTION=ls
+# todo_folder='/home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli/'
 
 # the following function greps a term as in $ grep <term> <Enter>
-v()
-{
-    grep "$1" $todo_folder/todo.txt 
-}
-alias t='/home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.sh -d ~/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.cfg' 
+# v()
+# {
+    # grep "$1" $todo_folder/todo.txt 
+# }
+# alias t='/home/donagh/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.sh -d ~/journal/2019/TODO/todo-cli-tool/todo.txt-cli/todo.cfg' 
 
 # the following function greps a term as in $ grep <term> <Enter>
 # alias cx='clear'
@@ -91,7 +91,7 @@ set -o vi
 #CYAN='\[\033[1;36m\]'
 #NC='\[\033[0m\]'
 
-export PATH=$PATH:$HOME/.local/bin  
+# export PATH=$PATH:$HOME/.local/bin  
 
 
 # export WORKON_HOME=$HOME/projects  
@@ -172,13 +172,13 @@ fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+# case "$TERM" in
+# xterm*|rxvt*)
+    # PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h \w\a\]$PS1"
+    # ;;
+# *)
+    # ;;
+# esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -227,8 +227,8 @@ alias l='ls -CF'
 # if [ -x /usr/bin/mint-fortune ]; then
 #      /usr/bin/mint-fortune
 # fi
-export PS1="$yellow[$CYAN\t$yellow][$red $USER $yellow][$GREEN\w$grey$yellow]$NC $ 
--> "
+# DOH
+# export PS1="$yellow[$CYAN\t$yellow][$red $USER $yellow][$GREEN\w$grey$yellow]$NC $ 
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
  

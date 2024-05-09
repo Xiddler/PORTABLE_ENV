@@ -390,7 +390,8 @@ C-c C-c and SPC c h also work!
 *** javascript example
 
 #+NAME: passes functions
-#+BEGIN_SRC js
+#+BEGIN_SRC javascript
+
   function isPass(student) {
       return student.mark >= requiredMark(student);
   }
@@ -400,20 +401,28 @@ C-c C-c and SPC c h also work!
   }
 #+END_SRC
 
-#+RESULTS: passes functions
-: undefined
+
 
 *** python example
 
+Not working 2024-04-15
+
 #+BEGIN_SRC python
 
-a = 2 + 22
+a = 'Hello Dolby'
 print(a)
 
 #+END_SRC
 
 #+RESULTS:
 : None
+
+
+
+
+
+
+
 *** To evaluate:
 
 org-ctrl-c-ctrl-c         <-- C-c C-c
@@ -421,6 +430,7 @@ or
 SPC c h
 or
 org-babel-execute-buffer  <-- C-c C-v b
+
 *** more examples
 
 #+begin_src elisp
@@ -479,13 +489,32 @@ Underline __underline__
 Strikethrough ~strikethrough~
 ** marks
 Within a file
-
 To go to a position in a buffer
+
+this heading is marked with 'm'
 
 *** vim-like marks in emacs
 URL: https://www.gnu.org/software/emacs/manual/html_node/emacs/Position-Registers.html
-Set: point-to-register [and give it a letter for reference] C-x r SPC
-Go to: jump-to-register C-x r j
+
+C-x r SPC is point-to-register
+C-x r j is jump-to-register
+
+Set: point-to-register [and give it a letter for reference] eg 'w' --> C-x r SPC and type w in prompt-space
+Go to: jump-to-register 'w' --> C-x r j
+
+Example:
+Set 'm' for "math" heading below --> C-x r SPC m
+Jump to 'm' --> C-x r j m
+
+_Proposed custom keybindings_
+SPC m m point-to-register [ SPC mark 'mark']
+SPC m j jump-to-register [ SPC mark 'jump']
+Note: Set in config.el on 2024-04-13
+
+Other relevant commands
+M-x view-register
+
+To remove a mark, just reassign it.
 
 *** global
 huh?
@@ -1807,4 +1836,6 @@ Turn on abbrev-mode
 (DONE!)
 
 * Quickies
-abbrevs:
+
+abbrevs: M-x abbrev-mode, list-abbrevs, write-abbrevs
+symbols

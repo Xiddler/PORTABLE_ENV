@@ -1,8 +1,12 @@
-# Download a single file to display in the terminal
-curl http://path.to.the/file
+# Handy guides
+https://everything.curl.dev/
 
 # Download a file and specify a new filename
-curl http://example.com/file.zip -o new_file.zip
+
+curl http://example.com/file.zip -o new_file.zip                PRIMARY USE CASE
+
+# Download a single file to display in the terminal
+curl http://path.to.the/file
 
 # Download multiple files
 curl -O URLOfFirstFile -O URLOfSecondFile

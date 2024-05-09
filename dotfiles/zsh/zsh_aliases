@@ -107,7 +107,6 @@ til() { jumpapp emacs  ~/DONAGHS/personal/learning/til.org }
 # things to learn 
 ttl() { jumpapp emacs  ~/DONAGHS/personal/learning/things_to_learn.org } 
 # sd() { cd $HOME/SD64/ }
-# pers() { cd $personal && ls }
 planning() { cd  $personal/planning/ }
 school() { vim /home/donagh/REPOS/projects/00_engineering_projects/PRE_PROJECTS/Schoolyard_Toilets_2024/schoolyard_wc.md }
  
@@ -224,13 +223,16 @@ alias -g contout='cat $HOME/ZIM/ORG/03_CONTACTS/Contacts.txt | rg -i -A18 -B2 '
 # PORTABLE_ENV including the /usr/share/cheat ones - do this first
 # alias ccheat="cp -f /usr/share/cheat/* $HOME/PORTABLE_ENV/cheat/dot_cheat_hard/ && cp -f $HOME/.cheat/* $HOME/PORTABLE_ENV/cheat/dot_cheat_hard/"
 #
-alias -g che='cheat -e '
-ch() { cheat "$1" | less }
-rgch() { rg -i "$1" $HOME/.cheat }
+# alias -g che='cheat -e '
 
-lsc() { ls ~/.cheat }
-fdc() { fd $1 ~/.cheat }
-gsc() { fd $1 ~/.cheat }
+che() { vim ~/.cheat/"$1" }
+ch() { ls ~/.cheat/"$1" }
+# ch() { cheat "$1" | less }
+
+# rgch() { rg -i "$1" $HOME/.cheat }
+lsc() { ls ~/.cheat }                   # list all cheats
+# fdc() { fd $1 ~/.cheat }
+gsc() { fd $1 ~/.cheat }                # find file in cheats i.e. if $1 in ~/.cheat
 
 #}}}
 #{{{ MARKDOWN 
@@ -303,8 +305,10 @@ pers() { cd $HOME/DONAGHS/personal } # go to personal
 today() { cd $HOME/DONAGHS/personal/journal/$y/$m && ls -lat | head -n 10 } # go to month of today's journal and list most recent 10 items
 tomonth() { cd $HOME/DONAGHS/personal/journal/$y/$m && ls -lat | head -n 10 } # go to month of today's journal and list most recent 10 items
 jour() { cd $HOME/DONAGHS/personal/journal/$y/$m } # go to directory of this month of today's journal 
-yj() { vim $HOME/DONAGHS/personal/journal/$y/$ym/"$yd-$ym.md"} # open yesterday's journal
-iwant() { vim $HOME/I_want.md } # added 2023-02-15 
+# for the following I need to run a script similar to mj()
+# yj() { vim $HOME/DONAGHS/personal/journal/$y/$ym/"$yd-$ym.md"} # open yesterday's journal
+yj() { /home/donagh/PORTABLE_ENV/dotfiles/scripts/.scripts/markdown_yesterday.sh }
+# iwant() { vim $HOME/I_want.md } # added 2023-02-15 
 # alias -g mj='$HOME/.scripts/markdown_journal.sh'
 # alias -g wj='vim $HOME/DONAGHS/personal/means/work_journal.md'
 # alias -g aj='vim $HOME/DONAGHS/personal/Means/action_journal.md'
@@ -373,8 +377,10 @@ alias gga='git add -A'
 # cf ~/.scripts/manage_all_git_repos.sh (on the laptop)
 alias -g g_run="$HOME/.scripts/manage_all_git_repos.sh" # list state of 4 main repos
 alias -g g_poe="$HOME/PORTABLE_ENV/"             # On github
+alias -g poe="$HOME/PORTABLE_ENV/"             # Quickie
 alias -g g_org="$HOME/Dropbox/org-mode/org/"       # this tracks my .org files
 alias -g g_pers="$HOME/DONAGHS/personal/"
+pers() { cd "$HOME/DONAGHS/personal/" && ls }
 alias -g g_comp="$HOME/DONAGHS/MY_ZIM/Computer/"   # zim/Computer only
 alias -g g_all_org="$HOME/DONAGHS/all_org/"        # this only tracks doom-notes.org
 
@@ -471,6 +477,8 @@ alias -g t2="tree -alL 2"
 alias -g t3="tree -alL 3"
 alias -g t4="tree -alL 4"
 
+# View last 20 edited files in order
+ls20() { ls -lt  **/*(.om[1,20]) }
 
 #}}}
 #{{{ BASH
