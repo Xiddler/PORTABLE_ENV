@@ -1014,4 +1014,14 @@ Overview of which map command works in which mode.  More details below.
 :lmap  :lnoremap :lunmap    Insert, Command-line, Lang-Arg
 :cmap  :cnoremap :cunmap    Command-line
 :tmap  :tnoremap :tunmap    Terminal-Job
+
+## To append eg -dm to a string:
+
+& represents the search term
+
+kkk                         :: term to be searched
+:%s/kkk/&-dm                :: The :s expression
+kkk-dm                      :: output
+
+
 # END

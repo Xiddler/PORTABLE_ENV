@@ -31,6 +31,7 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 #####################################################
 # Dropbox on Toshiba - to ensure dropbod runs after a reboot
 echo "Did you just reboot? Check dropboxd is running... ->% PS drobboxd OR ->% psd "
+echo "Rem: I changed cd to act like zoxide z"
 # TRY THIS here
 # echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p
 # sleep 5
@@ -150,8 +151,6 @@ set -g history-limit 9000 #
 setopt extendedhistory 
 
 
-# get fzf to enable Ctrl-R & Ctrl-T
-# source ~/.fzf/shell/key-bindings.zsh
 
 # enable grc - for colorizing output
 # source /etc/grc.zsh
@@ -181,7 +180,8 @@ bindkey 'kk' copy-earlier-word
 ## Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 #HISTSIZE=1000
 #SAVEHIST=1000
-#HISTFILE=$HOME/.zsh_history
+# HISTFILE=$HOME/.zsh_history
+HISTFILE=$HOME/.zhistory
 HISTSIZE=99999 
 HISTFILESIZE=99999
 
@@ -251,6 +251,7 @@ plugins=(
   fd-find
   # extract
   # systemd
+  zoxide
 )
 # the following is a workaround to solve a problem with not going to vi-cmd-mode on "jk" on the CLI
 # this seems to have gotten resolved somehow...
@@ -402,13 +403,25 @@ typeset -U path
 
 # speaking clock in the terminal
 
+##########################
+#     ranger
+##########################
 # To stop ranger from loading both the default and your custom rc.conf,
 #  please set the environment variable RANGER_LOAD_DEFAULT_RC to FALSE.
 # # ranger default config file rc.conf 
 export RANGER_LOAD_DEFAULT_RC=false
 
+#############################
+#        zoxide
+#############################
 # zoxide - for directory jumping using z 
-eval "$(zoxide init zsh)"
+# 2024-05-11 - changed to make cd be 'z' instead 
+eval "$(zoxide init --cmd cd zsh)"
+
+
+#############################
+#        mcfly
+#############################
 
 # mcfly - for history Ctrl-R
 eval "$(mcfly init zsh)"
@@ -419,14 +432,23 @@ export ALTERNATE_EDITOR=""
 # br is an alternative file searcher - described in HackerNews Jan 2020
 # source /home/donagh/.config/broot/launcher/bash/br
 
+#############################
+#     fzf
+#############################
+
 # fzf (disable this if using mcfly for Ctrl R)
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# get fzf to enable Ctrl-R & Ctrl-T
+# source ~/.fzf/shell/key-bindings.zsh
 #
+#############################
+#    dirjump (or d)
+#############################
 # dirjump - use -> % d to see 10 most recent directories visited. https://github.com/imambungo/dirjump
 # the author says he no longer maintains this and uses zoxide instead. But I like it!
 source ~/.config/dirjump/dirjump
 
-# source /home/donagh/.config/broot/launcher/bash/br
 
 # yazi - blazingly fast TUI file manager
 # URL: https://yazi-rs.github.io/

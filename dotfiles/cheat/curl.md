@@ -1,5 +1,6 @@
 # Handy guides
 https://everything.curl.dev/
+https://curl.se/docs/httpscripting.html
 
 # Download a file and specify a new filename
 

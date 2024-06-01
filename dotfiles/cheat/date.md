@@ -33,6 +33,11 @@ date -r 1440359821
 # Convert 'now' to Unix timestamp 
 date +"%s"
 
+# Get day of week of date
+
+->%  date --date '1962-08-17' | cut -d' ' -f1
+Fri
+
 # Print today's date in format suitable for affixing to file names
 date +"%Y%m%d_%H%M%S"
 
@@ -134,4 +139,5 @@ Tue 23 Jan 2024 09:05:44 GMT
 
 And if you want Z format, you can use a custom format string:
     date -ud '1 month' +'%FT%TTZ' --> 2024-05-12T14:13:22TZ
+date -Is -ud '1998-07-12'
 

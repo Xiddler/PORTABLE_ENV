@@ -258,6 +258,7 @@
 ;;
 ;; DONAGHS KEYBINDINGS
 ;; The following keybinding *do* work. :n indicates normal mode. :i is insert mode.
+;; (map! :n "SPC" :)
 (map! :n "Q" '@q) ; shortcut for @q to run a recorded macro
 ;; (map! :n "Q" 'org-babel-execute-src-block ) ;; Quantify! or Execute snippet!
 (map! :n "SPC d" 'treemacs ) ;; Tree directory for files / folders
@@ -290,6 +291,7 @@
 (map! :n ",o" 'org-ctrl-c-ctrl-c) ;; ch for check the box
 (map! :n "SPC m m" 'point-to-register)
 (map! :n "SPC m j" 'jump-to-register)
+(map! :n ", e" 'eval-last-sexp) ;; SPC m e e
 ;; (map! :n ",d" "@dnc - ") ;; or better to use abbrev-defs?
 ;; NOTE: Best not to use _any_ keyboard key after " when creating a `map! :i` keybinding as it will cause trouble in INSERT mode
 ;; (map! :i "C-c d" 'today) ;; works 2023-07-10; qq also works

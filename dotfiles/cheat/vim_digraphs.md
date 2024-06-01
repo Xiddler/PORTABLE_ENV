@@ -10,6 +10,7 @@ Two methods to insert digraphs: in INSERT mode
 † /-
 
 €   Eu  20ac   8364 EURO                                        [ alt. Digr =e ]
+£	Pd	0xe3	227 POUND SIGN 
 ℅   co  2105   8453 Care/of
 ©   Co  00a9    169 COPYRIGHT SIGN                              ©
 ®	Rg	0xae	174	REGISTERED SIGN                             ®
@@ -32,7 +33,6 @@ Two methods to insert digraphs: in INSERT mode
 ¿	?I	0xbf	191	INVERTED QUESTION MARK
 À	A!	0xc0	192	LATIN CAPITAL LETTER A WITH GRAVE 
 †	AE	0xc6	198
-£	a?	0xe3	227 POUND SIGN 
 ÷	-:	0xf7	247	DIVISION SIGN
 ≪   <* 
 ≫   *>

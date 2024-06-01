@@ -396,6 +396,10 @@ alias -g git_list='echo -e "~/PORTABLE_ENV/ \n~/Dropbox/org-mode/org/ \n~/DONAGH
 alias -g git_run='$HOME/.scripts/manage_all_git_repos.sh'
 alias -g git_all='$HOME/.scripts/git_run_all.sh'
 
+######################################
+#          lazygit                   #
+######################################
+lg() { lazygit }
 
 #}}}
 #{{{ LS
@@ -426,6 +430,7 @@ alias -g lfnh="ls -la | grep '^\-' | grep -v ' \..*$' "  # List only files not h
 alias -g lfl="ls -la --color=auto | grep '^[l]' | grep ' \..*$'" # List only files that are symlinks
 alias -g lfnl="ls -la | grep -v '\->' | grep -v '^d'" # List files which are not links 
 alias -g lfs="ls | xargs -n1" # simple list files in a column
+alias -g l1="ls | xargs -n1" # simple list files in a column
 
 # Directories
 # alias -g ld='ls -ld -- *(R)' # List non-hidden directories incl. those that are symlinks (zsh)

@@ -103,7 +103,9 @@ Get list of latest 20 files
 
     ->% ls -lt  **/*(.om[1,20])
 
-Aliases to `newest` and to `latest` in .zsh_aliases.
+(In man zshexpn --> glob qualifiers, it is explained that `o` stands for sort order, up and `m` stands for last modification time.)
+
+Aliased to `newest` and to `latest` in .zsh_aliases.
 
 ## Method 2 - using GNU find
 

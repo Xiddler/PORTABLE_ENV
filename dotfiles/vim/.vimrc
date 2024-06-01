@@ -882,6 +882,7 @@ inoremap i<space> I<space>
 " inoremap cant can't
 inoremap iiv I've
 inoremap iid I'd
+inoremap iim I'm
 inoremap £ # 
 inoremap wiht with
 inoremap taht that
@@ -889,7 +890,9 @@ inoremap dont don't
 inoremap didnt didn't
 inoremap wont won't
 inoremap cant can't
-inoremap ie<space> i.e. 
+" inoremap ie<space> i.e. 
+" inoremap <space>ot to
+inoremap waht what
 
 " when mistyping ot instead of the word to  - but this causes long delays...
 " espanso wouldn't work 
