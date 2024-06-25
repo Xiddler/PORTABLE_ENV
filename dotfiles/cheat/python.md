@@ -1,20 +1,20 @@
 # Desc: Python is a high-level programming language.
 
-# Basic example of server with python
+# Python Server
+
+## Basic example of server with python
+
 Will start a Web Server in the current directory on port 8000
  go to http://127.0.0.1:8000
 
- Python v2.7
-
-python -m SimpleHTTPServer
- Python 3
+Python 3
 python -m http.server 8000
 
-# SMTP-Server for debugging, messages will be discarded, and printed on stdout.
+## SMTP-Server for debugging, messages will be discarded, and printed on stdout.
 
 python -m smtpd -n -c DebuggingServer localhost:1025
 
-# Server files that are accessible over the LAN to other devices
+## Server files that are accessible over the LAN to other devices
 
 $ python -m http.server 8080  --directory  /home/donagh/DONAGHS/personal/journal/2022/10  --bind 0.0.0.0
 Serve 11SignUps.txt for access from the tablet etc.
@@ -23,22 +23,38 @@ python -m http.server 8088  --directory ~/DONAGHS/MY_ZIM/Computer --bind 0.0.0.0
 RPI
 python -m http.server 8088  --directory /home/donagh/astro_blog_npm_nvm_node_STUFF/tutorial/src/pages --bind 0.0.0.0
 
+## Beautify python server - allows uploading & downloading of files from one LAN device to another using a browser GUI
+
+First, activate the python virtualenv
+->% source ~/.virtualenvs/http_server/bin/activate
+
+->% http.server --bind 0.0.0.0 --port 8080 --folder ~/files/sample_files
+
+->% browse to localhost 8080  (or to http://192.168.1.86:8080/ if run from the Toshiba (check the internal ip address) )
+
 
 
 # Pretty print a json to the CLI
 
-python -mjson.tool file.json
+python -m json.tool file.json
 
 # VIRTUALENV 
-create a new virtualenv e.g. 'flask'
- python3.9 -m venv <path-to-venv>/venv
-python3 -m venv $HOME/.virtualenvs/flask 
 
- to activate virtenv
-source $HOME/.virtualenv/flask/bin/activate
+## Using python's own venv
+
+Create a new virtualenv e.g. 'flask'
+
+->% python3.9 -m venv <path-to-venv>/venv
+->% python3 -m venv $HOME/.virtualenvs/flask 
+
+To update dependencies at the same time  use --upgrade-deps
+->% python3 -m venv --upgrade-deps ~/.virtualenvs/NEWVENV 
+
+to activate virtenv
+->% source $HOME/.virtualenv/flask/bin/activate
 
  to deactivate virtenv 
-deactivate
+->% deactivate
 
  update pip - e.g. in fastapi virtualenv
 /home/donaghm/.virtualenvs/fastapi/bin/python -m pip install --upgrade pip
@@ -54,10 +70,15 @@ $ export WORKON_HOME=~/Envs
 $ source /usr/local/bin/virtualenvwrapper.sh
 (https://virtualenvwrapper.readthedocs.io/en/latest/install.html)
 
+## Using uv
+->% uv venv ~/.virtualenv/MYVENV
+
 # use requirements file
+
 pip install -r requirements.txt
 
 # python header
+
 see .vimrc
 !/usr/bin/python3
  -*- coding: utf-8 -*-

@@ -1,5 +1,6 @@
 #  For use of tramp on doom emacs on Windows
 [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
+
 #  XDG Base Directory Specification
 XDG_CONFIG_HOME="/home/donagh/.config"
 XDG_CACHE_HOME="/home/donagh/.cache"
@@ -16,6 +17,9 @@ XDG_CACHE_HOME="/home/donagh/.cache"
 #####################################################
 # Powerlevel10k Prompt
 #####################################################
+
+# Note: ( 2024-06-07 ) It seems powerlevel10k is no longer maintained. Consider using oh-my-posh (which I am using on Windows).
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -31,7 +35,7 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 #####################################################
 # Dropbox on Toshiba - to ensure dropbod runs after a reboot
 echo "Did you just reboot? Check dropboxd is running... ->% PS drobboxd OR ->% psd "
-echo "Rem: I changed cd to act like zoxide z"
+# echo "Rem: I changed cd to act like zoxide z"
 # TRY THIS here
 # echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p
 # sleep 5
@@ -251,7 +255,7 @@ plugins=(
   fd-find
   # extract
   # systemd
-  zoxide
+  # zoxide
 )
 # the following is a workaround to solve a problem with not going to vi-cmd-mode on "jk" on the CLI
 # this seems to have gotten resolved somehow...
@@ -274,7 +278,7 @@ plugins=(
 # PATH="$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin:/home/donagh/.emacs.d/bin/:/home/donagh/.cargo/bin:/home/donagh/PORTABLE_ENV_tmp/:/opt/texlive/2020/bin/x86_64-linux/:/home/donagh/.emacs/bin:/home/donagh/go/bin:/home/donagh/Applications/shellmath/shellmath:/home/donagh/.mix:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/maps/OSI_GridInQuest/GridInQuestII-Lin64-0100:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/golang/vugu_stuff:/home/donagh/.local/bin/gron:/usr/local/texlive/2021/bin/x86_64-linux:/home/donagh/Applications/nushell/nu_0_60_0_linux/nushell-0.60.0:/home/donagh/.subuser/bin"
 # Is this a good idea to have PATH defined here? 
 #
-PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin:/home/donagh/.emacs.d/bin/:/home/donagh/.cargo/bin:/home/donagh/PORTABLE_ENV_tmp/:/home/donagh/.emacs/bin:/home/donagh/go/bin:/home/donagh/Applications/shellmath/shellmath:/home/donagh/.mix:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/maps/OSI_GridInQuest/GridInQuestII-Lin64-0100:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/golang/vugu_stuff:/home/donagh/.local/bin/gron:/usr/local/texlive/2022/bin/x86_64-linux:/home/donagh/Applications/nushell/nu_0_60_0_linux/nushell-0.60.0:/home/donagh/.subuser/bin:/home/donagh/.local/bin/cheat:/usr/sbin/bash:/home/donagh/.config/emacs/bin"
+PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin:/home/donagh/.emacs.d/bin/:/home/donagh/.cargo/bin:/home/donagh/PORTABLE_ENV_tmp/:/home/donagh/.emacs/bin:/home/donagh/go/bin:/home/donagh/Applications/shellmath/shellmath:/home/donagh/.mix:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/maps/OSI_GridInQuest/GridInQuestII-Lin64-0100:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/golang/vugu_stuff:/home/donagh/.local/bin/gron:/usr/local/texlive/2022/bin/x86_64-linux:/home/donagh/.subuser/bin:/home/donagh/.local/bin/cheat:/usr/sbin/bash:/home/donagh/.config/emacs/bin"
 
 # source /home/donagh/.local/bin/virtualenvwrapper.sh
 
@@ -416,7 +420,9 @@ export RANGER_LOAD_DEFAULT_RC=false
 #############################
 # zoxide - for directory jumping using z 
 # 2024-05-11 - changed to make cd be 'z' instead 
-eval "$(zoxide init --cmd cd zsh)"
+# eval "$(zoxide init --cmd cd zsh)"
+# reverted 2024-06-02
+eval "$(zoxide init zsh)"
 
 
 #############################
@@ -436,24 +442,37 @@ export ALTERNATE_EDITOR=""
 #     fzf
 #############################
 
+eval "$(fzf --zsh)"
+
 # fzf (disable this if using mcfly for Ctrl R)
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # get fzf to enable Ctrl-R & Ctrl-T
 # source ~/.fzf/shell/key-bindings.zsh
-#
+# use fd instead of find
+# export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_COMMAND='fd --hidden --strip-cwd-prefix --exclude .git' #  --hidden means show hidden files
+
+
 #############################
 #    dirjump (or d)
 #############################
 # dirjump - use -> % d to see 10 most recent directories visited. https://github.com/imambungo/dirjump
 # the author says he no longer maintains this and uses zoxide instead. But I like it!
+# note I git cloned the full repo to $HOME/PORTABLE_ENV/dirjump/dirjump on 2024-06-25
 source ~/.config/dirjump/dirjump
 
 
-# yazi - blazingly fast TUI file manager
+#############################
+#       yazi 
+#############################
+# blazingly fast TUI file manager
 # URL: https://yazi-rs.github.io/
-# This function provides the ability to change the current working directory when exiting Yazi
-function ya() {
+# This function provides the ability to change the current working directory when exiting Yazi so that after navigating to a dir in
+# yazi and then quitting, you end up in the dir that you had last navigated to in yazi
+#
+# Repo suggests using yy as alias for yazi.
+function yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
 	yazi "$@" --cwd-file="$tmp"
 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then

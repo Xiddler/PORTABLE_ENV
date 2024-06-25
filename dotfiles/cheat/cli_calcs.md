@@ -5,6 +5,10 @@ Calculators on the command line
 
 
 
+# echo / bc
+
+->% echo "3 + 4.3 * 55.07" | bc
+
 # bc
 ->% bc
 55 * 34003
@@ -60,7 +64,7 @@ Integers only!
 
 # qalc
 
-->%qalc -i
+->% qalc -i
 > 33 * 44456
 
   33 × 44456 = 1467048

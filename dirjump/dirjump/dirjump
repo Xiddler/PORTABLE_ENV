@@ -1,0 +1,190 @@
+#!/usr/bin/env bash
+
+dirjump_command="d"
+# If you use oh-my-zsh, this will override its 'd' function.
+# Change it if you like, maybe 'j' or 'jump' or something.
+
+history_size=10
+# Recommendation:
+# in the range 5-20
+# not more than 50 (it is just not "recent" directories anymore)
+
+# If you already use the number 0-9 as aliases,
+# feel free to comment out or delete these.
+# You can still use <dirjump_command> <dir path number>
+# to jump through the dir history
+# Source: https://unix.stackexchange.com/a/203160/307359
+i=0
+while [ $i -le $history_size ]
+do
+	alias $i="$dirjump_command $i"
+	i=`expr $i + 1`
+done
+
+directory_list=~/.local/share/dirjump/directory_list
+last_dir_pop_time=~/.local/share/dirjump/last_dir_pop_time
+
+mkdir --parent "$(dirname $directory_list)"
+touch "$directory_list"
+
+function print_last_dir_pop_time()
+{
+	time_del=`cat "$last_dir_pop_time"`
+	curr_time=`date +%s`
+	delta_hour=`echo "($curr_time-$time_del)/3600" | bc`
+	if [ "$delta_hour" -ge 1 ]
+	then
+		if [ "$delta_hour" -eq 1 ]
+		then
+			echo "A path was last last popped out an hour ago."
+		else
+			echo "A path was last last popped out $delta_hour hours ago."
+		fi
+	else
+		delta_minute=`echo "($curr_time-$time_del)/60" | bc`
+		if [ "$delta_minute" -eq 0 ]
+		then
+			echo "A path was last last popped out just now."
+		elif [ "$delta_minute" -eq 1 ]
+		then
+			echo "A path was last last popped out a minute ago."
+		else
+			echo "A path was last last popped out $delta_minute minutes ago."
+		fi
+	fi
+}
+
+# Get dir path of nth line of directory_list
+# Source: https://stackoverflow.com/a/27056916/9157799
+get_nth_path()
+{
+	echo $(awk -v line=$1 'NR==line' "$directory_list")
+}
+
+# delete all directories whose numbers exceed the specified limit
+# Source: https://stackoverflow.com/q/45125826/9157799
+apply_max_limit_to_history()
+{
+	head -"$history_size" "$directory_list" > ~/.dirjump.temp
+	mv ~/.dirjump.temp "$directory_list"
+}
+
+# Source: https://superuser.com/a/246841/943615
+insert_dir_path_to_top()
+{
+	echo $1 | cat - "$directory_list" > ~/.dirjump.temp
+	mv ~/.dirjump.temp "$directory_list"
+}
+
+# Source: https://stackoverflow.com/a/12022403/9157799
+number_of_dir_paths()
+{
+	wc -l < "$directory_list"
+}
+
+# Source: https://askubuntu.com/a/20416/356625
+# Source: https://unix.stackexchange.com/a/207213/307359
+# Source: https://www.computerhope.com/unix/nl.htm
+print_directory_history()
+{
+	nl "$directory_list" | sed "s|    ||g; s|	|  |g; s|$HOME|~|g"
+}
+
+# Check if the given path already listed
+# Source: https://stackoverflow.com/a/4749368/9157799
+path_already_listed()
+{
+	if grep -Fxq "$1" "$directory_list"
+	then
+		echo "exist"
+	else
+		echo "notexist"
+	fi
+}
+
+alias "$dirjump_command"="dirjump"
+dirjump()
+{
+	# if the number of argument is greater than 1
+	if [ $# -gt 1 ]
+	then
+		echo "usage: $dirjump_command [dir path number]"
+		return
+	fi
+
+	# if no argument is given
+	if [ $# -eq 0 ]
+	then
+		delete_paths_that_no_longer_exist
+		print_directory_history
+
+		if [ -f "$last_dir_pop_time" ]
+		then
+			print_last_dir_pop_time
+		fi
+
+		return
+	fi
+
+	# if the requested path number is not out of range
+	if [[ $1 -le $(number_of_dir_paths) ]] && [[ $1 -ge 1 ]]
+	then
+		cd "$(get_nth_path $1)"
+	else
+		echo "dirjump: the requested dir path number is out of range"
+	fi
+}
+
+# Source: https://stackoverflow.com/a/5413132/9157799
+delete_a_dir_path()
+{
+	grep -Fxv "$1" "$directory_list" > ~/.dirjump.temp
+	mv ~/.dirjump.temp "$directory_list"
+}
+
+delete_paths_that_no_longer_exist()
+{
+	# iterate $directory_list
+	while IFS="" read -r p || [ -n "$p" ]
+	do
+		if [[ ! -d $p ]]; then
+			# if the dir doesn't exists, it's deleted from $directory_list
+			printf '%s\n' "Deleting \"$p\" from directory_list"
+			sed -i "\?^$p\$?d" $directory_list
+		fi
+	done < $directory_list
+}
+
+__propose_dir_path()
+{
+	# if it is home directory, reject the proposal
+	if [[ "$PWD" == "$HOME" ]]
+	then
+		return
+	fi
+
+	if [[ "$(path_already_listed "$PWD")" == "exist" ]]
+	then
+		delete_a_dir_path "$PWD"
+	fi
+
+	insert_dir_path_to_top "$PWD"
+	if [[ `number_of_dir_paths` -gt "$history_size" ]]
+	then
+		apply_max_limit_to_history
+		date +%s > "$last_dir_pop_time"
+	fi
+}
+
+# If using Zsh
+if [ -n "$ZSH_VERSION" ]
+then
+	# Source: https://stackoverflow.com/a/3964198/9157799
+	chpwd_functions=(${chpwd_functions[@]} __propose_dir_path)
+else
+	__dirjump_hook() {
+		# https://askubuntu.com/a/97766/356625
+		[[ "${__dirjump_prev_wd:=$PWD}" != "$PWD" ]] && __propose_dir_path; __dirjump_prev_wd="$PWD"
+	}
+	PROMPT_COMMAND="$PROMPT_COMMAND;__dirjump_hook"
+fi

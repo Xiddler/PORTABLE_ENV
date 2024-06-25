@@ -1,5 +1,24 @@
+# Flags
+
+-x extract
+-c create
+-f file
+-t list tar
+-z use gzip
+-j use bz2
+-v verbose
+-C specify destination directory
+
 # To extract an uncompressed archive:
 tar -xvf /path/to/foo.tar
+
+# To list contents of a tar file
+->% tar -tf myarchive.tar
+Output
+<file1>
+<file2>
+<file3>
+<file4>
 
 # To create an uncompressed archive:
 tar -cvf /path/to/foo.tar /path/to/foo/
@@ -35,7 +54,7 @@ tar -J ... -> tar -Ipixz ...
 
 
 # Run the below command in the terminal to see the contents of a tar.gz file without extracting it:
-# to list contents of tar file called file.tar:
+ to list contents of tar file called file.tar:
 $ tar -tvf file.tar
 
 

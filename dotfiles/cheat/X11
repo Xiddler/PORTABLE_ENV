@@ -1,8 +1,26 @@
-the X Window System 
-instead of the more traditional shorthands 
-"X", "X11", or "Xorg"
+The X Window System 
+
+instead of the more (incorrect) shorthands 
+"X", "X-windows", "X11", or "Xorg"
+
+
+FYI: A precursor of the X Window System was the W Window System.
 
 # webrefs
 https://magcius.github.io/xplain/article/x-basics.html 《very good overview incl. details
 
+# pdfs
+# An Introduction to the X Window System Robert Lupton
+https://www.astro.princeton.edu/~strauss/AST303/Xintro.pdf
 
+
+X consists of three parts:
+
+1. The Server The part that knows about the hardware and how to draw lines and write characters.
+
+2. The Clients Such things as terminal emulators, dvi previewers, and clocks
+
+3. The Window Manager A programme which handles negotiations between the different clients as they fight for screen space, colours, and sunlight.
+
+Another fundamental X-concept is that of resources, which is how X describes anything that a client might want to specify; 
+common examples would be fonts, colours (both foreground and background), and position on the screen.

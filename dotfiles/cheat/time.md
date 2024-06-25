@@ -85,20 +85,24 @@ GMT I need to subtract 8 hours to get PT
 # Epoch converter
 (Note: 10 significant digits before the decimal point)
 
-Epoch --> Date
+## Epoch --> Date
+
 ->% date -d @1682985600.000
+Output
 Tue 02 May 2023 01:00:00 IST 
+
 alias -g epochtodate="date -d @"$1
 epochtodate 1695641243
 
 ->% date -d @1682985600
 Tue 02 May 2023 01:00:00 IST 
 
-Date --> Epoch
+## Date --> Epoch
+
 ->% date -d '06/12/2012 07:21:22' +"%s"
 1339482082
 
-For UTC
+## For UTC
 
 ->% dat="$(date)"
 
@@ -143,6 +147,9 @@ eg 1636231543
 To see all relevant information about your system clock
 -> % timedatectl
 
+to set to local timezone
+->% timedatectl set-timezone Europe/Dublin
+
 ## Hardware clock
 The hardware clock will continue to keep time when the computer is powered off, thanks to the CMOS battery on the motherboard.
 -> % sudo hwclock
@@ -166,4 +173,32 @@ datetime.datetime(2023, 12, 29, 13, 13, 45, 541385, tzinfo=datetime.timezone.utc
 OUTPUT 
 2024-01-01 13:00:32.863726
 
+
+# python -m module calendar
+
+USAGE:
+->% python -m calendar <year> <month>
+
+EXAMPLES:
+
+❯ python -m calendar 1961 03
+     March 1961
+Mo Tu We Th Fr Sa Su
+       1  2  3  4  5
+ 6  7  8  9 10 11 12
+13 14 15 16 _17_ 18 19
+20 21 22 23 24 25 26
+27 28 29 30 31
+
+❯ python -m calendar 1962 08
+    August 1962
+Mo Tu We Th Fr Sa Su
+       1  2  3  4  5
+ 6  7  8  9 10 11 12
+13 14 15 16 _17_ 18 19
+20 21 22 23 24 25 26
+27 28 29 30 31
+
+
+# timedatectl
 

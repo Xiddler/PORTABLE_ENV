@@ -1,6 +1,10 @@
 " Filepath  /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim 
 " /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim
+
+" Plugin manager Plug https://github.com/junegunn/vim-plug 
 "
+" Install
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 " This file is where I call the plugins I want to use in vim. There is a line in .vimrc that calls this file
 " I am using the vim-plug plugin manager from https://github.com/junegunn/vim-plug 

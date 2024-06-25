@@ -14,16 +14,15 @@ For all things related to user / group.
 (not an exhaustive list)
 
 useradd                         :: useradd -m -G sudo -s <shell> donagh (will make /home/donagh automatically. -M to stop).
+userdel                         :: userdel -r username (the -r option forces userdel to remove the user’s home directory and mail spool)
 groupadd
 usermod                         :: usermod -aG additional_groups username
 passwd <user>                   :: give a <user> a passwd or edit one
 groups <user>                   :: displays groups that <user> belongs to
 gpasswd -a <user> <group>       :: Add users to a group with the gpasswd command (see FS#58262 regarding errors):
 groupmod -n new_group old_group :: Modify an existing group with the groupmod command e.g. to rename the old_group group to new_group
-chage -l donagh G Account       :: Account expires: never
+change -l donagh G Account       :: Account expires: never
 vipw / vigr                     :: edit /etc/passwd
-
-
 
 
 

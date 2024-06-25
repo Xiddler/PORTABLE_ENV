@@ -46,9 +46,14 @@ curl httpbin.org/ip
 curl -o /dev/null -w '%{http_code}\n' -s -I URL
 
 # get file contents without opening a browser
-# example: run a sever in the directory with plaintext.html python -m http.server 7000 and then 
+example: run a sever in the directory containing the file plaintext.html then ->% python -m http.server 7000 and then 
 -> % curl 127.0.0.1/plaintext.html
-# will output the contents to STDOUT
+ will output the contents to STDOUT
 
+# use curl as a dictionary
+->% curl dict.org/d:imminent
+
+# get weather report
+->% curl wttr.in/Limerick
 
 
