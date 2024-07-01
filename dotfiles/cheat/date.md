@@ -1,13 +1,20 @@
 # Help
-# See ~/.cheat/time.md for timezones and system time etc.
-date --help
+
+
+See ~/.cheat/time.md for timezones and system time etc. and also ~/.cheat/timezones.md
+
+
+# date utility
+->%  date --help
 man date
 https://www.epochconverter.com/
   see also
   dateutils - sudo pamac install dateutils. $ info dateutils for details. Can do anything with dates.
   today's date
-echo  $(date +"%Y-%m-%d")
+->% echo  $(date +"%Y-%m-%d")
  2023-10-05
+
+->% date
 
 # convert epoch(Unix) time to human readable date; seconds since 1/1/1970 
 

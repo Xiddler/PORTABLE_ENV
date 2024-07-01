@@ -83,7 +83,7 @@ Plug 'junegunn/vim-peekaboo'
 
 " LoremIpsum 
 " added 2022-09-15 Usage: :Loremipsum 55 will output 55 latin words 
-Plug 'https://github.com/vim-scripts/loremipsum' 
+" Plug 'https://github.com/vim-scripts/loremipsum' 
 
 " vim-mundo 
 " - multi undo " Added 2023-12-13 cf. HN - multiple / universal UNDO tree 

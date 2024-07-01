@@ -184,8 +184,10 @@ nnoremap <leader>sm :so $MYVIMRC<CR>
 "
 " 2022-02-05  Plugin manager: vim-plug started 
 " https://github.com/junegunn/vim-plug and https://github.com/junegunn/vim-plug/wiki/tutorial
-" Run this command to installl vim-plug
+" To installl vim-plug, do one of the following
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" or better ->% cd ~/.vim/autoload and git clone https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" or simply ->% ln -s ~/PORTABLE_ENV/vim/dotvim ~/.vim
 " 
 " Steps to installing a new plugin
 " 1. cd  /home/donagh/PORTABLE_ENV/vim/plugins/ 
@@ -870,8 +872,8 @@ endif
 " insert @dm - Note: dc for donagh comments
 " nmap dc 0i@dm -<left><right><space>
 nnoremap <leader>c 0i@dm -<left><right><space>
-inoremap dms @dmsaying -
-inoremap dme @dmediting -
+" inoremap dms @dmsaying -
+" inoremap dme @dmediting -
 
 nnoremap <leader>m ^d0
 inoremap <leader>c @dm - 
