@@ -151,9 +151,8 @@ inoremap lh —
 inoremap <leader>a  <C-Q>u276f
 
 
-" go to start of line and delete blanks to text i.e. shift text to start of line
+" go to start of line and delete all blanks to the first word/ text i.e. shift text to start of line where it does not begin at col 0
 nnoremap <leader>; 0:s/^\s*//g<cr>
- 
  
 
 
@@ -545,7 +544,8 @@ nnoremap <leader>v :colorscheme everforest<CR>
 " added 2022-11-04
 set background=dark
 "to toggle them automatically for you:
-map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+noremap <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+
 
 " to allow italics in vim 
 " https://hobo.house/2017/07/17/using-italics-with-vim-in-your-terminal/
@@ -807,7 +807,7 @@ nmap <leader>j :call SendHunk()<cr>
  
 " end UR_JOURNAL====================================================
 
-" Toggle slashes using ,t
+" Toggle slashes using <leader>t
 " a command and a mapping to easily toggle slashes in the current line, or a range of lines.
 " https://vim.fandom.com/wiki/Change_between_backslash_and_forward_slash
 
@@ -844,6 +844,7 @@ let g:tex_flavor='latex'
 " LSP {{{
 " Language Server Protocol 
 " Alternatively use neovim 
+
 if executable('rust-analyzer')
   au User lsp_setup call lsp#register_server({
 		\   'name': 'Rust Language Server',
@@ -874,8 +875,13 @@ endif
 nnoremap <leader>c 0i@dm -<left><right><space>
 " inoremap dms @dmsaying -
 " inoremap dme @dmediting -
+"
 
-nnoremap <leader>m ^d0
+" open an explorer window in the current directory
+" nnoremap <leader>m :tabedit %:p:h<CR>
+nnoremap <leader>m :tabedit %:p<CR>
+
+" nnoremap <leader>m ^d0
 inoremap <leader>c @dm - 
 " while using the MacAir I have these abbreviations
 " I have found the way to do it on the MacAir inside System Settings
@@ -968,6 +974,199 @@ map gf :edit <cfile><cr>
 nnoremap <leader>k :set nomore<Bar>:ls<Bar>:set more<CR>:b<Space>
 
 "}}}
+"{{{ Leader 
+"
+" === Leader ===
+
+" NOTE: This is just a sorted collection for information purposes only.
+" NOTE: <leader> may appear in other sections too. 
+
+" ######################################################################################
+" <leader> + non-alphabetic
+" ######################################################################################
+
+" handy goto start of line and down one line ;; conflicts with 'next f/w/' etc.
+" nnoremap <leader><leader> ^
+
+"<leader>; to go to start of line and delete all blanks to the first word/ text i.e. shift text to start of line where it does not begin at col 0
+nnoremap <leader>; 0:s/^\s*//g<cr>
+
+" Use , / to highlight point in file
+map <leader>/ <Plug>(easymotion-bd-w) 
+nmap <leader>/ <Plug>(easymotion-overwin-w) 
+
+" SURROUNDING
+" <leader>" to surround a word with "word"
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+
+"<leader>' surround a word with 'word'
+nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
+
+"<leader>_ to surround a word with _word_ (Single Underline)
+" nnoremap <leader>_ viw<esc>a_<esc>bi_<esc>lel
+
+" surround a word with __word__ (Double Underline)
+" nnoremap <leader>)_ viw<esc>a__<esc>bi__<esc>lel
+" noremap du F<space>wi__<esc>a__<esc>lel
+" nnoremap <leader>- viw<esc>a__<esc>bi__<esc>lel
+"END_SURROUNDING
+
+
+
+" ######################################################################################
+" <leader> + single alphabetic
+" ######################################################################################
+
+"<leader>a to produce ❯ <-- the pure-prompt symbol
+inoremap <leader>a  <C-Q>u276f
+
+"<leader>b to insert bullets — this is very slow compared to calling directly without the mapping. Why so?
+nmap <leader>b :call BulletList()<cr> 
+
+"<leader>c to imap insert a prefix for comments by me
+inoremap <leader>c @dm - 
+
+"<leader>c to nmap dc 0i@dm -<left><right><space>
+nnoremap <leader>c 0i@dm -<left><right><space>
+
+"<leader> d to insert full filepath into current buffer in normal mode
+" nnoremap <leader>d :put=expand('%:p')<cr>
+inoremap <leader>d <C-R>=expand("%:p:h")<CR>
+nnoremap <leader>d :call Filename()<cr>
+
+" Toggle/Open a file explorer to the right 
+" nnoremap <leader>e :Lex!<cr> " NOTE ,e is now mapped to change colorscheme below. I use ranger for navigating <leader>f
+
+"<leader>f to call up ranger file manager
+let g:ranger_map_keys = 0
+noremap <leader>f :Ranger<cr>
+
+"<leader>j to call the function SendHunk()
+nmap <leader>j :call SendHunk()<cr>
+
+" https://stackoverflow.com/questions/53664/how-to-effectively-work-with-multiple-files-in-vim
+nnoremap <leader>k :set nomore<Bar>:ls<Bar>:set more<CR>:b<Space>
+
+" open an explorer window in the current directory
+nnoremap <leader>m :tabedit %:p:h<CR>
+
+"<leader>n to open journal.org for access to snippets
+" nmap <leader>n :!jumpapp emacs<cr>
+
+"<leader>p to paste from system clipboard
+nnoremap <leader>p :set paste<cr> "+p :set nopaste<cr>
+
+"<leader>q to quit file
+noremap <leader>q :q<cr>
+
+"<leader>r to toggle line numbeRs
+nnoremap <leader>r  :exe 'set nu!' &nu ? 'rnu!' : ''
+nnoremap <C-n> :exe 'set nu!' &nu ? 'rnu!' : ''
+
+"<leader>s to save file
+nnoremap <leader>s :w<cr>
+inoremap <leader>s <C-c>:w<cr>
+
+"<leader>t to toggle word case  (Why so slow 4seconds lol)
+nmap <leader>t g~aW
+
+"<leader>u to Capitalize/minusculize letter under cursor
+nnoremap <leader>u v~
+
+"<leader>y to yank to system clipboard 
+nnoremap <leader>y "+y
+
+"<leader>x to close split (the one with cursor in it) COPY - SEE SPLITS BELOW
+noremap <leader>x <c-w>c<cr>
+
+"<leader>z to set the following to get fuzzy-finder FZF in vim working (and other plugins?)
+nmap <leader>z :FZF<cr> 
+
+
+" ######################################################################################
+" <leader> + multiple alphabetic
+" ######################################################################################
+
+
+" vim-mundo " https://simnalamburt.github.io/vim-mundo/ ; shows the vim undo tree
+" nnoremap <leader>uu :MundoToggle<CR>
+
+"<leader>vv to open $HOME/.vimrc in a new tab
+nnoremap <leader>vv :tabe $MYVIMRC<CR>
+
+" source $MYVIMRC - I can't ever seem to remember the keybinding...
+nnoremap <leader>ss :so $MYVIMRC<CR>
+nnoremap <leader>sv :so $MYVIMRC<CR>
+nnoremap <leader>sm :so $MYVIMRC<CR>
+
+"<leader>th & tk to swap vertical split to hor
+map <leader>th <C-w>t<C-w>H
+map <leader>tk <C-w>t<C-w>K
+
+" calls the function ToggleSlash — see Functions above
+noremap <silent> <leader>ts :ToggleSlash<CR>
+
+" open a terminal within vim
+map <leader>tt :terminal zsh<CR>
+
+"<leader> for SPLITS
+"<leader>vs to Split Vertical alt = " noremap <leader>v <c-w>v<c-w>l
+noremap <leader>vs :vsplit<cr>
+"<leader>hs to Split Horizontal  alt = " noremap <leader>h <c-w>s<c-w>j
+noremap <leader>hs :split<cr>
+"<leader>x to close split (the one with cursor in it)
+noremap <leader>x <c-w>c<cr>
+"END_SPLITS
+
+"<leader>vz and vza to open .zshrc / .zsh_aliases in a new tab in vim
+nnoremap <leader>vza :tabe ~/.zsh_aliases <cr>
+nnoremap <leader>vz :tabe ~/.zshrc <cr>
+
+" set width of Explorer window to 60 smaller
+" nnoremap <leader>ws <C-w>60<
+
+
+" ######################################################################################
+" <leader> for colorschemes
+" ######################################################################################
+
+"<leader>bg to toggle color darkness/lightness automatically 
+map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+
+" keybindings to change colorscheme
+nnoremap <leader>6 :colorscheme base16-default-dark<CR> 
+nnoremap <leader>g :colorscheme iceberg<CR>
+nnoremap <leader>e :colorscheme evening<CR>
+nnoremap <leader>v :colorscheme everforest<CR>
+
+
+
+" ######################################################################################
+" <leader> for filetypes
+" ######################################################################################
+"<leader>n to insert the python main() incantation
+" python files only — shortcut for if __name__  = ,m
+" autocmd Filetype python inoremap <leader>n if __name__ ==  '__main__':<enter>
+
+
+
+" ######################################################################################
+" <leader> for bullet numbering
+" ######################################################################################
+"<leader>n VISUAL for inserting bullet numbers
+vnoremap <leader>n :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR> 
+vnoremap <leader>nl :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR>  
+
+"<leader>nr to remove line numbers - first Visually select the lines
+vnoremap <leader>nr :s/^\(\d\)\{1,2\}\. // <CR>
+
+
+" ######################################################################################
+" THE END
+" ######################################################################################
+"
+"
+" }}}
 " {{{ My Digraphs & Special Characters
 " NOTE: Some are set in Custom Leader
 "
