@@ -1,4 +1,5 @@
 # You should not ignore .gitignore, since it's supposed to be included in the repository. i.e. don't have .gitignore in this file
+/home/donagh/PORTABLE_ENV/vim/plugins/*/.git/
 BU_pack/
 .git/
 */.git

@@ -1,15 +1,20 @@
 # META
 
-Edited 2022-11-08 made into .md file
+## Edited 
+2024-07-02 added HELP
+2022-11-08 made into .md file
 
-Quick access - put the cursor on the term and press * ( an old vim trick )
+## Quick access - put the cursor on the term and press * ( an old vim trick )
+
 NON-ASCII
 DIGRAPHS
 EMOJIS
 SESSIONS
 Arrows
 
-# Other vim* cheats
+# HELP
+
+## Other vim* cheats
 
 $HOME/.cheat/vim_digraphs.md
 $HOME/.cheat/vimium
@@ -17,7 +22,11 @@ $HOME/.cheat/vimium_all
 $HOME/.cheat/vim_mapping.md
 $HOME/.cheat/vim_special_chars.md
 
+## URLS
 
+0nline vim docs https://www.vim.org/docs.php
+
+Good vim-regex refresher https://dev.to/iggredible/learning-vim-regex-26ep 
 
 # File management
 
@@ -117,6 +126,10 @@ Examples:
 
 # DONAGHS PLUGINS
 
+Location: /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim
+
+
+
 easymotion
 ,/
  emmet
@@ -145,7 +158,7 @@ cat /home/donagh/PORTABLE_ENV/vim/plugins/my_vim_plugins
 # To install a new plugin
 
  1. git clone into /home/donagh/PORTABLE_ENV/vim/plugins (which is symlinked to ~/.vim)
- 2. vim /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim " rem: I can use gf to open that file!
+ 2. Edit file: vim /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim " rem: I can use gf to open that file!
  3. add e.g. Plug 'https://github.com/vim-airline/vim-airline-themes.git' under call plug#begin('/home/donagh/.vim/plugins')
  4. run :PlugInstall
 
@@ -164,7 +177,7 @@ ll $HOME/PORTABLE_ENV/vim/dotvim/plugins
  or
 grep "^Plug" /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim
 
- source for plugin recommendations
+source for plugin recommendations
 https://catonmat.net/vim-plugins
 
 
@@ -235,6 +248,7 @@ C-F --> forward one pane
 
 
 # Non-ascii characters
+
 See also $HOME/.cheat/vim_special_chars.md
 
 Help on non-ascii --> :help %u
@@ -330,6 +344,7 @@ ga
  Output: <”> 8221, Hex 201d, Oct 20035, Digr "9
 
 # COMMON SYMBOLS
+
 see also  /home/donagh/PORTABLE_ENV/dotfiles/cheat/vim-digraphs
 ```
 °	DG	0xb0	176	DEGREE SIGN
@@ -425,12 +440,10 @@ sort u
 :r! sed -n 3,7p /path/to/foo/bar.md
 :r !sed -n 3,7p /path/to/foo/bar.md
 
-# To read in the 3 lines After 'CHALLENGE' in the specified file
+# To read in i.e. copy the 3 lines After 'CHALLENGE' in the specified file
 r! grep -A3 "CHALLENGE" /path/to/foo/bar.md
 
 
-# 0nline vim docs
-https://www.vim.org/docs.php
 
 # Doom-emacs like save file
 w[SPC] # which is SPC w SPC as I have SPC mapped to : and the muscle memory carries over to doom-emacs.
@@ -886,6 +899,9 @@ trailing, mix-indent-file
 :colorscheme <space> Ctrl d     :: list of available colorschemes
 :colorscheme <space> Tab        :: select from one of available colorschemes
 
+NOTE: I added nightsense/snow on 2024-07-02
+NOTE: use <leader>2/3/4/5/6 to change themes
+
 
 
 # Regex
@@ -898,21 +914,21 @@ foobar foo barfoo
        ^      ^
        two matches here
 
-## 2.  Match foo which is preceded by bar: 
+## 2. Match foo which is preceded by bar: 
 > /\(bar\)\@<=foo
 
 foobar foo barfoo
               ^
               one match here
 
-## 3.  Match foo which is not preceded by bar: 
+## 3. Match foo which is not preceded by bar: 
 > /\(bar\)\@<!foo
 
 foobar foo barfoo
 ^      ^
 two matches here
 
-## 4.  Match foo which is neither followed nor preceded by bar:
+## 4. Match foo which is neither followed nor preceded by bar:
 > /\(bar\)\@<!foo\(bar\)\@!
 
 foobar foo barfoo
@@ -928,8 +944,13 @@ one match here
 
 # \ze and \zs for positive lookaround
 
-We may also use \zs and ze for positive lookbehind and lookahead. 
+You can use \zs and ze for positive lookbehind and lookahead. 
 \zs means that the actual match starts from here and \ze means that the actual match ends here. 
+foobar
+foofoo
+barbar
+bar foo
+
 Take the above foobar text as an example: foobar foo barfoo
 
     Match foo preceded by bar: \bar\zsfoo
