@@ -68,7 +68,7 @@ Plug 'easymotion/vim-easymotion' " Use ./ (i.e. period backslash) to navigate ar
 " the following plugin displays a buffer to the right on typing this  " <-- yes the quote symbol!
 Plug 'junegunn/vim-peekaboo'
 
-" nightsense/snow — added 2024-07-02
+" nightsense/snow
 Plug 'nightsense/snow'
 
 

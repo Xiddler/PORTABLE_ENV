@@ -1,6 +1,7 @@
 # META
 
 ## Edited 
+
 2024-07-02 added HELP
 2022-11-08 made into .md file
 
@@ -28,7 +29,49 @@ $HOME/.cheat/vim_special_chars.md
 
 Good vim-regex refresher https://dev.to/iggredible/learning-vim-regex-26ep 
 
-# File management
+# VIM
+
+## DIRECTORIES
+
+### Significant directories & files
+
+$MYVIMRC = ~/.vimrc
+$VIM = /usr/share/vim
+$RTP = ~/.vim
+
+ Ctrl R, in Ex mode,  with...
+% --> Current file name
+" --> Last yanked text
+* --> Clipboard contents
+/ --> Last search pattern
+
+### vimrc dirs
+
+When you start Vim, it will check the following six locations in that order for a vimrc file. The first found vimrc file will be used and the rest is ignored.
+
+    $VIMINIT
+
+    $HOME/.vimrc
+
+    $HOME/.vim/vimrc
+
+    $EXINIT
+
+    $HOME/.exrc
+
+    $VIMRUNTIME/default.vim
+
+
+
+
+## Use vim with NO packages
+vim -u NONE <filename>
+ or no vimrc
+vim -u NORC <filename>
+ or use a particular (eg minimal vimrc)
+vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc ~/files/sample_files/README.md
+
+## File management
 
 :e              reload file
 :q              quit
@@ -57,7 +100,7 @@ Open file under cursor - custom keybinding
 ,n
 
 
-# Movement
+## Movement
 
     k
   h   l         basic motion
@@ -76,7 +119,7 @@ G               go to end of file
 gk		        move down one displayed line
 gj		        move up one displayed line
 
-# Insertion
+## Insertion
 
 To exit from insert mode use Esc or Ctrl-C
 Enter insertion mode and:
@@ -90,7 +133,7 @@ O               create a new line above the cursor
 R               enter insert mode but replace instead of inserting chars
 :r {file}       insert from file i.e. read (file)
 
-# Editing
+## Editing
 
 u               undo
 yy              yank (copy) a line
@@ -102,19 +145,23 @@ P               paste before cursor
 dd              delete a line
 d{motion}       delete text that {motion} moves over
 
-# Search and replace with the `:substitute` (aka `:s`) command
-## :substitute
+## Search and replace with the `:substitute` (aka `:s`) command
+
+### :substitute
 :s/foo/bar/	replace the first match of 'foo' with 'bar' on the current line only
 :s/foo/bar/g	replace all matches (`g` flag) of 'foo' with 'bar' on the current line only
 :%s/foo/bar/g	replace all matches of 'foo' with 'bar' in the entire file (`:%s`)
 :%s/foo/bar/gc	ask to manually confirm (`c` flag) each replacement
 
-## :global
+### :global
+
 :g executes the given command on every line of the file hence global
 :g/^$/ d        delete all empty lines in a file
 :g/^$/,/./-j    reduce multiple blank lines to a single blank
 
 
+
+### prefixes 
 
 Preceding a motion or edition with a number repeats it 'n' times
 Examples:
@@ -124,38 +171,42 @@ Examples:
 42G         go to line 42
 
 
-# DONAGHS PLUGINS
+# Donaghs Plugins
 
 Location: /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim
 
+## easymotion
 
+Shortcut ,/
 
-easymotion
-,/
- emmet
+##  emmet
+
 ! <C-y>,                            # Note the , at the end.
 div>p#foo>ul>li*4 <C-y>,
 
- goyo & limelight
+## goyo & limelight
 F9
  or
 :Goyo
 
- Check installed plugins
+## Check installed plugins
+
 :scriptnames
 :help local-additions
 
- Plugins
- location of info on my vim plugins on zim-wiki
+## Plugins
+
+location of info on my vim plugins on zim-wiki
 /home/donagh/sd64/zim/Computer/LINUX/1Linux_Live_USB/02a_install_extras/10vim_settings/vim_plugins.txt
 eg cd to above folder and ->% grep <surround>
 
- list plugins
+## List plugins
+
 cat /home/donagh/PORTABLE_ENV/vim/plugins/my_vim_plugins
  or
  see /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim
 
-# To install a new plugin
+## To install a new plugin
 
  1. git clone into /home/donagh/PORTABLE_ENV/vim/plugins (which is symlinked to ~/.vim)
  2. Edit file: vim /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim " rem: I can use gf to open that file!
@@ -191,6 +242,7 @@ to change 'funny' to "funny"
 
 
 # Tab navigation
+
 gt # next tab → keybinding L
 gT # prev tab → keybinding H
 
@@ -213,10 +265,8 @@ tab right  L
 
 
 # Open vim at line 23
+
 vim +23 <filename>
-
-
-
 
 # Splits
 
@@ -229,6 +279,7 @@ maximize split  : Ctrl W | (ver. split)
 resize split    :res +5 or :vert res -5
 
 # Open a terminal in vim
+
 :sp |:terminal
 <leader> tt
 
@@ -343,7 +394,7 @@ ga
 
  Output: <”> 8221, Hex 201d, Oct 20035, Digr "9
 
-# COMMON SYMBOLS
+# Common Symbols
 
 see also  /home/donagh/PORTABLE_ENV/dotfiles/cheat/vim-digraphs
 ```
@@ -360,10 +411,13 @@ SUPERSCRIPTS & SUBSCRIPTS
 
 ℠ 	™ 	© 	® 	¶ 	† 	‡ 	– 	±
 SM 	TM 	Co 	Rg 	PI 	/- 	/= 	– 	+-
+
 § 	µ 	£ 	¢ 	¥ 	¤
 SE 	My 	$$ 	Ct 	Ye 	Cu
+
 ★ 	☆ 	♡ 	◆ 	◇
 *2 	*1 	cH 	Db 	Dw
+
 ✓ 	✗
 OK 	XX
 
@@ -431,6 +485,7 @@ Also in insert mode for ☺ press Ctrl-K 0u
 
 
 # Uniquify lines in a text
+
 sort u
 
 # Insert a range of lines from another file
@@ -484,7 +539,7 @@ C-W -
  Increase current window by 10 units
 10 C-W +
 
-# DELETE BLANK LINES
+# Delete Blank Lines
 :g/^\s*$/d
 OR
 :%v/./d
@@ -552,7 +607,7 @@ plugin --> git clone https://github.com/Yggdroot/indentLine
 # sudo trick
 :w !sudo tee %
 
-# NUMBERED LIST
+# Numbered List
 
  Method #1
  Visual select lines and ,n
@@ -570,7 +625,7 @@ plugin --> git clone https://github.com/Yggdroot/indentLine
 
     ```
 
-# EDIT AN EXISTING MACRO
+# Edit an Existing Macro
 
  make a new scratch buffer to edit the macro in <leader>c   c because s c ratch  has 2 letter c's in it and s is taken
  this function is defined in my vimrc
@@ -608,7 +663,7 @@ find 2Read.md
 
 :sfind 2Read.md
 
-# REGEX
+# Regex
 ```
 :h regexp and http://vimregex.com/
  wordboundary \< and \>
@@ -627,8 +682,25 @@ find 2Read.md
 # quxbar
 /\v(foo)@<=bar
 ```
+## Whole match
+\0 matches the whole search pattern
+
+Say, in the lines below, you want to enclose the numbers 1, 2, and 10 in double quotes,
+the fastest way to do it using the substitute command is :%s/[0-9]\+/"\0"
+
+const one = 1;
+const two = 2;
+const ten = 10;
+
+Ex command :%s/[0-9]\+/"\0" results in:
+
+const one = "1";
+const two = "2";
+const ten = "10";
+
 
 # Edit commands history
+
 Ctrl-f  (in command mode)
 q:      (in normalmode)
 
@@ -648,7 +720,7 @@ map <F5> :!pandoc % -o %:t:r.pdf<cr>    # NOTE: needs a pdf-engine like pdflatex
 
 The :t and :r are called filename modifiers.
 
-# FUNCTIONS
+# Functions
 Examples
 
 open my journal in a new tab
@@ -683,7 +755,7 @@ echo g:sum
 
 ```
 
-# JUMPS
+# Jumps
 jump lists     jumps are remembered in the jump list saurce of pnai
 :changes      lists the changes made to the file; use g; and g, to navigate this in normal mode
 :jumps        jumps are things like searches, finding marks; to navigate the jumps use Ctrl-o (backwards) and Ctrl-i (forwards) : will go to other files
@@ -693,7 +765,7 @@ A "jump" is a command that normally moves the cursor several lines away.
 The following commands are "jump" commands: "'", "`", "G", "/", "?", "n", "N", "%", "(", ")", "[[", "]]", "{", "}", ":s", ":tag", "L", "M", "H"
 ```
 
-# SPELLING
+# Spelling
 
 setlocal spell   'misspelt' words will be underlined. Navigate using [s (previous) ]s (next)
 
@@ -748,11 +820,11 @@ ddd.txt
 ->% vim $(cat ./list_files) 
 This will open all the files listed in list_files in buffers - handy for projects maybe
 
-# INFO
+# Info
  To display file data - for word count etc.
  Use airline or in normal mode g C-g
 
-# VIM PLUG
+# Vim Plug
  A modern plugin manager. Started using this 2022-02-05
 install
 cd ~/.vim/autoload
@@ -765,12 +837,20 @@ then in  /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim
 add e.g.
 Plug 'https://github.com/vim-airline/vim-airline.git'
 
-# COMMAND INFOLINE
- the command info line - that empty line below the airline strap
- to change it's height to 2 (ie 2 lines)
+# Command Infoline
+
+The command info line is that empty line below the airline strap. 
+To change it's height to 2 (ie 2 lines)
 :set cmdheight=2
 
 # Quickfix list and Location list
+
+## Intro 
+
+quickfix is a special mode in Vim  originally created to handle edit-compile-edit cycle error messages, but eventually evolved and used for all sorts of other things from displaying STDOUT when running async operations in vim-dispatch, fuzzy searching in fzf.vim, etc. 
+You can think of it as a list of pointers to various location in your files.
+
+Some commands in Vim automatically uses quickfix, like :make, :grep, and :vimgrep.
 
 The quickfix list is a data structure that holds file positions.
 Essentially, each entry in the quickfix list consists of a file path, a line number and optional column, and a description.
@@ -788,7 +868,7 @@ previous entry 	:cprevious 	:lprevious
 first entry 	:cfirst 	:lfirst
 last entry 	    :clast
 
-# Quickfix usage example
+## Quickfix usage example
 
 The quickfix list is populated when you run commands such as :grep.
 ```
@@ -835,27 +915,6 @@ But add a dot after the colon,
 :.! [command]
 and it'll dump the output of the command into your current window. Eg open a new buffer in $HOME then :. ls and the contents of $HOME will be pasted in.
 
-
-# VIM
-
-## DIRECTORIES
-significant directories & files
-$MYVIMRC = ~/.vimrc
-$VIM = /usr/share/vim
-$RTP = ~/.vim
-
- Ctrl R, in Ex mode,  with...
-% --> Current file name
-" --> Last yanked text
-* --> Clipboard contents
-/ --> Last search pattern
-
-## Use vim with NO packages
-vim -u NONE <filename>
- or no vimrc
-vim -u NORC <filename>
- or use a particular (eg minimal vimrc)
-vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc ~/files/sample_files/README.md
 
 # See how quickly Vim starts without your existing configuration:
 simple easy vim (for later searching - trust me!)
@@ -1036,7 +1095,10 @@ Overview of which map command works in which mode.  More details below.
 :cmap  :cnoremap :cunmap    Command-line
 :tmap  :tnoremap :tunmap    Terminal-Job
 
-## To append eg -dm to a string:
+# To append eg -dm to a string use & in :substitute
+
+    :%s/kkk/&-dm                
+:nnoremap <leader>' :s/\s*$//
 
 & represents the search term
 
@@ -1044,5 +1106,9 @@ kkk                         :: term to be searched
 :%s/kkk/&-dm                :: The :s expression
 kkk-dm                      :: output
 
+Alternative to using say capture groups and backreference as in
+:s/\(kkk\)/\1-dm/
+
+kkk-dm
 
 # END

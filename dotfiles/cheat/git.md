@@ -506,5 +506,9 @@ Then `git diff --name-status dir1 dir2` outputs the following, showing the chang
  This also doesn't require running `git init` on the two directories either, so it's immediately usable out of the box.
 
 
+# find the directory path of all .git/ directories (i.e. git repos) in this directory
+
+->% find . -type d -name "\.git" | xargs realpath 
+
 # END 
 

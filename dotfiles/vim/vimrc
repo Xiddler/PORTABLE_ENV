@@ -53,53 +53,9 @@ set ttyfast
 " See $HOME/PORTABLE_ENV/dotfiles/README.md 
 " Usage: On a new install -> %~ stow vim  will automatically create the necessary symlinks from this folder 
 " }}}
-" {{{ Custom Leader 
-
-" === Custom Leader ===
-" NOTE: <leader> may appear in other sections too
-
-" setting custom leader to comma. Needs to be set early!
-let mapleader=','
-
-" See also Customised below
-" use ,o to make a new vertical split, ,s for horiz, ,x to close a split
-" ,v calls up VISUAL mode
-" try ,o (as in OpEd) <-- works
-
-" move bullet point lines up / down
-" nmap <c-j> ddp - used for navigating between splits
-" nmap <c-k> ddkkp
+" {{{ Custom shortcuts 
 
 
-"  save file
-nnoremap <leader>s :w<cr>
-inoremap <leader>s <C-c>:w<cr>
-
-" quit file
-noremap <leader>q :q<cr>
-
-" use <leader>p to paste from system clipboard
-nnoremap <leader>p :set paste<cr> "+p :set nopaste<cr>
-
-" use <leader>y to yank to system clipboard 
-nnoremap <leader>y "+y
-
-" use <leader>f to call up ranger file manager
-let g:ranger_map_keys = 0
-noremap <leader>f :Ranger<cr>
-
-" handy goto start of line and down one line ;; conflicts with 'next f/w/' etc.
-" nnoremap <leader><leader> ^
-
-
-" shorten the filepath for REPOSITORIES
-" @r  <-- macro
-"python
-"shortcut for if __name__  = ,m
-" autocmd Filetype python inoremap <leader>n if __name__ ==  '__main__':<enter>
-" remove trailing whitespace from python files
-" autocmd BufWritePre .py :%s/\s\+$//e
-"
 " nav within the command mode - up and down for previous commands
 cmap <C-j> <Down>
 cmap <C-k> <Up>
@@ -107,63 +63,8 @@ cmap <C-h> <Left>
 cmap <C-l> <Right>
 
 
-" --- EASYMOTION PLUGIN --- 
-" easymotion keybindings - for fast navigation within a file
-" get , , w to make easy motion work
-" map <Leader><Leader>w <Plug>(easymotion-prefix)
-" highlight ALL words for navigating to
-" Use , / to highlight point in file
-map <leader>/ <Plug>(easymotion-bd-w) 
-nmap <leader>/ <Plug>(easymotion-overwin-w) 
-
-" --- PWD ---
-"  See Functions <leader>d [ note added 2023-02-10 ]
-
-" insert full filepath into current buffer in normal mode
-" nnoremap <leader>d :put=expand('%:p')<cr>
-
-"To insert the absolute path of the directory the file is in use:
-inoremap <leader>d <C-R>=expand("%:p:h")<CR>
-" To insert the name of the innermost directory (the one containing the current file) use:
-" inoremap <Leader>n <C-R>=expand("%:p:h:t")<CR>
-
-" toggle case - Why so slow 4seconds lol 
-nmap <leader>t g~aW
-" dUck
-"
-" to open journal.org for access to snippets
-" nmap <leader>n :!jumpapp emacs<cr>
-
-" surround a word with "word"
-nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
-
-" surround a word with 'word'
-nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
-
-
-" surround a word with _word_ (Single Underline)
-" nnoremap <leader>_ viw<esc>a_<esc>bi_<esc>lel
-nnoremap su viw<esc>a_<esc>bi_<esc>lel
-
-
-
-" surround a word with __word__ (Double Underline)
-" nnoremap <leader>)_ viw<esc>a__<esc>bi__<esc>lel
-" noremap du F<space>wi__<esc>a__<esc>lel
-" nnoremap <leader>- viw<esc>a__<esc>bi__<esc>lel
-nnoremap du viw<esc>a__<esc>bi__<esc>lel
-" nnoremap du Bwi__<esc>a__<esc>
-
 " use — (Mdash i.e. digraph -M) instead of - (normal dash) " this prevents making lines into a bullet list
 inoremap lh —
-
-" map ,a to ❯ (the pure-prompt symbol)
-inoremap <leader>a  <C-Q>u276f
-
-
-" go to start of line and delete all blanks to the first word/ text i.e. shift text to start of line where it does not begin at col 0
-nnoremap <leader>; 0:s/^\s*//g<cr>
- 
 
 
 " }}}
@@ -173,17 +74,18 @@ nnoremap <leader>; 0:s/^\s*//g<cr>
 
 let $RC="$HOME/.vimrc" " alternative to $MYVIMRC
 
+" NOTE: See Leader section below. These are just reminders.
 " open $MYVIMRC in a new tab Note: in CLI the alias is also vv  
-" nnoremap <leader>vv :tabe $MYVIMRC<CR> - this seems to invoke visual
+" nnoremap leader vv :tabe $MYVIMRC<CR> - this seems to invoke visual
 " mode...sometimes doesn't work
-" map <leader>vv :tabe $MYVIMRC<CR>
+" map leader vv :tabe $MYVIMRC<CR>
 " nnoremap omv :tabe $MYVIMRC<CR>  Open My Vimrc
-nnoremap <leader>vv :tabe $MYVIMRC<CR>
+" nnoremap leader vv :tabe $MYVIMRC<CR>
 
 " source $MYVIMRC - I can't seem to remember the keybinding...
-nnoremap <leader>ss :so $MYVIMRC<CR>
-nnoremap <leader>sv :so $MYVIMRC<CR>
-nnoremap <leader>sm :so $MYVIMRC<CR>
+" nnoremap leader ss :so $MYVIMRC<CR>
+" nnoremap leader sv :so $MYVIMRC<CR>
+" nnoremap leader sm :so $MYVIMRC<CR>
 
 
 
@@ -212,19 +114,11 @@ source /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim
 
 " Rem: Use gf to open that file! CHANGED LOCATION ON 2022-10-13 
 
-" vim-mundo " https://simnalamburt.github.io/vim-mundo/ ; shows the vim undo tree
-" nnoremap <leader>uu :MundoToggle<CR>
 
 "}}}
 " {{{ Navigating
 " === Navigating ===
 
-" Toggle/Open a file explorer to the right 
-" nnoremap <leader>e :Lex!<cr> " NOTE ,e mapped to change colorscheme below
-" :bd<enter> to close it!
-"
-nnoremap <leader>vza :tabe ~/.zsh_aliases <cr>
-nnoremap <leader>vz :tabe ~/.zshrc <cr>
 
 " configure Vim to open a file at the last edited location
 
@@ -287,13 +181,17 @@ endif
 " set timeout timeoutlen=3000 ttimeoutlen=100
 " set completeopt=menu,preview,longest "for a pop-up list of completions. (Replaces the existing one)
 
-" DoNAGH
-" --- NUMBERS ---
+" DONAGH
+
+" --- LINE NUMBERS ---
+
 set number
 set relativenumber " also Ctrl N to toggle this
+
 " toggle number and realativenumber
-nnoremap <C-n> :exe 'set nu!' &nu ? 'rnu!' : ''
-nnoremap <leader>r  :exe 'set nu!' &nu ? 'rnu!' : ''
+" NOTE: See Leader section below
+" nnoremap leader r  :exe 'set nu!' &nu ? 'rnu!' : ''
+" nnoremap <C-n> :exe 'set nu!' &nu ? 'rnu!' : ''
 
 " --- MACROS --- 
 "This mapping makes macros even easier to remember: hit qq to record, q to stop recording, and Q to apply.
@@ -317,10 +215,6 @@ set linebreak " prevents wrapping in the middle of a word
 " set nolist    " adds a . to empty spaces; do I need this? "set list will show the dots for spaces and tabs
 " set textwidth=0 " set textwidth=80 for a hard wrap 
 
-" --- FZF ---
-" :FZF 
-" set the following to get fuzzy-finder FZF in vim working (and other plugins?)
-nmap <leader>z :FZF<cr> 
 
 " usage: see $VIMRUNTIME/docs/fzf.txt :FZF and :h fzf
 set rtp+=/usr/share/vim/vim82
@@ -369,12 +263,14 @@ augroup END
 set splitbelow
 set splitright
 
+" NOTE: See Leader section below for shortcuts
+
 " Split Vertical alt = " noremap <leader>v <c-w>v<c-w>l
-noremap <leader>vs :vsplit<cr>
+" noremap leader vs :vsplit<cr>
 " Split Horizontal  alt = " noremap <leader>h <c-w>s<c-w>j
-noremap <leader>hs :split<cr>
+" noremap leader hs :split<cr>
 " close split (with cursor in it)
-noremap <leader>x <c-w>c<cr>
+" noremap leader x <c-w>c<cr>
 
 " in splits - use ctrl-h/j/k/l to switch focus between splits
 map <c-j> <c-w>j
@@ -382,12 +278,6 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
-
-" older?
-" shortcut to open a :Vex on the right only 20% width of screen
-" nnoremap <leader>e :lefta 30vs. <cr>
-" set width of Explorer window to 60 smaller
-" nnoremap <leader>ws <C-w>60<
 
 "}}}
 " {{{ Spaces And Tabs  
@@ -534,15 +424,11 @@ syntax enable
 " theme at 2022-11-03
 " colorscheme gruvbox
 " colorscheme dracula  
-
 " added 2022-11-04
 " colorscheme iceberg   
-
+"
 " added 2023-12-26
 " colorscheme everforest
-
-" added 2024-07-02
-" colorscheme snow (nightsense)
 
 " added 2023-12-26 - and my current preferred colorscheme
 colorscheme base16-default-dark
@@ -552,17 +438,15 @@ nnoremap <leader>6 :colorscheme base16-default-dark<CR>
 nnoremap <leader>5 :colorscheme iceberg<CR>
 nnoremap <leader>4 :colorscheme evening<CR>
 nnoremap <leader>3 :colorscheme everforest<CR>
-nnoremap <leader>2 :colorscheme snow<cr> " note: may need to do <leader>bg to get the 'light' version
-
+nnoremap <leader>2 :colorscheme snow<CR>
 
 " ***************** END COLORSCHEME ***************************
 
-
-" toggle background light/dark automatically 
-noremap <leader>bg :let &background = ( &background == "dark"? "light" : "dark" ) <CR>
-
 " added 2022-11-04
-set background=light
+set background=dark
+"to toggle them automatically for you:
+noremap <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+
 
 " to allow italics in vim 
 " https://hobo.house/2017/07/17/using-italics-with-vim-in-your-terminal/
@@ -777,7 +661,6 @@ function! Filename()
     " s:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/:\~/DONAGHS/:
 endfunction
 
-nmap <leader>d :call Filename()<cr>
 
 "====================================================
 " to Ur_Journal.md 
@@ -968,12 +851,7 @@ map <leader>tt :terminal zsh<CR>
 " same for work journal
 " nmap <leader>wj :!wj<CR>
 "
-"Swap vertical split to hor
-map <leader>th <C-w>t<C-w>H
-map <leader>tk <C-w>t<C-w>K
 
-" Capitalize/minusculize letter under cursor
-nnoremap <leader>u v~
 
 " Open a file with the appropriate application - in the background 
 " relative path
@@ -995,38 +873,42 @@ nnoremap <leader>k :set nomore<Bar>:ls<Bar>:set more<CR>:b<Space>
 "
 " === Leader ===
 
-" NOTE: This is just a sorted collection for information purposes only.
-" NOTE: <leader> may appear in other sections too. 
+" setting custom leader to comma. Needs to be set early!
+let mapleader=','
+
 
 " ######################################################################################
 " <leader> + non-alphabetic
 " ######################################################################################
 
-" handy goto start of line and down one line ;; conflicts with 'next f/w/' etc.
-" nnoremap <leader><leader> ^
 
 "<leader>; to go to start of line and delete all blanks to the first word/ text i.e. shift text to start of line where it does not begin at col 0
-nnoremap <leader>; 0:s/^\s*//g<cr>
+nnoremap <leader>@ 0:s/^\s*//g<cr>
 
-" Use , / to highlight point in file
+"<leader>@ delete blanks at end of a line (like <leader>; to delete leading blanks
+nnoremap <leader>$ :s/\s*$//<cr>
+
+
+" --- EASYMOTION PLUGIN --- 
+" Use , / to highlight point in file. easymotion keybindings - for fast navigation within a file
 map <leader>/ <Plug>(easymotion-bd-w) 
 nmap <leader>/ <Plug>(easymotion-overwin-w) 
+" --- END_EASYMOTION --- 
 
-" SURROUNDING
+" --- SURROUNDING ---
 " <leader>" to surround a word with "word"
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 
 "<leader>' surround a word with 'word'
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
 
-"<leader>_ to surround a word with _word_ (Single Underline)
-" nnoremap <leader>_ viw<esc>a_<esc>bi_<esc>lel
+"<leader>_ to surround a word with _word_ (Single Underline) hence ,su
+nnoremap <leader>su viw<esc>a_<esc>bi_<esc>lel
 
-" surround a word with __word__ (Double Underline)
-" nnoremap <leader>)_ viw<esc>a__<esc>bi__<esc>lel
-" noremap du F<space>wi__<esc>a__<esc>lel
-" nnoremap <leader>- viw<esc>a__<esc>bi__<esc>lel
-"END_SURROUNDING
+" surround a word with __word__ (Double Underline) hence ,du
+nnoremap <leader>du viw<esc>a__<esc>bi__<esc>lel
+
+" --- END_SURROUNDING ---
 
 
 
@@ -1046,29 +928,19 @@ inoremap <leader>c @dm -
 "<leader>c to nmap dc 0i@dm -<left><right><space>
 nnoremap <leader>c 0i@dm -<left><right><space>
 
-"<leader> d to insert full filepath into current buffer in normal mode
+"<leader>d to insert full filepath into current buffer in normal mode
 " nnoremap <leader>d :put=expand('%:p')<cr>
 inoremap <leader>d <C-R>=expand("%:p:h")<CR>
 nnoremap <leader>d :call Filename()<cr>
 
+
 " Toggle/Open a file explorer to the right 
 " nnoremap <leader>e :Lex!<cr> " NOTE ,e is now mapped to change colorscheme below. I use ranger for navigating <leader>f
 
-"<leader>f to call up ranger file manager
+" use <leader>f to call up ranger file manager
 let g:ranger_map_keys = 0
 noremap <leader>f :Ranger<cr>
 
-"<leader>j to call the function SendHunk()
-nmap <leader>j :call SendHunk()<cr>
-
-" https://stackoverflow.com/questions/53664/how-to-effectively-work-with-multiple-files-in-vim
-nnoremap <leader>k :set nomore<Bar>:ls<Bar>:set more<CR>:b<Space>
-
-" open an explorer window in the current directory
-nnoremap <leader>m :tabedit %:p:h<CR>
-
-"<leader>n to open journal.org for access to snippets
-" nmap <leader>n :!jumpapp emacs<cr>
 
 "<leader>p to paste from system clipboard
 nnoremap <leader>p :set paste<cr> "+p :set nopaste<cr>
@@ -1096,6 +968,8 @@ nnoremap <leader>y "+y
 "<leader>x to close split (the one with cursor in it) COPY - SEE SPLITS BELOW
 noremap <leader>x <c-w>c<cr>
 
+" --- FZF ---
+" :FZF 
 "<leader>z to set the following to get fuzzy-finder FZF in vim working (and other plugins?)
 nmap <leader>z :FZF<cr> 
 
