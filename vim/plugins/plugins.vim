@@ -40,6 +40,9 @@ Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 " https://github.com/dracula/dracula-theme.git
 " Plug 'https://github.com/dracula/vim.git'
 
+" tomorrow-night - added 2023-12-26
+Plug 'chriskempson/base16-vim'
+
 " iceberg - added 2022-11-04
 Plug 'https://github.com/cocopon/iceberg.vim.git'
 
@@ -47,8 +50,6 @@ Plug 'https://github.com/cocopon/iceberg.vim.git'
 Plug 'https://github.com/sainnhe/everforest' 
 " a bit faint?
 
-" tomorrow-night - added 2023-12-26
-Plug 'chriskempson/base16-vim'
 
 " ____________   END THEMES _______________________________
 

@@ -2,6 +2,9 @@ filename vim-digraphs.md
 
 see also ~/.cheat/vim_special_chars.md
 
+see also [WinCompose](https://github.com/samhocevar/wincompose) and 
+https://raw.githubusercontent.com/mirror/libX11/master/nls/en_US.UTF-8/Compose.pre
+
 Two methods to insert digraphs: in INSERT mode
 1. Ctrl K                   {char1} {char2}
 2. (with :set digraph on)   {char1} BS {char2} where BS is BACKSPACE
@@ -19,6 +22,7 @@ Two methods to insert digraphs: in INSERT mode
 ²	2S	0xb2	178	SUPERSCRIPT TWO
 ³	3S	0xb3	179	SUPERSCRIPT THREE
 ´	''	0xb4	180	ACUTE ACCENT
+‘   6'  2018        single quote                                Handy in .md files when ' causes issues
 µ	My	0xb5	181	MICRO SIGN µ
 ¶	PI	0xb6	182	PILCROW SIGN
 ·	.M	0xb7	183	MIDDLE DOT

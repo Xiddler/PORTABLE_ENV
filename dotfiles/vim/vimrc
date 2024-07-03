@@ -1,4 +1,5 @@
 "{{{ Preliminaries
+
 " === Preliminaries
 " Consider further splitting this big file into the following:
 " source $HOME/.vim/settings/plugins.vim
@@ -8,32 +9,40 @@
 "
 "
 " }}}
+" {{{ =============
+"
+"}}}
+" {{{ VIMRC
+"
+" }}}
 "{{{ Minimum Settings
 
-" filepath: /home/donagh/PORTABLE_ENV/dotfiles/vim/.vimrc
+" Base filepath: /home/donagh/PORTABLE_ENV/dotfiles/vim/.vimrc
 
 " === Min settings === 
 " cf. /usr/share/vim/vim82/defaults.vim 
 " 'set nocompatible' is never necessary in a vimrc file. When Vim detects a user vimrc file, it automatically sets nocompatible. 
 " set backspace=start,eol,indent  no longer needed
 
-" My minimal .vimrc location 
-" I have a minimal .vimrc available --> /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc
+" Minimal .vimrc location 
+" /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc
+" usage:
 " vvim <afile> is an alias on Toshiba for this — no folding, no plugins, horrible!
 
 "inoremap jk <esc>
 set <esc>=jk 
 
-
 " use spacebar to enter command mode. This matches doom-emacs for me and my muscle memory
 nnoremap <space> :
 
+
+" encoding
 set encoding=utf-8
 " set fileencoding=utf-8
 "
 " Better COPY & PASTE
-" When you want to paste large blocks of code into vim, press F2 before you
-" paste. At the bottom you should see ``-- INSERT (paste) --``.
+" When you want to paste large blocks of code into vim, press F2 before you paste. 
+" At the bottom you should see ``-- INSERT (paste) --``.
 set pastetoggle=<F2>
 set clipboard=unnamed
 
@@ -44,28 +53,15 @@ set undolevels=500
 " Rendering — added 2024-04-25
 set ttyfast
 
-"}}}
-"{{{ GNU Stow 
+" Open new split panes to right and bottom, which feels more natural than Vim's default
+set splitbelow
+set splitright
 
 " === GNU Stow === 
 
 " As of 2022-03-19 I am using stow to manage the symlinking of my dotfiles.
 " See $HOME/PORTABLE_ENV/dotfiles/README.md 
 " Usage: On a new install -> %~ stow vim  will automatically create the necessary symlinks from this folder 
-" }}}
-" {{{ Custom shortcuts 
-
-
-" nav within the command mode - up and down for previous commands
-cmap <C-j> <Down>
-cmap <C-k> <Up>
-cmap <C-h> <Left>
-cmap <C-l> <Right>
-
-
-" use — (Mdash i.e. digraph -M) instead of - (normal dash) " this prevents making lines into a bullet list
-inoremap lh —
-
 
 " }}}
 "{{{ MYVIMRC 
@@ -75,21 +71,52 @@ inoremap lh —
 let $RC="$HOME/.vimrc" " alternative to $MYVIMRC
 
 " NOTE: See Leader section below. These are just reminders.
-" open $MYVIMRC in a new tab Note: in CLI the alias is also vv  
+
 " nnoremap leader vv :tabe $MYVIMRC<CR> - this seems to invoke visual
-" mode...sometimes doesn't work
-" map leader vv :tabe $MYVIMRC<CR>
-" nnoremap omv :tabe $MYVIMRC<CR>  Open My Vimrc
 " nnoremap leader vv :tabe $MYVIMRC<CR>
 
-" source $MYVIMRC - I can't seem to remember the keybinding...
+" source $MYVIMRC
 " nnoremap leader ss :so $MYVIMRC<CR>
 " nnoremap leader sv :so $MYVIMRC<CR>
 " nnoremap leader sm :so $MYVIMRC<CR>
 
+" === Runtimepath and path ===
 
+" to find runtimepaths use :set <enter> 
+"RUNTIMEPATH 
+" ~/.vim
+" ~/.vim/plugins/vim-commentary
+" ~/.vim/plugins/stellarized
+" ~/.vim/plugins/vim-airline
+" ~/.vim/plugins/ranger.vim
+" ~/.vim/plugins/vim-easymotion
+" ~/.vim/plugins/goyo.vim
+" ~/.vim/plugins/limelight.vim
+" ~/.vim/plugins/vim-markdown-folding
+" ~/.vim/pack/nightsense/start/stellarized
+" /usr/share/vim/vimfiles
+" /usr/share/vim/vim82
+" /usr/share/vim/vimfiles/after
+" ~/.vim/plugins/vim-markdown-folding/after
+" ~/.vim/after
+   
+" :set runtimepath?
+let $RTP=split(&runtimepath, ',')[0] " allows :set rtp?
 
+" Path
+" :set path? path to search when using find / FZF 
+set path+=~/REPOS/
+
+" $VIMRUNTIME 
+" /usr/share/vim/vim90 
+
+" }}}
+" {{{ =============
+"
 "}}}
+" {{{ PLUGINS
+"
+" }}}
 " {{{ Plugins
 " === Plugins ===
 "
@@ -110,196 +137,173 @@ let $RC="$HOME/.vimrc" " alternative to $MYVIMRC
 " external sub-vimrc files for plugins, specifically  vim-plug using Plug
 " source /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim  
 " Rem: Use gf to open that file!
-source /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim 
+source /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim
+" source /home/donagh/PORTABLE_ENV/vim/plugins/base16-vim/colors/base16-default-dark.vim
+
+
 
 " Rem: Use gf to open that file! CHANGED LOCATION ON 2022-10-13 
 
+" List of plugins:
+" nnoremap lpl :!ls /home/donagh/PORTABLE_ENV/vim/plugins/<cr>
+
 
 "}}}
-" {{{ Navigating
-" === Navigating ===
+" {{{ Airline status line 
 
+"=== Airline status line ===
 
-" configure Vim to open a file at the last edited location
-
-au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
-                     \ exe "normal! g`\"" | endif
-
-" }}}
-" {{{ Lorem ipsum
+" set laststatus=2 "2 is for always show status line; 0 for never and 1 for when there are two windows
+" NOTE: built in is replaced by airline plugin (similar to Powerline in zsh)
 "
-ab lorem "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
+" AIRLINE
+"https://github.com/vim-airline/vim-airline and :h airline
+" config file at:  ??? It is configured here no?
+"
+" show other buffers in the status airline
+let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
+let g:airline#extensions#whitespace#enabled = 1
 
-" also Plugin :LoremIpsum
-" }}}
-"{{{ Buffers & Tabs 
+" Show just the filename instead of the full path/name
+" let g:airline#extensions#tabline#fnamemod = '%:t'
+let g:airline_section_c = '%t'
+" problem
+" column numbers are not showing fully / properly - how to fix this?
+" they are hidden behind the last section
+" configuration is here: /home/donagh/PORTABLE_ENV/vim/dotvim/plugins/vim-airline/autoload/airline/init.vim
+"
+" Airline Theme
+let g:airline_theme='tomorrow'
 
-" === Buffers ===
+" airline fonts
+" set guifont=Liberation\ Mono\ for\ Powerline\ 10 
+set guifont="Source Code Pro for Powerline 10"
+" the separator used on the left side
+  " let g:airline_left_sep='>'
 
-" TABS
-" Use (UPPERCASE) H and L to move to the previous/next tabpage & tab & tabs and next tab and previous tab: downside is you lose H and L defaults
-nnoremap H gT 
-nnoremap L gt
+" the separator used on the right side
+  " let g:airline_right_sep='<'
 
+" to automatically populate the g:airline_symbols dictionary with the powerline symbols.
+" let g:airline_powerline_fonts = 1
+" note:  /usr/share/fonts/OTF/PowerlineSymbols.otf: PowerlineSymbols:style=Medium 
+"  If you want to use plain ascii symbols, set this variable:
+  " let g:airline_symbols_ascii = 1
 
-" :bn (buffer next) without pressing enter button to make it like doom-emacs setting
-cnoremap bn :bn<cr> 
-nnoremap bn :bn<cr>
+" disable whitespace annoyance added 2022-11-15
+let g:airline#extensions#whitespace#enabled = 0
 
-" :bp (buffer previours) without pressing enter button to make it like doom-emacs setting
-cnoremap bp :bp<cr> 
-nnoremap bp :bp<cr>
-
-" Similar to my doom-emacs kill buffer
-cmap bk :wq<cr>
-
-" shortcut for the sudo trick - when you need to be sudo to save a file but you entered vim without being sudo 
-cmap w!! w !sudo tee % 
-
-" function to create a new scratch buffer
-function! Scratch()
-    split noswapfile hide enew
-    setlocal buftype=nofile
-    setlocal bufhidden=hide
-    "setlocal nobuflisted
-    "lcd ~
-    file scratch
-endfunction
-
-" open a doom-like scratch buffer
-cmap bx :call Scratch()<cr> 
-
-" list buffers - ready for a buffer number 
-nnoremap gb :ls<cr>:b<space>
-
-" the following being set means that filetype.vim is read at startup which sets autocmds for almost all filetypes under the sun.
-if has("autocmd")
-  filetype plugin indent on
+" if powerline font symbols are partially messed up
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
 endif
+let g:airline_symbols.space = "\ua0"
+" powerline symbols
+" cf. https://tuckerchapman.com/2020/09/15/getting-started-vim-airline/
 
-" to reduce the noticeable delay on performing certain commands
-" set timeout timeoutlen=3000 ttimeoutlen=100
-" set completeopt=menu,preview,longest "for a pop-up list of completions. (Replaces the existing one)
+" To have the column number 'colnr' showing in the statusline I put it in front of the line no. linenr 
+" (copied  from /home/donagh/PORTABLE_ENV/vim/plugins/vim-airline/autoload/airline/init.vim) 
+" if !exists('g:airline_section_z')
+   " if airline#util#winwidth() > 79
+     " let g:airline_section_z = airline#section#create(['windowswap', 'obsession', '%p%%', 'colnr', 'linenr', 'maxlinenr'])
+   " endif
+" endif
 
-" DONAGH
-
-" --- LINE NUMBERS ---
-
-set number
-set relativenumber " also Ctrl N to toggle this
-
-" toggle number and realativenumber
-" NOTE: See Leader section below
-" nnoremap leader r  :exe 'set nu!' &nu ? 'rnu!' : ''
-" nnoremap <C-n> :exe 'set nu!' &nu ? 'rnu!' : ''
-
-" --- MACROS --- 
-"This mapping makes macros even easier to remember: hit qq to record, q to stop recording, and Q to apply.
-nnoremap Q @@
-vnoremap Q :norm @q<cr>
-
-" Cursor
-set virtualedit=all " allows cursor to be moved anywhere in normal mode
-set noswapfile " prevents the automatic creation of swapfiles
-set hidden    " allows switching buffers without saving
-
-" dots instead of blanks?
-" set list
-" set listchars=tab:>\ ,trail:.
-
-
-" Wrapping lines 
-set wrap
-set wrapmargin=5 " set wm=5 
-set linebreak " prevents wrapping in the middle of a word 
-" set nolist    " adds a . to empty spaces; do I need this? "set list will show the dots for spaces and tabs
-" set textwidth=0 " set textwidth=80 for a hard wrap 
-
-
-" usage: see $VIMRUNTIME/docs/fzf.txt :FZF and :h fzf
-set rtp+=/usr/share/vim/vim82
-
-" --- NETRW STUFF ---
-" file browser
-let g:netrw_banner = 0          " don't show the banner at the top of the :Vex window, it looks cleaner
-let g:netrw_browse_split = 3    " open selected files in a new tab
-let g:netrw_liststyle = 3
-let g:netrw_winsize = 30
-
-
-" set previewpopup=height:10,width:60
-" set mouse+=a " copy lines without line numbers - can cause side issues
-
-" ---  Goyo --- for zen mode read/write 
-
-" Goyo & limelight toggle together - see gh for instructions to change this
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
-" Toggle goyo & limelight
-map <F9> :Goyo <cr>
-nnoremap <space>g<space> :Goyo <cr>
-
-" use emmet for html and css only
-let g:user_emmet_install_global = 0
-" autocmd FileType html,css EmmetInstall
-
-" }}}
-"{{{ Skeleton files
-
-" === Skeleton files ===
-
-" These provide templating for new files in  ~/.vim/vim_templates/skeleton.
-augroup skeletons
-    au!
-    autocmd BufNewFile *.* silent! execute '0r ~/.vim/vim_templates/skeleton.'.expand("<afile>:e")
-augroup END
-
-" }}} 
-"{{{ Splits 
-
-"  === Splits === 
-
-" Open new split panes to right and bottom, which feels more natural than Vim's default
-set splitbelow
-set splitright
-
-" NOTE: See Leader section below for shortcuts
-
-" Split Vertical alt = " noremap <leader>v <c-w>v<c-w>l
-" noremap leader vs :vsplit<cr>
-" Split Horizontal  alt = " noremap <leader>h <c-w>s<c-w>j
-" noremap leader hs :split<cr>
-" close split (with cursor in it)
-" noremap leader x <c-w>c<cr>
-
-" in splits - use ctrl-h/j/k/l to switch focus between splits
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
 
 
 "}}}
-" {{{ Spaces And Tabs  
-"=== Spaces And Tabs ===
+" {{{ =============
+"
+"}}}
+" {{{ CONFIGS
+"
+" }}}
+" {{{ Vim True Color support
 
-set tabstop=4       " tabs are at proper location 
-set shiftwidth=4    " indenting is 4 spaces
-set smarttab
-set softtabstop=4   " number of spaces in tab when editing
-set expandtab       " tabs are spaces
-set smartindent     " does the right thing (mostly) in programs
+" === Vim True Color support ===
 
+" https://github.com/morhetz/gruvbox/wiki/Terminal-specific
+
+"Neovim and recent Vim support true color terminal out of the box with just a single configuration option. No workarounds anymore. Just add 
+
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
+"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+" if (empty($TMUX))
+  if (has("nvim"))
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+" endif
 
 " }}}
-" {{{ UI Config 
+" {{{ Theme & Colors 
 
-"===  UI Config ===
+" === Theme  & Colors ===
+" to set a built-in colorscheme to, for example, inspect :digraphs which is " not good with 'iceberg'
+" :colorscheme <TAB> eg evening
+
+set termguicolors " but see below for TMUX config
+
+syntax enable
+
+" ***************** COLORSCHEME ***************************
+
+" colorscheme stellarized from nightsense -- seems to be gone from github;  note added 2022-11-03  
+"/home/donagh/PORTABLE_ENV/vim/dotvim/HELP/pack/nightsense/start/stellarised 
+" theme at 2022-11-03
+" colorscheme gruvbox
+" colorscheme dracula  
+" added 2022-11-04
+" colorscheme iceberg   
+"
+" added 2023-12-26
+colorscheme everforest
+
+
+" added 2023-12-26 - and my current preferred colorscheme
+" colorscheme base16-default-dark
+" colorscheme base16-atelier-cave
+    
+" NOTE: see Leader section below for changing colorscheme
+" keybindings to change colorscheme
+" nnoremap leader 6 :colorscheme base16-default-dark<CR> 
+" nnoremap leader 5 :colorscheme iceberg<CR>
+" nnoremap leader 4 :colorscheme evening<CR>
+" nnoremap leader 3 :colorscheme everforest<CR>
+" nnoremap leader 2 :colorscheme snow<CR>
+
+" ***************** END COLORSCHEME ***************************
+
+" added 2022-11-04
+set background=dark
+
+" NOTE: see Leader section below for changing background light/dary
+"to toggle them automatically for you:
+" noremap leader bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+
+
+" to allow italics in vim 
+" https://hobo.house/2017/07/17/using-italics-with-vim-in-your-terminal/
+" highlight Comment cterm=italic
+
+" }}}
+" {{{ Config 
+
+"===  Config ===
 
 set wildmenu            " visual autocomplete for command menu
+
 " allow  yanked text to be copied directly to the X11 system clipboard....not having to use the "+ register
 " makes y, d, c, p use the system clipboard 
 set clipboard=unnamedplus
+
 " make Y copy from cursor position to end of line (like C, D)
 nnoremap Y y$
 
@@ -317,12 +321,15 @@ autocmd Filetype markdown set conceallevel=2
 autocmd BufNewFile,BufRead,BufEnter *.md :set conceallevel=2
 
 
-" show italics
+" show italics in comments like this comment: Does terminal support, check with: 
+" ->% echo -e '\e[3m is this italics? \e[23m'
 highlight Comment cterm=italic
 
-" Make bold and italic stand out better - tesging
+" Make bold and italic stand out better - testing
 highlight htmlBold gui=bold guifg=#af0000 ctermfg=124
 highlight htmlItalic gui=italic guifg=#ff8700 ctermfg=214
+
+
 
 set updatetime=300 " reduce time for highlighting other references OPTIONAL - 2023-02-03
 set redrawtime=10000 " allow more time for loading syntax on large files OPTIONAL - 2023-02-03
@@ -338,6 +345,103 @@ set redrawtime=10000 " allow more time for loading syntax on large files OPTIONA
 " set hi link markdownError Normal " error with link?
 
 " }}}
+"{{{ Spelling 
+" === Spelling ===
+
+set dictionary=/run/media/donagh/USB128GB/REPOSITORIES/WORDS/Great_word_lists/TWL06_Scrabble_Word_List.txt
+" alternative (450,000+ words)
+" set dictionary=/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/WORDS/Great_word_lists/Word_lists/Linuxwords/linuxwords.1/dict
+
+"}}}
+" Abbreviations & typos {{{
+
+"=== Abbreviations & typos === 
+
+" Add header to .py file when starting a .py file
+" augroup templates
+  " au!
+  " read in template files
+  " autocmd BufNewFile *.py silent! execute '0r $HOME/PORTABLE_ENV/vim/py_header.temp'
+" augroup END 
+
+" join up line with line below 
+" nmap ,e g0jI<backspace> <esc>jg0 " Vim's J already does this! 
+
+
+" Abbreviations
+
+" use — (Mdash i.e. digraph -M) instead of - (normal dash) " this prevents making lines into a bullet list
+
+" insert @dm - Note: dc for donagh comments
+" nmap dc 0i@dm -<left><right><space>
+" nnoremap leader c 0i@dm -<left><right><space>
+" inoremap dms @dmsaying -
+" inoremap dme @dmediting -
+
+inoremap i<space> I<space>
+inoremap lh —
+inoremap £ # 
+
+" TYPOS
+inoremap iiv I've
+inoremap iid I'd
+inoremap iim I'm
+inoremap wiht with
+inoremap taht that
+inoremap dont don't
+inoremap didnt didn't
+inoremap wont won't
+inoremap cant can't
+inoremap waht what
+inoremap hte the
+
+
+" ABBREVIATIONS
+
+" need to be in insert mode for these then press <CR> or <SPC> to instigate 
+ab mys "Proactively engaged in making a better life for myself and/or others"
+ab FP 'Full Picture' 
+abb dtw - Donagh the Wise
+ab FQHB Fully Qualified Human Being 
+ab tbp The Big Picture
+
+" also Plugin :LoremIpsum
+ab lorem "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
+
+
+
+"}}}
+" {{{ My Digraphs & Special Characters
+" NOTE: Some are set in Custom Leader
+"
+" ==== DIGRAPHS ===
+" :digraphs   [ Note: my theme is not suitable for viewing the symbols ]
+" the 'iceberg' theme makes the symbols difficult to see. Instead, change the colorscheme - for example:
+" :colorscheme evening
+
+
+" Ctrl-K in insert mode
+" PR ▶  
+" PL ◀  
+" Eu € 
+" co ℅
+" <spc>0 °   degrees
+"
+" Special Characters
+" To insert a SC, in INSERT mode press Ctrl-V (or Ctrl-Q in, say Windows) and
+" insert the Unicode. Ex: for the SP `❯` In INSERT mode, Ctrl-Q then u276f
+" for ❯ alias a> 
+
+
+" inoremap ,a to ❯ (the pure-prompt symbol)
+" NOTE: see line 138 in Custom Leader for editing this or search (the pure-prompt symbol)
+" inoremap leader a  <C-Q>u276f
+
+ 
+
+ 
+
+"}}}
 " {{{ Searching 
 "=== Searching ===
 
@@ -407,140 +511,154 @@ nmap z; za
 
 
 " }}}
-" {{{ Theme & Colors 
+"{{{ Buffers & Tabs 
 
-" === Theme  & Colors ===
-" to set a built-in colorscheme to, for example, inspect :digraphs which is " not good with 'iceberg'
-" :colorscheme <TAB> eg evening
+" === Buffers ===
 
-set termguicolors " but see below for TMUX config
-
-syntax enable
-
-" ***************** COLORSCHEME ***************************
-
-" colorscheme stellarized from nightsense -- seems to be gone from github;  note added 2022-11-03  
-"/home/donagh/PORTABLE_ENV/vim/dotvim/HELP/pack/nightsense/start/stellarised 
-" theme at 2022-11-03
-" colorscheme gruvbox
-" colorscheme dracula  
-" added 2022-11-04
-" colorscheme iceberg   
-"
-" added 2023-12-26
-" colorscheme everforest
-
-" added 2023-12-26 - and my current preferred colorscheme
-colorscheme base16-default-dark
-    
-" keybindings to change colorscheme
-nnoremap <leader>6 :colorscheme base16-default-dark<CR> 
-nnoremap <leader>5 :colorscheme iceberg<CR>
-nnoremap <leader>4 :colorscheme evening<CR>
-nnoremap <leader>3 :colorscheme everforest<CR>
-nnoremap <leader>2 :colorscheme snow<CR>
-
-" ***************** END COLORSCHEME ***************************
-
-" added 2022-11-04
-set background=dark
-"to toggle them automatically for you:
-noremap <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+" TABS
+" Use (UPPERCASE) H and L to move to the previous/next tabpage & tab & tabs and next tab and previous tab: downside is you lose H and L defaults
+nnoremap H gT 
+nnoremap L gt
 
 
-" to allow italics in vim 
-" https://hobo.house/2017/07/17/using-italics-with-vim-in-your-terminal/
-highlight Comment cterm=italic
+" :bn (buffer next) without pressing enter button to make it like doom-emacs setting
+cnoremap bn :bn<cr> 
+nnoremap bn :bn<cr>
 
-" }}}
-" {{{ Vim True Color support
+" :bp (buffer previours) without pressing enter button to make it like doom-emacs setting
+cnoremap bp :bp<cr> 
+nnoremap bp :bp<cr>
 
-" === Vim True Color support ===
+" Similar to my doom-emacs kill buffer
+cmap bk :wq<cr>
 
-" https://github.com/morhetz/gruvbox/wiki/Terminal-specific
+" shortcut for the sudo trick - when you need to be sudo to save a file but you entered vim without being sudo 
+cmap w!! w !sudo tee % 
 
-"Neovim and recent Vim support true color terminal out of the box with just a single configuration option. No workarounds anymore. Just add 
 
-"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
-"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
-if (empty($TMUX))
-  if (has("nvim"))
-    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-  if (has("termguicolors"))
-    set termguicolors
-  endif
+" list buffers - ready for a buffer number 
+nnoremap gb :ls<cr>:b<space>
+
+" #################################################################
+
+" the following being set means that filetype.vim is read at startup which sets autocmds for almost all filetypes under the sun.
+if has("autocmd")
+  filetype plugin indent on
 endif
 
+" to reduce the noticeable delay on performing certain commands
+" set timeout timeoutlen=3000 ttimeoutlen=100
+" set completeopt=menu,preview,longest "for a pop-up list of completions. (Replaces the existing one)
+
+" DONAGH
+
+" --- LINE NUMBERS ---
+
+set number
+set relativenumber " also Ctrl N to toggle this
+
+" toggle number and realativenumber
+" NOTE: See Leader section below
+" nnoremap leader r  :exe 'set nu!' &nu ? 'rnu!' : ''
+" nnoremap <C-n> :exe 'set nu!' &nu ? 'rnu!' : ''
+
+
+" Cursor
+set virtualedit=all " allows cursor to be moved anywhere in normal mode
+set noswapfile " prevents the automatic creation of swapfiles
+set hidden    " allows switching buffers without saving
+
+" dots instead of blanks?
+" set list
+" set listchars=tab:>\ ,trail:.
+
+
+" Wrapping lines 
+set wrap
+set wrapmargin=5 " set wm=5 
+set linebreak " prevents wrapping in the middle of a word 
+" set nolist    " adds a . to empty spaces; do I need this? "set list will show the dots for spaces and tabs
+" set textwidth=0 " set textwidth=80 for a hard wrap 
+
+
+" usage: see $VIMRUNTIME/docs/fzf.txt :FZF and :h fzf
+set rtp+=/usr/share/vim/vim82
+
+" --- NETRW STUFF ---
+" file browser
+let g:netrw_banner = 0          " don't show the banner at the top of the :Vex window, it looks cleaner
+let g:netrw_browse_split = 3    " open selected files in a new tab
+let g:netrw_liststyle = 3
+let g:netrw_winsize = 30
+
+
+" set previewpopup=height:10,width:60
+" set mouse+=a " copy lines without line numbers - can cause side issues
+
+" ---  Goyo --- for zen mode read/write 
+
+" Goyo & limelight toggle together - see gh for instructions to change this
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+" Toggle goyo & limelight
+map <F9> :Goyo <cr>
+nnoremap <space>g<space> :Goyo <cr>
+
+" use emmet for html and css only
+let g:user_emmet_install_global = 0
+" autocmd FileType html,css EmmetInstall
+
 " }}}
-" {{{ Airline status line 
+"{{{ Skeleton files
 
-"=== Airline status line ===
+" === Skeleton files ===
 
-" set laststatus=2 "2 is for always show status line; 0 for never and 1 for when there are two windows
-" NOTE: built in is replaced by airline plugin (similar to Powerline in zsh)
+" These provide templating for new files in  ~/.vim/vim_templates/skeleton.
+augroup skeletons
+    au!
+    autocmd BufNewFile *.* silent! execute '0r ~/.vim/vim_templates/skeleton.'.expand("<afile>:e")
+augroup END
+
+" }}} 
+" {{{ Spaces And Tabs  
+"=== Spaces And Tabs ===
+
+set tabstop=4       " tabs are at proper location 
+set shiftwidth=4    " indenting is 4 spaces
+set smarttab
+set softtabstop=4   " number of spaces in tab when editing
+set expandtab       " tabs are spaces
+set smartindent     " does the right thing (mostly) in programs
+
+
+" }}}
+"{{{ Latex
+
+"=== latex ===
+
+"vim-latex plugin
+let g:tex_flavor='latex'
 "
-" AIRLINE
-"https://github.com/vim-airline/vim-airline and :h airline
-" config file at:  ??? It is configured here no?
 "
-" show other buffers in the status airline
-let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
-let g:airline#extensions#whitespace#enabled = 1
-
-" Show just the filename instead of the full path/name
-" let g:airline#extensions#tabline#fnamemod = '%:t'
-let g:airline_section_c = '%t'
-" problem
-" column numbers are not showing fully / properly - how to fix this?
-" they are hidden behind the last section
-" configuration is here: /home/donagh/PORTABLE_ENV/vim/dotvim/plugins/vim-airline/autoload/airline/init.vim
-"
-" Airline Theme
-let g:airline_theme='tomorrow'
-
-" airline fonts
-" set guifont=Liberation\ Mono\ for\ Powerline\ 10 
-set guifont="Source Code Pro for Powerline 10"
-" the separator used on the left side
-  " let g:airline_left_sep='>'
-
-" the separator used on the right side
-  " let g:airline_right_sep='<'
-
-" to automatically populate the g:airline_symbols dictionary with the powerline symbols.
-" let g:airline_powerline_fonts = 1
-" note:  /usr/share/fonts/OTF/PowerlineSymbols.otf: PowerlineSymbols:style=Medium 
-"  If you want to use plain ascii symbols, set this variable:
-  " let g:airline_symbols_ascii = 1
-
-" disable whitespace annoyance added 2022-11-15
-let g:airline#extensions#whitespace#enabled = 0
-
-" if powerline font symbols are partially messed up
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
-" powerline symbols
-" cf. https://tuckerchapman.com/2020/09/15/getting-started-vim-airline/
-
-" To have the column number 'colnr' showing in the statusline I put it in front of the line no. linenr 
-" (copied  from /home/donagh/PORTABLE_ENV/vim/plugins/vim-airline/autoload/airline/init.vim) 
-" if !exists('g:airline_section_z')
-   " if airline#util#winwidth() > 79
-     " let g:airline_section_z = airline#section#create(['windowswap', 'obsession', '%p%%', 'colnr', 'linenr', 'maxlinenr'])
-   " endif
-" endif
-
-
-
 "}}}
+" LSP {{{
+" Language Server Protocol 
+" Alternatively use neovim 
+
+if executable('rust-analyzer')
+  au User lsp_setup call lsp#register_server({
+		\   'name': 'Rust Language Server',
+		\   'cmd': {server_info->['rust-analyzer']},
+		\   'whitelist': ['rust'],
+		\ })
+endif
+" }}}
+" {{{ =============
+"
+"}}}
+" {{{ FUNCTIONS
+"
+" }}}
 "{{{ Functions 
 
 " === Functions === 
@@ -552,8 +670,9 @@ endfunction
 " nnoremap <C-l>, :call Simple()<CR> " this works
 command Simple call Simple()
 
-" --- Lists --- 
-"
+" === LISTS === 
+
+" --- Bullet list ---
 
 " make dash bullet points 
 function! BulletList()
@@ -562,21 +681,23 @@ function! BulletList()
 endfunction
 
 " this is very slow compared to calling directly without the mapping. Why so?
-nmap <leader>b :call BulletList()<cr> 
+" nmap leader b :call BulletList()<cr> 
 
 " Donaghs version
 " function! Bullet_dash()
    " execute 'normal!'.'0i- \<Esc>j'
 " endfunction
 
+" --- Number list ---
+
 " make numbered list - first Visually select the lines
 " Note: The numbers above 9 will not be right aligned. So use the following function.
 " n for number
-vnoremap <leader>n :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR> 
-vnoremap <leader>nl :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR>  
+" vnoremap leader n :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR> 
+" vnoremap leader nl :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR>  
 
 " remove line numbers - first Visually select the lines
-vnoremap <leader>nr :s/^\(\d\)\{1,2\}\. // <CR>
+" vnoremap leader nr :s/^\(\d\)\{1,2\}\. // <CR>
 
 " numbered list but RIGHT aligned higher than no. 9 
 function! NumberList() range
@@ -594,7 +715,21 @@ function! NumberList() range
         let difsize=difsize-1
     endwhile
 endfunction
-command NL call NumberList()
+
+" :call NumberList()
+
+ " 1	donald
+ " 2	duck
+ " 3	daffy
+ " 4	duck
+ " 5	garry
+ " 6	goose
+ " 7	mickey
+ " 8	mouse
+ " 9	harry
+" 10	heron
+" 11	kerry
+" 12	kangaroo
 
 " --- SHORTEN SD64 filepath after pasting into vim ---
 function! Neat_DONAGH()
@@ -662,6 +797,19 @@ function! Filename()
 endfunction
 
 
+" function to create a new scratch buffer
+function! Scratch()
+    split noswapfile hide enew
+    setlocal buftype=nofile
+    setlocal bufhidden=hide
+    "setlocal nobuflisted
+    "lcd ~
+    file scratch
+endfunction
+
+" open a doom-like scratch buffer
+cmap bx :call Scratch()<cr> 
+
 "====================================================
 " to Ur_Journal.md 
 "====================================================
@@ -703,11 +851,10 @@ function SendHunk()
    " :redir! >> /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/5_Ur_Journal.md | silent echon @r | redir END
 endfunction
 
-nmap <leader>j :call SendHunk()<cr>
  
 " end UR_JOURNAL====================================================
 
-" Toggle slashes using <leader>t
+" Toggle slashes using leader t
 " a command and a mapping to easily toggle slashes in the current line, or a range of lines.
 " https://vim.fandom.com/wiki/Change_between_backslash_and_forward_slash
 
@@ -726,149 +873,19 @@ function! ToggleSlash(independent) range
   endfor
 endfunction
 command! -bang -range ToggleSlash <line1>,<line2>call ToggleSlash(<bang>1)
-noremap <silent> <leader>ts :ToggleSlash<CR>
+
+" noremap silent  leader ts :ToggleSlash<CR>
 
 " try it: C:\Users\don_l\Applications
 
    
 "}}}
-"{{{ Latex
-
-"=== latex ===
-
-"vim-latex plugin
-let g:tex_flavor='latex'
-"
+" {{{ =============
 "
 "}}}
-" LSP {{{
-" Language Server Protocol 
-" Alternatively use neovim 
-
-if executable('rust-analyzer')
-  au User lsp_setup call lsp#register_server({
-		\   'name': 'Rust Language Server',
-		\   'cmd': {server_info->['rust-analyzer']},
-		\   'whitelist': ['rust'],
-		\ })
-endif
+" {{{ MAPPINGS
+"
 " }}}
-" Customised {{{
-
-"=== Customised === 
-
-" Add header to .py file when starting a .py file
-" augroup templates
-  " au!
-  " read in template files
-  " autocmd BufNewFile *.py silent! execute '0r $HOME/PORTABLE_ENV/vim/py_header.temp'
-" augroup END 
-
-" join up line with line below 
-" nmap ,e g0jI<backspace> <esc>jg0 " Vim's J already does this! 
-
-
-" Abbreviations
-
-" insert @dm - Note: dc for donagh comments
-" nmap dc 0i@dm -<left><right><space>
-nnoremap <leader>c 0i@dm -<left><right><space>
-" inoremap dms @dmsaying -
-" inoremap dme @dmediting -
-"
-
-" open an explorer window in the current directory
-" nnoremap <leader>m :tabedit %:p:h<CR>
-nnoremap <leader>m :tabedit %:p<CR>
-
-" nnoremap <leader>m ^d0
-inoremap <leader>c @dm - 
-" while using the MacAir I have these abbreviations
-" I have found the way to do it on the MacAir inside System Settings
-inoremap i<space> I<space>
-" inoremap dont don't
-" inoremap cant can't
-inoremap iiv I've
-inoremap iid I'd
-inoremap iim I'm
-inoremap £ # 
-inoremap wiht with
-inoremap taht that
-inoremap dont don't
-inoremap didnt didn't
-inoremap wont won't
-inoremap cant can't
-" inoremap ie<space> i.e. 
-" inoremap <space>ot to
-inoremap waht what
-
-" when mistyping ot instead of the word to  - but this causes long delays...
-" espanso wouldn't work 
-" inoremap <space>ot<space> to
-" inoremap gto<space> got
-" inoremap nto<space> not
-inoremap hte the
-
-" Timestamps
-" inoremap 
-" inoremap qq <C-R>=strftime("%Y-%m-%d")<CR>
-" inoremap aq <C-R>=strftime("%Y-%m-%d_%H:%M")<CR>
-"
-
-
-" nnoremap dms 0i@DMSaying -<left><right><right>
-" inoremap dms @DMSaying -<left><right><right> 
-
-" need to be in insert mode for these then press <CR> or <SPC> to instigate 
-ab mys "Proactively engaged in making a better life for myself and/or others"
-ab FP 'Full Picture' 
-abb dtw - Donagh the Wise
-ab lorem "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
-ab FQHB Fully Qualified Human Being 
-
-ab tbp The Big Picture
-
-
-" for the vim-notes plugin. ~/.vim/misc/notes/user
-" adds .txt suffix to new notes
-:let g:notes_directories = ['/home/donagh/PORTABLE_ENV/Notes', '/home/donagh/.vim/misc/notes/user']
-:let g:notes_suffix = '.txt'
-
-" Splits - change default position of new splits
-set splitbelow splitright
-"
-" open a terminal within vim
-map <leader>tt :terminal zsh<CR>
-
-" toggle between terminal split and code split
-
-" open today's markdown journal in a new tab
-" nmap <leader>mj :tabe /home/donagh/DONAGHS/personal/journal/$(date +%Y)/$(date +%m)/$(date +%d)-$(date +%m).md<cr>
-" open yesterday's markdown journal in a new tab
-" nmap <leader>my :tabe /home/donagh/DONAGHS/personal/journal/$(date +%Y)/$(date +%m)/$(date +%d-1)-$(date +%m).md<cr>
-" /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/journal/2022/02/03-02.md
-" nmap <leader>mj :!mj<CR>
-" same for work journal
-" nmap <leader>wj :!wj<CR>
-"
-
-
-" Open a file with the appropriate application - in the background 
-" relative path
-" nnoremap gX :silent :execute "!xdg-open" expand('%:p:h') . "/" . expand("<cfile>") " &"<cr>
-" what about absolute path ?  the folllowing doesn't work 
-" nnoremap gX :silent :execute "!xdg-open" expand('%:p') . "/" . expand("<cfile>") " &"<cr>
-
-
-" use gf to open a file even if it does not exist yet
-map gf :edit <cfile><cr>
-
-
-" combine :ls and :bn to open / navigate buffers
-" https://stackoverflow.com/questions/53664/how-to-effectively-work-with-multiple-files-in-vim
-nnoremap <leader>k :set nomore<Bar>:ls<Bar>:set more<CR>:b<Space>
-
-"}}}
 "{{{ Leader 
 "
 " === Leader ===
@@ -941,6 +958,9 @@ nnoremap <leader>d :call Filename()<cr>
 let g:ranger_map_keys = 0
 noremap <leader>f :Ranger<cr>
 
+" combine :ls and :bn to open / navigate buffers
+" https://stackoverflow.com/questions/53664/how-to-effectively-work-with-multiple-files-in-vim
+nnoremap <leader>k :set nomore<Bar>:ls<Bar>:set more<CR>:b<Space>
 
 "<leader>p to paste from system clipboard
 nnoremap <leader>p :set paste<cr> "+p :set nopaste<cr>
@@ -1026,9 +1046,10 @@ map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR
 
 " keybindings to change colorscheme
 nnoremap <leader>6 :colorscheme base16-default-dark<CR> 
-nnoremap <leader>g :colorscheme iceberg<CR>
-nnoremap <leader>e :colorscheme evening<CR>
-nnoremap <leader>v :colorscheme everforest<CR>
+nnoremap <leader>5 :colorscheme iceberg<CR>
+nnoremap <leader>4 :colorscheme evening<CR>
+nnoremap <leader>3 :colorscheme everforest<CR>
+nnoremap <leader>2 :colorscheme snow<CR>
 
 
 
@@ -1044,6 +1065,7 @@ nnoremap <leader>v :colorscheme everforest<CR>
 " ######################################################################################
 " <leader> for bullet numbering
 " ######################################################################################
+" Note: see also :call NumberList() above
 "<leader>n VISUAL for inserting bullet numbers
 vnoremap <leader>n :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR> 
 vnoremap <leader>nl :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR>  
@@ -1058,43 +1080,47 @@ vnoremap <leader>nr :s/^\(\d\)\{1,2\}\. // <CR>
 "
 "
 " }}}
-" {{{ My Digraphs & Special Characters
-" NOTE: Some are set in Custom Leader
-"
-" ==== DIGRAPHS ===
-" :digraphs   [ Note: my theme is not suitable for viewing the symbols ]
-" the 'iceberg' theme makes the symbols difficult to see. Instead, change the colorscheme - for example:
-" :colorscheme evening
+" {{{ Donaghs mappings
 
 
-" Ctrl-K in insert mode
-" PR ▶  
-" PL ◀  
-" Eu € 
-" co ℅
-" <spc>0 °   degrees
-"
-" Special Characters
-" To insert a SC, in INSERT mode press Ctrl-V (or Ctrl-Q in, say Windows) and
-" insert the Unicode. Ex: for the SP `❯` In INSERT mode, Ctrl-Q then u276f
-" for ❯ alias a> 
+" nav within the command mode - up and down for previous commands — avoids having to stretch for the arrow keys
+cmap <C-j> <Down>
+cmap <C-k> <Up>
+cmap <C-h> <Left>
+cmap <C-l> <Right>
 
 
-" inoremap ,a to ❯ (the pure-prompt symbol)
-" NOTE: see line 138 in Custom Leader for editing this or search (the pure-prompt symbol)
-" inoremap <leader>a  <C-Q>u276f
+" --- MACROS --- 
+"This mapping makes macros even easier to remember: hit qq to record, q to stop recording, and Q to apply.
+nnoremap Q @@
+vnoremap Q :norm @q<cr>
 
- 
+" open a file in a new tab
+map gf :tabe <cfile><cr>
+" rem: gT and gt to navigate through tabs
+" test gf with: /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/TESTING/afile.md
 
- 
+" }}}
+"{{{ Splits 
 
-"}}}
-"{{{ Spelling 
-" === Spelling ===
+"  === Splits === 
 
-set dictionary=/run/media/donagh/USB128GB/REPOSITORIES/WORDS/Great_word_lists/TWL06_Scrabble_Word_List.txt
-" alternative (450,000+ words)
-" set dictionary=/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/WORDS/Great_word_lists/Word_lists/Linuxwords/linuxwords.1/dict
+
+" NOTE: See Leader section below for shortcuts
+
+" Split Vertical alt = " noremap leader v <c-w>v<c-w>l
+" noremap leader vs :vsplit<cr>
+" Split Horizontal  alt = " noremap leader h <c-w>s<c-w>j
+" noremap leader hs :split<cr>
+" close split (with cursor in it)
+" noremap leader x <c-w>c<cr>
+
+" in splits - use ctrl-h/j/k/l to switch focus between splits
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
 
 "}}}
 " {{{ Custom Movements 
@@ -1128,10 +1154,6 @@ cmap w<space> :w<cr>
 " even shorter journey to s
 cmap s<space> :w<cr>
 
-" open a file in a new tab
-map gf :tabe <cfile><cr>
-" rem: gT and gt to navigate through tabs
-" test gf with: /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/TESTING/afile.md
 "
 " EXITS
 " write/quit with :ww and :xx (which are keybindings that work for me in doom-emacs)
@@ -1166,36 +1188,6 @@ cmap xx :q!<cr>
 " ,z            :: FZF
 
 " }}}
-" {{{ Runtimepath and path 
-
-" === Runtimepath and path ===
-
-" to find runtimepaths use :set <enter> 
-"RUNTIMEPATH 
-" ~/.vim
-" ~/.vim/plugins/vim-commentary
-" ~/.vim/plugins/stellarized
-" ~/.vim/plugins/vim-airline
-" ~/.vim/plugins/ranger.vim
-" ~/.vim/plugins/vim-easymotion
-" ~/.vim/plugins/goyo.vim
-" ~/.vim/plugins/limelight.vim
-" ~/.vim/plugins/vim-markdown-folding
-" ~/.vim/pack/nightsense/start/stellarized
-" /usr/share/vim/vimfiles
-" /usr/share/vim/vim82
-" /usr/share/vim/vimfiles/after
-" ~/.vim/plugins/vim-markdown-folding/after
-" ~/.vim/after
-   
-" :set runtimepath?
-let $RTP=split(&runtimepath, ',')[0] " allows :set rtp?
-
-" Path
-" :set path? path to search when using find / FZF 
-set path+=~/REPOS/
-
-" $VIMRUNTIME 
-" /usr/share/vim/vim90 
-
-" }}}
+" {{{ =============
+"
+"}}}

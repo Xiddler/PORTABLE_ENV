@@ -10,7 +10,7 @@
 let s:configuration = everforest#get_configuration()
 let s:palette = everforest#get_palette(s:configuration.background, s:configuration.colors_override)
 let s:path = expand('<sfile>:p') " the path of this script
-let s:last_modified = 'Tue Oct 24 16:39:47 UTC 2023'
+let s:last_modified = 'Tue Jun 25 13:38:33 UTC 2024'
 let g:everforest_loaded_file_types = []
 
 if !(exists('g:colors_name') && g:colors_name ==# 'everforest' && s:configuration.better_performance)
@@ -165,6 +165,10 @@ if s:configuration.transparent_background == 2
   call everforest#highlight('TabLine', s:palette.grey2, s:palette.bg3)
   call everforest#highlight('TabLineFill', s:palette.grey1, s:palette.none)
   call everforest#highlight('TabLineSel', s:palette.bg0, s:palette.statusline1)
+  if has('nvim')
+    call everforest#highlight('WinBar', s:palette.grey1, s:palette.none, 'bold')
+    call everforest#highlight('WinBarNC', s:palette.grey0, s:palette.none)
+  endif
 else
   call everforest#highlight('StatusLine', s:palette.grey1, s:palette.bg2)
   call everforest#highlight('StatusLineTerm', s:palette.grey1, s:palette.bg1)
@@ -173,6 +177,10 @@ else
   call everforest#highlight('TabLine', s:palette.grey2, s:palette.bg3)
   call everforest#highlight('TabLineFill', s:palette.grey1, s:palette.bg1)
   call everforest#highlight('TabLineSel', s:palette.bg0, s:palette.statusline1)
+  if has('nvim')
+    call everforest#highlight('WinBar', s:palette.grey1, s:palette.bg2, 'bold')
+    call everforest#highlight('WinBarNC', s:palette.grey1, s:palette.bg1)
+  endif
 endif
 if s:configuration.dim_inactive_windows
   call everforest#highlight('VertSplit', s:palette.bg4, s:palette.bg_dim)
@@ -189,23 +197,33 @@ call everforest#highlight('debugBreakpoint', s:palette.bg0, s:palette.red)
 call everforest#highlight('ToolbarButton', s:palette.bg0, s:palette.green)
 if has('nvim')
   call everforest#highlight('Substitute', s:palette.bg0, s:palette.yellow)
-  highlight! link WinBarNC Grey
+  if s:configuration.diagnostic_text_highlight
+    call everforest#highlight('DiagnosticError', s:palette.red, s:palette.bg_red)
+    call everforest#highlight('DiagnosticUnderlineError', s:palette.none, s:palette.bg_red, 'undercurl', s:palette.red)
+    call everforest#highlight('DiagnosticWarn', s:palette.yellow, s:palette.bg_yellow)
+    call everforest#highlight('DiagnosticUnderlineWarn', s:palette.none, s:palette.bg_yellow, 'undercurl', s:palette.yellow)
+    call everforest#highlight('DiagnosticInfo', s:palette.blue, s:palette.bg_blue)
+    call everforest#highlight('DiagnosticUnderlineInfo', s:palette.none, s:palette.bg_blue, 'undercurl', s:palette.blue)
+    call everforest#highlight('DiagnosticHint', s:palette.green, s:palette.bg_green)
+    call everforest#highlight('DiagnosticUnderlineHint', s:palette.none, s:palette.bg_green, 'undercurl', s:palette.green)
+  else
+    call everforest#highlight('DiagnosticError', s:palette.red, s:palette.none)
+    call everforest#highlight('DiagnosticUnderlineError', s:palette.none, s:palette.none, 'undercurl', s:palette.red)
+    call everforest#highlight('DiagnosticWarn', s:palette.yellow, s:palette.none)
+    call everforest#highlight('DiagnosticUnderlineWarn', s:palette.none, s:palette.none, 'undercurl', s:palette.yellow)
+    call everforest#highlight('DiagnosticInfo', s:palette.blue, s:palette.none)
+    call everforest#highlight('DiagnosticUnderlineInfo', s:palette.none, s:palette.none, 'undercurl', s:palette.blue)
+    call everforest#highlight('DiagnosticHint', s:palette.green, s:palette.none)
+    call everforest#highlight('DiagnosticUnderlineHint', s:palette.none, s:palette.none, 'undercurl', s:palette.green)
+  endif
   highlight! link DiagnosticFloatingError ErrorFloat
   highlight! link DiagnosticFloatingWarn WarningFloat
   highlight! link DiagnosticFloatingInfo InfoFloat
   highlight! link DiagnosticFloatingHint HintFloat
-  highlight! link DiagnosticError ErrorText
-  highlight! link DiagnosticWarn WarningText
-  highlight! link DiagnosticInfo InfoText
-  highlight! link DiagnosticHint HintText
   highlight! link DiagnosticVirtualTextError VirtualTextError
   highlight! link DiagnosticVirtualTextWarn VirtualTextWarning
   highlight! link DiagnosticVirtualTextInfo VirtualTextInfo
   highlight! link DiagnosticVirtualTextHint VirtualTextHint
-  highlight! link DiagnosticUnderlineError ErrorText
-  highlight! link DiagnosticUnderlineWarn WarningText
-  highlight! link DiagnosticUnderlineInfo InfoText
-  highlight! link DiagnosticUnderlineHint HintText
   highlight! link DiagnosticSignError RedSign
   highlight! link DiagnosticSignWarn YellowSign
   highlight! link DiagnosticSignInfo BlueSign
@@ -233,6 +251,7 @@ if has('nvim')
   highlight! link LspReferenceText CurrentWord
   highlight! link LspReferenceRead CurrentWord
   highlight! link LspReferenceWrite CurrentWord
+  highlight! link LspInlayHint InlayHints
   highlight! link LspCodeLens VirtualTextInfo
   highlight! link LspCodeLensSeparator VirtualTextHint
   highlight! link LspSignatureActiveParameter Search
@@ -390,6 +409,11 @@ elseif s:configuration.current_word ==# 'grey background'
 else
   call everforest#highlight('CurrentWord', s:palette.none, s:palette.none, s:configuration.current_word)
 endif
+if s:configuration.inlay_hints_background ==# 'none'
+  highlight! link InlayHints LineNr
+else
+  call everforest#highlight('InlayHints', s:palette.grey1, s:palette.bg_dim)
+endif
 " Define a color for each LSP item kind to create highlights for nvim-cmp, aerial.nvim, nvim-navic and coc.nvim
 let g:everforest_lsp_kind_color = [
       \ ["Array", "Aqua"],
@@ -542,16 +566,20 @@ highlight! link TSType YellowItalic
 highlight! link TSTypeBuiltin YellowItalic
 highlight! link TSTypeDefinition YellowItalic
 highlight! link TSTypeQualifier Orange
-highlight! link TSURI markdownUrl
+call everforest#highlight('TSURI', s:palette.blue, s:palette.none, 'underline')
 highlight! link TSVariable Fg
 highlight! link TSVariableBuiltin PurpleItalic
-if has('nvim-0.8.0')
+if has('nvim-0.8')
   highlight! link @annotation TSAnnotation
   highlight! link @attribute TSAttribute
   highlight! link @boolean TSBoolean
   highlight! link @character TSCharacter
   highlight! link @character.special TSCharacterSpecial
   highlight! link @comment TSComment
+  highlight! link @comment.error TSDanger
+  highlight! link @comment.note TSNote
+  highlight! link @comment.todo TSTodo
+  highlight! link @comment.warning TSWarning
   highlight! link @conceal Grey
   highlight! link @conditional TSConditional
   highlight! link @constant TSConstant
@@ -560,7 +588,10 @@ if has('nvim-0.8.0')
   highlight! link @constructor TSConstructor
   highlight! link @debug TSDebug
   highlight! link @define TSDefine
-  highlight! link @error TSError
+  highlight! link @diff.delta diffChanged
+  highlight! link @diff.minus diffRemoved
+  highlight! link @diff.plus diffAdded
+  highlight! link @error TSError " This has been removed from nvim-treesitter
   highlight! link @exception TSException
   highlight! link @field TSField
   highlight! link @float TSFloat
@@ -568,18 +599,47 @@ if has('nvim-0.8.0')
   highlight! link @function.builtin TSFuncBuiltin
   highlight! link @function.call TSFunctionCall
   highlight! link @function.macro TSFuncMacro
+  highlight! link @function.method TSMethod
+  highlight! link @function.method.call TSMethodCall
   highlight! link @include TSInclude
   highlight! link @keyword TSKeyword
+  highlight! link @keyword.conditional TSConditional
+  highlight! link @keyword.debug TSDebug
+  highlight! link @keyword.directive TSPreProc
+  highlight! link @keyword.directive.define TSDefine
+  highlight! link @keyword.exception TSException
   highlight! link @keyword.function TSKeywordFunction
+  highlight! link @keyword.import TSInclude
   highlight! link @keyword.operator TSKeywordOperator
+  highlight! link @keyword.repeat TSRepeat
   highlight! link @keyword.return TSKeywordReturn
+  highlight! link @keyword.storage TSStorageClass
   highlight! link @label TSLabel
+  highlight! link @markup.emphasis TSEmphasis
+  highlight! link @markup.environment TSEnvironment
+  highlight! link @markup.environment.name TSEnvironmentName
+  highlight! link @markup.heading TSTitle
+  highlight! link @markup.link TSTextReference
+  highlight! link @markup.link.label TSStringSpecial
+  highlight! link @markup.link.url TSURI
+  highlight! link @markup.list TSPunctSpecial
+  highlight! link @markup.list.checked Green
+  highlight! link @markup.list.unchecked Ignore
+  highlight! link @markup.math TSMath
+  highlight! link @markup.note TSNote
+  highlight! link @markup.quote Grey
+  highlight! link @markup.raw TSLiteral
+  highlight! link @markup.strike TSStrike
+  highlight! link @markup.strong TSStrong
+  highlight! link @markup.underline TSUnderline
   highlight! link @math TSMath
   highlight! link @method TSMethod
   highlight! link @method.call TSMethodCall
+  highlight! link @module TSNamespace
   highlight! link @namespace TSNamespace
   highlight! link @none TSNone
   highlight! link @number TSNumber
+  highlight! link @number.float TSFloat
   highlight! link @operator TSOperator
   highlight! link @parameter TSParameter
   highlight! link @parameter.reference TSParameterReference
@@ -595,7 +655,10 @@ if has('nvim-0.8.0')
   highlight! link @string TSString
   highlight! link @string.escape TSStringEscape
   highlight! link @string.regex TSStringRegex
+  highlight! link @string.regexp TSStringRegex
   highlight! link @string.special TSStringSpecial
+  highlight! link @string.special.symbol TSSymbol
+  highlight! link @string.special.uri TSURI
   highlight! link @symbol TSSymbol
   highlight! link @tag TSTag
   highlight! link @tag.attribute TSTagAttribute
@@ -628,8 +691,10 @@ if has('nvim-0.8.0')
   highlight! link @uri TSURI
   highlight! link @variable TSVariable
   highlight! link @variable.builtin TSVariableBuiltin
+  highlight! link @variable.member TSField
+  highlight! link @variable.parameter TSParameter
 endif
-if has('nvim-0.9.0')
+if has('nvim-0.9')
   highlight! link @lsp.type.class TSType
   highlight! link @lsp.type.comment TSComment
   highlight! link @lsp.type.decorator TSFunction
@@ -653,7 +718,7 @@ if has('nvim-0.9.0')
   highlight! link @lsp.type.type TSType
   highlight! link @lsp.type.typeParameter TSTypeDefinition
   highlight! link @lsp.type.variable TSVariable
-  highlight! link DiagnosticUnnecessary WarningText
+  call everforest#highlight('DiagnosticUnnecessary', s:palette.grey1, s:palette.none)
 endif
 highlight! link TSModuleInfoGood Green
 highlight! link TSModuleInfoBad Red
@@ -674,7 +739,7 @@ highlight! link CocPumMenu Pmenu
 highlight! link CocMenuSel PmenuSel
 highlight! link CocDisabled Grey
 highlight! link CocSnippetVisual DiffAdd
-highlight! link CocInlayHint LineNr
+highlight! link CocInlayHint InlayHints
 highlight! link CocNotificationProgress Green
 highlight! link CocNotificationButton PmenuSel
 highlight! link CocSemClass TSType
@@ -735,8 +800,8 @@ highlight! link LspWarningHighlight WarningText
 highlight! link LspInformationHighlight InfoText
 highlight! link LspHintHighlight HintText
 highlight! link lspReference CurrentWord
-highlight! link lspInlayHintsType LineNr
-highlight! link lspInlayHintsParameter LineNr
+highlight! link lspInlayHintsType InlayHints
+highlight! link lspInlayHintsParameter InlayHints
 highlight! link LspSemanticType TSType
 highlight! link LspSemanticClass TSType
 highlight! link LspSemanticEnum TSType
@@ -765,7 +830,7 @@ highlight! link YcmErrorLine ErrorLine
 highlight! link YcmWarningLine WarningLine
 highlight! link YcmErrorSection ErrorText
 highlight! link YcmWarningSection WarningText
-highlight! link YcmInlayHint LineNr
+highlight! link YcmInlayHint InlayHints
 highlight! link YcmErrorText VirtualTextError
 highlight! link YcmWarningText VirtualTextWarning
 if !has('nvim') && has('textprop') && !exists('g:YCM_HIGHLIGHT_GROUP')
@@ -1184,6 +1249,7 @@ call everforest#highlight('BufferTabpages', s:palette.grey1, s:palette.bg_dim, '
 call everforest#highlight('BufferTabpageFill', s:palette.bg_dim, s:palette.bg_dim)
 " }}}
 " rcarriga/nvim-notify {{{
+call everforest#highlight('NotifyBackground', s:palette.none, s:palette.bg0)
 highlight! link NotifyERRORBorder Red
 highlight! link NotifyWARNBorder Yellow
 highlight! link NotifyINFOBorder Green
@@ -1257,8 +1323,29 @@ highlight! link TargetFileName Grey
 call everforest#highlight('InclineNormalNC', s:palette.grey1, s:palette.bg2)
 " }}}
 " echasnovski/mini.nvim {{{
+call everforest#highlight('MiniAnimateCursor', s:palette.none, s:palette.none, 'reverse,nocombine')
+if s:configuration.float_style ==# 'dim'
+  call everforest#highlight('MiniFilesTitleFocused', s:palette.green, s:palette.bg_dim, 'bold')
+else
+  call everforest#highlight('MiniFilesTitleFocused', s:palette.green, s:palette.bg2, 'bold')
+endif
+call everforest#highlight('MiniHipatternsFixme', s:palette.bg0, s:palette.red, 'bold')
+call everforest#highlight('MiniHipatternsHack', s:palette.bg0, s:palette.yellow, 'bold')
+call everforest#highlight('MiniHipatternsNote', s:palette.bg0, s:palette.blue, 'bold')
+call everforest#highlight('MiniHipatternsTodo', s:palette.bg0, s:palette.green, 'bold')
+call everforest#highlight('MiniIconsAzure', s:palette.blue, s:palette.none)
+call everforest#highlight('MiniIconsBlue', s:palette.blue, s:palette.none)
+call everforest#highlight('MiniIconsCyan', s:palette.aqua, s:palette.none)
+call everforest#highlight('MiniIconsGreen', s:palette.green, s:palette.none)
+call everforest#highlight('MiniIconsGrey', s:palette.grey2, s:palette.none)
+call everforest#highlight('MiniIconsOrange', s:palette.orange, s:palette.none)
+call everforest#highlight('MiniIconsPurple', s:palette.purple, s:palette.none)
+call everforest#highlight('MiniIconsRed', s:palette.red, s:palette.none)
+call everforest#highlight('MiniIconsYellow', s:palette.yellow, s:palette.none)
 call everforest#highlight('MiniIndentscopePrefix', s:palette.none, s:palette.none, 'nocombine')
 call everforest#highlight('MiniJump2dSpot', s:palette.orange, s:palette.none, 'bold,nocombine')
+call everforest#highlight('MiniJump2dSpotAhead', s:palette.aqua, s:palette.none, 'nocombine')
+call everforest#highlight('MiniJump2dSpotUnique', s:palette.yellow, s:palette.none, 'bold,nocombine')
 call everforest#highlight('MiniStarterCurrent', s:palette.none, s:palette.none, 'nocombine')
 call everforest#highlight('MiniStatuslineDevinfo', s:palette.grey1, s:palette.bg1)
 call everforest#highlight('MiniStatuslineFileinfo', s:palette.grey1, s:palette.bg1)
@@ -1279,21 +1366,75 @@ call everforest#highlight('MiniTestEmphasis', s:palette.none, s:palette.none, 'b
 call everforest#highlight('MiniTestFail', s:palette.red, s:palette.none, 'bold')
 call everforest#highlight('MiniTestPass', s:palette.green, s:palette.none, 'bold')
 call everforest#highlight('MiniTrailspace', s:palette.none, s:palette.red)
-highlight! link MiniStarterItemBullet Grey
-highlight! link MiniStarterItemPrefix Yellow
-highlight! link MiniStarterQuery Blue
-highlight! link MiniStatuslineFilename Grey
-highlight! link MiniStatuslineModeInactive Grey
+highlight! link MiniAnimateNormalFloat NormalFloat
+highlight! link MiniClueBorder FloatBorder
+highlight! link MiniClueDescGroup DiagnosticFloatingWarn
+highlight! link MiniClueDescSingle NormalFloat
+highlight! link MiniClueNextKey DiagnosticFloatingHint
+highlight! link MiniClueNextKeyWithPostkeys DiagnosticFloatingError
+highlight! link MiniClueSeparator DiagnosticFloatingInfo
+highlight! link MiniClueTitle FloatTitle
 highlight! link MiniCompletionActiveParameter LspSignatureActiveParameter
 highlight! link MiniCursorword CurrentWord
 highlight! link MiniCursorwordCurrent CurrentWord
+highlight! link MiniDepsChangeAdded diffAdded
+highlight! link MiniDepsChangeRemoved diffRemoved
+highlight! link MiniDepsHint DiagnosticHint
+highlight! link MiniDepsInfo DiagnosticInfo
+highlight! link MiniDepsMsgBreaking DiagnosticWarn
+highlight! link MiniDepsPlaceholder Comment
+highlight! link MiniDepsTitle Title
+highlight! link MiniDepsTitleError DiffDelete
+highlight! link MiniDepsTitleSame DiffChange
+highlight! link MiniDepsTitleUpdate DiffAdd
+highlight! link MiniDiffOverAdd DiffAdd
+highlight! link MiniDiffOverChange DiffText
+highlight! link MiniDiffOverContext DiffChange
+highlight! link MiniDiffOverDelete DiffDelete
+highlight! link MiniDiffSignAdd GreenSign
+highlight! link MiniDiffSignChange BlueSign
+highlight! link MiniDiffSignDelete RedSign
+highlight! link MiniFilesBorder FloatBorder
+highlight! link MiniFilesBorderModified DiagnosticFloatingWarn
+highlight! link MiniFilesCursorLine CursorLine
+highlight! link MiniFilesDirectory Directory
+highlight! link MiniFilesFile NormalFloat
+highlight! link MiniFilesNormal NormalFloat
+highlight! link MiniFilesTitle FloatTitle
 highlight! link MiniIndentscopeSymbol Grey
 highlight! link MiniJump Search
+highlight! link MiniJump2dDim Comment
+highlight! link MiniMapNormal NormalFloat
+highlight! link MiniMapSymbolCount Special
+highlight! link MiniMapSymbolLine Title
+highlight! link MiniMapSymbolView Delimiter
+highlight! link MiniNotifyBorder FloatBorder
+highlight! link MiniNotifyNormal NormalFloat
+highlight! link MiniNotifyTitle FloatTitle
+highlight! link MiniOperatorsExchangeFrom IncSearch
+highlight! link MiniPickBorder FloatBorder
+highlight! link MiniPickBorderBusy DiagnosticFloatingWarn
+highlight! link MiniPickBorderText FloatTitle
+highlight! link MiniPickHeader DiagnosticFloatingHint
+highlight! link MiniPickIconDirectory Directory
+highlight! link MiniPickIconFile MiniPickNormal
+highlight! link MiniPickMatchCurrent CursorLine
+highlight! link MiniPickMatchMarked Visual
+highlight! link MiniPickMatchRanges DiagnosticFloatingHint
+highlight! link MiniPickNormal NormalFloat
+highlight! link MiniPickPreviewLine CursorLine
+highlight! link MiniPickPreviewRegion IncSearch
+highlight! link MiniPickPrompt DiagnosticFloatingInfo
 highlight! link MiniStarterFooter Orange
 highlight! link MiniStarterHeader Yellow
 highlight! link MiniStarterInactive Comment
 highlight! link MiniStarterItem Normal
+highlight! link MiniStarterItemBullet Grey
+highlight! link MiniStarterItemPrefix Yellow
+highlight! link MiniStarterQuery Blue
 highlight! link MiniStarterSection Title
+highlight! link MiniStatuslineFilename Grey
+highlight! link MiniStatuslineInactive Grey
 highlight! link MiniSurround IncSearch
 highlight! link MiniTablineFill TabLineFill
 " }}}
@@ -1305,6 +1446,12 @@ call everforest#highlight('LightspeedUnlabeledMatch', s:palette.fg, s:palette.no
 call everforest#highlight('LightspeedPendingOpArea', s:palette.bg0, s:palette.green)
 highlight! link LightspeedMaskedChar Purple
 highlight! link LightspeedGreyWash Grey
+" }}}
+" nvim-neotest/neotest {{{
+highlight! link NeotestPassed GreenSign
+highlight! link NeotestFailed RedSign
+highlight! link NeotestRunning YellowSign
+highlight! link NeotestSkipped BlueSign
 " }}}
 endif
 " }}}
@@ -1657,10 +1804,10 @@ call everforest#highlight('markdownH3', s:palette.yellow, s:palette.none, 'bold'
 call everforest#highlight('markdownH4', s:palette.green, s:palette.none, 'bold')
 call everforest#highlight('markdownH5', s:palette.blue, s:palette.none, 'bold')
 call everforest#highlight('markdownH6', s:palette.purple, s:palette.none, 'bold')
-call everforest#highlight('markdownUrl', s:palette.blue, s:palette.none, 'underline')
 call everforest#highlight('markdownItalic', s:palette.none, s:palette.none, 'italic')
 call everforest#highlight('markdownBold', s:palette.none, s:palette.none, 'bold')
 call everforest#highlight('markdownItalicDelimiter', s:palette.grey1, s:palette.none, 'italic')
+highlight! link markdownUrl TSURI
 highlight! link markdownCode Green
 highlight! link markdownCodeBlock Aqua
 highlight! link markdownCodeDelimiter Aqua
@@ -1691,6 +1838,26 @@ highlight! link mkdListItem Red
 highlight! link mkdRule Purple
 highlight! link mkdDelimiter Grey
 highlight! link mkdId Yellow
+" }}}
+" nvim-treesitter/nvim-treesitter {{{
+if has('nvim-0.8')
+  highlight! link @markup.heading.1.markdown markdownH1
+  highlight! link @markup.heading.2.markdown markdownH2
+  highlight! link @markup.heading.3.markdown markdownH3
+  highlight! link @markup.heading.4.markdown markdownH4
+  highlight! link @markup.heading.5.markdown markdownH5
+  highlight! link @markup.heading.6.markdown markdownH6
+  highlight! link @markup.heading.1.marker.markdown @conceal
+  highlight! link @markup.heading.2.marker.markdown @conceal
+  highlight! link @markup.heading.3.marker.markdown @conceal
+  highlight! link @markup.heading.4.marker.markdown @conceal
+  highlight! link @markup.heading.5.marker.markdown @conceal
+  highlight! link @markup.heading.6.marker.markdown @conceal
+  if !has('nvim-0.10')
+    call everforest#highlight('@markup.italic', s:palette.none, s:palette.none, 'italic')
+    call everforest#highlight('@markup.strikethrough', s:palette.none, s:palette.none, 'strikethrough')
+  endif
+endif
 " }}}
 " syn_end }}}
 " syn_begin: vimwiki {{{
@@ -1778,7 +1945,7 @@ highlight! link htmlSpecialTagName RedItalic
 " }}}
 " nvim-treesitter/nvim-treesitter {{{
 highlight! link htmlTSText TSNone
-if has('nvim-0.8.0')
+if has('nvim-0.8')
   highlight! link @text.html htmlTSText
 endif
 " }}}
@@ -1907,10 +2074,11 @@ highlight! link jsClassMethodType Orange
 " }}}
 " nvim-treesitter/nvim-treesitter {{{
 highlight! link javascriptTSInclude Purple
-if has('nvim-0.8.0')
+if has('nvim-0.8')
   highlight! link @include.javascript javascriptTSInclude
+  highlight! link @keyword.import.javascript javascriptTSInclude
 endif
-if has('nvim-0.9.0')
+if has('nvim-0.9')
   highlight! link @lsp.typemod.variable.defaultLibrary.javascript TSConstBuiltin
   highlight! link @lsp.typemod.variable.defaultLibrary.javascriptreact TSConstBuiltin
 endif
@@ -2210,11 +2378,13 @@ highlight! link typescriptMathStaticProp Aqua
 " nvim-treesitter/nvim-treesitter {{{
 highlight! link typescriptTSInclude Purple
 highlight! link tsxTSConstructor TSType
-if has('nvim-0.8.0')
+if has('nvim-0.8')
   highlight! link @include.typescript typescriptTSInclude
+  highlight! link @keyword.import.typescript typescriptTSInclude
+  highlight! link @keyword.import.tsx typescriptTSInclude
   highlight! link @constructor.tsx tsxTSConstructor
 endif
-if has('nvim-0.9.0')
+if has('nvim-0.9')
   highlight! link @lsp.typemod.variable.defaultLibrary.typescript TSConstBuiltin
   highlight! link @lsp.typemod.variable.defaultLibrary.typescriptreact TSConstBuiltin
 endif
@@ -2381,7 +2551,7 @@ highlight! link luaDocTag Green
 " }}}
 " nvim-treesitter/nvim-treesitter {{{
 highlight! link luaTSConstructor luaBraces
-if has('nvim-0.8.0')
+if has('nvim-0.8')
   highlight! link @constructor.lua luaTSConstructor
 endif
 " }}}
@@ -2454,12 +2624,13 @@ highlight! link goVarArgs Grey
 highlight! link goTSInclude Purple
 highlight! link goTSNamespace Fg
 highlight! link goTSConstBuiltin AquaItalic
-if has('nvim-0.8.0')
+if has('nvim-0.8')
   highlight! link @include.go goTSInclude
   highlight! link @namespace.go goTSNamespace
+  highlight! link @module.go goTSNamespace
   highlight! link @constant.builtin.go goTSConstBuiltin
 endif
-if has('nvim-0.9.0')
+if has('nvim-0.9')
   highlight! link @lsp.typemod.variable.defaultLibrary.go goTSConstBuiltin
   highlight! link @lsp.type.namespace.go goTSNamespace
 endif
@@ -2849,10 +3020,10 @@ highlight! link jsonQuote Grey
 highlight! link jsonTSLabel jsonKeyword
 highlight! link jsonTSString jsonString
 highlight! link jsonTSStringEscape SpecialChar
-if has('nvim-0.8.0')
+if has('nvim-0.8')
   highlight! link @label.json jsonTSLabel
   highlight! link @string.json jsonTSString
-  highlight! link @string.escape jsonTSStringEscape
+  highlight! link @string.escape.json jsonTSStringEscape
 endif
 " }}}
 " syn_end }}}
@@ -2869,7 +3040,7 @@ highlight! link yamlTSString yamlString
 highlight! link yamlTSStringEscape SpecialChar
 highlight! link yamlTSBoolean yamlConstant
 highlight! link yamlTSConstBuiltin yamlConstant
-if has('nvim-0.8.0')
+if has('nvim-0.8')
   highlight! link @field.yaml yamlTSField
   highlight! link @string.yaml yamlTSString
   highlight! link @string.escape.yaml yamlTSStringEscape
@@ -2891,7 +3062,7 @@ highlight! link tomlTableArray tomlTable
 " nvim-treesitter/nvim-treesitter {{{
 highlight! link tomlTSProperty tomlKey
 highlight! link tomlTSString tomlString
-if has('nvim-0.8.0')
+if has('nvim-0.8')
   highlight! link @property.toml tomlTSProperty
   highlight! link @string.toml tomlTSString
 endif
@@ -2909,7 +3080,7 @@ highlight! link gitcommitArrow Grey
 highlight! link gitcommitFile Green
 " }}}
 " nvim-treesitter/nvim-treesitter {{{
-if has('nvim-0.8.0')
+if has('nvim-0.8')
   highlight! link @text.gitcommit TSNone
 endif
 " }}}
@@ -2931,6 +3102,32 @@ highlight! link helpCommand Aqua
 highlight! link helpExample Green
 highlight! link helpSpecial Blue
 highlight! link helpSectionDelim Grey
+" syn_end }}}
+" syn_begin: neotest-summary {{{
+" https://github.com/nvim-neotest/neotest
+if has('nvim')
+highlight! link NeotestNamespace Purple
+highlight! link NeotestFile Aqua
+highlight! link NeotestDir Directory
+highlight! link NeotestIndent NonText
+call everforest#highlight('NeotestExpandMarker', s:palette.bg5, s:palette.none)
+highlight! link NeotestAdapterName Title
+highlight! link NeotestMarked Orange
+highlight! link NeotestTarget Red
+endif
+" syn_end }}}
+" syn_begin: mason {{{
+" https://github.com/williamboman/mason.nvim
+call everforest#highlight('MasonHeader', s:palette.bg0, s:palette.green, 'bold')
+call everforest#highlight('MasonHeaderSecondary', s:palette.bg0, s:palette.orange, 'bold')
+highlight! link MasonHighlight Green
+highlight! link MasonHighlightSecondary Yellow
+call everforest#highlight('MasonHighlightBlock', s:palette.bg0, s:palette.aqua)
+call everforest#highlight('MasonHighlightBlockBold', s:palette.bg0, s:palette.aqua, 'bold')
+call everforest#highlight('MasonHighlightBlockSecondary', s:palette.bg0, s:palette.yellow)
+call everforest#highlight('MasonHighlightBlockBoldSecondary', s:palette.bg0, s:palette.yellow, 'bold')
+call everforest#highlight('MasonMuted', s:palette.grey0, s:palette.none)
+call everforest#highlight('MasonMutedBlock', s:palette.bg0, s:palette.grey0)
 " syn_end }}}
 " }}}
 

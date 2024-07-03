@@ -1,0 +1,3 @@
+[submodule "vim/plugins/vim-themes"]
+	path = vim/plugins/vim-themes
+	url = https://github.com/mswift42/vim-themes.git

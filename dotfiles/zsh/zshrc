@@ -1,5 +1,5 @@
 #  For use of tramp on doom emacs on Windows
-[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
+# [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
 
 #  XDG Base Directory Specification
 XDG_CONFIG_HOME="/home/donagh/.config"
@@ -118,8 +118,10 @@ fi
 # xinput disable 12 (or 13 - check with $ xinput list)
 
 
-# show italics in vim etc.
-# export TERM=xterm-256color-italic
+# show italics in vim comments etc.  -- see .vimrc for this
+# https://hobo.house/2017/07/17/using-italics-with-vim-in-your-terminal/
+# export TERM=xterm-256color
+export TERM=xterm-256color-italic
 # export TERM=xterm-256color-bold
 
 # machine
@@ -282,10 +284,6 @@ PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:
 
 # source /home/donagh/.local/bin/virtualenvwrapper.sh
 
-# export MANPATH="/usr/local/man:$MANPATH"
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
-
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -325,8 +323,6 @@ export EDITOR="vim"
 # the following shortcut alias means that pressing enter after just a 
 # file name with .md extension will automagically open it with vim. Hurrah!
 
-# Other aliases -- now taken care of in .zsh_aliases
-source $HOME/.zsh_aliases
 # shortcuts for activating venvs. pb python basic
 # git
 # speedtest
@@ -338,7 +334,7 @@ source $HOME/.zsh_aliases
 # bindkeys see also $ zle -al
 # switches to the command mode
 bindkey 'jk' vi-cmd-mode 
-# cx for clear screen
+# cx for clear screen -- doesn't work perfectly
 bindkey 'cx' clear-screen
 
 # / for search shell history

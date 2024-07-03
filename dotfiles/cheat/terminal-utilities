@@ -5,3 +5,6 @@
 # pop-up notification e.g. ->% notify-send -t 4000 "Hello Donagh" will open a pop-up for 4 seconds
 ->% notify-send "Hello Donagh"
 
+# Test if terminal supports italics
+->% echo -e "\e[3m is this italics? \e[23m"
+
