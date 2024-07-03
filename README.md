@@ -67,7 +67,9 @@ $ sudo curl -L http://install.ohmyz.sh | sh\
 but replace the .zshrc with the above one
 
 ## git
-** get the dot files onto the remote machine **\
+
+    get the dot files onto the remote machine 
+
 git clone https://github/Xiddler/dot_files.git\
 git config --global user.email "xiddler@gmail.com" &&   git config --global user.name "Donagh"
 
@@ -127,3 +129,13 @@ ttps://github.com/terryma/vim-multiple-cursors
 ## 2024-01-14
 
 Issue with new token. Updated to new one.
+
+# git submodules - JUNE 2024
+
+URL: https://git-scm.com/book/en/v2/Git-Tools-Submodules
+
+command: 
+->% git submodule add <git repo>
+
+Added plugins/vim-themes this way on 2024-07-03
+
