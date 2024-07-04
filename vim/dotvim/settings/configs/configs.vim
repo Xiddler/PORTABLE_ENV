@@ -1,4 +1,14 @@
-"{{{ Config
+"{{{ Preliminaries
+
+" List of config files
+
+" $MYVIMRC at $HOME/.vimrc
+" $HOME/.vim/settings/configs/configs.vim
+" $HOME/.vim/settings/functions/functions.vim
+" $HOME/.vim/settings/mappings/mappings.vim
+" $HOME/.vim/plugins/plugins.vim
+
+" These are symlinked from PORTABLE_ENV/
 "
 "}}}
 " {{{ Theme & Colors 
@@ -34,8 +44,9 @@ syntax enable
 colorscheme base16-default-dark
 " colorscheme base16-atelier-cave
     
-" NOTE: see Leader section below for changing colorscheme
+" NOTE: see Leader section for changing colorscheme in $HOME/.vim/settings/mappings/mappings.vim
 " keybindings to change colorscheme
+" nnoremap leader 6 :colorscheme base16-greescreen<CR> 
 " nnoremap leader 6 :colorscheme base16-default-dark<CR> 
 " nnoremap leader 5 :colorscheme iceberg<CR>
 " nnoremap leader 4 :colorscheme evening<CR>
@@ -281,6 +292,7 @@ set modelines=1
 
 " The following line shows the intro screen with grey background and blue font - reads kinda easy?
 highlight Folded guibg=black guifg=#6a6d6a
+
 " Other options:
 " highlight Folded guibg=grey guifg=blue
 " highlight Folded guibg=black guifg=grey

@@ -1,16 +1,18 @@
 "{{{ Preliminaries
 
 
-" === Preliminaries ===
+" The .vimrc is split into the following:
+
+" $MYVIMRC = $HOME/.vimrc                                                   " This file
+
+source $HOME/.vim/plugins/plugins.vim                                       " plugins
+source $HOME/.vim/settings/configs/configs.vim                              " configs
+source $HOME/.vim/settings/functions/functions.vim                          " functions
+source $HOME/.vim/settings/mappings/mappings.vim                            " mappings
 
 
-" The .vimrc is split into the following
-" $MYVIMRC                                                                  " This file
-source $HOME/.vim/plugins/plugins.vim                                       " DONE
-source $HOME/.vim/settings/configs/configs.vim                              " DONE
-source $HOME/.vim/settings/functions/functions.vim                          " DONE
-source $HOME/.vim/settings/mappings/mappings.vim"                           " DONE
 " These are symlinked from PORTABLE_ENV/
+" Use <leader>pl/co/fu/ma to open the relevant file
 " Completed 2024-07-04
 
 
@@ -22,7 +24,7 @@ source $HOME/.vim/settings/mappings/mappings.vim"                           " DO
 " }}}
 "{{{ Minimum Settings
 
-" Base filepath: /home/donagh/PORTABLE_ENV/dotfiles/vim/.vimrc
+" Base filepath: /home/donagh/PORTABLE_ENV/dotfiles/vim_rc/vimrc
 
 " === Min settings === 
 " cf. /usr/share/vim/vim82/defaults.vim 
@@ -146,7 +148,7 @@ set path+=~/REPOS/
 " source $HOME/.vim/settings/plugins/plugins.vim 
 " source /home/donagh/PORTABLE_ENV/vim/plugins/base16-vim/colors/base16-default-dark.vim
 
-" Rem: Use gf to open that file! CHANGED LOCATION ON 2024-07-03 to $HOME/.vim/settings/plugins/plugin  [[ 2022-10-13  ]]
+" Rem: Use gf to open that file! CHANGED LOCATION ON 2024-07-03 to $HOME/.vim/plugins/plugin  [[ 2022-10-13  ]]
 
 " List of plugins:
 " nnoremap lpl :!ls /home/donagh/PORTABLE_ENV/vim/plugins/<cr>
@@ -159,6 +161,7 @@ set path+=~/REPOS/
 " {{{ CONFIGS
 
 " $HOME/.vim/settings/configs/configs.vim                              
+" For Themes and UI settings
 
 " }}}
 " {{{ =============

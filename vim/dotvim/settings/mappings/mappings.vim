@@ -1,30 +1,44 @@
+"{{{ Preliminaries
 
-"{{{ Leader
+" List of config files
+
+" $MYVIMRC at $HOME/.vimrc
+" $HOME/.vim/settings/configs/configs.vim
+" $HOME/.vim/settings/functions/functions.vim
+" $HOME/.vim/settings/mappings/mappings.vim
+" $HOME/.vim/plugins/plugins.vim
+
+" These are symlinked from PORTABLE_ENV/
+
+"}}}
+"{{{ Leader_key
 " === Leader ===
 
 " setting custom leader to comma. Needs to be set early!
 let mapleader=','
+"}}}
+"{{{  Leader_key + non-alphabetic
+"{{{{ Del leading blanks Leader_key @
 
-
-" ######################################################################################
-" <leader> + non-alphabetic
-" ######################################################################################
-
-
-"<leader>; to go to start of line and delete all blanks to the first word/ text i.e. shift text to start of line where it does not begin at col 0
+"<leader>@ to delete leading blanks
+" go to start of line and delete all blanks to the first word/ text i.e. shift text to start of line where it does not begin at col 0
 nnoremap <leader>@ 0:s/^\s*//g<cr>
 
-"<leader>@ delete blanks at end of a line (like <leader>; to delete leading blanks
+"}}}}
+"{{{{ Del trailing blanks Leader_key $
+
+"<leader>$ to delete blanks trailing blanks
+"at end of a line (like <leader>@ to delete leading blanks
 nnoremap <leader>$ :s/\s*$//<cr>
 
-
-" --- EASYMOTION PLUGIN --- 
+"}}}}
+"{{{{ EASYMOTION PLUGIN Leader_key /
 " Use , / to highlight point in file. easymotion keybindings - for fast navigation within a file
 map <leader>/ <Plug>(easymotion-bd-w) 
 nmap <leader>/ <Plug>(easymotion-overwin-w) 
 " --- END_EASYMOTION --- 
-
-" --- SURROUNDING ---
+"}}}}
+"{{{{ SURROUNDING eg Leader_key "
 " <leader>" to surround a word with "word"
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 
@@ -38,28 +52,28 @@ nnoremap <leader>su viw<esc>a_<esc>bi_<esc>lel
 nnoremap <leader>du viw<esc>a__<esc>bi__<esc>lel
 
 " --- END_SURROUNDING ---
-
-
-
-" ######################################################################################
-" <leader> + single alphabetic
-" ######################################################################################
+"}}}}
+"}}}
+"{{{ Leader_key + single alphabetic
 
 "<leader>a to produce ❯ <-- the pure-prompt symbol
 inoremap <leader>a  <C-Q>u276f
 
-"<leader>b to insert bullets — this is very slow compared to calling directly without the mapping. Why so?
+"<leader>b to insert bullets 
+" this is very slow compared to calling directly without the mapping. Why so?
 nmap <leader>b :call BulletList()<cr> 
 
-"<leader>c to imap insert a prefix for comments by me
+"<leader>c to imap insert a prefix for comments by me           INSERT MODE
 inoremap <leader>c @dm - 
 
-"<leader>c to nmap dc 0i@dm -<left><right><space>
+"<leader>c to nmap dc 0i@dm -<left><right><space>               NORMAL MODE
 nnoremap <leader>c 0i@dm -<left><right><space>
 
 "<leader>d to insert full filepath into current buffer in normal mode
 " nnoremap <leader>d :put=expand('%:p')<cr>
-inoremap <leader>d <C-R>=expand("%:p:h")<CR>
+" INSERT MODE
+inoremap <leader>d <C-R>=expand("%:p:h")<CR>                    
+" NORMAL MODE
 nnoremap <leader>d :call Filename()<cr>
 
 
@@ -105,10 +119,21 @@ noremap <leader>x <c-w>c<cr>
 "<leader>z to set the following to get fuzzy-finder FZF in vim working (and other plugins?)
 nmap <leader>z :FZF<cr> 
 
+"}}}
+"{{{ Leader_key + multiple alphabetic
+ 
+" VIM CONFIG FILES
+" mappings for opening plugins files
+nnoremap <leader>pl :tabe $HOME/.vim/plugins/plugins.vim<cr>
 
-" ######################################################################################
-" <leader> + multiple alphabetic
-" ######################################################################################
+" mappings for opening configs files
+nnoremap <leader>co :tabe $HOME/.vim/settings/configs/configs.vim<cr>
+
+" mappings for opening mappings files
+nnoremap <leader>ma :tabe $HOME/.vim/settings/mappings/mappings.vim<cr>
+
+" mappings for opening mappings files
+nnoremap <leader>fu :tabe $HOME/.vim/settings/functions/functions.vim<cr>
 
 
 " vim-mundo " https://simnalamburt.github.io/vim-mundo/ ; shows the vim undo tree
@@ -119,27 +144,35 @@ nnoremap <leader>vv :tabe $MYVIMRC<CR>
 
 " source $MYVIMRC - I can't ever seem to remember the keybinding...
 nnoremap <leader>ss :so $MYVIMRC<CR>
-nnoremap <leader>sv :so $MYVIMRC<CR>
-nnoremap <leader>sm :so $MYVIMRC<CR>
+" nnoremap <leader>sv :so $MYVIMRC<CR>
+" nnoremap <leader>sm :so $MYVIMRC<CR>
+
+
+" calls the function ToggleSlash — see Functions in $HOME/.vim/settings/functions/functions.vim
+noremap <silent> <leader>ts :ToggleSlash<CR>
+" C:\donald\duck\micky\mouse
+
+" open a terminal within vim
+map <leader>tt :terminal zsh<CR>
+
+" ===== SPLIT_WINDOW ===== 
+
+" See SPLITS below for switching focus between splits
+
+"<leader>vs to Split Vertical alt = " noremap <leader>v <c-w>v<c-w>l
+noremap <leader>vs :vsplit<cr>
+
+"<leader>hs to Split Horizontal  alt = " noremap <leader>h <c-w>s<c-w>j
+noremap <leader>hs :split<cr>
+
+"<leader>x to close split (the one with cursor in it)
+" noremap leader x <c-w>c<cr>
 
 "<leader>th & tk to swap vertical split to hor
 map <leader>th <C-w>t<C-w>H
 map <leader>tk <C-w>t<C-w>K
 
-" calls the function ToggleSlash — see Functions above
-noremap <silent> <leader>ts :ToggleSlash<CR>
-
-" open a terminal within vim
-map <leader>tt :terminal zsh<CR>
-
-"<leader> for SPLITS
-"<leader>vs to Split Vertical alt = " noremap <leader>v <c-w>v<c-w>l
-noremap <leader>vs :vsplit<cr>
-"<leader>hs to Split Horizontal  alt = " noremap <leader>h <c-w>s<c-w>j
-noremap <leader>hs :split<cr>
-"<leader>x to close split (the one with cursor in it)
-noremap <leader>x <c-w>c<cr>
-"END_SPLITS
+"END_SPLIT_WINDOW
 
 "<leader>vz and vza to open .zshrc / .zsh_aliases in a new tab in vim
 nnoremap <leader>vza :tabe ~/.zsh_aliases <cr>
@@ -147,40 +180,24 @@ nnoremap <leader>vz :tabe ~/.zshrc <cr>
 
 " set width of Explorer window to 60 smaller
 " nnoremap <leader>ws <C-w>60<
-
-
-" ######################################################################################
-" <leader> for colorschemes
-" ######################################################################################
+"}}}
+"{{{ Leader_key for colorschemes
 
 "<leader>bg to toggle color darkness/lightness automatically 
 map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
 " keybindings to change colorscheme
+nnoremap <leader>7 :colorscheme base16-greenscreen<CR> 
 nnoremap <leader>6 :colorscheme base16-default-dark<CR> 
 nnoremap <leader>5 :colorscheme iceberg<CR>
 nnoremap <leader>4 :colorscheme evening<CR>
 nnoremap <leader>3 :colorscheme everforest<CR>
 nnoremap <leader>2 :colorscheme snow<CR>
 nnoremap <leader>1 :colorscheme Oldlace<CR>
+"}}}
+"{{{ Leader_key for bullet numbering
 
- 
-
-
-
-" ######################################################################################
-" <leader> for filetypes
-" ######################################################################################
-"<leader>n to insert the python main() incantation
-" python files only — shortcut for if __name__  = ,m
-" autocmd Filetype python inoremap <leader>n if __name__ ==  '__main__':<enter>
-
-
-
-" ######################################################################################
-" <leader> for bullet numbering
-" ######################################################################################
-" Note: see also :call NumberList() above
+" Note: see also :call NumberList() in functions [ use <leader>fu to enter that file ]
 "<leader>n VISUAL for inserting bullet numbers
 vnoremap <leader>n :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR> 
 vnoremap <leader>nl :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR>  
@@ -188,16 +205,11 @@ vnoremap <leader>nl :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR>
 "<leader>nr to remove line numbers - first Visually select the lines
 vnoremap <leader>nr :s/^\(\d\)\{1,2\}\. // <CR>
 
-
-" ######################################################################################
-" THE END
-" ######################################################################################
-"
-"
-" }}}
-" {{{ Donaghs mappings
+"}}}
+" {{{ My mappings
 
 
+" --- Ex mode navigation ---
 " nav within the command mode - up and down for previous commands — avoids having to stretch for the arrow keys
 cmap <C-j> <Down>
 cmap <C-k> <Up>
@@ -207,21 +219,20 @@ cmap <C-l> <Right>
 
 " --- MACROS --- 
 "This mapping makes macros even easier to remember: hit qq to record, q to stop recording, and Q to apply.
+" Replay the last used macro
 nnoremap Q @@
-vnoremap Q :norm @q<cr>
+" vnoremap Q :norm @q<cr>
 
 " open a file in a new tab
-map gf :tabe <cfile><cr>
+nnoremap gf :tabe <cfile><cr>
 " rem: gT and gt to navigate through tabs
-" test gf with: /run/media/donaghm/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/TESTING/afile.md
 
 " }}}
 "{{{ Splits 
 
-"  === Splits === 
+" see  SPLIT_WINDOW above for <leader> keys for splits
 
-
-" NOTE: See Leader section below for shortcuts
+" NOTE: See Leader section in mappings.vim for shortcuts
 
 " Split Vertical alt = " noremap leader v <c-w>v<c-w>l
 " noremap leader vs :vsplit<cr>
@@ -260,9 +271,8 @@ nnoremap j gj
 nnoremap k gk
 
 
-" save 
-" /home/donagh/.vimrc
-"
+" SAVES
+
 " Save to be the same as my doom-emacs keybindings [SPC] w [SPC]
 " (REM: This works because SPACEBAR is mapped to : above and cmap puts vim into Ex mode )
 cmap w<space> :w<cr>

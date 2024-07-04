@@ -1,11 +1,20 @@
+"{{{ Preliminaries
 
-" Lines  600 - 818 from old .vimrc
+" List of config files
+
+" $MYVIMRC at $HOME/.vimrc
+" $HOME/.vim/settings/configs/configs.vim
+" $HOME/.vim/settings/functions/functions.vim
+" $HOME/.vim/settings/mappings/mappings.vim
+" $HOME/.vim/plugins/plugins.vim
+
+" These are symlinked from PORTABLE_ENV/
+
+" To insert lines  600 - 818 from old .vimrc
 "  :r !sed -n 600,818p /home/donagh/.vimrc
-
-
-
-
-" === Functions === 
+"
+"}}}
+"{{{ Simple
 
 " - sample function
 function! Simple()
@@ -14,9 +23,8 @@ endfunction
 " nnoremap <C-l>, :call Simple()<CR> " this works
 command Simple call Simple()
 
-" === LISTS === 
-
-" --- Bullet list ---
+"}}}
+"{{{ Bullet list ---
 
 " make dash bullet points 
 function! BulletList()
@@ -31,8 +39,8 @@ endfunction
 " function! Bullet_dash()
    " execute 'normal!'.'0i- \<Esc>j'
 " endfunction
-
-" --- Number list ---
+"}}}
+"{{{ Number list 
 
 " make numbered list - first Visually select the lines
 " Note: The numbers above 9 will not be right aligned. So use the following function.
@@ -74,7 +82,8 @@ endfunction
 " 10	heron
 " 11	kerry
 " 12	kangaroo
-
+" }}}
+"{{{ Neat DONAGHS
 " --- SHORTEN SD64 filepath after pasting into vim ---
 function! Neat_DONAGH()
     " Nd = Neaten_donagh i.e. shorten the long filepath using ~
@@ -82,13 +91,15 @@ function! Neat_DONAGH()
     s:/run/media/donagh/USB128GB/DONAGHS/:\~/DONAGHS/:
 endfunction
 command Nd call Neat_DONAGH()
-
+"}}}
+"{{{ Neat REPOS
 function! Neat_REPOS()
     " Nr = Neaten_repos i.e. shorten the long filepath using ~
     s:/run/media/donagh/USB128GB/REPOSITORIES/:\~/REPOS/:
 endfunction
 command Nr call Neat_REPOS()
-
+"}}}
+"{{{ My Journal
 " function to open my journal for today in a new tab from vim (mj is the command I use in the shell)
 function! Myjournal()
     let year = strftime('%Y')
@@ -103,18 +114,8 @@ endfunction
 
 " edit / open today's journal - my journal 
 nmap mj :!$HOME/.scripts/markdown_journal.sh <cr> 
-
-
-" function to open my work journal in a new tab from vim (wj is the command I use in the shell)
-function! WorkJournal()
-    let path = '/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/means/'
-    let filen =  path.'work_journal.md'
-    execute ":tabe ".filen
-endfunction 
-
-" open today's markdown journal in a new tab in vim; NOT CURRENTLY USED; 
-" nmap wj :call WorkJournal()<cr>
-
+"}}}
+"{{{ Prose Mode
 " from https://blog.langworth.com/vim3 - finesse on Goyo 
 " also makes autocompletion pull words from the thesaurus and dictionary when I hit Tab 
 function! ProseMode()
@@ -133,14 +134,15 @@ endfunction
 
 command! ProseMode call ProseMode()
 nmap \p :ProseMode<CR>
-
+"}}}
+"{{{ Insert filepath
 " put shortened filename/path in the buffer
 function! Filename()
     put=expand('%:p')
     " s:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/:\~/DONAGHS/:
 endfunction
-
-
+"}}}
+"{{{ Scratch buffer
 " function to create a new scratch buffer
 function! Scratch()
     split noswapfile hide enew
@@ -153,7 +155,8 @@ endfunction
 
 " open a doom-like scratch buffer
 cmap bx :call Scratch()<cr> 
-
+"}}}
+"{{{ to Ur_journal
 "====================================================
 " to Ur_Journal.md 
 "====================================================
@@ -175,6 +178,8 @@ cmap bx :call Scratch()<cr>
 " to Ur_Journal.md 
 "====================================================
 " 2023
+"}}}
+"{{{ Send Hunk 
 
 function SendHunk()
     
@@ -194,9 +199,8 @@ function SendHunk()
     " this also worked 
    " :redir! >> /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/5_Ur_Journal.md | silent echon @r | redir END
 endfunction
-
- 
-" end UR_JOURNAL====================================================
+"}}}
+"{{{ Toggle / to \ & \ to /
 
 " Toggle slashes using leader t
 " a command and a mapping to easily toggle slashes in the current line, or a range of lines.
@@ -222,4 +226,5 @@ command! -bang -range ToggleSlash <line1>,<line2>call ToggleSlash(<bang>1)
 
 " try it: C:\Users\don_l\Applications
 
+"}}}
    

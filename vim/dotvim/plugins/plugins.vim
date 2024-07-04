@@ -1,5 +1,7 @@
-" Filepath  /home/donagh/PORTABLE_ENV/vim/vimrc_files/plugins.vim 
-" /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim
+"{{{ Introduction
+
+" Filepath  $HOME/PORTABLE_ENV/vim/vimrc_files/plugins.vim 
+" $HOME/PORTABLE_ENV/vim/plugins/plugins.vim
 
 " Plugin manager Plug https://github.com/junegunn/vim-plug 
 "
@@ -11,24 +13,22 @@
 " .vimrc --> ~/.vim/plugins
 " vim starts -->  ~/.vim/autoload/plug.vim 
 
-" Enable / Disable Plugins {{{
 " === Enable / Disable Plugins ===
 " 2022-02-13 Created this new - external - sub-vimrc file 
 " 2022-02-05  vim-plug started 
 " https://github.com/junegunn/vim-plug and https://github.com/junegunn/vim-plug/wiki/tutorial
 " Remember to :so % after adding a new Plug or just PlugInstall in any vim file
+"}}}
 
+call plug#begin('$HOME/PORTABLE_ENV/vim/dotvim/plugins')
 
-call plug#begin('/home/donagh/PORTABLE_ENV/vim/plugins')
-
-
+" {{{ Airline status line 
 
 " AIRLINE
 " Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'vim-airline/vim-airline' 
 Plug 'https://github.com/vim-airline/vim-airline-themes.git' 
 
-" {{{ Airline status line 
 " Moved from $MYVIMRC on 2024-07-03
 
 "=== Airline status line ===
@@ -50,7 +50,7 @@ let g:airline_section_c = '%t'
 " problem
 " column numbers are not showing fully / properly - how to fix this?
 " they are hidden behind the last section
-" configuration is here: /home/donagh/PORTABLE_ENV/vim/dotvim/plugins/vim-airline/autoload/airline/init.vim
+" configuration is here: $HOME/PORTABLE_ENV/vim/dotvim/plugins/vim-airline/autoload/airline/init.vim
 "
 " Airline Theme
 let g:airline_theme='tomorrow'
@@ -84,7 +84,7 @@ let g:airline_symbols.space = "\ua0"
 " cf. https://tuckerchapman.com/2020/09/15/getting-started-vim-airline/
 
 " To have the column number 'colnr' showing in the statusline I put it in front of the line no. linenr 
-" (copied  from /home/donagh/PORTABLE_ENV/vim/plugins/vim-airline/autoload/airline/init.vim) 
+" (copied  from $HOME/PORTABLE_ENV/vim/plugins/vim-airline/autoload/airline/init.vim) 
 " if !exists('g:airline_section_z')
    " if airline#util#winwidth() > 79
      " let g:airline_section_z = airline#section#create(['windowswap', 'obsession', '%p%%', 'colnr', 'linenr', 'maxlinenr'])
@@ -94,8 +94,9 @@ let g:airline_symbols.space = "\ua0"
 
 
 "}}}
+"{{{ Themes
 
-" ____________   THEMES _______________________________
+"____________   THEMES _______________________________
 " VIM THEME
 " for the following plugin, -> %cp -r ~/.vim/plugins/stellarized ~/.vim/pack/nightsense/start/      :: this seems to be necessary
 " nightsense seems gone from github Note added 2022-11-03  Plug 'nightsense/stellarized'              
@@ -119,10 +120,11 @@ Plug 'https://github.com/sainnhe/everforest'
 
 " vim-themes - added 2024-07-03
 Plug 'https://github.com/mswift42/vim-themes.git'
-
 " ____________   END THEMES _______________________________
+"}}}
+"{{{ Preferred plugins
 
-" ------------  PREFERRED PLUGINS -----------------------------------
+"------------  PREFERRED PLUGINS -----------------------------------
 
 " commentary i.e. gcc  etc. 
 Plug 'tpope/vim-commentary' " quick comment / uncomment plugin
@@ -164,18 +166,20 @@ Plug 'nightsense/snow'
 " A Vim plugin to visualizes the Vim undo tree
 " Plug 'https://github.com/simnalamburt/vim-mundo.git'
 
+"}}}
+"{{{  UI
 
-
-" ____________   UI  _______________________________
 " Goyo
 Plug 'https://github.com/junegunn/goyo.vim.git' " Nice zen mode 
 " Limelight
 Plug 'https://github.com/junegunn/limelight.vim.git' " Darkens non-focussed areas 
+
 " Tabular
 " Plug 'godlygeek/tabular'  " for aligning text
 
-
-" ____________   MARKDOWN   _______________________________
+"}}}
+"{{{ Markdown
+"____________   MARKDOWN   _______________________________
 " With none of these enabled ##'s are salmon-coloured - but no folding
 " Check if this displays headings - yes but loses coloured # as in vim-mardown-folding 
 " preservim/vim-vim-markdown  https://github.com/preservim/vim-markdown.git  (this one has more stars and seems more active....)
@@ -183,22 +187,23 @@ Plug 'https://github.com/junegunn/limelight.vim.git' " Darkens non-focussed area
 " vim-markdown
 Plug 'plasticboy/vim-markdown'
 
-" Latex 
-" Plug 'vim-latex/vim-latex'
 " the following plugin (vim-markdown) includes Syntax Concealing - use :set conceallevel=2
 " Plug 'https://github.com/preservim/vim-markdown'                        
 " the following hides the heading in markdown files - a problem (is this why plasticboy is better?) - <-- use :set foldignore=# 
 " Plug 'masukomi/vim-markdown-folding'
-"
+"}}}
+"{{{ LSP
+
 " ____________   Language Server Protocol _______________________________
 " 
 " Plug 'prabirshrestha/vim-lsp'
 
-call plug#end()
-"
 " }}}
 
-" Preferred Plugins {{{
+call plug#end()
+
+" {{{  Plugins Listing
+
 " NOTE: These are now managed using vim.plug (see above Enable / Disable Plugins)
 
 " === Preferred Plugins === 
@@ -208,8 +213,24 @@ call plug#end()
 " autoload contains plug.vim
 " pack/nightsense/start/stellarized
 " plugins - this is the location for Plug to place other plugins
-
+"
+"
 " CURRENT - CURRENT - CURRENT - CURRENT - CURRENT 
+" 2024-07-04 
+" vim-peekaboo: Already installed                                          
+" everforest: Already installed                                            
+" goyo.vim: Already installed                                              
+" vim-airline-themes: Already installed                                    
+" vim-airline: Already installed                                           
+" vim-commentary: Already installed                                        
+" snow: Already installed                                                  
+" vim-easymotion: Already installed                                        
+" iceberg.vim: Already installed                                           
+" vim-themes: Already installed                                            
+" base16-vim: Already installed                                            
+" ranger.vim: Already installed                                            
+" vim-markdown: Already installed
+"
 " 2022-11-15 
 
 " - Finishing ... Done!
@@ -228,7 +249,9 @@ call plug#end()
 " - vim-lsp: Already installed
 " - vim-markdown: Already installed
 " - vim-peekaboo: Already installed
-"
+
+
+
 " OLD - OLD - OLD - OLD - OLD - OLD - OLD - OLD  
 " donaghm [16:50 Tue 20/04] [~/.vim] 
 " -> % tree -L 2
@@ -337,7 +360,7 @@ call plug#end()
    " vim-orgmode
    " (prefers also to include speedating from tpope)
    " open .org files in vim
-   " guide at /home/donaghm/PORTABLE_ENV/vim/dotvim/pack/vim-orgmode/start/vim-orgmode/doc/orgguide.txt
+   " guide at $HOME/PORTABLE_ENV/vim/dotvim/pack/vim-orgmode/start/vim-orgmode/doc/orgguide.txt
    "  https://github.com/jceb/vim-orgmode
    "
    " speedating
