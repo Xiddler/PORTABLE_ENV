@@ -7,6 +7,8 @@ BU_pack/
 */*/*/.git
 *.ipynb
 *.ipynb_checkpoint
+dotvim/vim/plugins
+/home/donagh/.vim/plugins
 dotfiles/git/.gitconfig
 scratch.md # Shortcut -> % vx 
 tabular
