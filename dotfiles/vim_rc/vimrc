@@ -118,7 +118,9 @@ set path+=~/REPOS/
 "
 "}}}
 " {{{ PLUGINS 
-"
+
+" $HOME/PORTABLE_ENV/vim/dotvim/plugins/plugins.vim
+
 " === Plugins ===
 
 " 2024-07-03: The plugins folder in now symlinked to $HOME/.vim/settings/plugins    (see Preliminaries above)
@@ -155,19 +157,25 @@ set path+=~/REPOS/
 "
 "}}}
 " {{{ CONFIGS
-"
+
+" $HOME/.vim/settings/configs/configs.vim                              
+
 " }}}
 " {{{ =============
 "
 "}}}
 " {{{ FUNCTIONS
-"
+
+" $HOME/.vim/settings/functions/functions.vim                          
+
 " }}}
 " {{{ =============
 "
 "}}}
 " {{{ MAPPINGS
-"
+
+" $HOME/.vim/settings/mappings/mappings.vim
+
 " }}}
 " {{{ =============
 "

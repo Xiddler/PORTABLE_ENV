@@ -1,4 +1,4 @@
-# LOCATION: ~/PORTABLE_ENV/dotfiles/zsh
+# LOCATION: ~/PORTABLE_ENV/dotfiles/zsh_rc/zsh_aliases
 
 #{{{ NOTES
 ## In functions, remember the 'command' prefix "$@" if the "alias" has the same name as the command. 
@@ -347,18 +347,21 @@ sshrpi() { ssh -i ~/.ssh/id_rpi_2 donagh@192.168.1.24 }
 #}}}
 #{{{ DOTFILES
 # dot files shortcuts 
+# cat file
 alias -g cb='cat ~/.bashrc'
 alias -g cv='cat ~/.vimrc'
 alias -g cz='cat ~/.zshrc'
 alias -g cza='cat ~/.zsh_aliases'
+# source file
 alias -g sb='source ~/.bashrc'
 alias -g sz='source ~/.zshrc'
 alias -g sza='source ~/.zsh_aliases'
+# edit file
 alias -g vb='vim ~/.bashrc'
 alias -g vv='vim ~/.vimrc'
 alias -g vz="vim ~/.zshrc"
 alias -g vza="vim ~/.zsh_aliases"
-# grep a config file
+# grep file
 gza() { rg "$1" ~/.zsh_aliases }
 gz() { rg "$1" ~/.zshrc }
 gv() { rg "$1" ~/.vimrc }
@@ -367,13 +370,10 @@ gv() { rg "$1" ~/.vimrc }
 # git shortcuts - but see $alias from zsh
 alias cm='git commit -m '
 alias gcm='git commit -m '
-alias ggs='git status'
+
 alias gss='git status'
 alias gll="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all -n 15"
-alias ggx='git status'
-alias gst='git status'
 alias gaa='git add -A'
-alias gga='git add -A'
 # cf ~/.scripts/manage_all_git_repos.sh (on the laptop)
 alias -g g_run="$HOME/.scripts/manage_all_git_repos.sh" # list state of 4 main repos
 alias -g g_poe="$HOME/PORTABLE_ENV/"             # On github
