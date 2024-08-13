@@ -57,7 +57,18 @@ nnoremap <leader>du viw<esc>a__<esc>bi__<esc>lel
 "{{{ Leader_key + single alphabetic
 
 "<leader>a to produce ❯ <-- the pure-prompt symbol
-inoremap <leader>a  <C-Q>u276f
+" inoremap <leader>a  <C-Q>u276f ❯  " the pure-prompt symbol
+" mathematical right angle bracket ⟩  
+inoremap <leader>a  <C-Q>u27e9  
+
+" mathematical left angle bracket  ⟨  
+inoremap <leader>l  <C-Q>u27e8  
+
+" Other arrow symbols
+"<C-Q>O076 greater-than sign > (the keyboard symbol >)
+"<C-Q>u232a 〉
+"<C-Q>u203a single right-pointing angle quotation mark U+203A › 
+"<C-Q>u27e9 mathematical right angle bracket U+27E9 ⟩
 
 "<leader>b to insert bullets 
 " this is very slow compared to calling directly without the mapping. Why so?
@@ -75,6 +86,7 @@ nnoremap <leader>c 0i@dm -<left><right><space>
 inoremap <leader>d <C-R>=expand("%:p:h")<CR>                    
 " NORMAL MODE
 nnoremap <leader>d :call Filename()<cr>
+
 
 
 " Toggle/Open a file explorer to the right 
@@ -180,6 +192,13 @@ nnoremap <leader>vz :tabe ~/.zshrc <cr>
 
 " set width of Explorer window to 60 smaller
 " nnoremap <leader>ws <C-w>60<
+
+
+"<leader>z to make new-numbered lines
+nnoremap <leader>zz g$i<cr> <esc>x                                                                                                               x
+ 
+
+ 
 "}}}
 "{{{ Leader_key for colorschemes
 

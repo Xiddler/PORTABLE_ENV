@@ -12,6 +12,7 @@ Create new session              :: tmux new -s <name>
 Return to session               :: tmux attach-session -t <name>
 Kill everything                 :: tmux kill-session -a
 Kill session                    :: tmux kill-session -t <name>
+List sessions                   :: tmux list-sessions
 List current sessions           :: C-a s
 
 # general
@@ -105,7 +106,7 @@ bind-key C-a send-prefix
     Ctrl+B, and then ?: Display Help page in tmux.
 
 # Window Commands
-
+leader + 
     C: Create a new window.
     ,: Rename the current window.
     W: List the windows.
@@ -217,3 +218,6 @@ switch-client        switchc                  -- switch the client to another se
 unbind-key           unbind                   -- unbind a key
 unlink-window        unlinkw                  -- unlink a window
 wait-for             wait                     -- wait for an event or trigger it
+
+
+

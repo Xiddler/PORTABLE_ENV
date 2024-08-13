@@ -68,7 +68,7 @@ function! NumberList() range
     endwhile
 endfunction
 
-" :call NumberList()
+" first Visually select the lines then :call NumberList()
 
  " 1	donald
  " 2	duck

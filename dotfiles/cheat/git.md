@@ -466,6 +466,9 @@ eg In the folder ~/PORTABLE_ENV/tmux/
 
 # UNDOING
 
+## To undo the last commit
+->% git reset --hard <commithash> where <commithash> is the hash of the previous commit
+
 ## To demote a file from the staged/index("to be committed") list to the "not staged for commit" list
 
 ->% git reset HEAD <file>
@@ -509,6 +512,64 @@ Then `git diff --name-status dir1 dir2` outputs the following, showing the chang
 # find the directory path of all .git/ directories (i.e. git repos) in this directory
 
 ->% find . -type d -name "\.git" | xargs realpath 
+
+# archive a repo and tar & compress it
+
+->% cd $HOME/PORTABLE_ENV 
+->% git archive --format=tar.gz -o /tmp/my-repo.tar.gz --prefix=my-repo/ main
+->% ls /tmp
+my-repo.tar.gz
+
+Look at the difference in size ( 2024-07-04 )
+->% du -sh my-repo.tar.gz
+27M     my-repo.tar.gz
+
+->% cd $HOME
+->% du -sh PORTABLE_ENV
+196M    PORTABLE_ENV
+
+# count objects in the .git/ folder
+
+git count-objects -v
+
+❯ git count-objects -v              # 2024-07-11
+count: 2491
+size: 64964
+in-pack: 6766
+packs: 1
+size-pack: 39753
+prune-packable: 0
+garbage: 0
+size-garbage: 0
+
+
+# view the top 10 largest files in a repo, ordered by size
+
+    ->%  git rev-list --objects --all | grep -f <(git verify-pack -v .git/objects/pack/*.idx| sort -k 3 -n | cut -f 1 -d " " | tail -10)
+ 
+
+#  delete images (e.g., \*.jpg, \*.png, and \*.gif) existing in history
+
+->% git filter-branch -f --index-filter 'git rm --cached --ignore-unmatch "assets/*.jpg" "assets/*.png" "assets/*.gif"' --prune-empty --tag-name-filter cat -- --all
+
+
+
+
+# CLEANING UP A GIT REPO
+
+https://junyonglee.me/github/How-to-clean-up-git-repository/
+
+
+->%  rm -Rf .git/refs/original
+
+->% rm -Rf .git/logs/
+
+->% git gc --aggressive --prune=now
+
+
+
+
+
 
 # END 
 

@@ -12,6 +12,7 @@ Two methods to insert digraphs: in INSERT mode
 × (star)X
 † /-
 
+
 €   Eu  20ac   8364 EURO                                        [ alt. Digr =e ]
 £	Pd	0xe3	227 POUND SIGN 
 ℅   co  2105   8453 Care/of
@@ -38,6 +39,7 @@ Two methods to insert digraphs: in INSERT mode
 À	A!	0xc0	192	LATIN CAPITAL LETTER A WITH GRAVE 
 †	AE	0xc6	198
 ÷	-:	0xf7	247	DIVISION SIGN
+Arrows
 ≪   <* 
 ≫   *>
 》  +>

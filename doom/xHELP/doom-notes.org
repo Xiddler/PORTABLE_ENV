@@ -831,6 +831,7 @@ in org mode:
 \dagger dagger
 \pound pound
 \mdash mdash
+\pound
 
 ** tags :tags:
 

@@ -302,6 +302,7 @@ C-F --> forward one pane
 
 See also $HOME/.cheat/vim_special_chars.md
 
+
 Help on non-ascii --> :help %u
 
 Insert non-ascii character
@@ -409,6 +410,10 @@ SUPERSCRIPTS & SUBSCRIPTS
 ₂  2s
 
 
+DAGGERS
+× (star)X
+† /-
+
 ℠ 	™ 	© 	® 	¶ 	† 	‡ 	– 	±
 SM 	TM 	Co 	Rg 	PI 	/- 	/= 	– 	+-
 
@@ -463,6 +468,9 @@ UT 	uT 	Dt 	dT
 ▶   ▷  ◀   ◁
 PR 	Tr 	PL 	Tl
 
+⟩  <leader>a
+⟨  <leader>l
+
 ```
 
 ## Emojis real
@@ -488,12 +496,20 @@ Also in insert mode for ☺ press Ctrl-K 0u
 
 sort u
 
-# Insert a range of lines from another file
+# Insert a range of lines from another file - 2 Methods
 
+## Method 1
 :put =readfile('/path/to/foo/foo.c')[146:226]
- or
+
+Note: to get '=' here, after :put enter C-r = 
+
+
+## Method 2
+
 :r! sed -n 3,7p /path/to/foo/bar.md
 :r !sed -n 3,7p /path/to/foo/bar.md
+
+
 
 # To read in i.e. copy the 3 lines After 'CHALLENGE' in the specified file
 r! grep -A3 "CHALLENGE" /path/to/foo/bar.md
@@ -1110,5 +1126,19 @@ Alternative to using say capture groups and backreference as in
 :s/\(kkk\)/\1-dm/
 
 kkk-dm
+
+# Enter/Search/Replace Hex char in Ex mode
+
+eg replace “ with " 
+
+    :s/“/"/g use :s/C-vu201c/"/g where the Hex code for “ is u201c (use the `ga` command to find it)
+
+where C-v followed by u allows entering the Hex code for “ which is 201c
+
+
+# Find all non-UTF-8 chars
+
+rg -axv '.*'
+grep -axv '.*'
 
 # END

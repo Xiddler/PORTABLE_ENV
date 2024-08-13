@@ -1,6 +1,10 @@
 #!/bin/bash
 
 
+# Made 2024-07-05
+# A variation on markdown_journal.sh to allow for experimentation. 
+
+
 
 # ----------------- START journal ------------------------------
 # my easy journal 
@@ -14,11 +18,12 @@ md_journal() {
         local year=`date +%Y`
         local month=`date +%m`
         local today=`date +%Y-%m-%d`
-        local dow=`date +%A`
+        # local dow=`date +%A`
+        local dow='07'
         local myDir='/run/media/donagh/USB128GB/DONAGHS/personal/journal/'$year/$month
         mkdir -p $myDir
         # local filen=$myDir/`date +%d-%m`\.md
-        local filen=$myDir/$(date +%d-%m)\.md
+        local filen=$myDir/02-07a.md
 
         if [ ! -f $filen ]; 
         then
@@ -46,13 +51,13 @@ DOINGTODAY
 SHOOTING THE BREEZE
 
 
-FORM MOOD 
+FORM MOOD / COGNITION
 
 
-SOCIAL COGNITION / COGNITION
+SOCIAL COGNITION
 
 
-NEW / DIFFERENT
+NEW or DIFFERENT
 
 
 " >>  $filen

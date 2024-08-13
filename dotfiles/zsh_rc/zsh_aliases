@@ -165,6 +165,7 @@ alias -g der="doom run" # doom emacs run;
 # Aliases - vim
 # alias -g sp='vim $HOME/REPOS/TESTING/scratch_pad.txt'
 alias -g bx='vim $HOME/REPOS/TESTING/scratch_pad.txt' # as used in doom-emacs and in vim. Perhaps buffer X?
+alias -g sc='vim $HOME/REPOS/TESTING/scratch_pad.txt' # as used in doom-emacs and in vim. Perhaps buffer X?
 alias -g vt='vim ~/REPOS/TESTING/test.md'
 alias -g music='vim $HOME/REPOS/music/music_memos.md'
 alias -g quakes='vim $HOME/DONAGHS/personal/mental_stuff/quakes.md'
@@ -179,6 +180,7 @@ alias -g email='vim ~/DONAGHS/personal/23_email_addresses.md'
 alias -g vw='vim /home/donagh/work.md'
 
 # Functions - vim
+
 # toread() { vim $HOME/REPOS/books/toRead.md }
 
 # 2r() { vim $HOME/REPOS/books/toRead.md }
@@ -507,6 +509,29 @@ bbpython() { source ~/.virtualenvs/bpython/bin/activate && sleep 4 &&  python -m
 # run a basic server in a directory
 # alias -g server='/usr/sbin/python -m http:server 9090 "$@"'
 #}}}
+#{{{ ARITHMETIC
+# 
+# -> % echo $((4*34))
+# -> % perl -E 'say 235*1.15'
+#}}}
+#{{{ CONVERT BASES
+# convert from decimal
+
+# To paste  Hex char eg “ into Ex buffer use  C-Vu201c
+
+dec2hex() { echo "obase=16; ibase=10; $1" | bc }
+dec2bin() { echo "obase=2; ibase=10; $1" | bc }
+dec2oct() { echo "obase=8; ibase=10; $1" | bc }
+
+# Usage ->% dec2hex 22
+
+# convert to decimal
+
+bin2dec() { echo "obase=10; ibase=2; $1" | bc }
+oct2dec() { echo "obase=10; ibase=8; $1" | bc }
+hex2dec() { echo "obase=10; ibase=16; $1" | bc }
+
+#}}}
 #{{{ NETWORKING 
 # shortcuts
 # Public IP address
@@ -548,10 +573,11 @@ e_creds() { echo /home/donagh/DONAGHS/MY_ZIM/Computer/11SignUps.txt }
 s_passwords() { 'python -m http.server 8088  --directory ~/DONAGHS/MY_ZIM/Computer --bind 0.0.0.0' }
 s_books() { 'python -m http.server 8089  --directory ~/REPOS/books --bind 0.0.0.0' }
 # open 4 panes with the above and one spare
-ttmux() { /home/donagh/.scripts/tmux.sh }
+# ttmux() { /home/donagh/.scripts/tmux.sh }
 # sesseion for emacs
-tnt() { tmux new -s toshy }
-tat() { tmux attach-session -t toshy } #  2023-10-20
+tnd() { tmux new -s daily }
+tad() { tmux attach-session -t daily } #  2023-10-20
+tma() { tmux a } # 2024-07-09
 
 # === SERVERS ===
 # start zim, cifs and dropbox
@@ -575,10 +601,6 @@ alias zs='zsh_stats' # lists last 20 commands with statistics
 
 und() { $HOME/.scripts/replace_space_with_underline.sh }
 
-#}}}
-#{{{ ARITHMETIC
-# -> % echo $((4*34))
-# -> % perl -E 'say 235*1.15'
 #}}}
 #{{{ ZOXIDE
 
@@ -682,4 +704,3 @@ und() { $HOME/.scripts/replace_space_with_underline.sh }
 # 2020-12-10 Manjaro again - may be missing some items...
 #}}}
 # THE END
-

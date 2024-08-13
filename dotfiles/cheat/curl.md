@@ -4,7 +4,9 @@ https://curl.se/docs/httpscripting.html
 
 # Download a file and specify a new filename
 
-curl http://example.com/file.zip -o new_file.zip                PRIMARY USE CASE
+curl http://example.com/file.zip -o new_file.zip                            (This will download file.zip and save it to new_file.zip)
+
+->% curl -O https://github.com/pop-os/cosmic-files/blob/master/README.md    (This will download the file README.md to the current folder)
 
 # Download a single file to display in the terminal
 curl http://path.to.the/file

@@ -3,10 +3,10 @@
 set -euo pipefail
 trap "echo 'error: Script failed: see failed command above'" ERR
 
-zArchive='/home/donagh/DONAGHS/personal/zArchive'
-dotgit='/home/donagh/DONAGHS/personal/.git'
-source='/home/donagh/DONAGHS/personal'
-destination='/home/donagh/BACKUPS/RSYNCED/personal'
+zArchive='/home/donagh/DONAGHS/personal/zArchive/'
+dotgit='/home/donagh/DONAGHS/personal/.git/'
+source='/home/donagh/DONAGHS/personal/'
+destination='/home/donagh/BACKUPS/RSYNCED/personal/'
 
 # original
 # rsync -a --exclude '/home/donagh/DONAGHS/personal/zArchive' --exclude '/home/donagh/DONAGHS/personal/.git/' --delete /home/donagh/DONAGHS/personal/ /home/donagh/BACKUPS/RSYNCED/personal/
