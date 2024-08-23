@@ -41,11 +41,16 @@ syntax enable
 
 
 " added 2023-12-26 - and my current preferred colorscheme
-colorscheme base16-default-dark
+" colorscheme base16-default-dark
+" changed 2024-08-22 - it shows italics & bold correctly (like everforest does)
+
+colorscheme miramare
 " colorscheme base16-atelier-cave
     
 " NOTE: see Leader section for changing colorscheme in $HOME/.vim/settings/mappings/mappings.vim
 " keybindings to change colorscheme
+"
+" nnoremap leader 0 :colorscheme base16-default-dark<CR>
 " nnoremap leader 6 :colorscheme base16-greescreen<CR> 
 " nnoremap leader 6 :colorscheme base16-default-dark<CR> 
 " nnoremap leader 5 :colorscheme iceberg<CR>

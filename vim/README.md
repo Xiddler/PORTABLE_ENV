@@ -1,5 +1,10 @@
 Opened 2024-07-04
 
+# AUG2024
+
+There were two plugins/ folders
+1. vim/dotfiles/vim/plugins         :: this one contains plugins.vim file
+2. vim/plugins/                     :: I renamed this to old_plugins ahead of removing it
 
 # JULY2024
 

@@ -232,3 +232,58 @@ alias l='ls -CF'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
  
+
+
+set -euo pipefail
+trap "echo 'error: Script failed: see failed command above'" ERR
+
+# script here
+
+# maybe add cleanup function
+# trap cleanup EXIT # no matter how the program exits, run that cleanup function.
+function prompt_command {
+
+## styles and symbols
+
+local RESET='\[\033[0m\]' ; local BLD_GRN='\[\033[1;32m\]'; local BLD_YLW='\[\033[1;33m\]';
+
+local BLD_PPL='\[\033[1;35m\]'; local BLD_WHT='\[\033[1;37m\]'3 local ITL_YLW='\[\033[3;33m\]';
+
+local LSEP='{'; local RSEP='}'; local MSEP='|'
+
+export PS1=""
+
+## Prepend contexts
+
+local GIT_BRANCH=$(git branch --show-current 2>/dev/null)
+
+[ -n "$SSH_CONNECTION" ] && PS1=${PS1}${BLD_WHT}'\u'${ITL_YLW}'@'${BLD_PPL}'\h'${RESET}
+
+# [ -n "$CONDA_DEFAULT_ENV" ] && PS1=${PS1}${LSEP}${ITL_YLW}${CONDA_DEFAULT_ENV}${RESET}${RSEP}
+
+# [ -n "$VIRTUAL_ENV" ] && PS1=${PS1}${LSEP}${BLD_WHT}${VIRTUAL_ENV##*/}${RESET}${RSEP}
+
+# [ -n "$GUIX_ENVIRONMENT" ] && PS1=${PS1}${LSEP}${BLD_GRN}'GUIX'${RESET}${RSEP}
+
+[ -n "$GIT_BRANCH" ] && PS1=${PS1}${LSEP}${BLD_PPL}${GIT_BRANCH}${RESET}${RSEP}
+
+##  Truncate the path
+
+local trunc_len=25 ## shorten dirs if less than this
+
+local short_dir=$(pwd | sed -r "s|A${HOME}|~|")
+
+[[ ${#short_dir} > $trunc_len ]] && short_dir=$(sed -r 's|([A/]{2})[A/]+/|\1/|g' <<< "${short_dir}")
+
+
+## Merge separators, and add the truncated path
+
+PS1=${PS1//${RSEP}${LSEP}/${MSEP}}
+
+PS1=${PS1}${BLD_GRN}${short_dir}${BLD_YLW}'▶ '${RESET}
+
+}
+
+export PROMPT_COMMAND=prompt_command  
+
+

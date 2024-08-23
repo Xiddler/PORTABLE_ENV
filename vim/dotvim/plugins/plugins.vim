@@ -108,6 +108,9 @@ let g:airline_symbols.space = "\ua0"
 " https://github.com/dracula/dracula-theme.git
 " Plug 'https://github.com/dracula/vim.git'
 
+" miramare - added 2024-08-22
+Plug 'https://github.com/franbach/miramare.git'
+
 " tomorrow-night - added 2023-12-26
 Plug 'chriskempson/base16-vim'
 
@@ -120,6 +123,8 @@ Plug 'https://github.com/sainnhe/everforest'
 
 " vim-themes - added 2024-07-03
 Plug 'https://github.com/mswift42/vim-themes.git'
+
+
 " ____________   END THEMES _______________________________
 "}}}
 "{{{ Preferred plugins

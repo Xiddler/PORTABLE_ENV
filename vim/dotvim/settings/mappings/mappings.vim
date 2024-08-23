@@ -200,14 +200,17 @@ nnoremap <leader>zz g$i<cr> <esc>x                                              
 
  
 "}}}
-"{{{ Leader_key for colorschemes
+"r{{{ Leader_key for themes / colorschemes
 
 "<leader>bg to toggle color darkness/lightness automatically 
 map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
 " keybindings to change colorscheme
-nnoremap <leader>7 :colorscheme base16-greenscreen<CR> 
-nnoremap <leader>6 :colorscheme base16-default-dark<CR> 
+nnoremap <leader>0 :colorscheme miramare<CR> 
+" added 2024-08-22
+
+nnoremap <leader>7 :colorscheme miramare<cr>
+nnoremap <leader>6 :colorscheme base16-greenscreen<CR> 
 nnoremap <leader>5 :colorscheme iceberg<CR>
 nnoremap <leader>4 :colorscheme evening<CR>
 nnoremap <leader>3 :colorscheme everforest<CR>
