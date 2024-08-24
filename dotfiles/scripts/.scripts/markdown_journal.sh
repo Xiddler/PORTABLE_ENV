@@ -69,7 +69,7 @@ Afternoon:
         else
            # $EDITOR "+normal Go" $filen 
            # I want to open the journal in buffer not a tab. Note added 2024-07-05
-           $EDITOR $filen 
+           $EDITOR $filen;
         fi
 
 }

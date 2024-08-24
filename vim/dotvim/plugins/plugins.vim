@@ -18,6 +18,31 @@
 " 2022-02-05  vim-plug started 
 " https://github.com/junegunn/vim-plug and https://github.com/junegunn/vim-plug/wiki/tutorial
 " Remember to :so % after adding a new Plug or just PlugInstall in any vim file
+
+" ALTERNATIVE:
+" There is the alternative of using the built-in vim package manager (see " ~/.vim/autoload/plug.vim)
+" Ref: https://linuxconfig.org/how-to-manage-vim-plugins-natively
+" 
+" Create the folder ~/.vim/pack if it doesn't exist
+" On opening, Vim looks for a _start_ and an _opt_ subdirectory somewher in " ~/.vim/pack
+" Plugins found under the _start_ are loaded automatically; those inside the _opt_ directory, instead, must be loaded manually.
+" A suitable structure for this folder might be:
+
+" /home/donagh/.vim/pack/
+" ├── colorschemes
+" │   ├── opt
+" │   └── start
+" ├── others
+" │   ├── opt
+" │   └── start --▷ nerdtree
+" └── syntax
+"     ├── opt
+"     └── start
+
+" EXAMPLE: To load package "nerdtree" do this: 
+" git -C ~/.vim/pack/others/start clone https://github.com/preservim/nerdtree
+" The -C option allows git to move into the specified directory before executing the “clone” command
+
 "}}}
 
 call plug#begin('$HOME/PORTABLE_ENV/vim/dotvim/plugins')
@@ -109,7 +134,8 @@ let g:airline_symbols.space = "\ua0"
 " Plug 'https://github.com/dracula/vim.git'
 
 " miramare - added 2024-08-22
-Plug 'https://github.com/franbach/miramare.git'
+"Plug 'https://github.com/franbach/miramare.git'
+" NOTE: Experimentally moved to ~/.vim/pack/colorschemes/start to pick my own colors behaviour  on 2024-08-24
 
 " tomorrow-night - added 2023-12-26
 Plug 'chriskempson/base16-vim'
@@ -148,6 +174,8 @@ Plug 'junegunn/vim-peekaboo'
 " nightsense/snow
 Plug 'nightsense/snow'
 
+" Added 2024-08-24 as suggested by miramare theme creator
+Plug 'sheerun/vim-polyglot'
 
 " Plug 'zaid/vim-rec'  Plug 'https://github.com/zaid/vim-rec'  for rec-files 
 "
