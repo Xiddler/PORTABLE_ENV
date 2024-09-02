@@ -1,3 +1,10 @@
+# NOTE THIS IS MY OWN VERSION OF MIREMARE
+Aug 2024
+I altered the colors to suit what I wanted
+miramare allows _italics_ and __bold__ in markdown files which I like
+
+
+# Original
 <p align="center">
   <img src="https://raw.githubusercontent.com/franbach/miramare/master/screen/logo.png" alt="Miramar Vim Theme"/>
 </p>

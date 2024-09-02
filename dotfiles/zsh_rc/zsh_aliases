@@ -363,6 +363,8 @@ alias -g vb='vim ~/.bashrc'
 alias -g vv='vim ~/.vimrc'
 alias -g vz="vim ~/.zshrc"
 alias -g vza="vim ~/.zsh_aliases"
+# vim config file
+alias -g vco="vim  $HOME/.vim/settings/configs/configs.vim" 
 # grep file
 gza() { rg "$1" ~/.zsh_aliases }
 gz() { rg "$1" ~/.zshrc }

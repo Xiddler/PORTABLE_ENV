@@ -29,6 +29,13 @@ $HOME/.cheat/vim_special_chars.md
 
 Good vim-regex refresher https://dev.to/iggredible/learning-vim-regex-26ep 
 
+# Use vim with NO packages
+
+vim -u NONE <filename>
+OR
+vim -u NORC <filename>
+OR use a particular (eg minimal vimrc)
+vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc ~/files/sample_files/README.md [ Shortcut vvim <filename> ]
 # VIM
 
 ## DIRECTORIES
@@ -64,12 +71,6 @@ When you start Vim, it will check the following six locations in that order for 
 
 
 
-## Use vim with NO packages
-vim -u NONE <filename>
- or no vimrc
-vim -u NORC <filename>
- or use a particular (eg minimal vimrc)
-vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc ~/files/sample_files/README.md
 
 ## File management
 
@@ -1141,4 +1142,16 @@ where C-v followed by u allows entering the Hex code for “ which is 201c
 rg -axv '.*'
 grep -axv '.*'
 
+# Problem with navigating to beginning of previous word
+
+SOLVED
+The problem was caused by my having a number of nnoremaps set to b?. 
+When I commented these out in .vimrc, the full b functionality and absence of latency returned. Added 2024-08-24.
+
+# URLS in markdown — hint
+  Square parens : name url
+  OR
+  Square name : parens url
+
 # END
+

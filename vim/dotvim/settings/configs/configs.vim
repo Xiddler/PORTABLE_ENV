@@ -45,6 +45,7 @@ syntax enable
 " changed 2024-08-22 - it shows italics & bold correctly (like everforest does)
 
 colorscheme miramare
+" NOTE: Now in ~/.vim/pack to keep it from changing — note added 2024-08-24
 " colorscheme base16-atelier-cave
     
 " NOTE: see Leader section for changing colorscheme in $HOME/.vim/settings/mappings/mappings.vim
@@ -318,17 +319,24 @@ nmap z; za
 nnoremap H gT 
 nnoremap L gt
 
+" NOTE: In the following I have commented out mappings that require an initial 'b' in normal
+" mode as it increased the latency of the b navigation command to an unacceptable degree
+" also applies to other navigation letters like k, w, h, j, l
 
 " :bn (buffer next) without pressing enter button to make it like doom-emacs setting
 cnoremap bn :bn<cr> 
-nnoremap bn :bn<cr>
+" nnoremap bn :bn<cr>
+" nnoremap nb :bn<cr>
 
-" :bp (buffer previours) without pressing enter button to make it like doom-emacs setting
+" :bp (buffer previous) without pressing enter button to make it like doom-emacs setting
 cnoremap bp :bp<cr> 
-nnoremap bp :bp<cr>
+" nnoremap bp :bp<cr>
+" nnoremap pb :bp<cr>
 
 " Similar to my doom-emacs kill buffer
 cmap bk :wq<cr>
+"kill buffer i.e. save and quite
+" nnoremap kb :wq<cr> 
 
 " shortcut for the sudo trick - when you need to be sudo to save a file but you entered vim without being sudo 
 cmap w!! w !sudo tee % 

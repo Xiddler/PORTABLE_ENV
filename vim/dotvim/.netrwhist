@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =0
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/usr/share/vim/vim91/syntax'
+let g:netrw_dirhist_1='/usr/share/vim/vim91'
 let g:netrw_dirhist_0='/home/donagh/PORTABLE_ENV/vim/vimrc_files'
 let g:netrw_dirhist_9='/home/donagh/0_From_128USB/0000_Holder/Handy-Sports-Guide'
 let g:netrw_dirhist_8='/home/donagh'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_6='/run/media/donagh/USB128GB/REPOSITORIES/TESTING'
 let g:netrw_dirhist_5='/run/media/donagh/USB128GB/DONAGHS/personal/journal/2024/06'
 let g:netrw_dirhist_4='/home'
 let g:netrw_dirhist_3='/home/donagh'
-let g:netrw_dirhist_2='/'
-let g:netrw_dirhist_1='/home'
