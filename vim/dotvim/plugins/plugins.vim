@@ -135,7 +135,7 @@ let g:airline_symbols.space = "\ua0"
 
 " miramare - added 2024-08-22
 "Plug 'https://github.com/franbach/miramare.git'
-" NOTE: Experimentally moved to ~/.vim/pack/colorschemes/start to pick my own colors behaviour  on 2024-08-24
+" NOTE: Experimentally moved to ~/.vim/pack/colorschemes/start to pick my own colors for permanent behaviour  on 2024-08-24
 
 " tomorrow-night - added 2023-12-26
 Plug 'chriskempson/base16-vim'

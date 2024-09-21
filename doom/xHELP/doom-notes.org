@@ -5,10 +5,41 @@
 #+FILEPATH: ~/PORTABLE_ENV/doom/xHELP/doom-notes.org
 #+options: il
 #+tags:    help orgmode org-mode donaghs
-#+EDITED:  2024-02-06; 2024-01-02; 2023-12-10; 2023-09-06; 2023-08-09; 2023-07-12; 2023-04-07; 2023-02-24; 2023-01-03; 2022-12-19; 2022-12-16; 2022-09-25
+#+EDITED:  2024-09-04; 2024-02-06; 2024-01-02; 2023-12-10; 2023-09-06; 2023-08-09; 2023-07-12; 2023-04-07; 2023-02-24; 2023-01-03; 2022-12-19; 2022-12-16; 2022-09-25
 #+LINE      ___________________________________________________________________________________________________________
 #+BABEL: :session *python* :cache yes :results output graphics :exports both :tangle yes \n" "-----"
 
+
+* Quickies
+
+** abbrevs
+:notes:
+see also  [[text expansion]]
+
+abbrev file: $HOME/PORTABLE_ENV/doom/dot_emacs/abbrev_defs (symlink to $HOME/.emacs.d/abbrev_defs) [added 2024-09-04]
+
+abbrevs: M-x abbrev-mode, list-abbrevs, write-abbrevs
+:end:
+
+*** how to
+added 2024-09-04
+
+To make yn turn into Donagh McCarthy do the following
+
+type yn
+C-x a i g
+(on prompt) type in Donagh McCarthy
+Turn on abbrev-mode
+(DONE!)
+
+to make fo correct to of
+type in fo
+C-x a i g
+type in of
+(DONE!)
+** org tables
+
+[[tables]]
 
 * DOOM EMACS
 ** abbrevs
@@ -1298,7 +1329,8 @@ NOTE: backslash is omitted to allow the plain text to be visible!
 \radic radic
 
 ** tables
-see [[https://orgmode.org/manual/Built_002din-Table-Editor.html#Built_002din-Table-Editor][org-mode tables]] (webref)
+
+see [[https://orgmode.org/manual/Built_002din-Table-Editor.html#Built_002din-Table-Editor][org-mode tables] (webref)
 
 *** insert table
 Type:
@@ -1321,9 +1353,12 @@ then press TAB to get this:
 | Joe   | Charleville |                   33 |
 | Mary  | Mallow      |                   44 |
 |       | SUM         |                  120 |
-|       |             |                      |
+|-------+-------------+----------------------|
 |       |             |          @2$3 + @3$3 |
 |       |             | (calc-eval 'C2+C3')? |
+
+C-c org-table-sum
+C-c + (but the S-<insertchar> doesn't seem to work to insert result into buffer. But it does in Windows emacs. Go figure.)
 
 *** table commands
 S-TAB OR M-a    :: move to column left
@@ -1836,7 +1871,3 @@ C-x a i g
 Turn on abbrev-mode
 (DONE!)
 
-* Quickies
-
-abbrevs: M-x abbrev-mode, list-abbrevs, write-abbrevs
-symbols

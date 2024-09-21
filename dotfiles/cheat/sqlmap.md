@@ -1,3 +1,13 @@
+# Opened 2024-09-20
+
+# sqlmap
+
+sqlmap is an open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers.
+
+URL --▷ https://sqlmap.org/
+Tutorial --▷ https://hackertarget.com/sqlmap-tutorial/
+
+
 # Test URL and POST data and return database banner (if possible)
 ./sqlmap.py --url="<url>" --data="<post-data>" --banner
 

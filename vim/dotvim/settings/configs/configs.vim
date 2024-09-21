@@ -173,12 +173,14 @@ set dictionary=/run/media/donagh/USB128GB/REPOSITORIES/WORDS/Great_word_lists/TW
 " inoremap dme @dmediting -
 
 inoremap i<space> I<space>
+" note: this has problems with words that end in 'i' eg radiI. Is there a fix for this?
 inoremap lh —
 inoremap £ # 
 
 " TYPOS
 inoremap iiv I've
 inoremap iid I'd
+inoremap iil I'll
 inoremap iim I'm
 inoremap wiht with
 inoremap taht that

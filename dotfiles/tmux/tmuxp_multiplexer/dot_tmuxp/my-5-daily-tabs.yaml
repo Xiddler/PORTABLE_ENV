@@ -1,0 +1,37 @@
+session_name: 5-daily-tabs
+windows:
+- focus: 'true'
+  layout: cdc5,150x39,0,0,8
+  options: {}
+  panes:
+  - pane
+  start_directory: /home/donagh
+  window_name: zsh
+- layout: abc6,150x40,0,0,9
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/donagh
+  window_name: zsh
+- layout: 670f,150x39,0,0,10
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: emacs
+  start_directory: /home/donagh
+  window_name: doom
+- layout: 5610,150x40,0,0,11
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/donagh
+  window_name: journal
+- layout: 5611,150x40,0,0,12
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/donagh
+  window_name: dict

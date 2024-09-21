@@ -7,9 +7,11 @@ XDG_CACHE_HOME="/home/donagh/.cache"
 # $XDG_DATA_HOME=".local/share"
 # $XDG_RUNTIME_DIR is provided by your system  Toshiba --> /run/user/1000
 
-# Go straight to tmux
+# Go straight to tmux -- but from 2024-09-13 see tmuxp config at $HOME/.tmuxp/mydailysession.yaml
 
-tmux attach-session -t tdaily-0
+# tmux attach-session -t tdaily-0
+tmux attach-session -t my-5-daily-tabs
+# tmux attach-session -t mydailysessions
 ######################################
 # emax on WSL auto
 # if [ $TTY="/dev/pts/1" ]; then

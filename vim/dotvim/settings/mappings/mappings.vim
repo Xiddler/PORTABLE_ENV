@@ -107,7 +107,7 @@ nnoremap <leader>p :set paste<cr> "+p :set nopaste<cr>
 noremap <leader>q :q<cr>
 
 "<leader>r to toggle line numbeRs
-nnoremap <leader>r  :exe 'set nu!' &nu ? 'rnu!' : ''
+nnoremap <leader>r  :exe 'set nu!' &nu ? 'rnu!' : '' <cr>
 nnoremap <C-n> :exe 'set nu!' &nu ? 'rnu!' : ''
 
 "<leader>s to save file
@@ -147,6 +147,11 @@ nnoremap <leader>ma :tabe $HOME/.vim/settings/mappings/mappings.vim<cr>
 " mappings for opening mappings files
 nnoremap <leader>fu :tabe $HOME/.vim/settings/functions/functions.vim<cr>
 
+" make ◁-- arrow left
+inoremap <leader>al <c-k>Tl--<space>
+
+" make --▷ arrow right
+inoremap <leader>ar --<c-k>Tr<space>
 
 " vim-mundo " https://simnalamburt.github.io/vim-mundo/ ; shows the vim undo tree
 " nnoremap <leader>uu :MundoToggle<CR>
@@ -156,7 +161,7 @@ nnoremap <leader>vv :tabe $MYVIMRC<CR>
 
 " source $MYVIMRC - I can't ever seem to remember the keybinding...
 nnoremap <leader>ss :so $MYVIMRC<CR>
-" nnoremap <leader>sv :so $MYVIMRC<CR>
+nnoremap <leader>sv :so $MYVIMRC<CR>
 " nnoremap <leader>sm :so $MYVIMRC<CR>
 
 

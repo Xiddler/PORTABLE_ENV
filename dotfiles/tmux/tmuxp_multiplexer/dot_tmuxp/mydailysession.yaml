@@ -1,0 +1,40 @@
+session_name: my-5-daily-tabs
+
+windows:
+
+  - window_name: zsh
+
+    panes:
+
+      - 
+
+  - window_name: zsh
+
+    panes:
+
+      -
+
+
+
+  - window_name: doom
+
+    panes:
+
+      - shell_command: # pane no. 1
+
+          - der # open doom emacs ->% doom run
+
+
+
+  - window_name: journal
+
+    panes:
+
+      - 
+
+  - window_name: dict
+
+    panes:
+
+      - dict 
+
