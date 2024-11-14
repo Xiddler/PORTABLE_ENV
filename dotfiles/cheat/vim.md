@@ -1153,5 +1153,19 @@ When I commented these out in .vimrc, the full b functionality and absence of la
   OR
   Square name : parens url
 
+# write with sudo trick
+:w !sudo tee %
+
+
+# Execute current buffer line as a vim command
+eg in your buffer you have a line thus:
+!stat %
+meaning to ouput the statistics of the current file (which is what % means in this context)
+Do this
+Place cursor on the relevant line then
+: C-r C-l <Enter>
+
+
+
 # END
 

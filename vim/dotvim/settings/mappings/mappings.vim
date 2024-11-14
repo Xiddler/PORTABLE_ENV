@@ -39,11 +39,15 @@ nmap <leader>/ <Plug>(easymotion-overwin-w)
 " --- END_EASYMOTION --- 
 "}}}}
 "{{{{ SURROUNDING eg Leader_key "
-" <leader>" to surround a word with "word"
+" <leader>" to surround a word with double quotes --▷  "word"
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+" <leader>dq to surround a word with double quotes --▷  "word"
+nnoremap <leader>dq viw<esc>a"<esc>bi"<esc>lel
 
-"<leader>' surround a word with 'word'
+"<leader>" surround a word with single quotes --▷ 'word'
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
+"<leader>sq surround a word with single quotes --▷ 'word'
+nnoremap <leader>sq viw<esc>a'<esc>bi'<esc>lel
 
 "<leader>_ to surround a word with _word_ (Single Underline) hence ,su
 nnoremap <leader>su viw<esc>a_<esc>bi_<esc>lel

@@ -11,7 +11,6 @@
 
 
 * Quickies
-
 ** abbrevs
 :notes:
 see also  [[text expansion]]
@@ -37,10 +36,17 @@ type in fo
 C-x a i g
 type in of
 (DONE!)
+** config files
+
+SPC f p
+** line nos.
+SPC t l
 ** org tables
 
 [[tables]]
 
+** themes
+SPC h t
 * DOOM EMACS
 ** abbrevs
 
@@ -1298,6 +1304,48 @@ M = Alt; S = Shift; C = Ctrl; RET = Enter / Return
 [SPC] w [SPC] <-- save-buffer
 AND
 [SPC] s [SPC] <-- save-buffer
+** source code
+Added 2024-11-01
+
+ #+BEGIN_SRC python
+
+ myresult = 42 * 23
+
+ print('Hello Europe! ' + str(myresult))
+
+ return myresult
+ #+END_SRC
+
+ #+RESULTS:
+ : 966
+ (this worked after in included the return statement)
+
+(press C-c C-c)
+
+
+ #+RESULTS:
+ : None
+
+ (ok, it doesn't seem to work in doom-emacs. Needed the return statement. Does it need org-babel-execute function?)
+
+*** NOTES
+
+Python source code blocks in Org Mode require a working python installation. Python is included in Mac OS X and often in Gnu/Linux, and is easily available for Windows. Python installers are located at the Python download site.
+
+Org Mode supports graphical output for LaTeX and HTML documents using Matplotlib.
+
+To configure your emacs org-mode to use python, you'll need to ensure that org-babel-load-languages includes an entry for it. Typically, org-babel-load-languages will contain many entries. The example below omits other languages.
+
+(org-babel-do-load-languages
+
+ 'org-babel-load-languages
+
+ '((python . t)))
+
+
+
+
+
 ** symbols
 
 See M-x org-entities-help.
@@ -1376,6 +1424,22 @@ The table editor makes use of the Emacs Calc package to implement spreadsheet-li
 C-c ?           :: get coordinates of a cell
 C-c }           :: toggle coordinates in the table
 calc-eval       :: to evaluate an expression using calc (seems to be missing in doom-emacs?)
+
+**** spreadsheet example
+
+|----------------+-----------+-----------+-------|
+| Country        | Abstracts | Downloads | Ratio |
+|----------------+-----------+-----------+-------|
+| United States  |         7 |       497 |  71.0 |
+| Unknown        |         4 |       183 |  20.8 |
+| United Kingdom |         3 |        41 |  13.7 |
+| Germany        |         3 |        29 |   9.7 |
+| Netherlands    |         5 |       121 |  10.5 |
+| Japan          |         1 |        18 |  18.0 |
+|----------------+-----------+-----------+-------|
+
+#+TBLFM: $4=$3/$2;%.1f
+Press C-c C-c on the above line
 
 ** todos
 To call TODO menu or make a new todo :
@@ -1702,7 +1766,8 @@ SPC
         c SPC 'calendar ;; quick calendar
         i Y   'clipboard-yank ;; paste from system clipboard; Note: SPC i y (lowercase) pastes from emacs yank
 * ISSUES
-** TODO zo not working
+** DONE zo not working
+
 Date: 2023-01-03
 Status: Unresolved
 

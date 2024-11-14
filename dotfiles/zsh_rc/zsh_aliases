@@ -102,8 +102,9 @@ org() { cd $HOME/all_org/org }
 az() { cd $HOME/all_org/org }
 2p() { cd $HOME/REPOS/2programming/ }
 2py() { cd $HOME/REPOS/2programming/python }
-2py1() { cd $HOME/REPOS/2programming/python/1python_projects }
-2py2() { cd $HOME/REPOS/2programming/python/2python_studies }
+2pp() { cd $HOME/REPOS/2programming/python/1python_projects }
+# 2py2() { cd $HOME/REPOS/2programming/python/2python_studies }
+2ps() { cd $HOME/REPOS/2programming/python/2python_studies }
 # things I learnt  
 til() { jumpapp emacs  ~/DONAGHS/personal/learning/til.org }  
 # things to learn 
@@ -160,6 +161,7 @@ alias -g szo='cd $HOME/DONAGHS/ZIM/ORG/'
 #{{{ doom emacs
 alias -g der="doom run" # doom emacs run; 
 # alias -g drr="doom run"
+alias -g sos="vim ~/DONAGHS/personal/SOS/structure.md"
 
 #}}}
 #{{{ VIM 
@@ -255,7 +257,8 @@ timer-dae() { echo "1234" | sudo -S systemctl daemon-reload }
 #}}}
 #{{{ REALPATH 
 # copy the path of a file to clipboard
- rp() { realpath $1 | xclip -selection clipboard }
+ # rp() { realpath $1 | xclip -selection clipboard }
+ rp() { realpath $1 } # print realpath to stdout
 # rp() { realpath $1 | xclipboard }
 # rp() { realpath $1 | clipit }
 # rp() { realpath $1 | clipcopy }
@@ -294,7 +297,7 @@ k=$(date +"%Y/%m")
 q=$(date +"%Y-%m-%d")
 y=$(date +"%Y")
 m=$(date +"%m")
-echo $m
+# echo $m
 tj=$(date +"%m-%d") # today's journal 
 yd=$(date  --date="yesterday" +"%d") # DAY of month for yesterday 
 ym=$(date  --date="yesterday" +"%m") # MONTH for yesterday 
@@ -381,6 +384,8 @@ alias gcm='git commit -m '
 alias gss='git status'
 alias gll="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all -n 15"
 alias gaa='git add -A'
+# list git branches
+alias gbr="git for-each-ref --color=always --sort=-committerdate refs/heads refs/remotes --format='%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset)) %(authorname)'"
 # cf ~/.scripts/manage_all_git_repos.sh (on the laptop)
 alias -g g_run="$HOME/.scripts/manage_all_git_repos.sh" # list state of 4 main repos
 alias -g g_poe="$HOME/PORTABLE_ENV/"             # On github
@@ -417,11 +422,11 @@ alias -g latest='ls -lt  **/*(.om[1,20])' # List latest 20 files edited - newest
 alias -g newest='ls -lt  **/*(.om[1,20])' # List latest 20 files edited - newest on top (zsh) [o is for ordered, m is for modified] - alias
 # ls various
 # Items (ie files and directories)
-alias -g li='ls -la --color=always' # long list everything - i.e. list items (files and folders) - alias
-# alias -g ll='ls -la --color=always' # long list everything
-alias -g ll='eza --color=always --long --all --no-filesize --git --no-time | less' # long list everything
+# alias -g li='ls -la --color=always' # long list everything - i.e. list items (files and folders) - alias
+alias -g ll='ls -la --color=always' # long list everything
+# alias -g lle='eza --color=always --long --all --no-filesize --git --no-time | less' # long list everything lle -- long list (with) eza
 alias -g lt='ls -lt --color=always | head -n 16' # list 10 most recent items in this directory EXCEPT dotfiles 
-alias -g ltt='ls -lt --color=always | head -n 16 | less' # list 10 most recent items in this directory EXCEPT dotfiles  and uses `less`;
+alias -g ltl='ls -lt --color=always | head -n 16 | less' # list 10 most recent items in this directory EXCEPT dotfiles  and uses `less`;
 alias -g l.='ls -d  --color=always .* ' # List hidden files and directories - short (alternative alias)
 # alias -g lih='ls -d .* ' # List all hidden items i.e. files and directories - short - alias
 alias -g lih="ls -la | grep ' \..*$'" # List all hidden items i.e. files and directories - long -  alias
@@ -481,7 +486,7 @@ alias -g lds="ls -ld -- *(T) | awk '{ print $NF }' "
 #
 # alias -g lih='ll -d [a-z]*' # List non-hidden items (files and folders) 
 # alias -g lin="ls | tr ' ' '\n'" # List non-hidden items (files and folders) 
-alias -g lle="ll | grep -v '^l.*'" # List all exclude links 
+# alias -g lle="ll | grep -v '^l.*'" # List all exclude links 
 alias -g lli="ll | grep '^l.*'" # List all include links 
 alias -g lls='ls | xargs -n1' # List ls in a single column
 # alias ls='ls --color=auto'
@@ -583,6 +588,8 @@ s_books() { 'python -m http.server 8089  --directory ~/REPOS/books --bind 0.0.0.
 tnd() { tmux new -s daily }
 tad() { tmux attach-session -t daily } #  2023-10-20
 tma() { tmux a } # 2024-07-09
+
+tm5() { tmuxp load $HOME/.tmuxp/mydailysession.yaml }
 
 # === SERVERS ===
 # start zim, cifs and dropbox

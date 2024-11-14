@@ -30,8 +30,6 @@ Two methods to insert digraphs: in INSERT mode
 ¸	'',	0xb8	184	CEDILLA
 ¹	1S	0xb9	185	SUPERSCRIPT ONE
 º	-o	0xba	186	MASCULINE ORDINAL INDICATOR
-»	>>	0xbb	187	RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
-«   <<  
 ¼	14	0xbc	188	VULGAR FRACTION ONE QUARTER
 ½	12	0xbd	189	VULGAR FRACTION ONE HALF
 ¾	34	0xbe	190	VULGAR FRACTION THREE QUARTERS
@@ -40,13 +38,10 @@ Two methods to insert digraphs: in INSERT mode
 †	AE	0xc6	198
 ÷	-:	0xf7	247	DIVISION SIGN
 Arrows
-≪   <* 
-≫   *>
 》  +>
 《  >+ 
-→   ->
-←   <-
-✓   OK  
+✓   OK 
+†   /-
 ◁   Tl or lT
 ▷   Tr or rT
 ▶   PR
@@ -56,10 +51,18 @@ Arrows
 ☺   0u       zero SMALL U
 ☻   0U       zero CAPITAL U
 
+
+
 ❯ --> <❯> 10095, Hex 276f, Octal 23557
 
 
+→   ->
+←   <-
 
+»	>>	0xbb	187	RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
+«   <<  
 
+≪   <* 
+≫   *>
 
 

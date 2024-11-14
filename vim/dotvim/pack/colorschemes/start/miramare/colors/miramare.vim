@@ -4,6 +4,7 @@
 " Author:       Francisco Bach <franciscobach@gmail.com>
 " Website:      https://github.com/franbach/miramare
 " License:      MIT
+" Filepath:     ~/PORTABLE_ENV/vim/dotvim/pack/colorschemes/start/miramare/colors/miramare.vim
 " -----------------------------------------------------------------------------
 
 " Initialization: {{{
@@ -38,12 +39,17 @@ let s:palette = {
       \ 'bg_red':     ['#392f32',   '52',   'DarkRed'],
       \ 'bg_green':   ['#333b2f',   '22',   'DarkGreen'],
       \ 'bg_blue':    ['#203a41',   '17',   'DarkBlue'],
-      "\ 'fg':         ['#e6d6ac',   '223',  'White'],
+      "\ 'fg':         ['#e6d6ac',   '223',  'White'], 
+      "\ " @donagh replaced original #color with the following
       \ 'fg':         ['#e5dcc5',   '223',  'White'],
-      \ 'red':        ['#e68183',   '167',  'Red'],
+      \ 'red':        ['#e68183',   '167',  'Red'], 
+      "\ 'orange':     ['#139b7b',   '208',  'Red'], 
       \ 'orange':     ['#e39b7b',   '208',  'Red'],
-      \ 'yellow':     ['#d9bb80',   '214',  'Yellow'],
+      "\ 'yellow':     ['#d9bb80',   '214',  'Yellow'],
+      "\ " @donagh replaced original #color with the following on 2024-10-03
+      \ 'yellow':     ['#87af87',   '214',  'Yellow'],
       \ 'green':      ['#87af87',   '108',  'Green'],
+      "\ 'green':      ['#27af87',   '108',  'Green'],
       \ 'cyan':       ['#87c095',   '108',  'Cyan'],
       \ 'blue':       ['#89beba',   '109',  'Blue'],
       \ 'purple':     ['#d3a0bc',   '175',  'Magenta'],
@@ -320,7 +326,8 @@ endif
 " builtin: {{{
 call s:HL('markdownH1', s:palette.red, s:palette.none, 'bold')
 call s:HL('markdownH2', s:palette.orange, s:palette.none, 'bold')
-call s:HL('markdownH3', s:palette.yellow, s:palette.none, 'bold')
+" call s:HL('markdownH3', s:palette.yellow, s:palette.none, 'bold')
+call s:HL('markdownH3', s:palette.purple, s:palette.none, 'bold')
 call s:HL('markdownH4', s:palette.green, s:palette.none, 'bold')
 call s:HL('markdownH5', s:palette.blue, s:palette.none, 'bold')
 call s:HL('markdownH6', s:palette.purple, s:palette.none, 'bold')
@@ -335,11 +342,13 @@ highlight! link markdownBlockquote Grey
 highlight! link markdownListMarker Red
 highlight! link markdownOrderedListMarker Red
 highlight! link markdownRule Purple
-highlight! link markdownHeadingRule Grey
+highlight! link markdownHeadingRule Grey 
+" highlight! link markdownHeadingRule Cyan  " @donagh 2024-10-03_13:37 
 highlight! link markdownUrlDelimiter Grey
 highlight! link markdownLinkDelimiter Grey
 highlight! link markdownLinkTextDelimiter Grey
 highlight! link markdownHeadingDelimiter Grey
+" highlight! link markdownHeadingDelimiter Cyan
 highlight! link markdownLinkText Purple
 highlight! link markdownUrlTitleDelimiter Green
 highlight! link markdownIdDeclaration markdownLinkText
@@ -355,6 +364,7 @@ highlight! link mkdBold Grey
 " highlight! link mkdLink Purple
 highlight! link mkdLink Red
 highlight! link mkdHeading Grey
+" highlight! link mkdHeading Cyan @donagh 2024-10-03_13:41  — changes the color " of the # symbol
 highlight! link mkdListItem Red
 highlight! link mkdRule Purple
 highlight! link mkdDelimiter Grey

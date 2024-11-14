@@ -54,17 +54,16 @@
       org-startup-with-inline-images t
       org-image-actual-width '(300))
 
-;; added 2024-02-06
 ;; To syntax highlight your code, set the following in your .emacs init file:
+;; added 2024-02-06
 
 (setq org-confirm-babel-evaluate nil
       org-src-fontify-natively t
       org-src-tab-acts-natively t)
 
-;; In the above the last variable removes the annoying “Do you want to execute” your code when you type: C-c C-c
 
 ;; Abbreviations
-;; Set abbrev-mode to enable on startup
+;; Set abbrev-mode to enable on startup; abbrev-defs located at $HOME/.emacs.d/abbrev_defs
 (setq-default abbrev-mode t)
 
 ;; Keywords
@@ -247,6 +246,18 @@
     (capitalize-word -1)))
 
 (add-hook 'post-self-insert-hook 'capitalize-i)
+
+;; org-radio-targets
+;; https://orgmode.org/manual/Radio-Targets.html
+ (defun org-insert-radio-target-brackets (&optional arg)
+    "Surround selected text with Org Radio Target angle brackets (eg. <<<arg>>>) and then find and update all radio targets"
+    (interactive)
+    (progn
+      (insert-pair arg "<<<" ">>>")
+      (org-update-radio-target-regexp)))
+
+(keymap-set org-mode-map "C-c n r" #'org-insert-radio-target-brackets)
+
 
 ;; (use-package 'origami)
 ;; (require 'origami)
@@ -511,12 +522,39 @@
     (cons 340 "#405A61")
     (cons 360 "#405A61")))
  '(vc-annotate-very-old-color nil))
-(custom-set-faces
+
+; ORIGINAL  (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ ; )
+
+
+;; from https://emacs.stackexchange.com/questions/14740/how-to-configure-markdown-mode-to-render-headings-like-org-mode
+;;; ----------------------------------------------
+;;           THE FOLLOWING DID WORK
+(custom-set-faces 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+
+ ;; markdown header text colors
+'(markdown-header-face-1 ((t (:inherit markdown-header-face :foreground "green" :height 1.0))))
+
+ ; '(markdown-header-face-2 ((t (:inherit markdown-header-face :foreground "medium blue" :height 1.0))))
+'(markdown-header-face-2 ((t (:inherit markdown-header-face :foreground "orange" :height 1.0))))
+
+'(markdown-header-face-3 ((t (:inherit markdown-header-face :foreground "blue" :height 1.0))))
+
+'(markdown-header-face-4 ((t (:inherit markdown-header-face :foreground "dark cyan" :height 1.0)))))
+
+;; In the above the last variable removes the annoying “Do you want to execute” your code when you type: C-c C-c
+;;; ----------------------------------------------
+
+
+
  ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
 ;; End:

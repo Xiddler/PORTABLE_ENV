@@ -12,5 +12,7 @@ mydailysessions.yaml is the hand-written yaml config file
 The main advantage of a tmux session manager like tmuxp is that if I (accidentally) delete a tab I don't have to 
 go to all the rounds to recreate my preferred  5-tab set up. $HOME/.tmuxp/mydailysession.yaml will do that after
 
+The other advantage is that the tabs come up in the same order (or I can recall them in the same order) on command
+
 ->% tmuxp load $HOME/.tmuxp/mydailysession.yaml 
 

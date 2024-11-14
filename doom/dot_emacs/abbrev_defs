@@ -10,6 +10,7 @@
     ("ii" "I" nil :count 0 :case-fixed t)
     ("iil" "I'll" nil :count 3)
     ("iiv" "I've " nil :count 1)
+    ("iid" "I'd " nil :count 0)
     ("lh" "--" nil :count 18)
     ("taht" "that" nil :count 1)
    ))

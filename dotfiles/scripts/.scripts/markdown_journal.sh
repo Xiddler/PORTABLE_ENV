@@ -48,6 +48,13 @@ Afternoon:
 
 
 
+### TODOS / ISSUES / PROBLEMS / TASKS
+
+
+
+## CULTURE
+
+
 ## NEWS 
 
 
@@ -55,13 +62,23 @@ Afternoon:
 ## SHOOTING THE BREEZE
 
 
-## FORM MOOD 
-
-
-## SOCIAL COGNITION / COGNITION
+## FORM & MOOD 
 
 
 ## NEW / DIFFERENT
+
+
+## MINDWORKING
+
+### MINDSET
+
+
+
+### SOCIAL COGNITION 
+
+
+
+### COGNITION
 
 
 " >>  $filen

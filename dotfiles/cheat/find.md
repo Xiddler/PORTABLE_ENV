@@ -1,12 +1,16 @@
-# See man find
-#
+Opened 2024-10-09
+
+
+See man find
+
 # To find files by case-insensitive extension (ex: .jpg, .JPG, .jpG):
 find . -iname "*.jpg"
 
 # To find directories:
 find . -type d
 
-# To find files:
+# To find files
+
 find . -type f
 
 # To find files by octal permission:
@@ -91,6 +95,9 @@ find . -type f -atime -5
 # Find files changed less than 5 days ago
 find . -type f -ctime -5
 
+# Find files newer than 3 days old
+find . -newermt $(date +%Y-%m-%d -d '3 day ago') -type f -print
+
 # IGNORE DIRECTORY 
 # SEE ~/files/sandbox_directory for tree and README.md
 #
@@ -154,5 +161,9 @@ OUTPUT
 -rw-r--r-- 1 donagh donagh 801 Nov  1 18:21 /home/donagh/util.txt
 
 
+
+
 # REM use fd - a modern alternative with regex!
+
+
 
