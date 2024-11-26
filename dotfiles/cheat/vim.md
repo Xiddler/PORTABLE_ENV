@@ -172,7 +172,7 @@ Examples:
 42G         go to line 42
 
 
-# Donaghs Plugins
+# Donaghs Install Plugins
 
 Location: /home/donagh/PORTABLE_ENV/vim/plugins/plugins.vim
 
@@ -1166,6 +1166,22 @@ Place cursor on the relevant line then
 : C-r C-l <Enter>
 
 
+
+# search symbols in the buffer
+
+I want to jump to the next instance of a symbol like †
+
+
+
+    1. yank symbol (†) into the (say) 0 register by putting cursor over the symbol and using the command in normal mode `yl`
+    2. / to start the search 
+    3. <C-r>" to insert the search terms you just yanked; now just type 0 as the register which contains the symbol
+    4. <CR> i.e. Enter to begin the search; then use n (forwards) or N (backwards) to search for the symbol in the buffer
+Try it:
+‡
+
+†
+ ‡
 
 # END
 

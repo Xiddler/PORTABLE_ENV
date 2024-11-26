@@ -177,6 +177,9 @@ Plug 'nightsense/snow'
 " Added 2024-08-24 as suggested by miramare theme creator
 Plug 'sheerun/vim-polyglot'
 
+" Added 2024-11-15 — to help with Unicode characters + bonuses
+Plug 'chrisbra/unicode.vim'
+
 " Plug 'zaid/vim-rec'  Plug 'https://github.com/zaid/vim-rec'  for rec-files 
 "
 " Plug 'tpope/vim-abolish'  Plug 'https://github.com/tpope/vim-abolish.git' - added 2022-09-02
@@ -232,6 +235,7 @@ Plug 'plasticboy/vim-markdown'
 " Plug 'prabirshrestha/vim-lsp'
 
 " }}}
+
 
 call plug#end()
 

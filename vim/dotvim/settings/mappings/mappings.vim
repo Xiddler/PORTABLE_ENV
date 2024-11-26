@@ -55,13 +55,30 @@ nnoremap <leader>su viw<esc>a_<esc>bi_<esc>lel
 " surround a word with __word__ (Double Underline) hence ,du
 nnoremap <leader>du viw<esc>a__<esc>bi__<esc>lel
 
+" surround word with parentheses ()
+nnoremap <leader>sp viw<esc>bi(<esc>ea)<esc>l
+
+" surround word with brackets []
+nnoremap <leader>sb viw<esc>bi[<esc>ea]<esc>l
+
+" surround word with curly brackets {}
+nnoremap <leader>sc viw<esc>bi{<esc>ea}<esc>l
+
+
+
 " --- END_SURROUNDING ---
 "}}}}
 "}}}
 "{{{ Leader_key + single alphabetic
 
 "<leader>a to produce ❯ <-- the pure-prompt symbol
-" inoremap <leader>a  <C-Q>u276f ❯  " the pure-prompt symbol
+" ❯  " the pure-prompt symbol — a nice right-pointing arrow
+inoremap <leader>>  <C-Q>u276f
+
+" the pure-prompt symbol
+" ❯ 
+
+
 " mathematical right angle bracket ⟩  
 inoremap <leader>a  <C-Q>u27e9  
 

@@ -1,17 +1,30 @@
+# Front matter
 filename vim-digraphs.md
 
-see also ~/.cheat/vim_special_chars.md
+Links ~/.cheat/symbols.md; ~/.cheat/vim_special_chars.md; ~/.cheat/unicode.md 
+URL [vim-unicode](https://github.com/chrisbra/unicode.vim) ◁ vim plugin installed 2024-11-15
 
-see also [WinCompose](https://github.com/samhocevar/wincompose) and 
-https://raw.githubusercontent.com/mirror/libX11/master/nls/en_US.UTF-8/Compose.pre
+see also 
+[WinCompose](https://github.com/samhocevar/wincompose) and 
+[Compose_pre](https://raw.githubusercontent.com/mirror/libX11/master/nls/en_US.UTF-8/Compose.pre)
 
-Two methods to insert digraphs: in INSERT mode
+
+# Vim digraphs
+
+:digraphs
+
+## Two methods to insert digraphs: 
+
+in INSERT mode
+
 1. Ctrl K                   {char1} {char2}
-2. (with :set digraph on)   {char1} BS {char2} where BS is BACKSPACE
+2. (with :set digraph)   {char1} BS {char2} where BS is BACKSPACE
 
 × (star)X
 † /-
 
+
+## selection of vim digraphs
 
 €   Eu  20ac   8364 EURO                                        [ alt. Digr =e ]
 £	Pd	0xe3	227 POUND SIGN 
@@ -48,9 +61,11 @@ Arrows
 ☼   SU
 ▲   UT
 △   uT
+▽   dT
+
 ☺   0u       zero SMALL U
 ☻   0U       zero CAPITAL U
-
+°	DG	0xb0	176	DEGREE SIGN
 
 
 ❯ --> <❯> 10095, Hex 276f, Octal 23557

@@ -204,6 +204,12 @@ vimm() { vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc $1 }
 #{{{ BOOKSEARCH
 booksearch() {find ~/REPOS/books -maxdepth 4 -name "*.*" -type f | grep -i $1 } # usage -> % booksearch 'smart'
 #}}}
+#{{{ dict 
+# look up the definition of a word using `dict`; resides at tmuxp tab 6
+# godict() {python /run/media/donagh/USB128GB/REPOSITORIES/2programming/python/1python_projects/dict_cli/my_dict.py}
+# using the `dict` virtualenv version of python
+godict() {/home/donagh/.virtualenvs/dict/bin/python /run/media/donagh/USB128GB/REPOSITORIES/2programming/python/1python_projects/dict_cli/my_dict.py}
+#}}}
 #{{{ RSYNC
 # manual rsync backup to the USB attached to the RPi
 # alias -g rsyncz="$HOME/.scripts/rsync_backup.sh"

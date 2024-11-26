@@ -1,5 +1,6 @@
 ;;; package --- Summary
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
+;;; filepath of this file --> /home/donagh/.config/doom/config.el
 
 ;; To refresh config.el --> C-h r r
 
@@ -247,16 +248,17 @@
 
 (add-hook 'post-self-insert-hook 'capitalize-i)
 
+;; removed the following due to start up WARNING — see zim-wiki --> EDITORS:doom emacs:issues with doom
 ;; org-radio-targets
 ;; https://orgmode.org/manual/Radio-Targets.html
- (defun org-insert-radio-target-brackets (&optional arg)
-    "Surround selected text with Org Radio Target angle brackets (eg. <<<arg>>>) and then find and update all radio targets"
-    (interactive)
-    (progn
-      (insert-pair arg "<<<" ">>>")
-      (org-update-radio-target-regexp)))
+ ; (defun org-insert-radio-target-brackets (&optional arg)
+    ; "Surround selected text with Org Radio Target angle brackets (eg. <<<arg>>>) and then find and update all radio targets"
+    ; (interactive)
+    ; (progn
+      ; (insert-pair arg "<<<" ">>>")
+      ; (org-update-radio-target-regexp)))
 
-(keymap-set org-mode-map "C-c n r" #'org-insert-radio-target-brackets)
+; (keymap-set org-mode-map "C-c n r" #'org-insert-radio-target-brackets)
 
 
 ;; (use-package 'origami)
