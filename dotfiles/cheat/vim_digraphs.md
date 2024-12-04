@@ -9,11 +9,21 @@ see also
 [Compose_pre](https://raw.githubusercontent.com/mirror/libX11/master/nls/en_US.UTF-8/Compose.pre)
 
 
-# Vim digraphs
+# Vim digraphs 
+
+## Help
 
 :digraphs
 
-## Two methods to insert digraphs: 
+In Normal mode `ga` when hovering over a character
+
+:UnicodeName when hovering over a character
+
+URL [vim digraphs online](https://sheet.shiar.nl/digraphs) Excellent cheat sheet
+URL [Unicode-explorer](https://unicode-explorer.com/search/) Find any Unicode point eg 'LATIN CAPITAL LETTER A WITH GRAVE' 
+
+
+## two methods to insert digraphs: 
 
 in INSERT mode
 
@@ -25,6 +35,8 @@ in INSERT mode
 
 
 ## selection of vim digraphs
+
+### selection of useful digraphs
 
 €   Eu  20ac   8364 EURO                                        [ alt. Digr =e ]
 £	Pd	0xe3	227 POUND SIGN 
@@ -48,28 +60,102 @@ in INSERT mode
 ¾	34	0xbe	190	VULGAR FRACTION THREE QUARTERS
 ¿	?I	0xbf	191	INVERTED QUESTION MARK
 À	A!	0xc0	192	LATIN CAPITAL LETTER A WITH GRAVE 
-†	AE	0xc6	198
+√   RT
 ÷	-:	0xf7	247	DIVISION SIGN
-Arrows
-》  +>
-《  >+ 
 ✓   OK 
-†   /-
-◁   Tl or lT
-▷   Tr or rT
-▶   PR
-☼   SU
-▲   UT
-△   uT
-▽   dT
 
+†   /-              DAGGER
+‡   /=              DOUBLE DAGGER
+Æ   AE
+
+Ⅸ   9R          ROMAN NUMERAL NINE
+☼   SU
 ☺   0u       zero SMALL U
 ☻   0U       zero CAPITAL U
 °	DG	0xb0	176	DEGREE SIGN
+✠   -X          MALTESE CROSS
+
+### Superscripts and subscripts
+ₐ  as          LATIN SUBSCRIPT SMALL LETTER A  [ I created the 'alias' `as` using :digraphs as 8336 or :execute "digraphs as " . 0x2090 ]
+ₑ  es          LATIN SUBSCRIPT SMALL LETTER E [ I created this using :execute "digraphs es " . 0x2091 ]
+
+2ₙ  nS 
+
+⁴  S4           SUPERSCRIPT FOUR
 
 
-❯ --> <❯> 10095, Hex 276f, Octal 23557
+### Greek alphabet
 
+Α α	Alpha	
+Β β	Beta	
+Γ γ	Gamma	
+Δ δ	Delta	
+Ε ε	Epsilon	
+Ζ ζ	Zeta	
+Η η	Eta
+Θ θ	Theta	
+Ι ι	Iota	
+Κ κ	Kappa	
+Λ λ	Lambda	
+Μ μ	Mu	
+Ν ν	Nu
+Ξ ξ	Xi
+Ο ο	Omicron
+Π π	Pi
+Ρ ρ	Rho
+Σ σς Sigma
+Τ τ	Tau
+Υ υ	Upsilon
+Φ φ	Phi
+Χ χ	Chi
+Ψ ψ	Psi
+Ω ω	Omega
+
+
+### Digraphs for small Greek letters
+
+α  a*
+β  b*
+γ  g*
+δ  d*
+ε  e*
+ζ  z*
+η  y*
+θ  h*
+ι  i*
+κ  k*
+λ  l*
+μ  m*
+ν  n*
+ξ  c*       GREEK SMALL LETTER XI
+ο  o*
+π  p*
+σ  s*
+τ  t*
+υ  u*
+φ  f*        GREEK SMALL LETTER PHI
+χ  x*        GREEK SMALL LETTER CHI
+ψ  q*        GREEK SMALL LETTER PSI
+ω  w*
+
+
+
+### Arrows
+》  +>
+《  >+ 
+
+▶   PR      BLACK RIGHT-POINTING TRIANGLE
+◀   PL      BLACK LEFT-POINTING TRIANGLE
+▲   UT      BLACK UP-POINTING TRIANGLE
+▼   Dt      BLACK DOWN-POINTING TRIANGLE
+
+◁   Tl or lT
+▷   Tr or rT
+△   uT      WHITE UP-POINTING TRIANGLE
+▽   dT      WHITE DOWN-POINTING TRIANGLE
+
+
+❯ --> <❯> 10095, Hex 276f, Octal 23557 .vimrc --> mappings.vim <leader>>  PURE PROMPT ARROW
 
 →   ->
 ←   <-

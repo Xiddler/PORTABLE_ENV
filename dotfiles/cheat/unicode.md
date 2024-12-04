@@ -37,10 +37,23 @@ The letters are:
     u: hex 4-digit value, max ffff (same as 65535 in decimal)
     U: hex 8-digit value, max 7fffffff
 
-## To get the Unicode point of a character in vim
+Example:
+LATIN CAPITAL LETTER A WITH GRAVE
+(Find any Unicode point eg 'LATIN CAPITAL LETTER A WITH GRAVE' at URL --▷ [Unicode-explorer](https://unicode-explorer.com/search/) )
+
+À ◁-- [insert] c-k A! (A backtick)          Digraph 
+À ◁-- [insert] c-q 192                      Dec
+À ◁-- [insert] c-q o300                     Octal
+À ◁-- [insert] c-q u00c0                    Hex (this is what unicode-explorer supplies)
 
 
-## unicode.vim plugin
+
+## to get the Unicode point of a character in vim
+
+## ga over the symbol or letter
+
+
+## use the unicode.vim plugin
 
 ### Usage
 

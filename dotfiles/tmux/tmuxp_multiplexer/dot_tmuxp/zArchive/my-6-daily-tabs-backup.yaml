@@ -1,0 +1,43 @@
+session_name: my-6-daily-tabs
+windows:
+- focus: 'true'
+  layout: cdbe,150x39,0,0,1
+  options: {}
+  panes:
+  - pane
+  start_directory: /home/donagh/PORTABLE_ENV/dotfiles/tmux/tmuxp_multiplexer/dot_tmuxp
+  window_name: zsh
+- layout: cdbf,150x39,0,0,2
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /run/media/donagh/USB128GB/DONAGHS/personal
+  window_name: zsh
+- layout: cdc0,150x39,0,0,3
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: emacs
+  start_directory: /home/donagh
+  window_name: doom
+- layout: cdc1,150x39,0,0,4
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: bash
+  start_directory: /home/donagh
+  window_name: journal
+- layout: cdc2,150x39,0,0,5
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: vim
+  start_directory: /home/donagh
+  window_name: sos
+- layout: cdc3,150x39,0,0,6
+  options: {}
+  panes:
+  - pane
+  start_directory: /home/donagh
+  window_name: dict

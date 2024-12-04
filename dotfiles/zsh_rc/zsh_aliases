@@ -209,6 +209,8 @@ booksearch() {find ~/REPOS/books -maxdepth 4 -name "*.*" -type f | grep -i $1 } 
 # godict() {python /run/media/donagh/USB128GB/REPOSITORIES/2programming/python/1python_projects/dict_cli/my_dict.py}
 # using the `dict` virtualenv version of python
 godict() {/home/donagh/.virtualenvs/dict/bin/python /run/media/donagh/USB128GB/REPOSITORIES/2programming/python/1python_projects/dict_cli/my_dict.py}
+# dict utilities: some handy sqlite commands to interrogate the sqlite3 database of words I have looked up
+dictu() { /home/donagh/.scripts/dict_utils.sh }
 #}}}
 #{{{ RSYNC
 # manual rsync backup to the USB attached to the RPi
