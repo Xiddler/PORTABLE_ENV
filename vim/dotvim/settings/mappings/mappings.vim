@@ -11,6 +11,7 @@
 " These are symlinked from PORTABLE_ENV/
 
 "}}}
+"
 "{{{ Leader_key
 " === Leader ===
 
@@ -75,7 +76,7 @@ nnoremap <leader>sc viw<esc>bi{<esc>ea}<esc>l
 " ❯  " the pure-prompt symbol — a nice right-pointing arrow
 inoremap <leader>>  <C-Q>u276f
 
-" the pure-prompt symbol
+" outputs the pure-prompt symbol
 " ❯ 
 
 
@@ -220,10 +221,9 @@ nnoremap <leader>vz :tabe ~/.zshrc <cr>
 " nnoremap <leader>ws <C-w>60<
 
 
-"<leader>z to make new-numbered lines
+"<leader>z to make new-numbered lines — used after capital J joins lines but fails to create a new numbered line
 nnoremap <leader>zz g$i<cr> <esc>x                                                                                                               x
  
-
  
 "}}}
 "r{{{ Leader_key for themes / colorschemes
@@ -314,7 +314,9 @@ nnoremap B ^
 " go to the next full stop even if it's on the next line (experimental)
 " nnoremap E f. " seems to be problematic
 nnoremap E $
+
 "set the cursor to move down a single row on the screen instead of full sentence. 
+" QUESTION: is this causing the problem noted in zim-wiki --▷ ISSUES:vim issue
 nnoremap j gj
 nnoremap k gk
 

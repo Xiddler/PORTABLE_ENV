@@ -37,7 +37,9 @@ windows:
 
     panes:
 
-      - sos
+      - shell_command:
+
+          - /usr/sbin/vim /home/donagh/DONAGHS/personal/SOS/Structure/structure4.md
 
 
   - window_name: dict
@@ -46,7 +48,6 @@ windows:
 
       - shell_command: 
 
-          - /home/donagh/.virtualenvs/dict/bin/python /run/media/donagh/USB128GB/REPOSITORIES/2programming/python/1python_projects/dict_cli/my_dict.py
-
+          - /home/donagh/.virtualenvs/dict/bin/python /run/media/donagh/USB128GB/REPOSITORIES/2programming/python/1python_projects/cli_python/main_cli.py
 
 

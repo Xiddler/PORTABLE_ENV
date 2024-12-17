@@ -23,6 +23,7 @@ source $HOME/.vim/settings/mappings/mappings.vim                            " ma
 "}}}
 " {{{ VIMRC
 colorscheme miramare
+" colorscheme elflord " 
 " }}}
 "{{{ Minimum Settings
 
@@ -38,8 +39,8 @@ colorscheme miramare
 " usage:
 " vvim <afile> is an alias on Toshiba for this — no folding, no plugins, horrible!
 
-"inoremap jk <esc>
-set <esc>=jk 
+inoremap jk <esc>
+"set <esc>=jk       " THIS CAUSED A LARGE LAG -- note added 2024-12-16
 
 " use spacebar to enter command mode. This matches doom-emacs for me and my muscle memory
 nnoremap <space> :
@@ -52,15 +53,17 @@ set encoding=utf-8
 " Better COPY & PASTE
 " When you want to paste large blocks of code into vim, press F2 before you paste. 
 " At the bottom you should see ``-- INSERT (paste) --``.
-set pastetoggle=<F2>
-set clipboard=unnamed
+set pastetoggle=<F2> "
+" set clipboard=unnamed
+set clipboard+=unnamedplus " Getting error ▷ W23: Clipboard register not available, using register 0 ◁ on 2024-12-16 " 
+
 
 " Remember more commands and search history
-set history=500
-set undolevels=500
+set history=500 " 
+set undolevels=500 " 
 
 " Rendering — added 2024-04-25
-set ttyfast
+set ttyfast "
 
 " Open new split panes to right and bottom, which feels more natural than Vim's default
 set splitbelow
@@ -86,6 +89,21 @@ let $RC="$HOME/.vimrc" " alternative to $MYVIMRC
 " nnoremap leader ss :so $MYVIMRC<CR>
 " nnoremap leader sv :so $MYVIMRC<CR>
 " nnoremap leader sm :so $MYVIMRC<CR>
+"
+" Saving every time I leave insert mode is my preferred alternative: `autocmd! InsertLeave * silent! update`
+" 2024-12-15
+" donagh - doesn't seem to like the * there
+" ERROR 
+" Error detected while processing InsertLeave Autocommands for "*":
+" E492: Not an editor command: slient! update
+" TRY THIS -- NOTE: It causes HUGE lag times. Don't use it.
+" augroup AUTOSAVE
+  " au!
+  " autocmd InsertLeave,TextChanged,FocusLost * silent! write " changed update to write
+" augroup END
+
+" Did that work? Seems so...
+
 
 " === Runtimepath and path ===
 
@@ -108,11 +126,11 @@ let $RC="$HOME/.vimrc" " alternative to $MYVIMRC
 " ~/.vim/after
    
 " :set runtimepath?
-let $RTP=split(&runtimepath, ',')[0] " allows :set rtp?
+let $RTP=split(&runtimepath, ',')[0] " allows :set rtp? " 
 
 " Path
 " :set path? path to search when using find / FZF 
-set path+=~/REPOS/
+set path+=~/REPOS/ 
 
 " $VIMRUNTIME 
 " /usr/share/vim/vim90 
@@ -161,6 +179,10 @@ set path+=~/REPOS/
 "
 "}}}
 " {{{ CONFIGS
+"
+" https://github.com/gabrielelana/vim-markdown.git version of vim-markdown seems to require the following line
+" let g:markdown_enable_folding = 1
+" DID NOT WORK FOR ME 2024-12-17
 
 " $HOME/.vim/settings/configs/configs.vim                              
 " For Themes and UI settings

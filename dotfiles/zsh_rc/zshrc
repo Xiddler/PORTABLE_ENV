@@ -10,10 +10,12 @@ XDG_CACHE_HOME="/home/donagh/.cache"
 # Go straight to tmux -- but from 2024-09-13 see tmuxp config at $HOME/.tmuxp/mydailysession.yaml
 
 # tmux attach-session -t tdaily-0
-tmux attach-session -t my-6-daily-tabs
 # tmux attach-session -t mydailysessions
 
-# tmuxp load /home/donagh/.tmuxp/mydaiysession.yaml
+# tmuxp load /home/donagh/.tmuxp/my-6-daily-tabs.yaml
+tmux attach-session -t my-6-daily-tabs
+
+
 ######################################
 # emax on WSL auto
 # if [ $TTY="/dev/pts/1" ]; then

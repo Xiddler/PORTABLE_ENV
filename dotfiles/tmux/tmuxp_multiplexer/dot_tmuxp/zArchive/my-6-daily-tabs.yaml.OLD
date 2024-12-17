@@ -5,7 +5,7 @@ windows:
   options: {}
   panes:
   - pane
-  start_directory: /home/donagh/PORTABLE_ENV/dotfiles/tmux/tmuxp_multiplexer/dot_tmuxp
+  start_directory: /home/donagh
   window_name: zsh
 - layout: abbf,150x40,0,0,2
   options: {}
@@ -38,6 +38,7 @@ windows:
 - layout: abc3,150x40,0,0,6
   options: {}
   panes:
-  - pane
+  - focus: 'true'
+    shell_command: /home/donagh/.virtualenvs/dict/bin/python /run/media/donagh/USB128GB/REPOSITORIES/2programming/python/1python_projects/dict_cli/my_dict.py
   start_directory: /home/donagh
   window_name: dict

@@ -10,6 +10,11 @@ Shortlist of CLI options:
 
 # LINUX CLI Utilities
 
+## My `dict` tab on tmuxp
+December 2024
+
+/run/media/donagh/USB128GB/REPOSITORIES/2programming/python/1python_projects/cli_python/main_cli.py
+
 ## Dictionary and Thesaurus - offline, opens a GUI
 artha
 
@@ -23,6 +28,9 @@ hunspell
 /usr/share/dict
 
 stardict - a GUI interface
+
+->% sdcv
+Stardict Console Version
 
 # alias def
 

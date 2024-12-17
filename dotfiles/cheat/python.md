@@ -191,6 +191,13 @@ C:\Users\don_l\.virtualenvs\pysimpleGUI\Scripts\activate.ps1
 1,000,000,000,000
 
 
+# subprocess module
+
+_example_
+
+import subprocess
+
+subprocess.call(['ls', '-l'], shell=True) #using the call() function
 
 
 

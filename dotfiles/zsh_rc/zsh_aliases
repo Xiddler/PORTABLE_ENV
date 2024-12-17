@@ -161,7 +161,7 @@ alias -g szo='cd $HOME/DONAGHS/ZIM/ORG/'
 #{{{ doom emacs
 alias -g der="doom run" # doom emacs run; 
 # alias -g drr="doom run"
-alias -g sos="vim ~/DONAGHS/personal/SOS/structure.md"
+alias -g sos="vim ~/DONAGHS/personal/SOS/Structure/structure4.md"
 
 #}}}
 #{{{ VIM 
@@ -208,9 +208,10 @@ booksearch() {find ~/REPOS/books -maxdepth 4 -name "*.*" -type f | grep -i $1 } 
 # look up the definition of a word using `dict`; resides at tmuxp tab 6
 # godict() {python /run/media/donagh/USB128GB/REPOSITORIES/2programming/python/1python_projects/dict_cli/my_dict.py}
 # using the `dict` virtualenv version of python
-godict() {/home/donagh/.virtualenvs/dict/bin/python /run/media/donagh/USB128GB/REPOSITORIES/2programming/python/1python_projects/dict_cli/my_dict.py}
+# godict() {/home/donagh/.virtualenvs/dict/bin/python /run/media/donagh/USB128GB/REPOSITORIES/2programming/python/1python_projects/dict_cli/my_dict.py}
+godict() {/home/donagh/.virtualenvs/dict/bin/python /run/media/donagh/USB128GB/REPOSITORIES/2programming/python/1python_projects/cli_python/main_cli.py}
 # dict utilities: some handy sqlite commands to interrogate the sqlite3 database of words I have looked up
-dictu() { /home/donagh/.scripts/dict_utils.sh }
+# dictu() { /home/donagh/.scripts/dict_utils.sh }
 #}}}
 #{{{ RSYNC
 # manual rsync backup to the USB attached to the RPi
@@ -593,11 +594,11 @@ s_books() { 'python -m http.server 8089  --directory ~/REPOS/books --bind 0.0.0.
 # open 4 panes with the above and one spare
 # ttmux() { /home/donagh/.scripts/tmux.sh }
 # sesseion for emacs
-tnd() { tmux new -s daily }
-tad() { tmux attach-session -t daily } #  2023-10-20
-tma() { tmux a } # 2024-07-09
+# tnd() { tmux new -s daily }
+# tad() { tmux attach-session -t daily } #  2023-10-20
+# tma() { tmux a } # 2024-07-09
 
-tm5() { tmuxp load $HOME/.tmuxp/mydailysession.yaml }
+tm6() { tmuxp load $HOME/.tmuxp/my-6-daily-tabs.yaml }
 
 # === SERVERS ===
 # start zim, cifs and dropbox

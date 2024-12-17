@@ -268,6 +268,7 @@ end
 " keep search centered
 nnoremap n nzzzv
 nnoremap N Nzzzv
+" issue with vim lag 2024-12-17 see ISSUES:vim issue in zim-wiki — commenting out the below
 nnoremap J mzJ`z
 
 

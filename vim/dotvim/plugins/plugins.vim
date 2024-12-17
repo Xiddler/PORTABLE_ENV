@@ -172,13 +172,13 @@ Plug 'easymotion/vim-easymotion' " Use ./ (i.e. period backslash) to navigate ar
 Plug 'junegunn/vim-peekaboo'
 
 " nightsense/snow
-Plug 'nightsense/snow'
+" Plug 'nightsense/snow'
 
 " Added 2024-08-24 as suggested by miramare theme creator
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 
 " Added 2024-11-15 — to help with Unicode characters + bonuses
-Plug 'chrisbra/unicode.vim'
+" Plug 'chrisbra/unicode.vim'
 
 " Plug 'zaid/vim-rec'  Plug 'https://github.com/zaid/vim-rec'  for rec-files 
 "
@@ -221,12 +221,22 @@ Plug 'https://github.com/junegunn/limelight.vim.git' " Darkens non-focussed area
 " preservim/vim-vim-markdown  https://github.com/preservim/vim-markdown.git  (this one has more stars and seems more active....)
 
 " vim-markdown
-Plug 'plasticboy/vim-markdown'
+" issue ISSUES:vim issue in zim-wiki — commenting out as a test
+" Plug 'plasticboy/vim-markdown'
 
 " the following plugin (vim-markdown) includes Syntax Concealing - use :set conceallevel=2
+" https://github.com/preservim/vim-markdown.git
 " Plug 'https://github.com/preservim/vim-markdown'                        
+" Plug 'preservim/vim-markdown'                        
 " the following hides the heading in markdown files - a problem (is this why plasticboy is better?) - <-- use :set foldignore=# 
 " Plug 'masukomi/vim-markdown-folding'
+"
+"
+" 2024-12-17  TRY NEW MARKDOWN PLUGIN -- due to vim issue mentioned in plasticboy above 
+" Loaded this from github to ~/.vim/pack/markdown_preservim/start/vim-markdown on 2024-12-17
+" Plug 'https://github.com/gabrielelana/vim-markdown.git'
+" Plug 'gabrielelana/vim-markdown'
+" GHF markdown?
 "}}}
 "{{{ LSP
 
