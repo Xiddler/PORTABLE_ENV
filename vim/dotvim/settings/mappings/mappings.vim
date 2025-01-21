@@ -11,7 +11,6 @@
 " These are symlinked from PORTABLE_ENV/
 
 "}}}
-"
 "{{{ Leader_key
 " === Leader ===
 
@@ -222,11 +221,12 @@ nnoremap <leader>vz :tabe ~/.zshrc <cr>
 
 
 "<leader>z to make new-numbered lines — used after capital J joins lines but fails to create a new numbered line
-nnoremap <leader>zz g$i<cr> <esc>x                                                                                                               x
+" nnoremap <leader>zz g$i<cr> <esc>x                                                                                                               x
+nnoremap <leader>zz g$i<cr> <esc>x                                                                                                               l
  
  
 "}}}
-"r{{{ Leader_key for themes / colorschemes
+"{{{ Leader_key for themes / colorschemes
 
 "<leader>bg to toggle color darkness/lightness automatically 
 map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
@@ -274,6 +274,12 @@ nnoremap Q @@
 " open a file in a new tab
 nnoremap gf :tabe <cfile><cr>
 " rem: gT and gt to navigate through tabs
+
+" }}}
+" {{{ My abbreviations
+ab rde raison d'être
+
+
 
 " }}}
 "{{{ Splits 

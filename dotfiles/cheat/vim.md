@@ -1042,7 +1042,7 @@ Think of ze meaning end
 saves each line in the buffer to a separate file.
 i love (parens) and then some
 
-# Special arguments                       
+# special arguments                       
 
 > Some special arguments are <silent> <Cmd> <buffer> <unique>
 
@@ -1112,7 +1112,7 @@ Overview of which map command works in which mode.  More details below.
 :cmap  :cnoremap :cunmap    Command-line
 :tmap  :tnoremap :tunmap    Terminal-Job
 
-# To append eg -dm to a string use & in :substitute
+# to append eg -dm to a string use & in :substitute
 
     :%s/kkk/&-dm                
 :nnoremap <leader>' :s/\s*$//
@@ -1128,7 +1128,7 @@ Alternative to using say capture groups and backreference as in
 
 kkk-dm
 
-# Enter/Search/Replace Hex char in Ex mode
+# enter/Search/Replace Hex char in Ex mode
 
 eg replace “ with " 
 
@@ -1137,12 +1137,12 @@ eg replace “ with "
 where C-v followed by u allows entering the Hex code for “ which is 201c
 
 
-# Find all non-UTF-8 chars
+# find all non-UTF-8 chars
 
 rg -axv '.*'
 grep -axv '.*'
 
-# Problem with navigating to beginning of previous word
+# problem with navigating to beginning of previous word
 
 SOLVED
 The problem was caused by my having a number of nnoremaps set to b?. 
@@ -1157,7 +1157,7 @@ When I commented these out in .vimrc, the full b functionality and absence of la
 :w !sudo tee %
 
 
-# Execute current buffer line as a vim command
+# execute current buffer line as a vim command
 eg in your buffer you have a line thus:
 !stat %
 meaning to ouput the statistics of the current file (which is what % means in this context)
@@ -1181,7 +1181,36 @@ Try it:
 ‡
 
 †
- ‡
+‡
+
+# regex: replace searched string --> \0
+
+TL;DR :s/pattern/\0/ where \0 captures the searched pattern. (I think \1 then captures the next item after the <space> )
+
+
+There is a nice shortcut in :%s/patttern/?? available in vim for replacing searched pattern with ?? but I can't remember it...
+Something like /\k or /() or something like that?
+Maybe
+:%s/pattern/HELP\1ME/g
+where \1 is the matched pattern 
+Yeah, possible. Looks ok...
+
+This is what I was looking for:
+:%s/^\d\+. /## \0\1/
+
+This replaces a numbered list with the same numbered list but with ## pre-pended. The search pattern is an initial number (eg 1. or 23.)
+followed by a space and the idea is to make markdown sections from these — hence the ## (or you could use # or ### etc.).
+So the \0 and the \1 are the 'arguments' from the search ... possible to think it like that where \0 is the search pattern and the next
+item (after the space) is \1.
+
+This seems to do the job. Not 100% certain that I have the logic right though.
+
+
+
+
+
+
+
 
 # END
 

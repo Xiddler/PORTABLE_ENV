@@ -76,7 +76,11 @@ focus() { cd $HOME/FOCUS }
 rems() { vim $HOME/DONAGHS/personal/reminders.md }
 busb() { cd $HOME/B693_backup }
 recipes() {cd $HOME/REPOS/FOOD/recipes }
+food() {cd $HOME/REPOS/FOOD }
 maps() {cd $HOME/REPOS//maps }
+diy() {cd $HOME/REPOS/DIY }
+lan() { cat $HOME/.cheat/lan.md }
+
 # EMACS
 # emax() { emacsclient /home/donagh/DONAGHS/personal/me.org } # using the emacs daemon 
 # emax() { emacsclient -c } # -c, --create-frame      Create a new frame instead of trying to use the current Emacs frame
@@ -161,7 +165,7 @@ alias -g szo='cd $HOME/DONAGHS/ZIM/ORG/'
 #{{{ doom emacs
 alias -g der="doom run" # doom emacs run; 
 # alias -g drr="doom run"
-alias -g sos="vim ~/DONAGHS/personal/SOS/Structure/structure4.md"
+alias -g sos="vim ~/DONAGHS/personal/SOS/Structure/structure5_2025_1.md"
 
 #}}}
 #{{{ VIM 
@@ -212,7 +216,33 @@ booksearch() {find ~/REPOS/books -maxdepth 4 -name "*.*" -type f | grep -i $1 } 
 godict() {/home/donagh/.virtualenvs/dict/bin/python /run/media/donagh/USB128GB/REPOSITORIES/2programming/python/1python_projects/cli_python/main_cli.py}
 # dict utilities: some handy sqlite commands to interrogate the sqlite3 database of words I have looked up
 # dictu() { /home/donagh/.scripts/dict_utils.sh }
+#
+# list of words I looked up
+lsw() { sqlite3 /run/media/donagh/USB128GB/REPOSITORIES/2programming/python/1python_projects/cli_python/donaghs_words.db "SELECT * FROM words;"}
+
 #}}}
+#{{{ info
+
+mylan() { echo "2024-12-07                \n
+|-------------------|-------------------| \n
+|                   |                   | \n
+|  Device           |  IP Address       | \n
+|                   |                   | \n
+|-------------------|-------------------| \n
+| Lenovo Win11      | 192.168.1.49      | \n
+| Toshiba laptop    | 192.168.1.86      | \n
+| Raspberry Pi      | 192.168.1.24 & 25 | \n
+| Oppo smartphone   | 192.168.1.104     | \n
+| Brother Printer   | 192.168.1.111     | \n
+| Huawei phone      | 192.168.1.162     | \n
+| Samsung Tablet    | 192.168.1.199     | \n
+|___________________|___________________| \n"
+}
+
+
+
+#}}}
+
 #{{{ RSYNC
 # manual rsync backup to the USB attached to the RPi
 # alias -g rsyncz="$HOME/.scripts/rsync_backup.sh"

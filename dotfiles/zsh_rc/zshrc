@@ -59,7 +59,7 @@ echo "Did you just reboot? Check dropboxd is running... ->% PS drobboxd OR ->% p
 # the following (uncommented line) allows profiling `zsh` to see what may be making it slow. NOTE: zprof needs to be uncommented at the last line too.
 # zmodload zsh/zprof
 
-zmodload zsh/mathfunc
+# zmodload zsh/mathfunc
 # allow math functionality - see che cli_calcs.md 
 # USAGE: ->% (( a = sin(44) * 44 )) && echo $a → 0.7788847046
 
@@ -181,9 +181,9 @@ setopt extendedhistory
 
 # to allow copying of arguments - of mv - using kk
 autoload copy-earlier-word
-zle -N copy-earlier-word
+# zle -N copy-earlier-word
 # bindkey '^[,' copy-earlier-word # original
-bindkey 'kk' copy-earlier-word
+# bindkey 'kk' copy-earlier-word
 
 
 ## Set name of the theme to load. Optionally, if you set this to "random"
@@ -294,7 +294,7 @@ plugins=(
 # PATH="$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin:/home/donagh/.emacs.d/bin/:/home/donagh/.cargo/bin:/home/donagh/PORTABLE_ENV_tmp/:/opt/texlive/2020/bin/x86_64-linux/:/home/donagh/.emacs/bin:/home/donagh/go/bin:/home/donagh/Applications/shellmath/shellmath:/home/donagh/.mix:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/maps/OSI_GridInQuest/GridInQuestII-Lin64-0100:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/golang/vugu_stuff:/home/donagh/.local/bin/gron:/usr/local/texlive/2021/bin/x86_64-linux:/home/donagh/Applications/nushell/nu_0_60_0_linux/nushell-0.60.0:/home/donagh/.subuser/bin"
 # Is this a good idea to have PATH defined here? 
 #
-PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin:/home/donagh/.emacs.d/bin/:/home/donagh/.cargo/bin:/home/donagh/PORTABLE_ENV_tmp/:/home/donagh/.emacs/bin:/home/donagh/go/bin:/home/donagh/Applications/shellmath/shellmath:/home/donagh/.mix:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/maps/OSI_GridInQuest/GridInQuestII-Lin64-0100:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/golang/vugu_stuff:/home/donagh/.local/bin/gron:/usr/local/texlive/2022/bin/x86_64-linux:/home/donagh/.subuser/bin:/home/donagh/.local/bin/cheat:/usr/sbin/bash:/home/donagh/.config/emacs/bin"
+PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin:/home/donagh/.emacs.d/bin/:/home/donagh/.cargo/bin:/home/donagh/PORTABLE_ENV_tmp/:/home/donagh/.emacs/bin:/home/donagh/go/bin:/home/donagh/Applications/shellmath/shellmath:/home/donagh/.mix:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/maps/OSI_GridInQuest/GridInQuestII-Lin64-0100:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/golang/vugu_stuff:/home/donagh/.local/bin/gron:/usr/local/texlive/2022/bin/x86_64-linux:/home/donagh/.subuser/bin:/home/donagh/.local/bin/cheat:/usr/sbin/bash:/home/donagh/.config/emacs/bin:/home/donagh/Applications/lc/lc"
 
 # source /home/donagh/.local/bin/virtualenvwrapper.sh
 
@@ -443,7 +443,7 @@ eval "$(zoxide init zsh)"
 eval "$(mcfly init zsh)"
 
 # emacs - to get emacsclient to work
-export ALTERNATE_EDITOR=""
+# export ALTERNATE_EDITOR=""
 
 # br is an alternative file searcher - described in HackerNews Jan 2020
 # source /home/donagh/.config/broot/launcher/bash/br
@@ -475,7 +475,7 @@ source ~/.config/dirjump/dirjump
 
 #############################
 # https://github.com/nvbn/thefuck
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 #############################
 
 
