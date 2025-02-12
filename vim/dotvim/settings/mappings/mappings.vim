@@ -3,6 +3,7 @@
 " List of config files
 
 " $MYVIMRC at $HOME/.vimrc
+"
 " $HOME/.vim/settings/configs/configs.vim
 " $HOME/.vim/settings/functions/functions.vim
 " $HOME/.vim/settings/mappings/mappings.vim

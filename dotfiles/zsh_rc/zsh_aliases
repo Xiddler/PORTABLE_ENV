@@ -250,7 +250,7 @@ rsyncz() { /home/donagh/.scripts/rsync_backup.sh }
 # investigate using systemd timers to do this automatically Note added 2022-04-02
 #}}}
 #{{{ DOCKER & PODMAN
-alias -g docker='sudo docker '
+# alias -g docker='sudo docker '
 alias -g podman='sudo podman '
 #}}}
 #{{{ GRON

@@ -312,6 +312,8 @@ highlight Folded guibg=black guifg=#6a6d6a
 
 " to match z; in emacs where zo doesn't (seem to) work for some reason. ie toggle fold open/close 
 nmap z; za
+nmap <tab> za
+
 
 
 " }}}
@@ -425,6 +427,7 @@ let g:user_emmet_install_global = 0
 " === Skeleton files ===
 
 " These provide templating for new files in  ~/.vim/vim_templates/skeleton.
+" eg opening a new file in the terminal with ->% vim newfile.py will provide the new file with python-suitable matter
 augroup skeletons
     au!
     autocmd BufNewFile *.* silent! execute '0r ~/.vim/vim_templates/skeleton.'.expand("<afile>:e")

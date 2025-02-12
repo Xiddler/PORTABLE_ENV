@@ -1,10 +1,11 @@
 "{{{ Preliminaries
 
 
-" The .vimrc is split into the following:
+" My .vimrc is split into the following:
 
 " $MYVIMRC = $HOME/.vimrc                                                   " This file
 
+" The constituent files are:
 source $HOME/.vim/plugins/plugins.vim                                       " plugins <leader>pl
 source $HOME/.vim/settings/configs/configs.vim                              " configs <leader>co
 source $HOME/.vim/settings/functions/functions.vim                          " functions <leader>fu
@@ -68,6 +69,9 @@ set ttyfast "
 " Open new split panes to right and bottom, which feels more natural than Vim's default
 set splitbelow
 set splitright
+
+" Set :Explorer to tree view
+"let g:netrw_liststyle=3
 
 " === GNU Stow === 
 

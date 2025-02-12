@@ -497,21 +497,6 @@ Also in insert mode for ☺ press Ctrl-K 0u
 
 sort u
 
-# Insert a range of lines from another file - 2 Methods
-
-## Method 1
-:put =readfile('/path/to/foo/foo.c')[146:226]
-
-Note: to get '=' here, after :put enter C-r = 
-
-
-## Method 2
-
-:r! sed -n 3,7p /path/to/foo/bar.md
-:r !sed -n 3,7p /path/to/foo/bar.md
-
-
-
 # To read in i.e. copy the 3 lines After 'CHALLENGE' in the specified file
 r! grep -A3 "CHALLENGE" /path/to/foo/bar.md
 
@@ -1204,6 +1189,22 @@ So the \0 and the \1 are the 'arguments' from the search ... possible to think i
 item (after the space) is \1.
 
 This seems to do the job. Not 100% certain that I have the logic right though.
+
+
+# Insert a range of lines from another file - 2 Methods
+
+## Method 1
+:put =readfile('/path/to/foo/foo.c')[146:226]
+
+Note: to get '=' here, after :put enter C-r = 
+
+
+## Method 2
+
+:r! sed -n 3,7p /path/to/foo/bar.md
+:r !sed -n 3,7p /path/to/foo/bar.md
+
+
 
 
 

@@ -221,7 +221,18 @@
 ;; pre-installed
 
 ; (use-package org-bullets)
+;;
+;; evil-vimish-fold; added 2025-02-03;
+;; https://github.com/alexmurray/evil-vimish-fold?tab=readme-ov-file#evil-vimish-fold
+;; (use-package evil-vimish-fold) ;; using this alone works
+(use-package vimish-fold
+  :ensure
+  :after evil)
 
+(use-package evil-vimish-fold
+  :ensure
+  :after vimish-fold
+  :hook ((prog-mode conf-mode text-mode) . evil-vimish-fold-mode))
 ;;
 ;; added 2023-07-10
 (defun now ()

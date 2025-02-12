@@ -57,8 +57,19 @@ git log --oneline --all --decorate --graph
 
 # To set your identity:
 
-git config --global user.name "John Doe"
-git config --global user.email johndoe@example.com
+## New way
+
+Hint: _includes set_
+
+$ git config set --global user.name "Your Name"
+$ git config set --global user.email "your-email@example.com"
+
+## Old way
+
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+
+
 
 # To set your editor:
 
