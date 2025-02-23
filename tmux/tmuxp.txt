@@ -1,0 +1,4 @@
+
+
+
+tmuxp load /home/donagh/.tmxup/my-6-daily-tabs.yaml

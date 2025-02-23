@@ -6,6 +6,19 @@ usage
 -> % stow zsh
 will create the symlinks for both .zshrc and .zsh_aliases in $HOME
 
+# PER DIRECTORY HISTORY
+added 2025-02-16
+https://github.com/jimhester/per-directory-history.git
+
+Per directory history for zsh, as well as global history, and the ability to toggle between them with ^G.
+
+Use Ctrl-G to toggle
+using global history
+ ~/REPOS/OUTDOOR/Fuel/gas                                                                                        42s  donagh@donagh-satellitep50c
+❯
+using local history
+ ~/REPOS/OUTDOOR/Fuel/gas                                                                                        42s  donagh@donagh-satellitep50c
+❯
 
 
 

@@ -499,10 +499,42 @@ function yy() {
 	rm -f -- "$tmp"
 }
 
+# per-directory-history
+source $HOME/PORTABLE_ENV/zsh/per-directory-history/per-directory-history.zsh
+
 # tilix terminal (testing out June 2022) 
 # if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         # source /etc/profile.d/vte.sh
 # fi
+ 
+#########################################################
+#########################################################
+# Consider using some /all of the foloowing — added 2025-02-17
+
+  # Ensure history is written after every command, allowing it to persist across sessions
+   # shopt -s histappend  # Append to history instead of overwriting
+   # PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+   # Set the history size (adjust as needed)
+   # HISTSIZE=50000   # Number of commands kept in memory
+
+   # HISTFILESIZE=1000000  # Number of commands kept in the history file
+
+   # Add timestamps to history (format: YYYY-MM-DD HH:MM:SS)
+   # HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
+
+   # Ignore duplicate and space-prefixed commands
+HISTCONTROL=ignoredups:ignorespace
+
+   # Save multi-line commands as a single entry
+   # shopt -s cmdhist
+
+   # Allow history expansion with Ctrl + R
+   # bind '"\e[A":history-search-backward'
+   # bind '"\e[B":history-search-forward'
+
+#########################################################
+#########################################################
 
 # sd  https://github.com/ianthehenry/sd 
 # fpath=(/home/donagh/Applications/sd_scripts_dir_utility/sd/sd $fpath)

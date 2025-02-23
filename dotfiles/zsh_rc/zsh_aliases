@@ -80,6 +80,7 @@ food() {cd $HOME/REPOS/FOOD }
 maps() {cd $HOME/REPOS//maps }
 diy() {cd $HOME/REPOS/DIY }
 lan() { cat $HOME/.cheat/lan.md }
+lsch() { ls $HOME/.cheat }
 
 # EMACS
 # emax() { emacsclient /home/donagh/DONAGHS/personal/me.org } # using the emacs daemon 
@@ -123,7 +124,7 @@ school() { vim /home/donagh/REPOS/projects/00_engineering_projects/PRE_PROJECTS/
 one() { vim ~/DONAGHS/personal/ONE_LONG_HARD_LOOK.md }
 
 #humour() { cd $HOME/SD64/1donaghs-stuff/humour/ }
-#outdoors() { cd $HOME/SD64/REPOS/OUTDOOR }
+outdoor() { cd $HOME/REPOS/OUTDOOR }
 projs() { cd /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/Projects }
 #donaghs() { cd $HOME/SD64/DONAGHS }
 mind() { cd $personal/minding_me }
@@ -165,7 +166,7 @@ alias -g szo='cd $HOME/DONAGHS/ZIM/ORG/'
 #{{{ doom emacs
 alias -g der="doom run" # doom emacs run; 
 # alias -g drr="doom run"
-alias -g sos="vim ~/DONAGHS/personal/SOS/Structure/structure5_2025_1.md"
+alias -g sos="vim ~/DONAGHS/personal/SOS/Structure/structure6_2025_2_2.md"
 
 #}}}
 #{{{ VIM 
@@ -251,7 +252,7 @@ rsyncz() { /home/donagh/.scripts/rsync_backup.sh }
 #}}}
 #{{{ DOCKER & PODMAN
 # alias -g docker='sudo docker '
-alias -g podman='sudo podman '
+# alias -g podman='sudo podman '
 #}}}
 #{{{ GRON
 #  Makes JSON greppable
