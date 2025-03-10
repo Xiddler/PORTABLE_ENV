@@ -69,17 +69,25 @@
 ;; nov.el Major mode for reading novels -https://depp.brause.cc/nov.el/
 ;; (package! nov.el)
 
-;; The long lost string manipulation tool for emacs
-;; https://github.com/magnars/s.el
+;;(package! git-commit)
+
+;; Origami: https://github.com/gregsexton/origami.el
+
+;; The long lost string manipulation tool for emacs ;; https://github.com/magnars/s.el
 ;; dependency for origami
 (package! s)
-
-;; Dash
-;; dependency for origami
+;; Dash -- a dependency for origami
 (package! dash)
 
-;; origami - folding in markdown and other filetypes : https://github.com/gregsexton/origami.el
+;; origami - folding in markdown and other filetypes 
+;; A text folding minor mode for Emacs.
+; With this minor mode enabled, you can collapse and expand regions of text.
 (package! origami)
+
+;; org bullets packages
+(package! org-bullets)
+(package! org-superstar)
+
 
 ;; vim-sneak emulator
 ;; https://github.com/hlissner/evil-snipe

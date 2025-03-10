@@ -4,6 +4,7 @@
 " My .vimrc is split into the following:
 
 " $MYVIMRC = $HOME/.vimrc                                                   " This file
+" MyVimSettingsDir='/home/donagh/settings'
 
 " The constituent files are:
 source $HOME/.vim/plugins/plugins.vim                                       " plugins <leader>pl

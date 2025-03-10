@@ -212,6 +212,14 @@
 
 (require 'use-package)
 
+
+;; org mode
+(use-package org
+  :hook
+  (org-mode . org-mode-hide-stars)
+  :ensure t
+  )
+
 ;; origami from gregsexton: the long lost string manipulation tool for emacs
 (use-package s)
 (use-package dash)
@@ -220,7 +228,56 @@
 ;; evil-snipe == vim-sneak
 ;; pre-installed
 
+;; Bullets
+;; Get pretty org-bullets in Doom Emacs
+;; in the init.el file uncomment (org +pretty)
+
+(use-package org-bullets)
+;;
+(use-package org-superstar)
+
+(defun org-mode-hide-stars ()
+  (font-lock-add-keywords
+   nil
+   '(("^\\*+ "
+      (0
+       (prog1 nil
+         (put-text-property (match-beginning 0) (match-end 0)
+                            'face (list :foreground
+                                        (face-attribute
+                                         'default :background)))))))))
+;; (use-package org-bullets
+  ;; :custom
+  ;; (org-bullets-bullet-list '("◉" "☯" "○" "☯" "✸" "☯" "✿" "☯" "✜" "☯" "◆" "☯" "▶"))
+  ;; (org-ellipsis "⤵")
+  ;; :hook (org-mode . org-bullets-mode))
+
+;; When installing Doom Emacs and using org-mode the defaults bullets are `*`. In order to get some fancy bullets the following steps need to be taken.
+
+;;    Add the org-mode +pretty flag to your org settings in init.el To read more on the available flags check the org-mode Doom Emacs module `lang/org`
+
+;; In init.el add the following
+;; :lang
+(org +pretty ) ; organize your plain life in plain text
+
+; (setq
+    ; org-superstar-headline-bullets-list '("⁖" "◉" "○" "✸" "✿")
+; )
+
+;; The org-bullets package replaces all headline markers with different Unicode bullets:
+
 ; (use-package org-bullets)
+    ; :config
+    ; (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+
+; (require 'org-bullets)(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+;; END org-bullets
+
+
+
+
 ;;
 ;; evil-vimish-fold; added 2025-02-03;
 ;; https://github.com/alexmurray/evil-vimish-fold?tab=readme-ov-file#evil-vimish-fold
@@ -235,13 +292,13 @@
   :hook ((prog-mode conf-mode text-mode) . evil-vimish-fold-mode))
 ;;
 ;; added 2023-07-10
-(defun now ()
-  "Insert string for the current time formatted like '2:34 PM' or 1507121460"
-  (interactive)                 ; permit invocation in minibuffer
-  ;; (insert (format-time-string "%D %-I:%M %p")))
+; (defun now ()
+;;; "Insert string for the current time formatted like '2:34 PM' or 1507121460"
+;;(interactive)                 ; permit invocation in minibuffer
+ ;; (insert (format-time-string "%D %-I:%M %p")))
   ;; (insert (format-time-string "%D %-I:%M %p")))
   ;; (insert (format-time-string "%02y%02m%02d%02H%02M%02S")))
-  (insert (format-time-string "%02y-%02m-%02d_%02H:%02M")))
+  ; (insert (format-time-string "%02y-%02m-%02d_%02H:%02M")))
 
 (defun today ()
   "Insert string for today's date nicely formatted in American style,

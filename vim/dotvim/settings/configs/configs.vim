@@ -139,78 +139,19 @@ autocmd Filetype markdown highlight link markdownError Normal
 "
 "
 "}}}
-"{{{ Spelling 
-" === Spelling ===
+"{{{ Dictionary
+" === Dictionary ===
 
 set dictionary=/run/media/donagh/USB128GB/REPOSITORIES/WORDS/Great_word_lists/TWL06_Scrabble_Word_List.txt
 " alternative (450,000+ words)
 " set dictionary=/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/WORDS/Great_word_lists/Word_lists/Linuxwords/linuxwords.1/dict
 
 "}}}
-" Abbreviations & typos {{{
-
-"=== Abbreviations & typos === 
-
-" Add header to .py file when starting a .py file
-" augroup templates
-  " au!
-  " read in template files
-  " autocmd BufNewFile *.py silent! execute '0r $HOME/PORTABLE_ENV/vim/py_header.temp'
-" augroup END 
-
-" join up line with line below 
-" nmap ,e g0jI<backspace> <esc>jg0 " Vim's J already does this! 
-
-
-" Abbreviations
-
-" use — (Mdash i.e. digraph -M) instead of - (normal dash) " this prevents making lines into a bullet list
-
-" insert @dm - Note: dc for donagh comments
-" nmap dc 0i@dm -<left><right><space>
-" nnoremap leader c 0i@dm -<left><right><space>
-" inoremap dms @dmsaying -
-" inoremap dme @dmediting -
-
-" note: this has problems with words that end in 'i' eg radiI. Is there a fix for this?
-inoremap lh —
-inoremap £ # 
-inoremap i<space> I<space>
-
-" TYPOS
-inoremap iiv I've
-inoremap iid I'd
-inoremap iil I'll
-inoremap iim I'm
-inoremap wiht with
-inoremap taht that
-inoremap dont don't
-inoremap didnt didn't
-inoremap wont won't
-inoremap cant can't
-inoremap waht what
-inoremap hte the
-inoremap teh the
-
-
-
-" ABBREVIATIONS
-
-" need to be in insert mode for these then press <CR> or <SPC> to instigate 
-ab mys "Proactively engaged in making a better life for myself and/or others"
-ab FP 'Full Picture' 
-abb dtw - Donagh the Wise
-ab FQHB Fully Qualified Human Being 
-ab tbp The Big Picture
-
-" also Plugin :LoremIpsum
-ab lorem "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
-
-
-
-"}}}
 " {{{ My digraphs & special characters
-" NOTE: Some are set in Custom Leader
+" NOTE: Some are set in Custom Leader in mappings.vim -- 
+" see 
+" 1. $HOME/.vim/settings/mappings/mappings.vim
+" 2. ->% che vim.md
 "
 " ==== DIGRAPHS ===
 " :digraphs   [ Note: my theme is not suitable for viewing the symbols ]
@@ -381,9 +322,12 @@ set virtualedit=all " allows cursor to be moved anywhere in normal mode
 set noswapfile " prevents the automatic creation of swapfiles
 set hidden    " allows switching buffers without saving
 
-" dots instead of blanks?
-" set list
+" set list!
 " set listchars=tab:>\ ,trail:.
+" The following from https://stackoverflow.com/questions/1675688/make-vim-show-all-white-spaces-as-a-character#1675752
+" dots instead of blanks 
+set listchars=tab:⇤–⇥,space:·,trail:·,precedes:⇠,extends:⇢,nbsp:×
+" set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 
 
 " Wrapping lines 

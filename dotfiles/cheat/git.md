@@ -577,6 +577,12 @@ https://junyonglee.me/github/How-to-clean-up-git-repository/
 
 ->% git gc --aggressive --prune=now
 
+# git rev-parse
+
+Is this directory part of a git repo?
+->% git rev-parse --is-inside-work-tree
+true
+
 
 
 

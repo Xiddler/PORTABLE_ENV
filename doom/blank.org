@@ -1,0 +1,44 @@
+#+TITLE:     communications.org
+#+AUTHOR:    Donagh McCarthy
+#+OPENED:    2025-03-07
+#+STARTUP:   overview
+#+FILEPATH:  $HOME/DONAGHS/personal/communications.org
+#+EDITED:    2025-03-07
+
+
+* communications
+:info:
+Opened 2025-03-07
+
+I know I need to improve my communication skills. I am _very_ poor at communication and understanding communication, particularly speaking to other people.
+
+
+:end:
+** Notes
+
+2025-03-07
+URL: https://www.bostonreview.net/articles/theres-a-word-for-that/
+
+"But crucially, the person to whom I am speaking can only understand what I am trying to say if they do the converse: if they see past my individual words and have a sudden intuition of the more unified, coherent idea that I had in mind and was trying to communicate—an idea which was itself carved out of my holistic, gestalt experience of the entire situation."
+
+I think this is one of my failings when I try to communicate. I am not properly aware of the gestalt picture that other people _may_ and _do_ have in their heads and I try to communicate only using words isolated from the gestalt picture, usually because I don't have the "holistic, gestalt experience of the entire situation" (HGEES for short) in my own head anyway.
+
+My difficulties have been that my arrested cognitive development has not afforded me the ability to construct these HGEES in many cases, which leads to the situation where I don' really know "what's going on". In order to be plausible, credible and an effective speaker / communicator one _must_ know "what's going on" and one must be able to assure and impress on 'the other' that one does, enabling good inter-communications.
+
+To ask the question: "Do I really know what's going on?". "Am I fully 'with it'?" How do I impart that to the other person? Do I know that I need to?
+
+Sometimes: Do I know that I don't know what's going on? Can happen that I don't. It did happen because I was UNABLE to concretise the reality.
+How does it happen that I don't know what's going on? How can it be that I am not "with it"?
+How do I get to be "with it"? With what? What is "it"? The HGEES, I guess.
+
+* meta
+:notes:
+Opened 2025-03-07
+
+
+
+:end:
+* links
+
+    [[file:~/PORTABLE_ENV/doom/xHELP/doom-notes.org][doom-notes]]
+

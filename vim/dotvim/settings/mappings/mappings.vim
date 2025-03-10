@@ -10,6 +10,11 @@
 " $HOME/.vim/plugins/plugins.vim
 
 " These are symlinked from PORTABLE_ENV/
+"
+" NOTE ON LEADER 
+" mappings.vim (this file) contains leader shortcuts that do editing, abbreviations & fixes typos
+" configs.vim contains leader shortcut that do configureing NOT abbreviations or editing
+"
 
 "}}}
 "{{{ Leader_key
@@ -169,12 +174,6 @@ nnoremap <leader>ma :tabe $HOME/.vim/settings/mappings/mappings.vim<cr>
 " mappings for opening mappings files
 nnoremap <leader>fu :tabe $HOME/.vim/settings/functions/functions.vim<cr>
 
-" make ◁-- arrow left
-inoremap <leader>al <c-k>Tl--<space>
-
-" make --▷ arrow right
-inoremap <leader>ar --<c-k>Tr<space>
-
 " vim-mundo " https://simnalamburt.github.io/vim-mundo/ ; shows the vim undo tree
 " nnoremap <leader>uu :MundoToggle<CR>
 
@@ -255,7 +254,7 @@ vnoremap <leader>nl :s/^\s*\zs/\=(line('.') - line("'<")+1).'. '<CR>
 vnoremap <leader>nr :s/^\(\d\)\{1,2\}\. // <CR>
 
 "}}}
-" {{{ My mappings
+" {{{ My non-leader mappings
 
 
 " --- Ex mode navigation ---
@@ -277,8 +276,89 @@ nnoremap gf :tabe <cfile><cr>
 " rem: gT and gt to navigate through tabs
 
 " }}}
-" {{{ My abbreviations
+" Abbreviations & typos {{{
+"=== Abbreviations & typos === 
+
+" :r! sed -n 150,229p $HOME/.vim/settings/configs/configs.vim 
+
+
+" Add header to .py file when starting a .py file
+" augroup templates
+  " au!
+  " read in template files
+  " autocmd BufNewFile *.py silent! execute '0r $HOME/PORTABLE_ENV/vim/py_header.temp'
+" augroup END 
+
+" join up line with line below 
+" nmap ,e g0jI<backspace> <esc>jg0 " Vim's J already does this! 
+
+
+" Abbreviations
+
+" use — (Mdash i.e. digraph -M) instead of - (normal dash) " this prevents making lines into a bullet list
+
+" insert @dm - Note: dc for donagh comments
+" nmap dc 0i@dm -<left><right><space>
+" nnoremap leader c 0i@dm -<left><right><space>
+" inoremap dms @dmsaying -
+" inoremap dme @dmediting -
+
+" note: this has problems with words that end in 'i' eg radiI. Is there a fix for this?
+inoremap lh —
+inoremap £ # 
+inoremap i<space> I<space>
+
+" TYPOS
+inoremap iiv I've
+inoremap iid I'd
+inoremap iil I'll
+inoremap iim I'm
+inoremap wiht with
+inoremap taht that
+inoremap dont don't
+inoremap didnt didn't
+inoremap wont won't
+" inoremap cant can't
+" but significant also 'corrects' to significan't; how to avoid this? try: ab cant can't in mappings.vim — see below; it fixes it;
+inoremap waht what
+inoremap hte the
+inoremap teh the
+
+
+
+" ABBREVIATIONS
+
+" need to be in insert mode for these then press <CR> or <SPC> to instigate 
+ab mys "Proactively engaged in making a better life for myself and/or others"
+ab FP 'Full Picture'
+abb dtw - Donagh the Wise
+ab FQHB Fully Qualified Human Being
+ab tbp The Big Picture
 ab rde raison d'être
+
+" does this fix significan't? Yes!
+ab cant can't
+
+" also Plugin :LoremIpsum
+ab lorem "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
+
+" arrow left (pointing) ◀-
+inoremap <leader>la <C-K>PL-
+" arrow right  (pointing) -▶
+inoremap <leader>ra -<C-K>PR
+
+" make ◁-- arrow left
+inoremap <leader>al <c-k>Tl--<space>
+" make --▷ arrow right
+inoremap <leader>ar --<c-k>Tr<space>
+
+
+                           
+
+
+"}}}
+" {{{ My digraphs & special characters
+
 
 
 

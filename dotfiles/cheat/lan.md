@@ -18,6 +18,24 @@ Opened 2024-12-07
 | Samsung Tablet    | 192.168.1.199     |
 |___________________|___________________|
 
+## ip a
+
+->% ip a
+
+also to return json format
+
+->% ip -j a
+
+To parse the output of `ip -j a` do this python's json.tool: 
+->% ip -j a | python -m json.tool 
+
+or use the jq utility
+->% ip -j a | jq '.[]'
+
+
+
+
+
 ## nmap on 2024-12-07
 ❯  nmap -sn 192.168.1.0/24
 Starting Nmap 7.95 ( https://nmap.org ) at 2024-12-07 13:50 GMT

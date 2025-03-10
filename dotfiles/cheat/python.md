@@ -35,7 +35,67 @@ First, activate the python virtualenv
 
 # Pretty print a json to the CLI
 
-python -m json.tool file.json
+->%  python -m json.tool file.json
+
+->% ip -j a | python -m json.tool | rg 'local'      [ another way to get my internal IP Address ]
+
+# Python modules with a CLI interface
+
+URL: https://docs.python.org/3/library/cmdline.html
+
+The following modules have a command-line interface.
+
+    ast
+    asyncio
+    base64
+    calendar                            <-- USEFUL
+    code
+    compileall
+    cProfile: see profile
+    difflib
+    dis
+    doctest
+    encodings.rot_13
+    ensurepip
+    filecmp
+    fileinput
+    ftplib
+    gzip
+    http.server                         <-- USEFUL
+    idlelib
+    inspect
+    json.tool                           <-- USEFUL
+    mimetypes
+    pdb
+    pickle
+    pickletools
+    platform
+    poplib
+    profile
+    pstats
+    py_compile
+    pyclbr
+    pydoc
+    quopri
+    random
+    runpy
+    site
+    sqlite3
+    symtable
+    sysconfig
+    tabnanny
+    tarfile
+    this
+    timeit                          <-- USEFUL
+    tokenize
+    trace
+    turtledemo
+    unittest
+    uuid
+    venv                            <-- USEFUL
+    webbrowser
+    zipapp
+    zipfile                         <-- USEFUL
 
 # VIRTUALENV 
 

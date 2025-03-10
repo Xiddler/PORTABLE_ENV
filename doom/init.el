@@ -27,7 +27,8 @@
        ;;japanese
 
        :completion
-       company           ; the ultimate code completion backend 
+       ;; company           ; the ultimate code completion backend 
+       (corfu +orderless)  ; complete with cap(f), cape and a flying feather!
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
        ivy               ; a search engine for love and life
@@ -78,7 +79,7 @@
        vc                ; version-control and Emacs, sitting in a tree
 
        :term
-       eshell            ; the elisp shell that works everywhere
+       ;; eshell            ; the elisp shell that works everywhere
        ;;shell             ; simple shell REPL for Emacs
        ;;term              ; basic terminal emulator for Emacs
        vterm             ; the best terminal emulation in Emacs
@@ -148,7 +149,6 @@
        ;;ocaml             ; an objective camel
        (org +pretty)        ; organize your plain life in plain text +pretty added 2022-01-03; this adds the pretty circles instead of *
        ;;remove () from the following as org-bullets wasn't working - but z o stopped working now 2022-12-17
-       ;; org-bullets        ; temporarily removed 2022-01-05 to check issue with [SPC] a t not working; note org-superstar-mode also relevant
        ;;perl              ; write code no one else can comprehend
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more

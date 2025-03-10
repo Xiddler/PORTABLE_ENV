@@ -472,6 +472,15 @@ PR 	Tr 	PL 	Tl
 ⟩  <leader>a
 ⟨  <leader>l
 
+Added to  $HOME/.vim/settings/configs/configs.vim -▶ Abbreviations & typos
+
+left (pointing) arrow ◀
+inoremap <leader>la <C-K>PL-
+right  (pointing) arrow ▶
+inoremap <leader>ra -<C-K>PR
+
+
+
 ```
 
 ## Emojis real
