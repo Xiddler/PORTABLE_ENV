@@ -68,17 +68,9 @@ Afternoon:
 ## NEW / DIFFERENT
 
 
-## MINDWORKING
-
-### MINDSET
+## RECOVERY
 
 
-
-### SOCIAL COGNITION 
-
-
-
-### COGNITION
 
 
 " >>  $filen

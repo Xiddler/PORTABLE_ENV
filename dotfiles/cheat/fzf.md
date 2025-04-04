@@ -19,6 +19,9 @@ example: search for files containing the word 'metavar'
 ->% rg -d 1 'metavar' | fzf
 
 
+## Use find to include the pwd
+->% find $PWD -print -maxdepth 3 | fzf
+
 # ----------------------------------------
 
 # FULL fzf HELP FILE

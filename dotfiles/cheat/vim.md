@@ -310,6 +310,37 @@ Insert non-ascii character
 eg an M dash —
 Insert then Ctrl-V u 2014
 The output of ga on that M dash is:
+              — – 
+              i – — 
+              — –  - 
+
+* Use the minus sign /−/ (U+2212) when formatting numbers, because the default hyphen-minus /-/ (U+2D) just looks wrong: "It is −1 °C vs. -1 °C." Moreover, the correct minus has the same width as plus (− vs. +).
+
+* Rare, but use the figure dash /‒/ (U+2012) or figure space / / (U+2007) if you need a placeholder character that is the same width as a single digit. For example, "Guess the PIN: 1‒34."
+
+I love  − – — - ‒   
+
+− Digr -2; U2212; proper minus sign because it has the same width as the plus sign + (the symbol on the keyboard — Digr 43) 
+– Digr -N; U2013; shows an inclusive range eg 7–10pm or approx. 1200–1500 years ago. Also "Book club – more like wine club – was every Wednesday night" 
+— Digr -M; U2014; meant to be used thus: Book club—more like wine club—was every Wednesday night. (Personally, I freaking hate this usage)
+‒ none;    U2012; used in, for example, "Guess the PIN: 1‒34." i.e. a single-digit width horizontal line;
+- none;    U2D;   the dash on the keyboard; the symbol used in Markdown lists (along with *);
+
+Hyphens
+‐ Digr -1; U2010; used to create a compound word; eg  hyphen‐ated 
+‑ none;    U2011;
+⁃ none;    U2043; 
+﹣none;    UFE63;
+－none;    UFF0D;
+᠆ none;    U1806;
+﹘none;    UFE58;
+
+And
+_ none;    U005F; named low line; we might call underscore;
+＿none;    UFF3F; 
+
+
+
 
 
 ```

@@ -559,6 +559,9 @@ bbpython() { source ~/.virtualenvs/bpython/bin/activate && sleep 4 &&  python -m
 # bbpython() { source ~/.virtualenvs/bpython/bin/activate }
 # run a basic server in a directory
 # alias -g server='/usr/sbin/python -m http:server 9090 "$@"'
+#
+# start a server: source python venv & serve folders on the LAN (incl.Toshiba) to view on the Windows web browser (Firefox)
+sourcevenv() { source /home/donagh/.virtualenvs/beauty-http-server/bin/activate && echo "browse to http://192.168.1.86:8080/" &&  http.server --bind 0.0.0.0 --port 8080 --folder $1 }
 #}}}
 #{{{ ARITHMETIC
 # 

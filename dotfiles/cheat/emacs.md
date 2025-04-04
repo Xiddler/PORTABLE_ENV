@@ -5,6 +5,8 @@
   Quick               $ emacs -q        (will open the non-doom raw emacs GUI)
   emacsclient         $ emacs --daemon  (will run the emacs server)
 
+# exit emacs
+
 # "jk" for ESC
 # M-x package-install evil-escape 
 #To toggle the evil-escape mode globally:

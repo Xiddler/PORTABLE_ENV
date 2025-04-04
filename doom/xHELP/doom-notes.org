@@ -19,14 +19,26 @@ abbrev file: $HOME/PORTABLE_ENV/doom/dot_emacs/abbrev_defs (symlink to $HOME/.em
 
 abbrevs: M-x abbrev-mode, list-abbrevs, write-abbrevs
 :end:
-
 *** how to
 added 2024-09-04
+
+C-x a g
+(add-global-abbrev)
+Example:
+type donacomment
+revert to normal mode
+C-x a g
+type in dc
+then, thereafter, `dc` turns into donacomment
+(DONE!)
+
 
 To make yn turn into Donagh McCarthy do the following
 
 type yn
 C-x a i g
+(inverse-add-global-abbref)
+sf
 (on prompt) type in Donagh McCarthy
 Turn on abbrev-mode
 (DONE!)
@@ -36,6 +48,13 @@ type in fo
 C-x a i g
 type in of
 (DONE!)
+
+
+C-x a i g/l
+is the keybinding for
+ g : inverse-add-global-abbrev
+ l : inverse-add-mode-abbrev
+
 ** config files
 
 SPC f p
@@ -120,6 +139,26 @@ Not working on Windows. I don't really care about this one to be honest. May not
 ** [[source code]]
 ** themes
 SPC h t
+** Insert Unicode & symbols
+NOTE: Check with `ga` on the character or symbol
+
+Use this to insert Unicode character:
+SPC i u (counsel-unicode-char)
+
+Example: for m-dash; in normal mode
+SPC i u 2014 --> —
+
+I made a keybinding for it
+M-dash        —      use `lh`  to render the M-dash
+
+More examples:
+Slash         /      SPC i u 2f
+Pure prompt   ❯      SPC i u 276f
+
+
+
+
+
 * DOOM EMACS
 ** abbrevs
 
@@ -929,6 +968,8 @@ For example, my username is “jdemaris” so my folder is /home/donagh/.emacs.d
 Property drawers stay folded by default, and are intended to store a collection of key-value pairs, but they don't get exported by default, and so are a good way to keep your notes and your writing together and then export, as needed when drafting is done.
 
 Example of propert drawer. Use the TAB key to fold/unfold it.
+
+
 :contents:
 This is a drawer. Use the TAB key to fold/unfold it.
 :end:
@@ -1216,11 +1257,20 @@ Clock table --> https://orgmode.org/manual/The-clock-table.html
 
 ** drawers
 [[property drawers]]
+
+Sometimes you want to keep information associated with an entry, but you normally do not want to see it.
+For this, Org mode has drawers.
+They can contain anything but a headline and another drawer.
+Here's an example of a drawer
+
 :example:
 This is an example of a drawer
 Use TAB to open & close
 
 :end:
+
+URL: https://orgmode.org/manual/Drawers.html
+
 ** headings - promote / demote
 How to when there are sub-headings?
 
@@ -1895,7 +1945,7 @@ Status: Unresolved
 using DIY 'z;' instead (for org/fold-toggle)
 Tried doom upgrade. No success.
 
-** TODO Leading stars appearing in non-top headings
+** DONE Leading stars appearing in non-top headings
 
 The * are not showing in the top headings. This is a new behaviour that I don't want.
 

@@ -44,6 +44,12 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 #####################################################
 # Dropbox on Toshiba - to ensure dropbod runs after a reboot
 echo "Did you just reboot? Check dropboxd is running... ->% PS drobboxd OR ->% psd "
+echo " \n
+# Dropbox
+echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p
+# and
+nohup ~/.dropbox-dist/dropboxd&
+"
 # echo "Rem: I changed cd to act like zoxide z"
 # TRY THIS here
 # echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p

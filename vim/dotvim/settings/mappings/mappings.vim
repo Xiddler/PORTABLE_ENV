@@ -73,23 +73,19 @@ nnoremap <leader>sc viw<esc>bi{<esc>ea}<esc>l
 
 
 " --- END_SURROUNDING ---
-"}}}}
-"}}}
-"{{{ Leader_key + single alphabetic
 
+"}}}}
+"{{{{ PROMPT SYMBOL ❯
 "<leader>a to produce ❯ <-- the pure-prompt symbol
 " ❯  " the pure-prompt symbol — a nice right-pointing arrow
 inoremap <leader>>  <C-Q>u276f
 
 " outputs the pure-prompt symbol
 " ❯ 
+" }}}}
 
-
-" mathematical right angle bracket ⟩  
-inoremap <leader>a  <C-Q>u27e9  
-
-" mathematical left angle bracket  ⟨  
-inoremap <leader>l  <C-Q>u27e8  
+"}}}
+"{{{ Leader_key + single alphabetic
 
 " Other arrow symbols
 "<C-Q>O076 greater-than sign > (the keyboard symbol >)
@@ -146,6 +142,10 @@ nmap <leader>t g~aW
 
 "<leader>u to Capitalize/minusculize letter under cursor
 nnoremap <leader>u v~
+
+"<leader>v to run :Vex
+nnoremap <leader>v :Vex<cr>
+
 
 "<leader>y to yank to system clipboard 
 nnoremap <leader>y "+y
@@ -343,14 +343,20 @@ ab cant can't
 ab lorem "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
 
 " arrow left (pointing) ◀-
-inoremap <leader>la <C-K>PL-
+inoremap <leader>la <C-K>PL-<space>
 " arrow right  (pointing) -▶
-inoremap <leader>ra -<C-K>PR
+inoremap <leader>ra -<C-K>PR<space>
 
 " make ◁-- arrow left
 inoremap <leader>al <c-k>Tl--<space>
 " make --▷ arrow right
 inoremap <leader>ar --<c-k>Tr<space>
+
+" mathematical right angle bracket ⟩  
+" inoremap <leader>a  <C-Q>u27e9  
+
+" mathematical left angle bracket  ⟨  
+" inoremap <leader>l  <C-Q>u27e8  
 
 
                            

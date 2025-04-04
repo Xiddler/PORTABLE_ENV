@@ -79,3 +79,5 @@ Open zim and type \euro to get € and copy/paste that into the application
 
 
 # Selected symbols
+
+≈ ?2 in digraph

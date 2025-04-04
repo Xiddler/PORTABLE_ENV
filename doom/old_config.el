@@ -167,10 +167,10 @@
 ;; 2022-01-01 current preferred theme:
 ;;
 ;; (setq doom-theme 'tsdh-dark )
-(setq doom-theme 'doom-acario-dark ) ;; the purple for diary.org is not the nicest otherwise a nice theme
+;; (setq doom-theme 'doom-acario-dark ) ;; the purple for diary.org is not the nicest otherwise a nice theme
 ;; (setq doom-theme 'spacemacs-theme-dark ) ;; it keeps the * in org-mode - yuk
 ;; 2024-02-27
-;; (setq doom-theme 'doom-one)
+(setq doom-theme 'doom-one)
 
 ;; ORG-DIRECTORY
 ;; If you use `org' and don't want your org files in the default location below,
@@ -258,7 +258,7 @@
 
 ;; In init.el add the following
 ;; :lang
-;; (org +pretty ) ; organize your plain life in plain text
+(org +pretty ) ; organize your plain life in plain text
 
 ; (setq
     ; org-superstar-headline-bullets-list '("⁖" "◉" "○" "✸" "✿")

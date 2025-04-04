@@ -75,14 +75,14 @@
 
 ;; The long lost string manipulation tool for emacs ;; https://github.com/magnars/s.el
 ;; dependency for origami
-(package! s)
+;; (package! s)
 ;; Dash -- a dependency for origami
-(package! dash)
+;; (package! dash)
 
 ;; origami - folding in markdown and other filetypes 
 ;; A text folding minor mode for Emacs.
 ; With this minor mode enabled, you can collapse and expand regions of text.
-(package! origami)
+;; (package! origami)
 
 ;; org bullets packages
 (package! org-bullets)

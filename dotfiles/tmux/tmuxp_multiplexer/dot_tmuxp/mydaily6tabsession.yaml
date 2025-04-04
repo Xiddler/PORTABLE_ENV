@@ -39,7 +39,7 @@ windows:
 
       - shell_command:
 
-          - /usr/sbin/vim /home/donagh/DONAGHS/personal/SOS/Structure/structure4.md
+          - /usr/sbin/vim /home/donagh/DONAGHS/personal/SOS/Structure/structure7_2025_3_1.md
 
 
   - window_name: dict

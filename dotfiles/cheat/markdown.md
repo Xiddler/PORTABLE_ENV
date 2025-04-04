@@ -88,3 +88,25 @@ and make the color changes here. I don't know of another way. Donagh McCarthy 20
 
 ###### H6 Mad
 
+# MARKDOWN TOOLS
+
+## myst-parser
+
+https://myst-parser.readthedocs.io/en/latest/intro.html
+https://www.sphinx-doc.org/en/master/usage/markdown.html#markdown
+
+MyST is an extension of CommonMark Markdown, that includes a rich additional syntax for technical authoring, and can integrate with Docutils and Sphinx.
+For example, MyST includes role and directive extensions points, to allow for richer features, such as admonitions and figures.
+
+->% pip install myst-parser
+We can now use the myst-docutils-demo CLI tool that came with the installed package to parse a file from markdown to HTML.
+
+## pandoc
+
+converts markdown files to other formats
+
+
+
+
+
+
