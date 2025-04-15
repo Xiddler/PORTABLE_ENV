@@ -655,7 +655,8 @@ alias zcp='zmv -C'
 alias zln='zmv -L'
 alias zs='zsh_stats' # lists last 20 commands with statistics
 
-und() { $HOME/.scripts/replace_space_with_underline.sh }
+# und() { $HOME/.scripts/replace_space_with_underline.sh }
+und() { /home/donagh/.scripts/und_py.sh }
 
 #}}}
 #{{{ ZOXIDE

@@ -83,3 +83,7 @@ These are NOT the same:  − – — - ‒  
  _ none;    U005F; named low line; we might call it underscore;
  ＿none;    UFF3F;
 
+# The tick mark
+✓ Digr OK  Hex 2713
+
+

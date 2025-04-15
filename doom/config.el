@@ -512,6 +512,17 @@
 ;; More Donaghs
 (setq message-kill-buffer-on-exit t)
 ;;
+;; Corfu - replacement for Company for completion — 2025-04-13
+;; With Corfu, I can send the “pop-up” completion to the mini-buffer. And once in the mini-buffer I can use embark-export.
+;; Below is the code, from the Corfu wiki for transferring the in region popup to the mini-buffer.
+
+;; (defun corfu-move-to-minibuffer ()
+;;   (interactive)
+;;   (let (completion-cycle-threshold completion-cycling)
+;;     (apply #'consult-completion-in-region completion-in-region--data)))
+;; (define-key corfu-map "\M-m" #'corfu-move-to-minibuffer))
+
+;;
 ;;
 ;; https://github.com/domtronn/all-the-icons.el
 ;; Instructions to install the fancy icons from the above webref

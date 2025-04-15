@@ -5,7 +5,7 @@
 #+FILEPATH: ~/PORTABLE_ENV/doom/xHELP/doom-notes.org
 #+options: il
 #+tags:    help orgmode org-mode donaghs
-#+EDITED:  2025-03-02; 2025-02-11; 2024-09-04; 2024-02-06; 2024-01-02; 2023-12-10; 2023-09-06; 2023-08-09; 2023-07-12; 2023-04-07; 2023-02-24; 2023-01-03; 2022-12-19; 2022-12-16; 2022-09-25
+#+EDITED:  2025-04-12; 2025-03-02; 2025-02-11; 2024-09-04; 2024-02-06; 2024-01-02; 2023-12-10; 2023-09-06; 2023-08-09; 2023-07-12; 2023-04-07; 2023-02-24; 2023-01-03; 2022-12-19; 2022-12-16; 2022-09-25
 #+LINE      ___________________________________________________________________________________________________________
 #+BABEL: :session *python* :cache yes :results output graphics :exports both :tangle yes \n" "-----"
 
@@ -19,7 +19,8 @@ abbrev file: $HOME/PORTABLE_ENV/doom/dot_emacs/abbrev_defs (symlink to $HOME/.em
 
 abbrevs: M-x abbrev-mode, list-abbrevs, write-abbrevs
 :end:
-*** how to
+ how to
+*** make new abbrev
 added 2024-09-04
 
 C-x a g
@@ -55,6 +56,31 @@ is the keybinding for
  g : inverse-add-global-abbrev
  l : inverse-add-mode-abbrev
 
+*** list abbrevs
+*** edit existing abbrevs
+M-x (edit-abbrevs) and save in the abbrevs buffer using M-x (abbrevs-edit-save-buffer)
+
+See //home/donagh/.emacs.d/abbrev_defs where the ~/.emacs.d folder is symlinked to ~/.configure/emacs [Added 2025-04-08]
+** calculate
+2025-04-13
+
+[[calculator
+]]
+
+_Method 1_
+Place cursor after the last `)` and press Ctrl-x Ctrl-e or M-x eval-last-sexp or , e
+(sin 45)
+(* 233 3002)
+
+_Method 2_
+M-: eval-expression. This opens a mini-buffer at bottom; then enter the expression you want evaluated.
+(* 3 67.032) <Enter> = 201.096
+
+
+_Method 3_
+M-x ielm This opens the interactive elisp; type in expression.
+Use :bd to close the ielm buffer
+
 ** config files
 
 SPC f p
@@ -68,6 +94,13 @@ Shift Alt <- on the heading
 
 ** line nos.
 SPC t l
+** modes
+2025-04-13
+
+C-h v
+describe-variable                            brings up Variable: prompt
+Variable: major-mode                         <-- type in this or select it from menu
+
 ** org tables
 
 [[tables]]
@@ -137,10 +170,15 @@ Compared to term (M-x term), you can still use your Emacs keybindings to navigat
 Not working on Windows. I don't really care about this one to be honest. May not come as a shock if you have ever heard me talk about my "love" for Windows before… May be a deal breaker to you if your main operating system is Windows.
 
 ** [[source code]]
-** themes
-SPC h t
-** Insert Unicode & symbols
-NOTE: Check with `ga` on the character or symbol
+** symbols & Unicode
+
+_EMACS METHOD_
+To check the unicode of a character use SPC h ' or M-x describe-char
+This will show how to input the character along with other information about the character
+eg to input ✓ do this, in insert mode:
+Ctrl-x 8 RET 2713 or M-x insert-char 2713 to output this symbol: ✓
+
+NOTE: vim-like method — Check with `ga` on the character or symbol or M-x describe-char
 
 Use this to insert Unicode character:
 SPC i u (counsel-unicode-char)
@@ -154,20 +192,34 @@ M-dash        —      use `lh`  to render the M-dash
 More examples:
 Slash         /      SPC i u 2f
 Pure prompt   ❯      SPC i u 276f
+Tick mark     ✓      SPC i u 2713 My abbrev --> tm
+Long hyphen   —      SPC i u 2014 My abbrev --> lh
+
+Am I right? ✓
 
 
 
 
+
+
+
+** themes
+SPC h t
 
 * DOOM EMACS
 ** abbrevs
+The abbrev_defs file holds the abbreviations defined by me.
+
+This file can be accessed using M-x (edit-abbrevs) — NOTE: It is important when saving this buffer to use M-x (abbrev-edit-save-buffer) to save it to the relevant abbrev_defs file which is located at ~/.config/emacs/abbrev_defs.
 
 Go to [[text expansion]] below for how to make new abbreviations / text expansion
-C-x a i g on the word
+C-x a i g just after the word
 
 //home/donagh/.emacs.d/abbrev_defs
+NOTE: The ~/.emacs.d folder needs to be symlinked to ~/.config/emacs as the \*ABBREVS\* definitions look for ~/.emacs.d
 
 If making changes to above file maybe restart doom to register this file?
+M-x (edit-abbrevs)
 
 invoke abbrev-mode usin M-x abbrev-mode
 
@@ -223,11 +275,14 @@ NOTE: for marks see [[marks]]
 [SPC] .                <-- list files in current directory
 [SPC] [SPC]            <-- find file in PARENT directory
 ** calculator
+
 *** Eval
 [SPC] ; <-- single line buffer
 *** Calculator
+
 M-x calc
-https://www.emacswiki.org/emacs/Calc_Tutorials_by_Andrew_Hyatt
+
+URL: https://www.emacswiki.org/emacs/Calc_Tutorials_by_Andrew_Hyatt
 -----
 Usage:
 <number> [Enter]
@@ -276,6 +331,19 @@ Possible assistance:
 .doom.d directory is the preferred place to store your custom config (not within the Doom directory itself).
 See the documentation (Henrik is super great about this)
 My config files __are__ indeed in /home/donagh/.doom.d and symlinked to /home/donagh/PORTABLE_ENV/doom/*.el
+
+** describe-
+2025-04-13
+
+describe-char SPC h '
+describe-variable C-h v
+describe-function C-h f
+describe-keymap
+describe-key C-h k
+describe-symbol C-h s
+
+— ✓
+✓
 
 ** dictionaries
 :notes:
@@ -456,6 +524,18 @@ https://github.com/domtronn/all-the-icons.el/wiki
  coffee
 *** I would like to upgrade the leading * to something nicer
 How do I achieve this?
+** ielm shell eshell term or vterm
+
+M-x ielm
+
+_shell_ is the oldest of these 3 choices. It uses Emacs's comint-mode to run a subshell (e.g. bash). In this mode, you're using Emacs to edit a command line. The subprocess doesn't see any input until you press Enter. Emacs is acting like a dumb terminal. It does support color codes, but not things like moving the cursor around, so you can't run curses-based applications.
+
+
+_term_ is a terminal emulator written in Emacs Lisp. In this mode, the keys you press are sent directly to the subprocess; you're using whatever line editing capabilities the shell presents, not Emacs's. It also allows you to run programs that use advanced terminal capabilities like cursor movement (e.g. you could run nano or less inside Emacs).
+
+
+_eshell_ is a shell implemented directly in Emacs Lisp. You're not running bash or any other shell as a subprocess. As a result, the syntax is not quite the same as bash or sh. It allows things like redirecting the output of a process directly to an Emacs buffer (try echo hello >#<buffer results>).
+
 ** images
 images can be displayed within the buffer with the following command: C-c C-x C-v (org-toggle-inline-images) <-- z i
 OR Move over image / link and press [Enter]
@@ -1920,23 +2000,23 @@ SPC
         c SPC 'calendar ;; quick calendar
         i Y   'clipboard-yank ;; paste from system clipboard; Note: SPC i y (lowercase) pastes from emacs yank
 * xHELP
-** shell eshell term or vterm
+** shortdoc
+2025-04-13
 
-_shell_ is the oldest of these 3 choices. It uses Emacs's comint-mode to run a subshell (e.g. bash). In this mode, you're using Emacs to edit a command line. The subprocess doesn't see any input until you press Enter. Emacs is acting like a dumb terminal. It does support color codes, but not things like moving the cursor around, so you can't run curses-based applications.
+M-x shortdoc
+provides information on various documentation groups
+** emacs-info-manual
+M-x emacs-info-manual                 <-- this displays the Emacs manual in Info mode
 
+** find-library
 
-
-_term_ is a terminal emulator written in Emacs Lisp. In this mode, the keys you press are sent directly to the subprocess; you're using whatever line editing capabilities the shell presents, not Emacs's. It also allows you to run programs that use advanced terminal capabilities like cursor movement (e.g. you could run nano or less inside Emacs).
-
-
-
-_eshell_ is a shell implemented directly in Emacs Lisp. You're not running bash or any other shell as a subprocess. As a result, the syntax is not quite the same as bash or sh. It allows things like redirecting the output of a process directly to an Emacs buffer (try echo hello >#<buffer results>).
-
-** bullets
+M-x find-library then type eg seq (or scroll down)
+* ISSUES
+** bullets issue
 2025-03-02
 
 How to hide the leading bullets in headings?
-* ISSUES
+
 ** DONE zo not working
 
 Date: 2023-01-03
@@ -2091,6 +2171,7 @@ Press C-c a t to enter the global todo list.
 
 ** literate programming
 
+
 #+begin_src python
 
 a = 33
@@ -2111,3 +2192,9 @@ C-x a i g
 Turn on abbrev-mode
 (DONE!)
 
+(defun dtext (mymsg) )
+(eq mymsg "This is printed out by the function dtext"))
+
+(dtext)
+
+** testing

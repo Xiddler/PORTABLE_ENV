@@ -37,6 +37,16 @@ $today
 Morning: 
 Afternoon: 
 
+
+## ACTIVITY
+
+
+
+# CATETORIES
+
+
+
+
 ## HEALTH
 
 
@@ -53,6 +63,11 @@ Afternoon:
 
 
 ## CULTURE
+
+## ENTERTAINMENT
+
+
+## NATURE
 
 
 ## NEWS 
