@@ -1,43 +1,42 @@
 session_name: my-6-daily-tabs
 windows:
 - focus: 'true'
-  layout: cdbe,150x39,0,0,1
+  layout: cf7e,163x39,0,0,1
   options: {}
   panes:
   - pane
-  start_directory: /home/donagh/PORTABLE_ENV/dotfiles/tmux/tmuxp_multiplexer/dot_tmuxp
+  start_directory: /home/donagh
   window_name: zsh
-- layout: abbf,150x40,0,0,2
+- layout: d23f,159x39,0,0,2
   options: {}
   panes:
   - focus: 'true'
     shell_command: zsh
-  start_directory: /home/donagh
+  start_directory: /home/donagh/PORTABLE_ENV/dotfiles/tmux/tmuxp_multiplexer/dot_tmuxp
   window_name: zsh
-- layout: abc0,150x40,0,0,3
+- layout: d240,159x39,0,0,3
   options: {}
   panes:
   - focus: 'true'
     shell_command: emacs
-  start_directory: /home/donagh
+  start_directory: /home/donagh/PORTABLE_ENV/dotfiles/tmux/tmuxp_multiplexer/dot_tmuxp
   window_name: doom
-- layout: abc1,150x40,0,0,4
+- layout: d241,159x39,0,0,4
   options: {}
   panes:
   - focus: 'true'
     shell_command: zsh
-  start_directory: /home/donagh
+  start_directory: /home/donagh/PORTABLE_ENV/dotfiles/tmux/tmuxp_multiplexer/dot_tmuxp
   window_name: journal
-- layout: abc2,150x40,0,0,5
-  options: {}
-  panes:
-  - focus: 'true'
-    shell_command: vim
-  start_directory: /home/donagh
-  window_name: sos
-- layout: abc3,150x40,0,0,6
+- layout: cf82,163x39,0,0,5
   options: {}
   panes:
   - pane
-  start_directory: /home/donagh
+  start_directory: /home/donagh/PORTABLE_ENV/dotfiles/tmux/tmuxp_multiplexer/dot_tmuxp
+  window_name: bpython
+- layout: d243,159x39,0,0,6
+  options: {}
+  panes:
+  - pane
+  start_directory: /home/donagh/PORTABLE_ENV/dotfiles/tmux/tmuxp_multiplexer/dot_tmuxp
   window_name: dict

@@ -51,3 +51,15 @@ docker ps -a
 
 # list all images
 docker images
+
+# Dockerfile
+
+Docker builds images by reading the instructions from a Dockerfile. A Dockerfile is a text file containing instructions for building your source code.
+
+https://docs.docker.com/build/concepts/dockerfile/
+
+# ==================================================================================================================
+# END
+
+
+

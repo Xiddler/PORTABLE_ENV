@@ -101,9 +101,58 @@ C-h v
 describe-variable                            brings up Variable: prompt
 Variable: major-mode                         <-- type in this or select it from menu
 
+** number a list
+2025-04-17
+
+
+To number a list:
+a. Insert dashes for each item. Then on the first dash go M-x org-ctrl-c-minus and toggle until the numbered lists appear!
+b. OR SPC m + (keep toggling to get more bullet styles!)
+c. OR Shift Right Arrow (Yep. Easy, right?)
+d. OR Ctrl C -
+
+
+
+1. beef
+2. ham
+3. lamb
+4. cheese
+
+
+Here's a solution using macros.
+
+(re)set macro counter to 1 : C-x C-k C-c (defaults to 0)
+Start recording a macro for the first line C-x (
+insert macro counter : C-x C-k C-i
+Go to the beginning of next line then end macro C-x )
+Select other items then : M-x apply-macro-to-region-lines
+
+:notes:
+
+table
+chair
+sofa
+desk
+
+:END:
+
+
+
+
 ** org tables
 
 [[tables]]
+
+
+_quick table, starting with, say:_
+
+|Name|Phone|Age|
+at point end of previous line, C-c RET
+
+Try it:
+|Name|Phone|Age|
+
+
 
 ** shells & REPL
 
@@ -1543,9 +1592,11 @@ AND
 ** source code
 Added 2024-11-01
 
+Literate programming
+
 #+BEGIN_SRC python
 
-myresult = 42 * 2349
+myresult = 43 * 2349
 
 # print("Hello Europe!")
 msg = "Hello Europe!"
@@ -1556,7 +1607,7 @@ return myresult, msg
 #+END_SRC
 
 #+RESULTS:
-| 98658 | Hello Europe! |
+| 101007 | Hello Europe! |
 
 NOTE1: this partially worked after I included the return statement but the print statement was not output.
 NOTE2: To get the code block to return "Hello Europe" do this --> return "Hello Europe"

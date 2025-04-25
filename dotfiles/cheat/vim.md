@@ -1244,14 +1244,63 @@ Note: to get '=' here, after :put enter C-r =
 :r! sed -n 3,7p /path/to/foo/bar.md
 :r !sed -n 3,7p /path/to/foo/bar.md
 
+# Insert stuff using the shell python
+
+Using :.! and :r! in vim to call a python process
+
+NOTE: This is a vim trick using python
+
+If the contents of a file are:
+
+for n in range(1, 30, 4):
+    print(f"{n}. ")
+
+Then you can, in ex moded do this `:r! python %` to output the following. 
+(Where `r` outputs to next line. `.!` is similar where the `.` is the current line. NOTE: Doesn't have to be a python file)
+
+1.
+5.
+9.
+13.
+17.
+21.
+25.
+
+# gq and gw
+
+format {motion}
+
+Try it on the following line: gwgw
+It will turn the following single line into four lines — just like my macro <leader> zz does but better!
+(You can undo it with several J commands in normal mode — i.e. uppercase j)
+
+long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.  Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)." 
 
 
 
+# g Ctrl a
+
+Increment all the visually selected initial numbers
+Example: Visually highlight the following zeroes, then g Ctrl a will number them incrementally in vim. (But not when using tmux as Ctrl a is
+reserved!)
 
 
+0gj0
+Assigned to "r
 
 
+0
+0
+0
+0
+0
+0
+0
+
+
+# norm
+
+in ex mode use norm to replicate typing in normal mode
 
 
 # END
-

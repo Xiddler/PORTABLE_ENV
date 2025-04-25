@@ -10,13 +10,13 @@ read  m
 
 echo " "
 
-echo "$m will now have it's spaces replaced with _ and is in the
-clipboard ready for pasting. What more do you want?"
+echo "$m will now have it's spaces replaced with _ and .md appended to create a markdown file"
 
 echo " "
 
 # echo "$m" | sed -e 's/\s/_/g' | xclip -selection clipboard
-echo "$m" | sed -e 's/\s/_/g'  > /tmp/clipped.txt && cat /tmp/clipped.txt
+echo "$m.md" | sed -e 's/\s/_/g'  > /tmp/clipped.txt && cat /tmp/clipped.txt
+# echo "$m.md" | sed -e 's/\s/_/g'  | cp {} /tmp/clipped.txt && cat /tmp/clipped.txt
 
 
 

@@ -259,6 +259,25 @@ import subprocess
 subprocess.call(['ls', '-l'], shell=True) #using the call() function
 
 
+# Using :.! and :r! in vim to call a python process
 
+NOTE: This is a vim trick using python
 
+If the contents of a file are:
 
+for n in range(1, 30, 4):
+    print(f"{n}. ")
+
+Then you can, in ex moded do this `:r! python %` to output the following. 
+(Where `r` outputs to next line. `.!` is similar where the `.` is the current line.)
+
+1.
+5.
+9.
+13.
+17.
+21.
+25.
+29.
+
+I don't know how vim would do this using a macro.

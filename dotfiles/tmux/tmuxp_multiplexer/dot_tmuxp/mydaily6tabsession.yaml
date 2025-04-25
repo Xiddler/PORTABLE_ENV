@@ -33,13 +33,13 @@ windows:
 
       - 
 
-  - window_name: sos
+  - window_name: bpython
 
     panes:
 
       - shell_command:
 
-          - /usr/sbin/vim /home/donagh/DONAGHS/personal/SOS/Structure/structure7_2025_3_1.md
+          - bpython
 
 
   - window_name: dict

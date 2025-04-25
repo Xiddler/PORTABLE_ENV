@@ -176,6 +176,7 @@ alias -g sos="vim ~/DONAGHS/personal/SOS/Structure/structure7_2025_3_1.md"
 alias -g bx='vim $HOME/REPOS/TESTING/scratch_pad.txt' # as used in doom-emacs and in vim. Perhaps buffer X?
 alias -g sc='vim $HOME/REPOS/TESTING/scratch_pad.txt' # as used in doom-emacs and in vim. Perhaps buffer X?
 alias -g vt='vim ~/REPOS/TESTING/test.md'
+alias -g vtt='vim ~/TESTING/testing_vim.txt'
 alias -g music='vim $HOME/REPOS/music/music_memos.md'
 alias -g quakes='vim $HOME/DONAGHS/personal/mental_stuff/quakes.md'
 # alias -g 2r='vim ~/REPOS/books/0READING/2Read.md'
@@ -656,7 +657,14 @@ alias zln='zmv -L'
 alias zs='zsh_stats' # lists last 20 commands with statistics
 
 # und() { $HOME/.scripts/replace_space_with_underline.sh }
-und() { /home/donagh/.scripts/und_py.sh }
+# und() { /home/donagh/.scripts/und_py.sh }
+# replace space with underline and create a new .md file with that title in books/Articles/articles_downloaded
+# UNDerline MarkDown
+undmd() { /home/donagh/.scripts/und.sh }
+
+# enter text (by typing or pasting) and replace space with underline in that text
+und() { /home/donagh/.scripts/replace_space_with_underline.sh }
+
 
 #}}}
 #{{{ ZOXIDE
