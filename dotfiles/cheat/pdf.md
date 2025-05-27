@@ -192,3 +192,31 @@ cpdf -thinlines 2pt in.pdf -o out.pdf
 # Search file for "word"
 
 use docfd - see zim-wiki/Computer LINUX:1Linux Live USB:01installed apps:docfd
+
+# Bash script to manipulate pdf files
+
+#!/bin/bash
+
+## Convert images to PDF
+
+img2pdf *.jpg -o images.pdf
+
+## Merge PDFs
+
+pdfunite file1.pdf file2.pdf images.pdf merged.pdf
+
+## Compress
+
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \ -dNOPAUSE -dQUIET -dBATCH -sOutputFile=compressed.pdf merged.pdf
+
+gs? this is the shortcut to open ghostscript on Manjaro
+
+## Remove unwanted pages (e.g., page 3)
+
+pdftk compressed.pdf cat 1-2 4-end output final.pdf
+
+## Add page numbers
+
+pdfjam final.pdf --outfile final_numbered.pdf --pagecommand '{}' --landscape
+
+# END

@@ -67,14 +67,14 @@ emacs /ssh:name@server:/path/to/file
 # authorized_keys
 _serverside_
 
-This file is on the serverside and contains the contents of the clientside file $HOME/.ssh/id_rsa.pub or
-$HOME/.ssh/id_rsa_do.pub or similar 
+This file is on the serverside and contains the contents of the clientside file PUBLIC_KEY 
+eg  $HOME/.ssh/id_rsa.pub or $HOME/.ssh/id_rsa_do.pub or similar 
 NOTE: extension is .pub it is public
 
 If the ssh command ->% ssh-copy-id is not available:
-Copy the contents of ~/.ssh/id_rsa.pub on the clientside to ~/.ssh/authorized_keys on the serverside. 
+Copy the contents of the clientside PUBLIC_KEY ~/.ssh/id_rsa.pub into the file ~/.ssh/authorized_keys on the serverside. 
 
-## What goes in serverside authorized_keys?
+## What goes into the serverside authorized_keys file?
 
 The contents of ~/.ssh/id_rss.pub from the clientside
 
@@ -89,7 +89,7 @@ ssh can automatically add keys to this file, but they can be added manually as w
 
 When you connect to a new remote server via SSH, you are prompted whether you want to add the remote hosts to known_hosts file.
 
-## What goes in serverside known_hosts?
+## What goes into the serverside known_hosts file?
 
 The known_hosts file stores the public keys of the hosts accessed by a user.
 The contents of the public key of all of the servers that you have connected using ssh. (Wait, is this correct?)

@@ -5,6 +5,8 @@
 #
 # This script backsup my important folders to the Toshiba laptop at $HOME/MY_LOCKER
 # Approx. size of $TARTARGET is 400MB
+# It depends on the original folders being up-to-date. The danger item is MY_ZIM on Windows which depends on a Task Schedule script running on Win11
+
 # Backup weekly
 
 set -euo pipefail

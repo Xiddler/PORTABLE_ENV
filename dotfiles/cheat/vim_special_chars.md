@@ -86,4 +86,14 @@ These are NOT the same:  − – — - ‒  
 # The tick mark
 ✓ Digr OK  Hex 2713
 
+# The Euro symbol
+
+Є in the title of the HN submission is not the Euro symbol.  € is.
+
+
+€ made using Ctrl K Eu
+Є mand using Ctrl K IE
+
+
+
 

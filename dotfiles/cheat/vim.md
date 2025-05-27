@@ -1239,7 +1239,7 @@ This seems to do the job. Not 100% certain that I have the logic right though.
 Note: to get '=' here, after :put enter C-r = 
 
 
-## Method 2
+## Method 2 using r! sed -n
 
 :r! sed -n 3,7p /path/to/foo/bar.md
 :r !sed -n 3,7p /path/to/foo/bar.md

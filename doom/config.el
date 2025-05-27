@@ -276,8 +276,10 @@
 ;; END org-bullets
 
 
+(setq evil-motion-state t)
 
-
+;; [...] is annoying maybe — Donagh McCarthy 2025-04-29
+(setq org-ellipsis " ▼ ")
 ;;
 ;; evil-vimish-fold; added 2025-02-03;
 ;; https://github.com/alexmurray/evil-vimish-fold?tab=readme-ov-file#evil-vimish-fold
@@ -373,6 +375,12 @@
 (map! :n "SPC m m" 'point-to-register)
 (map! :n "SPC m j" 'jump-to-register)
 (map! :n ", e" 'eval-last-sexp) ;; SPC m e e
+;; I have recorded macros to underline / italicize word under cursor and can execute them with <leader> which is comma
+(map! :n ",i" 'evil-execute-macro) ;; italic — needs , i i
+(map! :n ",u" 'evil-execute-macro) ;; underline
+
+
+;; iambic
 ;; (map! :n ",d" "@dnc - ") ;; or better to use abbrev-defs?
 ;; NOTE: Best not to use _any_ keyboard key after " when creating a `map! :i` keybinding as it will cause trouble in INSERT mode
 ;; (map! :i "C-c d" 'today) ;; works 2023-07-10; qq also works

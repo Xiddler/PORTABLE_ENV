@@ -1563,6 +1563,21 @@ In [[file:packages.el][Packages.el]]
 (package! org-roam
   :recipe (:host github :repo "org-roam/org-roam"))
 
+** profiler-report
+2025-05-15
+
+URL: https://emacs.stackexchange.com/questions/5377/practical-limits-on-org-mode-file-size
+
+One of the less known features of Emacs is that it has a profiler! Let's assume your file is called foo.org, then you could do this:
+
+M-xprofiler-start
+
+C-x ffoo.org
+
+M-xprofiler-report
+
+After you've done all that Emacs will pop up a buffer with statistics on CPU usage (you can also choose to profile memory or both CPU and memory, when you start the profiler). This should give you some clues as to what functions take most time to execute.
+
 ** register org directory
 to allow orgmode agenda/todos to be listed with t a t
 see config.el

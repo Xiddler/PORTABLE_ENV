@@ -36,3 +36,13 @@ which alacritty                                                               06
 
 
 
+# list directories by size - ncdu replacement
+
+->%  ls -d|where type == dir|sort-by size|reverse|format filesize GB size
+
+(can take a short while)
+
+
+# stats 
+
+->% if $nu.history-enabled { open $nu.history-path | lines | uniq --count | sort-by --reverse count | first 5 | rename command amount } else { print --stderr "History is disabled!" }

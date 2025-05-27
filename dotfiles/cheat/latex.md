@@ -17,3 +17,19 @@ Opened 2022-03-25
 .idx 	::If your document contains an index. LATEX stores all the words that go into the index in this file. Process this file with makeindex. Refer to section 4.2 on page 74 for more information on indexing.
 .ind 	::The processed .idx file, ready for inclusion into your document on the next compile cycle.
 .ilg 	::Logfile telling what makeindex did.
+
+# Locations
+
+
+/home/donagh/REPOS/2programming/latex/
+
+## Zim-wiki
+
+MAJORS:LaTeX
+
+
+## Sample tex files
+
+/home/donagh/REPOS/2programming/latex/sample_tex_files
+
+

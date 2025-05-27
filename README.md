@@ -1,4 +1,4 @@
-# Test
+ Test
 
 This is a test to see if -> % git add -p allows me to stage this hunk / chunk Now 2022-01-22_18:12
 
@@ -70,7 +70,7 @@ but replace the .zshrc with the above one
 
     get the dot files onto the remote machine 
 
-git clone https://github/Xiddler/dot_files.git\
+git clone https://github.com/Xiddler/PORTABLE_ENV.git
 git config --global user.email "xiddler@gmail.com" &&   git config --global user.name "Donagh"
 
 ## ssh

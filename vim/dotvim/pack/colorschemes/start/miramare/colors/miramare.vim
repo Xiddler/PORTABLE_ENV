@@ -364,7 +364,7 @@ highlight! link mkdBold Grey
 " highlight! link mkdLink Purple
 highlight! link mkdLink Red
 highlight! link mkdHeading Grey
-" highlight! link mkdHeading Cyan @donagh 2024-10-03_13:41  — changes the color " of the # symbol
+" highlight! link mkdHeading Cyan @donagh 2024-10-03_13:41  — changes the color of the # symbol
 highlight! link mkdListItem Red
 highlight! link mkdRule Purple
 highlight! link mkdDelimiter Grey

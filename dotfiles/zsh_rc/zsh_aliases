@@ -244,7 +244,6 @@ mylan() { echo "2024-12-07                \n
 
 
 #}}}
-
 #{{{ RSYNC
 # manual rsync backup to the USB attached to the RPi
 # alias -g rsyncz="$HOME/.scripts/rsync_backup.sh"
@@ -391,7 +390,9 @@ hme() { cd $HOME }
 ssht() { ssh -i /home/donagh/.ssh/id_rsa_toshiba donagh@donagh-satellitep50c.home }
 # ssh into the RPi
 # sshrpi() { ssh -i ~/.ssh/ip_rsa_rpi donagh@192.168.1.24 }
-sshrpi() { ssh -i ~/.ssh/id_rpi_2 donagh@192.168.1.24 }
+# sshrpi() { ssh -i ~/.ssh/id_rpi_2 donagh@192.168.1.24 }
+# 2025-05-14 
+sshrpi() { ssh -i ~/.ssh/id_ed25519_RPi donagh@192.168.1.24 }
 # alias -g sshdo='ssh -i $HOME/.ssh/id_rsa_do donagh@142.93.37.252'
 #}}}
 #{{{ DOTFILES
@@ -420,6 +421,9 @@ gv() { rg "$1" ~/.vimrc }
 #{{{ GIT
 # git shortcuts - but see $alias from zsh
 alias gcm='git commit -m '
+alias gco='git commit -m '
+alias gcl='git clone '
+alias gsss='git status --short | sort -r'
 alias gss='git status'
 alias gaa='git add -A'
 # alias -g gsw='git switch "$1"'
@@ -485,6 +489,8 @@ alias -g lf="ls -la | grep '^\-' | grep -v ' \..*$' "  # List only regular files
 alias -g lfh="ls -la | grep -v '^[d].*' | grep  ' \..*$'" # List all hidden files (incl. symlinks)
 alias -g lfnh="ls -la | grep '^\-' | grep -v ' \..*$' "  # List only files not hidden (Donaghs!) - alias
 alias -g lfl="ls -la --color=auto | grep '^[l]' | grep ' \..*$'" # List only files that are symlinks
+alias -g llk="ls -la . | grep '^l.*'" # list all symlinks
+
 alias -g lfnl="ls -la | grep -v '\->' | grep -v '^d'" # List files which are not links 
 alias -g lfs="ls | xargs -n1" # simple list files in a column
 alias -g l1="ls | xargs -n1" # simple list files in a column
@@ -641,7 +647,7 @@ tm6() { tmuxp load $HOME/.tmuxp/my-6-daily-tabs.yaml }
 zcd() { /home/donagh/.scripts/zim_cifs_dropbox.sh }
 
 # dropbox
-drop() { echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && ~/.dropbox-dist/dropboxd }
+drop() { echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && nohup ~/.dropbox-dist/dropboxd& }
 # check the dropbox is working --> ->% ps aux | grep "dropbox" where PS is an alias for ps aux | grep 
 psd() { PS dropbox }
 
@@ -655,6 +661,7 @@ tmt() { tmux attach-session -t toshy }
 alias zcp='zmv -C'
 alias zln='zmv -L'
 alias zs='zsh_stats' # lists last 20 commands with statistics
+sscl() { sudo systemctl $1 $2 }
 
 # und() { $HOME/.scripts/replace_space_with_underline.sh }
 # und() { /home/donagh/.scripts/und_py.sh }

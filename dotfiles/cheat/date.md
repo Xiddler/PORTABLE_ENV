@@ -148,3 +148,8 @@ And if you want Z format, you can use a custom format string:
     date -ud '1 month' +'%FT%TTZ' --> 2024-05-12T14:13:22TZ
 date -Is -ud '1998-07-12'
 
+# quick date insert using `date`
+
+->% date --iso-8601
+2025-05-18
+

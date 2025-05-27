@@ -94,7 +94,7 @@ i = ["insert_mode", "collapse_selection"]
 a = ["append_mode", "collapse_selection"]
 
 # Escape the madness! No more fighting with the cursor! Or with multiple cursors!
-esc = ["collapse_selection", "keep_primary_selection"]
+# esc = ["collapse_selection", "keep_primary_selection"]
 
 
 # [keys.insert]
@@ -129,11 +129,11 @@ j = ["extend_line_down", "extend_to_line_bounds"]
 
 # Clipboards over registers ye ye
 d = ["yank_main_selection_to_clipboard", "delete_selection"]
-x = ["yank_main_selection_to_clipboard", "delete_selection"]
+# x = ["yank_main_selection_to_clipboard", "delete_selection"]
 y = ["yank_main_selection_to_clipboard", "normal_mode", "flip_selections", "collapse_selection"]
 Y = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "goto_line_start", "collapse_selection", "normal_mode"]
 p = "replace_selections_with_clipboard" # No life without this
 P = "paste_clipboard_before"
 
 # Escape the madness! No more fighting with the cursor! Or with multiple cursors!
-esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
+# esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
