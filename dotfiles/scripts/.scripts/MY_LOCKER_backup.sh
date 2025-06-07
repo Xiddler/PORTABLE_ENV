@@ -6,8 +6,26 @@
 # This script backsup my important folders to the Toshiba laptop at $HOME/MY_LOCKER
 # Approx. size of $TARTARGET is 400MB
 # It depends on the original folders being up-to-date. The danger item is MY_ZIM on Windows which depends on a Task Schedule script running on Win11
+#
+#############################################
+# IMPORTANT SOURCE FOLDERS BACKED UP BY THIS script
+#############################################
+# org-mode from Dropbox
+# PORTABLE_ENV
+# personal/
+#
+#
+#############################################
+# DESTINATION FOLDER/FILE
+#/home/donagh/MY_LOCKER/MY_PRECIOUS_DATA-$today.tar.gz"
+#############################################
+#
+#############################################
+# Frequency of backup
+#############################################
+# Backup weekly using a cronjob
+# 05 19 * * 6 /home/donagh/.scripts/MY_LOCKER_backup.sh
 
-# Backup weekly
 
 set -euo pipefail
 trap "echo 'error: Script failed: see failed command above'" ERR
@@ -31,7 +49,7 @@ PORTABLE_ENV="/home/donagh/PORTABLE_ENV"
 # example: /home/donagh/samba/anonymous_shared_directory/MY_ZIM/Zipped_MY_ZIM_date/MY_ZIM_2023-10-03.zip
 MY_ZIM="/home/donagh/samba/anonymous_shared_directory/MY_ZIM/Zipped_MY_ZIM_date/MY_ZIM_$yesterday.zip"
 
-# Target file
+# Target file i.e. destination
 TARTARGET="/home/donagh/MY_LOCKER/MY_PRECIOUS_DATA-$today.tar.gz"
 
 tar -czf $TARTARGET $all_org $personal $PORTABLE_ENV $MY_ZIM

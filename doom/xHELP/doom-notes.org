@@ -999,7 +999,7 @@ Open the EPUB file with C-x C-f [ or SPC f f ] ~/novels/novel.epub, scroll with 
 More keybinds can be looked up with F1 m.
 
 
-**** Issues
+**** Doom emacs issues
 2023-02-24
 Not working. Can't open the epub file.
 *** projectile
@@ -1440,13 +1440,42 @@ Solution: restart doom and/or doom sync
 
 STATUS - 2020-10-03 FIXED
 ** links
-*** To make a link:
+*** To make a link to a heading in the current file
+
+Surround the name of the heading in [[]]
+eg
+: [[ISSUES]]
+
+[[ISSUES]]
+
+*** To make a link to another file
+
 SPC L  then pick the type e.g. file: and then follow the prompts
 
-*** To make a link to a heading in another file
+*** Steps to make a link to a heading in another file
 
-1. SPC m l s ie Go to the heading and M-x org-store-link
-2. SPC m l S ie Go to the destination file and  M-x org-insert-last-stored-link
+1. SPC m l s          :: ie Go to the heading and M-x org-store-link
+2. SPC m l S          :: ie Go to the destination file and  M-x org-insert-last-stored-link
+
+Format
+
+\[\[file:<full_filepath>::*Heading\]\[<label>\]\]
+
+obviously without the escaping '\'s. Steps 1. and 2. see this done automatically.
+
+**** Example 1
+
+: [[file:/home/donagh/DONAGHS/personal/words.org::*foreign words][foreign words]]            <-- the content of the link below
+
+[[file:/home/donagh/DONAGHS/personal/words.org::*foreign words][foreign words]]
+
+**** Example 2
+
+`Assorted` is a sub-heading of foreign words in the words.org file
+
+: [[file:/run/media/donagh/USB128GB/DONAGHS/personal/words.org::*Assorted][Assorted]]
+
+[[file:/run/media/donagh/USB128GB/DONAGHS/personal/words.org::*Assorted][Assorted]]
 
 ** org-mode keywords HEADINGS /  KEYWORDS
 To change headings

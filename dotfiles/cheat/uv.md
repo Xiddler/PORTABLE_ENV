@@ -162,3 +162,46 @@ Options:
   -r, --requirements <REQUIREMENTS>
           Add all packages listed in the given `requirements.txt` files
 
+# starting a new python project using uv
+
+See zim-wiki --> Python:package_installers:uv:uv_projects:test_FH
+
+> uv init
+
+> uv lock
+
+(The following automatically creates the .venv virtualenv folder)
+> uv run main.py
+
+> ls
+## {{{ output ls
+
+    Directory: C:\Users\don_l\python_stuff\FastHTML\test_FH
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----         Fri, 06-Jun    15:25                .venv
+-a---         Fri, 06-Jun    15:20            109 .gitignore
+-a---         Fri, 06-Jun    15:20              5 .python-version
+-a---         Fri, 06-Jun    15:20             85 main.py
+-a---         Fri, 06-Jun    15:20            153 pyproject.toml
+-a---         Fri, 06-Jun    15:24            358 README.md
+-a---         Fri, 06-Jun    15:25            127 uv.lock
+
+## }}}
+
+
+Then inside the project folder
+> .venv\Scripts\activate
+NOTE: this activated the virtualenv and automatically named it uv_sample_project — the same title as the project
+
+*C:\Users\don_1\python_stuff\FastHTML\test_FH\.venv* ~\python_stuff\FastHTML\test_FH git:(master):6
+
+The *emphasised* section highlights that the virtual env is activated and being used
+
+To uv add <package>
+> uv add python-fasthtml
+
+OR
+
+> uv pip install python-fasthtml
