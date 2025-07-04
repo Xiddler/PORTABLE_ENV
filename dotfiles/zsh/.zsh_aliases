@@ -1,0 +1,788 @@
+# LOCATION: ~/PORTABLE_ENV/dotfiles/zsh_rc/zsh_aliases
+
+#{{{ NOTES
+## In functions, remember the 'command' prefix "$@" if the "alias" has the same name as the command. 
+#ls() {
+#      command ls --color=auto "$@"
+#    }
+#}}}
+
+# CONTENTS
+
+# #{{{ GENERAL
+# Capital letters
+alias -g PS='ps aux | grep -i '
+alias -g G='| grep -i '
+alias -g L='| less '
+alias -g W='| wc -l '
+alias -g C='| xclip -selection clipboard'
+# alias -g C='| clipcopy '
+#
+alias hg=histgrep
+alias hj='history'
+alias -g pss='python3 -m http.server 5500'
+alias -g ra='ranger'
+# alias synaptic='sudo synaptic'
+# alias tm="calc -d 'read qtime; qtime(0)'" # sudo apt install apcalc WINTER TIME
+# alias tm="calc -d 'read qtime; qtime(1)'" # sudo apt install apcalc SUMMER TIME
+# alias tn='t | festival --tts'
+alias tn='t | spd-say --pipe-mode'
+alias -g ifconfig="echo 'Use the ip command'"
+#alias pip='pip3'
+alias speedtest="curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
+alias -g wett='curl wttr.in/limerick'
+alias -g def='~/.scripts/get_defs.sh ' # dictionary addition to $dict
+alias -g define='BROWSER=w3m ddgr \!wordnik ' # ddgr is CLI DDGo and w3m is CLI browser
+alias -g filepath='$HOME/.scripts/filename.sh'
+alias -g scrape='~/PORTABLE_ENV/scripts/scrape_website.sh'
+alias -g scryp='scryer-prolog '
+alias -g unum='/home/donagh/gApplications/UNUM/unum.pl'
+# alias -g pmj='/run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/journal/2021/$(date +"%m")/$(date +"%m")-$(date +"%d").md' # see Autokey
+alias -g jmj='janet ~/.scripts/my_journal.janet'
+alias -g mp='markdown_previewer '
+alias -g ap='apostrophe '
+# alias -g autok='python $HOME/REPOS/2programming/python/2python_studies/json_stuff/4autokey_test.py'
+alias -g trigs='python $HOME/PORTABLE_ENV/scripts/autokey_trigger_table.py'
+alias -g obs='python ~/PORTABLE_ENV/scripts/CLICK_obsid_to_ext4path.py'
+alias -g stow='stow -d /home/donagh/PORTABLE_ENV/dotfiles  -t /home/donagh '
+# ff() {fortune}
+# ss() {shuf -n2 ~/REPOS/Quotations/quotes.md } # note: ss is a networking utility!
+# alias -g take="mkdir -p "
+take() { mkdir -p "$1" && cd "$1" }
+snipo() { /home/donagh/.scripts/add_snips_org.sh }
+alias -g ep='echo $PATH'
+# alias -g exa='~/Applications/exa-linux-x86_64' # modern ls
+# alias -g kontout='cat /media/donagh/3520-FD13/zim/ORG/03_CONTACTS/Contacts.txt | ag -i -A18 -B2 ' # get contact  
+alias -g listd='du -s -- *(D) | sort -k1n' # list size of directories
+# alias -g nt='terminator --geometry +500+100' # open a new zsh terminal  
+alias -g xn='| xargs -n 1'
+alias -g zz='zsh -l'
+alias -g zimbu='$HOME/.scripts/zim_backup_to_tinyUSB.sh'
+# alias -g jc='jupyter-console'
+# instead of plain rm usd trash rm to move the file to Trash so as to be able to recover it like on the Desktop
+alias -g trm='mv --force -t ~/.local/share/Trash '
+# battery
+alias -g battery='acpi -V G battery'
+# System status
+alias -g chk='$HOME/.scripts/info.sh' # quick summary of system status
+
+# end general
+#}}}
+#{{{     NAVIGATION SHORTCUTS
+# NAVIGATION SHORTCUTS
+
+# Functions to navigate
+focus() { cd $HOME/FOCUS }
+rems() { vim $HOME/DONAGHS/personal/reminders.md }
+busb() { cd $HOME/B693_backup }
+recipes() {cd $HOME/REPOS/FOOD/recipes }
+food() {cd $HOME/REPOS/FOOD }
+maps() {cd $HOME/REPOS//maps }
+diy() {cd $HOME/REPOS/DIY }
+lan() { cat $HOME/.cheat/lan.md }
+lsch() { ls $HOME/.cheat }
+
+# EMACS
+# emax() { emacsclient /home/donagh/DONAGHS/personal/me.org } # using the emacs daemon 
+# emax() { emacsclient -c } # -c, --create-frame      Create a new frame instead of trying to use the current Emacs frame
+# emax() { emacsclient -t /home/donagh/DONAGHS/personal/me.org } # -t, Open a new Emacs frame on the current terminal
+# issue with differences between files saved when using emacsclient and emacs -nw
+# USE emacs -nw
+
+# Critical Thinking
+tnk() { vim ~/DONAGHS/personal/thinking_stuff/practising_critical_thinking.md }
+# hacks == hax
+haxe() { vim /home/donagh/PORTABLE_ENV/dotfiles/hax/$1 }
+# go to sample files
+sample() { cd /home/donagh/files/sample_files }
+
+# jour { cd $journal && ls }
+po() { cd $HOME/PORTABLE_ENV }
+ba() { cd $HOME/BACKUPS }
+# dm() { cd $HOME/Donaghs_Tmp }
+dr() { cd $HOME/Dropbox/ }
+dl() { cd $HOME/Downloads/ }
+te() { cd $HOME/TESTING }
+org() { cd $HOME/all_org/org }
+az() { cd $HOME/all_org/org }
+2p() { cd $HOME/REPOS/2programming/ }
+2py() { cd $HOME/REPOS/2programming/python }
+2pp() { cd $HOME/REPOS/2programming/python/1python_projects }
+# 2py2() { cd $HOME/REPOS/2programming/python/2python_studies }
+2ps() { cd $HOME/REPOS/2programming/python/2python_studies }
+# things I learnt  
+til() { jumpapp emacs  ~/DONAGHS/personal/learning/til.org }  
+# things to learn 
+ttl() { jumpapp emacs  ~/DONAGHS/personal/learning/things_to_learn.org } 
+# sd() { cd $HOME/SD64/ }
+planning() { cd  $personal/planning/ }
+school() { vim /home/donagh/REPOS/projects/00_engineering_projects/PRE_PROJECTS/Schoolyard_Toilets_2024/schoolyard_wc.md }
+ 
+ 
+
+# My Jan 2024 project
+one() { vim ~/DONAGHS/personal/ONE_LONG_HARD_LOOK.md }
+
+#humour() { cd $HOME/SD64/1donaghs-stuff/humour/ }
+outdoor() { cd $HOME/REPOS/OUTDOOR }
+projs() { cd /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/Projects }
+#donaghs() { cd $HOME/SD64/DONAGHS }
+mind() { cd $personal/minding_me }
+words() { cd $HOME/REPOS/WORDS/ }
+jargon() { vim /home/donagh/REPOS/WORDS/MY_WORDS/modern_jargon.md } # tech jargon, hacker words etc.
+terms() { vim ~/DONAGHS/personal/SELF_DEVELOPMENT/mental_stuff/terms.md } # mainly psychology terms
+hard() { vim $HOME/REPOS/WORDS/MY_WORDS/hard_words.txt }
+articles() { cd $HOME/REPOS/books/Articles/Articles_downloaded } # use autokey instead so as to be able to tabe in vim. Added 2021-10-25.
+books() { cd $HOME/REPOS/books/ } # use autokey instead so as to be able to tabe in vim. Added 2021-10-25.
+b_d() { cd $HOME/REPOS/books/ } # a collection of abbrs. for books; bd is books_directory; br is books_reading directory for notes; b2r is books to read;
+b_r() { cd $HOME/REPOS/books/0READING/0Reading_notes/ && ls } # b is prefix for books so br = books reading, b2r = books to read, bd = books directory
+b_2r() {vim ~/REPOS/books/0READING/2Read.md } # books to read; see b_r and b_d above
+reading() { cd $HOME/REPOS/books/0READING/0Reading_notes/ && ls }
+repos() { cd $HOME/REPOS/ } # 
+donas() { cd $HOME/DONAGHS/ }
+
+projects() { cd $HOME/REPOS/projects/ }
+thymo() { vim ~/DONAGHS/personal/health_general/THYMO/thymo.md }
+#bookmarks() { cd $HOME/SD64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
+# rnotes() { cd $HOME/REPOS/books/0Reading/0Reading_notes && ls }
+alc() { cd  $personal/alcohol/ }
+shared() { cd /home/donagh/samba/anonymous_shared_directory }
+anon="/home/donagh/samba/anonymous_shared_directory"
+vig() { cd /run/media/donagh/SD64GB/DONAGHS/personal/writings/my_writings/VIGNETTES/ }
+# Search Zim - Computer, ORG 
+alias -g ..='../'
+alias -g ...='../../'
+alias -g ....='../../../'
+alias -g .....='../../../../'
+alias -g ......='../../../../../'
+alias -g szc='cd $HOME/DONAGHS/MY_ZIM/Computer/'
+alias -g ziim='cd $HOME/ZIM/'
+alias -g szo='cd $HOME/DONAGHS/ZIM/ORG/'
+# shortcut to Tiny 128 USB drive
+# alias -g tiny='cd /run/media/donagh/gB693-3C22'
+# 2020-12-10 
+# alias hanging='cd $HOME/DONAGHS/ZIM/Computer/ && tail -n4 0_Hanging.txt && cd $HOME/ziim/Donaghs/00_Home/ && tail -n4 0_Hanging.txt'
+# end navigation
+#}}}
+#{{{ doom emacs
+alias -g der="doom run" # doom emacs run; 
+# alias -g drr="doom run"
+alias -g sos="vim ~/DONAGHS/personal/SOS/Structure/structure7_2025_3_1.md"
+
+#}}}
+#{{{ VIM 
+ # open a file using vim
+# Aliases - vim
+# alias -g sp='vim $HOME/REPOS/TESTING/scratch_pad.txt'
+alias -g bx='vim $HOME/REPOS/TESTING/scratch_pad.txt' # as used in doom-emacs and in vim. Perhaps buffer X?
+alias -g sc='vim $HOME/REPOS/TESTING/scratch_pad.txt' # as used in doom-emacs and in vim. Perhaps buffer X?
+alias -g vt='vim ~/REPOS/TESTING/test.md'
+alias -g vtt='vim ~/TESTING/testing_vim.txt'
+alias -g vima='vim ~/a.txt' # for temporary use eg implementing regex etc. NOTE: see configs/config.vim for autocmd setting to get this working
+alias -g music='vim $HOME/REPOS/music/music_memos.md'
+alias -g quakes='vim $HOME/DONAGHS/personal/mental_stuff/quakes.md'
+# alias -g 2r='vim ~/REPOS/books/0READING/2Read.md'
+# alias -g b2r='vim ~/REPOS/books/0READING/2Read.md' # books to read; see b_r and b_d above
+alias -g v_test='vim ~/REPOS/TESTING/test.md'
+alias -g v_fraud='vim ~/DONAGHS/personal/00Fraud/fraud.md'
+
+alias -g email='vim ~/DONAGHS/personal/23_email_addresses.md'
+
+alias -g vw='vim /home/donagh/work.md'
+
+# Functions - vim
+
+# toread() { vim $HOME/REPOS/books/toRead.md }
+
+# 2r() { vim $HOME/REPOS/books/toRead.md }
+wants() { vim $HOME/REPOS/Purchases/Wants/wants.md }
+
+# open a bare-config vim 
+vvim() { vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc $1 }
+vimm() { vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc $1 }
+
+#}}}
+# {{{ MANJARO
+# sps() { pamac search $ }
+# spi() { sudo pamac install $ }
+#
+#
+# }}}
+#{{{ BOOKSEARCH
+booksearch() {find ~/REPOS/books -maxdepth 4 -name "*.*" -type f | grep -i $1 } # usage -> % booksearch 'smart'
+#}}}
+#{{{ dict 
+# look up the definition of a word using `dict`; resides at tmuxp tab 6
+# godict() {python /run/media/donagh/USB128GB/REPOSITORIES/2programming/python/1python_projects/dict_cli/my_dict.py}
+# using the `dict` virtualenv version of python
+# godict() {/home/donagh/.virtualenvs/dict/bin/python /run/media/donagh/USB128GB/REPOSITORIES/2programming/python/1python_projects/dict_cli/my_dict.py}
+godict() {/home/donagh/.virtualenvs/dict/bin/python /run/media/donagh/USB128GB/REPOSITORIES/2programming/python/1python_projects/cli_python/main_cli.py}
+# dict utilities: some handy sqlite commands to interrogate the sqlite3 database of words I have looked up
+# dictu() { /home/donagh/.scripts/dict_utils.sh }
+#
+# list of words I looked up
+lsw() { sqlite3 /run/media/donagh/USB128GB/REPOSITORIES/2programming/python/1python_projects/cli_python/donaghs_words.db "SELECT * FROM words;"}
+
+#}}}
+#{{{ info
+
+mylan() { echo "2024-12-07                \n
+|-------------------|-------------------| \n
+|                   |                   | \n
+|  Device           |  IP Address       | \n
+|                   |                   | \n
+|-------------------|-------------------| \n
+| Lenovo Win11      | 192.168.1.49      | \n
+| Toshiba laptop    | 192.168.1.86      | \n
+| Raspberry Pi      | 192.168.1.24 & 25 | \n
+| Oppo smartphone   | 192.168.1.104     | \n
+| Brother Printer   | 192.168.1.111     | \n
+| Huawei phone      | 192.168.1.162     | \n
+| Samsung Tablet    | 192.168.1.199     | \n
+|___________________|___________________| \n"
+}
+
+
+
+#}}}
+#{{{ RSYNC
+# manual rsync backup to the USB attached to the RPi
+# alias -g rsyncz="$HOME/.scripts/rsync_backup.sh"
+rsyncz() { /home/donagh/.scripts/rsync_backup.sh }
+# investigate using systemd timers to do this automatically Note added 2022-04-02
+#}}}
+#{{{ DOCKER & PODMAN
+# alias -g docker='sudo docker '
+# alias -g podman='sudo podman '
+#}}}
+#{{{ GRON
+#  Makes JSON greppable
+alias norg="gron --ungron"
+alias ungron="gron --ungron"
+#}}}
+#{{{ CONTACTS 
+alias -g contin='python3 /media/donagh/3520-FD13/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/contin.py' # input new contact
+alias -g contout='cat $HOME/ZIM/ORG/03_CONTACTS/Contacts.txt | rg -i -A18 -B2 '
+#}}}
+#{{{ CHEATS
+# to copy all new and old cheats to /home/donag/PORTABLE_ENV/cheat/dot_cheat_hard
+# NOTE: the following is maybe not needed if ALL cheats are stored in
+# PORTABLE_ENV including the /usr/share/cheat ones - do this first
+# alias ccheat="cp -f /usr/share/cheat/* $HOME/PORTABLE_ENV/cheat/dot_cheat_hard/ && cp -f $HOME/.cheat/* $HOME/PORTABLE_ENV/cheat/dot_cheat_hard/"
+#
+# alias -g che='cheat -e '
+
+che() { vim ~/.cheat/"$1" }
+ch() { ls ~/.cheat/"$1" }
+# ch() { cheat "$1" | less }
+
+# rgch() { rg -i "$1" $HOME/.cheat }
+lsc() { ls ~/.cheat }                   # list all cheats
+# fdc() { fd $1 ~/.cheat }
+gsc() { fd $1 ~/.cheat }                # find file in cheats i.e. if $1 in ~/.cheat
+
+#}}}
+#{{{ MARKDOWN 
+# the following shortcut alias means that pressing enter after just entering  
+# a file name with .md extension will automagically open it with vim. Hurrah!
+alias -s md=vim
+#}}}
+#{{{ SYSTEM TIMERS
+# to edit / set systemd timers (as opposed to cron)
+#  main folder
+timer-s() { sudo vim "/etc/systemd/system/$1.service" } # edit a service e.g.-> % timer-s dothisthing
+timer-t() { sudo vim "/etc/systemd/system/$1.timer" } # edit a timer e.g.-> % timer-t dothisthing
+timer-st() { sudo systemctl start "$1.timer" }
+timer-ls() { systemctl list-timers --all }
+timer-dae() { echo "1234" | sudo -S systemctl daemon-reload } 
+#}}}
+#{{{ REALPATH 
+# copy the path of a file to clipboard
+ # rp() { realpath $1 | xclip -selection clipboard }
+ rp() { realpath $1 } # print realpath to stdout
+# rp() { realpath $1 | xclipboard }
+# rp() { realpath $1 | clipit }
+# rp() { realpath $1 | clipcopy }
+#}}}
+#{{{ PASSWORDS 
+# PASSWORDS OUT 
+# LINUX - Toshiba
+# alias -g passout='cat $HOME/DONAGHS/MY_ZIM/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias for catt
+passout() { rg -i "$1" $HOME/DONAGHS/MY_ZIM/Computer/11SignUps.txt }
+alias -g catt='cat $HOME/ZIM/Computer/11SignUps.txt|rg -i -A5 '
+# added 2022-03-20  using jq and 11SignUps.json
+pout() { jq '.passwords' $HOME/REPOS/11SignUps.json | rg -A4 $1 }
+# Windows 11
+# C:\Users\don_l\Applications\Zim_wiki\MY_ZIM\Computer\11SignUps.txt
+# passout() { rg "$1" C:\Users\don_l\Applications\Zim_wiki\MY_ZIM\Computer\11SignUps.txt }
+
+# PASSWORDS IN
+# LINUX - Toshiba
+alias -g passin='sudo python ~/PORTABLE_ENV/dotfiles/scripts/.scripts/pass_in.py'
+alias gett='$HOME/.scripts/get_password.sh'
+# Windows 11
+# pass_in.py located at C:\Users\don_l\PORTABLE_ENV\dotfiles\scripts\.scripts\pass_in.py
+
+
+# alias -g tpassin='sudo --prompt=1234 $HOME/.scripts/passin_terminal.py'
+# alias -g passin='$HOME/.scripts/passin.sh' # a non-GUI version
+# alias -g passin='python3 $HOME/SD64/REPOSITORIES/2programming/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
+# alias -g passin='python3 /run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/python/1python_projects/Tkinter_projects/tkinter_GUI/passin_credentials/pw_data-input.py'
+# alias -g passin='python3 /media/pi/B693-3C22/ALL_DONAGH/2programming_repository/python/1python_projects/tkinter_GUI/passin_credentials/pw_data-input.py' # input new password
+# alias -g passin='python3 /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/python/1python_projects/passwds_CLI/pass_in.py'
+#}}}
+#{{{ JOURNAL
+# journal='/run/media/donagh/c60cbdfc-37a8-4e08-b2dd-6286d16beb3d/SD35-BACKUP/1donaghs-stuff/personal/journal'
+# Go to Current Year/Month #  variables
+k=$(date +"%Y/%m")
+q=$(date +"%Y-%m-%d")
+y=$(date +"%Y")
+m=$(date +"%m")
+# echo $m
+tj=$(date +"%m-%d") # today's journal 
+yd=$(date  --date="yesterday" +"%d") # DAY of month for yesterday 
+ym=$(date  --date="yesterday" +"%m") # MONTH for yesterday 
+
+vur() {vim ~/DONAGHS/personal/5_Ur_Journal.md }
+# sends selected text to the above file  use ,j in vim to run it 
+send_hunk() { /home/donagh/.scripts/hunk_to_ur_journal.sh }
+
+mj() { $HOME/.scripts/markdown_journal.sh } # edit / open today's journal - my journal 
+mt() { vim ~/DONAGHS/personal/health_general/THYMO/thymo.md } # open thymo file 
+
+pers() { cd $HOME/DONAGHS/personal } # go to personal 
+today() { cd $HOME/DONAGHS/personal/journal/$y/$m && ls -lat | head -n 10 } # go to month of today's journal and list most recent 10 items
+tomonth() { cd $HOME/DONAGHS/personal/journal/$y/$m && ls -lat | head -n 10 } # go to month of today's journal and list most recent 10 items
+jour() { cd $HOME/DONAGHS/personal/journal/$y/$m } # go to directory of this month of today's journal 
+# for the following I need to run a script similar to mj()
+# yj() { vim $HOME/DONAGHS/personal/journal/$y/$ym/"$yd-$ym.md"} # open yesterday's journal
+yj() { /home/donagh/PORTABLE_ENV/dotfiles/scripts/.scripts/markdown_yesterday.sh }
+# iwant() { vim $HOME/I_want.md } # added 2023-02-15 
+# alias -g mj='$HOME/.scripts/markdown_journal.sh'
+# alias -g wj='vim $HOME/DONAGHS/personal/means/work_journal.md'
+# alias -g aj='vim $HOME/DONAGHS/personal/Means/action_journal.md'
+# alias -g dist='vim $HOME/DONAGHS/personal/Means/distractions.md'
+# alias -g mdd='$HOME/.scripts/markdown_diary.sh' # md is taken as mkdir -p <dir>
+# alias -g backup="$HOME/.scripts/backup_all_and_encrypt.sh" # backsup ALL_ZIM, personal and org to Dropbox in .7z format
+# alias -g mn='$HOME/.scripts/mynotes.sh'
+# alias -g wcmj='$HOME/.scripts/wordCount_journal.sh' # word count my journal (markdown journal) - usage ->% wcmj 05 [ie June]
+# end journal
+#}}}
+#{{{ PERSONAL
+# alias -g jour='cd $HOME/DONAGHS/personal/journal'
+alias -g writing='cd $HOME/DONAGHS/personal/writings/my_writings'
+# alias -g pers='cd $HOME/DONAGHS/personal/'
+# immediately edit a file
+grat() { $EDITOR $personal/minding_me/gratitude_journal.md }
+ideas() { $EDITOR $personal/ideas/ideas_to_go_at.md }
+insp() { $EDITOR $personal/ideas/inspire.md }
+# See  alias -g mj=md_journal above
+pain() { $EDITOR $personal/minding_me/pain_points.md }
+snips() { $EDITOR $HOME/DONAGHS/personal/ideas/snippets.md }
+wisd() { $EDITOR $HOME/DONAGHS/personal/ideas/snippets.md }
+# aj() { $EDITOR /home/donagh/gDONAGHS/personal/minding_me/alcohol_journal.md } # (a)lcohol-(j)ournal modelled after (m)y (j)ournal.
+hme() { cd $HOME }
+#}}}
+#{{{ SSH 
+# 2020-12-09
+# donagh-satellitep50c.home 2023-09-30
+
+# ssht() { ssh -i /home/donagh/.ssh/id_rsa_toshiba donagh@192.168.1.86 } 
+ssht() { ssh -i /home/donagh/.ssh/id_rsa_toshiba donagh@donagh-satellitep50c.home }
+# ssh into the RPi
+# sshrpi() { ssh -i ~/.ssh/ip_rsa_rpi donagh@192.168.1.24 }
+# sshrpi() { ssh -i ~/.ssh/id_rpi_2 donagh@192.168.1.24 }
+# 2025-05-14 
+sshrpi() { ssh -i ~/.ssh/id_ed25519_RPi donagh@192.168.1.24 }
+# alias -g sshdo='ssh -i $HOME/.ssh/id_rsa_do donagh@142.93.37.252'
+#}}}
+#{{{ DOTFILES
+# dot files shortcuts 
+# cat file
+alias -g cb='cat ~/.bashrc'
+alias -g cv='cat ~/.vimrc'
+alias -g cz='cat ~/.zshrc'
+alias -g cza='cat ~/.zsh_aliases'
+# source file
+alias -g sb='source ~/.bashrc'
+alias -g sz='source ~/.zshrc'
+alias -g sza='source ~/.zsh_aliases'
+# edit file
+alias -g vb='vim ~/.bashrc'
+alias -g vv='vim ~/.vimrc'
+alias -g vz="vim ~/.zshrc"
+alias -g vza="vim ~/.zsh_aliases"
+
+# vim config file
+alias -g vco="vim  $HOME/.vim/settings/configs/configs.vim" 
+alias -g vfu="vim  $HOME/.vim/settings/functions/functions.vim" 
+alias -g vpl="vim /home/donagh/PORTABLE_ENV/vim/dotvim/plugins/plugins.vim"
+alias -g vma="vim  $HOME/.vim/settings/mappings/mappings.vim" 
+
+# grep file
+gza() { rg "$1" ~/.zsh_aliases }
+gz() { rg "$1" ~/.zshrc }
+gv() { rg "$1" ~/.vimrc }
+#}}}
+#{{{ GIT
+# git shortcuts - but see $alias from zsh
+alias gcm='git commit -m '
+alias gco='git commit -m '
+alias gcl='git clone '
+alias gsss='git status --short | sort -r'
+alias gss='git status'
+alias gaa='git add -A'
+# alias -g gsw='git switch "$1"'
+gsw() { git switch "$1" }
+# git log pretty
+alias gll="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all -n 15"
+# list git branches
+alias glb="git for-each-ref --color=always --sort=-committerdate refs/heads refs/remotes --format='%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset)) %(authorname)'"
+# cf ~/.scripts/manage_all_git_repos.sh (on the laptop)
+alias -g g_run="$HOME/.scripts/manage_all_git_repos.sh" # list state of 4 main repos
+alias -g g_poe="$HOME/PORTABLE_ENV/"             # On github
+alias -g poe="$HOME/PORTABLE_ENV/"             # Quickie
+alias -g g_org="$HOME/Dropbox/org-mode/org/"       # this tracks my .org files
+alias -g g_pers="$HOME/DONAGHS/personal/"
+pers() { cd "$HOME/DONAGHS/personal/" && ls }
+alias -g g_comp="$HOME/DONAGHS/MY_ZIM/Computer/"   # zim/Computer only
+alias -g g_all_org="$HOME/DONAGHS/all_org/"        # this only tracks doom-notes.org
+
+# look at MY_PRECIOUS_DATA in the backups 
+alias -g b_locs="echo 'Toshiba\n Main --> SD64' '\n HDD' $HOME/BACKUPS && echo 'RPi\n' /media/donagh/MyUSB1/MY_LOCKER_RPi && echo 'Dropbox\n' orgmode/"
+alias -g b_run="echo /home/donagh/BACKUPS/orgmode_SNAPSHOTS && echo /home/donagh/BACKUPS/RSYNCED/personal/journal/2024/02"
+alias -g b_org="ls -last /home/donagh/BACKUPS/orgmode_SNAPSHOTS"
+alias -g b_jour="ls -last /home/donagh/BACKUPS/RSYNCED/personal/journal/2024/02"
+# echo -e "$mydir";
+# alias -g g_list='echo -e "~/PORTABLE_ENV/ \n~/Dropbox/org-mode/org/ \n~/DONAGHS/personal/ \n~/DONAGHS/MY_ZIM/Computer \n~/DONAGHS/all_org/"'
+alias -g g_list='$HOME/.scripts/list_all_git_repos.sh' # added 2023-11-07
+alias -g git_list='echo -e "~/PORTABLE_ENV/ \n~/Dropbox/org-mode/org/ \n~/DONAGHS/personal/ \n~/DONAGHS/MY_ZIM/Computer \n~/DONAGHS/all_org/"'
+alias -g git_run='$HOME/.scripts/manage_all_git_repos.sh'
+alias -g git_all='$HOME/.scripts/git_run_all.sh'
+
+######################################
+#          lazygit                   #
+######################################
+lg() { lazygit }
+
+#}}}
+#{{{ LS
+# note eza is a dependency
+# List directories / files. Code: f file, d directory, l symlink, i item (file/directory),  n non-.
+# Duplicate options are given where zsh is available / known to me
+alias -g latest='ls -lt  **/*(.om[1,20])' # List latest 20 files edited - newest on top (zsh) [o is for ordered, m is for modified]
+alias -g newest='ls -lt  **/*(.om[1,20])' # List latest 20 files edited - newest on top (zsh) [o is for ordered, m is for modified] - alias
+# ls various
+# Items (ie files and directories)
+# alias -g li='ls -la --color=always' # long list everything - i.e. list items (files and folders) - alias
+alias -g ll='ls -la --color=always' # long list everything
+# alias -g lle='eza --color=always --long --all --no-filesize --git --no-time | less' # long list everything lle -- long list (with) eza
+alias -g lt='ls -lt --color=always | head -n 16' # list 10 most recent items in this directory EXCEPT dotfiles 
+alias -g ltl='ls -lt --color=always | head -n 16 | less' # list 10 most recent items in this directory EXCEPT dotfiles  and uses `less`;
+alias -g l.='ls -d  --color=always .* ' # List hidden files and directories - short (alternative alias)
+# alias -g lih='ls -d .* ' # List all hidden items i.e. files and directories - short - alias
+alias -g lih="ls -la | grep ' \..*$'" # List all hidden items i.e. files and directories - long -  alias
+alias -g linh="ls -la --color=always | grep  -v '\..*$' " # List all items not hidden
+alias -g lil="ls -la | grep '\->' " # List all items that are links
+alias -g linl=" ls -la --color=always | grep -v '\->'" # List all items that are not links
+# alias -g lk='ls -1v' # List non-hidden items - short (files and folders) 
+# alias -g linh='ls -ld -- *(M)' # List non-hidden items (files and folders)  (zsh)
+
+# Files
+alias -g lf="ls -la | grep '^\-' | grep -v ' \..*$' "  # List only regular files (Donaghs!)
+# alias -g lr="ls -la | grep '^\-' | grep -v ' \..*$' "  # List only regular files (Donaghs!) - alias
+# alias -g lfr="ls -la | grep '^\-' | grep -v ' \..*$' "  # List only regular files (Donaghs!) - alias
+alias -g lfh="ls -la | grep -v '^[d].*' | grep  ' \..*$'" # List all hidden files (incl. symlinks)
+alias -g lfnh="ls -la | grep '^\-' | grep -v ' \..*$' "  # List only files not hidden (Donaghs!) - alias
+alias -g lfl="ls -la --color=auto | grep '^[l]' | grep ' \..*$'" # List only files that are symlinks
+alias -g llk="ls -la . | grep '^l.*'" # list all symlinks
+
+alias -g lfnl="ls -la | grep -v '\->' | grep -v '^d'" # List files which are not links 
+alias -g lfs="ls | xargs -n1" # simple list files in a column
+alias -g l1="ls | xargs -n1" # simple list files in a column
+
+# Directories
+# alias -g ld='ls -ld -- *(R)' # List non-hidden directories incl. those that are symlinks (zsh)
+# alias -g ld='ls -ld -- *(-/)'  # List non-hidden directories incl.those that are  symlinks (zsh)
+# alias -g ld='ls -ld -- *(-/)' | awk '{ print $9  "/" }'
+
+# ls -ld -- *(-/) | awk '{ print $9 }'
+# alias -g ld='ls -ld -- *(-/)' | awk '{ print $9 "/" }'
+
+ld() { ls -ld -- *(-/) | awk '{ print $9  "/"}' }
+# using `find` to identify directories in the current folder (here $HOME):
+# find ~  -maxdepth 1 -type d | cut -d'/' -f4  | grep -v '^[_ .]' | sort
+
+# alias -g ld='ls -lad */' # List non-hidden directories incl.those that are  symlinks
+alias -g ldh="ls -la  | grep '^d' | grep ' \..*$'" # List only directories that are hidden
+alias -g ldnh="ls -la | grep '^d' | grep -v ' \..*$' "  # List directories not hidden (Donaghs!)
+#
+# alias -g ldl="ls -ld -- *(I)"  # List only directories that are symlinks (zsh)
+alias -g ldl="ls -ld -- *(@)"   # List only directories that are symlinks (zsh)
+alias -g ldnl="ls -ld -- *(F)" # List only directories that are not symlinks (zsh)
+
+# alias -g ldl="ls -la   | grep '^[l]' | grep -v ' \..*$'" # List only directories that are symlinks
+# alias -g ldl=" ls -l -- *(l-2)" # List only directories that are symlinks (zsh)
+#
+# alias -g ldnl="ls -la   | grep '^[d].*' | grep -v ' \..*$'" # List only directories that are not symlinks
+alias -g lda=" ls -ld -- *(T)" # List only actual directories i.e. not symlinked directories (zsh)
+alias -g lds="ls -ld -- *(T) | awk '{ print $NF }' "
+# 
+# spare alternatives
+# alias lh="ls -lad -- *(D.)" # List hidden files. But includes non-hidden files???
+# alias lh="ls -lad --color *(D.)" # List hidden files. But includes non-hidden files???
+# alias -g lh="ls -la | awk -F' ' '{ print $NF }' | awk -F: '/^[^a-zA-z/0-9].{2,}/ { print $0 } ' " # List only hidden files
+# alias lh=" ls -la | awk -F' ' '{ print $NF }' | awk '/^[^a-zA-Z0-9/]/ { print $0 }' "
+# lh() { ls -la | awk -F' ' '{ print $NF }' | awk '/^[^a-zA-Z0-9/].{2,}/ { print $NF }' | column  }
+# alias lr='find . -maxdepth 1 -type f -ls' # Show only regular files
+# alias lr='find . ! -name . -prune -type f -exec ls -ldi {} +' # List only regular files (POSIXY)
+# alias lr='ls -l -- *(D.)' # List only regular files (zsh only)
+#
+# alias -g lih='ll -d [a-z]*' # List non-hidden items (files and folders) 
+# alias -g lin="ls | tr ' ' '\n'" # List non-hidden items (files and folders) 
+# alias -g lle="ll | grep -v '^l.*'" # List all exclude links 
+alias -g lli="ll | grep '^l.*'" # List all include links 
+alias -g lls='ls | xargs -n1' # List ls in a single column
+# alias ls='ls --color=auto'
+alias -g hp='ls --hide=*.py' # hide python files
+
+# view tree
+alias -g t2="tree -alL 2"
+alias -g t3="tree -alL 3"
+alias -g t4="tree -alL 4"
+
+# View last 20 edited files in order
+ls20() { ls -lt  **/*(.om[1,20]) }
+
+#}}}
+#{{{ BASH
+# Length of a string
+strlen() { /home/donagh/.scripts/string_length_bash.sh } # will request string then give length
+# OR
+# first define mystr eg ->% mystr="donaghmccarthty"
+# len=${#mystr}
+# then ->% sz && echo $len
+#}}}
+#{{{ PYTHON
+# python virtual envs shortcuts
+alias pb='source $HOME/.virtualenvs/basic/bin/activate'
+alias pd='source $HOME/.virtualenvs/django/bin/activate'
+alias pf='source $HOME/.virtualenvs/flask/bin/activate'
+bbpython() { source ~/.virtualenvs/bpython/bin/activate && sleep 4 &&  python -m bpython }
+# bbpython() { source ~/.virtualenvs/bpython/bin/activate }
+# run a basic server in a directory
+# alias -g server='/usr/sbin/python -m http:server 9090 "$@"'
+#
+# start a server: source python venv & serve folders on the LAN (incl.Toshiba) to view on the Windows web browser (Firefox)
+# sourcevenv() { source /home/donagh/.virtualenvs/beauty-http-server/bin/activate && echo "browse to http://192.168.1.86:8080/" &&  http.server --bind 0.0.0.0 --port 8080 --folder $1 }
+pyserve() { source /home/donagh/.virtualenvs/beauty-http-server/bin/activate && echo "browse to http://192.168.1.86:8080/" &&  http.server --bind 0.0.0.0 --port 8080 --folder $1 }
+# pyserve() { python -m http.server 8001 }
+
+#}}}
+#{{{ ARITHMETIC
+# 
+# -> % echo $((4*34))
+# -> % perl -E 'say 235*1.15'
+#}}}
+#{{{ CONVERT BASES
+# convert from decimal
+
+# To paste  Hex char eg “ into Ex buffer use  C-Vu201c
+
+dec2hex() { echo "obase=16; ibase=10; $1" | bc }
+dec2bin() { echo "obase=2; ibase=10; $1" | bc }
+dec2oct() { echo "obase=8; ibase=10; $1" | bc }
+
+# Usage ->% dec2hex 22
+
+# convert to decimal
+
+bin2dec() { echo "obase=10; ibase=2; $1" | bc }
+oct2dec() { echo "obase=10; ibase=8; $1" | bc }
+hex2dec() { echo "obase=10; ibase=16; $1" | bc }
+
+#}}}
+#{{{ NETWORKING 
+# shortcuts
+# Public IP address
+# alias ipe='dig @resolver1.opendns.com ANY myip.opendns.com +short' # external ip -- better
+# alias -g ipe='dig myip.opendns.com @resolver1.opendns.com +short'
+# original command = 'dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | awk -F'"' '{ print $2}'"
+# alias -g ipe='dig TXT +short o-o.myaddr.l.google.com @ns1.google.com'  --> "88.87.194.23" i.e. with "" surrounding the IP Address. How to remove?
+# get "external"  LAN IPv4 address
+alias -g ipe='dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | tr "\"" " " '
+# curl ipinfo.io
+# curl ifconfig.me
+# curl icanhazip.com
+# curl ipecho.net/plain
+# curl ifconfig.co
+# w3m https://duckduckgo.com/?q=ip
+#
+# get "internal"  LAN IPv4 address
+# ipi() { ip --color=auto -c -4 addr | rg 192 | cut -d'/' -f1 | tr 'inet' ' ' | sed 's/\s*//' }
+alias -g ipi="ip --color=auto -c -4 addr | rg 192 | cut -d'/' -f1 | tr 'inet' ' ' | sed 's/\s*//' "
+#
+# alias -g ping='ping -c3 '
+alias png='ping -c4 8.8.8.8' # ping google to check if there is internet access
+alias -g pong='~/.scripts/pong.sh' # png but shortened; if no out put, then internet is up; if not, no. of errors;
+alias avg='png G rtt | cut -d '/' -f5' # average png time atm. Compared to what? Is internet slow or not?
+# alias to get my IP address of digital ocean website (2020-02-17)
+alias site='dig donaghmccarthy.ie +short'
+#}}}
+#{{{ PATHS & FILES
+# For use when using rg etc. e_ for echo, like g_ for goto
+e_creds() { echo /home/donagh/DONAGHS/MY_ZIM/Computer/11SignUps.txt }
+# USAGE: rg -C3 "donagh@donaghmccarthy.me" $(e_creds)
+#}}}
+#{{{ ON REBOOT
+# ==== TMUX ====
+# on reboot
+# LAN servers for sshrpi, s_books, s_passords
+# s_books() { cd /home/donagh/REPOS/books && python -m http.server 8088 }
+# s_passwords() { cd /home/donagh/DONAGHS/MY_ZIM/Computer && python -m http.server 8089 }
+s_passwords() { 'python -m http.server 8088  --directory ~/DONAGHS/MY_ZIM/Computer --bind 0.0.0.0' }
+s_books() { 'python -m http.server 8089  --directory ~/REPOS/books --bind 0.0.0.0' }
+# open 4 panes with the above and one spare
+# ttmux() { /home/donagh/.scripts/tmux.sh }
+# sesseion for emacs
+# tnd() { tmux new -s daily }
+# tad() { tmux attach-session -t daily } #  2023-10-20
+# tma() { tmux a } # 2024-07-09
+
+tm6() { tmuxp load $HOME/.tmuxp/my-6-daily-tabs.yaml }
+
+# === SERVERS ===
+# start zim, cifs and dropbox
+zcd() { /home/donagh/.scripts/zim_cifs_dropbox.sh }
+
+# dropbox
+drop() { echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && nohup ~/.dropbox-dist/dropboxd& }
+# check the dropbox is working --> ->% ps aux | grep "dropbox" where PS is an alias for ps aux | grep 
+psd() { PS dropbox }
+
+# session for my journal and emacs
+tmt() { tmux attach-session -t toshy }
+
+
+# }}}
+#{{{ ZSH 
+# shortcuts
+alias zcp='zmv -C'
+alias zln='zmv -L'
+alias zs='zsh_stats' # lists last 20 commands with statistics
+# sscl() { sudo systemctl $1 $2 }
+# alias sscl='sudo systemctl '
+
+# und() { $HOME/.scripts/replace_space_with_underline.sh }
+# und() { /home/donagh/.scripts/und_py.sh }
+# replace space with underline and create a new .md file with that title in books/Articles/articles_downloaded
+# UNDerline MarkDown
+undmd() { /home/donagh/.scripts/und.sh }
+
+# enter text (by typing or pasting) and replace space with underline in that text
+und() { /home/donagh/.scripts/replace_space_with_underline.sh }
+
+
+#}}}
+#{{{ ZOXIDE
+
+ # =============================================================================
+#
+# Utility functions for zoxide.
+#
+# the following lines are in .zshrc
+# zoxide 
+# eval "$(zoxide init zsh)"
+
+# pwd based on the value of _ZO_RESOLVE_SYMLINKS.
+#function __zoxide_pwd() {
+#    \builtin pwd -L
+#}
+
+## cd + custom logic based on the value of _ZO_ECHO.
+#function __zoxide_cd() {
+#    # shellcheck disable=SC2164
+#    \builtin cd "$@"
+#}
+
+## =============================================================================
+##
+## Hook configuration for zoxide.
+##
+
+## Hook to add new entries to the database.
+#function __zoxide_hook() {
+#    zoxide add -- "$(__zoxide_pwd)"
+#}
+
+## Initialize hook.
+## shellcheck disable=SC2154
+#if [[ ${precmd_functions[(Ie)__zoxide_hook]} -eq 0 ]] && [[ ${chpwd_functions[(Ie)__zoxide_hook]} -eq 0 ]]; then
+#    chpwd_functions=("${chpwd_functions[@]}" "__zoxide_hook")
+#fi
+
+## =============================================================================
+##
+## When using zoxide with --no-aliases, alias these internal functions as
+## desired.
+##
+
+## Jump to a directory using only keywords.
+#function __zoxide_z() {
+#    if [ "$#" -eq 0 ]; then
+#        __zoxide_cd ~
+#    elif [ "$#" -eq 1 ] && [ "$1" = '-' ]; then
+#        if [ -n "${OLDPWD}" ]; then
+#            __zoxide_cd "${OLDPWD}"
+#        else
+#            # shellcheck disable=SC2016
+#            \builtin printf 'zoxide: $OLDPWD is not set'
+#            return 1
+#        fi
+#    elif [ "$#" -eq 1 ] && [ -d "$1" ]; then
+#        __zoxide_cd "$1"
+#    else
+#        \builtin local result
+#        result="$(zoxide query --exclude "$(__zoxide_pwd)" -- "$@")" \
+#            && __zoxide_cd "${result}"
+#    fi
+#}
+
+## Jump to a directory using interactive search.
+#function __zoxide_zi() {
+#    \builtin local result
+#    result="$(zoxide query -i -- "$@")" && __zoxide_cd "${result}"
+#}
+
+## =============================================================================
+##
+## Convenient aliases for zoxide. Disable these using --no-aliases.
+##
+
+## Remove definitions.
+## function __zoxide_unset() {
+##     \builtin unalias "$@" &>/dev/null
+##     \builtin unfunction "$@" &>/dev/null
+##     \builtin unset "$@" &>/dev/null
+## }
+
+## __zoxide_unset 'z'
+## function z() {
+##     __zoxide_z "$@"
+## }
+
+## __zoxide_unset 'zi'
+## function zi() {
+##     __zoxide_zi "$@"
+## }
+# end zoxide
+# #}}}
+#{{{ EDITS: 
+# 2024-07-04 did nothing
+# 2022-04-02 added Notes and ARITHMETIC
+# 2022-03-22 variations on ls utility - big input, success
+# 2022-03-21 Major re-organisation 
+# 2021-12-21 # Reinstall of Manjaro see SD64   
+# 2020-12-10 Manjaro again - may be missing some items...
+#}}}
+# THE END

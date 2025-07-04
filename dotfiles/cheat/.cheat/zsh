@@ -1,3 +1,21 @@
+#
+# webrefs
+https://zsh.sourceforge.io/Doc/Release/Editor-Functions-Index.html#Editor-Functions-Index-1_tp_letter-A
+Editor Functions Index
+eg 
+	vi-forward-char	 	            18.6.1 Movement
+	vi-forward-word	 	            18.6.1 Movement
+	vi-forward-word-end	 	        18.6.1 Movement
+	vi-goto-column	 	            18.6.1 Movement
+	vi-goto-mark	 	            18.6.1 Movement
+	vi-goto-mark-line	 	        18.6.1 Movement
+	vi-history-search-backward	 	18.6.2 History Control
+	vi-history-search-forward	 	18.6.2 History Control
+	vi-indent	 	                18.6.3 Modifying Text
+
+
+#
+#
 # A plain old glob
 #
 print -l *.txt
@@ -94,6 +112,9 @@ hash -d hello=~/Documents
 man zshall
 https://manpages.debian.org/bullseye/zsh-common/index.html :: contains only contents of -> % man zshall
 
+## zsh-syntax-highlighting
+
+# zsh-abbr - see https://zsh-abbr.olets.dev/
 
 
 

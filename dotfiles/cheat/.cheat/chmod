@@ -1,6 +1,9 @@
 # Add execute for all (myscript.sh)
 chmod a+x myscript.sh
 
+# set all files to 664 recursively 
+chmod -R 664 Computer/
+
 # Set user to read/write/execute, group/global to read only (myscript.sh), symbolic mode
 chmod u=rwx, go=r myscript.sh 
 

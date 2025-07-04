@@ -1,8 +1,0 @@
-# Turn on daemon to backup doom-emacs
-
-
-->% echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p
-# This will return shell to user
-
-# To return shell to user use nohup and an ending &
-->% nohup ~/.dropbox-dist/dropboxd&

@@ -47,6 +47,10 @@
   ;; UNCOMMENT  :mode "\\.n3$"
   ;; UNCOMMENT  :mode "\\.ttl$")
 
+;; package sly (for Common Lisp)
+;; (package! sly
+;; :recipe (:host github :repo "joaotavora/sly"))
+
 
 
 ;; package! is specific to doom (it registers the package so that subsequent doom sync fetch and builds the package).
@@ -60,6 +64,8 @@
 ;; ;; One line that is uncommented is at the very end - (provide 'packages)
 ;; This will allow doom sync to search this file for packages to install
 
+;; sly
+(package! sly)
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)

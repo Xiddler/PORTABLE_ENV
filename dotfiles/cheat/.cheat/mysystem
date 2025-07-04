@@ -1,3 +1,67 @@
+->% fastfetch 
+
+donagh@donagh-satellitep50c
+---------------------------
+OS: Manjaro Linux Wynsdey 24.0.1 x86_64
+Host: SATELLITE P50-C (PSPTSE-00L003DU)
+Kernel: Linux 5.15.158-1-MANJARO
+Uptime: 23 days, 3 hours, 3 mins
+Packages: 2164 (pacman)[stable], 2 (snap)
+Shell: zsh 5.9
+Display (CMN15CB): 1920x1080 @ 60Hz [Built-in]
+DE: KDE Plasma 6.0.5
+WM: KWin (X11)
+WM Theme: Breeze
+Theme: breeze (BreathLight) [QT], Breath [GTK2/3]
+Icons: breeze [QT], breeze [GTK2/3/4]
+Font: Noto Sans (10pt) [QT], Noto Sans (10pt) [GTK2/3/4]
+Cursor: Breeze (24px)
+Terminal: zellij 0.40.1
+CPU: Intel(R) Core(TM) i7-5500U (4) @ 3.00 GHz
+GPU 1: NVIDIA GeForce 930M [Discrete]
+GPU 2: Intel HD Graphics 5500 @ 0.95 GHz [Integrated]
+Memory: 1.99 GiB / 7.68 GiB (26%)
+Swap: 1.14 GiB / 8.80 GiB (13%)
+Disk (/): 423.24 GiB / 906.86 GiB (47%) - ext4
+Disk (/run/media/donagh/USB128GB): 29.43 GiB / 114.17 GiB (26%) - ext4 [External]
+Local IP (wlp7s0): 192.168.1.86/24 *
+Battery: 100% [AC Connected]
+Locale: en_US.UTF-8
+
+
+
+
+
+██████████████████  ████████    donagh@donagh-satellitep50c
+
+██████████████████  ████████    ---------------------------
+██████████████████  ████████    OS: Manjaro Linux Wynsdey 24.0.1 x86_64
+██████████████████  ████████    Host: SATELLITE P50-C (PSPTSE-00L003DU)
+████████            ████████    Kernel: Linux 5.15.158-1-MANJARO
+████████  ████████  ████████    Uptime: 23 days, 3 hours, 3 mins
+████████  ████████  ████████    Packages: 2164 (pacman)[stable], 2 (snap)
+████████  ████████  ████████    Shell: zsh 5.9
+████████  ████████  ████████    Display (CMN15CB): 1920x1080 @ 60Hz [Built-in]
+████████  ████████  ████████    DE: KDE Plasma 6.0.5
+████████  ████████  ████████    WM: KWin (X11)
+████████  ████████  ████████    WM Theme: Breeze
+████████  ████████  ████████    Theme: breeze (BreathLight) [QT], Breath [GTK2/3]
+████████  ████████  ████████    Icons: breeze [QT], breeze [GTK2/3/4]
+                                Font: Noto Sans (10pt) [QT], Noto Sans (10pt) [GTK2/3/4]
+                                Cursor: Breeze (24px)
+                                Terminal: zellij 0.40.1
+                                CPU: Intel(R) Core(TM) i7-5500U (4) @ 3.00 GHz
+                                GPU 1: NVIDIA GeForce 930M [Discrete]
+                                GPU 2: Intel HD Graphics 5500 @ 0.95 GHz [Integrated]
+                                Memory: 1.99 GiB / 7.68 GiB (26%)
+                                Swap: 1.14 GiB / 8.80 GiB (13%)
+                                Disk (/): 423.24 GiB / 906.86 GiB (47%) - ext4
+                                Disk (/run/media/donagh/USB128GB): 29.43 GiB / 114.17 GiB (26%) - ext4 [External]
+                                Local IP (wlp7s0): 192.168.1.86/24 *
+                                Battery: 100% [AC Connected]
+                                Locale: en_US.UTF-8
+
+
 ->% neofetch 
 (2020-09-14_12:23) 
 OS: Manjaro Linux x86_64 
@@ -17,3 +81,5 @@ CPU: Intel i7-5500U (4) @ 3.000GHz
 GPU: NVIDIA GeForce 930M 
 GPU: Intel HD Graphics 5500 
 Memory: 3049MiB / 7877MiB 
+
+

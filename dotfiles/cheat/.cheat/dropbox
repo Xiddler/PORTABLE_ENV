@@ -2,5 +2,7 @@
 
 
 ->% echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p
+# This will return shell to user
 
-->% ~/.dropbox-dist/dropboxd
+# To return shell to user use nohup and an ending &
+->% nohup ~/.dropbox-dist/dropboxd&

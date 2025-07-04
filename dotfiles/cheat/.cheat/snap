@@ -1,3 +1,10 @@
+#
+# Webrefs
+# https://snapcraft.io/ [Canonical]
+# On Arch Linux, snap can be installed from the Arch User Repository (AUR).https://aur.archlinux.org/packages/snapd/
+#
+#
+#
 # To find the `foo` snap:
 snap find foo
 

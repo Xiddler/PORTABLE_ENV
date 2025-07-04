@@ -1,4 +1,12 @@
 # On linux
+
+# CLI tools
+ebookinfo  0.0.1-1 Library and utility for extracting meta-data from certain e-book files
+ebook-tools  0.2.2-7 [Installed] Tools for accessing and converting various ebook file formats
+ebook-convert  Usage: ebook-convert input_file output_file [options]
+
+
+# Readers / formats
 +-------------+--------------+
 |  Format     |    Reader    |
 +-------------+--------------+
@@ -7,6 +15,8 @@
 |             |   evince     |
 |  epub       |   fbreader   |
 |             |   calibre    |
+|             |   foliate    | added 2023-01-28; AUR;
+|             |   epy        | added 2023-02-24; AUR;
 |  djvu       |   djview4    |
 |  mobi       |   fbreader   |
 |  fb2        |   fbreader   | 
@@ -14,7 +24,14 @@
 |  rtf        |   fbreader   | 
 |  chm        |   fbreader   | 
 |  azw3       |   calibre    |
+| vast array  |   kavita     | added 2023-08-29; https://www.kavitareader.com/ 
 +-------------+--------------+
+
+Kavita Extensive File support
+    Manga/Comics: ZIP, RAR, RAR5, CBR, CBZ, CB7, CBT, TAR.GZ, 7ZIP/7Z
+    Books: EPUB2, EPUB3, PDF
+    Raw Images: JPG/JPEG, PNG, WebP, GIF, AVIF
+
 
 The ebook formats:
 
@@ -42,7 +59,7 @@ MOBI: A widely used, very popular format by Mobipocket; also can be .prc. Mobipo
 
 PDB: Stands for palm database. This format is widely used for cellphones (BlackBerry, iPhone), and Palm devices. Plucker, PalmDOC, iSilo, eReader, zTXT, and many more.
 
-PDF: Stands for Portable Document Format. The most widely used file type. Created by Adobe. Most ebook readers support PDF, but it's a challenge to display a 14" diagonal page on a 6" diagonal screen. There are conversion softwares, such as Calibre, that reformat PDF to display better on ebook readers.
+PDF: Stands for Portable Document Format. The most widely used file type. Created by Adobe. Most ebook readers support PDF, but it's a challenge to display a 14ins diagonal page on a 6ins diagonal screen. There are conversion softwares, such as Calibre, that reformat PDF to display better on ebook readers.
 
 PRC: Stands for Palm Resource Compiler; aka MOBI.
 
@@ -53,14 +70,4 @@ TXT: Plain text files don't retain special characters or formatting; basic notep
 WOLF: The proprietary format for Hanlin ebook readers, aka BeBook; extension .wol.
 
 
-+-------------+--------------+
-|  Format     |    Reader    |
-+-------------+--------------+
-|  pdf        |   okular     |
-|             |   zathura    |
-|             |   evince     |
-|  epub       |   fbreader   |
-|             |   calibre    |
-|  djvu       |   djview4    |
-|  mobi       |   fbreader   |
-+-------------+--------------+
+

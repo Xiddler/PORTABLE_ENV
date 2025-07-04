@@ -1,0 +1,19 @@
+->% neofetch 
+(2020-09-14_12:23) 
+OS: Manjaro Linux x86_64 
+Host: SATELLITE P50-C PSPTSE-00L003DU 
+Kernel: 5.4.60-2-MANJARO 
+Uptime: 20 hours, 39 mins 
+Packages: 1610 (pacman), 9 (snap) 
+Shell: bash 5.0.18 
+Resolution: 1920x1080 
+DE: Plasma 5.19.5 
+WM: KWin 
+WM Theme: Breeze 
+Theme: Breath [Plasma], Breath [GTK2/3] 
+Icons: breath [Plasma], breath [GTK2/3] 
+Terminal: terminator 
+CPU: Intel i7-5500U (4) @ 3.000GHz 
+GPU: NVIDIA GeForce 930M 
+GPU: Intel HD Graphics 5500 
+Memory: 3049MiB / 7877MiB 

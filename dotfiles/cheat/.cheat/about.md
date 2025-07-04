@@ -1,5 +1,6 @@
 Opened 2022-01-22
 
+
 # INTRO
             
             Computer concepts in plain English
@@ -37,7 +38,9 @@ https://expeditedsecurity.com/aws-in-plain-english/
 User-friendly interface for an application e.g. Magit in Emacs is a git porcelain (probably the best)
 
 # An expression (in contrast to a statement)
-An expression is an unit of code that can be evaluated to produce a result.
+Expres­sions are things that are eval­u­ated to produce a value 
+State­ments are things that denote an action
+For instance, in Python, x = 42 is a state­ment, and x + 42 is an expres­sion.
 
 # The browser
 A browser is a universal Virtual Machine which just only takes JS and WASM at the moment (2022).
@@ -85,3 +88,31 @@ The term closure is often used as a synonym for anonymous function.
 # bikeshedding
 When organizations spend disproportionate time on trivial issues - in the design of a nuclear plant when 90% of the discussion is around the design of the
 bikeshed
+
+# microprocessors v microcontrollers
+Microprocessors (µPs) are also referred to as microprocessor units (MPUs). Early MPUs contained only a central processing unit (CPU). Over time, other functions were added like cache memory, floating point units (FPUs), memory management units (MMUs), and so on. The key point is that — other than any cache and things like FPUs and MMUs — a microprocessor doesn’t contain any internal memory or peripherals. 
+
+By comparison, microcontrollers (µCs), which are also referred to as microcontroller units (MCUs), contain non-volatile memory like Flash, volatile memory like SRAM, peripherals like counters, timers, analog-to-digital converters (ADCs), and communications interfaces like UART, I2C, and SPI. Essentially, a microcontroller is a little standalone computer presented on a single silicon chip that contains its own program, which it starts executing as soon as it powers-up. This explains why microcontrollers appear in embedded systems, and why embedded systems appear all over the place.
+
+# Airgap 
+refers to a computer (or network) that is physically disconnected from a larger network and the Internet.
+
+# Yggdrasil 
+a Mesh Network that is fully Encrypted and provides an IPv6 IP on the network to anyone.
+ 
+# Attention Economy
+Profiting from convincing (or, perhaps more accurately, “manipulating”) people to pay attention. 
+# Stack and heap
+
+The three types of memory, and when to use them
+
+## Stack
+Stack or Automatic storage is where local variables are stored. A new region of automatic storage is created for a function when it is called, and deleted when it returns. Only the return value is kept; it is copied into the automatic storage of the function which called it. This means that it is unsafe to return a pointer to a local variable, because the underlying data will be silently deleted. Automatic storage is often called the stack.
+
+## Heap
+Heap or Allocated storage is the result of using malloc(). It survives until it is free()‘d, so can be passed wherever, including upwards to calling functions. It is often called the heap.
+
+## (other)
+Static storage is valid for the lifetime of the program. It is allocated when the process starts. Global variables are stored here.
+
+

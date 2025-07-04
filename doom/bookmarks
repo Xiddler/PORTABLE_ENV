@@ -1,0 +1,47 @@
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("snips.org"
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/ideas/snips.org")
+ (front-context-string)
+ (rear-context-string . "what works — SOT")
+ (position . 371507)
+ (last-modified 26723 43404 951045 43000))
+("psychology.org"
+ (filename . "/run/media/donagh/USB128GB/REPOSITORIES/psychology/psychology.org")
+ (front-context-string . "#+TITLE:     psy")
+ (rear-context-string)
+ (position . 1)
+ (last-modified 26718 32714 458784 987000))
+("get_living.org"
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/get_living.org")
+ (front-context-string . "g)\n\n* get_doing\n")
+ (rear-context-string . "ulting to nothin")
+ (position . 6095)
+ (last-modified 26718 23450 330127 631000))
+("cl_1.lisp"
+ (filename . "/home/donagh/cl_1.lisp")
+ (front-context-string)
+ (rear-context-string . "\n(factorial 10)\n")
+ (position . 94)
+ (last-modified 26702 48899 206610 377000))
+("recovery.org"
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/RECOVERY/recovery.org")
+ (front-context-string . "#+TITLE:     rec")
+ (rear-context-string)
+ (position . 1)
+ (last-modified 26702 47676 165882 99000))
+("org.org"
+ (filename . "/home/donagh/Dropbox/org-mode/org/org.org")
+ (front-context-string . "* links\n\n[[file:")
+ (rear-context-string . "ropbox account\n\n")
+ (position . 182294)
+ (last-modified 26702 47640 249014 861000))
+("todos.org"
+ (filename . "/home/donagh/Dropbox/org-mode/org/todos.org")
+ (front-context-string . "#+OPENED:    202")
+ (rear-context-string)
+ (position . 1)
+ (last-modified 26702 47636 99336 56000))
+)

@@ -1,5 +1,12 @@
+# intro
+
+All you are actually doing is adding the contents of your id_rsa.pub file to your ~/.ssh/authorized_keys file on your linux host. 
+(You may need to run 'systemctl restart ssh'.)
+
 # To copy a key to a remote host:
-ssh-copy-id username@host
+ssh-copy-id -i ~/.ssh/id_rsa username@host
+ssh-copy-id -i ~/.ssh/id_rsa_toshiba donagh@192.168.1.86
+
 
 # To copy a key to a remote host on a non-standard port:
 ssh-copy-id username@host -p 2222

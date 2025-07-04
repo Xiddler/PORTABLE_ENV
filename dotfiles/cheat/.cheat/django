@@ -66,3 +66,34 @@ $ python manage.py makemigrations
 # a template name as its second argument and 
 # a dictionary as its optional third argument. 
 # It returns an HttpResponse object of the given template rendered with the given context.
+#
+#
+# NOTES on w3schools tutorial - 2022-08-16 
+#
+# The confusing thing about Django is that you often need 4 different but interconnected files for one webpage: models.py, urls.py, views.py, and a template html file.
+#
+# Common CLI commands 
+django-admin startproject myworld
+python manage.py runserver
+python manage.py migrate
+python manage.py startapp myapp
+python manage.py makemigrations myapp
+
+# MVT web architecture 
+MODEL
+A Django model is a table in the database; it provides the interface with the database; interfaces with data; it replaces SQL statements; 
+In Django, the model is the object that is mapped to the database; has class ; 
+When you create a model, Django creates a corresponding table in the database via python classes;
+
+VIEW
+A Django view decides what information to present to the user and collects information from the user; has python functions for each URL; 
+
+TEMPLATE
+A Django template provides display logic and is the interface between the user and the Django application; html pages and Django tags; 
+
+Other
+URLS
+Lets Django know about the URLs and paths that you want the user to be able to go to;
+
+# END 
+

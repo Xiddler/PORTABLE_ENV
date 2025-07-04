@@ -1,0 +1,40 @@
+# locations
+#---------------------------------------
+zim/Computer/MAJORS:Fonts
+#---------------------------------------
+/usr/share/fonts                        :: (seen in /etc/fonts/fonts.conf)
+/usr/local/share/fonts                  :: where to place NEW fonts (seen in /etc/fonts/fonts.conf)
+/usr/share/fontconfig/conf.avail        :: https://wiki.archlinux.org/title/Font_configuration
+~/.local/share/fonts                    :: ? for what?
+/etc/fonts/fonts.conf
+/var/cache/config
+#---------------------------------------
+# ~/.fonts    :: NOTE this is DEPRECATED
+# move all TTF and OTF files into the directory. Every font in ~/.fonts directory will now be available for use to your installed apps. But remember, those fonts will only be available to that one user. 
+#---------------------------------------
+
+# fc commands
+fc           
+fc-cache        :: inform the font configuration of the existence of the new font. Use -f flag to force.
+fc-cache-32  
+fc-cat
+fc-conflist  
+fc-list         :: list fonts on the system
+fc-match
+fc-pattern   
+fc-query
+fc-scan         :: To obtain the Family name as listed in the font itself. -> % fc-scan .fonts/lklug.ttf --format='%{family}\n'
+fc-validate
+
+
+# To get new fonts installed on manjaro
+# download new font to ~/.local/share/fonts (if not exist, create)
+# unzip if file is zipped (not sure if necessary?)
+
+# on Manjaro - System Settings
+> Font Management       :: Show installed fonts: personal / system
+> Fonts                 :: select the font face to be used by the system (not the terminal)
+
+# in kitty
+-> % kitty list-fonts   :: lists fonts available to kitty 
+

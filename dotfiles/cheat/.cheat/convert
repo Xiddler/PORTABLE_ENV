@@ -1,3 +1,6 @@
+#
+# IMAGES 
+#
 # To resize an image to a fixed width and proportional height:
 convert original-image.jpg -resize 100x converted-image.jpg
 
@@ -17,3 +20,12 @@ for file in `ls original/image/path/`;
     new_file=`basename $new_path`;
     convert $file -resize 150 converted/image/path/$new_file.png;
 done
+
+# 
+#  DOCUMENTS
+#
+#  to convert from markdown to html 
+pandoc -o out.html in.md 
+#  to convert from html to markdown 
+pandoc -o out.md in.html
+

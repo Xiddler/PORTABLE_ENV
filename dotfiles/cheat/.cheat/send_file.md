@@ -1,13 +1,19 @@
 # Contents:
+# /home/donagh/PORTABLE_ENV/dotfiles/cheat/send_file.md
 
-1. SEND FILE(S) OVER THE NET
+# 1. SEND FILE(S) OVER THE NET
+Dropbox - on laptops, smartphone, tablet
+Mega - on laptop only
 wormhole
 
-2. SEND FILE(S) FROM ONE COMPUTER TO ANOTHER
+# 2. SEND FILE(S) FROM ONE COMPUTER TO ANOTHER
 croc
 magic-wormhole
 
-## 1. OVER THE NET
+# 3. SEND FILES OVER LAN
+
+
+# 1. OVER THE NET
 
 To send a file from one computer to another using the internet
 
@@ -24,6 +30,7 @@ https://ipfs.io/
 
 ###  Other sites for sharing files:
 
+https://schollz.com/software/croc/
 https://wormhole.app/ 
 https://send.vis.ee/
 https://instant.io
@@ -55,7 +62,7 @@ https://killedbymozilla.com/
 
 END 1. SEND FILE(S) OVER THE NET
 
-## 2. FROM ONE COMPUTER TO ANOTHER
+# 2. FROM ONE COMPUTER TO ANOTHER
 
 Use croc (or magic-wormhole)
 
@@ -73,4 +80,13 @@ Code is: code-phrase
 
 Then to receive the file (or folder) on another computer, you can just do
 $ croc code-phrase
+
+# 3. OVER LAN
+
+## scp
+
+## samba
+
+
+
 

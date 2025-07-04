@@ -378,7 +378,9 @@
 ;; I have recorded macros to underline / italicize word under cursor and can execute them with <leader> which is comma
 (map! :n ",i" 'evil-execute-macro) ;; italic — needs , i i
 (map! :n ",u" 'evil-execute-macro) ;; underline
-
+(map! :n "SPC f t" '(lambda() (interactive)(find-file "/home/donagh/DONAGHS/personal/template.org"))) ;; opens template.org — 2025-06-14 — SUCCESS!
+(map! :n ",b" 'isearch-backward)
+(map! :n ",p" 'evil-collection-sly-eval-print-last-expression) ; to evaluate a region in a .lisp file and print onto the buffer
 
 ;; iambic
 ;; (map! :n ",d" "@dnc - ") ;; or better to use abbrev-defs?
@@ -390,7 +392,7 @@
 ; (map! :n "ggf" 'with-editor-finish') ;; magit C-c C-c
 
 ;; NOTE about jk for esc
-;; file --> ~/.emacs.d/modules/editor/evil/config.el
+;; edit the file --> ~/.emacs.d/modules/editor/evil/config.el
 ;; 329:        evil-escape-key-sequence "jk"
 
 

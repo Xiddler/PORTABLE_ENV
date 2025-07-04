@@ -3,3 +3,38 @@ du -sk *| sort -rn
 
 # To show cumulative humanreadable size
 du -sh
+
+# nice readout
+
+->% cd ~/PORTABLE_ENV 
+
+->%  du -s -k * | sort -r -n -k1,1 -t" "
+
+62592   vim
+13660   dotfiles
+3200    firefox
+2740    dirjump
+2608    droplets
+2468    zsh
+1620    autokey
+324     doom
+
+# show a list of directories and their sizes under the current dir - no hidden (.git/) though
+
+->% du --apparent-size -c -s -B1048576 * | sort -g
+
+2       zsh
+3       dirjump
+3       droplets
+7       firefox
+11      dotfiles
+50      vim
+74      total
+
+# nice output - accurate and includes hidden
+#
+->% du -hs * .??* 2> /dev/null | sort -h | tail -22
+
+
+
+

@@ -19,7 +19,6 @@ abbrev file: $HOME/PORTABLE_ENV/doom/dot_emacs/abbrev_defs (symlink to $HOME/.em
 
 abbrevs: M-x abbrev-mode, list-abbrevs, write-abbrevs
 :end:
- how to
 *** make new abbrev
 added 2024-09-04
 
@@ -55,12 +54,23 @@ C-x a i g/l
 is the keybinding for
  g : inverse-add-global-abbrev
  l : inverse-add-mode-abbrev
+ \sad  \frowny  \smiley
 
 *** list abbrevs
 *** edit existing abbrevs
 M-x (edit-abbrevs) and save in the abbrevs buffer using M-x (abbrevs-edit-save-buffer)
 
-See //home/donagh/.emacs.d/abbrev_defs where the ~/.emacs.d folder is symlinked to ~/.configure/emacs [Added 2025-04-08]
+See $HOME/.emacs.d/abbrev_defs where the ~/.emacs.d folder is symlinked to ~/.configure/emacs [Added 2025-04-08]
+*** abbrevs not working
+2025-06-26
+
+Not reading the abbrevs-defs file in ~/.config/emacs/abbrev-defs (which is a symlink from POE)
+
+SOLUTION
+M-x read-abbrev-file
+and enter ~/.config/emacs/abbrev-defs
+(often needed after a system reboot)
+
 ** calculate
 2025-04-13
 
@@ -84,16 +94,23 @@ Use :bd to close the ielm buffer
 ** config files
 
 SPC f p
-** heading shift right
+** headings
 
 To demote a heading
 Shift Alt -> on the heading
+SPC m s j
 
 To promote a heading
 Shift Alt <- on the heading
+SPC m s k
 
 ** line nos.
 SPC t l
+** linking in org-mode
+2025-06-26
+
+[[Steps to make a link to a heading in another file]]
+
 ** modes
 2025-04-13
 
@@ -136,9 +153,6 @@ desk
 
 :END:
 
-
-
-
 ** org tables
 
 [[tables]]
@@ -151,8 +165,6 @@ at point end of previous line, C-c RET
 
 Try it:
 |Name|Phone|Age|
-
-
 
 ** shells & REPL
 
@@ -221,6 +233,8 @@ Not working on Windows. I don't really care about this one to be honest. May not
 ** [[source code]]
 ** symbols & Unicode
 
+M-x org-entities-help
+
 _EMACS METHOD_
 To check the unicode of a character use SPC h ' or M-x describe-char
 This will show how to input the character along with other information about the character
@@ -246,9 +260,10 @@ Long hyphen   —      SPC i u 2014 My abbrev --> lh
 
 Am I right? ✓
 
+Right arrow \to        backslash (bsl) to
 
-
-
+              bsl Gamma                                           bsl pi
+Given a circle \Gamma of diameter d, the length of its circumference is \pi{}d.
 
 
 
@@ -1636,7 +1651,10 @@ AND
 ** source code
 Added 2024-11-01
 
+org-babel
 Literate programming
+
+
 
 #+BEGIN_SRC python
 
@@ -1863,6 +1881,16 @@ M-x which-key   <-- view options for which-key
 
 which-key-show-full-major-mode  -- show all bindings in the map for the current mode
 * bookmarks
+** bookmarks file
+2025-06-27
+
+SPC b m save current buffer name as a bookmark
+
+M-x bookmark-save --> save current selection of bookmarks to a file located at:
+\/home/donagh/.config/emacs/.local/etc/bookmarks
+
+M-x bookmark-load
+
 ** Outside of a file
 Open a file and then SPC b m to mark it
 
@@ -1881,6 +1909,22 @@ Open a file and then SPC b m to mark it
 URL: https://www.gnu.org/software/emacs/manual/html_node/emacs/Mark.html
 Set a mark: C-SPC
 Go to mark: SPC s r ... and select
+
+** bookmarks format
+2025-06-29
+
+(("psychology.org"
+ (filename . "/run/media/donagh/USB128GB/REPOSITORIES/psychology/psychology.org")
+ (front-context-string . "#+TITLE:     psy")
+ (rear-context-string)
+ (position . 1)
+ (last-modified 26718 32714 458784 987000))
+("get_living.org"...
+
+* images
+2025-06-29
+
+[[/home/donagh/files/sample_files/duck.jpg]]
 
 * Tramp
 :about:
@@ -2094,6 +2138,9 @@ SPC
         z     '+org/close-all-folds  ;; z M is such a pain
         c SPC 'calendar ;; quick calendar
         i Y   'clipboard-yank ;; paste from system clipboard; Note: SPC i y (lowercase) pastes from emacs yank
+** Help
+User Manual https://www.gnu.org/software/tramp/#Frequently-Asked-Questions-1
+Speed up    https://coredumped.dev/2025/06/18/making-tramp-go-brrrr./
 * xHELP
 ** shortdoc
 2025-04-13

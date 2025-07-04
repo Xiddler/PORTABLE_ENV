@@ -12,3 +12,6 @@ ssh-keygen -p -P old_passphrase -N '' -f /path/to/keyfile
 
 # To generate a 4096 bit RSA key with a passphase and comment containing the user and hostname
 ssh-keygen -t rsa -b 4096 -C "$USER@$HOSTNAME" -P passphrase
+
+# 
+ssh-keygen -t ed25519 

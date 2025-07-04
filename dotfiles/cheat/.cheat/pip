@@ -31,6 +31,8 @@ pip install -I SomePackage1==1.1.0 'SomePackage2>=1.0.4'
 
 # Upgrade pip
 python3 -m pip install --upgrade pip
+or
+/usr/sbin/python3 -m pip install --upgrade pip
 # new virtualenv to upgrade pip
 /home/donagh/.virtualenvs/fastapi/bin/python3 -m pip install --upgrade pip
 

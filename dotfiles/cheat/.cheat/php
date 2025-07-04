@@ -21,3 +21,4 @@ php -i | grep "php.ini"
 
 # To start a local webserver for the cwd on port 3000 (requires php >= 5.4):
 php -S localhost:3000
+php -S 192.168.1.86:8090 # starts a server on the Toshiba which can be browsed from anywhere on the LAN (Mar 2024)
