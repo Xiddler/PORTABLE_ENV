@@ -468,6 +468,9 @@ lg() { lazygit }
 #}}}
 #{{{ LS
 # note eza is a dependency
+alias -g ls="eza"
+# eza: Option --time (-t) has no "--color=always" setting (choices: modified, changed, accessed, created)
+
 # List directories / files. Code: f file, d directory, l symlink, i item (file/directory),  n non-.
 # Duplicate options are given where zsh is available / known to me
 alias -g latest='ls -lt  **/*(.om[1,20])' # List latest 20 files edited - newest on top (zsh) [o is for ordered, m is for modified]
@@ -475,10 +478,13 @@ alias -g newest='ls -lt  **/*(.om[1,20])' # List latest 20 files edited - newest
 # ls various
 # Items (ie files and directories)
 # alias -g li='ls -la --color=always' # long list everything - i.e. list items (files and folders) - alias
-alias -g ll='ls -la --color=always' # long list everything
+# alias -g ll='ls -la --color=always' # long list everything
+alias -g ll='eza -l ' # long list everything
 # alias -g lle='eza --color=always --long --all --no-filesize --git --no-time | less' # long list everything lle -- long list (with) eza
-alias -g lt='ls -lt --color=always | head -n 16' # list 10 most recent items in this directory EXCEPT dotfiles 
-alias -g ltl='ls -lt --color=always | head -n 16 | less' # list 10 most recent items in this directory EXCEPT dotfiles  and uses `less`;
+# alias -g lt='ls -lt --color=always | head -n 16' # list 10 most recent items in this directory EXCEPT dotfiles 
+# alias -g lt='ls -lt | head -n 16' # list 10 most recent items in this directory EXCEPT dotfiles 
+alias -g lt='eza -l --sort=oldest --color=always | head -n 15' # not sure why it's oldest because that outputs neweat???
+# alias -g ltl='ls -lt --color=always | head -n 16 | less' # list 10 most recent items in this directory EXCEPT dotfiles  and uses `less`;
 alias -g l.='ls -d  --color=always .* ' # List hidden files and directories - short (alternative alias)
 # alias -g lih='ls -d .* ' # List all hidden items i.e. files and directories - short - alias
 alias -g lih="ls -la | grep ' \..*$'" # List all hidden items i.e. files and directories - long -  alias

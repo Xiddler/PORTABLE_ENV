@@ -284,8 +284,9 @@ plugins=(
 # the following is a workaround to solve a problem with not going to vi-cmd-mode on "jk" on the CLI
 # this seems to have gotten resolved somehow...
 # Ans: zsh has bindings for vi on the CLI
-# https://github.com/zsh-users/zsh-autosuggestions/issues/126
-#
+
+
+
 # if [ -z "$_zsh_custom_scripts_loaded" ]; then
 #   _zsh_custom_scripts_loaded=1
 #   plugins+=(zsh-syntax-highlighting)
@@ -303,6 +304,8 @@ plugins=(
 # Is this a good idea to have PATH defined here? 
 #
 PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin:/home/donagh/.cargo/bin:/home/donagh/PORTABLE_ENV_tmp/:/home/donagh/go/bin:/home/donagh/Applications/shellmath/shellmath:/home/donagh/.mix:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/maps/OSI_GridInQuest/GridInQuestII-Lin64-0100:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/golang/vugu_stuff:/home/donagh/.local/bin/gron:/usr/local/texlive/2022/bin/x86_64-linux:/home/donagh/.subuser/bin:/home/donagh/.local/bin/cheat:/usr/sbin/bash:/home/donagh/.config/emacs/bin:/home/donagh/Applications/lc/lc"
+
+CDPATH='.:/home/donagh/DONAGHS/:/home/donagh/DONAGHS/personal/:/home/donagh/REPOS/:/home/donagh/PORTABLE_ENV/:/home/donagh/.config/'
 
 # source /home/donagh/.local/bin/virtualenvwrapper.sh
 
@@ -506,9 +509,6 @@ function yy() {
 	rm -f -- "$tmp"
 }
 
-# per-directory-history
-source $HOME/PORTABLE_ENV/zsh/per-directory-history/per-directory-history.zsh
-# Use Ctrl G to toggle between local and global
 
 # tilix terminal (testing out June 2022) 
 # if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
@@ -547,6 +547,8 @@ HISTCONTROL=ignoredups:ignorespace
 # sd  https://github.com/ianthehenry/sd 
 # fpath=(/home/donagh/Applications/sd_scripts_dir_utility/sd/sd $fpath)
 
+#########################################################
+#########################################################
 # Pure prompt
 # initialize pure prompt (for use in WSL etc. - p10k being too complicated)
 # https://github.com/sindresorhus/pure 
@@ -558,7 +560,8 @@ prompt pure
 #fpath+=($HOME/.zsh/pure)
 # change the color for both `prompt:success` and `prompt:error`
 zstyle ':prompt:pure:prompt:*' color cyan
-#
+
+#########################################################
 # zsh-abbr - allows TEXT expansion in the zsh (eg pas = pamac search) 
 # see zim-wiki and cheats --> zsh
 # and https://zsh-abbr.olets.dev/
@@ -567,11 +570,25 @@ source $HOME/PORTABLE_ENV/zsh/zsh_abbr/zsh-abbr/zsh-abbr.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # see first line regarding zLINUX:1Linux Live USB:01installed apps:powerlevel10kprof 
 # zprof 
+
+#########################################################
+# per-directory-history
+# Use Ctrl G to toggle between local and global
+source $HOME/PORTABLE_ENV/zsh/per-directory-history/per-directory-history.zsh
+
+#########################################################
+# Config zsh-autosuggestions 
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# see a completion offered after the cursor in a muted gray color
+# git clone https://github.com/zsh-users/zsh-autosuggestions ~/PORTABLE_ENV/zsh
+# ln -s ~/PORTABLE_ENV/zsh/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+# sudo pamac install zsh-autosuggestions [Installed -- 2025-07-07 ] 
+# https://github.com/zsh-users/zsh-autosuggestions/issues/126
 #
-# call the zsh-syntax-highlighting plugin last thing in this file
+#########################################################
+# zsh-syntax-highlighting plugin last thing in this file
 # plugins=( zsh-syntax-highlighting )
 source $HOME/PORTABLE_ENV/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

@@ -2,7 +2,19 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("snips.org"
+(("books.org"
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/books.org")
+ (front-context-string . "jects\n** Psychol")
+ (rear-context-string . "(by year)\n\n* Sub")
+ (position . 58920)
+ (last-modified 26731 48879 739195 794000))
+("words.org"
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/words.org")
+ (front-context-string . "dulgent\n\nidiosyn")
+ (rear-context-string . "selfish\n\nself-in")
+ (position . 51007)
+ (last-modified 26730 15797 611615 692000))
+("snips.org"
  (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/ideas/snips.org")
  (front-context-string)
  (rear-context-string . "what works — SOT")

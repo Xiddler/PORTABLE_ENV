@@ -16,6 +16,7 @@ Opened 2024-12-07
 | Brother Printer   | 192.168.1.111     |
 | Huawei phone      | 192.168.1.162     |
 | Samsung Tablet    | 192.168.1.199     |
+| Chromebook        | 192.168.1.51      |
 |___________________|___________________|
 
 ## ip a
@@ -54,7 +55,12 @@ Nmap done: 256 IP addresses (5 hosts up) scanned in 6.36 seconds
 
 # External IP Address
 
-2024-12-07
+## 2025-07-04
+->% ipe                 ◁-- Command (alias) to get external IP Address of router
+
+88.87.169.214
+
+## 2024-12-07
 
 ->% ipe                 ◁-- Command to get external IP Address of router
 

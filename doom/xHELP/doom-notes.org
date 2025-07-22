@@ -266,7 +266,6 @@ Right arrow \to        backslash (bsl) to
 Given a circle \Gamma of diameter d, the length of its circumference is \pi{}d.
 
 
-
 ** themes
 SPC h t
 
