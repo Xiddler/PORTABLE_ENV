@@ -9,6 +9,13 @@
 --delete      :: delete extraneous files from dest dirs
 --delete      :: When this option is used, rsync deletes extraneous files from the destination location.
 
+# QUICKIES
+rsync source destination
+
+example
+source = 192.168.1.51:/home/donagh/
+
+
 # To copy files from remote to local, maintaining file properties and sym-links (-a), zipping for faster transfer (-z), verbose (-v).  
 rsync -avz host:file1 :file1 /dest/
 rsync -avz /source host:/dest

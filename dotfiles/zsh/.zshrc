@@ -1,5 +1,6 @@
 #  For use of tramp on doom emacs on Windows
 # [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
+# source ~/.zshrc
 
 #  XDG Base Directory Specification
 XDG_CONFIG_HOME="/home/donagh/.config"
@@ -13,6 +14,7 @@ XDG_CACHE_HOME="/home/donagh/.cache"
 # tmux attach-session -t mydailysessions
 
 # tmuxp load /home/donagh/.tmuxp/my-6-daily-tabs.yaml
+# 2025-07-23 — seems I need to source this file after ssh-ing from Windows Powershell; that usen't be the case;
 tmux attach-session -t my-6-daily-tabs
 
 
@@ -72,10 +74,14 @@ nohup ~/.dropbox-dist/dropboxd&
 # NOTE: Aliases handled in .zsh_aliases or .bash_aliases
 
 # issue with locale - added 2022-11-22
-export LC_TIME='en_IE.UTF-8'
 
-# locale
-export LANG=en_US.utf8
+
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_TIME=en_IE.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export LC_MESSAGES=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 
 # It will set red for bold and blue for underlined. 
@@ -83,6 +89,7 @@ export LESS='-R --use-color -Dd+r$Du+b$'
 
 
 # POWERLEVEL - START 
+# I have replaced this promt
 
 # see End of This File 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -146,8 +153,9 @@ export TERM=xterm-256color-italic
 # export LS_COLORS="$(vivid generate zenburn)"
 export LS_COLORS="$(vivid generate catppuccin-mocha)"
 
-# machine
+# show machine
 COMP=$(uname -a | cut -d' ' -f2)
+comp() { echo $COMP }
 
 
 # borg backup
@@ -331,8 +339,12 @@ CDPATH='.:/home/donagh/DONAGHS/:/home/donagh/DONAGHS/personal/:/home/donagh/REPO
 autoload -U zmv # meaning zsh mv command
 # You can then run zmv to rename files according to a pattern. Both the pattern and the replacement text need to be quoted so that they are passed-as is to the zmv function which will expand them in due course.
 # zmv '^*.*' '$f.md'
+#
 # autocompletion
+# this requires zhs-completions plugin to be installed
 autoload -U compinit; compinit
+autoload -U colors; colors
+
 # In bash to use the vi editor
 # set -o vi
 setopt VI # what is this? Sets the line editort to vi. Also works: bindkey -v 
@@ -341,6 +353,9 @@ setopt autocd
 setopt autolist # e.g.in $HOME directory -> %ls /DoTAB ie follow ls /Do With  TAB
 setopt extendedglob # extended globbbing e.g. ls -d ^*.py excludes .py files
 setopt SHARE_HISTORY # uses same history for all sessions
+setopt HIST_IGNORE_SPACE # don't save in .zhistory if there's an initial space
+setopt HIST_IGNORE_DUPS
+setopt inc_append_history
 # only fools wouldn't do this ;-) 
 export EDITOR="vim"
 # export BROWSER="w3m"
@@ -439,6 +454,8 @@ export RANGER_LOAD_DEFAULT_RC=false
 #############################
 #        zoxide
 #############################
+# https://github.com/ajeetdsouza/zoxide
+
 # zoxide - for directory jumping using z 
 # 2024-05-11 - changed to make cd be 'z' instead 
 # eval "$(zoxide init --cmd cd zsh)"
@@ -449,9 +466,15 @@ eval "$(zoxide init zsh)"
 #############################
 #        mcfly
 #############################
+# https://github.com/cantino/mcfly
+
+
+# source /usr/share/doc/mcfly/mcfly.bash
+
 
 # mcfly - for history Ctrl-R
-eval "$(mcfly init zsh)"
+# eval "$(mcfly init zsh)"
+# export MCFLY_KEY_SCHEME=vim
 
 # emacs - to get emacsclient to work
 # export ALTERNATE_EDITOR=""
@@ -462,8 +485,10 @@ eval "$(mcfly init zsh)"
 #############################
 #     fzf
 #############################
+# https://github.com/junegunn/fzf
 
 eval "$(fzf --zsh)"
+# source <(fzf --zsh) # does the same thing
 
 # fzf (disable this if using mcfly for Ctrl R)
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -472,16 +497,55 @@ eval "$(fzf --zsh)"
 # source ~/.fzf/shell/key-bindings.zsh
 # use fd instead of find
 # export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_DEFAULT_COMMAND='fd --hidden --strip-cwd-prefix --exclude .git' #  --hidden means show hidden files
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git" #  --hidden means show hidden files
+export FZF_DEFAULT_OPTS="--style minimal --color 16 --layout=reverse --height=30% --preview='bat -p --color=always {} '"
+export FZF_CTRL_R_OPTS="--style minimal --color 16 --info inline --no-sort --no-preview"
+
+# mini menu
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+
+# extra
+#
+# export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+FZF_COLORS="bg+:-1,\
+fg:gray,\
+fg+:white,\
+border:black,\
+spinner:0,\
+hl:yellow,\
+header:blue,\
+info:green,\
+pointer:red,\
+marker:blue,\
+prompt:gray,\
+hl+:red"
+
+export FZF_DEFAULT_OPTS="--height 60% \
+--border sharp \
+--layout reverse \
+--color '$FZF_COLORS' \
+--prompt '∷ ' \
+--pointer ▶ \
+--marker ⇒"
+# export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -n 10'"
+export FZF_ALT_T_OPTS="--preview 'tree -C {} | head -n 10'"
+export FZF_COMPLETION_DIR_COMMANDS="cd pushd rmdir tree ls"
+
+# export FZF_TMUX_OPTS="-p"
 
 
 #############################
 #    dirjump (or d)
 #############################
+# https://github.com/imambungo/dirjump
+
 # dirjump - use -> % d to see 10 most recent directories visited. https://github.com/imambungo/dirjump
 # the author says he no longer maintains this and uses zoxide instead. But I like it!
 # note I git cloned the full repo to $HOME/PORTABLE_ENV/dirjump/dirjump on 2024-06-25
 source ~/.config/dirjump/dirjump
+# echo 'source ~/.config/dirjump/dirjump' >> ~/.zshrc
 
 
 #############################
@@ -500,14 +564,14 @@ source ~/.config/dirjump/dirjump
 # yazi and then quitting, you end up in the dir that you had last navigated to in yazi
 #
 # Repo suggests using yy as alias for yazi.
-function yy() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
+# function yy() {
+# 	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+# 	yazi "$@" --cwd-file="$tmp"
+# 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+# 		cd -- "$cwd"
+# 	fi
+# 	rm -f -- "$tmp"
+# }
 
 
 # tilix terminal (testing out June 2022) 
@@ -517,7 +581,7 @@ function yy() {
  
 #########################################################
 #########################################################
-# Consider using some /all of the foloowing — added 2025-02-17
+# Consider using some /all of the following — added 2025-02-17
 
   # Ensure history is written after every command, allowing it to persist across sessions
    # shopt -s histappend  # Append to history instead of overwriting
@@ -532,7 +596,7 @@ function yy() {
    # HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
 
    # Ignore duplicate and space-prefixed commands
-HISTCONTROL=ignoredups:ignorespace
+# HISTCONTROL=ignoredups:ignorespace
 
    # Save multi-line commands as a single entry
    # shopt -s cmdhist
@@ -542,14 +606,21 @@ HISTCONTROL=ignoredups:ignorespace
    # bind '"\e[B":history-search-forward'
 
 #########################################################
-#########################################################
 
 # sd  https://github.com/ianthehenry/sd 
 # fpath=(/home/donagh/Applications/sd_scripts_dir_utility/sd/sd $fpath)
 
 #########################################################
 #########################################################
+# 
+# DONAGHS PREFERENCES
+#
+#########################################################
+#########################################################
+
+#########################################################
 # Pure prompt
+#########################################################
 # initialize pure prompt (for use in WSL etc. - p10k being too complicated)
 # https://github.com/sindresorhus/pure 
 fpath+=(/home/donagh/PORTABLE_ENV/zsh/home_dot_zsh/pure)
@@ -561,35 +632,51 @@ prompt pure
 # change the color for both `prompt:success` and `prompt:error`
 zstyle ':prompt:pure:prompt:*' color cyan
 
+# zstyle
+zstyle ':completion:*:' menu select # tab opens cmp menu
+
 #########################################################
-# zsh-abbr - allows TEXT expansion in the zsh (eg pas = pamac search) 
+# zsh-abbr 
+#########################################################
+# allows TEXT expansion in the zsh (eg pas = pamac search) 
 # see zim-wiki and cheats --> zsh
 # and https://zsh-abbr.olets.dev/
-source $HOME/PORTABLE_ENV/zsh/zsh_abbr/zsh-abbr/zsh-abbr.zsh
+source $HOME/PORTABLE_ENV/zsh/zsh-abbr/zsh-abbr.plugin.zsh
 
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# see first line regarding zLINUX:1Linux Live USB:01installed apps:powerlevel10kprof 
-# zprof 
+# see /home/donagh/.config/zsh-abbr/user-abbreviations
+# usage ->% abbr "mqa"="my quick abbreviation"
+# ->% mqa<Enter>
 
 #########################################################
 # per-directory-history
-# Use Ctrl G to toggle between local and global
+#########################################################
+
+# Use Ctrl G to toggle between local and global history
 source $HOME/PORTABLE_ENV/zsh/per-directory-history/per-directory-history.zsh
+# ->% echo $PER_DIRECTORY_HISTORY_TOGGLE --▷ ^G
 
 #########################################################
-# Config zsh-autosuggestions 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# zsh-autosuggestions 
+#########################################################
+# suggests commands as you type based on history and completions
+# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# changed to the following on 2025-07-27 and it now works
+source ~/PORTABLE_ENV/zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 # see a completion offered after the cursor in a muted gray color
 # git clone https://github.com/zsh-users/zsh-autosuggestions ~/PORTABLE_ENV/zsh
 # ln -s ~/PORTABLE_ENV/zsh/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 # sudo pamac install zsh-autosuggestions [Installed -- 2025-07-07 ] 
 # https://github.com/zsh-users/zsh-autosuggestions/issues/126
-#
+#########################################################
+# zsh-completions
+#########################################################
+# see auto-completions above ~ line 338
+
 #########################################################
 # zsh-syntax-highlighting plugin last thing in this file
+#########################################################
 # plugins=( zsh-syntax-highlighting )
 source $HOME/PORTABLE_ENV/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 
 

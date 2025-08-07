@@ -7,13 +7,18 @@ windows:
 
     panes:
 
-      - 
+      - shell_command: 
+
+          - source ~/.zshrc
+
 
   - window_name: zsh
 
     panes:
 
-      -
+      - shell_command: 
+
+          - source ~/.zshrc
 
 
 
@@ -21,9 +26,9 @@ windows:
 
     panes:
 
-      - shell_command: # pane no. 1
+      - shell_command: 
 
-          - der # open doom emacs ->% doom run
+          - source ~/.zshrc # && der # open doom emacs ->% doom run
 
 
 
@@ -31,7 +36,10 @@ windows:
 
     panes:
 
-      - 
+      - shell_command: 
+
+          - source ~/.zshrc
+
 
   - window_name: bpython
 

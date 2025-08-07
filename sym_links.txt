@@ -1,0 +1,36 @@
+ln -s /home/donagh/PORTABLE_ENV//dotfiles/bash/.bashrc /home/donagh/.bashrc
+ln -s /home/donagh/PORTABLE_ENV//dotfiles/cheat/.cheat /home/donagh/.cheat
+ln -s /home/donagh/PORTABLE_ENV//dotfiles/scripts/.scripts /home/donagh/.scripts
+ln -s /home/donagh/PORTABLE_ENV/dotfiles_overflow/tmux/dot_tmux /home/donagh/.tmux 
+ln -s /home/donagh/PORTABLE_ENV/dotfiles_overflow/tmux/tmux.conf  /home/donagh/.tmux.conf 
+ln -s /home/donagh/PORTABLE_ENV/dotfiles_overflow/tmux/tmuxp_multiplexer/dot_tmuxp  /home/donagh/.tmuxp 
+ln -s /home/donagh/PORTABLE_ENV//vim/dotvim/ /home/donagh/.vim
+ln -s /home/donagh/PORTABLE_ENV//dotfiles/vim/.vimrc /home/donagh/.vimrc
+ln -s /home/donagh/PORTABLE_ENV//dotfiles/zsh/.zsh_aliases /home/donagh/.zsh_aliases
+ln -s /home/donagh/PORTABLE_ENV//dotfiles/zsh/.zshrc /home/donagh/.zshrc
+
+
+lrwxrwxrwx    1 donagh donagh        42 Sep 29  2023 all_org -> /run/media/donagh/USB128GB/DONAGHS/all_org
+lrwxrwxrwx    1 donagh donagh        34 Jul  4 12:10 .bashrc -> PORTABLE_ENV/dotfiles/bash/.bashrc
+lrwxrwxrwx    1 donagh donagh        34 Jul  4 12:10 .cheat -> PORTABLE_ENV/dotfiles/cheat/.cheat
+lrwxrwxrwx    1 donagh donagh        34 Sep 28  2023 DONAGHS -> /run/media/donagh/USB128GB/DONAGHS
+lrwxrwxrwx    1 donagh donagh        34 Mar 19  2022 .dotfiles -> /home/donagh/PORTABLE_ENV/dotfiles
+lrwxrwxrwx    1 donagh donagh         5 Aug  4  2020 .face.icon -> .face
+lrwxrwxrwx    1 donagh donagh        36 Jul  4 12:10 .gitconfig -> PORTABLE_ENV/dotfiles/git/.gitconfig
+lrwxrwxrwx    1 donagh donagh        36 Jul  4 12:10 .init.vim -> PORTABLE_ENV/dotfiles/nvim/.init.vim
+lrwxrwxrwx    1 donagh donagh        37 Jan 14  2022 .marks -> /home/donagh/PORTABLE_ENV/MARKS/marks
+lrwxrwxrwx    1 donagh donagh        38 Jun  5  2024 myvenv -> /home/donagh/.virtualenvs/.venv/myvenv
+lrwxrwxrwx    1 donagh donagh        43 Nov 25  2022 .obsidian -> /home/donagh/PORTABLE_ENV/obsidian/obsidian
+lrwxrwxrwx    1 donagh donagh        49 Nov 25  2022 .obsidian.vimrc -> /home/donagh/PORTABLE_ENV/obsidian/obsidian.vimrc
+lrwxrwxrwx    1 donagh donagh        26 Apr  8 14:18 .old_.emacs.d.June -> /home/donagh/.config/emacs
+lrwxrwxrwx    1 donagh donagh        39 Sep 28  2023 REPOS -> /run/media/donagh/USB128GB/REPOSITORIES
+lrwxrwxrwx    1 donagh donagh        38 Jul  4 12:10 .scripts -> PORTABLE_ENV/dotfiles/scripts/.scripts
+lrwxrwxrwx    1 donagh donagh        57 Jul  4 18:06 .tmux -> /home/donagh/PORTABLE_ENV/dotfiles_overflow/tmux/dot_tmux
+lrwxrwxrwx    1 donagh donagh        58 Jul  4 17:51 .tmux.conf -> /home/donagh/PORTABLE_ENV/dotfiles_overflow/tmux/tmux.conf
+lrwxrwxrwx    1 donagh donagh        63 Jul  4 17:33 .tmuxp -> PORTABLE_ENV/dotfiles_overflow/tmux/tmuxp_multiplexer/dot_tmuxp
+lrwxrwxrwx    1 donagh donagh        36 Jan 18  2023 .vim -> /home/donagh/PORTABLE_ENV/vim/dotvim
+lrwxrwxrwx    1 donagh donagh        32 Jul  4 12:10 .vimrc -> PORTABLE_ENV/dotfiles/vim/.vimrc
+lrwxrwxrwx    1 donagh donagh        44 Jan 14  2022 .Xresources -> /home/donagh/PORTABLE_ENV/X_files/Xresources
+lrwxrwxrwx    1 donagh donagh        38 Jul  4 12:10 .zsh_aliases -> PORTABLE_ENV/dotfiles/zsh/.zsh_aliases
+lrwxrwxrwx    1 donagh donagh        46 Jul 27 18:08 .zshenv -> /home/donagh/PORTABLE_ENV/dotfiles/zsh/.zshenv
+lrwxrwxrwx    1 donagh donagh        32 Jul  4 12:10 .zshrc -> PORTABLE_ENV/dotfiles/zsh/.zshrc

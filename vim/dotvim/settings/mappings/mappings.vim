@@ -323,7 +323,7 @@ inoremap wont won't
 " inoremap cant can't
 " but significant also 'corrects' to significan't; how to avoid this? try: ab cant can't in mappings.vim — see below; it fixes it;
 inoremap waht what
-inoremap hte the
+" inoremap hte the " this also messes with words like enlighten, frighten; can I find a fix for this? Should I just kill this one?
 inoremap teh the
 
 
@@ -337,6 +337,8 @@ abb dtw - Donagh the Wise
 ab FQHB Fully Qualified Human Being
 ab tbp The Big Picture
 ab rde raison d'être
+ab psm psycho-social-mental illness
+ab ahve have
 
 " does this fix significan't? Yes!
 ab cant can't

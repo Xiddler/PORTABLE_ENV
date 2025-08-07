@@ -1,3 +1,5 @@
+# ZFS is a file system with volume management capabilities. 
+
 # WARNING:
 #   In order to avoid headaches when moving ZFS physical devices around,
 #   one will be much better served to reference devices by their *immutable*

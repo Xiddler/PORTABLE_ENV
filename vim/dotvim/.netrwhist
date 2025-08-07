@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =6
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/donagh/PORTABLE_ENV/zsh/zsh-autosuggestions'
+let g:netrw_dirhist_7='/home/donagh/PORTABLE_ENV/dotfiles/zsh/.zprofile'
 let g:netrw_dirhist_6='/home/donagh/PORTABLE_ENV/dotfiles/tmux/.tmux/plugins/tmux'
 let g:netrw_dirhist_5='/home/donagh/.vim/syntax'
 let g:netrw_dirhist_4='/home/donagh/.vim/spell'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_2='/home/donagh/.vim/HELP/pack/nightsense/start/stellarized/
 let g:netrw_dirhist_1='/home/donagh/.vim/HELP/pack/nightsense/start/stellarized'
 let g:netrw_dirhist_0='/home/donagh/.vim/HELP/pack/nightsense/start'
 let g:netrw_dirhist_9='/home/donagh/.vim/HELP/pack/nightsense'
-let g:netrw_dirhist_8='/home/donagh/.vim/HELP/pack'
-let g:netrw_dirhist_7='/home/donagh/.vim/HELP'

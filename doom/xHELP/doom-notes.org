@@ -111,6 +111,11 @@ SPC t l
 
 [[Steps to make a link to a heading in another file]]
 
+** url link syntax
+
+put the link / URI instead of x and the description in the second pair of [].
+
+
 ** modes
 2025-04-13
 
@@ -265,7 +270,6 @@ Right arrow \to        backslash (bsl) to
               bsl Gamma                                           bsl pi
 Given a circle \Gamma of diameter d, the length of its circumference is \pi{}d.
 
-
 ** themes
 SPC h t
 
@@ -278,8 +282,14 @@ This file can be accessed using M-x (edit-abbrevs) — NOTE: It is important whe
 Go to [[text expansion]] below for how to make new abbreviations / text expansion
 C-x a i g just after the word
 
-//home/donagh/.emacs.d/abbrev_defs
+Abbreviations file at:
+$HOME/.config/emacs/abbrev_defs
+
 NOTE: The ~/.emacs.d folder needs to be symlinked to ~/.config/emacs as the \*ABBREVS\* definitions look for ~/.emacs.d
+->% cd $HOME/.config/emacs
+->% ls -la
+abbrev_defs -> /home/donagh/PORTABLE_ENV/doom/dot_emacs/abbrev_defs
+
 
 If making changes to above file maybe restart doom to register this file?
 M-x (edit-abbrevs)
@@ -321,14 +331,24 @@ HOW?
 In config.el add
 (setq org-ellipsis " ▼ ")
 ** bookmarks
+
 Bookmarks a file. To allow me to jump to a bookmarked file or location easily.
+bookmark file at $HOME/.config/emacs/.local/etc/bookmark
 
 SPC RET  Create or jump to bookmark i.e. list bookmarked files/locations
+
 M-x bookmark (for a list of available commands)
 SPC b m  Set bookmark   [ emacs: C-x r m ]
 M-x bookmark-bmenu-list [ emacs: C-x r l ]
 
 NOTE: for marks see [[marks]]
+
+Reading / writing the bookmarks file
+After a restart it may be necessary to read the bookmark file:
+bookmark file at $HOME/.config/emacs/.local/etc/bookmark
+
+To add a new bookmark to this file; when in the relevant buffer (that you want to bookmark):
+M-x bookmark-write
 
 ** buffers
 [SPC] ,                <-- switch buffers

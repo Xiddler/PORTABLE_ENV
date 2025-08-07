@@ -160,6 +160,10 @@ OUTPUT
 /home/donagh/util.txt
 -rw-r--r-- 1 donagh donagh 801 Nov  1 18:21 /home/donagh/util.txt
 
+# move files of a certain pattern to a different folder
+
+->% find . -iname "*.jpg" -exec mv {} ~/new_foldername \;
+
 
 
 

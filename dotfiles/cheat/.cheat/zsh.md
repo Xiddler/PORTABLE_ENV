@@ -13,6 +13,40 @@ eg
 	vi-history-search-forward	 	18.6.2 History Control
 	vi-indent	 	                18.6.3 Modifying Text
 
+# check if login shell
+if [[ -o login ]]; then
+    print yes
+else
+    print no
+fi
+
+to check if it's interactive use:
+
+if [[ -o interactive ]]; then
+  print yes
+else
+  print no
+fi
+
+# list of startup zsh files
+https://zsh.sourceforge.io/Guide/zshguide02.html#l8
+
+/etc/zshenv
+    Always run for every zsh.
+~/.zshenv
+    Usually run for every zsh (see below).
+/etc/zprofile
+    Run for login shells.
+~/.zprofile
+    Run for login shells.
+/etc/zshrc
+    Run for interactive shells.
+~/.zshrc
+    Run for interactive shells.
+/etc/zlogin
+    Run for login shells.
+~/.zlogin
+    Run for login shells.
 
 #
 #

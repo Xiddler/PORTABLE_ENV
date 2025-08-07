@@ -1,5 +1,12 @@
 This is a file to show commands for copying the relevant theme and zsh-syntax=highlighting plugins
 
+The main zsh plugins are:
+zsh-syntax-highlighting
+zsh-autosuggestions                 :: 34k stars on github; suggests commands as you type based on history and completions; 
+zsh-abbr
+zsh-completions
+per-directory-history
+
 STOW
 As of 2022-03-19 I am using stow to create the symlinks for my dotfiles. See zim-wiki/Computer:LINUX:1Linux Live USB:01installed apps:stow
 usage

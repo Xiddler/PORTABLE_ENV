@@ -1,33 +1,74 @@
-# What does xargs do exactly?
-# Answer: runs a given command on each line of input from a piped command 
+# Overview
 
-# find all file name ending with .pdf and remove them
+
+xargs and -exec do similar things; see https://unix.stackexchange.com/questions/41740/find-exec-vs-find-xargs-which-one-to-choose
+
+the -exec … + is often an alternative way 
+
+
+
+    find . -exec cmd {} +
+    find . -print0 | xargs -0 cmd
+
+Both are meant to be reliable ways to run a command on the files found by find.
+
+
+# See also
+
+~/.cheat/exec.md
+~/.cheat/parallel.md
+~/.cheat/xargs.md (this file)
+
+
+# Helpful info
+
+
+Safely piping file names to xargs requires that your find supports the -print0 option and your xargs has the corresponding option to read it (--null or -0). 
+
+Otherwise, filenames with unprintable characters or backslashes or quotes or whitespace in the name may cause unexpected behavior. 
+
+On the other hand, find -exec {} + is in the POSIX find spec, so it is portable, and it is about as safe as find -print0 | xargs -0, and definitely safer than find | xargs. 
+
+It's recommended never doing find | xargs without -print0.
+
+
+
+# What does xargs do exactly?
+
+ Answer: runs a given command on each line of input from a piped command 
+
+
+# Examples
+
+## find all file name ending with .pdf and remove them -- could be dangerous
 find -name *.pdf | xargs rm -rf
 
-# if file name contains spaces you should use this instead 
+## if file name contains spaces you should use this instead 
 
     find -name *.pdf | xargs -I{} rm -rf '{}'
 
-# xargs -I{}: on each line in the input, run the given command and replace {} with the contents of the line
+Here, xargs -I{}: on each line in the input, run the given command and replace {} with the contents of the line
 
-# using grep - find all files that contain a line ending in sh to a maxdepth of 2
+## using grep - find all files that contain a line ending in sh to a maxdepth of 2
 find -maxdepth 2 -name "*.*" -type f | xargs -I{} grep 'sh$' '{}'
 
-# Will show every .pdf like:
-#	&toto.pdf=
-#	&titi.pdf=
-# -n1 => One file by one file. ( -n2 => 2 files by 2 files )
+ Will show every .pdf like:
+	&toto.pdf=
+	&titi.pdf=
+ -n1 => One file by one file. ( -n2 => 2 files by 2 files )
 
     find -name *.pdf | xargs -I{} -n1 echo '&{}='
 
-# If find returns no result, do not run rm
-# This option is a GNU extension.
+If find returns no result, do not run rm
+
+## This option is a GNU extension.
 find -name "*.pdf" | xargs --no-run-if-empty rm
 
-# open a book from the results of my booksearch command using okular
+## open a book from the results of my booksearch command using okular
+
 ❯ echo $(booksearch interface) | xargs okular # it works!!
 
-# display the line count in all the files in $HOME (2022-11-08)  
+## display the line count in all the files in $HOME (2022-11-08)  
 ❯ lf | awk '{ print $NF }' | xargs wc -l
 grep: warning: stray \ before -
    13 helix1.txt
@@ -45,7 +86,7 @@ grep: warning: stray \ before -
   453 total
 (Note: lf is an alias for list (only) files )
 
-# Easily handling arguments with whitespace 
+## Easily handling arguments with whitespace 
 
   find . -type f -print | xargs wc -l
 
@@ -53,9 +94,9 @@ vs.
 
   find . -type f -print0 | xargs -0 wc -l
 
-> If you have filenames with whitespace, the first will skip a bunch of files, the second won't.
+> If you have filenames with whitespace, the first will skip a bunch of files, the second won't. i.e. you may/may not want to 'catch' file with filenames containing spaces.
 
-# bottles on the wall
+## bottles on the wall
 
-->% seq 10 -1 0 | xargs printf '%s bottles of beer on the wall…\n'
+->% seq 10 -1 0 | xargs printf '%s green bottles hanging on the wall…\n'
 

@@ -468,7 +468,7 @@ lg() { lazygit }
 #}}}
 #{{{ LS
 # note eza is a dependency
-alias -g ls="eza"
+# alias -g ls="eza"
 # eza: Option --time (-t) has no "--color=always" setting (choices: modified, changed, accessed, created)
 
 # List directories / files. Code: f file, d directory, l symlink, i item (file/directory),  n non-.
@@ -480,10 +480,10 @@ alias -g newest='ls -lt  **/*(.om[1,20])' # List latest 20 files edited - newest
 # alias -g li='ls -la --color=always' # long list everything - i.e. list items (files and folders) - alias
 # alias -g ll='ls -la --color=always' # long list everything
 alias -g ll='eza -l ' # long list everything
-# alias -g lle='eza --color=always --long --all --no-filesize --git --no-time | less' # long list everything lle -- long list (with) eza
+alias -g lle='eza --color=always --long --all --no-filesize --git --no-time | less' # long list everything lle -- long list (with) eza
 # alias -g lt='ls -lt --color=always | head -n 16' # list 10 most recent items in this directory EXCEPT dotfiles 
-# alias -g lt='ls -lt | head -n 16' # list 10 most recent items in this directory EXCEPT dotfiles 
-alias -g lt='eza -l --sort=oldest --color=always | head -n 15' # not sure why it's oldest because that outputs neweat???
+alias -g lt='ls -lt | head -n 16' # list 10 most recent items in this directory EXCEPT dotfiles 
+# alias -g lt='eza -l --sort=oldest --color=always | head -n 15' # not sure why it's oldest because that outputs neweat???
 # alias -g ltl='ls -lt --color=always | head -n 16 | less' # list 10 most recent items in this directory EXCEPT dotfiles  and uses `less`;
 alias -g l.='ls -d  --color=always .* ' # List hidden files and directories - short (alternative alias)
 # alias -g lih='ls -d .* ' # List all hidden items i.e. files and directories - short - alias
@@ -560,6 +560,8 @@ alias -g t4="tree -alL 4"
 # View last 20 edited files in order
 ls20() { ls -lt  **/*(.om[1,20]) }
 
+alias lastmod='find . -type f -not -path "*/\.*" -exec ls -lrt {} + | less'
+
 #}}}
 #{{{ BASH
 # Length of a string
@@ -630,14 +632,16 @@ alias -g ipi="ip --color=auto -c -4 addr | rg 192 | cut -d'/' -f1 | tr 'inet' ' 
 #
 # alias -g ping='ping -c3 '
 alias png='ping -c4 8.8.8.8' # ping google to check if there is internet access
+stem='192.168.1.'
+ping4() { ping -c4 $stem$1 } # shorthand for ping -c4 <ip-addr>
 alias -g pong='~/.scripts/pong.sh' # png but shortened; if no out put, then internet is up; if not, no. of errors;
 alias avg='png G rtt | cut -d '/' -f5' # average png time atm. Compared to what? Is internet slow or not?
 # alias to get my IP address of digital ocean website (2020-02-17)
-alias site='dig donaghmccarthy.ie +short'
+# alias site='dig donaghmccarthy.ie +short'
 #}}}
 #{{{ PATHS & FILES
 # For use when using rg etc. e_ for echo, like g_ for goto
-e_creds() { echo /home/donagh/DONAGHS/MY_ZIM/Computer/11SignUps.txt }
+# e_creds() { echo /home/donagh/DONAGHS/MY_ZIM/Computer/11SignUps.txt }
 # USAGE: rg -C3 "donagh@donaghmccarthy.me" $(e_creds)
 #}}}
 #{{{ ON REBOOT
@@ -655,7 +659,8 @@ s_books() { 'python -m http.server 8089  --directory ~/REPOS/books --bind 0.0.0.
 # tad() { tmux attach-session -t daily } #  2023-10-20
 # tma() { tmux a } # 2024-07-09
 
-tm6() { tmuxp load $HOME/.tmuxp/my-6-daily-tabs.yaml }
+# tmuxp load 
+tml() { tmuxp load $HOME/.tmuxp/my-6-daily-tabs.yaml }
 
 # === SERVERS ===
 # start zim, cifs and dropbox
@@ -667,7 +672,7 @@ drop() { echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf;
 psd() { PS dropbox }
 
 # session for my journal and emacs
-tmt() { tmux attach-session -t toshy }
+# tmt() { tmux attach-session -t toshy }
 
 
 # }}}
