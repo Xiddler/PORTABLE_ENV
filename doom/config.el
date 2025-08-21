@@ -10,15 +10,12 @@
 ;; DM - I use this file mainly for adding new key-bindings
 
 
-;; Some functionality uses this to identify you, e.g. GPG configuration, email
-;; clients, file templates and snippets.
+;; Some functionality uses this to identify you, e.g. GPG configuration, email clients, file templates and snippets.
 ;;; Code:
 (setq user-full-name "Donagh McCarthy"
       user-mail-address "xiddler@gmail.com")
 
-;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
-;; are the three important ones:
-;;
+;; Doom exposes five (optional) variables for controlling fonts in Doom. Here are the three important ones:
 ;; + `doom-font'
 ;; + `doom-variable-pitch-font'
 ;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for presentations or streaming.
@@ -32,6 +29,10 @@
 (setq doom-font (font-spec :family "Liberation Mono" :size 20))
 ;; Needs to be installed from PORTABLE_ENV
 ;;
+;;
+;; ==================================================================================================================================
+;; ORG MODE
+;; ==================================================================================================================================
 ;; org-capture - locations for captures
 ;;
 ;; (setq org-capture-templates
@@ -62,51 +63,132 @@
       org-src-fontify-natively t
       org-src-tab-acts-natively t)
 
+;; testing the following —  wtf does it do anyway?
+(setq org-highlight-links '(bracket angle plain tag date footnote))
+;; Setup custom links
+
+;; ORG-DIRECTORY
+;; If you use `org' and don't want your org files in the default location below,
+;; change `org-directory'. It must be set before org loads!
+(setq org-directory "~/all_org/org")
+
+;; Set which files will be found by org-agenda commands - updated 2024-01-02
+(setq org-agenda-files (list "/home/donagh/Dropbox/org-mode/org/worksearch.org"
+                                "/home/donagh/Dropbox/org-mode/org/org.org"
+                                "/home/donagh/Dropbox/org-mode/org/todos.org"
+                                "/home/donagh/DONAGHS/personal/Financial_Reality/money.org"))
+
+;; hide emphasis markers in //italic// in org mode. Works!
+(setq org-hide-emphasis-markers t)
+
+;; Org-babel
+;; Org-babel might be nice, but editing inside an Org-buffer means that you have to give up all the nice functionalities of the individual language’s major more. Luckily, we have org-edit-special (bound to SPC m ‘ in Doom Emacs).
+
+(setq org-src-window-setup 'current-window)
+
+
+;; org-babel for python
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t)))
+
+
+
+;; ==================================================================================================================================
+;; ENDORGMODE
+;; ==================================================================================================================================
+
 
 ;; Abbreviations
-;; Set abbrev-mode to enable on startup; abbrev-defs located at $HOME/.emacs.d/abbrev_defs
+;; initialize read-abbrev-file command and also bookmark-load command after restart / reboot
+;; Set abbrev-mode to enable on startup; abbrev-defs located at $HOME/.emacs.d/abbrev_defs ;; UPDATE: It's located at $HOME/.config/emacs/abbr-defs
+;; Turn on abbrev mode
 (setq-default abbrev-mode t)
+;; (setq-default bookmark-load t)
+
+;; Indenting
+;; URL: https://www.xemacs.org/Links/tutorials_1.html
+;; To insert tab-space instead of indenting, try this — not sure that this worked
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4) ;; or set it up with hooks for particular file types
+
+;; The variable tab-stop-list contains a list of tab stop positions, and M-i moves to the next tab stop. (In fundamental mode, TAB also does this.)
+;; You can define your own list with a statement like the following:
+(setq tab-stop-list '(4 8 12 16))
+
 
 ;; Keywords
 ;; Note: For actual keywords I was using /home/donagh.emacs.d/modules/lang/org/config.el WRONGLY
 ;; The following seems to be working UPDATE 2024-02-14 No, it's not
 
+;; (setq org-todo-keywords
+;;         '((sequence
+;;            "TODO(t)"        ; A task that needs doing & is ready to do
+;;            "PROJ(p)"        ; A project, which usually contains other tasks
+;;            ;"LOOP(r)"       ; A recurring task
+;;            "STRT(s)"        ; A task that is in progress
+;;            "WAIT(w)"        ; Something external is holding up this task
+;;            ;;"HOLD(h)"      ; This task is paused/on hold because of me
+;;            "HAPPENING(h)"   ; This task is happening
+;;            "REPEAT(r)"      ; This task is recurring
+;;            "READING(g)"     ; To promote my renascent reading habit
+;;            "MAINTENANCE(m)" ; For House and IT
+;;            "IDEA(i)"        ; An unconfirmed and unapproved task or notion
+;;            "|"
+;;            "DONE(d)"        ; Task successfully completed
+;;            "KILL(k)")       ; Task was cancelled, aborted or is no longer applicable
+;;           (sequence
+;;            "[ ](T)"         ; A task that needs doing
+;;            "[-](S)"         ; Task is in progress
+;;            "[?](W)"         ; Task is being held up or paused
+;;            "|"
+;;            "[X](D)")        ; Task was completed
+;;           (sequence
+        ;;    "|"
+        ;;    "OKAY(o)"
+        ;;    "YES(y)"
+        ;;    "NO(n)"))
+        ;; org-todo-keyword-faces
+        ;; '(("[-]"  . +org-todo-active)
+        ;;   ("STRT" . +org-todo-active)
+        ;;   ("[?]"  . +org-todo-onhold)
+        ;;   ("WAIT" . +org-todo-onhold)
+        ;;   ("HOLD" . +org-todo-onhold)
+        ;;   ("PROJ" . +org-todo-project)
+        ;;   ("NO"   . +org-todo-cancel)
+        ;;   ("KILL" . +org-todo-cancel)))
+;;
+;;alternative
 (setq org-todo-keywords
         '((sequence
-           "TODO(t)"        ; A task that needs doing & is ready to do
-           "PROJ(p)"        ; A project, which usually contains other tasks
-           ;"LOOP(r)"       ; A recurring task
-           "STRT(s)"        ; A task that is in progress
-           "WAIT(w)"        ; Something external is holding up this task
-           ;;"HOLD(h)"      ; This task is paused/on hold because of me
-           "HAPPENING(h)"   ; This task is happening
-           "REPEAT(r)"      ; This task is recurring
-           "READING(g)"     ; To promote my renascent reading habit
-           "MAINTENANCE(m)" ; For House and IT
-           "IDEA(i)"        ; An unconfirmed and unapproved task or notion
+           "TODO(t)"                    ;What needs to be done
+           "NEXT(n)"                    ;A project without NEXTs is stuck
            "|"
-           "DONE(d)"        ; Task successfully completed
-           "KILL(k)")       ; Task was cancelled, aborted or is no longer applicable
+           "DONE(d)")
           (sequence
-           "[ ](T)"         ; A task that needs doing
-           "[-](S)"         ; Task is in progress
-           "[?](W)"         ; Task is being held up or paused
+           "REPEAT(e)"                    ;Repeating tasks
            "|"
-           "[X](D)")        ; Task was completed
+           "DONE")
           (sequence
+           "HOLD(h)"                    ;Task is on hold because of me
+           "PROJ(p)"                    ;Contains sub-tasks
+           "WAIT(w)"                    ;Tasks delegated to others
+           "REVIEW(r)"                  ;Daily notes that need reviews
+           "IDEA(i)"                    ;Daily notes that need reviews
            "|"
-           "OKAY(o)"
-           "YES(y)"
-           "NO(n)"))
+           "STOP(c)"                    ;Stopped/cancelled
+           "EVENT(m)"                   ;Meetings
+           ))
         org-todo-keyword-faces
         '(("[-]"  . +org-todo-active)
-          ("STRT" . +org-todo-active)
+          ("NEXT" . +org-todo-active)
           ("[?]"  . +org-todo-onhold)
-          ("WAIT" . +org-todo-onhold)
-          ("HOLD" . +org-todo-onhold)
+          ("REVIEW" . +org-todo-onhold)
+          ("HOLD" . +org-todo-cancel)
           ("PROJ" . +org-todo-project)
-          ("NO"   . +org-todo-cancel)
-          ("KILL" . +org-todo-cancel)))
+          ("DONE"   . +org-todo-cancel)
+          ("STOP" . +org-todo-cancel)))
+
 
 ;; count words
 ;; No -enable-word-count available for the following. How come?
@@ -164,27 +246,18 @@
 ;; (setq doom-theme 'doom-ir-black-brighter-comments )
 ;; (setq doom-theme 'spacemacs-dark )
 ;;
-;; 2022-01-01 current preferred theme:
-;;
 ;; (setq doom-theme 'tsdh-dark )
-(setq doom-theme 'doom-acario-dark ) ;; the purple for diary.org is not the nicest otherwise a nice theme
+;; changed this on 2025-08-11
+;; (setq doom-theme 'doom-acario-dark ) ;; the purple for diary.org is not the nicest otherwise a nice theme ; diary.org no longer used I guess
+;; preferred 2025-08-11
+(setq doom-theme 'doom-gruvbox) ;; classy
+;; (setq doom-theme 'doom-bluloco-dark ) ;; 2025-08-11 ;; problem with links from other files having text background that obscures the text
+;; (setq doom-theme 'doom-dark ) ;; 2025-08-11
+;; (setq doom-theme 'doom-tomorrow-night ) ;; 2025-08-11
+
 ;; (setq doom-theme 'spacemacs-theme-dark ) ;; it keeps the * in org-mode - yuk
 ;; 2024-02-27
 ;; (setq doom-theme 'doom-one)
-
-;; ORG-DIRECTORY
-;; If you use `org' and don't want your org files in the default location below,
-;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/all_org/org")
-
-;; Set which files will be found by org-agenda commands - updated 2024-01-02
-(setq org-agenda-files (list "/home/donagh/Dropbox/org-mode/org/worksearch.org"
-                                "/home/donagh/Dropbox/org-mode/org/org.org"
-                                "/home/donagh/Dropbox/org-mode/org/todos.org"
-                                "/home/donagh/DONAGHS/personal/Financial_Reality/money.org"))
-
-;; hide emphasis markers in //italic// in org mode. Works!
-(setq org-hide-emphasis-markers t)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -194,6 +267,12 @@
 
 ;; doom emacs modeline
 (setq doom-modeline-height 35)
+
+;; Turn off highlighting current line in text-like .org files
+;; Highlight mode is nice. However, in an Org-mode buffer, I feel like it might be too much. Let’s turn off hl-line-mode in text buffers for now.
+(add-hook 'text-mode-hook (lambda () (hl-line-mode -1)))
+;; works! hl line mode in this config (elisp) file but not in .org files. Cool.
+
 
 ;; use for SLIME lisp
 ;; (setq inferior-lisp-program "sbcl")
@@ -280,6 +359,7 @@
 
 ;; [...] is annoying maybe — Donagh McCarthy 2025-04-29
 (setq org-ellipsis " ▼ ")
+
 ;;
 ;; evil-vimish-fold; added 2025-02-03;
 ;; https://github.com/alexmurray/evil-vimish-fold?tab=readme-ov-file#evil-vimish-fold
@@ -381,6 +461,7 @@
 (map! :n "SPC f t" '(lambda() (interactive)(find-file "/home/donagh/DONAGHS/personal/template.org"))) ;; opens template.org — 2025-06-14 — SUCCESS!
 (map! :n ",b" 'isearch-backward)
 (map! :n ",p" 'evil-collection-sly-eval-print-last-expression) ; to evaluate a region in a .lisp file and print onto the buffer
+;; (map! :i "\t" " ") ;; see doom-note.org --> indenting
 
 ;; iambic
 ;; (map! :n ",d" "@dnc - ") ;; or better to use abbrev-defs?
@@ -546,10 +627,6 @@
   ;;
 ;; (all-the-icons-faicon  "cogs")         ;; FontAwesome icon for cogs
 
-;; org-babel
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((python . t)))
 
 ;; org-roam dependencies - ref https://www.ianjones.us/own-your-second-brain
 ; (require 'company-org-roam)

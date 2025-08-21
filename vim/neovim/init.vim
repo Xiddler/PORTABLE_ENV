@@ -82,22 +82,22 @@
     "
     " Plug
     " the Plug plugin manager
-    call plug#begin()
+    "call plug#begin()
     " tpopes plugins
-    Plug 'tpope/vim-sensible'
-    Plug 'tpope/vim-commentary' " e.g. gc<motion> gdj <-- toggles
-    Plug 'tpope/vim-surround' " e.g. to surround with {} use yssB. see :h surround
-    Plug 'tpope/vim-vividchalk'  "colorscheme 
+    " Plug 'tpope/vim-sensible'
+    " Plug 'tpope/vim-commentary' " e.g. gc<motion> gdj <-- toggles
+    " Plug 'tpope/vim-surround' " e.g. to surround with {} use yssB. see :h surround
+    " Plug 'tpope/vim-vividchalk'  "colorscheme 
      " airline-powerline prompt
-    Plug 'vim-airline/vim-airline'
+    " Plug 'vim-airline/vim-airline'
     " colorschemes
     "
-    Plug 'mhartington/oceanic-next' " https://github.com/mhartington/oceanic-next < OceanicNext
-    Plug 'https://github.com/tomasr/molokai.git'
-    Plug 'https://github.com/endel/vim-github-colorscheme.git'
+    " Plug 'mhartington/oceanic-next' " https://github.com/mhartington/oceanic-next < OceanicNext
+    " Plug 'https://github.com/tomasr/molokai.git'
+    " Plug 'https://github.com/endel/vim-github-colorscheme.git'
     " many colors
-    Plug 'https://github.com/upsuper/vim-colorschemes.git'
-    call plug#end()
+    " Plug 'https://github.com/upsuper/vim-colorschemes.git'
+    " call plug#end()
     " 
 	filetype off
 	syntax on
@@ -114,7 +114,7 @@
     " COLORSCHEMES
     " colorscheme vividchalk 
     " colorscheme OceanicNext
-    colorscheme molokai
+    " colorscheme molokai
     " colorscheme colorschemes
     " colorscheme github
     " colorscheme elflord

@@ -179,6 +179,7 @@ nnoremap <leader>fu :tabe $HOME/.vim/settings/functions/functions.vim<cr>
 
 "<leader>vv to open $HOME/.vimrc in a new tab
 nnoremap <leader>vv :tabe $MYVIMRC<CR>
+nnoremap <leader>rc :tabe $MYVIMRC<CR>
 
 " source $MYVIMRC - I can't ever seem to remember the keybinding...
 nnoremap <leader>ss :so $MYVIMRC<CR>

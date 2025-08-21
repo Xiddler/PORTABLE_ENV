@@ -1,0 +1,42 @@
+session_name: my-6-daily-tabs
+windows:
+- focus: 'true'
+  layout: cb3e,172x38,0,0,1
+  options: {}
+  panes:
+  - pane
+  start_directory: /home/donagh
+  window_name: zsh
+- layout: b13f,172x41,0,0,2
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: vim
+  start_directory: /home/donagh/.local/share/nvim/plugged/vim-easymotion
+  window_name: zsh
+- layout: cb40,172x38,0,0,3
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: emacs
+  start_directory: /home/donagh
+  window_name: doom
+- layout: cb41,172x38,0,0,4
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /run/media/donagh/USB128GB/REPOSITORIES/books/Articles/Articles_downloaded
+  window_name: journal
+- layout: ce02,168x38,0,0,5
+  options: {}
+  panes:
+  - pane
+  start_directory: /home/donagh
+  window_name: bpython
+- layout: ce03,168x38,0,0,6
+  options: {}
+  panes:
+  - pane
+  start_directory: /home/donagh
+  window_name: dict

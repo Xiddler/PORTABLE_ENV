@@ -2,7 +2,19 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("books.org"
+(("doom-notes.org"
+ (filename . "/home/donagh/PORTABLE_ENV/doom/xHELP/doom-notes.org")
+ (front-context-string . "s\n\nM-x bookmark-")
+ (rear-context-string . "cal/etc/bookmark")
+ (position . 59906)
+ (last-modified 26778 15810 465103 169000))
+("social_sychology.org"
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/SOCIAL_STUFF/social_sychology.org")
+ (front-context-string . "#+TITLE:     soc")
+ (rear-context-string)
+ (position . 1)
+ (last-modified 26778 15724 638197 905000))
+("books.org"
  (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/books.org")
  (front-context-string . "jects\n** Psychol")
  (rear-context-string . "(by year)\n\n* Sub")
@@ -32,12 +44,6 @@
  (rear-context-string . "ulting to nothin")
  (position . 6095)
  (last-modified 26718 23450 330127 631000))
-("cl_1.lisp"
- (filename . "/home/donagh/cl_1.lisp")
- (front-context-string)
- (rear-context-string . "\n(factorial 10)\n")
- (position . 94)
- (last-modified 26702 48899 206610 377000))
 ("recovery.org"
  (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/RECOVERY/recovery.org")
  (front-context-string . "#+TITLE:     rec")

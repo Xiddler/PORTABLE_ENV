@@ -126,7 +126,7 @@ let g:airline_symbols.space = "\ua0"
 " nightsense seems gone from github Note added 2022-11-03  Plug 'nightsense/stellarized'              
 " 
 " gruvbox - added 2022-04-02. For a change.
-" Plug 'https://github.com/morhetz/gruvbox.git'
+Plug 'https://github.com/morhetz/gruvbox.git'
 "
 " dracula - added 2022-11-04 (to get nicer markdown style - hate the yellow)
 " https://github.com/dracula/dracula-theme.git
@@ -167,8 +167,12 @@ Plug 'easymotion/vim-easymotion' " Use ./ (i.e. period backslash) to navigate ar
 " similar to (doom)emacs: avy-goto-char
 
 " peekaboo
-" the following plugin displays a buffer to the right on typing this  " <-- yes the quote symbol!
+" the following plugin displays a buffer showing the regs to the right on typing this  " <-- yes the quote symbol!
 Plug 'junegunn/vim-peekaboo'
+
+" vim-vinegar — edit files easily -- 2025-08-16
+" git clone https://github.com/tpope/vim-vinegar.git
+Plug 'tpope/vim-vinegar'
 
 " nightsense/snow
 " Plug 'nightsense/snow'

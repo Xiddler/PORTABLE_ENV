@@ -4,7 +4,7 @@
 " My .vimrc is split into the following:
 
 " $MYVIMRC = $HOME/.vimrc                                                   " This file
-" MyVimSettingsDir='/home/donagh/settings'
+" MyVimSettingsDir='/home/donagh/.vim/settings'
 
 " The constituent files are:
 source $HOME/.vim/settings/configs/configs.vim                              " configs <leader>co
@@ -28,6 +28,7 @@ colorscheme miramare
 " colorscheme elflord " 
 " }}}
 "{{{ Minimum Settings
+" vimm <filename>
 
 " Base filepath: /home/donagh/PORTABLE_ENV/dotfiles/vim_rc/vimrc
 

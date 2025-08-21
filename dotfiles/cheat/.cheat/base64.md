@@ -23,7 +23,9 @@ Donagh McCarthy
 
 
 
+ENCODE AN IMAGE
 
+❯ base64 bird.png > bird_64.txt
 
 
 

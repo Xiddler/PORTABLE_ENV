@@ -146,7 +146,7 @@ thymo() { vim ~/DONAGHS/personal/health_general/THYMO/thymo.md }
 #bookmarks() { cd $HOME/SD64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
 # rnotes() { cd $HOME/REPOS/books/0Reading/0Reading_notes && ls }
 alc() { cd  $personal/alcohol/ }
-shared() { cd /home/donagh/samba/anonymous_shared_directory }
+anon() { cd /home/donagh/samba/anonymous_shared_directory }
 anon="/home/donagh/samba/anonymous_shared_directory"
 vig() { cd /run/media/donagh/SD64GB/DONAGHS/personal/writings/my_writings/VIGNETTES/ }
 # Search Zim - Computer, ORG 
@@ -178,6 +178,7 @@ alias -g bx='vim $HOME/REPOS/TESTING/scratch_pad.txt' # as used in doom-emacs an
 alias -g sc='vim $HOME/REPOS/TESTING/scratch_pad.txt' # as used in doom-emacs and in vim. Perhaps buffer X?
 alias -g vt='vim ~/REPOS/TESTING/test.md'
 alias -g vtt='vim ~/TESTING/testing_vim.txt'
+alias -g ntt='nvim ~/TESTING/nvim_testing.txt'
 alias -g vima='vim ~/a.txt' # for temporary use eg implementing regex etc. NOTE: see configs/config.vim for autocmd setting to get this working
 alias -g music='vim $HOME/REPOS/music/music_memos.md'
 alias -g quakes='vim $HOME/DONAGHS/personal/mental_stuff/quakes.md'
@@ -200,6 +201,13 @@ wants() { vim $HOME/REPOS/Purchases/Wants/wants.md }
 # open a bare-config vim 
 vvim() { vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc $1 }
 vimm() { vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc $1 }
+
+#}}}
+#{{{ NVIM
+nvim="nvim -u ~/PORTABLE_ENV/nvim/init.lua $1"
+vni() { nvim ~/.config/nvim/init.lua }
+# Like vv for .vimrc
+nn() { nvim ~/.config/nvim/init.lua }
 
 #}}}
 # {{{ MANJARO
@@ -388,7 +396,8 @@ hme() { cd $HOME }
 # donagh-satellitep50c.home 2023-09-30
 
 # ssht() { ssh -i /home/donagh/.ssh/id_rsa_toshiba donagh@192.168.1.86 } 
-ssht() { ssh -i /home/donagh/.ssh/id_rsa_toshiba donagh@donagh-satellitep50c.home }
+# from Leonovo Arch
+ssht() { ssh -i /home/donagh/.ssh/id_to_toshiba donagh@donagh-satellitep50c.home }
 # ssh into the RPi
 # sshrpi() { ssh -i ~/.ssh/ip_rsa_rpi donagh@192.168.1.24 }
 # sshrpi() { ssh -i ~/.ssh/id_rpi_2 donagh@192.168.1.24 }
@@ -410,6 +419,7 @@ alias -g sza='source ~/.zsh_aliases'
 # edit file
 alias -g vb='vim ~/.bashrc'
 alias -g vv='vim ~/.vimrc'
+alias -g vrc='vim ~/.vimrc'
 alias -g vz="vim ~/.zshrc"
 alias -g vza="vim ~/.zsh_aliases"
 
@@ -597,17 +607,17 @@ pyserve() { source /home/donagh/.virtualenvs/beauty-http-server/bin/activate && 
 
 # To paste  Hex char eg “ into Ex buffer use  C-Vu201c
 
-dec2hex() { echo "obase=16; ibase=10; $1" | bc }
-dec2bin() { echo "obase=2; ibase=10; $1" | bc }
-dec2oct() { echo "obase=8; ibase=10; $1" | bc }
+# dec2hex() { echo "obase=16; ibase=10; $1" | bc }
+# dec2bin() { echo "obase=2; ibase=10; $1" | bc }
+# dec2oct() { echo "obase=8; ibase=10; $1" | bc }
 
 # Usage ->% dec2hex 22
 
 # convert to decimal
 
-bin2dec() { echo "obase=10; ibase=2; $1" | bc }
-oct2dec() { echo "obase=10; ibase=8; $1" | bc }
-hex2dec() { echo "obase=10; ibase=16; $1" | bc }
+# bin2dec() { echo "obase=10; ibase=2; $1" | bc }
+# oct2dec() { echo "obase=10; ibase=8; $1" | bc }
+# hex2dec() { echo "obase=10; ibase=16; $1" | bc }
 
 #}}}
 #{{{ NETWORKING 
@@ -650,8 +660,8 @@ alias avg='png G rtt | cut -d '/' -f5' # average png time atm. Compared to what?
 # LAN servers for sshrpi, s_books, s_passords
 # s_books() { cd /home/donagh/REPOS/books && python -m http.server 8088 }
 # s_passwords() { cd /home/donagh/DONAGHS/MY_ZIM/Computer && python -m http.server 8089 }
-s_passwords() { 'python -m http.server 8088  --directory ~/DONAGHS/MY_ZIM/Computer --bind 0.0.0.0' }
-s_books() { 'python -m http.server 8089  --directory ~/REPOS/books --bind 0.0.0.0' }
+# s_passwords() { 'python -m http.server 8088  --directory ~/DONAGHS/MY_ZIM/Computer --bind 0.0.0.0' }
+# s_books() { 'python -m http.server 8089  --directory ~/REPOS/books --bind 0.0.0.0' }
 # open 4 panes with the above and one spare
 # ttmux() { /home/donagh/.scripts/tmux.sh }
 # sesseion for emacs

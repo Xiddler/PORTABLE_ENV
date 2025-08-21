@@ -87,6 +87,10 @@ export LC_ALL=en_US.UTF-8
 # It will set red for bold and blue for underlined. 
 export LESS='-R --use-color -Dd+r$Du+b$'
 
+# FUNCTEST - reached limit of 500 on 2025-08-07
+# see .bashrc
+# set -o functrace
+# limit functest 1000
 
 # POWERLEVEL - START 
 # I have replaced this promt
@@ -624,6 +628,11 @@ source ~/.config/dirjump/dirjump
 # initialize pure prompt (for use in WSL etc. - p10k being too complicated)
 # https://github.com/sindresorhus/pure 
 fpath+=(/home/donagh/PORTABLE_ENV/zsh/home_dot_zsh/pure)
+
+# echo $fpath
+# /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/functions/Calendar /usr/share/zsh/functions/Chpwd /usr/share/zsh/functions/Completion /usr/share/zsh/functions/Completion/Base /usr/share/zsh/functions/Completion/Linux /usr/share/zsh/functions/Completion/Unix /usr/share/zsh/functions/Completion/X /usr/share/zsh/functions/Completion/Zsh /usr/share/zsh/functions/Exceptions /usr/share/zsh/functions/MIME /usr/share/zsh/functions/Math /usr/share/zsh/functions/Misc /usr/share/zsh/functions/Newuser /usr/share/zsh/functions/Prompts /usr/share/zsh/functions/TCP /usr/share/zsh/functions/VCS_Info /usr/share/zsh/functions/VCS_Info/Backends /usr/share/zsh/functions/Zftp /usr/share/zsh/functions/Zle /home/donagh/PORTABLE_ENV/zsh/home_dot_zsh/pure /home/donagh/PORTABLE_ENV/zsh/home_dot_zsh/pure
+
+
 autoload -U promptinit; promptinit
 # PURE_PROMPT_SYMBOL="❯"
 prompt pure

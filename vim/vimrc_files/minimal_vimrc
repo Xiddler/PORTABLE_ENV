@@ -10,6 +10,7 @@ hi link markdownError normal
 " set termguicolors
 
 " Donaghs - for use in containers
+" inoremap  jk <esc>
 set <esc>=jk
 let mapleader=','
 nnoremap <space> :

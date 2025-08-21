@@ -18,6 +18,7 @@
     ("iim" "I'm" nil :count 1)
     ("iiv" "I've" nil :count 9)
     ("lh" "—" nil :count 162)
+    ("ohter" "other" nil :count 1)
     ("ohters" "others" nil :count 2)
     ("tath" "that" nil :count 1)
     ("teh" "the" nil :count 8)

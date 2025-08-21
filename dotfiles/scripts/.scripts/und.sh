@@ -31,5 +31,6 @@ mydest=/home/donagh/REPOS/books/Articles/Articles_downloaded/$mynew.md
 vim $mydest
 
 
+# also the option of using  | tr " " "_"
 
 

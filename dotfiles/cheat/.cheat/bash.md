@@ -3,6 +3,7 @@
 https://github.com/jlevy/the-art-of-command-line    《good for a freshen up  
 https://wiki.bash-hackers.org/
 https://mywiki.wooledge.org/BashFAQ  AND  https://mywiki.wooledge.org/BashGuide
+pitfalls at https://mywiki.wooledge.org/BashPitfalls
 
 # bash resources
 

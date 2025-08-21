@@ -80,7 +80,8 @@ and enter ~/.config/emacs/abbrev-defs
 _Method 1_
 Place cursor after the last `)` and press Ctrl-x Ctrl-e or M-x eval-last-sexp or , e
 (sin 45)
-(* 233 3002)
+(* 233 3002) ==> 699466
+(* 50 526.50) ==> 26,325
 
 _Method 2_
 M-: eval-expression. This opens a mini-buffer at bottom; then enter the expression you want evaluated.
@@ -114,7 +115,6 @@ SPC t l
 ** url link syntax
 
 put the link / URI instead of x and the description in the second pair of [].
-
 
 ** modes
 2025-04-13
@@ -497,6 +497,58 @@ Exited emacs
  ->% doom doctor
  ->% doom run
 
+** dired
+2025-08-11
+URL: [[https://discourse.doomemacs.org/t/dired-keybind-reference-sheet/127][dired cheatsheet]]
+
+M-x dired-do-             :: to see much of what dired can do
+
+Entering dired
+=================================================================
+Evil Key     Vanilla Key   Description
+...............................................................
+SPC f d      C-c f d       Open directory in dired (prompts you)
+SPC o -      C-c o -       Open current directory in dired
+SPC p . RET  C-c p D       Open project root in dired
+
+File IO
+=================================================================
+Evil Key  Vanilla Key      Description
+...............................................................
+D                          Delete the file at point
+R                          Rename the file at point
+C                          Copy the file at point
+\+                         Create a directory
+SPC .     C-x C-f          Create a new file
+=                          Diff files
+Z                          Compress a file/directory
+
+Marking files
+=================================================================
+Key                        Description
+...............................................................
+m                          Mark files
+%m                         Mark files by regexp
+!                          Run shell command on marked files
+d                          Mark file(s) for deletion
+x                          Delete marked files
+u                          Unmark a file/directory
+U                          Unmark all marked files/directories
+
+
+directory editor
+C-x d                     :: open dired
+
+
+    C-x d to open dired
+    RET to select directory of current file
+    C-x C-j (dired-jump to the name of the current file, in Dired)
+    R to rename the file (or dired-do-rename).
+    q to go back to the (renamed) file buffer
+
+
+[SPC] o -                 :: Dired on current buffer — to, for example, rename file using R in Dired
+
 ** directory tree navigation
 *** treemacs [SPC] d
 [[treemacs]]
@@ -607,6 +659,12 @@ https://github.com/domtronn/all-the-icons.el/wiki
  coffee
 *** I would like to upgrade the leading * to something nicer
 How do I achieve this?
+** indenting
+2025-08-11
+
+See https://www.emacswiki.org/emacs/CategoryIndentation
+and https://www.xemacs.org/Links/tutorials_1.html
+
 ** ielm shell eshell term or vterm
 
 M-x ielm
@@ -664,6 +722,8 @@ Note: M-x list-input-methods displays a list of all the supported input methods.
 
 3. SPC i u <-- Insert Unicode Character
 eg Type in: POUND SIGN --> £
+
+ EM DASH — (shortcut is lh — with abbrev-mode on )
 
 ** keybindings
 doom uses vim keybindings in the buffers
@@ -914,7 +974,29 @@ Note: The preferred (only?) way to install non-built-in packages is via packages
 **** Plain emacs
 - M-x packge-install
 - in config.el (use-package origami)
+*** aphelia
+2025-08-11
+
+Formatters
+
+Doom uses apheleia to efficiently format-on-save code from a wide variety of languages.
+
+Formatters can be added or modified easily:
+
+(after! format
+  ; Edit an existing formatter
+  (set-formatter! 'black '("blackd-client" "--line-length" "119"))
+  ; Add a new formatter
+  (set-formatter! 'typstfmt '("typstyle" "-c=100"))
+  (setq-hook! 'typst-ts-mode-hook +format-with 'typstfmt)
+)
+
 *** avy
+
+g s [SPC] <letter>
+
+Avy allows quickly jumping to a match from a keyboard-based decision tree (centered around your home row).
+
 **** About
 For fast navigation within a file.
 Like easymotion plugin in vim
@@ -933,12 +1015,37 @@ To move to f of fruit <-- g s s fr then press hl letter
 elephants in your head
 oranges are not the only fruit
 plain herds are better than awful
+*** babel
+
+See [[org-babel]]
+
+#+begin_src elisp
+(define-abbrev global-abbrev-table "ttyl" "talk to you later")
+#+end_src
+
+#+RESULTS:
+: ttyl
+
+C-c C-c
+
+After pressing <Enter> at the endpoint you'll get
+talk to you later
+
+
+the raw code is as follows:
+: #+begin_src elisp
+: (define-abbrev global-abbrev-table "ttyl" "talk to you later")
+: #+end_src
+
 *** counsel
 Ivy interface for dynamically querying a search engine
 *** company
 A modular text completion framework
 
 *** dired
+
+Dired is a file explorer integrated in emacs. Open it by pressing ENTER on the first line of SPC f f, after navigating to the folder of your choice. Alternatively, use C-x d.
+
 :about:
 dired is a built-in file manager / file explorer
 New buffer below showing the contents of (current) directory
@@ -1000,6 +1107,9 @@ keybinding: ,/ <type char>
 *** origami
 folding in markdown
 *** flycheck
+
+Flycheck provides syntax checking (with a very generic meaning: from code to natural language), supporting plethora of backends.
+
 Syntax highlighting
 cf. flymake
 *** flymake
@@ -1107,6 +1217,10 @@ from https://www.murilopereira.com/how-to-open-a-file-in-emacs/#part-two-compute
 
 This module enhances the Emacs search and completion experience, and also provides a united interface for project search and replace, powered by ripgrep.
 It does this with several modular packages focused on enhancing the built-in completing-read interface, rather than replacing it with a parallel ecosystem like ivy and helm do.
+*** yasnippets
+2025-08-11
+
+Yasnippet is a snippet templating engine, which help avoid repeatedly typing boilerplate. In any mode, call M-x yas-describe-tables to see the available snippets; Doom ships with a relatively large library.
 ** projects
 *** manage projects
 
@@ -1557,6 +1671,8 @@ with
 ** packages for org-mode
 *** org-babel
 
+see [[babel]]
+
 
 Allows you to have short snippets of code that can be run inside org-mode. Literate programming.
 
@@ -1576,14 +1692,14 @@ def fib(n):
         a, b = b, a+b
     return b if n > 0 else 0
 
-return fib(10)
+return fib(15)
 # print(fib(5))
 # print("done")
 
 #+END_SRC
 
 #+RESULTS:
-: 55
+: 610
 
 Hint: C-c C-c to process. Does not process the "print" function.
 
@@ -1907,6 +2023,8 @@ SPC b m save current buffer name as a bookmark
 
 M-x bookmark-save --> save current selection of bookmarks to a file located at:
 \/home/donagh/.config/emacs/.local/etc/bookmarks
+
+ /home/donagh/.config/emacs/.local/etc/bookmarks
 
 M-x bookmark-load
 

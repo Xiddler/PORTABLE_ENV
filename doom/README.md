@@ -20,3 +20,9 @@ packages.el
 I am going to try to symlink today's new config,init and packages files.
 
 
+# bookmarks
+
+SPC b m to mark a bookmark
+
+bookmark file  
+/home/donagh/.config/emacs/.local/etc/bookmarks

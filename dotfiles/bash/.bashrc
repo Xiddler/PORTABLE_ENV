@@ -10,6 +10,11 @@ if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
 
+# FUNCTEST
+# set -o functrace
+# set -o functrace
+limit funcnest 1000
+
 # functions for shortcuts: original in .zsh_aliases
 # inserted in .bashrc to allow vim to access them
 # alc() { $EDITOR $personal/minding_me/alcohol_journal.md }
