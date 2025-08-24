@@ -11,6 +11,7 @@
 -- ================================================================================================
 -- DONAGHS settings
 vim.keymap.set("i", "jk", "<esc>")
+vim.keymap.set("n", "w", "W")
 vim.opt.foldenable = true
 
 

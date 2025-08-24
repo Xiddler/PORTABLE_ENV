@@ -32,6 +32,7 @@ syntax enable
 "/home/donagh/PORTABLE_ENV/vim/dotvim/HELP/pack/nightsense/start/stellarised 
 " theme at 2022-11-03
 colorscheme gruvbox
+" colorscheme  base16-classic-dark
 " colorscheme dracula  
 " added 2022-11-04
 " colorscheme iceberg   
