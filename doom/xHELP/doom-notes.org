@@ -5,7 +5,7 @@
 #+FILEPATH: ~/PORTABLE_ENV/doom/xHELP/doom-notes.org
 #+options: il
 #+tags:    help orgmode org-mode donaghs
-#+EDITED:  2025-04-12; 2025-03-02; 2025-02-11; 2024-09-04; 2024-02-06; 2024-01-02; 2023-12-10; 2023-09-06; 2023-08-09; 2023-07-12; 2023-04-07; 2023-02-24; 2023-01-03; 2022-12-19; 2022-12-16; 2022-09-25
+#+EDITED:  2025-09-13; 2025-04-12; 2025-03-02; 2025-02-11; 2024-09-04; 2024-02-06; 2024-01-02; 2023-12-10; 2023-09-06; 2023-08-09; 2023-07-12; 2023-04-07; 2023-02-24; 2023-01-03; 2022-12-19; 2022-12-16; 2022-09-25
 #+LINE      ___________________________________________________________________________________________________________
 #+BABEL: :session *python* :cache yes :results output graphics :exports both :tangle yes \n" "-----"
 
@@ -19,6 +19,11 @@ abbrev file: $HOME/PORTABLE_ENV/doom/dot_emacs/abbrev_defs (symlink to $HOME/.em
 
 abbrevs: M-x abbrev-mode, list-abbrevs, write-abbrevs
 :end:
+*** abbrevs file
+2025-09-13
+
+$HOME/.config/emacs/abbr_defs
+
 *** make new abbrev
 added 2024-09-04
 
@@ -61,6 +66,9 @@ is the keybinding for
 M-x (edit-abbrevs) and save in the abbrevs buffer using M-x (abbrevs-edit-save-buffer)
 
 See $HOME/.emacs.d/abbrev_defs where the ~/.emacs.d folder is symlinked to ~/.configure/emacs [Added 2025-04-08]
+
+Abbrevs file is at: $HOME/.config/emacs/abbr_defs
+
 *** abbrevs not working
 2025-06-26
 
@@ -68,7 +76,8 @@ Not reading the abbrevs-defs file in ~/.config/emacs/abbrev-defs (which is a sym
 
 SOLUTION
 M-x read-abbrev-file
-and enter ~/.config/emacs/abbrev-defs
+~~and enter ~/.config/emacs/abbrev-defs~~
+and enter ~/.config/emacs/abbr_defs
 (often needed after a system reboot)
 
 ** calculate
@@ -238,6 +247,9 @@ Not working on Windows. I don't really care about this one to be honest. May not
 ** [[source code]]
 ** symbols & Unicode
 
+_METHODS_
+SPC i u                      e.g. SPC i u 394 --> Δ
+M-x insert-char
 M-x org-entities-help
 
 _EMACS METHOD_
@@ -602,9 +614,19 @@ M-x ielm or [SPC] o r
 ** general notes
 - See spacemacs_notes above. Lots of stuff applies in doom-emacs.
 ** headings
+
+C-c C-j org-goto
+
 Remove a * <-- to promote to parent level
+
 M - up <-- to move up
 M - down <-- to move down
+
+[ [ M-x outline-previous-visible-heading
+
+*** URLs_hd
+https://emacs.stackexchange.com/questions/19810/move-point-to-previous-next-parent-heading
+
 ** help
 C-h i    :: info; list of Help Tutorials
 C-h k    :: help on keys
@@ -871,6 +893,16 @@ example:
 [[file+emacs:org.org][Health]]
 which is the below with a ] at the end (which hides the details)
 [[file+emacs:org.org][Health]
+
+** macros
+2025-09-03
+
+`q` a will begin recording a macro to register `a` and pressing `q` again will stop recording. `@a` will play the macro.
+Replace any register with a letter of your choosing.
+
+According to the GNU documentation, you can use kmacro-to-register to store the last recorded macro in a register.
+Default keybinding is C-x C-k x r to store in register r.
+These registers are not the evil-registers but the emacs registers which can be viewed using M-x view-registers.
 
 ** magit
 [[Magit][Magit]]

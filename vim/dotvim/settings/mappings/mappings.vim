@@ -326,6 +326,7 @@ inoremap wont won't
 inoremap waht what
 " inoremap hte the " this also messes with words like enlighten, frighten; can I find a fix for this? Should I just kill this one?
 inoremap teh the
+inoremap adn and
 
 
 
@@ -340,6 +341,7 @@ ab tbp The Big Picture
 ab rde raison d'être
 ab psm psycho-social-mental illness
 ab ahve have
+ab wk Wikipedia
 
 " does this fix significan't? Yes!
 ab cant can't

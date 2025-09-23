@@ -1,3 +1,9 @@
+# Help
+
+## URLS
+https://silverrainz.me/blog/2025-09-systemd-fzf-aliases.html
+https://github.com/rgwood/systemctl-tui
+
 # List all loaded/active units
 systemctl list-units
 
@@ -34,3 +40,7 @@ systemctl isolate foo.target
 
 # Change default target
 systemctl enable foo.target
+
+# Random
+List runnning services
+-> %  systemctl --type=service --state=running

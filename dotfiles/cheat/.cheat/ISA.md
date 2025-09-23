@@ -1,6 +1,7 @@
 # FRONTMATTER
 Opened 2025-07-23
-Filepath 
+Filepath  /home/donagh/PORTABLE_ENV/dotfiles/cheat/.cheat/arch_comps
+
 
 # ISA Architecture for Computers
 # =============================================================================================================
@@ -37,12 +38,12 @@ The Alpha architecture is a 64-bit architecture developed by Digital Equipment C
 AMD64 is a 64-bit architecture that is compatible with the x86 architecture (and thus also known as x86_64). It was first used by AMD (under the AMD64 name) and Intel (under the EM64T name) and is now the most prominent architecture for medium and high-end desktop PCs. It is also commonly found in the server segment. Variants include: AMD Athlon 64, Opteron, Sempron, Phenom, FX, Ryzen, Threadripper, and Epyc along with Intel Pentium 4, Core2, Core i3, i5, i7, i9, Xeon, and some Atoms.
 
 
-## ARM 
+## ARM  /  Aarch
 
 ARM is a 32-bit architecture that is very popular in embedded and small systems. Sub-architectures range from ARMv2 to ARMv6 (legacy), to ARMv6-M (Cortex), as well as ARMv8-R and ARMv8-M and are often found in smart phones, tablets, hand-held consoles, end-user GPS navigation systems, etc. Variants include: StrongARM and Cortex-M.
 
 
-## ARM64 
+## ARM64  /  Aarch
 
 ARM64 is a 64-bit variant of ARM for embedded and server systems. The primary sub-architecture referred to as AArch64 (also known as ARMv8-A) is produced by a few manufacturers. AArch64 chips are seen in a variety of SoCs including developer boards, smart phones, tablets, smart TVs, etc. Variants include: ARM Holdings' Cortex-A53, A57, A72, A73, and Qualcomm's Kryo and Falkor.
 

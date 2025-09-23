@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/run/media/donagh/USB128GB/DONAGHS/personal/journal/2025/09'
 let g:netrw_dirhist_4='/run/media/donagh/USB128GB/DONAGHS/personal/journal/2025/08'
 let g:netrw_dirhist_3='/home/donagh'
 let g:netrw_dirhist_2='/home/donagh/PORTABLE_ENV/vim/dotvim/plugins'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_9='/home/donagh/.config/nvim.orig'
 let g:netrw_dirhist_8='/home/donagh/PORTABLE_ENV/zsh/zsh-autosuggestions'
 let g:netrw_dirhist_7='/home/donagh/PORTABLE_ENV/dotfiles/zsh/.zprofile'
 let g:netrw_dirhist_6='/home/donagh/PORTABLE_ENV/dotfiles/tmux/.tmux/plugins/tmux'
-let g:netrw_dirhist_5='/home/donagh/.vim/syntax'

@@ -1,3 +1,7 @@
+# QUICKIES
+          zipped file        source
+tar -czf /path/to/foo.tgz /path/to/foo/
+
 # Flags
 
 -x extract

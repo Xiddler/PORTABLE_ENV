@@ -177,3 +177,7 @@ The sqlite3 program is able to show the results of a query in 14 different outpu
     tcl 
 
 You can use the ".mode" dot command to switch between these output formats. 
+
+# Backup an sqlite3 db
+
+-> % sqlite3 app.db '.backup backup.db'

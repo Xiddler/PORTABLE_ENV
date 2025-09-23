@@ -41,13 +41,13 @@ windows:
           - source ~/.zshrc
 
 
-  - window_name: bpython
+  - window_name: ipython
 
     panes:
 
       - shell_command:
 
-          - bpython
+          - ipython --TerminalInteractiveShell.editing_mode=vi
 
 
   - window_name: dict
