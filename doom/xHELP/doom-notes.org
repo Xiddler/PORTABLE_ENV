@@ -5,7 +5,7 @@
 #+FILEPATH: ~/PORTABLE_ENV/doom/xHELP/doom-notes.org
 #+options: il
 #+tags:    help orgmode org-mode donaghs
-#+EDITED:  2025-09-13; 2025-04-12; 2025-03-02; 2025-02-11; 2024-09-04; 2024-02-06; 2024-01-02; 2023-12-10; 2023-09-06; 2023-08-09; 2023-07-12; 2023-04-07; 2023-02-24; 2023-01-03; 2022-12-19; 2022-12-16; 2022-09-25
+#+EDITED:  2025-10-12; 2025-09-13; 2025-04-12; 2025-03-02; 2025-02-11; 2024-09-04; 2024-02-06; 2024-01-02; 2023-12-10; 2023-09-06; 2023-08-09; 2023-07-12; 2023-04-07; 2023-02-24; 2023-01-03; 2022-12-19; 2022-12-16; 2022-09-25
 #+LINE      ___________________________________________________________________________________________________________
 #+BABEL: :session *python* :cache yes :results output graphics :exports both :tangle yes \n" "-----"
 
@@ -104,6 +104,16 @@ Use :bd to close the ielm buffer
 ** config files
 
 SPC f p
+** getting help
+2025-10-18
+
+for Emacs
+
+M-x describe-? v variable; f function ;
+
+
+C-h i      Info on packages
+
 ** headings
 
 To demote a heading
@@ -125,6 +135,16 @@ SPC t l
 
 put the link / URI instead of x and the description in the second pair of [].
 
+** macros
+2025-10-28
+
+M-x kmacro-???
+
+Macros saved in file:
+~/.emacs.d/kbd_macros
+
+Can I save my defined macros in a file for persistence?
+
 ** modes
 2025-04-13
 
@@ -135,11 +155,17 @@ Variable: major-mode                         <-- type in this or select it from 
 ** number a list
 2025-04-17
 
+TL;DR
+with dashes on items, C-c -
+
+Note:
+kmacro: C-c d for enter dash
+
 
 To number a list:
 a. Insert dashes for each item. Then on the first dash go M-x org-ctrl-c-minus and toggle until the numbered lists appear!
 b. OR SPC m + (keep toggling to get more bullet styles!)
-c. OR Shift Right Arrow (Yep. Easy, right?)
+c. OR Shift Right Arrow (Yep. Easy, right? But doesn't always work).
 d. OR Ctrl C -
 
 
@@ -247,6 +273,9 @@ Not working on Windows. I don't really care about this one to be honest. May not
 ** [[source code]]
 ** symbols & Unicode
 
+M-x org-entities-help
+
+*** intro
 _METHODS_
 SPC i u                      e.g. SPC i u 394 --> Δ
 M-x insert-char
@@ -269,11 +298,13 @@ SPC i u 2014 --> —
 I made a keybinding for it
 M-dash        —      use `lh`  to render the M-dash
 
-More examples:
+*** some examples
+
 Slash         /      SPC i u 2f
 Pure prompt   ❯      SPC i u 276f
 Tick mark     ✓      SPC i u 2713 My abbrev --> tm
 Long hyphen   —      SPC i u 2014 My abbrev --> lh
+Squared       \sup2      backslash sup2
 
 Am I right? ✓
 
@@ -330,10 +361,9 @@ When installing Doom Emacs and using org-mode the defaults bullets are `*`. In o
     org-superstar-headline-bullets-list '("⁖" "◉" "○" "✸" "✿")
 )
 
-****  org-superstar-mode
+**** org-superstar-mode
 
 M-x org-superstar-mode
-
 
 *** theme
     [SPC] h t <-- select theme
@@ -962,6 +992,26 @@ Go to mark: SPC s r ... and select
 
 ** packages
 see also org-mode/packages
+:notes_on_modern_packages:
+2025-11-03
+
+- consult: search and navigation commands, provides candidates for...
+
+- vertico: vertical display of candidates in the minibuffer
+
+- marginalia: annotations for the candidates
+
+- orderless: orderless fuzzy match for candidates
+
+- embark: right mouse context menu for candidates
+
+:end:
+*** refs
+2025-11-03
+
+[^1]: https://www.jamescherti.com/essential-emacs-packages/ some good overview thoughts on essential(ish) emacs packages
+
+*** -----------------------------
 *** emacs
 REM: DOOM doesn't use emacs packages.el it uses straight.el instead for package management. Use init.el
 **** install new package
@@ -1075,15 +1125,22 @@ Ivy interface for dynamically querying a search engine
 A modular text completion framework
 
 *** dired
-
-Dired is a file explorer integrated in emacs. Open it by pressing ENTER on the first line of SPC f f, after navigating to the folder of your choice. Alternatively, use C-x d.
-
 :about:
+
 dired is a built-in file manager / file explorer
 New buffer below showing the contents of (current) directory
 :end:
+
+See also zim-wiki --> EDITORS:emacs:packages:dired
+
+Usage:
+ SPC f d RET
+
+Dired is a file explorer integrated in emacs. Open it by pressing ENTER on the first line of SPC f f, after navigating to the folder of your choice. Alternatively, use C-x d.
+
 **** A short intro to Dired
-M-x dired
+
+M-x dired OR SPC f d RET
 
 Dired is how you interface with a directory
 Name comes from Directory Editor
@@ -1148,6 +1205,9 @@ cf. flymake
 Syntax highlighting
 
 *** helm
+
+A better alternative is [[vertico]]
+
 a generic completion mechanism for Emacs - in insert mode.
 see also : ivy, vertico (below)
 *** image-dired
@@ -1229,6 +1289,9 @@ M-x treemacs <-- opens explorer for CURRENT directory
 [SPC] d <-- toggles close / open
 :q in treemacs pane to quit OR [SPC] b d
 use vim keys for navigating
+*** tramp
+2025-11-16
+
 *** various
 Added 2023-12-10
 from https://www.murilopereira.com/how-to-open-a-file-in-emacs/#part-two-computers-and-humans
@@ -1244,6 +1307,8 @@ from https://www.murilopereira.com/how-to-open-a-file-in-emacs/#part-two-compute
 | seq.el  | sequences                        |
 +---------+----------------------------------+
 *** vertico
+
+good alternative to ivy & helm
 
 [[https://docs.doomemacs.org/latest/modules/completion/vertico/][vertico online]]
 
@@ -1282,6 +1347,12 @@ Example of propert drawer. Use the TAB key to fold/unfold it.
 :contents:
 This is a drawer. Use the TAB key to fold/unfold it.
 :end:
+** registers
+2025-10-28
+
+evil- registers --> :reg OR SPC i r
+emacs registers --> M-x view-register
+
 ** search in buffer
 [[search]] in current buffer
 
@@ -1307,12 +1378,15 @@ C-h r r to refresh config.el file
 
 ** symbols
 
+[[symbols & Unicode]]
+
 in org mode:
 (To make that \dagger symbol: M-x org-pretty-mode and <backslash>dagger. See M-x org-entities-help.)
 \dagger dagger
 \pound pound
 \mdash mdash
 \pound
+\sup2
 
 ** tags :tags:
 
@@ -1583,6 +1657,8 @@ URL: https://orgmode.org/manual/Drawers.html
 ** headings - promote / demote
 How to when there are sub-headings?
 
+Alt Up/Down
+
 ** help
 *** reference
 *** In doom-emacs
@@ -1774,6 +1850,9 @@ In [[file:packages.el][Packages.el]]
 (package! org-roam
   :recipe (:host github :repo "org-roam/org-roam"))
 
+** priority markers
+2025-10-12
+
 ** profiler-report
 2025-05-15
 
@@ -1865,11 +1944,13 @@ To configure your emacs org-mode to use python, you'll need to ensure that org-b
 See M-x org-entities-help.
 
 Pro tip: Given a circle \Gamma of diameter d, the length of its circumference is \pi{}d.
-Area of circle = \pi r x r
+Area of circle = \pi r x r OR  \pi.r\sup2
 
 
 To make that \dagger symbol: M-x org-pretty-mode and <backslash>dagger. See M-x org-entities-help.
-NOTE: backslash is omitted to allow the plain text to be visible!
+Simply in insert mode: <backslash>dagger --> \dag
+
+NOTE: In the following the backslash is omitted to allow the plain text to be visible!
 
 \dagger dagger
 \pound pound
@@ -2493,7 +2574,7 @@ print(a)
 #+RESULTS:
 : None
 
-** test text expansion
+** DONE test text expansion
 See also ~/.emacs.d/abbrev_defs
 
 To make yn turn into Donagh McCarthy do the following

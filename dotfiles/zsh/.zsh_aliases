@@ -170,6 +170,31 @@ alias -g der="doom run" # doom emacs run;
 alias -g sos="vim ~/DONAGHS/personal/SOS/Structure/structure7_2025_3_1.md"
 
 #}}}
+#{{{ LITTLE TOOLS
+
+cpwd() { pwd | xsel -b } # copy pwd to clipboard 
+alias -g rg="rg -S" # use Smartcase
+
+# PLAN FILES — a very simple TODO manager
+# Each line starts with either
+# A character / blank                 :: a todo item; noted, started; rg "\[a-z\]\[A-Z\]" alias to tdo — for Todos toDOs
+# A dash -                            :: ongoing; rg "^\-" todo.plan; alias to ton — for Todos ONgoing
+# An asterisk * done                  :: done; rg "^\*" todo.plan; alias to tdn — for Todos DoNe
+# An 'A'                              :: abandoned ; alias to tab — for Todos ABandoned
+
+thp() {sed -n 3,10p ~/DONAGHS/personal/todo.plan }
+
+tvi() { vim ~/DONAGHS/personal/todo.plan }
+tdo() { rg "^[a-zA-Z].*" ~/DONAGHS/personal/todo.plan }
+ton() { rg "^\-" ~/DONAGHS/personal/todo.plan }
+tdn() { rg "^\*" ~/DONAGHS/personal/todo.plan }
+tpr() { rg "^PROJ" ~/DONAGHS/personal/todo.plan }
+
+t() { date +"%H:%M" }
+
+
+
+#}}}
 #{{{ VIM 
  # open a file using vim
 # Aliases - vim
@@ -201,6 +226,10 @@ wants() { vim $HOME/REPOS/Purchases/Wants/wants.md }
 # open a bare-config vim 
 vvim() { vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc $1 }
 vimm() { vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc $1 }
+scb() { vim $(mktemp) } # make a throwaway scratch buffer 
+scd() { cd $(mktemp -d) } # make a throwaway directory for messing
+
+
 
 #}}}
 #{{{ NVIM
@@ -420,8 +449,10 @@ alias -g sza='source ~/.zsh_aliases'
 alias -g vb='vim ~/.bashrc'
 alias -g vv='vim ~/.vimrc'
 alias -g vrc='vim ~/.vimrc'
-alias -g vz="vim ~/.zshrc"
-alias -g vza="vim ~/.zsh_aliases"
+# alias -g vz="vim ~/.zshrc"
+alias -g vz="vim ~/.zshrc && . ~/.zshrc" # automatic sourcing!
+# alias -g vza="vim ~/.zsh_aliases"
+alias -g vza="vim ~/.zsh_aliases && . ~/.zsh_aliases"
 
 # vim config file
 alias -g vco="vim  $HOME/.vim/settings/configs/configs.vim" 
@@ -580,6 +611,19 @@ strlen() { /home/donagh/.scripts/string_length_bash.sh } # will request string t
 # first define mystr eg ->% mystr="donaghmccarthty"
 # len=${#mystr}
 # then ->% sz && echo $len
+#}}}
+#{{{ EPOCH
+
+epoch () {
+if [[ -z "${1:-}" ]]
+    then
+            date +'%s'
+    else
+            date --date="@${1}"
+    fi
+}
+
+
 #}}}
 #{{{ PYTHON
 # python virtual envs shortcuts

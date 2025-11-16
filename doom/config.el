@@ -81,6 +81,10 @@
 ;; hide emphasis markers in //italic// in org mode. Works!
 (setq org-hide-emphasis-markers t)
 
+;; my abbreviations file - read and write
+(setq abbrev-file "~/.emacs.d/abbrev_defs") ;; rem: symlink
+(setq read-abbrev-file 1)
+
 ;; Org-babel
 ;; Org-babel might be nice, but editing inside an Org-buffer means that you have to give up all the nice functionalities of the individual language’s major more. Luckily, we have org-edit-special (bound to SPC m ‘ in Doom Emacs).
 
@@ -118,7 +122,7 @@
 
 
 ;; Keywords
-;; Note: For actual keywords I was using /home/donagh.emacs.d/modules/lang/org/config.el WRONGLY
+;; Note: For actual keywords I was using /home/donagh/.emacs.d/modules/lang/org/config.el WRONGLY?
 ;; The following seems to be working UPDATE 2024-02-14 No, it's not
 
 ;; (setq org-todo-keywords
@@ -161,10 +165,15 @@
 ;;alternative
 (setq org-todo-keywords
         '((sequence
-           "TODO(t)"                    ;What needs to be done
-           "NEXT(n)"                    ;A project without NEXTs is stuck
+           "TODO(t)"                    ; What needs to be done
            "|"
-           "DONE(d)")
+           ;; "NEXT(n)"                    ; A project without NEXTs is stuck
+           "STARTED(s)"                    ; A task that has starte
+           "ONGOING(o)"
+           "DONE(d)"
+           "|"
+           "WAIT(w)"                    ; Something external is holding up this task
+           "READING(g)")                    ; I'm reading this
           (sequence
            "REPEAT(e)"                    ;Repeating tasks
            "|"
@@ -181,10 +190,13 @@
            ))
         org-todo-keyword-faces
         '(("[-]"  . +org-todo-active)
-          ("NEXT" . +org-todo-active)
+          ;; ("NEXT" . +org-todo-active)
           ("[?]"  . +org-todo-onhold)
           ("REVIEW" . +org-todo-onhold)
-          ("HOLD" . +org-todo-cancel)
+          ("STARTED" . +org-todo-active)
+          ("ONGOING" . +org-todo-active)
+          ("ONGOING" . +org-todo-reading)
+          ("HOLD" . +org-todo-onhold)
           ("PROJ" . +org-todo-project)
           ("DONE"   . +org-todo-cancel)
           ("STOP" . +org-todo-cancel)))
@@ -461,6 +473,8 @@
 (map! :n "SPC f t" '(lambda() (interactive)(find-file "/home/donagh/DONAGHS/personal/template.org"))) ;; opens template.org — 2025-06-14 — SUCCESS!
 (map! :n ",b" 'isearch-backward)
 (map! :n ",p" 'evil-collection-sly-eval-print-last-expression) ; to evaluate a region in a .lisp file and print onto the buffer
+;; (map! :n "dB" ') ;; delete all word backwards when cursor is on the last letter
+;;
 ;; (map! :i "\t" " ") ;; see doom-note.org --> indenting
 
 ;; iambic

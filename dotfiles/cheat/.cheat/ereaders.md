@@ -7,25 +7,32 @@ ebook-convert  Usage: ebook-convert input_file output_file [options]
 
 
 # Readers / formats
-+-------------+--------------+
-|  Format     |    Reader    |
-+-------------+--------------+
-|  pdf        |   okular     |
-|             |   zathura    |
-|             |   evince     |
-|  epub       |   fbreader   |
-|             |   calibre    |
-|             |   foliate    | added 2023-01-28; AUR;
-|             |   epy        | added 2023-02-24; AUR;
-|  djvu       |   djview4    |
-|  mobi       |   fbreader   |
-|  fb2        |   fbreader   | 
-|  OpenReader |   fbreader   | 
-|  rtf        |   fbreader   | 
-|  chm        |   fbreader   | 
-|  azw3       |   calibre    |
-| vast array  |   kavita     | added 2023-08-29; https://www.kavitareader.com/ 
-+-------------+--------------+
++-------------+--------------+------------+
+|  Format     |    Reader    |   Mobile   |
+|             |   (desktop)  |  (Android) |
++-------------+--------------+------------+
+|  pdf        |   okular     |            |
+|             |   zathura    | xodo⁴      |
+|             |   evince     |            |
+|  epub       |   fbreader   | fbreader   |
+|             |   calibre    |            |
+|             |   foliate¹   |            | 
+|             |   epy²       |            | 
+|  djvu       |   djview4    |            |
+|  mobi       |   fbreader   |            |
+|  fb2        |   fbreader   |            | 
+|  OpenReader |   fbreader   |            | 
+|  rtf        |   fbreader   |            | 
+|  chm        |   fbreader   |            | 
+|  azw3       |   calibre    |            |
+| vast array  |   kavita³    |            | 
++-------------+--------------+------------+
+
+¹ added 2023-01-28; AUR;
+² added 2023-02-24; AUR;
+³ added 2023-08-29; https://www.kavitareader.com/ 
+⁴ added 2025-10-27; allows dark mode; available for desktop too;
+
 
 Kavita Extensive File support
     Manga/Comics: ZIP, RAR, RAR5, CBR, CBZ, CB7, CBT, TAR.GZ, 7ZIP/7Z

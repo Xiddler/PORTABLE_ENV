@@ -146,3 +146,27 @@ C F*    F    F†
 
 F* is "double C and add 30" quick and dirty
 F† is "double C, subtract 10% and add 32"
+
+# Sample usage
+
+Example of replacing grep+cut with a single awk invokation:
+
+    $ echo token:abc:def | grep -E ^token | cut -d: -f2
+    abc
+
+    $ echo token:abc:def | awk -F: '/^token/ { print $2 }'
+    abc
+
+Conditions don't have to be regular expressions. For example:
+
+    $ echo $CSV
+    foo:24
+    bar:15
+    baz:49
+
+    $ echo $CSV | awk -F: '$2 > 20 { print $1 }'
+    foo
+    baz
+
+
+

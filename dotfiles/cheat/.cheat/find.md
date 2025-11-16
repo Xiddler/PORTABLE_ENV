@@ -169,5 +169,21 @@ OUTPUT
 
 # REM use fd - a modern alternative with regex!
 
+# Remove / delete files matching a glob pattern
+e.g. the files named Alpha, Beta, Gamma, Delta,
+
+-> %  find . -maxdepth 1 -type f -name "*," -delete
+
+This works!
+-> % find <dirname> -type f -name 'whatever.*' -exec rm {} \;
+
+Remove all .git/ directories
+-> % find <dirname> -depth -type d -name '.git' -exec rm -r '{}' \;
 
 
+# Remove using xargs
+-> %  find <dirname> -name '*.txt' | xargs rm
+-> %  find <dirname> -name '*.txt' | xargs rip     ;; if rip is available then you can undo with rip -u
+
+
+# END

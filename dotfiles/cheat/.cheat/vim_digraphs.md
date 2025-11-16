@@ -138,8 +138,10 @@ in INSERT mode
 
 
 # Arrows
-》  +>
+》  +>     U+300B
 《  >+ 
+
+⟫   none   U+27EB
 
 ▶   PR      BLACK RIGHT-POINTING TRIANGLE
 ◀   PL      BLACK LEFT-POINTING TRIANGLE

@@ -17,3 +17,9 @@ scp -o "ProxyCommand nc -x 127.0.0.1:9999 -X 4 %h %p" file.txt username@example2
 # donagh@raspberrypi ~
 > scp -i ~/.ssh/id_rsa_toshiba donagh@192.168.1.86:/home/donagh/MY_LOCKER/MY_PRECIOUS_DATA-2024-01-06.tar.gz /home/donagh/MY_LOCKER
 
+-> %  scp -i ~/.ssh/id_ed25519_toshiba donagh@192.168.1.86:/home/donagh/flask_htmx_lanner_tar.tar .
+
+# from Toshiba to  LenArch
+
+
+-> % scp -i ~/.ssh/id_to_Toshiba donagh@192.168.1.86:/home/donagh/slang.pdf . 

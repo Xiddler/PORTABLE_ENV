@@ -1,5 +1,13 @@
 # Actual example of mounting a USB device on Linux
 
+## introduction
+
+### Queries
+
+Why do we need to mount anything on linux anyway?
+What things can you or must you mount?
+
+
 ## find device on system
 
 ### ->% lsblk

@@ -100,3 +100,26 @@ vs.
 
 ->% seq 10 -1 0 | xargs printf '%s green bottles hanging on the wall…\n'
 
+# Remove files using xargs with find
+
+-> %  find <dirname> -name '*.txt' | xargs rm
+-> %  find <dirname> -name '*.txt' | xargs rip     ;; if rip is available then you can undo with rip -u
+
+
+# Check speed of xargs
+
+Make a temporary directory and cd into it:
+```
+-> % cd $(mktemp -d)
+
+-> %  touch {1..3000}.txt
+
+-> % ls -l *.txt | wc -l
+3000
+
+-> % time find . -name '*.txt' | xargs rm
+real	0m0.053s
+user	0m0.029s
+sys	0m0.029s
+
+```

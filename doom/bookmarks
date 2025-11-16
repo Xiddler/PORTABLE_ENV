@@ -2,7 +2,85 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("doom-notes.org"
+(("org"
+ (filename . "/home/donagh/Dropbox/org-mode/org/")
+ (front-context-string . "org.org\n  -rw-r-")
+ (rear-context-string . "4K Nov 12 19:02 ")
+ (position . 317)
+ (last-modified 26900 57741 681281 656000))
+("REPOSITORIES"
+ (filename . "/run/media/donagh/USB128GB/REPOSITORIES/")
+ (front-context-string . "projects\n  drwxr")
+ (rear-context-string . "0K Sep 28  2023 ")
+ (position . 3950)
+ (last-modified 26900 57679 832984 318000))
+("mydir"
+ (filename . "/home/donagh/mydir.org")
+ (front-context-string . "HOME]]\n\n[[file:R")
+ (rear-context-string . "file:mydir.org][")
+ (position . 20)
+ (last-modified 26900 50871 952759 20000))
+("mind.org"
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/mind.org")
+ (front-context-string . "nd.org\n#+AUTHOR:")
+ (rear-context-string)
+ (position . 16)
+ (last-modified 26897 62259 225146 400000))
+("persons.org"
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/persons.org")
+ (front-context-string . "\n\n* persons\n2025")
+ (rear-context-string . ":    2025-10-30\n")
+ (position . 168)
+ (last-modified 26883 53022 949081 313000))
+("emotions.org"
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/emotions.org")
+ (front-context-string . "The study of sub")
+ (rear-context-string . "f emotions.[2]\n\n")
+ (position . 4581)
+ (last-modified 26881 58600 587326 861000))
+("encounters.org"
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/SOCIAL_STUFF/encounters.org")
+ (front-context-string . "** 2025-10-28\n\nT")
+ (rear-context-string . "[^1]:\n\n_BOOKS_\n\n")
+ (position . 537)
+ (last-modified 26881 2687 946627 957000))
+("philosophy.org"
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/philosophy.org")
+ (front-context-string . " philosophy\n2025")
+ (rear-context-string . "  2025-10-22\n\n\n*")
+ (position . 182)
+ (last-modified 26880 56185 907471 167000))
+("thinking.org"
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/thinking.org")
+ (front-context-string . "* meta\n:notes:\nO")
+ (rear-context-string . " to this topic\n\n")
+ (position . 3977)
+ (last-modified 26875 24750 729191 279000))
+("gaps.org"
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/gaps.org")
+ (front-context-string . "!\n\n\n** Refs_gp\n\n")
+ (rear-context-string . "ut I may well do")
+ (position . 827)
+ (last-modified 26874 21843 483027 359000))
+("projects.org"
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/Projects/projects.org")
+ (front-context-string . "!\nWhat can I thi")
+ (rear-context-string . "I think? Show me")
+ (position . 3382)
+ (last-modified 26872 57287 843097 481000))
+("memos.org"
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/memos.org")
+ (front-context-string . ") Life\n2025-10-1")
+ (rear-context-string . "e Quality of (my")
+ (position . 12782)
+ (last-modified 26866 15792 627905 772000))
+("ideas.org"
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/ideas/ideas.org")
+ (front-context-string . "\" (2011, p. 250)")
+ (rear-context-string . "ills in-between.")
+ (position . 12184)
+ (last-modified 26855 50893 36377 820000))
+("doom-notes.org"
  (filename . "/home/donagh/PORTABLE_ENV/doom/xHELP/doom-notes.org")
  (front-context-string . "s\n\nM-x bookmark-")
  (rear-context-string . "cal/etc/bookmark")
@@ -23,21 +101,21 @@
 ("words.org"
  (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/words.org")
  (front-context-string . "dulgent\n\nidiosyn")
- (rear-context-string . "selfish\n\nself-in")
- (position . 51007)
- (last-modified 26730 15797 611615 692000))
+ (rear-context-string . "\nselfish\n\nself-i")
+ (position . 67244)
+ (last-modified 26899 17460 336769 423000))
 ("snips.org"
  (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/ideas/snips.org")
- (front-context-string)
- (rear-context-string . "what works — SOT")
+ (front-context-string . " who we are and ")
+ (rear-context-string . "go, one can find")
  (position . 371507)
- (last-modified 26723 43404 951045 43000))
+ (last-modified 26899 13328 732846 962000))
 ("psychology.org"
  (filename . "/run/media/donagh/USB128GB/REPOSITORIES/psychology/psychology.org")
- (front-context-string . "#+TITLE:     psy")
- (rear-context-string)
- (position . 1)
- (last-modified 26718 32714 458784 987000))
+ (front-context-string . "**** projection\n")
+ (rear-context-string . "with the issue.\n")
+ (position . 54904)
+ (last-modified 26900 37697 73186 419000))
 ("get_living.org"
  (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/get_living.org")
  (front-context-string . "g)\n\n* get_doing\n")
@@ -46,10 +124,10 @@
  (last-modified 26718 23450 330127 631000))
 ("recovery.org"
  (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/RECOVERY/recovery.org")
- (front-context-string . "#+TITLE:     rec")
- (rear-context-string)
- (position . 1)
- (last-modified 26702 47676 165882 99000))
+ (front-context-string . "t me, not the ge")
+ (rear-context-string . " am talking abou")
+ (position . 500471)
+ (last-modified 26859 26127 835596 194000))
 ("org.org"
  (filename . "/home/donagh/Dropbox/org-mode/org/org.org")
  (front-context-string . "* links\n\n[[file:")

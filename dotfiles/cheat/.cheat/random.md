@@ -24,7 +24,8 @@ EDPXfQaQbZqmWg==
 
 ## man od for more information on od.
 
-# shuf
+# generate a random number using the shell utility shuf
+
 shuf --random-source='/dev/urandom' -n 1 -i 1-100;
 33
 

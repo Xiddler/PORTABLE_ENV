@@ -28,5 +28,6 @@ for mydir in "${directories[@]}";
        # cd "$mydir" && git add -A # | tail -n 8
 done
 
-echo "NOTE: MY_ZIM handled on Windows 11 since July 2023"
+echo "NOTE: MY_ZIM handled on LenArch since Nov 2025"
+echo "Separate git repo for Arch_PORTABLE_ENV"
 

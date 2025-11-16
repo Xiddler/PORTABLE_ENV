@@ -31,9 +31,11 @@ sed '/Once upon a time/i\Chapter 1'
 sed '/happily ever after/a\The end.'
 
 ## Get a numbered line from a file - the following command will display the 122nd line
+
 sed -n '122{p;q}'  f4_lichess_I_Wobble.txt
- Explanations: the p is print that line. the q means quit and sed does no more processing
- This will display the 3rd line
+     Explanations: the p is print that line. the q means quit and sed does no more processing
+
+This will display the 3rd line
 sed -n 3p 0text.md
  -n, --quiet, --silent suppress automatic printing of pattern space.  With the "p" flag will cause the modified line to be printed.
 

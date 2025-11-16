@@ -15,7 +15,10 @@ see
 
 # Selected symbols
 
+†   /-              DAGGER
+‡   /=              DOUBLE DAGGER
 
+⟫ U+27EB
 €   Eu  20ac   8364 EURO                                        [ alt. Digr =e ]
 £	Pd	0xe3	227 POUND SIGN 
 ℅   co  2105   8453 Care/of

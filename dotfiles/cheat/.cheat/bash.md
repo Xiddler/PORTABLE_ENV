@@ -137,3 +137,23 @@ find "$filename" -prune -printf '%m\n'
 # date - see -> % cheat date 
  print yesterday's date (for my jounal)
 date  --date="yesterday" +"%Y-%m-%d"
+# Bash operators
+& = run in background
+
+; = execute sequentially
+
+&& = AND operator
+
+|| = OR operator
+
+! = NOT operator
+
+&&-|| = ANDOR operator
+
+{} = combine command operator
+
+() = precedence operator
+
+=~ = regex operator
+
+# END

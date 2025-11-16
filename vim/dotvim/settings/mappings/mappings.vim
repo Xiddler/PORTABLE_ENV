@@ -123,6 +123,9 @@ noremap <leader>f :Ranger<cr>
 " https://stackoverflow.com/questions/53664/how-to-effectively-work-with-multiple-files-in-vim
 nnoremap <leader>k :set nomore<Bar>:ls<Bar>:set more<CR>:b<Space>
 
+" shift sentence to left ie  remove all leading spaces to shift sentence to point '0'
+nnoremap <leader>n g^d0
+
 "<leader>p to paste from system clipboard
 nnoremap <leader>p :set paste<cr> "+p :set nopaste<cr>
 
@@ -184,6 +187,7 @@ nnoremap <leader>rc :tabe $MYVIMRC<CR>
 " source $MYVIMRC - I can't ever seem to remember the keybinding...
 nnoremap <leader>ss :so $MYVIMRC<CR>
 nnoremap <leader>sv :so $MYVIMRC<CR>
+nnoremap <leader>so :so $MYVIMRC<CR>
 " nnoremap <leader>sm :so $MYVIMRC<CR>
 
 
@@ -193,6 +197,11 @@ noremap <silent> <leader>ts :ToggleSlash<CR>
 
 " open a terminal within vim
 map <leader>tt :terminal zsh<CR>
+
+" open yesterday's journal in a new tab
+" yj() { /home/donagh/PORTABLE_ENV/dotfiles/scripts/.scripts/markdown_yesterday.sh }
+map <leader>yj :! sh /home/donagh/PORTABLE_ENV/dotfiles/scripts/.scripts/markdown_yesterday.sh <CR>
+
 
 " ===== SPLIT_WINDOW ===== 
 
@@ -222,8 +231,11 @@ nnoremap <leader>vz :tabe ~/.zshrc <cr>
 
 
 "<leader>z to make new-numbered lines — used after capital J joins lines but fails to create a new numbered line
-" nnoremap <leader>zz g$i<cr> <esc>x                                                                                                               x
-nnoremap <leader>zz g$i<cr> <esc>x                                                                                                               l
+" nnoremap <leader>zz g$i<cr> <esc>x                                                                                                               
+
+" nnoremap <leader>zz g$i<cr> <esc>x                                                                                                               
+" the following is more vim-like
+nnoremap <leader>zz gq
  
  
 "}}}
@@ -276,6 +288,10 @@ nnoremap Q @@
 nnoremap gf :tabe <cfile><cr>
 " rem: gT and gt to navigate through tabs
 
+" delete word backwards ie delete all word with cursor on last letter
+nnoremap dB dbx
+
+
 " }}}
 " Abbreviations & typos {{{
 "=== Abbreviations & typos === 
@@ -310,6 +326,7 @@ nnoremap gf :tabe <cfile><cr>
 inoremap lh —
 inoremap £ # 
 inoremap i<space> I<space>
+inoremap eu<space> €
 
 " TYPOS
 inoremap iiv I've
@@ -336,12 +353,19 @@ inoremap adn and
 ab mys "Proactively engaged in making a better life for myself and/or others"
 ab FP 'Full Picture'
 abb dtw - Donagh the Wise
+ab dtw - Donagh di Wit
 ab FQHB Fully Qualified Human Being
 ab tbp The Big Picture
 ab rde raison d'être
 ab psm psycho-social-mental illness
 ab ahve have
 ab wk Wikipedia
+ab hte the
+ab ptp Positive Thinking Patterns
+ab sotw 'system of the world'
+ab su1 ¹
+ab su2 ²
+
 
 " does this fix significan't? Yes!
 ab cant can't
