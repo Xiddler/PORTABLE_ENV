@@ -57,14 +57,19 @@ PORTABLE_ENV="/home/donagh/PORTABLE_ENV"
 # 2025-08-25 
 # Need to replace the following as MY_ZIM now on LenArch
 # To read a Samba server from another Linux machine, you can use the smbclient command to list available shares with smbclient -L //server and then access a specific share using smbclient //server/share -U username. Make sure you have the necessary permissions and the Samba client installed.
+# 2025-11-30
+# The Lenovo laptop now has Manjaro as it's OS (after Arch crashed on me)
 
-MY_ZIM="/home/donagh/samba/anonymous_shared_directory/MY_ZIM/MY_ZIM"
+# MY_ZIM="/home/donagh/samba/anonymous_shared_directory/MY_ZIM/RSYNCED/MY_ZIM"
+MY_ZIM_Computer_folder="/home/donagh/samba/anonymous_shared_directory/ZIM_WIKI_from_LenManj/Computer"
+MY_ZIM_Computer_file="/home/donagh/samba/anonymous_shared_directory/ZIM_WIKI_from_LenManj/Computer.txt"
+
 
 # Target file i.e. destination
 TARTARGET="/home/donagh/MY_LOCKER/MY_PRECIOUS_DATA-$today.tar.gz"
 
 # tar -czf $TARTARGET $all_org $personal $PORTABLE_ENV $MY_ZIM
-tar -czf $TARTARGET $all_org $personal $PORTABLE_ENV $MY_ZIM
+tar -czf $TARTARGET $all_org $personal $PORTABLE_ENV $MY_ZIM_Computer_folder $MY_ZIM_Computer_file
 
 
 

@@ -41,10 +41,14 @@ password=1234
 # destination is RPi/usb_128/RSYNCED
 
 
-# NOTE zim_Computer is now live on Windows as of June 2023. So, it needs backing up separately.
+# NOTE: Zim-wiki now on LenManjaro 
+#
+# zim_Computer was on Windows from June 2023. So, it needs backing up separately. UPDATE: Zim-wiki now on LenManjaro
 ####################
 ### zim_Computer ### 
 ####################
+
+source_zim='$HOME/samba/anonymous_shared_directory/MY_ZIM/RSYNCED/MY_ZIM'
 
 # To the HDD of the laptop  See previous NOTE above.
 # sudo -S <<< $password rsync -a --delete ~/DONAGHS/MY_ZIM/Computer ~/BACKUPS/RSYNCED/zim_Computer && \
@@ -56,6 +60,7 @@ password=1234
 
 # One-liner and enter password TO Laptop
 # sudo rsync -a --delete ~/DONAGHS/MY_ZIM/Computer ~/BACKUPS/RSYNCED/zim_Computer && sudo rsync -a --delete ~/DONAGHS/MY_ZIM/Computer.txt ~/BACKUPS/RSYNCED/zim_Computer
+
 
 
 #################

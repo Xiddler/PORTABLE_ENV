@@ -1,6 +1,6 @@
 #  For use of tramp on doom emacs on Windows
 # [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
-# source ~/.zshrc
+source ~/.zsh_aliases
 
 #  XDG Base Directory Specification
 XDG_CONFIG_HOME="/home/donagh/.config"
@@ -15,7 +15,55 @@ XDG_CACHE_HOME="/home/donagh/.cache"
 
 # tmuxp load /home/donagh/.tmuxp/my-6-daily-tabs.yaml
 # 2025-07-23 — seems I need to source this file after ssh-ing from Windows Powershell; that usen't be the case;
-tmux attach-session -t my-6-daily-tabs
+# tmux attach-session -t my-6-daily-tabs
+# attach only if tmux NOT already running
+if [[ ! tmux ]] ; then
+    tmux attach-session -t my-6-daily-tabs
+fi
+
+#########################################################
+#                     HISTORY
+#########################################################
+## Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
+#HISTSIZE=1000
+# HISTFILE=$HOME/.zsh_history
+#
+export HISTFILE=$HOME/.zhistory
+export HISTSIZE=99999 
+export HISTFILESIZE=99999
+export SAVEHIST=1000
+
+# shopt -s cmdhist
+#shopt -s histappend  # Append to history instead of overwriting
+# PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+   
+   
+   
+# Consider using some /all of the following — added 2025-02-17
+
+  # Ensure history is written after every command, allowing it to persist across sessions
+   # shopt -s histappend  # Append to history instead of overwriting
+   # PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+   # Set the history size (adjust as needed)
+   # HISTSIZE=50000   # Number of commands kept in memory
+
+   # HISTFILESIZE=1000000  # Number of commands kept in the history file
+
+   # Add timestamps to history (format: YYYY-MM-DD HH:MM:SS)
+   # HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
+
+   # Ignore duplicate and space-prefixed commands
+# HISTCONTROL=ignoredups:ignorespace
+
+   # Save multi-line commands as a single entry
+
+   # Allow history expansion with Ctrl + R
+   # bind '"\e[A":history-search-backward'
+   # bind '"\e[B":history-search-forward'
+
+#########################################################
+
 
 
 ######################################
@@ -217,13 +265,6 @@ autoload copy-earlier-word
 # to edit the above file go to: $HOME/.oh-my-zsh/themes/crcandy_dm.zsh-themes
 ## ZSH_THEME="powerlevel9k/powerlevel9k"
 
-## Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-#HISTSIZE=1000
-#SAVEHIST=1000
-# HISTFILE=$HOME/.zsh_history
-HISTFILE=$HOME/.zhistory
-HISTSIZE=99999 
-HISTFILESIZE=99999
 
 ## Use modern completion system
 #autoload -Uz compinit
@@ -594,32 +635,6 @@ source ~/.config/dirjump/dirjump
         # source /etc/profile.d/vte.sh
 # fi
  
-#########################################################
-#########################################################
-# Consider using some /all of the following — added 2025-02-17
-
-  # Ensure history is written after every command, allowing it to persist across sessions
-   # shopt -s histappend  # Append to history instead of overwriting
-   # PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-
-   # Set the history size (adjust as needed)
-   # HISTSIZE=50000   # Number of commands kept in memory
-
-   # HISTFILESIZE=1000000  # Number of commands kept in the history file
-
-   # Add timestamps to history (format: YYYY-MM-DD HH:MM:SS)
-   # HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
-
-   # Ignore duplicate and space-prefixed commands
-# HISTCONTROL=ignoredups:ignorespace
-
-   # Save multi-line commands as a single entry
-   # shopt -s cmdhist
-
-   # Allow history expansion with Ctrl + R
-   # bind '"\e[A":history-search-backward'
-   # bind '"\e[B":history-search-forward'
-
 #########################################################
 
 # sd  https://github.com/ianthehenry/sd 

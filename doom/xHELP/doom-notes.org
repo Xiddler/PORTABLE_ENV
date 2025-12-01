@@ -2137,11 +2137,15 @@ SPC b m save current buffer name as a bookmark
 M-x bookmark-save --> save current selection of bookmarks to a file located at:
 \/home/donagh/.config/emacs/.local/etc/bookmarks
 
+NOTE:
+This file-location is symlinked from ~/PORTABLE_ENV/doom/bookmards
+
  /home/donagh/.config/emacs/.local/etc/bookmarks
 
 M-x bookmark-load
 
-** Outside of a file
+
+** outside of a file
 Open a file and then SPC b m to mark it
 
   books.org                                                                     /run/media/donagh/USB128GB/REPOSITORIES/books/books.org
@@ -2170,6 +2174,16 @@ Go to mark: SPC s r ... and select
  (position . 1)
  (last-modified 26718 32714 458784 987000))
 ("get_living.org"...
+
+** fixing duplicate bookmarks
+2025-11-19
+
+M-x bookmark-delete-all
+Check that the duplicates are removed from
+~/PORTABLE_ENV/doom/bookmarks file (which is linked to the location: ~/.config/emacs/.loca/etc/bookmarks)
+using, say, vim to delete the duplicates
+Then
+M-x bookmark-load
 
 * images
 2025-06-29

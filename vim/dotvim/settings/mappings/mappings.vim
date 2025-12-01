@@ -119,6 +119,12 @@ nnoremap <leader>d :call Filename()<cr>
 let g:ranger_map_keys = 0
 noremap <leader>f :Ranger<cr>
 
+" use <leader>g to gqj
+" let g:ranger_map_keys = 0
+" noremap <C-G> gqj
+" try using kanata 2025-11-28 
+
+
 " combine :ls and :bn to open / navigate buffers
 " https://stackoverflow.com/questions/53664/how-to-effectively-work-with-multiple-files-in-vim
 nnoremap <leader>k :set nomore<Bar>:ls<Bar>:set more<CR>:b<Space>
@@ -365,6 +371,11 @@ ab ptp Positive Thinking Patterns
 ab sotw 'system of the world'
 ab su1 ¹
 ab su2 ²
+ab obn  Old Bad Negative Harmful Thinking Patterns
+ab ngp  New Good Positive Helpful & Sensible Thinking Patterns
+ab ohter other
+ab ohters others
+
 
 
 " does this fix significan't? Yes!

@@ -192,6 +192,7 @@ tpr() { rg "^PROJ" ~/DONAGHS/personal/todo.plan }
 
 t() { date +"%H:%M" }
 
+utils() { /home/donagh/.scripts/utils.sh }
 
 
 #}}}
@@ -426,7 +427,8 @@ hme() { cd $HOME }
 
 # ssht() { ssh -i /home/donagh/.ssh/id_rsa_toshiba donagh@192.168.1.86 } 
 # from Leonovo Arch
-ssht() { ssh -i /home/donagh/.ssh/id_to_toshiba donagh@donagh-satellitep50c.home }
+# ssht() { ssh -i /home/donagh/.ssh/id_to_toshiba donagh@donagh-satellitep50c.home }
+# ssht() { ssh -i /home/donagh/.ssh/id_ed_Toshiba donagh@192.168.1.86 }
 # ssh into the RPi
 # sshrpi() { ssh -i ~/.ssh/ip_rsa_rpi donagh@192.168.1.24 }
 # sshrpi() { ssh -i ~/.ssh/id_rpi_2 donagh@192.168.1.24 }
@@ -514,6 +516,7 @@ lg() { lazygit }
 
 # List directories / files. Code: f file, d directory, l symlink, i item (file/directory),  n non-.
 # Duplicate options are given where zsh is available / known to me
+alias -g lss="eza"
 alias -g latest='ls -lt  **/*(.om[1,20])' # List latest 20 files edited - newest on top (zsh) [o is for ordered, m is for modified]
 alias -g newest='ls -lt  **/*(.om[1,20])' # List latest 20 files edited - newest on top (zsh) [o is for ordered, m is for modified] - alias
 # ls various
