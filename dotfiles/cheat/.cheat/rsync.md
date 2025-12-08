@@ -10,7 +10,9 @@
 --delete      :: When this option is used, rsync deletes extraneous files from the destination location.
 
 # QUICKIES
-rsync source destination
+
+template-command
+-> %  rsync source destination
 
 example
 source = 192.168.1.51:/home/donagh/

@@ -371,10 +371,12 @@ ab ptp Positive Thinking Patterns
 ab sotw 'system of the world'
 ab su1 ¹
 ab su2 ²
+ab su3 ³
 ab obn  Old Bad Negative Harmful Thinking Patterns
 ab ngp  New Good Positive Helpful & Sensible Thinking Patterns
 ab ohter other
 ab ohters others
+ab becasue because
 
 
 

@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/run/media/donagh/USB128GB/DONAGHS/personal/journal/2025/12'
 let g:netrw_dirhist_4='/run/media/donagh/USB128GB/DONAGHS/personal/journal/2025/11'
 let g:netrw_dirhist_3='/home/donagh/.scripts'
 let g:netrw_dirhist_2='/run/media/donagh/USB128GB/DONAGHS/personal/journal/2025/11'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_9='/run/media/donagh/USB128GB/DONAGHS/personal/journal/2025/
 let g:netrw_dirhist_8='/run/media/donagh/USB128GB/DONAGHS/personal/journal/2025'
 let g:netrw_dirhist_7='/run/media/donagh/USB128GB/DONAGHS/personal/journal/2025/11'
 let g:netrw_dirhist_6='/run/media/donagh/USB128GB/DONAGHS/personal/journal/2025/10'
-let g:netrw_dirhist_5='/run/media/donagh/USB128GB/DONAGHS/personal/journal/2025/09'
