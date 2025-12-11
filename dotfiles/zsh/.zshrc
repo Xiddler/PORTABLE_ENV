@@ -12,6 +12,7 @@ XDG_CACHE_HOME="/home/donagh/.cache"
 
 # tmux attach-session -t tdaily-0
 # tmux attach-session -t mydailysessions
+tmuxp load $HOME/.tmuxp/mydaily6tabsession.yaml 
 
 # tmuxp load /home/donagh/.tmuxp/my-6-daily-tabs.yaml
 # 2025-07-23 — seems I need to source this file after ssh-ing from Windows Powershell; that usen't be the case;
