@@ -6,6 +6,13 @@ See ~/.cheat/time.md for timezones and system time etc. and also ~/.cheat/timezo
 # QUICKIES
 
 ->% echo  $(date +"%Y-%m-%d")
+2025-12-16
+
+OR
+
+-%>  date --iso-8601
+2025-12-16
+
 
 # date utility
 ->%  date --help
@@ -21,8 +28,11 @@ https://www.epochconverter.com/
 
 # convert epoch(Unix) time to human readable date; seconds since 1/1/1970 
 
-date --date="@1669807759"
- alternative 
+date --date="@1768068481" --> Sat Jan 10 06:08:01 PM GMT 2026
+
+OR
+
+date -d @1768068481
 
 # Convert Unix timestamp to Date(Linux)
 
@@ -41,6 +51,7 @@ date -ud @1900000000
 date -r 1440359821
 
 # Convert 'now' to Unix timestamp 
+
 date +"%s"
 
 # Get day of week of date

@@ -281,3 +281,20 @@ Then you can, in ex moded do this `:r! python %` to output the following.
 29.
 
 I don't know how vim would do this using a macro.
+
+# Shebang trick using uv
+
+in `demo.py`:
+```
+
+    #!/usr/bin/env -S uv run
+    # /// script
+    # requires-python = ">=3.13"
+    print("hello, world")
+
+```
+Then 
+-%> chmod +x demo.py 
+-%> ./demo.py`
+
+

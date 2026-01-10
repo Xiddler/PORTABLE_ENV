@@ -15,6 +15,8 @@ Use `ga` to check the actual value of the character under the cursor.
 From ref URL1 above
 "If there’s no equivalent for the Unicode code point you’re trying to represent in the encoding you’re trying to represent it in, you usually get a little question mark: ? or, if you’re really good, a box. Which did you get? -> � "
 
+In insert mode use Ctr-Q u0041
+
 # My issues with special characters
 
 I run into problems in markdown when I use certain characters at the beginning of a line, notably - (dash) and > (greater than sign)
@@ -29,10 +31,13 @@ A
 
 
 
+
 # To insert the prompt from pure-prompt ❯
 
 In INSERT mode, Ctrl-Q u276f
 ❯ this is the Pure prompt arrow
+❯
+
 
 I have mapped <leader>> to do this in .vimrc ~/.vim/mappings.vim --▷  Custom Leader
 ❯ 
@@ -91,8 +96,8 @@ These are NOT the same:  − – — - ‒  
 Є in the title of the HN submission is not the Euro symbol.  € is.
 
 
-€ made using Ctrl K Eu
-Є mand using Ctrl K IE
+€ made (in insert mode) using Ctrl K Eu
+Є made (in insert mode) using Ctrl K IE
 
 
 

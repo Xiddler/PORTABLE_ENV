@@ -1,3 +1,8 @@
+#  the .zshrc file is read when starting new interactive shell
+#
+# set initial shell level
+export INIT_SHELL_LEVEL=$SHLVL
+#
 #  For use of tramp on doom emacs on Windows
 # [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
 source ~/.zsh_aliases
@@ -12,7 +17,7 @@ XDG_CACHE_HOME="/home/donagh/.cache"
 
 # tmux attach-session -t tdaily-0
 # tmux attach-session -t mydailysessions
-tmuxp load $HOME/.tmuxp/mydaily6tabsession.yaml 
+# tmuxp load $HOME/.tmuxp/mydaily6tabsession.yaml 
 
 # tmuxp load /home/donagh/.tmuxp/my-6-daily-tabs.yaml
 # 2025-07-23 — seems I need to source this file after ssh-ing from Windows Powershell; that usen't be the case;
@@ -20,20 +25,27 @@ tmuxp load $HOME/.tmuxp/mydaily6tabsession.yaml
 # attach only if tmux NOT already running
 if [[ ! tmux ]] ; then
     tmux attach-session -t my-6-daily-tabs
+else 
+    tmuxp load $HOME/.tmuxp/mydaily6tabsession.yaml 
 fi
 
 #########################################################
 #                     HISTORY
 #########################################################
-## Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-#HISTSIZE=1000
-# HISTFILE=$HOME/.zsh_history
-#
+
 export HISTFILE=$HOME/.zhistory
+# export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=99999 
 export HISTFILESIZE=99999
 export SAVEHIST=1000
 
+setopt SHARE_HISTORY # uses same history for all sessions
+setopt HIST_IGNORE_SPACE # don't save in .zhistory if there's an initial space
+setopt HIST_IGNORE_DUPS
+setopt inc_append_history
+# time and date data added to zsh history
+setopt extendedhistory 
+# setopt appendhistory
 # shopt -s cmdhist
 #shopt -s histappend  # Append to history instead of overwriting
 # PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
@@ -63,6 +75,7 @@ export SAVEHIST=1000
    # bind '"\e[A":history-search-backward'
    # bind '"\e[B":history-search-forward'
 
+# END HISTORY CONFIG
 #########################################################
 
 
@@ -226,8 +239,6 @@ MYVIMRC=$HOME/.vimrc
 # https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html#Prompt-Expansion
 # setopt PROMPT_PERCENT 
 
-# Increase scrolling history. This is __NOT__ the number of items listed from a command. That'd be a Terminator setting.
-set -g history-limit 9000 #
 
 # refer to https://betterdev.blog/minimal-safe-bash-script-template/
 # set -Eeou pipefail
@@ -236,8 +247,6 @@ set -g history-limit 9000 #
 # setxkbmap -option caps:escape
 # setxkbmap -option caps:caps
 #
-# time and date data added to zsh history
-setopt extendedhistory 
 
 
 
@@ -400,10 +409,6 @@ setopt VI # what is this? Sets the line editort to vi. Also works: bindkey -v
 setopt autocd
 setopt autolist # e.g.in $HOME directory -> %ls /DoTAB ie follow ls /Do With  TAB
 setopt extendedglob # extended globbbing e.g. ls -d ^*.py excludes .py files
-setopt SHARE_HISTORY # uses same history for all sessions
-setopt HIST_IGNORE_SPACE # don't save in .zhistory if there's an initial space
-setopt HIST_IGNORE_DUPS
-setopt inc_append_history
 # only fools wouldn't do this ;-) 
 export EDITOR="vim"
 # export BROWSER="w3m"
@@ -424,6 +429,13 @@ export EDITOR="vim"
 bindkey 'jk' vi-cmd-mode 
 # cx for clear screen -- doesn't work perfectly
 bindkey 'cx' clear-screen
+bindkey 'xc' clear-screen
+bindkey "j'" clear-screen
+
+# binding a shortcut to a hardcoded string ; `jl` will now cd $HOME without needing to press <Enter> — for the win!
+# zshzle bindkey - widgets
+bindkey -s 'jl' 'cd ^M'     # cd ~ without pressing enter
+bindkey -s 'j;' 'cd - ^M'   # cd - without pressing enter
 
 # / for search shell history
 # causes problems when entering / for filepaths
@@ -688,7 +700,7 @@ source $HOME/PORTABLE_ENV/zsh/zsh-abbr/zsh-abbr.plugin.zsh
 #########################################################
 
 # Use Ctrl G to toggle between local and global history
-source $HOME/PORTABLE_ENV/zsh/per-directory-history/per-directory-history.zsh
+# source $HOME/PORTABLE_ENV/zsh/per-directory-history/per-directory-history.zsh
 # ->% echo $PER_DIRECTORY_HISTORY_TOGGLE --▷ ^G
 
 #########################################################

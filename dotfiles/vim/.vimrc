@@ -43,6 +43,7 @@ colorscheme miramare
 " vvim <afile> is an alias on Toshiba for this — no folding, no plugins, horrible!
 
 inoremap jk <esc>
+inoremap JK <esc>
 "set <esc>=jk       " THIS CAUSED A LARGE LAG -- note added 2024-12-16
 
 " use spacebar to enter command mode. This matches doom-emacs for me and my muscle memory

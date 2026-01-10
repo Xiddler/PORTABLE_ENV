@@ -335,15 +335,16 @@ inoremap i<space> I<space>
 inoremap eu<space> €
 
 " TYPOS
-inoremap iiv I've
-inoremap iid I'd
-inoremap iil I'll
-inoremap iim I'm
-inoremap wiht with
-inoremap taht that
-inoremap dont don't
-inoremap didnt didn't
-inoremap wont won't
+" NOTE: Currently (Jan 2026) handled using espanso — system wide keybindings
+" inoremap iiv I've
+" inoremap iid I'd
+" inoremap iil I'll
+" inoremap iim I'm
+" inoremap wiht with
+" inoremap taht that
+" inoremap dont don't
+" inoremap didnt didn't
+" inoremap wont won't
 " inoremap cant can't
 " but significant also 'corrects' to significan't; how to avoid this? try: ab cant can't in mappings.vim — see below; it fixes it;
 inoremap waht what
@@ -370,8 +371,11 @@ ab hte the
 ab ptp Positive Thinking Patterns
 ab sotw 'system of the world'
 ab su1 ¹
+ab S11 ¹
 ab su2 ²
+ab S22 ²
 ab su3 ³
+ab S33 ³
 ab obn  Old Bad Negative Harmful Thinking Patterns
 ab ngp  New Good Positive Helpful & Sensible Thinking Patterns
 ab ohter other
@@ -379,9 +383,8 @@ ab ohters others
 ab becasue because
 
 
-
-" does this fix significan't? Yes!
-ab cant can't
+" does this fix significan't? Yes! NO! See  /home/donagh/Arch_PORTABLE_ENV/dot_config/espanso/match/base.yml
+" ab cant can't
 
 " also Plugin :LoremIpsum
 ab lorem "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
