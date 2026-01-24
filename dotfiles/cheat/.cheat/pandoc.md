@@ -25,6 +25,15 @@ $ pandoc -o filename.html myfile.pdf
 
 for file in .md; do pandoc --quiet --template template.html $file -o "docs/${file%.}.html" done
 
+# convert html to txt or markdown
+
+-%> pandoc -o Disaster_planning_for_regular_folks.md Disaster_planning_for_regular_folks.shtml
+
+-%> pandoc -f html -t markdown input.html -o output.md
+pandoc -f shtml -t markdown Disaster_planning_for_regular_folks.shtml -o Disaster_planning_for_regular_folks.md
+
+
+
 # pandoc help
 
 ->% pandoc --help 

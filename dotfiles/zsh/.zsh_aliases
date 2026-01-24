@@ -81,6 +81,7 @@ maps() {cd $HOME/REPOS//maps }
 diy() {cd $HOME/REPOS/DIY }
 lan() { cat $HOME/.cheat/lan.md }
 lsch() { ls $HOME/.cheat }
+v0() { vim ~/DONAGHS/personal/0000_THINK_DO.md }
 
 # EMACS
 # emax() { emacsclient /home/donagh/DONAGHS/personal/me.org } # using the emacs daemon 

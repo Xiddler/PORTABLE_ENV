@@ -228,3 +228,11 @@ BTW Cicero is translated as Chickpea reflecting Cicero's ancestor's cleft chin. 
 
 Wikipedia
 Tironian notes (Latin: notae Tironianae) are a form of thousands of signs that were formerly used in a system of shorthand (Tironian shorthand) dating from the 1st   century BCE and named after Tiro, a personal secretary to Marcus Tullius Cicero, who is often credited as their inventor.[1] Tiro's system consisted of about 4,000   signs,[2] extended to 5,000 signs by others. During the medieval period, Tiro's notation system was taught in European monasteries and expanded to a total of about   13,000 signs.[3] The use of Tironian notes declined after 1100 but lasted into the 17th century. A few Tironian signs are still used today.
+
+# zero width space
+
+
+a zero-width space U+200B
+
+That is:
+Ctrl Q u 200b --> ​

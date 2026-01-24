@@ -47,7 +47,7 @@ setopt inc_append_history
 setopt extendedhistory 
 # setopt appendhistory
 # shopt -s cmdhist
-#shopt -s histappend  # Append to history instead of overwriting
+# shopt -s histappend  # Append to history instead of overwriting
 # PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
    
    
@@ -533,8 +533,18 @@ eval "$(zoxide init zsh)"
 
 
 # mcfly - for history Ctrl-R
-# eval "$(mcfly init zsh)"
+eval "$(mcfly init zsh)"
+export MCFLY_KEY_SCHEME=vim
+# higher numbers weight toward shorter matches. Values in the 2-5 range get good results
+export MCFLY_FUZZY=2
+
+# options for mcfly
 # export MCFLY_KEY_SCHEME=vim
+# export MCFLY_FUZZY=2
+# export MCFLY_INTERFACE_VIEW=TOP			[option BOTTOM]
+# export MCFLY_RESULTS=20
+# export MCFLY_RESULTS_SORT=LAST_RUN
+# export MCFLY_HISTORY_LIMIT=2000
 
 # emacs - to get emacsclient to work
 # export ALTERNATE_EDITOR=""

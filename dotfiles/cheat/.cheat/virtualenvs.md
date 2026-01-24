@@ -47,3 +47,15 @@ pip install wheel
 source $HOME/.virtualenvs/django/bin/activate
 
 
+# using UV
+see zim-wiki --▷ Python:PACKAGE MANAGERS:uv
+
+-%> sudo pamac install uv
+-%> cd <project_directory>
+-%> uv init
+
+Create .virtualenv
+->% uv venv $HOME/.virtualenvs/myvenv
+
+To install a package
+->% uv pip install <package>

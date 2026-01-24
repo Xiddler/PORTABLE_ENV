@@ -1,0 +1,61 @@
+#+TITLE:     name.org
+#+AUTHOR:    Donagh McCarthy
+#+OPENED:    date
+#+STARTUP:   overview
+#+FILEPATH:  $HOME/DONAGHS/personal/name.org
+#+EDITED:    date
+
+
+* name
+* meta
+:notes:
+Opened date
+
+
+
+:end:
+* links
+
+    [[file:~/PORTABLE_ENV/doom/xHELP/doom-notes.org][doom-notes]]
+
+* TODO [#A] A task with *high* priority
+
+The description of the task
+
+* A collapsed section
+
+You cannot see the description when collapsed
+
+* DONE something done already :sometag:
+SCHEDULED: <2023-12-08 Fri 11:13>
+:PROPERTIES:
+:CREATED: [2023-12-03 Sun 10:48]
+:END:
+
+a [[https://github.com/BBazard/obsidian-orgmode-cm6][link]]
+
+#+begin_src javascript
+const block = "highlighted"
+#+end_src
+
+* literate
+
+ #+BEGIN_SRC python
+ myresult = 42 * 23
+ print('Hello Europe! ' + str(myresult))
+ #+END_SRC
+
+ #+RESULTS:
+ : None
+
+* tables
+
+|         col | colm o rourke | fire        |
+|             |               |             |
+| My Column 1 | My Column 2   | Last Column |
+|-------------+---------------+-------------|
+|          42 | foo           | bar         |
+|          23 | baz           | abcdefg     |
+|-------------+---------------+-------------|
+|             |               |             |
+|          65 |               |             |

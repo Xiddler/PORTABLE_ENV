@@ -105,6 +105,11 @@ highlight htmlItalic gui=italic guifg=#ff8700 ctermfg=214
 set updatetime=300 " reduce time for highlighting other references OPTIONAL - 2023-02-03
 set redrawtime=10000 " allow more time for loading syntax on large files OPTIONAL - 2023-02-03
 
+" When going to a new line in many cases (like `:25`, `gg`, `dd`), move the
+" cursor to the first non-blank of the line. Without this, the cursor will be
+" kept in the same column when possible.
+set startofline
+
 
 " older
 " Enable CursorLine

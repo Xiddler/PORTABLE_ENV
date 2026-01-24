@@ -1,0 +1,4 @@
+# pack-refs with: peeled fully-peeled sorted 
+8cb483a702b97573ac52da46e333939e3df33f6e refs/remotes/origin/gitbook
+b177c7120a6c3d891c7f12aeae3849ecf07e43f1 refs/remotes/origin/master
+53cc54127e9ea8d6ea7039b74f50e27739f574fe refs/remotes/origin/publish
