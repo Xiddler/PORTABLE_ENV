@@ -33,10 +33,11 @@ see
 ®	rg	0xae	174	REGISTERED SIGN                             ®
 ™   tm  2122   8482 TRADEMARK SIGN                              ™ 
 °	dg	0xb0	176	DEGREE SIGN
-¹	1s	0xb9	185	SUPERSCRIPT ONE
-²	2s	0xb2	178	SUPERSCRIPT TWO
-³	3s	0xb3	179	SUPERSCRIPT THREE
-⁴   s4  2074   8308 SUPERSCRIPT FOUR
+¹	1s	0xb9	185	SUPERSCRIPT ONE                             Aliased by me to S11 in insert mode
+²	2s	0xb2	178	SUPERSCRIPT TWO                             Aliased by me to S22 in insert mode
+³	3s	0xb3	179	SUPERSCRIPT THREE                           Aliased by me to S33 in insert mode
+⁴   s4  2074   8308 SUPERSCRIPT FOUR                            Aliased by me to S44 in insert mode
+⁵   s5  2075   8309 SUPERSCRIPT FIVE                            Aliased by me to S55 in insert mode
 ´	''	0xb4	180	ACUTE ACCENT
 ‘   6'  2018        single quote                                Handy in .md files when ' causes issues
 µ	my	0xb5	181	MICRO SIGN µ

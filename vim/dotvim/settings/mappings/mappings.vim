@@ -370,12 +370,12 @@ ab wk Wikipedia
 ab hte the
 ab ptp Positive Thinking Patterns
 ab sotw 'system of the world'
-ab su1 ¹
 ab S11 ¹
-ab su2 ²
 ab S22 ²
-ab su3 ³
 ab S33 ³
+ab S44 ⁴
+ab S55 ⁵
+
 ab obn  Old Bad Negative Harmful Thinking Patterns
 ab ngp  New Good Positive Helpful & Sensible Thinking Patterns
 ab ohter other

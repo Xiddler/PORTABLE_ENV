@@ -51,11 +51,14 @@ Afternoon:
 ### FINANCIAL
 
 
+### PLANS
+
+
 ## ACTIVITY
 
 
 
-# CATEGORIES
+# PROMPTS
 
 
 
@@ -74,8 +77,8 @@ Afternoon:
 ### TODOS / ISSUES / PROBLEMS / TASKS
 
 
-
 ## CULTURE
+
 
 ## ENTERTAINMENT
 

@@ -249,6 +249,7 @@ nn() { nvim ~/.config/nvim/init.lua }
 # }}}
 #{{{ BOOKSEARCH
 booksearch() {find ~/REPOS/books -maxdepth 4 -name "*.*" -type f | grep -i $1 } # usage -> % booksearch 'smart'
+bs() {find ~/REPOS/books -maxdepth 4 -name "*.*" -type f | grep -i $1 } # usage -> % booksearch 'smart'
 #}}}
 #{{{ dict 
 # look up the definition of a word using `dict`; resides at tmuxp tab 6
@@ -287,8 +288,15 @@ mylan() { echo "2024-12-07                \n
 #{{{ RSYNC
 # manual rsync backup to the USB attached to the RPi
 # alias -g rsyncz="$HOME/.scripts/rsync_backup.sh"
-rsyncz() { /home/donagh/.scripts/rsync_backup.sh }
+# rsyncz() { /home/donagh/.scripts/rsync_backup.sh }
 # investigate using systemd timers to do this automatically Note added 2022-04-02
+
+# HN https://news.ycombinator.com/item?id=46890814 — added 2026-02-07 
+# eg -%> rsync-copy <source-dir+file> <target-dir+file>
+alias rsync-copy='/usr/sbin/rsync -avz --progress -h '
+alias rsync-move='/usr/sbin/rsync -avz --progress -h --remove-source-files '
+alias rsync-sync='/usr/sbin/rsync -avzu --delete --progress -h '
+alias rsync-update='/usr/sbin/rsync -avzu --progress -h '
 #}}}
 #{{{ DOCKER & PODMAN
 # alias -g docker='sudo docker '
