@@ -30,6 +30,9 @@
 ;; Needs to be installed from PORTABLE_ENV
 ;;
 ;;
+;; get the cursor to not move backwards when exiting insert mode.
+(setq evil-move-cursor-back nil)
+
 ;; ==================================================================================================================================
 ;; ORG MODE
 ;; ==================================================================================================================================
@@ -463,7 +466,10 @@
 (map! :n "z ;" '+org/toggle-fold) ;; for some reason z o -> +org/open-fold is not functioning - added 2022-12-18
 (map! :n "SPC b L" 'bookmark-bmenu-list) ;; list files/locations bookmarked in a buffer. SPC RET to quick access bookmarks
 (map! :n "SPC c h" 'org-ctrl-c-ctrl-c) ;; ch for check the box
-(map! :n ",o" 'org-ctrl-c-ctrl-c) ;; ch for check the box
+;; (map! :n ",o" 'org-ctrl-c-ctrl-c) ;; ch for check the box
+;; (map! :n ",o" 'other-window) ;;
+(map! :n ",h" 'evil-window-left) ;;
+(map! :n ",l" 'evil-window-right) ;; doesn't work in treemacs
 (map! :n "SPC m m" 'point-to-register)
 (map! :n "SPC m j" 'jump-to-register)
 (map! :n ", e" 'eval-last-sexp) ;; SPC m e e

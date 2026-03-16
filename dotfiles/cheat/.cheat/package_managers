@@ -1,14 +1,16 @@
 Operating System 	Package Manager
 -----------------------------------
 Alpine Linux 	    apk-tools 	
-Arch Linux 	        pacman 	
+Arch Linux 	        pacman, yay
 Fedora Linux 	    DNF 	
 FreeBSD 	        pkg 	
 Gentoo Linux 	    Portage 	
+Manjaro             Pamac, yay
 Microsoft Windows 	Chocolatey 	
 Microsoft Windows 	Scoop 	
 NixOS 	            Nix 	
 Solus 	            eopkg 	
+Termux              pkg
 Various 	        Cargo 	
 Various 	        Conda 	
 Various 	        Homebrew 	

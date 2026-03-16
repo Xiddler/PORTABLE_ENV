@@ -167,6 +167,9 @@ noremap <leader>x <c-w>c<cr>
 "<leader>z to set the following to get fuzzy-finder FZF in vim working (and other plugins?)
 nmap <leader>z :FZF<cr> 
 
+" shift a much-indented line to position to beginning of LHS
+nnoremap <leader>h ^d0
+
 "}}}
 "{{{ Leader_key + multiple alphabetic
  
@@ -333,6 +336,7 @@ inoremap lh —
 inoremap £ # 
 inoremap i<space> I<space>
 inoremap eu<space> €
+inoremap dgc °C
 
 " TYPOS
 " NOTE: Currently (Jan 2026) handled using espanso — system wide keybindings

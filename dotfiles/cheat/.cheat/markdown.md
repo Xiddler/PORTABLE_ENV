@@ -72,9 +72,10 @@ multimarkdown file.md > file.html
 
 see /home/donagh/PORTABLE_ENV/vim/dotvim/pack/colorschemes/start/miramare/
 
-To change the colors of the markdown headings got to the Pallette section of 
+To change the colors of the markdown headings go to the `Pallette` section of 
 ~/PORTABLE_ENV/vim/dotvim/pack/colorschemes/start/miramare/colors/miramare.vim
 and make the color changes here. I don't know of another way. Donagh McCarthy 2024-10-03
+Returned here 2026-02-14 
 
 # H1 Notes
 

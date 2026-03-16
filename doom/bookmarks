@@ -1,7 +1,6 @@
 ;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8; mode: lisp-data -*-
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
-;;; /home/donagh/.config/emacs/.local/etc/bookmarks
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org"
  (filename . "/home/donagh/Dropbox/org-mode/org/")
@@ -22,11 +21,11 @@
  (position . 20)
  (last-modified 26900 50871 952759 20000))
 ("mind.org"
- (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/mind.org")
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/000_DIRECTORY_ORGS/01_ME_STUFF/mind.org")
  (front-context-string . "nd.org\n#+AUTHOR:")
  (rear-context-string)
  (position . 16)
- (last-modified 26897 62259 225146 400000))
+ (last-modified 27054 49878 823966 905000))
 ("persons.org"
  (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/persons.org")
  (front-context-string . "\n\n* persons\n2025")
@@ -106,11 +105,11 @@
  (position . 67244)
  (last-modified 26899 17460 336769 423000))
 ("snips.org"
- (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/ideas/snips.org")
- (front-context-string . " who we are and ")
- (rear-context-string . "go, one can find")
- (position . 371507)
- (last-modified 26899 13328 732846 962000))
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/000_DIRECTORY_ORGS/05_IDEAS/ideas/snips.org")
+ (front-context-string . "9\n\n“As is the In")
+ (rear-context-string . "I\n\n*** 2026-03-0")
+ (position . 448026)
+ (last-modified 27054 58140 969886 40000))
 ("psychology.org"
  (filename . "/run/media/donagh/USB128GB/REPOSITORIES/psychology/psychology.org")
  (front-context-string . "**** projection\n")
@@ -131,10 +130,10 @@
  (last-modified 26859 26127 835596 194000))
 ("org.org"
  (filename . "/home/donagh/Dropbox/org-mode/org/org.org")
- (front-context-string . "* links\n\n[[file:")
- (rear-context-string . "ropbox account\n\n")
- (position . 182294)
- (last-modified 26702 47640 249014 861000))
+ (front-context-string . "tments\n:note:\nto")
+ (rear-context-string . "-----\n*** Appoin")
+ (position . 15243)
+ (last-modified 27054 50248 757484 236000))
 ("todos.org"
  (filename . "/home/donagh/Dropbox/org-mode/org/todos.org")
  (front-context-string . "#+OPENED:    202")

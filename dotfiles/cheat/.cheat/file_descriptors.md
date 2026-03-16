@@ -2,7 +2,7 @@
 Opened 2025-06-18
 
 
-# shell redirection
+# file descriptors incl. shell redirection
 # =============================================================================================================
 
 
@@ -79,6 +79,17 @@ Try it!  With a file named `test.txt` containing "The quick brown fox jumps over
 ->% cat 01file 
 cat: test.tzt: No such file or directory ◁-- here stderr is redirected to the file 01file
 
+
+## 2>&1
+
+
+
+File descriptor 1 is the standard output (stdout).
+File descriptor 2 is the standard error (stderr).
+
+At first, 2>1 may look like a good way to redirect stderr to stdout. However, it will actually be interpreted as "redirect stderr to a file named 1".
+
+& indicates that what follows and precedes is a file descriptor, and not a filename. Thus, we use 2>&1. Consider >& to be a redirect merger operator.
 
 
 

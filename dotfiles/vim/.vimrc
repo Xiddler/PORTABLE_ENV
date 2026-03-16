@@ -1,6 +1,8 @@
 "{{{ Preliminaries
 
 
+" /home/donagh/.vimrc
+
 " My .vimrc is split into the following:
 
 " $MYVIMRC = $HOME/.vimrc                                                   " This file
@@ -19,6 +21,8 @@ source $HOME/.vim/plugins/plugins.vim                                       " pl
 
 " Where is?
 " abbreviations         :: config file at $HOME/.vim/settings/configs/configs.vim
+"
+" Note: Leader configuration is in $HOME/.vim/settings/mappings/mappings.vim
 
 " }}}
 " {{{ =============

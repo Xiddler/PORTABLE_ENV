@@ -23,11 +23,11 @@ XDG_CACHE_HOME="/home/donagh/.cache"
 # 2025-07-23 — seems I need to source this file after ssh-ing from Windows Powershell; that usen't be the case;
 # tmux attach-session -t my-6-daily-tabs
 # attach only if tmux NOT already running
-if [[ ! tmux ]] ; then
-    tmux attach-session -t my-6-daily-tabs
-else 
-    tmuxp load $HOME/.tmuxp/mydaily6tabsession.yaml 
-fi
+# if [[ ! tmux ]] ; then
+#     tmux attach-session -t my-6-daily-tabs
+# else 
+#     tmuxp load $HOME/.tmuxp/mydaily6tabsession.yaml 
+# fi
 
 #########################################################
 #                     HISTORY
@@ -104,7 +104,7 @@ setopt extendedhistory
 #####################################################
 
 #####################################################
-# DROPBOXD
+# DROPBOXD - START
 #####################################################
 # Dropbox on Toshiba - to ensure dropbod runs after a reboot
 echo "Did you just reboot? Check dropboxd is running... ->% PS drobboxd OR ->% psd "
@@ -710,7 +710,7 @@ source $HOME/PORTABLE_ENV/zsh/zsh-abbr/zsh-abbr.plugin.zsh
 #########################################################
 
 # Use Ctrl G to toggle between local and global history
-# source $HOME/PORTABLE_ENV/zsh/per-directory-history/per-directory-history.zsh
+source $HOME/PORTABLE_ENV/zsh/per-directory-history/per-directory-history.zsh
 # ->% echo $PER_DIRECTORY_HISTORY_TOGGLE --▷ ^G
 
 #########################################################

@@ -31,7 +31,7 @@ syntax enable
 " colorscheme stellarized from nightsense -- seems to be gone from github;  note added 2022-11-03  
 "/home/donagh/PORTABLE_ENV/vim/dotvim/HELP/pack/nightsense/start/stellarised 
 " theme at 2022-11-03
-colorscheme gruvbox
+" colorscheme gruvbox
 " colorscheme  base16-classic-dark
 " colorscheme dracula  
 " added 2022-11-04
@@ -45,7 +45,7 @@ colorscheme gruvbox
 " colorscheme base16-default-dark
 " changed 2024-08-22 - it shows italics & bold correctly (like everforest does)
 
-" colorscheme miramare
+colorscheme miramare
 " NOTE: Now in ~/.vim/pack to keep it from changing — note added 2024-08-24
 " colorscheme base16-atelier-cave
     
@@ -53,8 +53,8 @@ colorscheme gruvbox
 " keybindings to change colorscheme
 "
 " nnoremap leader 0 :colorscheme base16-default-dark<CR>
+" nnoremap leader 7 :colorscheme miramare<CR> 
 " nnoremap leader 6 :colorscheme base16-greescreen<CR> 
-" nnoremap leader 6 :colorscheme base16-default-dark<CR> 
 " nnoremap leader 5 :colorscheme iceberg<CR>
 " nnoremap leader 4 :colorscheme evening<CR>
 " nnoremap leader 3 :colorscheme everforest<CR>

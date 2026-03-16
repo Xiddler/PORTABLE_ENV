@@ -325,10 +325,12 @@ endif
 " Markdown: {{{
 " builtin: {{{
 call s:HL('markdownH1', s:palette.red, s:palette.none, 'bold')
-call s:HL('markdownH2', s:palette.orange, s:palette.none, 'bold')
-" call s:HL('markdownH3', s:palette.yellow, s:palette.none, 'bold')
+" call s:HL('markdownH2', s:palette.orange, s:palette.none, 'bold')
+call s:HL('markdownH2', s:palette.yellow, s:palette.none, 'bold')
 call s:HL('markdownH3', s:palette.purple, s:palette.none, 'bold')
-call s:HL('markdownH4', s:palette.green, s:palette.none, 'bold')
+" call s:HL('markdownH4', s:palette.green, s:palette.none, 'bold') " 2026-02-14 
+" call s:HL('markdownH4', s:palette.purple, s:palette.none, 'bold')
+call s:HL('markdownH4', s:palette.orange, s:palette.none, 'bold')
 call s:HL('markdownH5', s:palette.blue, s:palette.none, 'bold')
 call s:HL('markdownH6', s:palette.purple, s:palette.none, 'bold')
 call s:HL('markdownUrl', s:palette.blue, s:palette.none, 'underline')

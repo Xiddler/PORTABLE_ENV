@@ -7,7 +7,10 @@
 # journal='/run/media/donagh/USB128GB/DONAGHS/personal/journal'
 # removed ## Headings and ### Subheadings following my escape from hospital as I found them 'de trop'.
 # added separate PROMPTS for DIARY & JOURNALLING on 2024-02-01
-#
+
+# DECEDITOR="vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc "
+
+
 md_journal() {
   local year=$(date +%Y)
   local month=$(date +%m)
@@ -30,12 +33,19 @@ $today
 # MY DIARY
 > $dow
 
+# PUBLIC
+
 ## WEATHER
 Morning: 
 Afternoon: 
 
+## EVENTS OF THE DAY
 
 
+## WHAT'S HAPPENING WITH OTHER PEOPLE
+
+
+# PRIVATE
 
 ## STATUS
 
@@ -51,11 +61,14 @@ Afternoon:
 ### FINANCIAL
 
 
-### PLANS
+### THINGS
 
 
 ## ACTIVITY
 
+
+
+### PROJECTS & PLANS
 
 
 # PROMPTS

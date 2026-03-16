@@ -5,7 +5,7 @@
 #+FILEPATH: ~/PORTABLE_ENV/doom/xHELP/doom-notes.org
 #+options: il
 #+tags:    help orgmode org-mode donaghs
-#+EDITED:  2025-10-12; 2025-09-13; 2025-04-12; 2025-03-02; 2025-02-11; 2024-09-04; 2024-02-06; 2024-01-02; 2023-12-10; 2023-09-06; 2023-08-09; 2023-07-12; 2023-04-07; 2023-02-24; 2023-01-03; 2022-12-19; 2022-12-16; 2022-09-25
+#+EDITED:  2026-03-13; 2025-10-12; 2025-09-13; 2025-04-12; 2025-03-02; 2025-02-11; 2024-09-04; 2024-02-06; 2024-01-02; 2023-12-10; 2023-09-06; 2023-08-09; 2023-07-12; 2023-04-07; 2023-02-24; 2023-01-03; 2022-12-19; 2022-12-16; 2022-09-25
 #+LINE      ___________________________________________________________________________________________________________
 #+BABEL: :session *python* :cache yes :results output graphics :exports both :tangle yes \n" "-----"
 
@@ -134,6 +134,7 @@ SPC t l
 ** url link syntax
 
 put the link / URI instead of x and the description in the second pair of [].
+ [description][x]
 
 ** macros
 2025-10-28
@@ -315,7 +316,7 @@ Given a circle \Gamma of diameter d, the length of its circumference is \pi{}d.
 
 ** themes
 SPC h t
-
+** [[treemacs]]
 * DOOM EMACS
 ** abbrevs
 The abbrev_defs file holds the abbreviations defined by me.
@@ -1280,15 +1281,6 @@ see also [[
 evil-avy-goto-char]]
 [[evil-snipe]]
 
-*** treemacs
-**** About
-View directories in a tree structure in a separate panel
-**** Commands
-[SPC] d
-M-x treemacs <-- opens explorer for CURRENT directory
-[SPC] d <-- toggles close / open
-:q in treemacs pane to quit OR [SPC] b d
-use vim keys for navigating
 *** tramp
 2025-11-16
 
@@ -1454,6 +1446,33 @@ doom-molokai     :: Cerise headlines with orange subs
 doom-material    :: Gre/blue headlines w dim purple subs
 ** tramp
 [[Tramp][Tramp]]
+** treemacs
+*** About
+View directories in a tree structure in a separate panel
+*** Commands
+[SPC] d
+M-x treemacs <-- opens explorer for CURRENT directory
+[SPC] d <-- toggles close / open
+:q in treemacs pane to quit OR [SPC] b d
+use vim keys for navigating
+
+help
+M-x describe-mode (inside treemacs) and it will show lots of stuff regarding treemacs; SPC h m
+
+? Summon the helpful hydra to show you the treemacs keymap.
+b bookmark point in treemacs; then SPC RET to get bookmarks
+m on a file or folder in treemacs to move it to another folder. Found this one by accident.
+u go up to parent
+d delete at point
+w change the width of the treemacs panel
+P enable Peek mode; will preview at point; P toggles;
+cd create directory
+cf create file
+
+*** Where are the docs?
+
+docs at https://www.spacemacs.org/layers/+filetree/treemacs/README.html#inside-treemacs
+
 ** sparse trees
 [SPC] m s s r <pattern>
 For filtering all but what you want to see
@@ -1558,6 +1577,7 @@ The file is located at:
 August 2023:
 I did a search & replace of 01d4c077-4709-4b5b-9431-087bc9060d68 for SD64GB so that it will be easier to mount the SDCard to the Toshiba laptop system in future.
 I also made a backup bookmarks_backup_Aug2023 today 2023-08-09
+
 * Org-mode
 :about:
 THIS!
@@ -2604,3 +2624,5 @@ Turn on abbrev-mode
 (dtext)
 
 ** testing
+* links
+

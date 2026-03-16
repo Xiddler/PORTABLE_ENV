@@ -1307,4 +1307,9 @@ Assigned to "r
 in ex mode use norm to replicate typing in normal mode
 
 
+# change heading colors of markdown files
+
+see ~/.cheat/markdown.md
+
+
 # END

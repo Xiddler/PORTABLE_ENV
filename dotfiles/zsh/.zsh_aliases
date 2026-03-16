@@ -170,6 +170,8 @@ alias -g der="doom run" # doom emacs run;
 # alias -g drr="doom run"
 alias -g sos="vim ~/DONAGHS/personal/SOS/Structure/structure7_2025_3_1.md"
 
+lod() {  ls ~/DONAGHS/personal/000_DIRECTORY_ORGS | xargs -n 1 }
+
 #}}}
 #{{{ LITTLE TOOLS
 
@@ -501,14 +503,14 @@ alias -g g_comp="$HOME/DONAGHS/MY_ZIM/Computer/"   # zim/Computer only
 alias -g g_all_org="$HOME/DONAGHS/all_org/"        # this only tracks doom-notes.org
 
 # look at MY_PRECIOUS_DATA in the backups 
-alias -g b_locs="echo 'Toshiba\n Main --> SD64' '\n HDD' $HOME/BACKUPS && echo 'RPi\n' /media/donagh/MyUSB1/MY_LOCKER_RPi && echo 'Dropbox\n' orgmode/"
+# alias -g b_locs="echo 'Toshiba\n Main --> SD64' '\n HDD' $HOME/BACKUPS && echo 'RPi\n' /media/donagh/MyUSB1/MY_LOCKER_RPi && echo 'Dropbox\n' orgmode/"
 alias -g b_run="echo /home/donagh/BACKUPS/orgmode_SNAPSHOTS && echo /home/donagh/BACKUPS/RSYNCED/personal/journal/2024/02"
 alias -g b_org="ls -last /home/donagh/BACKUPS/orgmode_SNAPSHOTS"
 alias -g b_jour="ls -last /home/donagh/BACKUPS/RSYNCED/personal/journal/2024/02"
 # echo -e "$mydir";
 # alias -g g_list='echo -e "~/PORTABLE_ENV/ \n~/Dropbox/org-mode/org/ \n~/DONAGHS/personal/ \n~/DONAGHS/MY_ZIM/Computer \n~/DONAGHS/all_org/"'
 alias -g g_list='$HOME/.scripts/list_all_git_repos.sh' # added 2023-11-07
-alias -g git_list='echo -e "~/PORTABLE_ENV/ \n~/Dropbox/org-mode/org/ \n~/DONAGHS/personal/ \n~/DONAGHS/MY_ZIM/Computer \n~/DONAGHS/all_org/"'
+# alias -g git_list='echo -e "~/PORTABLE_ENV/ \n~/Dropbox/org-mode/org/ \n~/DONAGHS/personal/ \n~/DONAGHS/MY_ZIM/Computer \n~/DONAGHS/all_org/"'
 alias -g git_run='$HOME/.scripts/manage_all_git_repos.sh'
 alias -g git_all='$HOME/.scripts/git_run_all.sh'
 
@@ -727,13 +729,18 @@ alias avg='png G rtt | cut -d '/' -f5' # average png time atm. Compared to what?
 
 # tmuxp load 
 tml() { tmuxp load $HOME/.tmuxp/my-6-daily-tabs.yaml }
+stm() {  tmuxp load ~/.tmuxp/my-6-daily-tabs.yaml }
+
 
 # === SERVERS ===
 # start zim, cifs and dropbox
-zcd() { /home/donagh/.scripts/zim_cifs_dropbox.sh }
+# zcd() { /home/donagh/.scripts/zim_cifs_dropbox.sh }
 
 # dropbox
-drop() { echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && nohup ~/.dropbox-dist/dropboxd& }
+# start dropbox — replaces `drop()`
+sdr() { command /home/donagh/.scripts/start_dropbox_on_Toshiba.sh }
+
+# drop() { echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && nohup ~/.dropbox-dist/dropboxd& }
 # check the dropbox is working --> ->% ps aux | grep "dropbox" where PS is an alias for ps aux | grep 
 psd() { PS dropbox }
 
