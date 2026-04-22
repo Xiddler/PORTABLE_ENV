@@ -3,3 +3,6 @@ smbclient -L <hostname> -U%
 
 # To connect to a share:
 smbclient //<hostname>/<share> -U<username>%<password>
+TRY
+-%> smbclient //donagh@donagh-satellitep50c/home/donagh/REPOS/books/ -Udonagh%1234
+

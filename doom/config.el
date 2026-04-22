@@ -123,6 +123,13 @@
 ;; You can define your own list with a statement like the following:
 (setq tab-stop-list '(4 8 12 16))
 
+;; treemacs
+;; (setq grep-find-template
+   ;;    "find <D> <X> -type f <F> -exec grep <C> -nH -e <R> \\{\\} +")
+;; my preference
+(setq grep-find-template
+      "fd ")
+
 
 ;; Keywords
 ;; Note: For actual keywords I was using /home/donagh/.emacs.d/modules/lang/org/config.el WRONGLY?
@@ -482,6 +489,7 @@
 ;; (map! :n "dB" ') ;; delete all word backwards when cursor is on the last letter
 ;;
 ;; (map! :i "\t" " ") ;; see doom-note.org --> indenting
+(map! :n "tb" 'treemacs-bookmark )
 
 ;; iambic
 ;; (map! :n ",d" "@dnc - ") ;; or better to use abbrev-defs?
@@ -721,24 +729,17 @@
 
 ;; from https://emacs.stackexchange.com/questions/14740/how-to-configure-markdown-mode-to-render-headings-like-org-mode
 ;;; ----------------------------------------------
-;;           THE FOLLOWING DID WORK
-(custom-set-faces 
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
 
- ;; markdown header text colors
-'(markdown-header-face-1 ((t (:inherit markdown-header-face :foreground "green" :height 1.0))))
+(custom-set-faces
 
- ; '(markdown-header-face-2 ((t (:inherit markdown-header-face :foreground "medium blue" :height 1.0))))
-'(markdown-header-face-2 ((t (:inherit markdown-header-face :foreground "orange" :height 1.0))))
+'(markdown-header-delimiter-face ((t (:foreground "#616161" :height 0.9))))
+'(markdown-header-face-1 ((t (:height 1.6  :foreground "#A3BE8C" :weight extra-bold :inherit markdown-header-face))))
+'(markdown-header-face-2 ((t (:height 1.4  :foreground "#EBCB8B" :weight extra-bold :inherit markdown-header-face))))
+'(markdown-header-face-3 ((t (:height 1.2  :foreground "#D08770" :weight extra-bold :inherit markdown-header-face))))
+'(markdown-header-face-4 ((t (:height 1.15 :foreground "#BF616A" :weight bold :inherit markdown-header-face))))
+'(markdown-header-face-5 ((t (:height 1.1  :foreground "#b48ead" :weight bold :inherit markdown-header-face))))
+'(markdown-header-face-6 ((t (:height 1.05 :foreground "#5e81ac" :weight semi-bold :inherit markdown-header-face)))))
 
-'(markdown-header-face-3 ((t (:inherit markdown-header-face :foreground "blue" :height 1.0))))
-
-'(markdown-header-face-4 ((t (:inherit markdown-header-face :foreground "dark cyan" :height 1.0)))))
-
-;; In the above the last variable removes the annoying “Do you want to execute” your code when you type: C-c C-c
 ;;; ----------------------------------------------
 
 

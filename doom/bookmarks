@@ -2,7 +2,19 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("org"
+(("building_character.org"
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/000_DIRECTORY_ORGS/01_ME_STUFF/building_character.org")
+ (front-context-string . "s\n\n[[file:~/PORT")
+ (rear-context-string . "\n\n\n\n:end:\n* link")
+ (position . 5686)
+ (last-modified 27093 21448 205724 757000))
+("collections.org"
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/000_DIRECTORY_ORGS/05_IDEAS/thinking_stuff/collections.org")
+ (front-context-string . "interests\n2026-0")
+ (rear-context-string . "e.\n\n\n:end:\n\n*** ")
+ (position . 4992)
+ (last-modified 27087 64952 559185 190000))
+("org"
  (filename . "/home/donagh/Dropbox/org-mode/org/")
  (front-context-string . "org.org\n  -rw-r-")
  (rear-context-string . "4K Nov 12 19:02 ")
@@ -112,10 +124,10 @@
  (last-modified 27054 58140 969886 40000))
 ("psychology.org"
  (filename . "/run/media/donagh/USB128GB/REPOSITORIES/psychology/psychology.org")
- (front-context-string . "**** projection\n")
- (rear-context-string . "with the issue.\n")
- (position . 54904)
- (last-modified 26900 37697 73186 419000))
+ (front-context-string . "If you don’t lau")
+ (rear-context-string . "good news to?\n\n\"")
+ (position . 174447)
+ (last-modified 27095 55135 798040 982000))
 ("get_living.org"
  (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/get_living.org")
  (front-context-string . "g)\n\n* get_doing\n")

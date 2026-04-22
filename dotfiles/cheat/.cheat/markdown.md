@@ -108,6 +108,11 @@ converts markdown files to other formats
 
 
 
+# Markdown mode in emacs
+
+see https://jblevins.org/projects/markdown-mode/
+
+in a markdown file opened in emacs M-x describe-mode for much of the above link's content
 
 
 

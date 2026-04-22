@@ -17,6 +17,7 @@
 " 2022-02-05  vim-plug started 
 " https://github.com/junegunn/vim-plug and https://github.com/junegunn/vim-plug/wiki/tutorial
 " Remember to :so % after adding a new Plug or just PlugInstall in any vim file
+" Command: PlugInstall
 
 " ALTERNATIVE:
 " There is the alternative of using the built-in vim package manager (see " ~/.vim/autoload/plug.vim)

@@ -10,6 +10,7 @@
 
 # DECEDITOR="vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc "
 
+# Edited: 2026-03-27 
 
 md_journal() {
   local year=$(date +%Y)
@@ -25,13 +26,12 @@ md_journal() {
     touch $filen
     # front matter for new day's journal:
     echo "# FRONT MATTER
-$today
 
 ~/PORTABLE_ENV/dotfiles/scripts/.scripts/markdown_journal.sh            Bash script 
 
 
-# MY DIARY
-> $dow
+# DIARY
+> $dow     $today
 
 # PUBLIC
 
@@ -42,7 +42,23 @@ Afternoon:
 ## EVENTS OF THE DAY
 
 
-## WHAT'S HAPPENING WITH OTHER PEOPLE
+
+## WHAT'S GOING ON & HAPPENING
+
+### In my life
+
+
+### In my head
+
+
+### With my future
+
+
+### With public me
+
+
+### With other people
+
 
 
 # PRIVATE
@@ -58,61 +74,57 @@ Afternoon:
 ### SOCIAL
 
 
+### PLANS
+
+
+### WORK
+
+
 ### FINANCIAL
+
+#### Standing
+
+
+#### Income
+
+
+#### Spending
+
+
+#### Saving / investing
+
+
+
 
 
 ### THINGS
 
 
+### SPIRITUAL
+(and related)
+
+
 ## ACTIVITY
 
 
-
-### PROJECTS & PLANS
-
-
-# PROMPTS
+### Exercise
 
 
+### Jobs
 
 
-## HEALTH
+### Projects 
 
 
-## CONTINUINGTODAY
+### Entertainment
 
 
-
-## DOINGTODAY
-
+### Games
 
 
-### TODOS / ISSUES / PROBLEMS / TASKS
+### Reading
 
 
-## CULTURE
-
-
-## ENTERTAINMENT
-
-
-## NATURE
-
-
-## NEWS 
-
-
-
-## SHOOTING THE BREEZE
-
-
-## FORM & MOOD 
-
-
-## NEW / DIFFERENT
-
-
-## RECOVERY
 
 
 

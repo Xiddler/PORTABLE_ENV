@@ -80,6 +80,11 @@ M-x read-abbrev-file
 and enter ~/.config/emacs/abbr_defs
 (often needed after a system reboot)
 
+** bookmarks_q
+2026-04-03
+
+[[bookmarks]]
+
 ** calculate
 2025-04-13
 
@@ -376,7 +381,8 @@ In config.el add
 ** bookmarks
 
 Bookmarks a file. To allow me to jump to a bookmarked file or location easily.
-bookmark file at $HOME/.config/emacs/.local/etc/bookmark
+bookmark file at $HOME/.config/emacs/.local/etc/bookmarks; symlinked bookmarks -> /home/donagh/PORTABLE_ENV/doom/bookmarks
+
 
 SPC RET  Create or jump to bookmark i.e. list bookmarked files/locations
 
@@ -392,6 +398,19 @@ bookmark file at $HOME/.config/emacs/.local/etc/bookmark
 
 To add a new bookmark to this file; when in the relevant buffer (that you want to bookmark):
 M-x bookmark-write
+
+To "correct" faulty bookmarks:
+M-x bookmark-delete-all
+then
+M-x bookmark-load
+
+To save bookmarks to FILE
+M-x bookmark-save
+
+Find a bookmark in treemacs
+M-x treemacs-bookmark
+
+
 
 ** buffers
 [SPC] ,                <-- switch buffers
@@ -1450,6 +1469,7 @@ doom-material    :: Gre/blue headlines w dim purple subs
 *** About
 View directories in a tree structure in a separate panel
 *** Commands
+
 [SPC] d
 M-x treemacs <-- opens explorer for CURRENT directory
 [SPC] d <-- toggles close / open
@@ -1468,6 +1488,14 @@ w change the width of the treemacs panel
 P enable Peek mode; will preview at point; P toggles;
 cd create directory
 cf create file
+C-c C-p a add project to treemacs M-x treemacs-add-project-to-workspace
+
+*** Find file
+2026-04-03
+
+
+Search project for a file
+SPC /
 
 *** Where are the docs?
 
@@ -2163,7 +2191,6 @@ This file-location is symlinked from ~/PORTABLE_ENV/doom/bookmards
  /home/donagh/.config/emacs/.local/etc/bookmarks
 
 M-x bookmark-load
-
 
 ** outside of a file
 Open a file and then SPC b m to mark it

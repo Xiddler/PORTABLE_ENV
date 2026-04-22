@@ -21,5 +21,9 @@ vim-airline
 iceberg*
 /home/donagh/PORTABLE_ENVvim/plugins/iceberg.vim
 /home/donagh/PORTABLE_ENVvim/plugins/iceberg.vim/.git
- vim/plugins/vim/.git/
+vim/plugins/vim/.git/
+doom/bookmarks_BU*
+doom/config.el.BU
+vim/dotvim/autoload/plug.vim.old
+
 
