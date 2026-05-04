@@ -1,0 +1,113 @@
+name: Deploy Site
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "site/**"
+      - "screenshots/**"
+      - "images/**"
+      - ".github/workflows/deploy-site.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        working-directory: site
+        run: npm ci
+
+      - name: Build CSS
+        working-directory: site
+        run: npx @tailwindcss/cli -i css/input.css -o css/output.css --minify
+
+      - name: Prepare output
+        run: |
+          mkdir -p _site/css _site/js _site/screenshots _site/images
+          cp site/index.html _site/
+          cp site/css/output.css _site/css/output.css
+          cp site/js/main.js _site/js/main.js
+          cp screenshots/*.png _site/screenshots/
+          cp images/wb-logo.svg _site/images/wb-logo.svg
+          cp images/wb-logo.svg _site/favicon.svg
+          cp site/og-image.png _site/og-image.png
+          cp site/robots.txt _site/robots.txt
+          cp site/sitemap.xml _site/sitemap.xml
+          cp -r site/logos _site/logos
+          cp site/CNAME _site/CNAME
+
+      - name: Validate local references
+        run: |
+          echo "Checking that all locally-referenced files exist in _site..."
+          fail=0
+          # Extract relative src= and href= values from index.html, skip anchors and absolute URLs
+          for ref in $(grep -oP '(?:src|href)="([^"#][^"]*)"' _site/index.html \
+                       | sed 's/.*="//;s/"$//' \
+                       | grep -v '^https\?://' \
+                       | grep -v '^data:' \
+                       | sort -u); do
+            if [ ! -e "_site/$ref" ]; then
+              echo "MISSING: _site/$ref"
+              fail=1
+            fi
+          done
+          if [ "$fail" -eq 1 ]; then
+            echo "Some referenced files are missing from the build output."
+            exit 1
+          fi
+          echo "All local references are valid."
+
+      - name: Validate HTML structure
+        run: |
+          # Check that the HTML is well-formed: matching doctype, html, head, body tags
+          html="_site/index.html"
+          errors=0
+          if ! head -1 "$html" | grep -qi '<!doctype html>'; then
+            echo "Missing <!DOCTYPE html>"
+            errors=1
+          fi
+          for tag in html head body; do
+            open=$(grep -c "<${tag}" "$html" || true)
+            close=$(grep -c "</${tag}>" "$html" || true)
+            if [ "$open" -ne "$close" ]; then
+              echo "Mismatched <${tag}> tags: $open opening, $close closing"
+              errors=1
+            fi
+          done
+          if [ "$errors" -eq 1 ]; then
+            exit 1
+          fi
+          echo "HTML structure looks good."
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: "_site"
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

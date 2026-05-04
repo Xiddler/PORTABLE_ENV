@@ -1,0 +1,27 @@
+# Warm Burnout Dark -- Starship palette
+# Paste this into your ~/.config/starship.toml
+# Then set: palette = 'warm_burnout_dark'
+
+[palettes.warm_burnout_dark]
+background = "#1a1510"
+foreground = "#bfbdb6"
+comment = "#b4a89c"
+cursor = "#f5c56e"
+accent = "#b8522e"
+burnt_orange = "#ff8f40"
+amber = "#ffb454"
+gold = "#e6c08a"
+aged_brass = "#deb074"
+terra_cotta = "#dc9e92"
+coral = "#ec9878"
+dusty_mauve = "#d4a8b8"
+dried_sage = "#b4bc78"
+verdigris = "#96b898"
+steel_patina = "#90aec0"
+error = "#f49090"
+red = "#f06b73"
+green = "#70bf56"
+yellow = "#fdb04c"
+blue = "#4fbfff"
+magenta = "#d0a1ff"
+cyan = "#93e2c8"

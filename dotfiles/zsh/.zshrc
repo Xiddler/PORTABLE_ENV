@@ -7,6 +7,9 @@ export INIT_SHELL_LEVEL=$SHLVL
 # [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
 source ~/.zsh_aliases
 
+# DO NOT TRACK — per https://donottrack.sh/
+export DO_NOT_TRACK=1
+
 #  XDG Base Directory Specification
 XDG_CONFIG_HOME="/home/donagh/.config"
 XDG_CACHE_HOME="/home/donagh/.cache"

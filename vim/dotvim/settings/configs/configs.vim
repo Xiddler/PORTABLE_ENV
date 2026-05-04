@@ -45,7 +45,9 @@ syntax enable
 " colorscheme base16-default-dark
 " changed 2024-08-22 - it shows italics & bold correctly (like everforest does)
 
-colorscheme miramare
+" colorscheme miramare
+colorscheme warm-burnout-dark " 2026-05-01 
+
 " NOTE: Now in ~/.vim/pack to keep it from changing — note added 2024-08-24
 " colorscheme base16-atelier-cave
     

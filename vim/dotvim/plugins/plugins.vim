@@ -150,6 +150,9 @@ Plug 'https://github.com/sainnhe/everforest'
 " vim-themes - added 2024-07-03
 Plug 'https://github.com/mswift42/vim-themes.git'
 
+" warm burnout
+Plug 'felipefdl/warm-burnout', { 'rtp': 'vim' }
+" Plug 'https://github.com/felipefdl/warm-burnout',  { 'rtp': 'vim' }'
 
 " ____________   END THEMES _______________________________
 "}}}

@@ -490,6 +490,7 @@
 ;;
 ;; (map! :i "\t" " ") ;; see doom-note.org --> indenting
 (map! :n "tb" 'treemacs-bookmark )
+(map! :n ",d" 'delete-other-windows)
 
 ;; iambic
 ;; (map! :n ",d" "@dnc - ") ;; or better to use abbrev-defs?

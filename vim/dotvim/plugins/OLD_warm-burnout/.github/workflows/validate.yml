@@ -1,0 +1,40 @@
+name: Validate Themes
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: Install Neovim
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y neovim
+
+      - name: Check formatting
+        run: cargo fmt -- --check
+
+      - name: Install rumdl
+        run: cargo install rumdl --version 0.1.84 --locked
+
+      - name: Check Markdown
+        run: |
+          rumdl fmt .
+          git diff --exit-code
+          rumdl check .
+
+      - name: Run clippy
+        run: cargo clippy -- -D warnings
+
+      - name: Run theme validation tests
+        run: cargo test

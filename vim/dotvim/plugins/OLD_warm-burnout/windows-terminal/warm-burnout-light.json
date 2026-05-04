@@ -1,0 +1,23 @@
+{
+  "name": "Warm Burnout Light",
+  "background": "#F5EDE0",
+  "foreground": "#3A3630",
+  "cursorColor": "#8A6600",
+  "selectionBackground": "#E5E8E2",
+  "black": "#3A3630",
+  "red": "#B82820",
+  "green": "#2D6A14",
+  "yellow": "#8A6000",
+  "blue": "#2060A0",
+  "purple": "#8A3090",
+  "cyan": "#146858",
+  "white": "#C0B8AA",
+  "brightBlack": "#686868",
+  "brightRed": "#C83028",
+  "brightGreen": "#3A7A20",
+  "brightYellow": "#9A7008",
+  "brightBlue": "#2870B0",
+  "brightPurple": "#9A38A0",
+  "brightCyan": "#208870",
+  "brightWhite": "#FAF6F0"
+}

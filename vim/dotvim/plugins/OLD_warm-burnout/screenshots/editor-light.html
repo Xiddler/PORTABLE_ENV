@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200, initial-scale=1">
+<title>Warm Burnout Light - Editor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #F5EDE0;
+    --bg-dim: #EDE6DA;
+    --bg-float: #F0E8DC;
+    --bg-highlight: #EAE2D6;
+    --fg: #3a3630;
+    --fg-dim: #5c5750;
+    --fg-gutter: #8a8070;
+    --fg-gutter-active: #6a6258;
+    --accent: #b8522e;
+    --cursor: #8a6600;
+    --border: #DDD6CA;
+    --keyword: #924800;
+    --func: #855700;
+    --string: #4d5c1a;
+    --type: #285464;
+    --operator: #8f4418;
+    --number: #7e4060;
+    --tag: #8e4632;
+    --member: #883850;
+    --comment: #544c40;
+    --decorator: #7a5a1c;
+    --regex: #286a48;
+    --property: #74501c;
+    --constant: #7e4060;
+    --added: #226414;
+    --modified: #2868a0;
+    --deleted: #c43040;
+    --tab-active-border: #b8522e;
+  }
+
+  body {
+    width: 1200px;
+    height: 800px;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Inter', -apple-system, sans-serif;
+    overflow: hidden;
+  }
+
+  .container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .titlebar {
+    height: 38px;
+    background: var(--bg-dim);
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .titlebar .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .dot-red { background: #b82820; }
+  .dot-yellow { background: #8a6000; }
+  .dot-green { background: #2d6a14; }
+  .titlebar-text {
+    flex: 1;
+    text-align: center;
+    font-size: 12px;
+    color: var(--fg-dim);
+    font-weight: 500;
+    letter-spacing: 0.2px;
+  }
+
+  .main {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .sidebar {
+    width: 220px;
+    background: var(--bg-dim);
+    border-right: 1px solid var(--border);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar-header {
+    padding: 12px 14px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--fg-dim);
+  }
+  .file-tree { padding: 0 6px; font-size: 13px; }
+  .file-item {
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: var(--fg-dim);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: default;
+  }
+  .file-item.active {
+    background: var(--bg-highlight);
+    color: var(--fg);
+  }
+  .file-item .icon { font-size: 14px; width: 16px; text-align: center; }
+  .folder-icon { color: var(--decorator); }
+  .rs-icon { color: var(--keyword); }
+  .toml-icon { color: var(--property); }
+  .md-icon { color: var(--fg-dim); }
+  .yml-icon { color: var(--member); }
+  .indent { padding-left: 16px; }
+
+  .editor-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .tabs {
+    display: flex;
+    background: var(--bg-dim);
+    border-bottom: 1px solid var(--border);
+    height: 36px;
+    flex-shrink: 0;
+  }
+  .tab {
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--fg-dim);
+    border-right: 1px solid var(--border);
+    cursor: default;
+    position: relative;
+  }
+  .tab.active {
+    background: var(--bg);
+    color: var(--fg);
+  }
+  .tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--tab-active-border);
+  }
+
+  .code-container {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    padding-top: 4px;
+  }
+  .line-numbers {
+    padding: 0 12px 0 16px;
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 22px;
+    color: var(--fg-gutter);
+    user-select: none;
+    flex-shrink: 0;
+  }
+  .line-numbers .active-line-nr { color: var(--fg-gutter-active); }
+  .code {
+    flex: 1;
+    padding: 0 16px 0 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 22px;
+    overflow: hidden;
+    white-space: pre;
+  }
+  .code .line { height: 22px; position: relative; }
+  .code .line.active-line {
+    background: var(--bg-highlight);
+    display: block;
+    margin: 0 -16px 0 -8px;
+    padding: 0 16px 0 8px;
+  }
+
+  .kw { color: var(--keyword); font-weight: 700; }
+  .fn { color: var(--func); }
+  .str { color: var(--string); }
+  .ty { color: var(--type); font-style: italic; }
+  .op { color: var(--operator); }
+  .num { color: var(--number); }
+  .tg { color: var(--tag); }
+  .mb { color: var(--member); }
+  .cm { color: var(--comment); font-style: italic; }
+  .dc { color: var(--decorator); }
+  .rx { color: var(--regex); }
+  .pr { color: var(--property); }
+  .ct { color: var(--constant); }
+  .px { color: var(--fg); }
+  .lf { color: var(--member); }
+
+  .minimap {
+    width: 60px;
+    background: var(--bg);
+    border-left: 1px solid var(--border);
+    flex-shrink: 0;
+    padding: 4px 4px;
+    opacity: 0.4;
+  }
+  .minimap-line {
+    height: 3px;
+    margin-bottom: 1px;
+    border-radius: 1px;
+    opacity: 0.6;
+  }
+
+  .statusbar {
+    height: 24px;
+    background: var(--bg-dim);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    font-size: 11px;
+    color: var(--fg-dim);
+    gap: 16px;
+    flex-shrink: 0;
+    border-top: 1px solid var(--border);
+  }
+  .statusbar-right {
+    margin-left: auto;
+    display: flex;
+    gap: 16px;
+  }
+
+  .breadcrumb {
+    padding: 4px 16px 4px 46px;
+    font-size: 12px;
+    color: var(--fg-dim);
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .breadcrumb span { color: var(--fg-gutter); margin: 0 4px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="titlebar">
+    <div class="dot dot-red"></div>
+    <div class="dot dot-yellow"></div>
+    <div class="dot dot-green"></div>
+    <div class="titlebar-text">palette.rs - warm-burnout-demo</div>
+  </div>
+  <div class="main">
+    <div class="sidebar">
+      <div class="sidebar-header">Explorer</div>
+      <div class="file-tree">
+        <div class="file-item"><span class="icon folder-icon">&#9662;</span> src</div>
+        <div class="file-item indent active"><span class="icon rs-icon">rs</span> palette.rs</div>
+        <div class="file-item indent"><span class="icon rs-icon">rs</span> lib.rs</div>
+        <div class="file-item indent"><span class="icon rs-icon">rs</span> contrast.rs</div>
+        <div class="file-item indent"><span class="icon rs-icon">rs</span> theme.rs</div>
+        <div class="file-item"><span class="icon folder-icon">&#9662;</span> tests</div>
+        <div class="file-item indent"><span class="icon rs-icon">rs</span> canonical.rs</div>
+        <div class="file-item indent"><span class="icon rs-icon">rs</span> vscode.rs</div>
+        <div class="file-item"><span class="icon folder-icon">&#9656;</span> benches</div>
+        <div class="file-item"><span class="icon toml-icon">T</span> Cargo.toml</div>
+        <div class="file-item"><span class="icon toml-icon">T</span> rustfmt.toml</div>
+        <div class="file-item"><span class="icon md-icon">#</span> README.md</div>
+      </div>
+    </div>
+    <div class="editor-area">
+      <div class="tabs">
+        <div class="tab active"><span class="icon rs-icon" style="font-size:12px">rs</span> palette.rs</div>
+        <div class="tab"><span class="icon rs-icon" style="font-size:12px">rs</span> contrast.rs</div>
+        <div class="tab"><span class="icon toml-icon" style="font-size:12px">T</span> Cargo.toml</div>
+      </div>
+      <div class="breadcrumb">src <span>&#8250;</span> palette.rs <span>&#8250;</span> <span style="color: var(--func)">Token</span></div>
+      <div class="code-container">
+        <div class="line-numbers">
+           1<br> 2<br> 3<br> 4<br> 5<br> 6<br> 7<br> 8<br> 9<br>10<br>11<br>12<br><span class="active-line-nr">13</span><br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35
+        </div>
+        <div class="code"><div class="line"><span class="kw">use</span> <span class="px">std::</span><span class="ty">fmt</span><span class="px">;</span></div><div class="line"><span class="kw">use</span> <span class="px">serde::{</span><span class="ty">Deserialize</span><span class="px">, </span><span class="ty">Serialize</span><span class="px">};</span></div><div class="line"></div><div class="line"><span class="cm">/// A single color token with contrast metadata.</span></div><div class="line"><span class="dc">#[derive(Debug, Clone, Serialize, Deserialize)]</span></div><div class="line"><span class="kw">pub</span> <span class="kw">struct</span> <span class="ty">Token</span> <span class="px">{</span></div><div class="line">    <span class="kw">pub</span> <span class="pr">name</span><span class="px">: </span><span class="ty">String</span><span class="px">,</span></div><div class="line">    <span class="kw">pub</span> <span class="pr">hex</span><span class="px">: </span><span class="ty">String</span><span class="px">,</span></div><div class="line">    <span class="kw">pub</span> <span class="pr">contrast</span><span class="px">: </span><span class="ty">f64</span><span class="px">,</span></div><div class="line">    <span class="kw">pub</span> <span class="pr">style</span><span class="px">: </span><span class="ty">FontStyle</span><span class="px">,</span></div><div class="line"><span class="px">}</span></div><div class="line"></div><div class="line active-line"><span class="dc">#[derive(Debug, Clone, Copy, PartialEq, Serialize, Deserialize)]</span></div><div class="line"><span class="kw">pub</span> <span class="kw">enum</span> <span class="ty">FontStyle</span> <span class="px">{</span></div><div class="line">    <span class="ct">Normal</span><span class="px">,</span></div><div class="line">    <span class="ct">Bold</span><span class="px">,</span></div><div class="line">    <span class="ct">Italic</span><span class="px">,</span></div><div class="line"><span class="px">}</span></div><div class="line"></div><div class="line"><span class="kw">const</span> <span class="ct">AAA_MIN</span><span class="px">: </span><span class="ty">f64</span> <span class="op">=</span> <span class="num">7.0</span><span class="px">;</span></div><div class="line"><span class="kw">const</span> <span class="ct">AA_MIN</span><span class="px">: </span><span class="ty">f64</span> <span class="op">=</span> <span class="num">4.5</span><span class="px">;</span></div><div class="line"></div><div class="line"><span class="kw">impl</span> <span class="ty">Token</span> <span class="px">{</span></div><div class="line">    <span class="cm">/// Check if the token meets the required contrast for a variant.</span></div><div class="line">    <span class="kw">pub</span> <span class="kw">fn</span> <span class="fn">meets_contrast</span><span class="px">(</span><span class="op">&amp;</span><span class="kw">self</span><span class="px">, </span><span class="px">variant: </span><span class="ty">Variant</span><span class="px">) </span><span class="op">-&gt;</span> <span class="ty">bool</span> <span class="px">{</span></div><div class="line">        <span class="kw">let</span> <span class="px">min </span><span class="op">=</span> <span class="kw">match</span> <span class="px">variant {</span></div><div class="line">            <span class="ty">Variant</span><span class="px">::</span><span class="ct">Dark</span> <span class="op">=&gt;</span> <span class="ct">AAA_MIN</span><span class="px">,</span></div><div class="line">            <span class="ty">Variant</span><span class="px">::</span><span class="ct">Light</span> <span class="op">=&gt;</span> <span class="ct">AA_MIN</span><span class="px">,</span></div><div class="line">        <span class="px">};</span></div><div class="line">        <span class="kw">self</span><span class="px">.</span><span class="pr">contrast</span> <span class="op">&gt;=</span> <span class="px">min</span></div><div class="line">    <span class="px">}</span></div><div class="line"></div><div class="line">    <span class="kw">pub</span> <span class="kw">fn</span> <span class="fn">luminance</span><span class="px">(</span><span class="op">&amp;</span><span class="kw">self</span><span class="px">) </span><span class="op">-&gt;</span> <span class="ty">f64</span> <span class="px">{</span></div><div class="line">        <span class="kw">let</span> <span class="px">rgb </span><span class="op">=</span> <span class="fn">hex_to_rgb</span><span class="px">(</span><span class="op">&amp;</span><span class="kw">self</span><span class="px">.</span><span class="pr">hex</span><span class="px">);</span></div><div class="line">        <span class="num">0.2126</span> <span class="op">*</span> <span class="fn">srgb_to_linear</span><span class="px">(</span><span class="px">rgb.</span><span class="num">0</span><span class="px">)</span></div><div class="line">            <span class="op">+</span> <span class="num">0.7152</span> <span class="op">*</span> <span class="fn">srgb_to_linear</span><span class="px">(</span><span class="px">rgb.</span><span class="num">1</span><span class="px">)</span></div><div class="line">            <span class="op">+</span> <span class="num">0.0722</span> <span class="op">*</span> <span class="fn">srgb_to_linear</span><span class="px">(</span><span class="px">rgb.</span><span class="num">2</span><span class="px">)</span></div><div class="line">    <span class="px">}</span></div></div>
+        <div class="minimap">
+          <div class="minimap-line" style="width:40%;background:var(--keyword)"></div>
+          <div class="minimap-line" style="width:55%;background:var(--keyword)"></div>
+          <div class="minimap-line" style="width:5%;background:transparent"></div>
+          <div class="minimap-line" style="width:60%;background:var(--comment)"></div>
+          <div class="minimap-line" style="width:65%;background:var(--decorator)"></div>
+          <div class="minimap-line" style="width:40%;background:var(--keyword)"></div>
+          <div class="minimap-line" style="width:35%;background:var(--keyword)"></div>
+          <div class="minimap-line" style="width:35%;background:var(--keyword)"></div>
+          <div class="minimap-line" style="width:40%;background:var(--keyword)"></div>
+          <div class="minimap-line" style="width:40%;background:var(--keyword)"></div>
+          <div class="minimap-line" style="width:10%;background:transparent"></div>
+          <div class="minimap-line" style="width:5%;background:transparent"></div>
+          <div class="minimap-line" style="width:65%;background:var(--decorator)"></div>
+          <div class="minimap-line" style="width:40%;background:var(--keyword)"></div>
+          <div class="minimap-line" style="width:20%;background:var(--constant)"></div>
+          <div class="minimap-line" style="width:20%;background:var(--constant)"></div>
+          <div class="minimap-line" style="width:20%;background:var(--constant)"></div>
+          <div class="minimap-line" style="width:10%;background:transparent"></div>
+          <div class="minimap-line" style="width:5%;background:transparent"></div>
+          <div class="minimap-line" style="width:40%;background:var(--constant)"></div>
+          <div class="minimap-line" style="width:40%;background:var(--constant)"></div>
+          <div class="minimap-line" style="width:5%;background:transparent"></div>
+          <div class="minimap-line" style="width:30%;background:var(--keyword)"></div>
+          <div class="minimap-line" style="width:60%;background:var(--comment)"></div>
+          <div class="minimap-line" style="width:70%;background:var(--func)"></div>
+          <div class="minimap-line" style="width:45%;background:var(--keyword)"></div>
+          <div class="minimap-line" style="width:55%;background:var(--constant)"></div>
+          <div class="minimap-line" style="width:55%;background:var(--constant)"></div>
+          <div class="minimap-line" style="width:15%;background:transparent"></div>
+          <div class="minimap-line" style="width:40%;background:var(--keyword)"></div>
+          <div class="minimap-line" style="width:5%;background:transparent"></div>
+          <div class="minimap-line" style="width:55%;background:var(--func)"></div>
+          <div class="minimap-line" style="width:55%;background:var(--func)"></div>
+          <div class="minimap-line" style="width:55%;background:var(--num)"></div>
+          <div class="minimap-line" style="width:55%;background:var(--num)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="statusbar">
+    <span>main</span>
+    <span>Rust</span>
+    <div class="statusbar-right">
+      <span>Ln 13, Col 1</span>
+      <span>UTF-8</span>
+      <span>Spaces: 4</span>
+      <span>Warm Burnout Light</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

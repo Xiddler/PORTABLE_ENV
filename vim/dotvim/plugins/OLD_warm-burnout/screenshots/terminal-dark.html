@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200, initial-scale=1">
+<title>Warm Burnout Dark - Terminal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #1a1510;
+    --bg-dim: #14120f;
+    --fg: #bfbdb6;
+    --fg-dim: #ada69c;
+    --accent: #b8522e;
+    --border: #2a2620;
+
+    /* ANSI */
+    --black: #23211b;
+    --red: #f06b73;
+    --green: #70bf56;
+    --yellow: #fdb04c;
+    --blue: #4fbfff;
+    --magenta: #d0a1ff;
+    --cyan: #93e2c8;
+    --white: #c7c7c7;
+    --bright-black: #686868;
+    --bright-red: #f07178;
+    --bright-green: #aad94c;
+    --bright-yellow: #ffb454;
+    --bright-blue: #59c2ff;
+    --bright-magenta: #d2a6ff;
+    --bright-cyan: #95e6cb;
+    --bright-white: #ffffff;
+
+    /* Starship prompt colors */
+    --burnt-orange: #ff8f40;
+    --amber: #ffb454;
+    --gold: #e6c08a;
+    --dried-sage: #b4bc78;
+    --steel-patina: #90aec0;
+    --coral: #ec9878;
+  }
+
+  body {
+    width: 1200px;
+    height: 800px;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Inter', -apple-system, sans-serif;
+    overflow: hidden;
+  }
+
+  .container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .titlebar {
+    height: 38px;
+    background: var(--bg-dim);
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .titlebar .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .dot-red { background: #f06b73; }
+  .dot-yellow { background: #fdb04c; }
+  .dot-green { background: #70bf56; }
+  .titlebar-text {
+    flex: 1;
+    text-align: center;
+    font-size: 12px;
+    color: var(--fg-dim);
+    font-weight: 500;
+  }
+
+  /* No tab bar - Ghostty style, title only in titlebar */
+
+  .terminal {
+    flex: 1;
+    padding: 16px 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 21px;
+    overflow: hidden;
+    white-space: pre;
+  }
+
+  /* Prompt styling (Starship-like) */
+  .prompt-dir { color: var(--steel-patina); font-weight: 700; }
+  .prompt-git { color: var(--burnt-orange); }
+  .prompt-char { color: var(--bright-green); }
+  .prompt-err { color: var(--red); }
+  .prompt-time { color: var(--bright-black); }
+
+  .ansi-red { color: var(--red); }
+  .ansi-green { color: var(--green); }
+  .ansi-yellow { color: var(--yellow); }
+  .ansi-blue { color: var(--blue); }
+  .ansi-magenta { color: var(--magenta); }
+  .ansi-cyan { color: var(--cyan); }
+  .ansi-white { color: var(--white); }
+  .ansi-bright-black { color: var(--bright-black); }
+  .ansi-bright-red { color: var(--bright-red); }
+  .ansi-bright-green { color: var(--bright-green); }
+  .ansi-bright-yellow { color: var(--bright-yellow); }
+  .ansi-bright-blue { color: var(--bright-blue); }
+  .ansi-bright-magenta { color: var(--bright-magenta); }
+  .ansi-bright-cyan { color: var(--bright-cyan); }
+  .ansi-bright-white { color: var(--bright-white); }
+  .ansi-bold { font-weight: 700; }
+  .ansi-dim { opacity: 0.6; }
+
+  /* tmux status bar (matches warm-burnout-dark.conf) */
+  .tmux-status {
+    height: 24px;
+    background: var(--bg-dim);
+    display: flex;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+  .tmux-left {
+    color: var(--amber);
+    padding: 0 10px;
+    flex-shrink: 0;
+  }
+  .tmux-windows {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    color: var(--comment);
+  }
+  .tmux-win {
+    padding: 0 8px;
+  }
+  .tmux-win.active {
+    background: var(--burnt-orange);
+    color: var(--bg-dim);
+    font-weight: 700;
+  }
+
+  .cursor-block {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background: var(--gold);
+    vertical-align: text-bottom;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="titlebar">
+    <div class="dot dot-red"></div>
+    <div class="dot dot-yellow"></div>
+    <div class="dot dot-green"></div>
+    <div class="titlebar-text">Terminal - warm-burnout</div>
+  </div>
+  <div class="terminal"><span class="prompt-dir">~/Projects/warm-burnout</span> <span class="prompt-git"> main</span> <span class="prompt-time">[0s]</span>
+<span class="prompt-char">&#10095;</span> git log --oneline -8
+
+<span class="ansi-bright-yellow">00df980</span> Add JetBrains IDE theme support
+<span class="ansi-bright-yellow">61c6ef0</span> Add Windows Terminal theme support
+<span class="ansi-bright-yellow">a1b24c7</span> Fix Zed hardcoded blue defaults leaking through theme
+<span class="ansi-bright-yellow">24e6d4f</span> Add iTerm2 theme support
+<span class="ansi-bright-yellow">20fc0f8</span> Add tmux theme support
+<span class="ansi-bright-yellow">88a3d12</span> Add Xcode theme support
+<span class="ansi-bright-yellow">f4c7e91</span> Add Neovim colorscheme
+<span class="ansi-bright-yellow">3b28a56</span> Add Starship prompt theme
+
+<span class="prompt-dir">~/Projects/warm-burnout</span> <span class="prompt-git"> main</span> <span class="prompt-time">[0s]</span>
+<span class="prompt-char">&#10095;</span> cargo test -- --quiet
+<span class="ansi-bold">   Compiling</span> warm-burnout-tests v0.1.0
+<span class="ansi-bold">    Finished</span> <span class="ansi-cyan">`test`</span> profile in <span class="ansi-bold">1.82s</span>
+<span class="ansi-bold">     Running</span> unittests src/lib.rs
+
+running tests
+<span class="ansi-green">test result: ok.</span> all passed; 0 failed; 0 ignored
+
+<span class="prompt-dir">~/Projects/warm-burnout</span> <span class="prompt-git"> main</span> <span class="prompt-time">[2s]</span>
+<span class="prompt-char">&#10095;</span> ls -la
+<span class="ansi-bright-blue ansi-bold">drwxr-xr-x</span>  <span class="ansi-white">22</span> felipe staff  <span class="ansi-green">704</span> Mar 14 <span class="ansi-bright-white">.</span>
+<span class="ansi-bright-blue ansi-bold">drwxr-xr-x</span>  <span class="ansi-white">48</span> felipe staff <span class="ansi-green">1536</span> Mar 10 <span class="ansi-bright-white">..</span>
+<span class="ansi-bright-blue ansi-bold">drwxr-xr-x</span>   <span class="ansi-white">4</span> felipe staff  <span class="ansi-green">128</span> Mar 14 <span class="ansi-bright-blue">.github</span>
+<span class="ansi-dim">-rw-r--r--</span>   <span class="ansi-white">1</span> felipe staff <span class="ansi-green">8.2K</span> Mar 14 <span class="ansi-bright-white">AGENTS.md</span>
+<span class="ansi-dim">-rw-r--r--</span>   <span class="ansi-white">1</span> felipe staff  <span class="ansi-green">12K</span> Mar 14 <span class="ansi-bright-white">Cargo.lock</span>
+<span class="ansi-dim">-rw-r--r--</span>   <span class="ansi-white">1</span> felipe staff  <span class="ansi-green">340</span> Mar 14 <span class="ansi-bright-white">Cargo.toml</span>
+<span class="ansi-dim">-rw-r--r--</span>   <span class="ansi-white">1</span> felipe staff <span class="ansi-green">1.0K</span> Mar 14 <span class="ansi-bright-white">LICENSE</span>
+<span class="ansi-dim">-rw-r--r--</span>   <span class="ansi-white">1</span> felipe staff <span class="ansi-green">6.4K</span> Mar 14 <span class="ansi-bright-white">README.md</span>
+<span class="ansi-bright-blue ansi-bold">drwxr-xr-x</span>   <span class="ansi-white">4</span> felipe staff  <span class="ansi-green">128</span> Mar 14 <span class="ansi-bright-blue">ghostty</span>
+<span class="ansi-bright-blue ansi-bold">drwxr-xr-x</span>   <span class="ansi-white">6</span> felipe staff  <span class="ansi-green">192</span> Mar 14 <span class="ansi-bright-blue">jetbrains</span>
+<span class="ansi-bright-blue ansi-bold">drwxr-xr-x</span>   <span class="ansi-white">5</span> felipe staff  <span class="ansi-green">160</span> Mar 14 <span class="ansi-bright-blue">nvim</span>
+<span class="ansi-bright-blue ansi-bold">drwxr-xr-x</span>   <span class="ansi-white">4</span> felipe staff  <span class="ansi-green">128</span> Mar 14 <span class="ansi-bright-blue">vscode</span>
+<span class="ansi-bright-blue ansi-bold">drwxr-xr-x</span>   <span class="ansi-white">3</span> felipe staff   <span class="ansi-green">96</span> Mar 14 <span class="ansi-bright-blue">zed</span>
+<span class="ansi-bright-blue ansi-bold">drwxr-xr-x</span>   <span class="ansi-white">6</span> felipe staff  <span class="ansi-green">192</span> Mar 14 <span class="ansi-bright-blue">zsh</span>
+
+<span class="prompt-dir">~/Projects/warm-burnout</span> <span class="prompt-git"> main</span> <span class="prompt-time">[0s]</span>
+<span class="prompt-char">&#10095;</span> <span class="cursor-block"></span></div>
+  <div class="tmux-status">
+    <div class="tmux-left"> dev</div>
+    <div class="tmux-windows">
+      <span class="tmux-win"> 0:nvim </span>
+      <span class="tmux-win active"> 1:zsh </span>
+      <span class="tmux-win"> 2:logs </span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

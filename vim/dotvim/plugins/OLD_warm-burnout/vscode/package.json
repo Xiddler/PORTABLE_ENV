@@ -1,0 +1,49 @@
+{
+  "name": "warm-burnout",
+  "displayName": "Warm Burnout",
+  "description": "The theme for developers who are already burned out but still have deadlines. Mostly warm palette, one cool type accent, WCAG-audited contrast.",
+  "version": "1.6.0",
+  "publisher": "felip3fdl",
+  "license": "MIT",
+  "icon": "warm-burnout-logo-vscode.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/felipefdl/warm-burnout"
+  },
+  "homepage": "https://warmburnout.com",
+  "bugs": {
+    "url": "https://github.com/felipefdl/warm-burnout/issues"
+  },
+  "keywords": [
+    "theme",
+    "color-theme",
+    "dark-theme",
+    "light-theme",
+    "warm",
+    "warm-palette",
+    "contrast",
+    "wcag"
+  ],
+  "galleryBanner": {
+    "color": "#1a1510",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": ["Themes"],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Warm Burnout Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/warm-burnout-dark.json"
+      },
+      {
+        "label": "Warm Burnout Light",
+        "uiTheme": "vs",
+        "path": "./themes/warm-burnout-light.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200, initial-scale=1">
+<title>Warm Burnout Dark - Editor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #1a1510;
+    --bg-dim: #14120f;
+    --bg-float: #1f1d17;
+    --bg-highlight: #222018;
+    --fg: #bfbdb6;
+    --fg-dim: #ada69c;
+    --fg-gutter: #6b665f;
+    --fg-gutter-active: #a59f96;
+    --accent: #b8522e;
+    --cursor: #f5c56e;
+    --border: #2a2620;
+    --keyword: #ff8f40;
+    --func: #ffb454;
+    --string: #b4bc78;
+    --type: #90aec0;
+    --operator: #f29668;
+    --number: #d4a8b8;
+    --tag: #dc9e92;
+    --member: #ec9878;
+    --comment: #b4a89c;
+    --decorator: #e6c08a;
+    --regex: #96b898;
+    --property: #deb074;
+    --constant: #d4a8b8;
+    --added: #70bf56;
+    --modified: #73b8ff;
+    --deleted: #f26d78;
+    --tab-active-border: #b8522e;
+  }
+
+  body {
+    width: 1200px;
+    height: 800px;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Inter', -apple-system, sans-serif;
+    overflow: hidden;
+  }
+
+  .container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  /* Title bar */
+  .titlebar {
+    height: 38px;
+    background: var(--bg-dim);
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .titlebar .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .dot-red { background: #f06b73; }
+  .dot-yellow { background: #fdb04c; }
+  .dot-green { background: #70bf56; }
+  .titlebar-text {
+    flex: 1;
+    text-align: center;
+    font-size: 12px;
+    color: var(--fg-dim);
+    font-weight: 500;
+    letter-spacing: 0.2px;
+  }
+
+  .main {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    width: 220px;
+    background: var(--bg-dim);
+    border-right: 1px solid var(--border);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar-header {
+    padding: 12px 14px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--fg-dim);
+  }
+  .file-tree { padding: 0 6px; font-size: 13px; }
+  .file-item {
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: var(--fg-dim);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: default;
+  }
+  .file-item.active {
+    background: var(--bg-highlight);
+    color: var(--fg);
+  }
+  .file-item .icon { font-size: 14px; width: 16px; text-align: center; }
+  .folder-icon { color: var(--decorator); }
+  .ts-icon { color: var(--type); }
+  .rs-icon { color: var(--keyword); }
+  .json-icon { color: var(--string); }
+  .md-icon { color: var(--fg-dim); }
+  .css-icon { color: var(--member); }
+  .indent { padding-left: 16px; }
+
+  /* Editor area */
+  .editor-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* Tabs */
+  .tabs {
+    display: flex;
+    background: var(--bg-dim);
+    border-bottom: 1px solid var(--border);
+    height: 36px;
+    flex-shrink: 0;
+  }
+  .tab {
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--fg-dim);
+    border-right: 1px solid var(--border);
+    cursor: default;
+    position: relative;
+  }
+  .tab.active {
+    background: var(--bg);
+    color: var(--fg);
+  }
+  .tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--tab-active-border);
+  }
+  .tab .dot-modified {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  /* Code area */
+  .code-container {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    padding-top: 4px;
+  }
+  .line-numbers {
+    padding: 0 12px 0 16px;
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 22px;
+    color: var(--fg-gutter);
+    user-select: none;
+    flex-shrink: 0;
+  }
+  .line-numbers .active-line-nr { color: var(--fg-gutter-active); }
+  .code {
+    flex: 1;
+    padding: 0 16px 0 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 22px;
+    overflow: hidden;
+    white-space: pre;
+  }
+  .code .line { height: 22px; position: relative; }
+  .code .line.active-line {
+    background: var(--bg-highlight);
+    display: block;
+    margin: 0 -16px 0 -8px;
+    padding: 0 16px 0 8px;
+  }
+
+  /* Syntax classes */
+  .kw { color: var(--keyword); font-weight: 700; }
+  .fn { color: var(--func); }
+  .str { color: var(--string); }
+  .ty { color: var(--type); font-style: italic; }
+  .op { color: var(--operator); }
+  .num { color: var(--number); }
+  .tg { color: var(--tag); }
+  .mb { color: var(--member); }
+  .cm { color: var(--comment); font-style: italic; }
+  .dc { color: var(--decorator); }
+  .rx { color: var(--regex); }
+  .pr { color: var(--property); }
+  .ct { color: var(--constant); }
+  .px { color: var(--fg); }
+
+  /* Minimap */
+  .minimap {
+    width: 60px;
+    background: var(--bg);
+    border-left: 1px solid var(--border);
+    flex-shrink: 0;
+    padding: 4px 4px;
+    opacity: 0.5;
+  }
+  .minimap-line {
+    height: 3px;
+    margin-bottom: 1px;
+    border-radius: 1px;
+    opacity: 0.6;
+  }
+
+  /* Status bar (matches vscode statusBar.background / statusBar.foreground) */
+  .statusbar {
+    height: 24px;
+    background: var(--bg-dim);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    font-size: 11px;
+    color: var(--fg-dim);
+    gap: 16px;
+    flex-shrink: 0;
+    border-top: 1px solid var(--border);
+  }
+  .statusbar-right {
+    margin-left: auto;
+    display: flex;
+    gap: 16px;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    padding: 4px 16px 4px 46px;
+    font-size: 12px;
+    color: var(--fg-dim);
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .breadcrumb span { color: var(--fg-gutter); margin: 0 4px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="titlebar">
+    <div class="dot dot-red"></div>
+    <div class="dot dot-yellow"></div>
+    <div class="dot dot-green"></div>
+    <div class="titlebar-text">app.tsx - warm-burnout-demo</div>
+  </div>
+  <div class="main">
+    <div class="sidebar">
+      <div class="sidebar-header">Explorer</div>
+      <div class="file-tree">
+        <div class="file-item"><span class="icon folder-icon">&#9662;</span> src</div>
+        <div class="file-item indent active"><span class="icon ts-icon">TS</span> app.tsx</div>
+        <div class="file-item indent"><span class="icon ts-icon">TS</span> index.ts</div>
+        <div class="file-item indent"><span class="icon css-icon">&#9679;</span> theme.css</div>
+        <div class="file-item indent"><span class="icon ts-icon">TS</span> hooks.ts</div>
+        <div class="file-item"><span class="icon folder-icon">&#9662;</span> components</div>
+        <div class="file-item indent"><span class="icon ts-icon">TS</span> header.tsx</div>
+        <div class="file-item indent"><span class="icon ts-icon">TS</span> sidebar.tsx</div>
+        <div class="file-item indent"><span class="icon ts-icon">TS</span> editor.tsx</div>
+        <div class="file-item"><span class="icon folder-icon">&#9656;</span> lib</div>
+        <div class="file-item"><span class="icon folder-icon">&#9656;</span> tests</div>
+        <div class="file-item"><span class="icon json-icon">{}</span> package.json</div>
+        <div class="file-item"><span class="icon json-icon">{}</span> tsconfig.json</div>
+        <div class="file-item"><span class="icon md-icon">#</span> README.md</div>
+      </div>
+    </div>
+    <div class="editor-area">
+      <div class="tabs">
+        <div class="tab active"><span class="icon ts-icon" style="font-size:12px">TS</span> app.tsx <span class="dot-modified"></span></div>
+        <div class="tab"><span class="icon ts-icon" style="font-size:12px">TS</span> hooks.ts</div>
+        <div class="tab"><span class="icon css-icon" style="font-size:12px">&#9679;</span> theme.css</div>
+      </div>
+      <div class="breadcrumb">src <span>&#8250;</span> app.tsx <span>&#8250;</span> <span style="color: var(--func)">ThemeProvider</span></div>
+      <div class="code-container">
+        <div class="line-numbers">
+           1<br> 2<br> 3<br> 4<br> 5<br> 6<br> 7<br> 8<br> 9<br>10<br>11<br><span class="active-line-nr">12</span><br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35
+        </div>
+        <div class="code"><div class="line"><span class="kw">import</span> <span class="px">{ </span><span class="fn">useState</span><span class="px">, </span><span class="fn">useEffect</span><span class="px"> }</span> <span class="kw">from</span> <span class="str">"react"</span><span class="px">;</span></div><div class="line"><span class="kw">import</span> <span class="px">{ </span><span class="ty">Theme</span><span class="px">, </span><span class="ty">ColorToken</span><span class="px"> }</span> <span class="kw">from</span> <span class="str">"./types"</span><span class="px">;</span></div><div class="line"><span class="kw">import</span> <span class="px">{ </span><span class="fn">loadPalette</span> <span class="px">}</span> <span class="kw">from</span> <span class="str">"./lib/palette"</span><span class="px">;</span></div><div class="line"></div><div class="line"><span class="cm">// WCAG AAA contrast ratios for every token</span></div><div class="line"><span class="kw">const</span> <span class="ct">MIN_CONTRAST</span> <span class="op">=</span> <span class="num">7.0</span><span class="px">;</span></div><div class="line"><span class="kw">const</span> <span class="ct">WARM_HUE_RANGE</span><span class="op">:</span> <span class="ty">readonly</span> <span class="px">[</span><span class="ty">number</span><span class="px">, </span><span class="ty">number</span><span class="px">]</span> <span class="op">=</span> <span class="px">[</span><span class="num">13</span><span class="px">, </span><span class="num">40</span><span class="px">];</span></div><div class="line"></div><div class="line"><span class="kw">interface</span> <span class="ty">ThemeProviderProps</span> <span class="px">{</span></div><div class="line">  <span class="pr">children</span><span class="op">:</span> <span class="ty">React.ReactNode</span><span class="px">;</span></div><div class="line">  <span class="pr">variant</span><span class="op">?:</span> <span class="str">"dark"</span> <span class="op">|</span> <span class="str">"light"</span><span class="px">;</span></div><div class="line active-line">  <span class="pr">fallback</span><span class="op">?:</span> <span class="ty">Theme</span><span class="px">;</span></div><div class="line"><span class="px">}</span></div><div class="line"></div><div class="line"><span class="kw">export</span> <span class="kw">function</span> <span class="fn">ThemeProvider</span><span class="px">(</span><span class="px">{ </span><span class="ct">children</span><span class="px">, </span><span class="ct">variant</span> <span class="op">=</span> <span class="str">"dark"</span><span class="px">, </span><span class="ct">fallback</span><span class="px"> }: </span><span class="ty">ThemeProviderProps</span><span class="px">) {</span></div><div class="line">  <span class="kw">const</span> <span class="px">[</span><span class="px">theme</span><span class="px">, </span><span class="fn">setTheme</span><span class="px">]</span> <span class="op">=</span> <span class="fn">useState</span><span class="op">&lt;</span><span class="ty">Theme</span> <span class="op">|</span> <span class="ty">null</span><span class="op">&gt;</span><span class="px">(</span><span class="ct">fallback</span> <span class="op">??</span> <span class="ct">null</span><span class="px">);</span></div><div class="line">  <span class="kw">const</span> <span class="px">[</span><span class="px">error</span><span class="px">, </span><span class="fn">setError</span><span class="px">]</span> <span class="op">=</span> <span class="fn">useState</span><span class="op">&lt;</span><span class="ty">string</span> <span class="op">|</span> <span class="ty">null</span><span class="op">&gt;</span><span class="px">(</span><span class="ct">null</span><span class="px">);</span></div><div class="line"></div><div class="line">  <span class="fn">useEffect</span><span class="px">(() </span><span class="kw">=&gt;</span><span class="px"> {</span></div><div class="line">    <span class="kw">const</span> <span class="px">palette</span> <span class="op">=</span> <span class="fn">loadPalette</span><span class="px">(</span><span class="px">variant</span><span class="px">);</span></div><div class="line"></div><div class="line">    <span class="cm">// Validate all tokens meet contrast minimum</span></div><div class="line">    <span class="kw">for</span> <span class="px">(</span><span class="kw">const</span> <span class="px">[</span><span class="px">name</span><span class="px">, </span><span class="px">token</span><span class="px">]</span> <span class="kw">of</span> <span class="mb">Object</span><span class="px">.</span><span class="fn">entries</span><span class="px">(</span><span class="px">palette</span><span class="px">.</span><span class="pr">tokens</span><span class="px">)) {</span></div><div class="line">      <span class="kw">const</span> <span class="px">ratio</span> <span class="op">=</span> <span class="fn">contrastRatio</span><span class="px">(</span><span class="px">token</span><span class="px">.</span><span class="pr">hex</span><span class="px">, </span><span class="px">palette</span><span class="px">.</span><span class="pr">bg</span><span class="px">);</span></div><div class="line">      <span class="kw">if</span> <span class="px">(</span><span class="px">ratio</span> <span class="op">&lt;</span> <span class="ct">MIN_CONTRAST</span><span class="px">) {</span></div><div class="line">        <span class="fn">setError</span><span class="px">(</span><span class="str">`Token </span><span class="rx">${</span><span class="px">name</span><span class="rx">}</span><span class="str"> fails AAA: </span><span class="rx">${</span><span class="px">ratio</span><span class="px">.</span><span class="fn">toFixed</span><span class="px">(</span><span class="num">1</span><span class="px">)</span><span class="rx">}</span><span class="str">:1`</span><span class="px">);</span></div><div class="line">        <span class="kw">return</span><span class="px">;</span></div><div class="line">      <span class="px">}</span></div><div class="line">    <span class="px">}</span></div><div class="line"></div><div class="line">    <span class="fn">setTheme</span><span class="px">(</span><span class="px">palette</span><span class="px">);</span></div><div class="line">  <span class="px">}, [</span><span class="px">variant</span><span class="px">, </span><span class="ct">fallback</span><span class="px">]);</span></div><div class="line"></div><div class="line">  <span class="kw">if</span> <span class="px">(</span><span class="px">error</span><span class="px">)</span> <span class="kw">return</span> <span class="tg">&lt;div</span> <span class="dc">className</span><span class="op">=</span><span class="str">"theme-error"</span><span class="tg">&gt;</span><span class="px">{</span><span class="px">error</span><span class="px">}</span><span class="tg">&lt;/div&gt;</span><span class="px">;</span></div><div class="line">  <span class="kw">if</span> <span class="px">(!</span><span class="px">theme</span><span class="px">)</span> <span class="kw">return</span> <span class="tg">&lt;div</span> <span class="dc">className</span><span class="op">=</span><span class="str">"loading"</span><span class="tg"> /&gt;</span><span class="px">;</span></div><div class="line"></div><div class="line">  <span class="kw">return</span> <span class="tg">&lt;</span><span class="ty">ThemeContext</span><span class="px">.</span><span class="ty">Provider</span> <span class="dc">value</span><span class="op">=</span><span class="px">{</span><span class="px">theme</span><span class="px">}</span><span class="tg">&gt;</span><span class="px">{</span><span class="ct">children</span><span class="px">}</span><span class="tg">&lt;/</span><span class="ty">ThemeContext</span><span class="px">.</span><span class="ty">Provider</span><span class="tg">&gt;</span><span class="px">;</span></div><div class="line"><span class="px">}</span></div></div>
+        <div class="minimap">
+          <div class="minimap-line" style="width:70%;background:var(--keyword)"></div>
+          <div class="minimap-line" style="width:60%;background:var(--keyword)"></div>
+          <div class="minimap-line" style="width:55%;background:var(--keyword)"></div>
+          <div class="minimap-line" style="width:5%;background:transparent"></div>
+          <div class="minimap-line" style="width:50%;background:var(--comment)"></div>
+          <div class="minimap-line" style="width:35%;background:var(--constant)"></div>
+          <div class="minimap-line" style="width:60%;background:var(--type)"></div>
+          <div class="minimap-line" style="width:5%;background:transparent"></div>
+          <div class="minimap-line" style="width:40%;background:var(--keyword)"></div>
+          <div class="minimap-line" style="width:45%;background:var(--property)"></div>
+          <div class="minimap-line" style="width:50%;background:var(--string)"></div>
+          <div class="minimap-line" style="width:30%;background:var(--property)"></div>
+          <div class="minimap-line" style="width:5%;background:transparent"></div>
+          <div class="minimap-line" style="width:5%;background:transparent"></div>
+          <div class="minimap-line" style="width:80%;background:var(--func)"></div>
+          <div class="minimap-line" style="width:70%;background:var(--func)"></div>
+          <div class="minimap-line" style="width:70%;background:var(--func)"></div>
+          <div class="minimap-line" style="width:5%;background:transparent"></div>
+          <div class="minimap-line" style="width:40%;background:var(--func)"></div>
+          <div class="minimap-line" style="width:55%;background:var(--func)"></div>
+          <div class="minimap-line" style="width:5%;background:transparent"></div>
+          <div class="minimap-line" style="width:50%;background:var(--comment)"></div>
+          <div class="minimap-line" style="width:75%;background:var(--keyword)"></div>
+          <div class="minimap-line" style="width:70%;background:var(--func)"></div>
+          <div class="minimap-line" style="width:60%;background:var(--keyword)"></div>
+          <div class="minimap-line" style="width:80%;background:var(--string)"></div>
+          <div class="minimap-line" style="width:25%;background:var(--keyword)"></div>
+          <div class="minimap-line" style="width:15%;background:transparent"></div>
+          <div class="minimap-line" style="width:10%;background:transparent"></div>
+          <div class="minimap-line" style="width:5%;background:transparent"></div>
+          <div class="minimap-line" style="width:35%;background:var(--func)"></div>
+          <div class="minimap-line" style="width:60%;background:var(--func)"></div>
+          <div class="minimap-line" style="width:5%;background:transparent"></div>
+          <div class="minimap-line" style="width:80%;background:var(--tag)"></div>
+          <div class="minimap-line" style="width:70%;background:var(--tag)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="statusbar">
+    <span>main</span>
+    <span>TypeScript React</span>
+    <div class="statusbar-right">
+      <span>Ln 12, Col 24</span>
+      <span>UTF-8</span>
+      <span>Spaces: 2</span>
+      <span>Warm Burnout Dark</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

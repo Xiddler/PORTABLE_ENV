@@ -1,0 +1,15 @@
+node_modules/
+*.vsix
+.vscode-test/
+out/
+dist/
+target/
+.DS_Store
+.claude/
+jetbrains/warm-burnout-theme.jar
+.idea/
+
+# Site build artifacts and local dev symlinks
+site/css/output.css
+site/images
+site/screenshots

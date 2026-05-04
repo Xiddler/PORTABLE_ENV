@@ -211,6 +211,8 @@ map <leader>tt :terminal zsh<CR>
 " yj() { /home/donagh/PORTABLE_ENV/dotfiles/scripts/.scripts/markdown_yesterday.sh }
 map <leader>yj :! sh /home/donagh/PORTABLE_ENV/dotfiles/scripts/.scripts/markdown_yesterday.sh <CR>
 
+" open today's journal in a new buffer while keeping yesterday's open
+" map <leader>mj :! sh /home/donagh/PORTABLE_ENV/dotfiles/scripts/.scripts/markdown_yesterday.sh <CR>
 
 " ===== SPLIT_WINDOW ===== 
 

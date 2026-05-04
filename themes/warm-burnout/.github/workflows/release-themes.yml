@@ -1,0 +1,227 @@
+name: Release Theme Packages
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: Install Neovim
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y neovim
+
+      - name: Check formatting
+        run: cargo fmt -- --check
+
+      - name: Run clippy
+        run: cargo clippy -- -D warnings
+
+      - name: Run theme validation tests
+        run: cargo test
+
+  package:
+    needs: [validate]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Package Ghostty
+        run: |
+          cd ghostty
+          zip -j ../warm-burnout-ghostty.zip \
+            warm-burnout-dark \
+            warm-burnout-light
+
+      - name: Package Zsh
+        run: |
+          cd zsh
+          zip -j ../warm-burnout-zsh.zip \
+            warm-burnout-dark.zsh-theme \
+            warm-burnout-light.zsh-theme \
+            warm-burnout-dark-fzf.zsh \
+            warm-burnout-light-fzf.zsh
+
+      - name: Package Starship
+        run: |
+          cd starship
+          zip -j ../warm-burnout-starship.zip \
+            warm-burnout-dark.toml \
+            warm-burnout-light.toml \
+            starship.toml
+
+      - name: Package Zed
+        run: |
+          cd zed
+          zip -r ../warm-burnout-zed.zip \
+            themes/warm-burnout.json \
+            extension.toml \
+            LICENSE
+
+      - name: Package Neovim
+        run: |
+          cd nvim
+          zip -r ../warm-burnout-nvim.zip \
+            colors/ \
+            lua/
+
+      - name: Package Vim
+        run: |
+          cd vim
+          zip -r ../warm-burnout-vim.zip \
+            colors/
+
+      - name: Package Xcode
+        run: |
+          cd xcode
+          zip -j ../warm-burnout-xcode.zip \
+            "Warm Burnout Dark.xccolortheme" \
+            "Warm Burnout Light.xccolortheme"
+
+      - name: Package iTerm2
+        run: |
+          cd iterm2
+          zip -j ../warm-burnout-iterm2.zip \
+            "Warm Burnout Dark.itermcolors" \
+            "Warm Burnout Light.itermcolors"
+
+      - name: Package Windows Terminal
+        run: |
+          cd windows-terminal
+          zip -j ../warm-burnout-windows-terminal.zip \
+            warm-burnout-dark.json \
+            warm-burnout-light.json \
+            warm-burnout.json
+
+      - name: Package Warp
+        run: |
+          cd warp
+          zip -j ../warm-burnout-warp.zip \
+            warm-burnout-dark.yaml \
+            warm-burnout-light.yaml
+
+      - name: Package Alacritty
+        run: |
+          cd alacritty
+          zip -j ../warm-burnout-alacritty.zip \
+            warm-burnout-dark.toml \
+            warm-burnout-light.toml
+
+      - name: Package tmux
+        run: |
+          cd tmux
+          zip -j ../warm-burnout-tmux.zip \
+            warm-burnout-dark.conf \
+            warm-burnout-light.conf \
+            warm-burnout.tmux
+
+      - name: Package Zellij
+        run: |
+          cd zellij
+          zip -j ../warm-burnout-zellij.zip \
+            warm-burnout-dark.kdl \
+            warm-burnout-light.kdl
+
+      - name: Package eza
+        run: |
+          cd eza
+          zip -j ../warm-burnout-eza.zip dark.yml light.yml
+
+      - name: Package Home Assistant
+        run: cp themes/warm-burnout.yaml warm-burnout-home-assistant.yaml
+
+      - name: Package Obsidian
+        run: |
+          cd obsidian
+          zip -r ../warm-burnout-obsidian.zip \
+            theme.css \
+            manifest.json \
+            fonts/
+
+      - name: Package JetBrains
+        run: |
+          cd jetbrains
+          chmod +x build.sh
+          ./build.sh
+
+      - name: Attach to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            warm-burnout-ghostty.zip
+            warm-burnout-zsh.zip
+            warm-burnout-starship.zip
+            warm-burnout-zed.zip
+            warm-burnout-nvim.zip
+            warm-burnout-vim.zip
+            warm-burnout-xcode.zip
+            warm-burnout-iterm2.zip
+            warm-burnout-windows-terminal.zip
+            warm-burnout-warp.zip
+            warm-burnout-alacritty.zip
+            warm-burnout-tmux.zip
+            warm-burnout-zellij.zip
+            warm-burnout-eza.zip
+            warm-burnout-home-assistant.yaml
+            warm-burnout-obsidian.zip
+            jetbrains/warm-burnout-theme.jar
+
+      - name: Publish to JetBrains Marketplace
+        if: vars.PUBLISH_JETBRAINS == 'true'
+        run: |
+          curl -i \
+            --header "Authorization: Bearer $JETBRAINS_TOKEN" \
+            -F xmlId=com.warm-burnout.theme \
+            -F file=@jetbrains/warm-burnout-theme.jar \
+            https://plugins.jetbrains.com/api/updates/upload
+        env:
+          JETBRAINS_TOKEN: ${{ secrets.JETBRAINS_TOKEN }}
+
+  sync-obsidian-mirror:
+    needs: [validate]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Sync to mirror repo
+        env:
+          MIRROR_DEPLOY_KEY: ${{ secrets.OBSIDIAN_MIRROR_DEPLOY_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$MIRROR_DEPLOY_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          export GIT_SSH_COMMAND="ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no"
+
+          git clone git@github.com:felipefdl/warm-burnout-obsidian.git mirror
+          cp obsidian/theme.css mirror/
+          cp obsidian/manifest.json mirror/
+          cp obsidian/README.md mirror/
+          cp obsidian/screenshot.png mirror/
+          cp -r obsidian/fonts mirror/
+          cp -r obsidian/screenshots mirror/
+          cp LICENSE mirror/
+
+          cd mirror
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to sync"
+          else
+            git commit -m "Sync from warm-burnout ${GITHUB_REF_NAME}"
+            git tag "${GITHUB_REF_NAME}"
+            git push origin main --tags
+          fi

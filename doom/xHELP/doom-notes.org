@@ -114,7 +114,7 @@ SPC f p
 
 for Emacs
 
-M-x describe-? v variable; f function ;
+M-x describe-? v variable; f function ; m mode ; k key; b bindings;
 
 
 C-h i      Info on packages
@@ -130,6 +130,7 @@ Shift Alt <- on the heading
 SPC m s k
 
 ** line nos.
+
 SPC t l
 ** linking in org-mode
 2025-06-26
@@ -322,6 +323,19 @@ Given a circle \Gamma of diameter d, the length of its circumference is \pi{}d.
 ** themes
 SPC h t
 ** [[treemacs]]
+** windows tips
+2026-04-26
+
+C-x o goto other window
+C-x 1 delete other window
+C-x 2 split window below
+C-x 3 split window right
+
+SPC w j evil-window-down
+SPC w k evil-window-up
+SPC w l evil-window-right
+SPC w h evil-window-left
+
 * DOOM EMACS
 ** abbrevs
 The abbrev_defs file holds the abbreviations defined by me.
@@ -1758,8 +1772,8 @@ SPC L  then pick the type e.g. file: and then follow the prompts
 
 *** Steps to make a link to a heading in another file
 
-1. SPC m l s          :: ie Go to the heading and M-x org-store-link
-2. SPC m l S          :: ie Go to the destination file and  M-x org-insert-last-stored-link
+1. SPC m l s          :: ie Go to the source file and the heading and M-x org-store-link
+2. SPC m l S          :: ie Go to the destination file and M-x org-insert-last-stored-link
 
 Format
 

@@ -10,6 +10,9 @@ if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
 
+# DO NOT TRACK — per https://donottrack.sh/
+export DO_NOT_TRACK=1
+
 # FUNCTEST
 # set -o functrace
 # set -o functrace

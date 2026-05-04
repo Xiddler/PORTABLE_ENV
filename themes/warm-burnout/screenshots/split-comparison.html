@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200, initial-scale=1">
+<title>Warm Burnout - Dark vs Light</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 800px;
+    display: flex;
+    overflow: hidden;
+    font-family: 'Inter', -apple-system, sans-serif;
+  }
+
+  .panel {
+    width: 600px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* Dark panel */
+  .dark {
+    --bg: #1a1510;
+    --bg-dim: #14120f;
+    --bg-highlight: #222018;
+    --fg: #bfbdb6;
+    --fg-dim: #ada69c;
+    --fg-gutter: #6b665f;
+    --fg-gutter-active: #a59f96;
+    --accent: #b8522e;
+    --border: #2a2620;
+    --keyword: #ff8f40;
+    --func: #ffb454;
+    --string: #b4bc78;
+    --type: #90aec0;
+    --operator: #f29668;
+    --number: #d4a8b8;
+    --tag: #dc9e92;
+    --member: #ec9878;
+    --comment: #b4a89c;
+    --decorator: #e6c08a;
+    --regex: #96b898;
+    --property: #deb074;
+    --constant: #d4a8b8;
+  }
+
+  /* Light panel */
+  .light {
+    --bg: #F5EDE0;
+    --bg-dim: #EDE6DA;
+    --bg-highlight: #EAE2D6;
+    --fg: #3a3630;
+    --fg-dim: #5c5750;
+    --fg-gutter: #8a8070;
+    --fg-gutter-active: #6a6258;
+    --accent: #b8522e;
+    --border: #DDD6CA;
+    --keyword: #924800;
+    --func: #855700;
+    --string: #4d5c1a;
+    --type: #285464;
+    --operator: #8f4418;
+    --number: #7e4060;
+    --tag: #8e4632;
+    --member: #883850;
+    --comment: #544c40;
+    --decorator: #7a5a1c;
+    --regex: #286a48;
+    --property: #74501c;
+    --constant: #7e4060;
+  }
+
+  .panel {
+    background: var(--bg);
+    color: var(--fg);
+  }
+
+  .panel-header {
+    height: 38px;
+    background: var(--bg-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+    position: relative;
+  }
+  .panel-header .label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--fg-dim);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .panel-header .variant-badge {
+    position: absolute;
+    right: 12px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: var(--accent);
+    color: #f5ede0;
+  }
+
+  .panel .dots {
+    position: absolute;
+    left: 14px;
+    display: flex;
+    gap: 6px;
+  }
+  .panel .dots .dot { width: 10px; height: 10px; border-radius: 50%; }
+
+  .dark .dots .dot:nth-child(1) { background: #f06b73; }
+  .dark .dots .dot:nth-child(2) { background: #fdb04c; }
+  .dark .dots .dot:nth-child(3) { background: #70bf56; }
+  .light .dots .dot:nth-child(1) { background: #b82820; }
+  .light .dots .dot:nth-child(2) { background: #8a6000; }
+  .light .dots .dot:nth-child(3) { background: #2d6a14; }
+
+  .code-area {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    padding-top: 8px;
+  }
+
+  .line-numbers {
+    padding: 0 10px 0 14px;
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 22px;
+    color: var(--fg-gutter);
+    user-select: none;
+    flex-shrink: 0;
+  }
+  .line-numbers .active-line-nr { color: var(--fg-gutter-active); }
+
+  .code {
+    flex: 1;
+    padding: 0 14px 0 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 22px;
+    overflow: hidden;
+    white-space: pre;
+  }
+  .code .line { height: 22px; }
+  .code .line.active-line {
+    background: var(--bg-highlight);
+    display: block;
+    margin: 0 -14px 0 -6px;
+    padding: 0 14px 0 6px;
+  }
+
+  .kw { color: var(--keyword); font-weight: 700; }
+  .fn { color: var(--func); }
+  .str { color: var(--string); }
+  .ty { color: var(--type); font-style: italic; }
+  .op { color: var(--operator); }
+  .num { color: var(--number); }
+  .tg { color: var(--tag); }
+  .mb { color: var(--member); }
+  .cm { color: var(--comment); font-style: italic; }
+  .dc { color: var(--decorator); }
+  .rx { color: var(--regex); }
+  .pr { color: var(--property); }
+  .ct { color: var(--constant); }
+  .px { color: var(--fg); }
+
+  .divider {
+    width: 1px;
+    background: #444;
+    flex-shrink: 0;
+  }
+
+  .footer {
+    height: 28px;
+    background: var(--bg-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: var(--fg-dim);
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    flex-shrink: 0;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+  <div class="panel dark">
+    <div class="panel-header">
+      <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+      <span class="label">index.html</span>
+      <span class="variant-badge">Dark</span>
+    </div>
+    <div class="code-area">
+      <div class="line-numbers">
+         1<br> 2<br> 3<br> 4<br> 5<br> 6<br> 7<br> 8<br> 9<br>10<br>11<br>12<br>13<br>14<br><span class="active-line-nr">15</span><br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34
+      </div>
+      <div class="code"><div class="line"><span class="op">&lt;!</span><span class="kw">DOCTYPE</span> <span class="tg">html</span><span class="op">&gt;</span></div><div class="line"><span class="tg">&lt;html</span> <span class="dc">lang</span><span class="op">=</span><span class="str">"en"</span><span class="tg">&gt;</span></div><div class="line"><span class="tg">&lt;head&gt;</span></div><div class="line">  <span class="tg">&lt;meta</span> <span class="dc">charset</span><span class="op">=</span><span class="str">"UTF-8"</span><span class="tg"> /&gt;</span></div><div class="line">  <span class="tg">&lt;title&gt;</span><span class="px">Warm Burnout</span><span class="tg">&lt;/title&gt;</span></div><div class="line">  <span class="tg">&lt;style&gt;</span></div><div class="line">    <span class="pr">:root</span> <span class="px">{</span></div><div class="line">      <span class="pr">--bg</span><span class="px">: </span><span class="num">#1a1510</span><span class="px">;</span></div><div class="line">      <span class="pr">--fg</span><span class="px">: </span><span class="num">#bfbdb6</span><span class="px">;</span></div><div class="line">      <span class="pr">--accent</span><span class="px">: </span><span class="num">#b8522e</span><span class="px">;</span></div><div class="line">      <span class="pr">--keyword</span><span class="px">: </span><span class="num">#ff8f40</span><span class="px">;</span></div><div class="line">      <span class="pr">--string</span><span class="px">: </span><span class="num">#b4bc78</span><span class="px">;</span></div><div class="line">    <span class="px">}</span></div><div class="line"></div><div class="line active-line">    <span class="tg">body</span> <span class="px">{</span></div><div class="line">      <span class="pr">background</span><span class="px">: </span><span class="fn">var</span><span class="px">(</span><span class="pr">--bg</span><span class="px">);</span></div><div class="line">      <span class="pr">color</span><span class="px">: </span><span class="fn">var</span><span class="px">(</span><span class="pr">--fg</span><span class="px">);</span></div><div class="line">      <span class="pr">font-family</span><span class="px">: </span><span class="str">"JetBrains Mono"</span><span class="px">, </span><span class="ct">monospace</span><span class="px">;</span></div><div class="line">      <span class="pr">margin</span><span class="px">: </span><span class="num">0</span><span class="px">;</span></div><div class="line">      <span class="pr">min-height</span><span class="px">: </span><span class="num">100vh</span><span class="px">;</span></div><div class="line">    <span class="px">}</span></div><div class="line"></div><div class="line">    <span class="tg">.token</span> <span class="px">{</span></div><div class="line">      <span class="pr">display</span><span class="px">: </span><span class="ct">inline-block</span><span class="px">;</span></div><div class="line">      <span class="pr">padding</span><span class="px">: </span><span class="num">2px</span> <span class="num">8px</span><span class="px">;</span></div><div class="line">      <span class="pr">border-radius</span><span class="px">: </span><span class="num">4px</span><span class="px">;</span></div><div class="line">      <span class="pr">border</span><span class="px">: </span><span class="num">1px</span> <span class="ct">solid</span> <span class="fn">var</span><span class="px">(</span><span class="pr">--accent</span><span class="px">);</span></div><div class="line">    <span class="px">}</span></div><div class="line">  <span class="tg">&lt;/style&gt;</span></div><div class="line"><span class="tg">&lt;/head&gt;</span></div><div class="line"><span class="tg">&lt;body&gt;</span></div><div class="line">  <span class="tg">&lt;h1</span> <span class="dc">class</span><span class="op">=</span><span class="str">"token"</span><span class="tg">&gt;</span><span class="px">your eyes deserved this</span><span class="tg">&lt;/h1&gt;</span></div><div class="line">  <span class="cm">&lt;!-- every pixel, audited to hurt less --&gt;</span></div><div class="line"><span class="tg">&lt;/body&gt;</span></div><div class="line"><span class="tg">&lt;/html&gt;</span></div></div>
+    </div>
+    <div class="footer">mostly warm, rarely blue</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="panel light">
+    <div class="panel-header">
+      <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+      <span class="label">index.html</span>
+      <span class="variant-badge">Light</span>
+    </div>
+    <div class="code-area">
+      <div class="line-numbers">
+         1<br> 2<br> 3<br> 4<br> 5<br> 6<br> 7<br> 8<br> 9<br>10<br>11<br>12<br>13<br>14<br><span class="active-line-nr">15</span><br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34
+      </div>
+      <div class="code"><div class="line"><span class="op">&lt;!</span><span class="kw">DOCTYPE</span> <span class="tg">html</span><span class="op">&gt;</span></div><div class="line"><span class="tg">&lt;html</span> <span class="dc">lang</span><span class="op">=</span><span class="str">"en"</span><span class="tg">&gt;</span></div><div class="line"><span class="tg">&lt;head&gt;</span></div><div class="line">  <span class="tg">&lt;meta</span> <span class="dc">charset</span><span class="op">=</span><span class="str">"UTF-8"</span><span class="tg"> /&gt;</span></div><div class="line">  <span class="tg">&lt;title&gt;</span><span class="px">Warm Burnout</span><span class="tg">&lt;/title&gt;</span></div><div class="line">  <span class="tg">&lt;style&gt;</span></div><div class="line">    <span class="pr">:root</span> <span class="px">{</span></div><div class="line">      <span class="pr">--bg</span><span class="px">: </span><span class="num">#F5EDE0</span><span class="px">;</span></div><div class="line">      <span class="pr">--fg</span><span class="px">: </span><span class="num">#3a3630</span><span class="px">;</span></div><div class="line">      <span class="pr">--accent</span><span class="px">: </span><span class="num">#b8522e</span><span class="px">;</span></div><div class="line">      <span class="pr">--keyword</span><span class="px">: </span><span class="num">#924800</span><span class="px">;</span></div><div class="line">      <span class="pr">--string</span><span class="px">: </span><span class="num">#4d5c1a</span><span class="px">;</span></div><div class="line">    <span class="px">}</span></div><div class="line"></div><div class="line active-line">    <span class="tg">body</span> <span class="px">{</span></div><div class="line">      <span class="pr">background</span><span class="px">: </span><span class="fn">var</span><span class="px">(</span><span class="pr">--bg</span><span class="px">);</span></div><div class="line">      <span class="pr">color</span><span class="px">: </span><span class="fn">var</span><span class="px">(</span><span class="pr">--fg</span><span class="px">);</span></div><div class="line">      <span class="pr">font-family</span><span class="px">: </span><span class="str">"JetBrains Mono"</span><span class="px">, </span><span class="ct">monospace</span><span class="px">;</span></div><div class="line">      <span class="pr">margin</span><span class="px">: </span><span class="num">0</span><span class="px">;</span></div><div class="line">      <span class="pr">min-height</span><span class="px">: </span><span class="num">100vh</span><span class="px">;</span></div><div class="line">    <span class="px">}</span></div><div class="line"></div><div class="line">    <span class="tg">.token</span> <span class="px">{</span></div><div class="line">      <span class="pr">display</span><span class="px">: </span><span class="ct">inline-block</span><span class="px">;</span></div><div class="line">      <span class="pr">padding</span><span class="px">: </span><span class="num">2px</span> <span class="num">8px</span><span class="px">;</span></div><div class="line">      <span class="pr">border-radius</span><span class="px">: </span><span class="num">4px</span><span class="px">;</span></div><div class="line">      <span class="pr">border</span><span class="px">: </span><span class="num">1px</span> <span class="ct">solid</span> <span class="fn">var</span><span class="px">(</span><span class="pr">--accent</span><span class="px">);</span></div><div class="line">    <span class="px">}</span></div><div class="line">  <span class="tg">&lt;/style&gt;</span></div><div class="line"><span class="tg">&lt;/head&gt;</span></div><div class="line"><span class="tg">&lt;body&gt;</span></div><div class="line">  <span class="tg">&lt;h1</span> <span class="dc">class</span><span class="op">=</span><span class="str">"token"</span><span class="tg">&gt;</span><span class="px">your eyes deserved this</span><span class="tg">&lt;/h1&gt;</span></div><div class="line">  <span class="cm">&lt;!-- every pixel, audited to hurt less --&gt;</span></div><div class="line"><span class="tg">&lt;/body&gt;</span></div><div class="line"><span class="tg">&lt;/html&gt;</span></div></div>
+    </div>
+    <div class="footer">contrast audited, deadlines remain</div>
+  </div>
+</body>
+</html>

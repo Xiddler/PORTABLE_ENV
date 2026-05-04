@@ -28,7 +28,8 @@ source $HOME/.vim/plugins/plugins.vim                                       " pl
 " {{{ =============
 "}}}
 " {{{ VIMRC
-colorscheme miramare
+" colorscheme miramare
+colorscheme warm-burnout-dark
 " colorscheme elflord " 
 " }}}
 "{{{ Minimum Settings

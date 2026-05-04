@@ -1,0 +1,31 @@
+<idea-plugin>
+  <id>com.warm-burnout.theme</id>
+  <name>Warm Burnout</name>
+  <version>1.0.2</version>
+  <vendor url="https://github.com/felipefdl">Felipe Lima</vendor>
+  <description><![CDATA[
+    <p>The theme for developers who are already burned out but still have deadlines.</p>
+
+    <p>Mostly warm palette, one cool type accent, contrast-audited to WCAG standards.
+    Full UI theme: editor, sidebar, tabs, toolbar, popups, everything.</p>
+
+    <ul>
+      <li><b>Dark</b>: AAA contrast (7:1+) on every syntax token. For the 3am sessions.</li>
+      <li><b>Light</b>: AA contrast (4.5:1+) on warm sepia cream. For when someone opens the blinds.</li>
+    </ul>
+
+    <p>Bold keywords, italic types, readable comments. The style system adds
+    non-color cues for code structure when the warm palette starts to blur together.</p>
+  ]]></description>
+  <change-notes><![CDATA[
+    <p>1.0.2: Dropped classic variants. Islands themes only. Fixed toolbar borders and project gradient.</p>
+    <p>1.0.1: Fix editor color scheme not loading when selecting the UI theme.</p>
+    <p>1.0.0: Initial release.</p>
+  ]]></change-notes>
+  <idea-version since-build="242"/>
+  <depends>com.intellij.modules.platform</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <themeProvider id="com.warm-burnout.dark" path="/Warm Burnout Islands Dark.theme.json"/>
+    <themeProvider id="com.warm-burnout.light" path="/Warm Burnout Islands Light.theme.json"/>
+  </extensions>
+</idea-plugin>

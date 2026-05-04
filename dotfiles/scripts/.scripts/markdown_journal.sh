@@ -116,6 +116,9 @@ Afternoon:
 ### Projects 
 
 
+### Learning
+
+
 ### Entertainment
 
 
@@ -125,6 +128,24 @@ Afternoon:
 ### Reading
 
 
+
+## XOTD
+
+X of the day where X could be:
+
+concept
+event
+highlight
+insight
+joke
+loss
+person
+quote
+speculation
+win
+word
+
+This would help me to appreciate (and be grateful for / more aware of) the stuff that "made my day".
 
 
 
