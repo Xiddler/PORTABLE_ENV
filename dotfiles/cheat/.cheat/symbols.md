@@ -1,17 +1,57 @@
 Opened 2024-11-15
 Filepath ~/PORTABLE_ENV/dotfiles/cheat/symbols.md
 
-Links ~/.cheat/vim_digraphs.md; ~/.cheat/vim_special_chars.md; ~/.cheat/unicode.md; ~/.cheat/ascii;
+Links 
+
+~/.cheat/vim_digraphs.md
+~/.cheat/vim_special_chars.md 
+~/.cheat/unicode.md 
+~/.cheat/ascii
 
 
 
 Symbols
+
+
 
 # vim
 see
 ~/.cheat/vim_digraphs.md
 ~/.cheat/vim_special_chars.md
 ~/.cheat/unicode.md
+
+# where is
+
+arrows in ~/.cheat/vim_digraphs.md
+copied here
+》  +>     U+300B
+《  >+
+
+⟫   none   U+27EB
+
+▶   PR      BLACK RIGHT-POINTING TRIANGLE
+◀   PL      BLACK LEFT-POINTING TRIANGLE
+▲   UT      BLACK UP-POINTING TRIANGLE
+▼   Dt      BLACK DOWN-POINTING TRIANGLE
+
+◁   Tl or lT
+▷   Tr or rT
+△   uT      WHITE UP-POINTING TRIANGLE
+▽   dT      WHITE DOWN-POINTING TRIANGLE
+
+
+❯ --> <❯> 10095, Hex 276f, Octal 23557 .vimrc --> mappings.vim <leader>>  PURE PROMPT ARROW
+
+
+→   ->
+←   <-
+
+»   >>  0xbb    187 RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
+«   <<
+
+≪   <*
+≫   *>
+
 
 # how to
 
@@ -26,13 +66,14 @@ see
 
 †   /-              DAGGER
 ‡   /=              DOUBLE DAGGER
-€   eu  20ac   8364 EURO                                        [ alt. Digr =e ]
-£	pd	0xe3	227 POUND SIGN 
-℅   co  2105   8453 Care/of
-©   co  00a9    169 COPYRIGHT SIGN                              ©
-®	rg	0xae	174	REGISTERED SIGN                             ®
-™   tm  2122   8482 TRADEMARK SIGN                              ™ 
-°	dg	0xb0	176	DEGREE SIGN
+€   Eu  20ac   8364 EURO                                        [ alt. Digr =e ]
+£	Pd	0xe3	227 POUND SIGN                                  £
+℅   co  2105   8453 Care/of                                     ℅
+©   Co  00a9    169 COPYRIGHT SIGN                              © 
+®	Rg	0xae	174	REGISTERED SIGN                             ®
+™   TM  2122   8482 TRADEMARK SIGN                              ™ 
+°	DG	0xb0	176	DEGREE SIGN                                 °
+¬   -,
 ¹	1s	0xb9	185	SUPERSCRIPT ONE                             Aliased by me to S11 in insert mode
 ²	2s	0xb2	178	SUPERSCRIPT TWO                             Aliased by me to S22 in insert mode
 ³	3s	0xb3	179	SUPERSCRIPT THREE                           Aliased by me to S33 in insert mode

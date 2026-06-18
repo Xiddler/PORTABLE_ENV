@@ -403,6 +403,7 @@ pers() { cd $HOME/DONAGHS/personal } # go to personal
 today() { cd $HOME/DONAGHS/personal/journal/$y/$m && ls -lat | head -n 10 } # go to month of today's journal and list most recent 10 items
 tomonth() { cd $HOME/DONAGHS/personal/journal/$y/$m && ls -lat | head -n 10 } # go to month of today's journal and list most recent 10 items
 jour() { cd $HOME/DONAGHS/personal/journal/$y/$m } # go to directory of this month of today's journal 
+bj() { cd /home/donagh/BACKUPS/RSYNCED/personal/journal } # backup of journal (for occasional checking)
 # for the following I need to run a script similar to mj()
 # yj() { vim $HOME/DONAGHS/personal/journal/$y/$ym/"$yd-$ym.md"} # open yesterday's journal
 yj() { /home/donagh/PORTABLE_ENV/dotfiles/scripts/.scripts/markdown_yesterday.sh }
@@ -737,7 +738,13 @@ stm() {  tmuxp load -y ~/.tmuxp/my-6-daily-tabs.yaml }
 
 # dropbox
 # start dropbox — replaces `drop()`
-sdr() { command /home/donagh/.scripts/start_dropbox_on_Toshiba.sh }
+# sdr() { command /home/donagh/.scripts/start_dropbox_on_Toshiba.sh }
+# sdb() { command /home/donagh/.scripts/start_dropbox_on_Toshiba.sh }
+## sdb() { echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p; sleep 5; nohup ~/.dropbox-dist/dropboxd& }
+# NOTE: problem is that sudo needs a password
+# I tried echo fs.inotify.max_user_watches=100000 | sudo <<< 1234 tee -a /etc/sysctl.conf; sudo sysctl -p
+# but that did not work
+
 
 # drop() { echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p && nohup ~/.dropbox-dist/dropboxd& }
 # check the dropbox is working --> ->% ps aux | grep "dropbox" where PS is an alias for ps aux | grep 

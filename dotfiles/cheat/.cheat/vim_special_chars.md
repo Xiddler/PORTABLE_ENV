@@ -1,7 +1,9 @@
 # FRONTMATTER
 Opened 2024-01-12
 File vim_special_chars.md
+
 Links ~/.cheat/vim_digraphs.md; ~/.cheat/unicode.md (also ~/.cheat/symbols.md which is a clearing house for all of them)
+
 URL1: https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/
 
 About: long dash —, pure-prompt ❯ etc.
@@ -21,8 +23,6 @@ In insert mode use Ctr-Q u0041
 
 I run into problems in markdown when I use certain characters at the beginning of a line, notably - (dash) and > (greater than sign)
 These have special meanings in markdown and I want to use similar looking characters. Hence this file.
-
-# To insert special characters in vim using decimal, Hex or Octal
 
 # To insert the letter `A` using the Unicode for it
 
@@ -46,7 +46,8 @@ I have mapped <leader>> to do this in .vimrc ~/.vim/mappings.vim --▷  Custom L
 Using ga on the first symbol of the next line:
 ❯ --> <❯> 10095, Hex 276f, Octal 23557
 NOTE: this is not a greater-than sign
->
+
+> 
 
 
 # The hyphen, minus sign, n-dash, m-dash etc.
@@ -100,5 +101,28 @@ These are NOT the same:  − – — - ‒  
 Є made (in insert mode) using Ctrl K IE
 
 
+
+
+
+# To insert special characters in vim using decimal, Hex or Octal
+
+:help i_CTRL-V_digit
+
+In insert mode, type Ctrl+V (or Ctrl+Q) followed by:
+
+      decimal number (0-255)
+    o then an octal number (o0-o377, i.e., 255 is the maximum value)
+    x then a hex number (x00-xFF, i.e., 255 is the maximum value)
+    u then a 4-hexchar Unicode sequence
+a i 
+
+Example:
+insert `i`
+
+i  decimal          Ctrl+Q 105
+i  hex              Ctrl+Q x69
+i  octal            Ctrl+q o151
+i  unicode 4 char   Ctrl+q u0069
+i  unicode 8 char   Ctrl+q U00000069 
 
 

@@ -368,6 +368,8 @@ let g:netrw_banner = 0          " don't show the banner at the top of the :Vex w
 let g:netrw_browse_split = 3    " open selected files in a new tab
 let g:netrw_liststyle = 3
 let g:netrw_winsize = 30
+" note <leader>v is set in $HOME/.vim/settings/mappings/mappings.vim to open
+" Vex on the LHS
 
 
 " set previewpopup=height:10,width:60

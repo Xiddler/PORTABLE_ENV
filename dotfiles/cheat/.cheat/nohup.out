@@ -43,3 +43,4 @@ dropbox: load fq extension '/home/donagh/.dropbox-dist/dropbox-lnx.x86_64-221.4.
 <frozen zipimport>:259: UserWarning: google.protobuf.service module is deprecated. RPC implementations should provide code generator plugins which generate code specific to the RPC implementation. service.py will be removed in Jan 2025
 dropbox: load fq extension '/home/donagh/.dropbox-dist/dropbox-lnx.x86_64-221.4.5365/tornado.speedups.cpython-38-x86_64-linux-gnu.so'
 dropbox: load fq extension '/home/donagh/.dropbox-dist/dropbox-lnx.x86_64-221.4.5365/wrapt._wrappers.cpython-38-x86_64-linux-gnu.so'
+Another instance of Dropbox (28760) is running!

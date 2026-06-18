@@ -1,9 +1,12 @@
+# FRONTMATTER
 Opened 2024-08-15
 
 fzf is an interactive filter program for any kind of list
 
+URL: https://github.com/junegunn/fzf
 
-# Notes
+# 
+# USAGE
 
 
 To preview files in a RHS pane
@@ -20,13 +23,25 @@ example: search for files containing the word 'metavar'
 
 
 ## Use find to include the pwd
+
 ->% find $PWD -print -maxdepth 3 | fzf
 
-# ----------------------------------------
+## use vim with fzf
 
+-%>  fzf --print0 | xargs -0 -o vim
+
+This will print the contents of current directory in fzf-fashion and when you select the file you want, it will open it in vim
+
+## use some styling
+
+-%> fzf --style full --preview 'fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}'
+
+# use fzf to find process to kill
+-%>  kill -9 **<tab>
+
+# 
 # FULL fzf HELP FILE
 
-# ----------------------------------------
 
 fzf is an interactive filter program for any kind of list.
 

@@ -5,10 +5,11 @@ set -euo pipefail
 trap "echo 'error: Script failed: see failed command above'" ERR
 
 # script here
+password=1234
 
 # maybe add cleanup function
 # trap cleanup EXIT # no matter how the program exits, run that cleanup function.
-echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p
+echo fs.inotify.max_user_watches=100000 | sudo -S <<< $password tee -a /etc/sysctl.conf; sudo sysctl -p
 
 sleep 20
 
@@ -16,4 +17,8 @@ nohup ~/.dropbox-dist/dropboxd&
 
 
 
+
+## echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p
+# and
+## nohup ~/.dropbox-dist/dropboxd&
 

@@ -156,6 +156,7 @@ in INSERT mode
 
 ❯ --> <❯> 10095, Hex 276f, Octal 23557 .vimrc --> mappings.vim <leader>>  PURE PROMPT ARROW
 
+
 →   ->
 ←   <-
 

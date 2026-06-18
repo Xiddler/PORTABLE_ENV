@@ -20,6 +20,7 @@
 ;; DONAGHS
 ;;; Code:
 ;;; (projectile-add-known-project "~/ALL_ORG")
+;;; (projectile-add-known-project "/home/donagh/<Project Dir>/")
 
 ;; original entries
 (doom! :input

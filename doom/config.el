@@ -130,6 +130,9 @@
 (setq grep-find-template
       "fd ")
 
+;; see init.el 2026-06-01
+;; (setq-default emacs-reader t)
+;; doctor doom did not like this attempt
 
 ;; Keywords
 ;; Note: For actual keywords I was using /home/donagh/.emacs.d/modules/lang/org/config.el WRONGLY?
@@ -318,7 +321,6 @@
 (use-package org
   :hook
   (org-mode . org-mode-hide-stars)
-  :ensure t
   )
 
 ;; origami from gregsexton: the long lost string manipulation tool for emacs
@@ -387,11 +389,9 @@
 ;; https://github.com/alexmurray/evil-vimish-fold?tab=readme-ov-file#evil-vimish-fold
 ;; (use-package evil-vimish-fold) ;; using this alone works
 (use-package vimish-fold
-  :ensure
   :after evil)
 
 (use-package evil-vimish-fold
-  :ensure
   :after vimish-fold
   :hook ((prog-mode conf-mode text-mode) . evil-vimish-fold-mode))
 ;;
@@ -403,6 +403,8 @@
   ;; (insert (format-time-string "%D %-I:%M %p")))
   ;; (insert (format-time-string "%02y%02m%02d%02H%02M%02S")))
   ; (insert (format-time-string "%02y-%02m-%02d_%02H:%02M")))
+
+
 
 (defun today ()
   "Insert string for today's date nicely formatted in American style,

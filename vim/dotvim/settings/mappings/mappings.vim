@@ -152,8 +152,8 @@ nmap <leader>t g~aW
 "<leader>u to Capitalize/minusculize letter under cursor
 nnoremap <leader>u v~
 
-"<leader>v to run :Vex
-nnoremap <leader>v :Vex<cr>
+"<leader>v to run :Vex (! means on the left side)
+nnoremap <leader>v :Vex!<cr>
 
 
 "<leader>y to yank to system clipboard 
@@ -336,7 +336,7 @@ nnoremap dB dbx
 " note: this has problems with words that end in 'i' eg radiI. Is there a fix for this?
 inoremap lh —
 inoremap £ # 
-inoremap i<space> I<space>
+" inoremap i<space> I<space>
 inoremap eu<space> €
 inoremap dgc °C
 
@@ -353,11 +353,11 @@ inoremap dgc °C
 " inoremap wont won't
 " inoremap cant can't
 " but significant also 'corrects' to significan't; how to avoid this? try: ab cant can't in mappings.vim — see below; it fixes it;
-inoremap waht what
+" inoremap waht what " tried using espanso for this
 " inoremap hte the " this also messes with words like enlighten, frighten; can I find a fix for this? Should I just kill this one?
 inoremap teh the
 inoremap adn and
-
+inoremap DG °
 
 
 " ABBREVIATIONS
@@ -366,7 +366,8 @@ inoremap adn and
 ab mys "Proactively engaged in making a better life for myself and/or others"
 ab FP 'Full Picture'
 abb dtw - Donagh the Wise
-ab dtw - Donagh di Wit
+" ab dtw - Donagh di Wit
+inoremap dtw - Donagh di Wit
 ab FQHB Fully Qualified Human Being
 ab tbp The Big Picture
 ab rde raison d'être

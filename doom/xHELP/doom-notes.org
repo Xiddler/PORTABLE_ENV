@@ -5,7 +5,7 @@
 #+FILEPATH: ~/PORTABLE_ENV/doom/xHELP/doom-notes.org
 #+options: il
 #+tags:    help orgmode org-mode donaghs
-#+EDITED:  2026-03-13; 2025-10-12; 2025-09-13; 2025-04-12; 2025-03-02; 2025-02-11; 2024-09-04; 2024-02-06; 2024-01-02; 2023-12-10; 2023-09-06; 2023-08-09; 2023-07-12; 2023-04-07; 2023-02-24; 2023-01-03; 2022-12-19; 2022-12-16; 2022-09-25
+#+EDITED:  2026-06-17; 2026-03-13; 2025-10-12; 2025-09-13; 2025-04-12; 2025-03-02; 2025-02-11; 2024-09-04; 2024-02-06; 2024-01-02; 2023-12-10; 2023-09-06; 2023-08-09; 2023-07-12; 2023-04-07; 2023-02-24; 2023-01-03; 2022-12-19; 2022-12-16; 2022-09-25
 #+LINE      ___________________________________________________________________________________________________________
 #+BABEL: :session *python* :cache yes :results output graphics :exports both :tangle yes \n" "-----"
 
@@ -1274,11 +1274,11 @@ More keybinds can be looked up with F1 m.
 Not working. Can't open the epub file.
 *** projectile
 **** About
- Its goal is to provide a nice set of features operating on a project level without introducing external dependencies
+Provides a nice set of features operating on a project level without introducing external dependencies
 
 cf. also projectile for treemacs
 **** Background
-REM: Projectils confines the scope of files available to those in the project you selected with [SPC] p p
+REM: Projectile confines the scope of files available to those in the project you selected with [SPC] p p
 -----
 If you are more familiar with IDEs like Eclipse or IntelliJ, you probably already have a concept of a project in your mind. It’s basically a folder for a particular codebase (probably under version control) that is pretty much a cohesive unit that you work on independently. In Emacs, this grouping and identification is usually managed by Projectile. With Doom, this is installed by default.
 
@@ -1295,16 +1295,22 @@ For example, my username is “jdemaris” so my folder is /home/donagh/.emacs.d
     (projectile-add-known-project "/home/donagh/Projects/playground/otp")
 '
 
+to add a new project
+[SPC] p a
+
     test addition
 **** Commands
 REM: The projects must be made known to Doom in the init.el file. cf.[[Background][Background]]
 ---------
 [SPC] p p (OR in the Doom splash screen select open project)
 **** Idea of a project
+
 *** s
+
 https://dev.to/themkat/packages-that-make-emacs-lisp-more-pleasant-12cj
 s.el
 to provide more pleasant string handling, and it touts itself as "The long lost Emacs string manipulation library"
+
 *** swiper
 For searching for text in a buffer
 [SPC] s b
@@ -1366,7 +1372,7 @@ For example, my username is “jdemaris” so my folder is /home/donagh/.emacs.d
 
 Property drawers stay folded by default, and are intended to store a collection of key-value pairs, but they don't get exported by default, and so are a good way to keep your notes and your writing together and then export, as needed when drafting is done.
 
-Example of propert drawer. Use the TAB key to fold/unfold it.
+Example of propery drawer. Use the TAB key to fold/unfold it.
 
 
 :contents:
@@ -1425,6 +1431,7 @@ SPC m l
 tags are words preceded by : and ending in : e.g. :donaghs: or :work: - these can then be searched using  C-c \ OR C-c / m
 see https://www.gnu.org/software/emacs/manual/html_node/org/Tag-searches.html#Tag-searches
 ** text expansion
+
 aka [[abbrevs]]
 See also ~/.emacs.d/abbrev_defs
 
@@ -2250,6 +2257,77 @@ M-x bookmark-load
 2025-06-29
 
 [[/home/donagh/files/sample_files/duck.jpg]]
+
+* Isearch
+2026-06-01
+
+C-s search forward; C-s next item; C-r search backward;
+
+https://emacsredux.com/blog/2025/03/18/you-have-no-idea-how-powerful-isearch-is/
+
+You have no idea how powerful isearch is!
+
+Mar 18, 2025 | Built-ins isearch • Bozhidar Batsov
+
+isearch is probably one of the most widely known Emacs commands. Every Emacs user knows that they can run it using C-s (to search forward) and C-r to search backwards. Everyone also knows they can keep pressing C-s and C-r to go over the list of matches in the current buffer. Even at this point that’s a very useful command. But that doesn’t even scratch the surface of what isearch can do!
+
+After you’ve started isearch you can actually do a lot more than pressing C-s and C-r:
+
+    Type DEL to cancel last input item from end of search string.
+    Type RET to exit, leaving point at location found.
+    Type LFD (C-j) to match end of line.
+    Type M-s M-< to go to the first match, M-s M-> to go to the last match. (super handy)
+    Type C-w to yank next word or character in buffer onto the end of the search string, and search for it. (very handy)
+    Type C-M-d to delete character from end of search string.
+    Type C-M-y to yank char from buffer onto end of search string and search for it.
+    Type C-M-z to yank from point until the next instance of a specified character onto end of search string and search for it.
+    Type M-s C-e to yank rest of line onto end of search string and search for it.
+    Type C-y to yank the last string of killed text.
+    Type M-y to replace string just yanked into search prompt with string killed before it.
+    Type C-q to quote control character to search for it.
+    Type C-x 8 RET to add a character to search by Unicode name, with completion.
+    C-g while searching or when search has failed cancels input back to what has been found successfully.
+    C-g when search is successful aborts and moves point to starting point.
+
+You can also toggle some settings write isearch is active:
+
+    Type M-s c to toggle search case-sensitivity.
+    Type M-s i to toggle search in invisible text.
+    Type M-s r to toggle regular-expression mode.
+    Type M-s w to toggle word mode.
+    Type M-s _ to toggle symbol mode.
+    Type M-s ' to toggle character folding.
+
+Type M-s SPC to toggle whitespace matching. In incremental searches, a space or spaces normally matches any whitespace defined by the variable search-whitespace-regexp; see also the variables isearch-lax-whitespace and isearch-regexp-lax-whitespace.
+
+Type M-s e to edit the search string in the minibuffer. That one is super useful!
+
+Also supported is a search ring of the previous 16 search strings:
+
+    Type M-n to search for the next item in the search ring.
+    Type M-p to search for the previous item in the search ring.
+    Type C-M-i to complete the search string using the search ring.
+
+Last, but not least - you can directly search for the symbol/thing at point:
+
+    Type M-s . to search for the symbol at point. (useful in the context of programming languages)
+    Type M-s M-. to search for the thing (e.g. word or symbol) at point.
+
+One of the most useful parts of that is the fact that a region is a thing. So you can mark a region (e.g. with expand-region or mark-*) and M-s M-. to immediately search for other instances of that text. Powerful stuff!
+
+Tip: You don’t really have to remember all those keybindings - just remember you can press C-h b to show them. (after you’ve started isearch)
+
+Most of the above text is coming straight from the docstring of isearch. It’s funny that I’ve been using Emacs for almost 20 years, I use isearch numerous times every day and I still often forget about much of its functionality.
+
+There’s more to isearch, though. Did you know it’s widely customizable as well? If you check its options with M-x customize-group isearch you’ll see there are over 30 (!!!) options there! Admittedly, I never used any of them, but you’ve got quite a lot of opportunities to tweak the behavior of isearch if you want to. Here’s an example of a customization some of you might find useful:
+
+;; When isearching, enable M-<, M->, C-v and M-v to skip between matches
+;; in an intuitive fashion.  Note that the `cua-selection-mode' bindings
+;; for C-v and M-v bindings are not supported.
+(setq isearch-allow-motion t
+      isearch-motion-changes-direction t)
+
+I hope you learned something useful today! Keep searching (the Emacs docs)!
 
 * Tramp
 :about:

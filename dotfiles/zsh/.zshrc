@@ -1,3 +1,4 @@
+#  Toshiba .zshrc
 #  the .zshrc file is read when starting new interactive shell
 #
 # set initial shell level
@@ -117,6 +118,7 @@ echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sys
 # and
 nohup ~/.dropbox-dist/dropboxd&
 "
+
 # echo "Rem: I changed cd to act like zoxide z"
 # TRY THIS here
 # echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p
@@ -129,8 +131,13 @@ nohup ~/.dropbox-dist/dropboxd&
 #####################################################
 
 # zsh modules (optional)
+# zrof zsh profiler
+# Zsh also ships with a profiler. Put this at the very top of your .zshrc:
 # the following (uncommented line) allows profiling `zsh` to see what may be making it slow. NOTE: zprof needs to be uncommented at the last line too.
-# zmodload zsh/zprof
+# https://mijndertstuij.nl/posts/life-is-too-short-for-a-slow-terminal/
+zmodload zsh/zprof
+# and this at the very bottom:
+# zprof
 
 # zmodload zsh/mathfunc
 # allow math functionality - see che cli_calcs.md 
@@ -403,7 +410,23 @@ autoload -U zmv # meaning zsh mv command
 #
 # autocompletion
 # this requires zhs-completions plugin to be installed
-autoload -U compinit; compinit
+# autoload -U compinit; compinit
+# https://mijndertstuij.nl/posts/life-is-too-short-for-a-slow-terminal/
+# compinit is one of the most expensive things in a typical .zshrc. By default it does a security audit of every completion file, every single time you open a shell. 
+# The fix is to only do the full run if the cache (.zcompdump) is older than 24 hours, and otherwise skip the check with -C:
+
+autoload -Uz compinit
+if [[ -n ~/.zcompdump(#qNmh-24) ]]; then
+  compinit -C
+else
+  compinit
+fi
+
+# That glob qualifier (#qNmh-24) reads as "exists and was modified within the last 24 hours". 
+
+
+
+
 autoload -U colors; colors
 
 # In bash to use the vi editor
@@ -438,8 +461,8 @@ bindkey "jl" clear-screen # like Ctrl L
 
 # binding a shortcut to a hardcoded string ; `jl` will now cd $HOME without needing to press <Enter> — for the win!
 # zshzle bindkey - widgets
-bindkey -s "j;" 'cd ^M'     # cd ~ without pressing enter; cd to $HOME
-bindkey -s "j'" 'cd - ^M'   # cd - without pressing enter; cd to previous directory
+bindkey -s "j;" 'cd ^M'     # cd ~ without pressing Enter; cd to $HOME
+bindkey -s "j'" 'cd - ^M'   # cd - without pressing Enter; cd to previous directory
 
 # / for search shell history
 # causes problems when entering / for filepaths
@@ -739,6 +762,8 @@ source ~/PORTABLE_ENV/zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 #########################################################
 # plugins=( zsh-syntax-highlighting )
 source $HOME/PORTABLE_ENV/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# see also zsh-patina — an alternative to this @ https://github.com/michel-kraemer/zsh-patina NOTE: added 2026-06-08 
 
 
-
+# from  line 136 above
+# zprof

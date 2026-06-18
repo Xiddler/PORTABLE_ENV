@@ -23,6 +23,7 @@ md_journal() {
   local filen=$myDir/$(date +%d-%m)\.md
 
   if [ ! -f $filen ]; then
+    cd $myDir
     touch $filen
     # front matter for new day's journal:
     echo "# FRONT MATTER
@@ -123,6 +124,9 @@ Afternoon:
 
 
 ### Games
+Connections: x rows; y lives used ; Scoring: 1,2,4,3; 
+Wordle: x rows ABCDE
+Lichess: z%
 
 
 ### Reading

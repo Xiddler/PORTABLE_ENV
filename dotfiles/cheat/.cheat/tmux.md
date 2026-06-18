@@ -219,5 +219,18 @@ unbind-key           unbind                   -- unbind a key
 unlink-window        unlinkw                  -- unlink a window
 wait-for             wait                     -- wait for an event or trigger it
 
+# send message to another tmux window
+2026-05-22 
+On zsh_1:
+-%> tmux send-keys -t 2 "'echo "hi from 1"'
+and
+echo "hi from 1"
+appears on zsh_2
+
+or send the `godict` command (which won't run it) from zsh_1 to dict tab
+-%> tmux send-keys -t 6 godict
+
+
+
 
 

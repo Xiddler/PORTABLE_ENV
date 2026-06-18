@@ -37,9 +37,11 @@ The letters are:
     u: hex 4-digit value, max ffff (same as 65535 in decimal)
     U: hex 8-digit value, max 7fffffff
 
+
+
 Example:
 LATIN CAPITAL LETTER A WITH GRAVE
-(Find any Unicode point eg 'LATIN CAPITAL LETTER A WITH GRAVE' at URL --▷ [Unicode-explorer](https://unicode-explorer.com/search/) )
+(Find any Unicode point eg 'LATIN CAPITAL LETTER A WITH GRAVE' at URL --▷ [Unicode-explorer](https://unicodeplus.com/) )
 
 À ◁-- [insert] c-k A! (A backtick)          Digraph 
 À ◁-- [insert] c-q 192                      Dec

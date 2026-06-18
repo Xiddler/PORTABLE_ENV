@@ -932,6 +932,9 @@ to replace with [spc]-[spc] do
 HINT :help %u
 
 ```
+# use fzf and vim together
+-%>  fzf --print0 | xargs -0 -o vim
+This will list all the files in the current directory in fzf-fashion and then when you select the file you want, it will open in vim
 
 # To convert the annoying, illegible first line into the second line use @h where h contains :s/\%u2014/ - /g
 
@@ -1345,7 +1348,20 @@ See
 :h i_ctrl-r
 
 
+# manipulate digraphs
+2026-06-18 
+
+The ex command to capture a digraph for searching
+:redir @a | silent digraph | redir END | new +setl\ buftype=nofile\ bufhidden=wipe | put! a
+
+Example: To copy ® to other parts of the buffer:
+Select ® then yank it to (say) the `a` register with "ya
+Select the above command and paste it into the ex command line (using Ctrl Shift v)
+Now 
+:put
+will place the contents of the `a` register in the buffer at the cursor point
 
 
 
 # END
+

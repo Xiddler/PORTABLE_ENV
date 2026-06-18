@@ -580,13 +580,28 @@ https://junyonglee.me/github/How-to-clean-up-git-repository/
 # git rev-parse
 
 Is this directory part of a git repo?
+
 ->% git rev-parse --is-inside-work-tree
 true
 
+# STAGING AND UNDOING CHANGES
+2026-06-01 
 
+Staging means copying files to a hidden “staging area” to commit in the next git commit. 
+The opposite is git reset, which removes (“unstages”) files from the staging area.
 
+→ git reset files...                Unstage some files
+→ git reset                         Unstage ALL files
 
+You can also undo changes that aren’t staged yet, restoring some or all files to their most recent commit.
 
+→ git restore files...              Undo unstaged changes in files
+→ git reset --hard                  Unstage, then undo ALL changes
+
+Older versions of Git use git checkout instead of git restore.
+
+WARNING
+git reset --hard destroys all uncommitted changes, whether they’re staged or not. Be sure you mean it!
 
 # END 
 

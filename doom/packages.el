@@ -51,6 +51,11 @@
 ;; (package! sly
 ;; :recipe (:host github :repo "joaotavora/sly"))
 
+;; emacs-reader
+;; pdf + reader for emacs — 2026-06-01 https://codeberg.org/MonadicSheep/emacs-reader
+;; (package! reader
+;; :recipe (:host codeberg :repo "MonadicSheep/emacs-reader"))
+;; quote or not before (:host ?
 
 
 ;; package! is specific to doom (it registers the package so that subsequent doom sync fetch and builds the package).
