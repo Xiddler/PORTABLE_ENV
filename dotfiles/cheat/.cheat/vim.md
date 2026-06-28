@@ -1362,6 +1362,45 @@ Now
 will place the contents of the `a` register in the buffer at the cursor point
 
 
+# searching for digraphs
+2026-06-22 
+
+The problem is how to enter a digraph into the search window.
+Solution:
+copy the digraph into a <register>
+use Ctrl r <register> 
+hey presto!
+
+Example
+
+You want to search for the digraph ¹ (supertext 1)
+Place cursor over the digraph and type "hyl to copy the digraph into the `h` register
+Type `/` to enter search
+Type Ctrl r h to paste the contents of the `h` register into the search box 
+Press Enter and `n` to search the buffer for all instances of ¹ and Bob's your Uncle.
+
+# math in vim
+
+= is the expression register
+
+Let's calculate an approximate value for π and paste it into the current buffer.
+
+We know that 355/113 is a good approximation for π
+The ex register needs to be told about decimal places so we'll enter the ratio as 355.0/113
+
+In normal mode, open the ex cli with `:`
+Ctrl r =            [ no spaces! ]
+355.0/113 (Enter)
+_output_
+:3.141593
+
+Esc to exit the ex cli (with the :3.141593 still displaying)
+
+In normal mode
+":p
+will paste the result of the calculation into the current buffer
+
+3.141593
 
 # END
 

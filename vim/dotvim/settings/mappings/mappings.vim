@@ -110,6 +110,7 @@ inoremap <leader>d <C-R>=expand("%:p:h")<CR>
 " NORMAL MODE
 nnoremap <leader>d :call Filename()<cr>
 
+inoremap <leader>g ®
 
 
 " Toggle/Open a file explorer to the right 
@@ -133,7 +134,7 @@ nnoremap <leader>k :set nomore<Bar>:ls<Bar>:set more<CR>:b<Space>
 nnoremap <leader>n g^d0
 
 "<leader>p to paste from system clipboard
-nnoremap <leader>p :set paste<cr> "+p :set nopaste<cr>
+" nnoremap <leader>p :set paste<cr> "+p :set nopaste<cr>
 
 "<leader>q to quit file
 noremap <leader>q :q<cr>
@@ -365,9 +366,9 @@ inoremap DG °
 " need to be in insert mode for these then press <CR> or <SPC> to instigate 
 ab mys "Proactively engaged in making a better life for myself and/or others"
 ab FP 'Full Picture'
-abb dtw - Donagh the Wise
-" ab dtw - Donagh di Wit
-inoremap dtw - Donagh di Wit
+abb dtw — Donagh the Wise
+" ab dtw — Donagh di Wit
+inoremap dtw — Donagh di Wit
 ab FQHB Fully Qualified Human Being
 ab tbp The Big Picture
 ab rde raison d'être
