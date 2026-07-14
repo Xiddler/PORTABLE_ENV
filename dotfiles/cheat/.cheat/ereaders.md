@@ -19,6 +19,7 @@ ebook-convert  Usage: ebook-convert input_file output_file [options]
 |             |   foliate¹   |            | 
 |             |   epy²       |            | 
 |  djvu       |   djview4    |            |
+|  djvu       |   okular     |            | added 2026-07-01 
 |  mobi       |   fbreader   |            |
 |  fb2        |   fbreader   |            | 
 |  OpenReader |   fbreader   |            | 

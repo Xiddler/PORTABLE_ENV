@@ -2,7 +2,13 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("people.org"
+(("central_issues.org"
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/000_DIRECTORY_ORGS/01_ME_STUFF/central_issues.org")
+ (front-context-string . "personal\n2025-11")
+ (rear-context-string . "------------\n** ")
+ (position . 6400)
+ (last-modified 27220 57392 859007 762000))
+("people.org"
  (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/000_DIRECTORY_ORGS/08_INTERESTS/people.org")
  (front-context-string . "~/DONAGHS/person")
  (rear-context-string . "ew\n#+FILEPATH:  ")
@@ -69,7 +75,7 @@
  (position . 4581)
  (last-modified 26881 58600 587326 861000))
 ("encounters.org"
- (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/SOCIAL_STUFF/encounters.org")
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/06_SOCIAL_STUFF/SOCIAL_STUFF/encounters.org")
  (front-context-string . "** 2025-10-28\n\nT")
  (rear-context-string . "[^1]:\n\n_BOOKS_\n\n")
  (position . 537)
@@ -105,7 +111,7 @@
  (position . 12782)
  (last-modified 26866 15792 627905 772000))
 ("ideas.org"
- (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/ideas/ideas.org")
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/000_DIRECTORY_ORGS/05_IDEAS/ideas/ideas.org")
  (front-context-string . "\" (2011, p. 250)")
  (rear-context-string . "ills in-between.")
  (position . 12184)
@@ -117,13 +123,13 @@
  (position . 59906)
  (last-modified 26778 15810 465103 169000))
 ("social_sychology.org"
- (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/SOCIAL_STUFF/social_sychology.org")
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/000_DIRECTORY_ORGS/06_SOCIAL_STUFF/SOCIAL_STUFF/social_sychology.org")
  (front-context-string . "#+TITLE:     soc")
  (rear-context-string)
  (position . 1)
  (last-modified 26778 15724 638197 905000))
 ("books.org"
- (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/books.org")
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/000_DIRECTORY_ORGS/08_INTERESTS/books.org")
  (front-context-string . "jects\n** Psychol")
  (rear-context-string . "(by year)\n\n* Sub")
  (position . 58920)

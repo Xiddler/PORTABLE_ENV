@@ -102,9 +102,8 @@ Try remounting with write permissions using
 
 # ---------------------------------------
 # sudo mount
+
 sudo mount /dev/sdb1 /mnt/Tiny_USB_SanDisk
-
-
 
 #  -o means options
 

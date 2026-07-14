@@ -287,7 +287,9 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 ;; TIP:  SPC t l to toggle line numbers
-(setq display-line-numbers-type 'relative)
+;; (setq display-line-numbers-type 'relative)
+(setq line-number-mode 'nil)
+(setq display-line-numbers-type 'nil)
 ;; (setq display-line-numbers-type t)
 
 ;; doom emacs modeline

@@ -21,14 +21,19 @@ echo "Enter the string"
 
 read myvar
 
+
 # replace the spaces with underscores
 mynew=${myvar// /_}
+
+# commas?
+mynew=${mynew//,/}
 
 # set the file path
 mydest=/home/donagh/REPOS/books/Articles/Articles_downloaded/$mynew.md
 
 # edit the file in the appropriate directory using vim
 vim $mydest
+# echo $mydest
 
 
 # also the option of using  | tr " " "_"

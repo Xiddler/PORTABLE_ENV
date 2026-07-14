@@ -68,6 +68,9 @@ MY_ZIM_Computer_file="/home/donagh/samba/anonymous_shared_directory/ZIM_WIKI_fro
 # Target file i.e. destination
 TARTARGET="/home/donagh/MY_LOCKER/MY_PRECIOUS_DATA-$today.tar.gz"
 
+# Manual — for fixing when errors spotted
+# TARTARGET="/home/donagh/MY_LOCKER/MY_PRECIOUS_DATA-2026-07-11.tar.gz"
+
 # tar -czf $TARTARGET $all_org $personal $PORTABLE_ENV $MY_ZIM
 tar -czf $TARTARGET $all_org $personal $PORTABLE_ENV $MY_ZIM_Computer_folder $MY_ZIM_Computer_file
 

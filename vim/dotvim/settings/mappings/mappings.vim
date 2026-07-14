@@ -364,12 +364,15 @@ inoremap DG °
 " ABBREVIATIONS
 
 " need to be in insert mode for these then press <CR> or <SPC> to instigate 
-ab mys "Proactively engaged in making a better life for myself and/or others"
+" ab mys 'Proactively engaged in making a better life for myself and/or others' " pathetic
+ab toob Too bad. Poor me. Hard cheese. Tough luck. Bye bye.
 ab FP 'Full Picture'
 abb dtw — Donagh the Wise
 " ab dtw — Donagh di Wit
+" Donagh dim wit
 inoremap dtw — Donagh di Wit
 ab FQHB Fully Qualified Human Being
+ab FRHB Fully Recognisable Human Being
 ab tbp The Big Picture
 ab rde raison d'être
 ab psm psycho-social-mental illness
@@ -389,6 +392,7 @@ ab ngp  New Good Positive Helpful & Sensible Thinking Patterns
 ab ohter other
 ab ohters others
 ab becasue because
+ab welta weltanschauung
 
 
 " does this fix significan't? Yes! NO! See  /home/donagh/Arch_PORTABLE_ENV/dot_config/espanso/match/base.yml

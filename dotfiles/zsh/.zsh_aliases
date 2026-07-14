@@ -487,6 +487,7 @@ alias gcl='git clone '
 alias gsss='git status --short | sort -r'
 alias gss='git status'
 alias gaa='git add -A'
+alias gla='git log --all'
 # alias -g gsw='git switch "$1"'
 gsw() { git switch "$1" }
 # git log pretty
@@ -563,6 +564,7 @@ alias -g lfnl="ls -la | grep -v '\->' | grep -v '^d'" # List files which are not
 alias -g lfs="ls | xargs -n1" # simple list files in a column
 alias -g l1="ls | xargs -n1" # simple list files in a column
 
+
 # Directories
 # alias -g ld='ls -ld -- *(R)' # List non-hidden directories incl. those that are symlinks (zsh)
 # alias -g ld='ls -ld -- *(-/)'  # List non-hidden directories incl.those that are  symlinks (zsh)
@@ -571,7 +573,7 @@ alias -g l1="ls | xargs -n1" # simple list files in a column
 # ls -ld -- *(-/) | awk '{ print $9 }'
 # alias -g ld='ls -ld -- *(-/)' | awk '{ print $9 "/" }'
 
-ld() { ls -ld -- *(-/) | awk '{ print $9  "/"}' }
+ld() { ls -ld -- *(-/) | awk '{ print $9  "/"}' } # List non-hidden directories incl. those that are symlinks (zsh)
 # using `find` to identify directories in the current folder (here $HOME):
 # find ~  -maxdepth 1 -type d | cut -d'/' -f4  | grep -v '^[_ .]' | sort
 
@@ -617,6 +619,9 @@ alias -g t4="tree -alL 4"
 ls20() { ls -lt  **/*(.om[1,20]) }
 
 alias lastmod='find . -type f -not -path "*/\.*" -exec ls -lrt {} + | less'
+
+recent() { ls -lt  **/*(.om[1,20]) } # print most recently accessed files on this dir
+rr() { ls -lt  **/*(.om[1,20]) } # print most recently accessed files on this dir
 
 #}}}
 #{{{ BASH
