@@ -10,7 +10,7 @@
 
 # DECEDITOR="vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc "
 
-# Edited: 2026-03-27 
+# Edited: 2026-07-22; 2026-03-27 
 
 md_journal() {
   local year=$(date +%Y)
@@ -40,6 +40,8 @@ md_journal() {
 Morning: 
 Afternoon: 
 
+# ==========================================================
+
 ## EVENTS OF THE DAY
 
 
@@ -63,6 +65,11 @@ Afternoon:
 
 
 # PRIVATE
+
+
+
+
+# ==========================================================
 
 ## STATUS
 

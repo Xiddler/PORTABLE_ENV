@@ -337,8 +337,10 @@ nnoremap dB dbx
 " note: this has problems with words that end in 'i' eg radiI. Is there a fix for this?
 inoremap lh —
 inoremap £ # 
+
+inoremap <leader>e €
 " inoremap i<space> I<space>
-inoremap eu<space> €
+" inoremap eu<space> €
 inoremap dgc °C
 
 " TYPOS

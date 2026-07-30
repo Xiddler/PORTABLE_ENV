@@ -265,6 +265,8 @@ godict() {/home/donagh/.virtualenvs/dict/bin/python /run/media/donagh/USB128GB/R
 # list of words I looked up
 lsw() { sqlite3 /run/media/donagh/USB128GB/REPOSITORIES/2programming/python/1python_projects/cli_python/donaghs_words.db "SELECT * FROM words;"}
 
+spell() { cat /run/media/donagh/USB128GB/REPOSITORIES/WORDS/0WORDS_BIG.txt | fzf }
+
 #}}}
 #{{{ info
 

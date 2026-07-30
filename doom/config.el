@@ -46,11 +46,11 @@
          ;;
          ;
 ;;see https://orgmode.org/manual/Capture-templates.html
-(setq org-capture-templates
-      '(("u" "Todo" entry (file+headline "~/DONAGHS/personal/6_Ur_Journal.org" "Items")
-         "* %?\n  %i\n  %a")
-        ("v" "Ur_Journal" entry (file+datetree "~/org/journal.org")
-         "* %?\nEntered on %U\n  %i\n  %a")))
+;; (setq org-capture-templates
+      ;; '(("u" "Todo" entry (file+headline "~/DONAGHS/personal/6_Ur_Journal.org" "Items")
+         ;; "* %?\n  %i\n  %a")
+        ;; ("v" "Ur_Journal" entry (file+datetree "~/org/journal.org")
+         ;; "* %?\nEntered on %U\n  %i\n  %a")))
 
 ;; Improve org mode looks : https://lucidmanager.org/productivity/ricing-org-mode/ :: added 2023-08-02
 (setq org-startup-indented t
@@ -112,6 +112,10 @@
 ;; Turn on abbrev mode
 (setq-default abbrev-mode t)
 ;; (setq-default bookmark-load t)
+;;
+;;bookmarks
+;;~/.config/emacs/.local/etc/bookmarks
+;; (setq bookmark-load t)
 
 ;; Indenting
 ;; URL: https://www.xemacs.org/Links/tutorials_1.html
