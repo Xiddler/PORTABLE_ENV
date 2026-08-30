@@ -123,6 +123,29 @@ set startofline
 " set hi link markdownError Normal " error with link?
 
 " }}}
+"{{{ Persistend undo
+
+" trial started 2026-08-19  :: trial ended 2026-08-19 
+" persistent undo
+
+" if !isdirectory($HOME."/PORTABLE_ENV/vim/dotvim/undodir")
+"     call mkdir($HOME."/PORTABLE_ENV/vim/dotvim/undodir")
+" endif
+
+" set undodir=~/PORTABLE_ENV/vim/dotvim/undodir"
+" set undofile
+" set undolevels=1000 "maximum number of changes that can be undone
+" set undoreload=10000 "maximum number lines to save for undo on a buffer reload
+
+"}}}
+"{{{ ctags
+" trial started 2026-08-19 
+" ctags looks in the right directory
+set tags=./.tags,.tags;$HOME
+nnoremap <C-}> g<C-]>
+nnoremap <C-[> <C-t>
+
+"}}}
 " {{{ Filetype
 " plugin and ftplugin
 

@@ -1,6 +1,15 @@
 # sqlite3 
-# tutorial at https://www.sqlitetutorial.net/
 
+# webrefs
+
+homepage at
+https://www.sqlite.org/
+
+tutorial at 
+https://www.sqlitetutorial.net/
+
+guide & usage at
+https://database.guide/what-is-sqlite/
 
 # create database and launch interactive shell
 sqlite3 example.db
@@ -84,7 +93,7 @@ See [cli sqlite3 shell](https://www.sqlite.org/cli.html)
 
 sqlite>.help
 sqlite>.exit            Exit interactive shell
-sqlite>
+sqlite>.quit            Exit interactive shell
 sqlite>
 sqlite>
 
@@ -181,3 +190,14 @@ You can use the ".mode" dot command to switch between these output formats.
 # Backup an sqlite3 db
 
 -> % sqlite3 app.db '.backup backup.db'
+OR
+-%> cp donagh.db donagh_backup.db
+
+# count distinct words in dict database
+
+~/REPOS/2programming/python/1python_projects/cli_python/donaghs_words.db
+
+(2026-08-07)
+SELECT count(DISTINCT word) FROM words;
+❯ 958
+

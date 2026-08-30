@@ -156,4 +156,8 @@ date  --date="yesterday" +"%Y-%m-%d"
 
 =~ = regex operator
 
+# list files from the last 12 days in the current (.) directory
+
+find . -newermt $(date +%Y-%m-%d -d '12 day ago') -type f -print
+
 # END

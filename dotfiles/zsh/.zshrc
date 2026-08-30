@@ -565,6 +565,7 @@ export MCFLY_KEY_SCHEME=vim
 # higher numbers weight toward shorter matches. Values in the 2-5 range get good results
 export MCFLY_FUZZY=2
 
+
 # options for mcfly
 # export MCFLY_KEY_SCHEME=vim
 # export MCFLY_FUZZY=2

@@ -128,7 +128,7 @@ noremap <leader>f :Ranger<cr>
 
 " combine :ls and :bn to open / navigate buffers
 " https://stackoverflow.com/questions/53664/how-to-effectively-work-with-multiple-files-in-vim
-nnoremap <leader>k :set nomore<Bar>:ls<Bar>:set more<CR>:b<Space>
+" nnoremap <leader>kk :set nomore<Bar>:ls<Bar>:set more<CR>:b<Space>
 
 " shift sentence to left ie  remove all leading spaces to shift sentence to point '0'
 nnoremap <leader>n g^d0
@@ -144,8 +144,12 @@ nnoremap <leader>r  :exe 'set nu!' &nu ? 'rnu!' : '' <cr>
 nnoremap <C-n> :exe 'set nu!' &nu ? 'rnu!' : ''
 
 "<leader>s to save file
-nnoremap <leader>s :w<cr>
-inoremap <leader>s <C-c>:w<cr>
+"nnoremap <leader>s :w<cr> " note I use s with other letters after the leader
+"for other thing so the plain leader s slows down this method of saving; use
+"leader k
+nnoremap <leader>k :w<cr>
+"inoremap <leader>s <C-c>:w<cr>
+" 2026-08-19 
 
 "<leader>t to toggle word case  (Why so slow 4seconds lol)
 nmap <leader>t g~aW
@@ -360,14 +364,16 @@ inoremap dgc °C
 " inoremap hte the " this also messes with words like enlighten, frighten; can I find a fix for this? Should I just kill this one?
 inoremap teh the
 inoremap adn and
-inoremap DG °
+" inoremap DG ° " sent to espanso
 
 
 " ABBREVIATIONS
 
 " need to be in insert mode for these then press <CR> or <SPC> to instigate 
 " ab mys 'Proactively engaged in making a better life for myself and/or others' " pathetic
-ab toob Too bad. Poor me. Hard cheese. Tough luck. Bye bye.
+" ab toob Too bad. Poor me. Hard cheese. Tough luck. Bye bye.
+" changed to the following on 2026-08-18 
+ab toob Too bad. Poor you. Hard cheese. Tough luck. 
 ab FP 'Full Picture'
 abb dtw — Donagh the Wise
 " ab dtw — Donagh di Wit

@@ -1640,6 +1640,17 @@ Then press Q to get...
 appear
 defamation
 
+** windows
+2026-08-23
+
+close bottom window
+,d  <-- delete-other-window
+
+SPC w j SPC w c
+
+Emacs windows
+C-x o <-- other window i.e. go to other window
+
 ** workspaces
 [SPC] [TAB] n create new workspace
 [SPC] [TAB] <#> switch to Workspace <#> Displayed at bottom of window.
@@ -2276,6 +2287,25 @@ Check that the duplicates are removed from
 using, say, vim to delete the duplicates
 Then
 M-x bookmark-load
+
+** bookmark list
+2026-08-24
+
+SPC b L
+
+Then use
+d to mark lines to be deleted
+and then
+x to delete
+
+In vanilla emacs Delete, Rename a Bookmarks
+
+First, Alt+x list-bookmarks , then
+
+    Type d to mark the current item for deletion.
+    Type x to delete all D marked ones.
+    Type r to rename current bookmark's title.
+    Type s to save the change. (Not in doom-emacs)
 
 * images
 2025-06-29

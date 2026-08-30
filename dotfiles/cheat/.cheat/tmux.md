@@ -1,13 +1,18 @@
 # Quick Ref.
-#Rem: Two separate actions: Do Ctrl-a together then let go and then % for example.
-# Cheat sheet https://tmuxcheatsheet.com/ 
 
-# in the terminal 
+Rem: Two separate actions: Do Ctrl-a together then let go and then % for example.
+Cheat sheet https://tmuxcheatsheet.com/ 
+
+# Using tmux
+
+in the terminal 
+
 Start tmux						:: tmux
 List tmux windows               :: tmux ls
 Detach from tmux                :: C-a d
 
-# sessions
+sessions
+
 Create new session              :: tmux new -s <name>
 Return to session               :: tmux attach-session -t <name>
 Kill everything                 :: tmux kill-session -a
@@ -15,98 +20,113 @@ Kill session                    :: tmux kill-session -t <name>
 List sessions                   :: tmux list-sessions
 List current sessions           :: C-a s
 
-# general
+general
+
 Info                            :: C-a ? [ list all the tmux options ] 
 
-# windows
+windows
+
 Create window                   :: C-a c
 Rename the current window       :: C-a , 
 Go to next window               :: C-a n
 Go to previous window           :: C-a p
 Close current window            :: C-a &
 
-# panes
+panes
+
 Vert. split						:: C-a % or C-a v
 Hor. split						:: C-a " or C-a h
 Focus split left				:: C-a ←  or Alt ←
 Focus split right				:: C-a →  or Alt →
 Go full screen                  :: C-a z
-Resize pane                     :: C-a Alt →  
+Resize pane                     :: C-a Alt →
 Kill current pane               :: C-a x
 
 
-# In ~/.tmux.conf
-Use vi keys in buffer           :: setw -g mode-keys vi
+# tmux on the cli
 
+Detach an already attached session (great if you are moving devices with different screen resolutions):
 
-# Detach an already attached session (great if you are moving devices with different screen resolutions)
 tmux attach -d 
 
-# Display session:
+Display session:
+
 tmux ls
 
-# Rename session:
+Rename session:
+
 Ctrl-a $
 
-# Switch session:
+Switch session:
+
 Ctrl-a s
 
-# Start a shared session:
+Start a shared session:
+
 tmux -S /tmp/your_shared_session
 chmod 777 /tmp/your_shared_session
 
-# Help screen (Q to quit):
+Help screen (Q to quit):
+
 Ctrl-a ?
 
-# Scroll in window:
+Scroll in window:
+
 Ctrl-a PageUp/PageDown
 
-# Reload configuation file
-Ctrl-a : source-file /path/to/file
+Reload configuation file
+
 Ctrl-a : source-file ~/.tmux.conf
 
 # Window management
-# =================
 
-# Create window:
+Create window:
 Ctrl-a c
 
-# Destroy window:
+Destroy window:
 Ctrl-a x
 
-# Switch between windows:
+Switch between windows:
 Ctrl-a [0-9]
 or
 Ctrl-a Arrows
 
-# Split windows horizontally:
+Split windows horizontally:
 Ctrl-a %
 
-# Split windows vertically:
+Split windows vertically:
 Ctrl-a "
 
 NOTE: C-a
-# remap prefix from 'C-b' to 'C-a'
-# In the ~/.tmux.conf file 
+
+END window management
+
+# ~/.tmux.conf file 
+
+Use vi keys in buffer           :: setw -g mode-keys vi
+
+
+remap prefix from 'C-b' to 'C-a'
+
 unbind C-b
 set-option -g prefix C-a
 bind-key C-a send-prefix
 
-# Alternatively  $ tmux source-file ~/PORTABLE_ENV/tmux.conf
-# This turns the old C-b into the new C-a (which is easier on the fingers!)
+Alternatively  $ tmux source-file ~/PORTABLE_ENV/tmux.conf
+This turns the old C-b into the new C-a (which is easier on the fingers!)
 
+# Ctrl A Cheat Sheet 
 
-# A Ctrl+A Cheat Sheet
-
-# Session Commands
+Session Commands
 
     S: List sessions.
     $: Rename current session.
     D: Detach current session.
-    Ctrl+B, and then ?: Display Help page in tmux.
+    Ctrl+A and then ? Displays Help page in tmux.
 
-# Window Commands
+Window Commands
 leader + 
+
     C: Create a new window.
     ,: Rename the current window.
     W: List the windows.
@@ -114,7 +134,7 @@ leader +
     P: Move to the previous window.
     0 to 9: Move to the window number specified.
 
-# Pane Commands
+ Pane Commands
 
     h: Create a horizontal split.
     v: Create a vertical split.
@@ -129,8 +149,9 @@ leader +
     X: Close the current pane.
 # tmux <commands>
 
-  /usr                                                                                                                donagh@donagh-satellitep50c
 ❯ tmux
+_output_
+
 attach-session       attach                   -- attach or switch to a session     ->% tmxu attach-session -t <sessin-name>
 bind-key             bind                     -- bind a key to a command
 break-pane           breakp                   -- break a pane from an existing into a new window
@@ -220,6 +241,7 @@ unlink-window        unlinkw                  -- unlink a window
 wait-for             wait                     -- wait for an event or trigger it
 
 # send message to another tmux window
+
 2026-05-22 
 On zsh_1:
 -%> tmux send-keys -t 2 "'echo "hi from 1"'
@@ -230,7 +252,20 @@ appears on zsh_2
 or send the `godict` command (which won't run it) from zsh_1 to dict tab
 -%> tmux send-keys -t 6 godict
 
+# config for Ctrl/Shift Enter
 
+tmux strips modifier information from certain keys by default. 
+Without configuration, Shift+Enter and Ctrl+Enter are usually indistinguishable from plain Enter.
 
+Recommended Configuration
 
+Add to ~/.tmux.conf:
 
+set -g extended-keys on
+set -g extended-keys-format csi-u
+
+Then restart tmux fully:
+tmux kill-server
+tmux
+
+# END

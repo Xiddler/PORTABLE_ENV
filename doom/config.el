@@ -461,6 +461,7 @@
 (map! :n "ta" 'org-agenda )
 (map! :n "SPC w w" 'kill-buffer ) ;; like vim
 (map! :n "SPC s SPC" 'save-buffer ) ;; even simpler than w, like vim
+(map! :n ",k" 'save-buffer) ;; very easy on the keybard and it works in VIM
 (map! :n "SPC j" 'outline-next-visible-heading )
 (map! :n "SPC k" 'outline-previous-visible-heading )
 (map! :n "SPC l" 'org-insert-link )
@@ -499,6 +500,7 @@
 ;; (map! :i "\t" " ") ;; see doom-note.org --> indenting
 (map! :n "tb" 'treemacs-bookmark )
 (map! :n ",d" 'delete-other-windows)
+(map! :n ",j" 'delete-other-windows)
 
 ;; iambic
 ;; (map! :n ",d" "@dnc - ") ;; or better to use abbrev-defs?

@@ -143,12 +143,43 @@ hash -d hello=~/Documents
 ~hello/world
 
 # help from
-man zshall
-https://manpages.debian.org/bullseye/zsh-common/index.html :: contains only contents of -> % man zshall
+man zshall (ie zsh all)
+https://manpages.debian.org/bullseye/zsh-common/index.html :: contains only contents of -> % man zshall (ie zsh all)
 
 ## zsh-syntax-highlighting
 
 # zsh-abbr - see https://zsh-abbr.olets.dev/
+# BANGS !!
+https://refp.se/articles/your-shell-and-the-lazy-exclamation-mark
 
+The rule of three
+
+    !! which expands to the previous command (eg -%> sudo !!
+    !needle which expands to the most recent command starting with "needle"
+    !?needle? matches the most recent command containing "needle"
+
+
+The powerful four
+
+    !$ the last argument of the previous command
+    !:0 when you need to rerun that annoyingly located script
+    !$:h for an easy extraction of the directory part
+    !$:t for when you want the filename and nothing else
+
+ Modifier
+
+Modifiers are perhaps where we enter "oh-daaaaaaaym"-territory — they allow you to extract/modify only certain parts of what would otherwise be an entire argument.
+
+$ !:$:h # strip filename (`dirname`)
+$ !:1:t # strip leading path (`basename`)
+$ !:1:r # strip only the extension
+$ !:1:e # leave only the extension
+
+$ !:s/hello/bye/ # replace first 'hello' with 'bye'
+$ !:gs/foo/bar/  # replace all 'foo' with 'bar'
+
+$ !ssh:p # print what would run, without running it
+
+# END zsh.md
 
 
