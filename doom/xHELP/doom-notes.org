@@ -307,6 +307,10 @@ M-dash        —      use `lh`  to render the M-dash
 
 *** some examples
 
+
+
+.̲
+
 Slash         /      SPC i u 2f
 Pure prompt   ❯      SPC i u 276f
 Tick mark     ✓      SPC i u 2713 My abbrev --> tm

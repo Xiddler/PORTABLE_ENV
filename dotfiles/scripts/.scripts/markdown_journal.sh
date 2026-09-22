@@ -131,9 +131,13 @@ Afternoon:
 
 
 ### Games
+
 Connections: x rows; y lives used ; Scoring: 1,2,4,3; 
+(Note: ⎽ <leader>u in insert mode)
+
 Wordle: x rows ABCDE
-Lichess: z%
+
+Lichess: z% Current rating:
 
 
 ### Reading

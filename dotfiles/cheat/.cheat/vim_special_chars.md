@@ -35,10 +35,11 @@ A
 # To insert the prompt from pure-prompt ❯
 
 In INSERT mode, Ctrl-Q u276f
+,j 
+,>
+
 ❯ this is the Pure prompt arrow
 ❯
-
-
 I have mapped <leader>> to do this in .vimrc ~/.vim/mappings.vim --▷  Custom Leader
 ❯ 
 
@@ -114,7 +115,7 @@ In insert mode, type Ctrl+V (or Ctrl+Q) followed by:
     o then an octal number (o0-o377, i.e., 255 is the maximum value)
     x then a hex number (x00-xFF, i.e., 255 is the maximum value)
     u then a 4-hexchar Unicode sequence
-a i 
+
 
 Example:
 insert `i`
@@ -124,5 +125,9 @@ i  hex              Ctrl+Q x69
 i  octal            Ctrl+q o151
 i  unicode 4 char   Ctrl+q u0069
 i  unicode 8 char   Ctrl+q U00000069 
+
+.̲   <.>  46,  Hex 2e,  Octal 056 < > 818, Hex 0332, Octal 1462
+
+
 
 

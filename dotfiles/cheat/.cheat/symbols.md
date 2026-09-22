@@ -1,3 +1,4 @@
+# FRONTMATTER
 Opened 2024-11-15
 Filepath ~/PORTABLE_ENV/dotfiles/cheat/symbols.md
 
@@ -8,60 +9,10 @@ Links
 ~/.cheat/unicode.md 
 ~/.cheat/ascii
 
+# SELECTED SYMBOLS
 
-
-Symbols
-
-
-
-# vim
-see
-~/.cheat/vim_digraphs.md
-~/.cheat/vim_special_chars.md
-~/.cheat/unicode.md
-
-# where is
-
-arrows in ~/.cheat/vim_digraphs.md
-copied here
-》  +>     U+300B
-《  >+
-
-⟫   none   U+27EB
-
-▶   PR      BLACK RIGHT-POINTING TRIANGLE
-◀   PL      BLACK LEFT-POINTING TRIANGLE
-▲   UT      BLACK UP-POINTING TRIANGLE
-▼   Dt      BLACK DOWN-POINTING TRIANGLE
-
-◁   Tl or lT
-▷   Tr or rT
-△   uT      WHITE UP-POINTING TRIANGLE
-▽   dT      WHITE DOWN-POINTING TRIANGLE
-
-
-❯ --> <❯> 10095, Hex 276f, Octal 23557 .vimrc --> mappings.vim <leader>>  PURE PROMPT ARROW
-
-
-→   ->
-←   <-
-
-»   >>  0xbb    187 RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
-«   <<
-
-≪   <*
-≫   *>
-
-
-# how to
-
-⟫  ◁--  Ctrl-Q U27EB
-ᥢ  ◁--  Ctrl-Q U1962
-
-# Selected symbols
-
-
-  dphs   Hex
+sy  dig  Hex
+_________________________________________
 ⁊       204a        TIRONIAN ET
 
 †   /-              DAGGER
@@ -105,16 +56,83 @@ copied here
 °	dg	0xb0	176	DEGREE SIGN
 ✠   -x          MALTESE CROSS
 
-Superscripts and subscripts
+
+√   RT          SQUARE ROOT
+∛               Ctrl+q u221b CUBED ROOT
+∞   00          INFINITY
+
+‗   =2
+₋   -s
+ḻ   L_
+⎽       Ctrl+Q u23bd  (leader u in insert mode)  NON-STANDARD UNDERSCORE
+
+
+# Superscripts and subscripts
 
 ₐ  as          LATIN SUBSCRIPT SMALL LETTER A  [ I created the 'alias' `as` using :digraphs as 8336 or :execute "digraphs as " . 0x2090 ]
 ₑ  es          LATIN SUBSCRIPT SMALL LETTER E [ I created this using :execute "digraphs es " . 0x2091 ]
 
 2ₙ  nS 
 
+# Arrows
+
+》  +>     U+300B
+《  >+
+
+⟫   none   U+27EB
+
+▶   PR      BLACK RIGHT-POINTING TRIANGLE
+◀   PL      BLACK LEFT-POINTING TRIANGLE
+▲   UT      BLACK UP-POINTING TRIANGLE
+▼   Dt      BLACK DOWN-POINTING TRIANGLE
+
+◁   Tl or lT
+▷   Tr or rT
+△   uT      WHITE UP-POINTING TRIANGLE
+▽   dT      WHITE DOWN-POINTING TRIANGLE
 
 
-Greek alphabet
+❯ --> <❯> 10095, Hex 276f, Octal 23557 .vimrc --> mappings.vim <leader>>  PURE PROMPT ARROW
+
+→   ->
+←   <-
+
+»   >>  0xbb    187 RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
+«   <<
+
+≪   <*
+≫   *>
+
+》  +>     U+300B
+《  >+
+
+⟫   none   U+27EB
+
+▶   PR      BLACK RIGHT-POINTING TRIANGLE
+◀   PL      BLACK LEFT-POINTING TRIANGLE
+▲   UT      BLACK UP-POINTING TRIANGLE
+▼   Dt      BLACK DOWN-POINTING TRIANGLE
+
+◁   Tl or lT
+▷   Tr or rT
+△   uT      WHITE UP-POINTING TRIANGLE
+▽   dT      WHITE DOWN-POINTING TRIANGLE
+
+
+❯ --> <❯> 10095, Hex 276f, Octal 23557 .vimrc --> mappings.vim <leader>>  PURE PROMPT ARROW
+
+
+→   ->
+←   <-
+
+»   >>  0xbb    187 RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
+«   <<
+
+≪   <*
+≫   *>*>
+
+
+### Greek alphabet
 
 Α α	Alpha	
 Β β	Beta	
@@ -142,7 +160,7 @@ Greek alphabet
 Ω ω	Omega
 
 
-Digraphs for small Greek letters
+### Digraphs for small Greek letters
 
 α  a*
 β  b*
@@ -171,6 +189,77 @@ Digraphs for small Greek letters
 Other 
 〔	U+3014	LEFT TORTOISE SHELL BRACKET
 〕	U+3015	RIGHT TORTOISE SHELL BRACKET
+
+
+# vim help
+
+:h i_CTRL-V_digit
+
+# URLS
+
+https://omgsymbol.com/                  :: good for search eg "underscore"
+https://unicode-explorer.com/
+
+
+# where is
+
+arrows in ~/.cheat/vim_digraphs.md
+copied here
+》  +>     U+300B
+《  >+
+
+⟫   none   U+27EB
+
+▶   PR      BLACK RIGHT-POINTING TRIANGLE
+◀   PL      BLACK LEFT-POINTING TRIANGLE
+▲   UT      BLACK UP-POINTING TRIANGLE
+▼   Dt      BLACK DOWN-POINTING TRIANGLE
+
+◁   Tl or lT
+▷   Tr or rT
+△   uT      WHITE UP-POINTING TRIANGLE
+▽   dT      WHITE DOWN-POINTING TRIANGLE
+
+
+❯ --> <❯> 10095, Hex 276f, Octal 23557 .vimrc --> mappings.vim <leader>>  PURE PROMPT ARROW
+
+
+→   ->
+←   <-
+
+»   >>  0xbb    187 RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
+«   <<
+
+≪   <*
+≫   *>
+
+
+# how to insert —  non-digraph method
+
+_in insert mode_ ...  type Ctrl+V (or Ctrl+Q) followed by:
+
+      decimal number (0-255)
+    o then an octal number (o0-o377, i.e., 255 is the maximum value)
+    x then a hex number (x00-xFF, i.e., 255 is the maximum value)
+    u then a 4-hexchar Unicode sequence
+
+
+
+Example:
+insert i
+
+i  decimal          Ctrl+q 105
+i  hex              Ctrl+q x69
+i  octal            Ctrl+q o151
+i  unicode 4 char   Ctrl+q u0069
+i  unicode 8 char   Ctrl+q U00000069
+
+ḻ  l underscore     Ctrl+q u1e3b; Digr l_
+
+ 
+ 
+
+
 
 
 # Windows

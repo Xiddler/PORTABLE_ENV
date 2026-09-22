@@ -2,7 +2,13 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("projectXY.org"
+(("money.org"
+ (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/000_DIRECTORY_ORGS/04_MONEY/money.org")
+ (front-context-string . "Available money\n")
+ (rear-context-string . "-------------\n* ")
+ (position . 14597)
+ (last-modified 27286 42507 369529 415000))
+("projectXY.org"
  (filename . "/run/media/donagh/USB128GB/DONAGHS/personal/000_DIRECTORY_ORGS/03_ACTIVITIES/projectXY.org")
  (front-context-string . " \"what I don't w")
  (rear-context-string . "imiting/avoiding")

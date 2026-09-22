@@ -123,7 +123,7 @@ set startofline
 " set hi link markdownError Normal " error with link?
 
 " }}}
-"{{{ Persistend undo
+"{{{ Persistend undo — not used
 
 " trial started 2026-08-19  :: trial ended 2026-08-19 
 " persistent undo

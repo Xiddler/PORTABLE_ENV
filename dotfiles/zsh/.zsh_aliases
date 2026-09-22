@@ -302,6 +302,12 @@ alias rsync-move='/usr/sbin/rsync -avz --progress -h --remove-source-files '
 alias rsync-sync='/usr/sbin/rsync -avzu --delete --progress -h '
 alias rsync-update='/usr/sbin/rsync -avzu --progress -h '
 #}}}
+#{{{ RESTIC
+
+restc() { restic -r ~/BACKUPS/restic-repo -p $RESTIC_PASSWORD_FILE $1 }
+restdir='/home/donagh/BACKUPS/restic-repo'
+
+#}}}
 #{{{ DOCKER & PODMAN
 # alias -g docker='sudo docker '
 # alias -g podman='sudo podman '
@@ -659,7 +665,7 @@ bbpython() { source ~/.virtualenvs/bpython/bin/activate && sleep 4 &&  python -m
 #
 # start a server: source python venv & serve folders on the LAN (incl.Toshiba) to view on the Windows web browser (Firefox)
 # sourcevenv() { source /home/donagh/.virtualenvs/beauty-http-server/bin/activate && echo "browse to http://192.168.1.86:8080/" &&  http.server --bind 0.0.0.0 --port 8080 --folder $1 }
-pyserve() { source /home/donagh/.virtualenvs/beauty-http-server/bin/activate && echo "browse to http://192.168.1.86:8080/" &&  http.server --bind 0.0.0.0 --port 8080 --folder $1 }
+pyserve() { source /home/donagh/.virtualenvs/my_http_server/bin/activate && echo "browse to http://192.168.1.86:8080/" &&  http.server --bind 0.0.0.0 --port 8080 --folder $1 }
 # pyserve() { python -m http.server 8001 }
 
 #}}}

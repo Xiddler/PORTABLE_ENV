@@ -79,6 +79,9 @@ nnoremap <leader>sc viw<esc>bi{<esc>ea}<esc>l
 "<leader>a to produce ❯ <-- the pure-prompt symbol
 " ❯  " the pure-prompt symbol — a nice right-pointing arrow
 inoremap <leader>>  <C-Q>u276f
+inoremap <leader>j  <C-Q>u276f
+
+
 
 " outputs the pure-prompt symbol
 " ❯ 
@@ -148,6 +151,8 @@ nnoremap <C-n> :exe 'set nu!' &nu ? 'rnu!' : ''
 "for other thing so the plain leader s slows down this method of saving; use
 "leader k
 nnoremap <leader>k :w<cr>
+nnoremap <leader>kh :wq<cr>
+" kj was too easily hit in error
 "inoremap <leader>s <C-c>:w<cr>
 " 2026-08-19 
 
@@ -159,6 +164,7 @@ nnoremap <leader>u v~
 
 "<leader>v to run :Vex (! means on the left side)
 nnoremap <leader>v :Vex!<cr>
+
 
 
 "<leader>y to yank to system clipboard 
@@ -174,6 +180,10 @@ nmap <leader>z :FZF<cr>
 
 " shift a much-indented line to position to beginning of LHS
 nnoremap <leader>h ^d0
+
+" non-standard underscore (for letter placeholders for example)
+" U23bd
+inoremap <leader>u ⎽
 
 "}}}
 "{{{ Leader_key + multiple alphabetic
